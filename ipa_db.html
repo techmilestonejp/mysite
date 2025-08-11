@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>勉強メモ_データベーススペシャリスト</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">勉強メモ_データベーススペシャリスト</h1>
+</header>
+<p>作成日：2025/07/27 12:31:57<br />
+更新日：2025/08/11 20:29:34<br />
+<a href="index.html">トップページ</a></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="概要">概要</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="ドットコムデータベース関連">ドットコム/データベース関連</h3>
+<ul>
+<li>データベーススペシャリスト試験ドットコム
+<ul>
+<li><a
+href="https://www.db-siken.com/">データベーススペシャリスト試験ドットコム</a></li>
+</ul></li>
+</ul>
+<h3 id="応用情報処理試験過去問">応用情報処理試験/過去問</h3>
+<ul>
+<li><a
+href="https://www.ap-siken.com/index_te.html#9_1">9,データベース</a></li>
+</ul>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="qiitaサイト">Qiitaサイト</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="qiita用語集">Qiita用語集</h3>
+<ul>
+<li>Qiita/用語集：データベース
+<ul>
+<li><a
+href="https://qiita.com/178_c_m/items/9440ff96f74d2db666df">分かりやすく正規化について理解しよう
+(データベース)</a></li>
+</ul></li>
+<li>Qiita/勉強メモ
+<ul>
+<li>https://qiita.com/okapee0608/items/6770f50ef3cc1bbb6e3d</li>
+<li>https://qiita.com/konbraphat51/items/9f5350448b54d802675f</li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="勉強サイト">勉強サイト</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="データベーススペシャリスト技術公開サイト">データベーススペシャリスト・技術公開サイト</h3>
+<ul>
+<li>データベーススペシャリスト試験 完全攻略サイト
+<ul>
+<li><a href="https://databasestudy.web.fc2.com/">トップページ</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="テクノロジーデータベース基礎">テクノロジー：データベース基礎</h2>
+<p>大分類 03: 技術要素<br />
+中分類 09: データベース
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="acid特性">ACID特性</h3>
+<p>ACIDとは、データベーストランザクションの信頼性と整合性を保証するための4つの特性のこと。<br />
+4つの特性は、以下のとおり。</p>
+<ol type="1">
+<li>Atomicity・原子性</li>
+<li>Consistency・一貫性</li>
+<li>Isolation・独立性</li>
+<li>Durability・持続性</li>
+</ol>
+<ul>
+<li><a
+href="https://qiita.com/RyutoYoda/items/0cd43432e8c7bcb5c028">今更聞けないACID特性について解説</a></li>
+</ul>
+<h3 id="正規化">正規化</h3>
+<p>正規形とは、データベース上で扱うデータの重複をなくし、一貫性と効率性を保持するためのデータ形式のこと。</p>
+<ul>
+<li>第一正規化
+<ul>
+<li>第一正規化とは、繰り返し項目(繰り返しの列、セル結合)を排除すること。</li>
+<li>繰返し項目の分離と導出項目の削除</li>
+</ul></li>
+<li>第二正規形
+<ul>
+<li>第二正規化とは、すべての候補キーにおいて、部分関数従属性を解消し、完全関数従属性のみの状態であること。</li>
+<li>部分関数従属性の解消</li>
+</ul></li>
+<li>第三正規形
+<ul>
+<li>第三正規化とは、第二正規化を満たした状態で、非キー属性が推移的関数従属を解消されていること。</li>
+<li>推移的関数従属性の解消</li>
+</ul></li>
+<li>関数従属性
+<ul>
+<li>関係従属とは、ある列Aの値が決まれば、別の列Bの値が決まる状態のこと。</li>
+</ul></li>
+<li>部分関数従属性
+<ul>
+<li>部分関数従属性とは、ある列が複合主キーの一部の列で値が決まる状態のこと。</li>
+</ul></li>
+<li>完全関数従属性
+<ul>
+<li>完全関数従属性とは、ある列が複合主キーの全ての列によってのみ値が一意に決まる状態のこと。</li>
+</ul></li>
+<li>推移的関数従属性
+<ul>
+<li>推移的関数従属性とは、ある列が主キーに直接依存せず、別の列を経由して間接的に決定される状態のこと。</li>
+</ul></li>
+<li>候補キー
+<ul>
+<li>候補キーとは、任意の行(レコード)を一意に識別するための列または列の組み合わせのこと。</li>
+<li>主キー、ユニークキー等が含まれる。</li>
+</ul></li>
+<li>主キー
+<ul>
+<li>主キーとは、候補キーのうちNULL値を含まないもののこと。</li>
+</ul></li>
+<li>複合主キー
+<ul>
+<li>複数の列で構成される主キー</li>
+</ul></li>
+<li>非キー属性
+<ul>
+<li>主キー(候補キー)に含まれない列のこと。</li>
+</ul></li>
+<li><a
+href="https://qiita.com/kouki_o9/items/7f50364672eb1a675793">正規化の要点</a></li>
+<li><a
+href="https://qiita.com/178_c_m/items/9440ff96f74d2db666df">分かりやすく正規化について理解しよう</a></li>
+<li><a
+href="https://qiita.com/Asaiii12/items/57006065cf3ba0393201">第1正規形から第3正規形まで簡単にまとめてみた</a></li>
+<li><a
+href="https://qiita.com/k-y/items/cdb48f2a0afb5873d78e">データベース
+応用情報技術者試験 対策日記14</a></li>
+<li><a
+href="http://ext-web.edu.sgu.ac.jp/HIKO/Prog03/SenpaiKyozai/shiohara/formalize.html">正規化</a></li>
+<li><a
+href="https://oss-db.jp/dojo/dojo_info_04">データベースの正規化</a></li>
+<li><a
+href="https://www.foresight.jp/fe/column/normalization/?srsltid=AfmBOoqJDwV5oIlUkOHAjyi_y039eRwbm7yRNrQey8PoJQWox9l49wBK">基本情報技術者試験の鬼門であるデータベースの正規化について解説</a></li>
+<li><a
+href="https://breezegroup.co.jp/202005/database-normalization/">第1正規形・第2正規形・第3正規形について紹介</a></li>
+<li><a
+href="https://www.uncovertruth.co.jp/dx-accelerator/blog/articles/visualization_method/097/">関数従属性とは？</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="テクノロジーデータベース表記方法">テクノロジー：データベース表記方法</h2>
+<p>大分類 03: 技術要素<br />
+中分類 09: データベース
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="uml図1対多の関係性">UML図/1対多の関係性</h3>
+<ul>
+<li>https://www.fe-siken.com/kakomon/sample/a22.html</li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="その他ツール">その他ツール</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="plantuml">PlantUML</h3>
+<ul>
+<li>https://zenn.dev/shimiyu/articles/57dcd5576a0fcc</li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

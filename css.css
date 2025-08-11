@@ -1,0 +1,100 @@
+/* ページ全体の基本的な設定。背景色や文字色など */
+
+body {
+	font-size   : 9pt;
+	/* font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif; */
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','Meiryo UI','メイリオ',Verdana,'ＭＳ Ｐゴシック',sans-serif;
+	color       : #020202;
+	background  : #ffffff;
+}
+
+/* タイトル設定 */
+h1 {
+	font-size:    12pt;
+}
+
+/* サブタイトルの設定 */
+h2 {
+	font-size:    12pt;
+	color:#00007F;
+}
+
+h3 {
+	font-size:    10pt;
+	margin: 0em;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+h4 {
+	position:     relative;
+	font-size:    9pt;
+	font-weight:  normal;
+	padding-left: 1.2em;     /*アイコン分のスペース*/
+}
+
+h4::before {
+	position: absolute;       /* 絶対位置 */
+	content:  "\025a1";       /* アイコンのユニコード */
+	font-size: 9pt;           /* サイズ */
+	color: #000000;           /*アイコン色*/
+	left: 0;                  /* アイコンの位置 */
+	/* top:  0;*/             /* アイコンの位置 */
+}
+
+/* テーブルの設定 */
+table {
+	font-size   : 9pt;
+	font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+	margin: 0.5em 1em 0.5em 5em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a0a0a0;
+	border-collapse: collapse;
+}
+
+th {
+	font-size   : 9pt;
+	font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+	padding: 2px;
+	background-color:#f0f0f0;
+	color: #000;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a0a0a0;
+}
+
+td {
+	font-size   : 9pt;
+	font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+	padding: 2px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a0a0a0;
+}
+
+
+/* リンク文字列に関する設定 */
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	background-color: transparent;
+	color: #00a;
+	text-decoration: none;
+}
+
+a:hover {
+	/* text-decoration: underline;*/
+}
+
+blockquote {
+	/* background-color:#d0f0f0; */
+	background-color:#f0d0f0;
+}
+
+pre {
+	/* background-color:#f0d0f0; */
+	background-color:#d0f0f0;
+}
