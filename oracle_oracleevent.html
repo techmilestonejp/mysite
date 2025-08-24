@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Oracle_Oracle待機イベント</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Oracle_Oracle待機イベント</h1>
+</header>
+<p><a href="index.html">トップページ</a><br />
+更新日：2025/08/24 21:05:22<br />
+更新日：2025/08/24 21:05:22</p>
+<hr />
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h2 id="概要">概要</h2>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h3 id="目的">目的</h3>
+<p>Oracle待機イベントについてまとめます。</p>
+<hr />
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h2 id="cpu時間について">CPU時間について</h2>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h3 id="dbtimedb-cpu">DBTime、DB CPU</h3>
+<p>AWRレポート上に出てくる「DBTime」と「DB
+CPU」は以下のような関係となっている。</p>
+<pre><code>(合計CPU時間) = (DB Time) + (OracleDB以外のCPU時間) + (空きのCPU時間)
+(DB Time)     = (DB CPU)  + (待機時間(Oracle待機イベントの合計時間))</code></pre>
+<ul>
+<li><a
+href="https://blogs.oracle.com/otnjp/post/tsushima-hakushi-17">津島博士のパフォーマンス講座　
+第17回 チューニングについて</a></li>
+</ul>
+<hr />
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle待機イベント">Oracle待機イベント</h2>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<p>「待機イベント名」「1.概要」「2.発生原因」「3.待機時間」「4.対応策」「5.影響度」「6.(あれば)参考情報」の順番で記載します。</p>
+<ol type="1">
+<li>db file sequential read
+<ol type="1">
+<li>順次読取りは、単一ブロック読取りです。単一ブロックI/Oは通常、索引を使用した結果です。
+非常にまれなケースとして、エクステントの境界のため、またはバッファ・キャッシュ内にバッファが存在するため、
+全表スキャン・コールが単一ブロック・コールに切り捨てられることがあります。</li>
+<li>索引によるDBブロック読み込み</li>
+<li>ユーザー・プロセスがSGAバッファ・キャッシュにバッファを読み取り、物理I/Oコールが戻るまでの待機時間を表します。</li>
+<li>処理を軽減させることは難しい</li>
+<li>軽減は不要</li>
+</ol></li>
+<li>db file scattered read
+<ol type="1">
+<li>db file scattered
+readは、データを複数の不連続メモリー位置に読み取るために散布読取りを発行します。散布読取りは通常、マルチブロック読取りです。全体スキャンの他、(索引の)高速全スキャンでも行うことができます。
+db file scattered
+read待機イベントは、全体スキャンが発生していることを識別します。</li>
+<li>索引によるDBブロック読み込み</li>
+<li>ユーザー・プロセスがSGAバッファ・キャッシュにバッファを読み取り、物理I/Oコールが戻るまでの待機時間を表します。</li>
+<li>処理を軽減させることは難しい</li>
+<li>軽減は不要</li>
+</ol></li>
+<li>db file parallel write
+<ol type="1">
+<li>このイベントはDBWRで発生します。これは、DBWRがファイルとブロックへのパラレル書込みを実行中であることを示します。</li>
+<li>Dbファイルへの書込み</li>
+<li>データベースファイルから、物理I/Oコールが戻るまでの待機時間を表します。
+最後のI/Oがディスクに書き込まれると、待機は終了します。</li>
+<li>処理を軽減させることは難しい</li>
+<li>軽減は不要</li>
+</ol></li>
+</ol>
+<hr />
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h2 id="リンク集">リンク集</h2>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<h3 id="oracle-databaseリファレンス">Oracle Databaseリファレンス</h3>
+<ul>
+<li>Oracle Databaseリファレンス(Release 23)
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/F82042_01/refrn/descriptions-of-wait-events.html">C.Oracle待機イベント</a></li>
+</ul></li>
+<li>Oracle Databaseリファレンス(12.2)
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/E82638_01/refrn/oracle-wait-events.html">C.Oracle待機イベント</a></li>
+<li><a
+href="https://docs.oracle.com/cd/E82638_01/refrn/descriptions-of-wait-events.html">C.3
+待機イベントの説明</a></li>
+</ul></li>
+<li>Oracle Databaseリファレンス(11.2)
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/E16338_01/server.112/b56311/waitevents.htm">C.Oracle待機イベント</a></li>
+</ul></li>
+</ul>
+<h3 id="リンク集-1">リンク集</h3>
+<ul>
+<li>日本エクセム株式会社
+<ul>
+<li><a
+href="https://www.ex-em.co.jp/__/categories/OracleWaitevent">Oracle待機イベント情報一覧</a></li>
+<li><a href="https://www.ex-em.co.jp/blog/db-file-sequential-read">db
+file sequential read</a></li>
+</ul></li>
+<li>Qiita
+<ul>
+<li><a
+href="https://qiita.com/cube1225/items/a9f278deb2da40d38045">Oracleの待機イベントは知っていますか？</a></li>
+</ul></li>
+<li><a
+href="http://www.doppo1.net/oracle/tuning/wait-event.html">待機イベント一覧</a></li>
+</ul>
+<h3 id="awrレポート解析">AWRレポート解析</h3>
+<ul>
+<li><a href="https://eeengineer.com/oracle-awr-report/">Oracle
+AWRレポートの見方と解析ポイントを徹底解説</a></li>
+</ul>
+<hr />
+<!----------------------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
