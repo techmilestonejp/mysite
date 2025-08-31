@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 更新日：2025/08/24 21:05:22<br />
-更新日：2025/08/24 21:05:22</p>
+更新日：2025/08/31 09:53:45</p>
 <hr />
 <!----------------------------------------------------------------------------------------------------------------------------------->
 <h2 id="概要">概要</h2>
@@ -59,9 +59,10 @@ href="https://blogs.oracle.com/otnjp/post/tsushima-hakushi-17">津島博士の�
 <ol type="1">
 <li>db file sequential read
 <ol type="1">
-<li>順次読取りは、単一ブロック読取りです。単一ブロックI/Oは通常、索引を使用した結果です。
+<li>順次読取りは、単一ブロック読取りです。単一ブロックI/Oは通常、索引を使用した結果です。<br />
 非常にまれなケースとして、エクステントの境界のため、またはバッファ・キャッシュ内にバッファが存在するため、
-全表スキャン・コールが単一ブロック・コールに切り捨てられることがあります。</li>
+全表スキャン・コールが単一ブロック・コールに切り捨てられることがあります。<br />
+</li>
 <li>索引によるDBブロック読み込み</li>
 <li>ユーザー・プロセスがSGAバッファ・キャッシュにバッファを読み取り、物理I/Oコールが戻るまでの待機時間を表します。</li>
 <li>処理を軽減させることは難しい</li>
@@ -70,9 +71,11 @@ href="https://blogs.oracle.com/otnjp/post/tsushima-hakushi-17">津島博士の�
 <li>db file scattered read
 <ol type="1">
 <li>db file scattered
-readは、データを複数の不連続メモリー位置に読み取るために散布読取りを発行します。散布読取りは通常、マルチブロック読取りです。全体スキャンの他、(索引の)高速全スキャンでも行うことができます。
+readは、データを複数の不連続メモリー位置に読み取るために散布読取りを発行します。<br />
+散布読取りは通常、マルチブロック読取りです。全体スキャンの他、(索引の)高速全スキャンでも行うことができます。
 db file scattered
-read待機イベントは、全体スキャンが発生していることを識別します。</li>
+read待機イベントは、全体スキャンが発生していることを識別します。<br />
+</li>
 <li>索引によるDBブロック読み込み</li>
 <li>ユーザー・プロセスがSGAバッファ・キャッシュにバッファを読み取り、物理I/Oコールが戻るまでの待機時間を表します。</li>
 <li>処理を軽減させることは難しい</li>
@@ -126,6 +129,8 @@ file sequential read</a></li>
 <ul>
 <li><a
 href="https://qiita.com/cube1225/items/a9f278deb2da40d38045">Oracleの待機イベントは知っていますか？</a></li>
+<li><a
+href="https://qiita.com/tbtakhk/items/03a100912406c1396c66#%E5%BE%85%E6%A9%9F%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%AE%E7%A8%AE%E9%A1%9E%E3%81%A8%E6%84%8F%E5%91%B3">待機イベントの種類と意味</a></li>
 </ul></li>
 <li><a
 href="http://www.doppo1.net/oracle/tuning/wait-event.html">待機イベント一覧</a></li>
@@ -137,6 +142,12 @@ href="https://web.archive.org/web/20190908110917/http://otn.oracle.co.jp/skillup
 Database 性能対策機能</a></li>
 <li><a href="https://eeengineer.com/oracle-awr-report/">Oracle
 AWRレポートの見方と解析ポイントを徹底解説</a></li>
+<li><a
+href="https://web.archive.org/web/20131211111717/https://blogs.oracle.com/oracle4engineer/entry/column_howtouse_awr">AWR(Automatic
+Workload
+Repository／自動ワークロード・リポジトリ)の使い方～レポート、見方、ライセンス</a></li>
+<li><a
+href="https://qiita.com/tbtakhk/items/03a100912406c1396c66">Statspackレポートの見方についてまとめてみた</a></li>
 </ul>
 <hr />
 <!----------------------------------------------------------------------------------------------------------------------------------->
