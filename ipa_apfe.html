@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_応用情報技術者試験</h1>
 </header>
 <p>作成日：2025/04/26 21:09:56<br />
-更新日：2025/08/31 09:53:45<br />
+更新日：2025/09/05 10:57:07<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -88,6 +88,10 @@ href="https://www.fe-siken.com/index_te.html">FE:分野別過去問題テクノ�
 href="https://www.fe-siken.com/index_ma.html">FE:分野別過去問題マネジメント</a></li>
 <li><a
 href="https://www.fe-siken.com/index_st.html">FE:分野別過去問題ストラテジ</a></li>
+</ul></li>
+<li>ITパスポート試験ドットコム
+<ul>
+<li><a href="https://www.itpassportsiken.com/word/">用語集</a></li>
 </ul></li>
 </ul>
 <hr />
@@ -148,8 +152,6 @@ href="https://qiita.com/d_kvn/items/1db06c3feecf69577afb">応用情報技術者�
 <ul>
 <li><a
 href="https://qiita.com/web_keigo/items/0f2c8e24b2cdee244ca1">応用情報技術者試験：情報システム開発について</a></li>
-<li><a
-href="https://qiita.com/masaya8028/items/5dff3cbc8aadddba99b3">モジュール強度</a></li>
 </ul></li>
 <li>Qiita/用語集：ISO/JIS関連
 <ul>
@@ -249,7 +251,7 @@ href="https://spica.co.jp/it-school/website_top/">対策ビデオ</a></li>
 <ul>
 <li>セキュリティスペシャリストの分野が広い</li>
 </ul></li>
-<li>プログラム開発の管理
+<li>ソフトウェア開発の管理
 <ul>
 <li>スクラムが出たり、出なかったり</li>
 </ul></li>
@@ -261,7 +263,11 @@ href="https://spica.co.jp/it-school/website_top/">対策ビデオ</a></li>
 <ul>
 <li>ITマネージャーの分野が広い</li>
 </ul></li>
-<li>法務関連
+<li>会計
+<ul>
+<li>会計計算</li>
+</ul></li>
+<li>法務
 <ul>
 <li>著作権</li>
 <li>準委任・請負</li>
@@ -278,6 +284,13 @@ href="https://spica.co.jp/it-school/website_top/">対策ビデオ</a></li>
 <li><a
 href="https://www.ap-siken.com/index_te.html#1_1">1.1離散数学</a></li>
 </ul>
+<h3 id="x進法を分数で表記">X進法を分数で表記</h3>
+<p>(10進法)</p>
+<pre><code>0.123… = 0.1 + 0.02 + 0.003 + … = 1/10 + 2/(10*10) + 3/(10*10*10) + …</code></pre>
+<p>(16進法)</p>
+<pre><code>0.abc… = 0.a + 0.0b + 0.00c + … = a/16 + b/(16*16) + c/(16*16*16) + …</code></pre>
+<p>(2進法)</p>
+<pre><code>0.111… = 0.1 + 0.01 + 0.001 + … = 1/2 + 1/(2*2) + 1/(2*2*2) + …</code></pre>
 <h3 id="の補数">2の補数</h3>
 <ul>
 <li><a
@@ -471,6 +484,7 @@ href="https://www.fe-siken.com/kakomon/22_aki/q17.html">基本情報技術者平
 <h3 id="サービス可用性">サービス可用性</h3>
 <p>サービス可用性は、システムやサービスがどれだけ継続して利用可能かを数値で表したものです。<br />
 以下の式で表せられます。</p>
+<p>(可用性)</p>
 <pre><code>可用性 = 稼働時間 / (稼働時間 + 停止時間)</code></pre>
 <ul>
 <li><a
@@ -549,13 +563,13 @@ href="https://qiita.com/d_kvn/items/ddf936f3f2db60c1e2fd">応用情報技術者�
 <li>ソフトウェア方式設計</li>
 <li>ソフトウェア詳細設計</li>
 </ol></li>
-<li>構築(政策)
+<li>構築(制作)
 <ol type="1">
-<li>プログラミング</li>
+<li>ソフトウェアコード作成(プログラミング)</li>
 </ol></li>
 <li>テスト
 <ol type="1">
-<li>単体テスト（ソフトウェアユニットテスト）
+<li>ソフトウェア単体テスト（ソフトウェアユニットテスト）
 <ul>
 <li>ソフトウェアユニット「モジュール」のテストを実施する。</li>
 </ul></li>
@@ -571,7 +585,7 @@ href="https://qiita.com/d_kvn/items/ddf936f3f2db60c1e2fd">応用情報技術者�
 <ul>
 <li>ソフトウェア品目を結合して、システムとしてまとめ上げる。</li>
 </ul></li>
-<li>システム適格性テスト
+<li>システム適格性確認テスト
 <ul>
 <li>システム要件通りに実現されているかをテストする。</li>
 </ul></li>
@@ -594,53 +608,66 @@ href="https://www.mij-s.com/pafu/web_fe/gozen/04/4_3.htm">開発環境</a></li>
 <li><a
 href="https://www.it-shikaku.jp/top30.php?hidari=12-01.php&amp;migi=km12-01.php">1.システム要件定義</a></li>
 </ul></li>
+<li><a
+href="https://www.nw-siken.com/kakomon/28_aki/am2_24.html">NWスぺ平成28年秋期午前2問24</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="テクノロジーシステム開発技術ソフトウェア要件定義">テクノロジー：システム開発技術/ソフトウェア要件定義</h2>
+id="テクノロジーシステム開発技術モジュール">テクノロジー：システム開発技術/モジュール</h2>
 <p>大分類 04: 開発技術<br />
 中分類 12: システム開発技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="応用情報処理過去問-3">応用情報処理過去問</h3>
+<h3 id="モジュール強度">モジュール強度</h3>
 <ul>
+<li>モジュール強度
+<ol type="1">
+<li>暗合的強度（Coincidental Strength)<br />
+全く関連のない機能が、偶然同じモジュールにまとめられている状態</li>
+<li>論理的強度（Logical Strength） A, B,
+Cといった複数の類似する機能が、論理的にまとめて一つのモジュールに収められている状態﻿</li>
+<li>時間的強度（Temporal Strength）
+特定の時点で一度に実行される一連の初期設定処理などが、まとめて一つのモジュールに収められている状態</li>
+<li>手順的強度（Procedural Strength）
+実行される順番が決まっている一連の処理などが、まとめて一つのモジュールに収められている状態</li>
+<li>逐次強度（Communicational Strength）
+あるモジュールでの処理結果を次のモジュールで利用するなど、データや処理結果が連続して使われる関係にある機能がまとめられている状態</li>
+<li>情報的強度（Sequential Strength）
+処理の対象データと、そのデータを処理する機能が、一つのモジュールにまとめられている状態﻿</li>
+<li>機能的強度（Functional Strength）
+単一の機能を実行するために、関連するデータと処理が全て一つのモジュールに収められている状態で、これは最もモジュール強度の高い設計です﻿</li>
+</ol></li>
 <li><a
-href="https://www.ap-siken.com/index_te.html#12_3">12.3ソフトウェア要件定義</a></li>
+href="https://cyzennt.co.jp/blog/2019/03/16/%E3%80%8C%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%BC%B7%E5%BA%A6%E3%81%A8%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E7%B5%90%E5%90%88%E5%BA%A6%E3%80%8D%E3%81%AE%E5%9B%B3%E8%A7%A3/">モジュール強度とモジュール結合度の図解と解</a></li>
+<li><a
+href="https://qiita.com/masaya8028/items/5dff3cbc8aadddba99b3">モジュール強度</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/29_aki/q46.html">応用情報技術者平成29年秋期午前問46</a></li>
 </ul>
-<h3 id="uml">UML</h3>
+<h3 id="モジュール結合度">モジュール結合度</h3>
+<p>ソフトウェア設計では、一般的に以下の6つのレベルでモジュール間の結びつきが定義されている。</p>
 <ul>
-<li>構造に関する表記
-<ul>
-<li>クラス図（Class Diagram）</li>
-<li>オブジェクト図（Object Diagram）</li>
-</ul></li>
-<li>振る舞いに関する表記
-<ul>
-<li>ユースケース図（Use Case Diagram）</li>
-<li>アクティビティ図</li>
-<li>コミュニケーション図</li>
-</ul></li>
+<li>モジュール結合度
+<ol type="1">
+<li>データ結合（Data
+Coupling）:モジュール間で必要なパラメータのみを渡す最も独立性の高い結合です。</li>
+<li>スタンプ結合（Stamp Coupling）:複合データ構造全体を渡す場合。</li>
+<li>制御結合（Control Coupling）:モジュール間で制御情報を渡す場合。</li>
+<li>外部結合（External
+Coupling）:共通の外部データ領域（グローバル変数など）を共有する場合。</li>
+<li>共有結合（Common
+Coupling）:複数のモジュールが同一のグローバルなデータ領域にアクセスする場合。</li>
+<li>内容結合（Content
+Coupling）:あるモジュールが他のモジュールの内部構造やロジックを直接変更する場合、最も結合度が高い状態です。</li>
+</ol></li>
 <li><a
-href="https://www.itsenka.com/contents/development/uml/">UML入門</a></li>
+href="https://shikaku-dou.com/ap-lesson-20/">初心者向け！モジュール結合度を分かりやすく解説！</a></li>
 <li><a
-href="https://products.sint.co.jp/ober/blog/uml-type">UMLの８種類を解説</a></li>
+href="https://qiita.com/eKushida/items/39bdb3f88fb68ecd66f6">モジュール結合度について</a></li>
 <li><a
-href="https://grannet.co.jp/column/uml/">UMLとは？活用するメリットから代表的な8つの種類まで</a></li>
-<li><a href="https://cacoo.com/ja/blog/what-is-uml/">UMLとは</a></li>
-</ul>
-<h3 id="dfd">DFD</h3>
-<p>DFD 【Data Flow Diagram】 データフロー図 / 機能情報関連図 /
-データフローダイアグラム<br />
-入力データに対して何らかの処理を施し、データを出力する流れをプロセスという。</p>
-<ul>
-<li><a href="https://e-words.jp/w/DFD.html">DFD</a></li>
+href="https://qiita.com/masaya8028/items/e46ad2b9c26c34d4815a">モジュールの結合度について</a></li>
 <li><a
-href="https://qiita.com/k-y/items/d9cd89c13ac67f761492">システム設計・テスト
-応用情報技術者試験 対策日記@17</a></li>
-<li><a
-href="https://www.ap-siken.com/kakomon/27_aki/q46.html">応用情報技術者平成27年秋期午前問46</a></li>
-<li><a
-href="https://www.ap-siken.com/kakomon/18_haru/q40.html">応用情報技術者平成18年秋期午前問40</a></li>
+href="https://e-words.jp/w/%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E7%B5%90%E5%90%88%E5%BA%A6.html">モジュール結合度</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -649,15 +676,42 @@ id="テクノロジーシステム開発技術ソフトウェア設計">テク�
 <p>大分類 04: 開発技術<br />
 中分類 12: システム開発技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="応用情報処理過去問-4">応用情報処理過去問</h3>
+<h3 id="応用情報処理過去問-3">応用情報処理過去問</h3>
 <ul>
 <li><a
 href="https://www.ap-siken.com/index_te.html#12_4">12.4ソフトウェア方式設計・詳細設計</a></li>
 </ul>
-<h3 id="モジュール強度">モジュール強度</h3>
+<h3 id="品質特性">品質特性</h3>
+<ul>
+<li>ISO/IEC9126の品質特性
+<ol type="1">
+<li>機能性</li>
+<li>信頼性</li>
+<li>使用性</li>
+<li>効率性</li>
+<li>保守性</li>
+<li>移植性</li>
+</ol></li>
+<li>ISO/IEC 9126
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/ISO/IEC_9126">ISO/IEC 9126 -
+Wikipedia</a></li>
+<li><a
+href="https://www.itpassportsiken.com/word/%E5%93%81%E8%B3%AA%E7%89%B9%E6%80%A7.html">品質特性</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/26_haru/q47.html">応用情報技術者平成26年春期午前問47</a></li>
+<li><a
+href="https://www.nw-siken.com/kakomon/29_aki/am2_24.html">NWスぺ平成29年春期午前2問24</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/23_aki/q46.html">応用情報技術者平成23年秋期午前問46</a></li>
+</ul></li>
+<li>ISO/IEC 25010
 <ul>
 <li><a
-href="https://www.ap-siken.com/kakomon/29_aki/q46.html">応用情報技術者平成29年秋期午前問46</a></li>
+href="https://qiita.com/UT_ITDaiku/items/ae2c2ae83e7e6dbb1ee2">ソフトウェアの品質特性モデルのISO/IEC9126とISO/IEC25010を学んだまとめ</a></li>
+<li><a
+href="https://www.qbook.jp/column/1790.html">ソフトウェアの「品質特性」とは？8つの品質特性と31の品質副特性を詳しく紹介</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -743,17 +797,6 @@ href="https://www.ap-siken.com/kakomon/30_haru/q46.html">応用情報技術者�
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="テクノロジーソフトウェア開発技術方式設計">テクノロジー：ソフトウェア開発技術/方式設計</h2>
-<p>大分類 04: 開発技術<br />
-中分類 13: ソフトウェア開発管理技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ソフトウェア品質特性">ソフトウェア品質特性</h3>
-<ul>
-<li>https://www.ap-siken.com/bunya.php?m=12&amp;s=4&amp;no=34</li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2
 id="テクノロジーアジャイル開発概要">テクノロジー：アジャイル開発/概要</h2>
 <p>大分類 04: 開発技術<br />
 中分類 13: ソフトウェア開発管理技術<br />
@@ -835,6 +878,59 @@ href="https://www.bohyoh.com/ITEE/SDD/2015B/SDD2015BA49.html">エクストリー
 href="https://www.ap-siken.com/kakomon/07_haru/q48.html">応用情報技術者令和07年春期午前問48</a></li>
 <li><a
 href="https://www.ap-siken.com/kakomon/04_aki/q49.html">応用情報技術者令和04年秋期午前問49</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="テクノロジーソフトウェア開発手法">テクノロジー：ソフトウェア開発手法</h2>
+<p>大分類 04: 開発技術<br />
+中分類 13: ソフトウェア開発管理技術
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="応用情報処理過去問-4">応用情報処理過去問</h3>
+<ul>
+<li><a
+href="https://www.ap-siken.com/index_te.html#13_1">13.1開発プロセス・手法</a></li>
+</ul>
+<h3 id="uml">UML</h3>
+<ul>
+<li>構造に関する表記
+<ul>
+<li>クラス図（Class Diagram）</li>
+<li>オブジェクト図（Object Diagram）</li>
+</ul></li>
+<li>振る舞いに関する表記
+<ul>
+<li>ユースケース図（Use Case Diagram）</li>
+<li>アクティビティ図</li>
+<li>コミュニケーション図</li>
+</ul></li>
+<li><a
+href="https://www.itsenka.com/contents/development/uml/">UML入門</a></li>
+<li><a
+href="https://products.sint.co.jp/ober/blog/uml-type">UMLの８種類を解説</a></li>
+<li><a
+href="https://grannet.co.jp/column/uml/">UMLとは？活用するメリットから代表的な8つの種類まで</a></li>
+<li><a href="https://cacoo.com/ja/blog/what-is-uml/">UMLとは</a></li>
+</ul>
+<h3 id="dfd">DFD</h3>
+<p>DFD 【Data Flow Diagram】 データフロー図 / 機能情報関連図 /
+データフローダイアグラム<br />
+入力データに対して何らかの処理を施し、データを出力する流れをプロセスという。</p>
+<ul>
+<li><a href="https://e-words.jp/w/DFD.html">DFD</a></li>
+<li><a
+href="https://qiita.com/k-y/items/d9cd89c13ac67f761492">システム設計・テスト
+応用情報技術者試験 対策日記@17</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/27_aki/q46.html">応用情報技術者平成27年秋期午前問46</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/18_haru/q40.html">応用情報技術者平成18年秋期午前問40</a></li>
+</ul>
+<h3 id="状態遷移図">状態遷移図</h3>
+<ul>
+<li><a
+href="https://www.skygroup.jp/media/article/3876/">状態遷移図とは何？</a></li>
+<li>https://www.ap-siken.com/kakomon/28_haru/q48.html</li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1039,6 +1135,8 @@ href="https://it-trend.jp/project_management/article/33-0033#chapter-2">ファ�
 <li><a
 href="https://www.ap-siken.com/kakomon/25_haru/q51.html">応用情報技術者平成25年春期午前問51</a></li>
 </ul>
+<h3 id="クラッキング">クラッキング</h3>
+<p>クラッキングとは、人員を投入してスケジュールを短縮する方法です。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="マネジメントiso-21500jis-q-21500">マネジメント：ISO 21500/JIS Q
@@ -1286,6 +1384,11 @@ href="https://www.ap-siken.com/kakomon/28_aki/q55.html">応用情報技術者平
 <p>大分類 06: サービスマネジメント<br />
 中分類 16: システム監査<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="応用情報処理過去問-6">応用情報処理過去問</h3>
+<ul>
+<li><a
+href="https://www.ap-siken.com/index_ma.html#16_1">16.1システム監査</a></li>
+</ul>
 <h3 id="システム監査">システム監査</h3>
 <ul>
 <li>システム監査基準
@@ -1306,6 +1409,10 @@ href="https://www.meti.go.jp/policy/netsecurity/sys-kansa/sys-kanri-2023.pdf">�
 </ul></li>
 <li><a
 href="https://qiita.com/safsa/items/f4bba695afa42f3fd924">システム監査基準（令和5年）</a></li>
+<li><a
+href="https://www.itpassportsiken.com/word/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E7%9B%A3%E6%9F%BB%E5%9F%BA%E6%BA%96.html">システム監査基準</a></li>
+<li><a
+href="https://masassiah.web.fc2.com/contents/20ap/note16.html">システム監査</a></li>
 <li><a
 href="https://www.ap-siken.com/kakomon/04_aki/q60.html">応用情報技術者令和04年秋期午前問60</a></li>
 </ul>
@@ -1356,12 +1463,75 @@ href="https://qiita.com/lymansouka2017/items/595c1a6a94d88cfd6ff4">システム�
 <li><a
 href="https://www.ap-siken.com/kakomon/07_haru/q58.html">応用情報技術者令和07年春期午前問58</a></li>
 </ul>
+<h3 id="監査調書">監査調書</h3>
+<ul>
+<li>監査調書に記載される事項
+<ul>
+<li>監査実施者及び実施日時</li>
+<li>監査の目的</li>
+<li>実施した監査手続</li>
+<li>入手した監査証拠</li>
+<li>システム監査人が発見した事実（事象，原因，影響範囲等）及び発見事実に関するシステム監査人の所見</li>
+<li>監査調書のレビューが行われた場合には，レビューアの氏名及びレビュー日</li>
+</ul></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/04_haru/q59.html">応用情報技術者令和04年春期午前問59</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="マネジメントその他監査">マネジメント：その他監査</h2>
+<h2 id="マネジメント内部統制">マネジメント：内部統制</h2>
 <p>大分類 06: サービスマネジメント<br />
 中分類 16: システム監査<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="応用情報処理過去問-7">応用情報処理過去問</h3>
+<ul>
+<li><a
+href="https://www.ap-siken.com/index_ma.html#16_2">16.2内部統制</a></li>
+</ul>
+<h3 id="内部統制">内部統制</h3>
+<ul>
+<li>内部統制/IT統制
+<ul>
+<li>(ITに係る)全般統制</li>
+<li>(ITに係る)業務処理統制</li>
+</ul></li>
+<li><a
+href="https://qiita.com/lymansouka2017/items/3cc4cb697b20a57b3dff">IT業務処理統制項目</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/06_haru/q60.html">応用情報技術者令和06年春期午前問60</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/05_haru/q60.html">応用情報技術者令和05年春期午前問60</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/27_aki/q60.html">応用情報技術者平成27年秋期午前問60</a></li>
+</ul>
+<h3
+id="内部統制の4つの目的6つの基本的要素">内部統制の4つの目的・6つの基本的要素</h3>
+<ul>
+<li>内部統制の4つの目的
+<ol type="1">
+<li>業務の有効性及び効率性</li>
+<li>財務報告の信頼性</li>
+<li>事業活動に関わる法令等の遵守</li>
+<li>資産の保全</li>
+</ol></li>
+<li>内部統制の6つの基本的要素
+<ol type="1">
+<li>統制環境</li>
+<li>リスクの評価と対応</li>
+<li>統制活動</li>
+<li>情報と伝達</li>
+<li>モニタリング（監視活動）</li>
+<li>IT（情報技術）へ対応</li>
+</ol></li>
+<li><a
+href="https://backofficestudy.com/2021/07/03/6basiccomponents/">内部統制の６つの基本的要素</a></li>
+<li><a
+href="https://www.obc.co.jp/special/ipo/column/list/66">内部統制とは？</a></li>
+<li><a
+href="https://qiita.com/lymansouka2017/items/4c20f6c38a33dbcf4cf1">内部統制を構成する6つの基本的要素の一つ：ITへの対応</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/05_aki/q60.html">応用情報技術者令和05年秋期午前問60</a></li>
+</ul>
 <h3
 id="財務報告に係る内部統制の評価及び監査の基準">財務報告に係る内部統制の評価及び監査の基準</h3>
 <ul>
@@ -1371,17 +1541,6 @@ href="https://www.fsa.go.jp/singi/singi_kigyou/kijun/20230407_naibutousei_kansa.
 href="https://co-warc.warc.jp/media/GYAA27Cy">金融商品取引法における内部統制報告制度とは？</a></li>
 <li><a
 href="https://www.sc-siken.com/kakomon/07_haru/am2_25.html">SCスぺ令和07年春期午前2問25</a></li>
-</ul>
-<h3 id="ifrs国際会計基準">IFRS（国際会計基準）</h3>
-<ul>
-<li><a
-href="https://www.yayoi-kk.co.jp/kaikei/oyakudachi/ifrs/">IFRS（国際会計基準）とは</a></li>
-<li><a
-href="https://jicpa.or.jp/specialized_field/ifrs/basic/ifrs/">IFRSの基礎知識</a></li>
-<li><a
-href="https://www.obc.co.jp/360/list/post377">IFRSとは？日本会計基準との違いやメリット、注意点を分かりやすく解説</a></li>
-<li><a
-href="https://www.ap-siken.com/kakomon/01_aki/q76.html">応用情報技術者令和01年秋期午前問76</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1482,11 +1641,6 @@ href="https://www.ap-siken.com/kakomon/30_aki/q62.html">応用情報技術者平
 <li><a
 href="https://www.ibm.com/docs/ja/bpm/8.5.6?topic=applications-business-process-definitions-bpds">ビジネス・プロセス定義
 (BPD)</a></li>
-</ul>
-<h3 id="状態遷移図">状態遷移図</h3>
-<ul>
-<li><a
-href="https://www.skygroup.jp/media/article/3876/">状態遷移図とは何？</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1658,7 +1812,7 @@ id="ストラテジビジネスインダストリ">ストラテジ：ビジネ�
 <p>大分類 09: 企業と法務<br />
 中分類 21: ビジネスインダストリ<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="応用情報処理過去問-6">応用情報処理過去問</h3>
+<h3 id="応用情報処理過去問-8">応用情報処理過去問</h3>
 <ul>
 <li><a
 href="https://www.ap-siken.com/index_st.html#21_1">21.1ビジネスシステム</a></li>
@@ -1736,7 +1890,7 @@ href="https://www.ap-siken.com/kakomon/30_haru/q62.html">応用情報技術者�
 <p>大分類 09: 企業と法務<br />
 中分類 23: 法務<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="過去問-2">過去問</h3>
+<h3 id="応用情報処理過去問-9">応用情報処理過去問</h3>
 <ul>
 <li><a
 href="https://www.ap-siken.com/index_st.html#22_3">22.3会計・財務</a></li>
@@ -1746,13 +1900,37 @@ href="https://www.ap-siken.com/index_st.html#22_3">22.3会計・財務</a></li>
 <li><a
 href="https://qiita.com/MetroOsamu/items/20e9f8d728d24cab1848">企業の利益や決算書に関するワードのまとめ</a></li>
 </ul>
+<h3 id="粗利益">粗利益</h3>
+<ul>
+<li>利益
+<ol type="1">
+<li>粗利 (売上総利益) ＝ 売上高 － 売上原価</li>
+<li>営業利益 ＝ (1の計算結果) － 販売費及び一般管理費</li>
+<li>経常利益＝（2の計算結果）＋ 営業外収益 － 営業外費用</li>
+<li>税引前当期純利益＝（3の計算結果）＋ 特別利益 － 特別損益</li>
+<li>純利（当期純利益） ＝（4の計算結果）－ 法人税等</li>
+</ol></li>
+<li><a
+href="https://p-m-g.tokyo/media/cash_flow/4980/">粗利益とは？</a></li>
+</ul>
+<h3 id="ifrs国際会計基準">IFRS（国際会計基準）</h3>
+<ul>
+<li><a
+href="https://www.yayoi-kk.co.jp/kaikei/oyakudachi/ifrs/">IFRS（国際会計基準）とは</a></li>
+<li><a
+href="https://jicpa.or.jp/specialized_field/ifrs/basic/ifrs/">IFRSの基礎知識</a></li>
+<li><a
+href="https://www.obc.co.jp/360/list/post377">IFRSとは？日本会計基準との違いやメリット、注意点を分かりやすく解説</a></li>
+<li><a
+href="https://www.ap-siken.com/kakomon/01_aki/q76.html">応用情報技術者令和01年秋期午前問76</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ストラテジ知的財産権">ストラテジ：知的財産権</h2>
 <p>大分類 09: 企業と法務<br />
 中分類 23: 法務<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="応用情報処理過去問-7">応用情報処理過去問</h3>
+<h3 id="応用情報処理過去問-10">応用情報処理過去問</h3>
 <ul>
 <li><a
 href="https://www.ap-siken.com/index_st.html#23_5">23.1知的財産権</a></li>
@@ -1787,7 +1965,7 @@ href="https://www.ap-siken.com/kakomon/28_aki/q78.html">応用情報技術者平
 <p>大分類 09: 企業と法務<br />
 中分類 23: 法務<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="応用情報処理過去問-8">応用情報処理過去問</h3>
+<h3 id="応用情報処理過去問-11">応用情報処理過去問</h3>
 <ul>
 <li><a
 href="https://www.ap-siken.com/index_st.html#23_5">23.5標準化関連</a></li>
