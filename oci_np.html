@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/09/27 08:41:19<br />
+更新日：2025/09/27 21:31:26<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -139,6 +139,27 @@ href="https://qiita.com/Skogkatter112/items/98c6f815b4e0b6556b7e">AWS/Azure
 href="https://qiita.com/Skogkatter112/items/51b619026aa53a9c6069">AWS/Azure
 経験者がはじめる OCI 入門：第２弾 IAM/IDCS編</a></li>
 </ul>
+<h3 id="oci構成">OCI構成</h3>
+<ul>
+<li>物理的構成
+<ul>
+<li>リージョン→可用性ドメイン→フォルト・ドメイン</li>
+</ul></li>
+<li>論理的構成
+<ul>
+<li>テナンシ(アカウント)→コンパートメント</li>
+</ul></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/01/08/093000">【OCI】OCI最初に知ることシリーズ1【テナンシとコンパートメント】</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/01/22/093000">【OCI】OCI最初に知ることシリーズ3【リージョンと可用性ドメイン】</a></li>
+<li><a
+href="https://qiita.com/Skogkatter112/items/98c6f815b4e0b6556b7e">AWS/Azure
+経験者がはじめる OCI 入門</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/oci-sabisuji-ben-qing-bao">OCI
+サービス基本情報</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="vcn概要">VCN概要</h2>
@@ -148,6 +169,15 @@ href="https://qiita.com/Skogkatter112/items/51b619026aa53a9c6069">AWS/Azure
 <ul>
 <li><a
 href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.html">OCIワークロード・ネットワーキングの主要な設計決定について学習</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-jia-xiang-kuraudonetutowaku-vcn-gai-yao">OCI技術資料
+: 仮想クラウド・ネットワーク (VCN) 概要</a></li>
+<li><a
+href="https://hudtech.r-ccs.riken.jp/ocisf/briefing/20200729/Hands-On-02-Virtual_Cloud_Network_100_jp_master.pdf">仮想クラウド・ネットワーク
+(VCN) 概要</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/beginners/creating-vcn/">その2
+- クラウドに仮想ネットワーク(VCN)を作る</a></li>
 </ul>
 <h3 id="vcn概要-1">VCN概要</h3>
 <ul>
@@ -167,12 +197,25 @@ href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#vcn%E3%81%AE%E6%A6
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm">VCNルート表</a></li>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables_topic-working.htm</li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables_topic-working.htm">VCNルート表とルート・ルールの作業</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.htm">ハブVCN内の転送ルーティング</a></li>
 <li><a
 href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654">【OCI】oracle
 cloud -仮想クラウド・ネットワーク構築編(ルート表)</a></li>
+</ul>
+<h3 id="サブネット">サブネット</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/Overview_of_VCNs_and_Subnets.htm">VCNとサブネットの概要</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingVCNs.htm">VCNとサブネットの管理</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/create_subnet.htm">サブネットの作成</a></li>
+<li><a
+href="https://qiita.com/manaki/items/20d9aa3b47db3b39fddd">【OCI】oracle
+cloud -仮想クラウド・ネットワーク構築編(サブネット)</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -294,9 +337,13 @@ href="https://techblog.ap-com.co.jp/entry/2025/05/23/173915">【OCI】ローカ�
 <h3
 id="プライベートエンドポイント概要">プライベート・エンドポイント/概要</h3>
 <ul>
-<li>https://www.oracle.com/jp/cloud/networking/private-endpoint/</li>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm</li>
-<li>https://cloudii.jp/news/blog/oracle-cloud/objectstorage-privateendpoint/</li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/private-endpoint/">プライベート・エンドポイント</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm">プライベート・エンドポイントの作成</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/objectstorage-privateendpoint/">【Oracle
+Cloud】オブジェクトストレージ　プライベートエンドポイントを触ってみた！</a></li>
 <li><a
 href="https://xn--w8j8bac3czf5bl7e.com/2025/06/10/oci-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%83%BB%E3%82%A8/">OCI
 オブジェクト・ストレージのプライベート・エンドポイントを利用してみよう！</a></li>
@@ -393,8 +440,10 @@ Networkで使用される使用可能なパブリック・ルートのみをオ�
 <h3 id="パス優先">パス優先</h3>
 <p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
 <ul>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_as_path</li>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm</li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_as_path">BGPを使用したOracleからオンプレミス・ネットワークへのルートの優先</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm">動的ルーティング・ゲートウェイ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -420,7 +469,9 @@ href="https://cloudii.jp/news/blog/oracle-cloud/20200124-1579848579/#%E3%83%AA%E
 <li><a
 href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Concepts/fastconnectrequirements.htm">FastConnectの要件</a></li>
 <li>https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-fastconnect-xiang-xi</li>
-<li>https://qiita.com/hongmnh/items/5bdad2d50cb454cebf1f</li>
+<li><a
+href="https://qiita.com/hongmnh/items/5bdad2d50cb454cebf1f">【OCI】FastConnectについていろいろ
+#1(サービス概要)</a></li>
 </ul>
 <h3 id="fastconnect接続方式">FastConnect/接続方式</h3>
 <ul>
@@ -436,6 +487,9 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network
 <ul>
 <li>FastConnectロケーションを提供するデータセンター内に、自身のネットワーク機器を設置し、Oracleが提供するFastConnectポートに対して物理ケーブルで直接接続（ダイレクトコネクト）します。最もレイテンシが低く、セキュリティが高い選択肢ですが、半面で物理的なネットワーク作業や機器管理が必要となります。</li>
 </ul></li>
+<li><a
+href="https://qiita.com/hongmnh/items/8722801d50c47174323a">【OCI】FastConnectについていろいろ
+#2(接続モデル)</a></li>
 <li><a
 href="https://www.scsk.jp/sp/netxdc/column/oci_fastconnect_vpnconnect.html">Oracle
 Cloud Infrastructureへの接続、VPN
@@ -820,12 +874,15 @@ Path）とは、ネットワークにおいて、同じ宛先に対してコス�
 <ul>
 <li>https://www.infraexpert.com/study/routing13.html</li>
 <li>https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%AB%E3%83%81%E3%83%91%E3%82%B9.html</li>
-<li>https://qiita.com/shirok/items/c3dbe48ad8f3bef26949</li>
+<li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
+Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
 </ul>
 <h3
 id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
+<p>BGPにおけるルートフィルタリングは以下の4つの手法があります。<br />
+以下の手法により、BGPネイバーと送受信するルートのフィルタリングを行うことができます。</p>
 <ul>
-<li>BGP - ルートフィルタリングの種類
+<li>BGP/ルートフィルタリングの種類
 <ul>
 <li>distribute-list</li>
 <li>prefix-list</li>
@@ -839,9 +896,38 @@ prefix-list</a></li>
 <li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
 as-path access-list</a></li>
 </ul>
-<h3 id="as-path-prepend">AS Path Prepend</h3>
+<h3
+id="bgpローカルプリファレンスlocal-preference">BGP/ローカルプリファレンス(Local
+Preference)</h3>
+<p>BGPのLocal
+Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
+Local
+Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
 <ul>
-<li>https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca</li>
+<li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
+<li><a
+href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
+Preference</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz21.html">BGP -
+LOCAL_PREF</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
+LOCAL_PREF - Cisco Config</a></li>
+<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
+LOCAL_PREF</a></li>
+<li><a
+href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979">BGPの冗長構成（AS
+PATH Prepend、Local-Preference）</a></li>
+<li><a
+href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
+<li><a
+href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
+local-preference</a></li>
+</ul>
+<h3 id="asパスプリペンドas-path-prepend">ASパス・プリペンド(AS Path
+Prepend)</h3>
+<ul>
+<li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
+Path Prepend</a></li>
 </ul>
 <h3 id="非対称ルーティング">非対称ルーティング</h3>
 <p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
