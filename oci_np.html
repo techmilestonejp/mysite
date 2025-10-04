@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/09/28 23:43:19<br />
+更新日：2025/10/04 21:44:27<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -184,6 +184,16 @@ href="https://qiita.com/Skogkatter112/items/98c6f815b4e0b6556b7e">AWS/Azure
 <li><a
 href="https://speakerdeck.com/ocise/oci-sabisuji-ben-qing-bao">OCI
 サービス基本情報</a></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/4a29c6a57607dcf3168d#%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%96">リージョンのサブスクライブ</a></li>
+</ul>
+<h3 id="iam">IAM</h3>
+<ul>
+<li>https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-xiang-xi</li>
+</ul>
+<h3 id="コスト管理">コスト管理</h3>
+<ul>
+<li>https://speakerdeck.com/ocise/oci-kosutoguan-li</li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -311,6 +321,7 @@ href="https://qiita.com/500InternalServerError/items/be14d19a8a51601346cb">IPv6�
 <li>インターネットゲートウェイ</li>
 <li>NATゲートウェイ</li>
 <li>サービスゲートウェイ</li>
+<li>プライベート・エンドポイント</li>
 <li>ローカル・ピアリング・ゲートウェイ(LPG)</li>
 <li>ダイナミック・ルーティング・ゲートウェイ(DRG)</li>
 </ul></li>
@@ -336,41 +347,20 @@ href="https://techblog.ap-com.co.jp/entry/2025/05/15/170939">LPG？DRG？RPC？
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc">Oracle
 Cloud Infrastructure Architect Associate
 勉強メモ(ネットワーキング)</a></li>
+<li><a
+href="https://qiita.com/sazumi/items/8c70b557e5ed365d365c">OCIのネットワーク：VCNの繋ぎ方</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ローカルピアリング接続lpc">ローカルピアリング接続(LPC)</h2>
+<h2 id="サービスゲートウェイ">サービス・ゲートウェイ</h2>
 <p>分類04:VCNゲートウェイ<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ローカルピアリング接続">ローカルピアリング接続</h3>
-<p>Virtual Cloud
-Network(VCN)は、VCNピアリングを使用することで各VCNは他のVCNに直接アクセスすることが可能となります。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/localVCNpeering.htm">ローカル・ピアリング・ゲートウェイを使用したローカルVCNピアリング</a></li>
-<li><a href="https://qiita.com/shirok/items/79e85af83cee040aa62d">Oracle
-Cloud: VCNとVCNをLocal Peering してみた</a></li>
-</ul>
-<h3 id="ピアidpeer-id">ピアID(Peer ID)</h3>
-<ul>
-<li>ピアID(Peer ID)
-<ul>
-<li>ピアIDは、リクエスト側テナンシーによって作成されたRPCのOCIDです。</li>
-<li>これによりRPCが一意に識別され、受け入れ側テナンシーは適切なピアリングをターゲットとして確立できます。</li>
-</ul></li>
-<li>https://docs.oracle.com/ja/learn/stsvpn-btw-ociregions/index.html#introduction</li>
-<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/connect-lpg.htm</li>
-</ul>
-<h3
-id="ローカルピアリングゲートウェイlpg">ローカルピアリングゲートウェイ(LPG)</h3>
-<p>同じリージョン内の2つのVCNを接続し、プライベートIPアドレスを使用して通信できることです。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/create-lpg.htm">ローカル・ピアリング・ゲートウェイの作成</a></li>
-<li><a
-href="https://techblog.ap-com.co.jp/entry/2025/05/23/173915">【OCI】ローカルピアリングゲートウェイを使用して異なるVCN間の接続をしてみた</a></li>
-</ul>
-<hr />
+<h3 id="oracle-services-network">Oracle Services Network</h3>
+<p>Oracle Services Networkは、Oracleサービス用に予約されているOracle
+Cloud Infrastructureの概念的なネットワークです。
+これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。</p>
+<p>https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/
+https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.htm</p>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="プライベートエンドポイント">プライベート・エンドポイント</h2>
 <p>分類04:VCNゲートウェイ<br />
@@ -411,6 +401,45 @@ Warehouseでは、選択したサブネットの一つのプライベートIPア
 <li>プライベート・エンドポイント：順方向、逆方向ともに接続が可能です。</li>
 <li>サービス・ゲートウェイ：順方向(VCN→OSN)のみの接続が可能です。</li>
 </ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ローカルピアリング接続lpc">ローカルピアリング接続(LPC)</h2>
+<p>分類04:VCNゲートウェイ<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ローカルピアリング接続">ローカルピアリング接続</h3>
+<p>Virtual Cloud
+Network(VCN)は、VCNピアリングを使用することで各VCNは他のVCNに直接アクセスすることが可能となります。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/localVCNpeering.htm">ローカル・ピアリング・ゲートウェイを使用したローカルVCNピアリング</a></li>
+<li><a href="https://qiita.com/shirok/items/79e85af83cee040aa62d">Oracle
+Cloud: VCNとVCNをLocal Peering してみた</a></li>
+</ul>
+<h3 id="ピアidpeer-id">ピアID(Peer ID)</h3>
+<ul>
+<li>ピアID(Peer ID)
+<ul>
+<li>ピアIDは、リクエスト側テナンシーによって作成されたRPCのOCIDです。</li>
+<li>これによりRPCが一意に識別され、受け入れ側テナンシーは適切なピアリングをターゲットとして確立できます。</li>
+</ul></li>
+<li>https://docs.oracle.com/ja/learn/stsvpn-btw-ociregions/index.html#introduction</li>
+<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/connect-lpg.htm</li>
+</ul>
+<h3
+id="ローカルピアリングゲートウェイlpg">ローカルピアリングゲートウェイ(LPG)</h3>
+<p>同じリージョン内の2つのVCNを接続し、プライベートIPアドレスを使用して通信できることです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/create-lpg.htm">ローカル・ピアリング・ゲートウェイの作成</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/05/23/173915">【OCI】ローカルピアリングゲートウェイを使用して異なるVCN間の接続をしてみた</a></li>
+</ul>
+<h3
+id="ローカルピアリング接続のiam設定">ローカルピアリング接続のIAM設定</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm#scenario_m__local-LPG-xten">VCN間のルーティングに関するIAMポリシー</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -456,10 +485,10 @@ href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブ
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-dns">OCI DNS</h2>
+<h2 id="oci-dns">OCI-DNS</h2>
 <p>分類05:OCIネットワーク・ソリューションとアプリケーション・サービスの計画・設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ocidns概要">OCIDNS/概要</h3>
+<h3 id="oci-dns概要">OCI-DNS/概要</h3>
 <ul>
 <li><a
 href="https://speakerdeck.com/ocise/dnsgai-yao?slide=35">DNS概要</a></li>
@@ -511,6 +540,24 @@ href="https://qiita.com/sh-sho/items/4431d5cac2addd0b9809">OCIのマネージド
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="オンプレミス環境">オンプレミス環境</h2>
+<p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="cpecustomer-premises-equipment">CPE(Customer Premises
+Equipment)</h3>
+<p>CPEとは、Customer Premises
+Equipmentの略で顧客構内機器のことを表します。<br />
+オンプレミス側に設置しているルータのことを指します。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/configuringCPE.htm">CPE構成</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Reference/CPElist.htm">検証済CPEデバイス</a></li>
+<li><a
+href="https://www.ashisuto.co.jp/db_blog/article/onpre-to-cloud03.html">オンプレミス環境とクラウドを接続してみよう！</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="動的ルーティングゲートウェイdrg">動的ルーティングゲートウェイ(DRG)</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
@@ -537,6 +584,26 @@ Isolation)してみてみた</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-rt-create.htm">DRGルート表の作成</a></li>
 </ul>
+<h3 id="パス優先">パス優先</h3>
+<p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_as_path">BGPを使用したOracleからオンプレミス・ネットワークへのルートの優先</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm">動的ルーティング・ゲートウェイ</a></li>
+</ul>
+<h3 id="as番号">AS番号</h3>
+<p>OCIのAS番号は、リージョン関係なく同一の”31898”となる。</p>
+<ul>
+<li><a
+href="https://qiita.com/sazumi/items/8c70b557e5ed365d365c#fastconnect%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E6%8E%A5%E7%B6%9A">FastConnectを使った接続</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="動的ルーティングゲートウェイdrg経路制御">動的ルーティングゲートウェイ(DRG)/経路制御</h2>
+<p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
 <h3
 id="drgのルートディストリビューション">DRGのルート・ディストリビューション</h3>
 <p>ルート・ディストリビューションは、マッチ基準（OCIDやアタッチメント・タイプなど）とアクションを含む宣言文のリストです。<br />
@@ -578,14 +645,6 @@ Networkで使用される使用可能なパブリック・ルートのみをオ�
 <ul>
 <li>ローカル・リージョンのOSNリソースによって使用されるパブリック・ルートのみをオンプレミス・ネットワークに通知します。</li>
 </ul></li>
-</ul>
-<h3 id="パス優先">パス優先</h3>
-<p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_as_path">BGPを使用したOracleからオンプレミス・ネットワークへのルートの優先</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm">動的ルーティング・ゲートウェイ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -655,6 +714,36 @@ ConnectとFastConnectの違いは？</a></li>
 </ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="fastconnect他のクラウドプロバイダとの接続">FastConnect/他のクラウド・プロバイダとの接続</h2>
+<p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="他のクラウドプロバイダとの接続概要">他のクラウド・プロバイダとの接続/概要</h3>
+<ul>
+<li>https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html</li>
+<li>https://cloud.nttsmc.com/cxc/oci.html</li>
+<li>他社ベンダー
+<ul>
+<li>https://cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview?hl=ja</li>
+<li>https://qiita.com/asahide/items/fe0b33928b676dc1a760</li>
+<li>https://learn.microsoft.com/ja-jp/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking</li>
+</ul></li>
+</ul>
+<h3 id="oracle-interconnect-for-azure">Oracle Interconnect for
+Azure</h3>
+<p>Microsoft AzureとOracle Cloud
+Infrastructure（OCI）の機能を、データ転送料金のかからない、低レイテンシ・プライベート接続により組み合わせることで、アプリケーションの移行と最新化を加速します。</p>
+<ul>
+<li><a href="https://www.oracle.com/jp/cloud/azure/interconnect/">Oracle
+Interconnect for Azure</a></li>
+<li><a
+href="https://qiita.com/Hitachi_Takumi/items/fe95b9eda9d71e184a3f">基幹システムを想定したOCIとAzureによるマルチクラウド構成の性能を検証しました</a></li>
+<li><a
+href="https://blog.s-style.co.jp/2023/07/10050/">AzureとOCIをインターコネクトで繋ぐ方法</a></li>
 </ul>
 <h3 id="fastconnect-oracleパートナの使用">FastConnect
 Oracleパートナの使用</h3>
@@ -741,36 +830,6 @@ Cloud と AWS Site-to-Site VPN (IPSec) 接続してみてみた</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="オンプレミス環境">オンプレミス環境</h2>
-<p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="cpecustomer-premises-equipment">CPE(Customer Premises
-Equipment)</h3>
-<p>CPEとは、Customer Premises
-Equipmentの略で顧客構内機器のことを表します。<br />
-オンプレミス側に設置しているルータのことを指します。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/configuringCPE.htm">CPE構成</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Reference/CPElist.htm">検証済CPEデバイス</a></li>
-<li><a
-href="https://www.ashisuto.co.jp/db_blog/article/onpre-to-cloud03.html">オンプレミス環境とクラウドを接続してみよう！</a></li>
-</ul>
-<h3 id="oracle-interconnect-for-azure">Oracle Interconnect for
-Azure</h3>
-<p>Microsoft AzureとOracle Cloud
-Infrastructure（OCI）の機能を、データ転送料金のかからない、低レイテンシ・プライベート接続により組み合わせることで、アプリケーションの移行と最新化を加速します。</p>
-<ul>
-<li><a href="https://www.oracle.com/jp/cloud/azure/interconnect/">Oracle
-Interconnect for Azure</a></li>
-<li><a
-href="https://qiita.com/Hitachi_Takumi/items/fe95b9eda9d71e184a3f">基幹システムを想定したOCIとAzureによるマルチクラウド構成の性能を検証しました</a></li>
-<li><a
-href="https://blog.s-style.co.jp/2023/07/10050/">AzureとOCIをインターコネクトで繋ぐ方法</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="転送ルーティング">転送ルーティング</h2>
 <p>分類07:転送ルーティング<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
@@ -816,7 +875,7 @@ id="サードパーティプロバイダー接続の注意点">サードパー�
 <h2 id="ハブスポーク構成">ハブ・スポーク構成</h2>
 <p>分類07:転送ルーティング<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ハブスポーク構成-1">ハブ・スポーク構成</h3>
+<h3 id="ハブスポーク構成設定">ハブ・スポーク構成/設定</h3>
 <p>DRGアタッチメントにVCNルート表を関連付ける。</p>
 <ul>
 <li><a
@@ -824,10 +883,88 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.ht
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-waf">OCI WAF</h2>
+<h2
+id="クロステナンシテナンシ間接続">クロス・テナンシ(テナンシ間接続)</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ociwaf概要">OCIWAF/概要</h3>
+<h3 id="クロステナンシ概要">クロス・テナンシ/概要</h3>
+<ul>
+<li><a
+href="https://qiita.com/shirok/items/a09f6bd14f769551f716">契約が異なるテナンシの
+VCNを Cross-Tenancy Peering VCNsしてみてみた</a></li>
+<li><a
+href="https://qiita.com/shirok/items/b61ed3f87291c3002b94">契約が異なるテナンシ、異なるリージョン間を
+Cross-Tenancy Remote Peeringしてみてみた</a></li>
+</ul>
+<h3 id="クロステナンシiamポリシー">クロス・テナンシ/IAMポリシー</h3>
+<ul>
+<li>承認:endorse
+<ul>
+<li>独自のテナンシ内のグループが他のテナンシ内で実行できる一般的な機能セットを示します。Endorseステートメントは、境界を越えて他のテナントにアクセスし、そのテナンシのリソースを使用するユーザーのグループを含むテナンシに常に属します。例では、このテナントをグループ・テナンシと呼んでいます。</li>
+</ul></li>
+<li>許可:admit
+<ul>
+<li>他のテナントからグループに付与する独自のテナンシの機能の種類を示します。許可ステートメントは、テナンシへのアクセスを許可するテナンシに属します。許可ステートメントは、グループ・テナンシからのリソース・アクセスを必要とし、対応する承認ステートメントで特定されるユーザーのグループを識別します。例では、このテナントをリソース・テナンシと呼んでいます。</li>
+</ul></li>
+<li>定義:define
+<ul>
+<li>承認および許可ポリシー・文のテナンシOCIDに別名を割り当てます。「許可」ステートメントのグループ・テナンシからIAMグループOCIDに別名を割り当てるには、リソース・テナンシに「定義」ステートメントも必要です。エイリアスは、選択したわかりやすい名前です。テナンシまたはグループの実際の表示名を使用する必要はありません。</li>
+</ul></li>
+<li><a
+href="https://qiita.com/tkonishi/items/3b8848b65bec4f99afef">OCIのクロステナンシ・ポリシーを設定してみる</a></li>
+<li>https://docs.oracle.com/ja-jp/iaas/database-tools/doc/cross-tenancy-policies.html</li>
+<li>https://docs.oracle.com/ja-jp/iaas/Content/Identity/policieshow/iam-cross-domain.htm</li>
+<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/database-tools/doc/cross-tenancy-association-policies.html</li>
+<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm</li>
+<li>https://www.site24x7.jp/help/oci/enable-oci-tenancy-access.html</li>
+<li>https://iret.media/167663</li>
+<li>https://www.kodaruma.com/2022/05/oci.html</li>
+<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm</li>
+</ul>
+<h3
+id="クロステナンシiamポリシー設定コマンド">クロス・テナンシ/IAMポリシー設定コマンド</h3>
+<pre><code>Define tenancy Requestor as &lt;requestor-group-ocid&gt;
+Define group RequestorGrp as &lt;requestor-group-ocid&gt;
+Admit group RequestorGrp of tenancy Requestor to manage remote-peering-to in compartment &lt;acceptor-compartment-name&gt;</code></pre>
+<ul>
+<li><a
+href="https://www.ateam-oracle.com/post/inter-tenancy-vcn-peering-using-remote-peering-connection">Inter-Tenancy
+VCN peering using Remote Peering Connection</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-zero-trust-packet-routingzpr">OCI Zero Trust Packet
+Routing(ZPR)</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-zero-trust-packet-routing概要">OCI Zero Trust Packet
+Routing/概要</h3>
+<ul>
+<li>https://www.oracle.com/jp/security/what-is-zero-trust/</li>
+<li>https://www.oracle.com/jp/security/cloud-security/zero-trust-packet-routing/</li>
+<li>https://speakerdeck.com/oracle4engineer/ocwc_20240626_security</li>
+<li>https://www.lac.co.jp/lacwatch/service/20250210_004275.html</li>
+<li>https://qiita.com/sazumi/items/c80c09eaf19f82871be3</li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-bastionoci要塞">OCI-Bastion(OCI要塞)</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-bastion概要">OCI-Bastion/概要</h3>
+<ul>
+<li>https://www.oracle.com/jp/security/cloud-security/bastion/</li>
+<li>https://oracle-japan.github.io/ocitutorials/intermediates/bastion/</li>
+<li>https://speakerdeck.com/oracle4engineer/bastion-overview</li>
+<li>https://www.youtube.com/watch?v=Rqs9WjVyZMQ</li>
+<li>https://qiita.com/koin3z/items/f252111bf46f938f4843</li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-waf">OCI-WAF</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-waf概要">OCI-WAF/概要</h3>
 <p>OCI WAF(Web Application
 Firewall)は、コンソール上で様々なルールを適用し、悪意のあるインターネット・トラフィックからのリクエストを除外することで<br />
 web アプリケーションを保護できるセキュリティ・サービスである。</p>
@@ -839,16 +976,53 @@ WAF保護ルールの考え方</a></li>
 href="https://qiita.com/ramtan0522/items/aa4f55d5b13655c6c024">OCI
 WAFポリシーでセキュリティ強化してみる</a></li>
 </ul>
-<h3 id="ociwafポリシー設定">OCIWAF/ポリシー設定</h3>
+<h3 id="oci-wafwafポリシー設定">OCI-WAF/WAFポリシー設定</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Policies/create_waf-policy.htm">Webアプリケーション・ファイアウォール・ポリシーの作成</a></li>
+</ul>
+<h3
+id="oci-wafwafポリシーの一般的な設定手順">OCI-WAF/WAFポリシーの一般的な設定手順</h3>
+<ul>
+<li>WAFポリシー設定
+<ol type="1">
+<li>IPアドレスをカテゴリごとに分類
+<ul>
+<li>悪意ある</li>
+<li>他社競合</li>
+<li>信頼できるパートナー</li>
+</ul></li>
+<li>IPアドレスのカテゴリごとにネットワークアドレスリストを作成</li>
+<li>ネットワークアドレスリストにファイアウォールルールを設定する</li>
+<li>ユーザエージェントまたはHTTPメソッド条件ごとに「アクセス制御ルール」を作成する</li>
+<li>ルールごとに、「ALLOW」「REDIRECT」のアクションを設定する</li>
+</ol></li>
 </ul>
 <h3 id="captchaチャレンジ">CAPTCHAチャレンジ</h3>
 <p>特定のURLに人間のみがアクセスできるようにする必要がある場合は、CAPTCHA保護でそれを制御できます。</p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Bot/captcha_fingerprint_challenge.htm">エッジ・ポリシーのCAPTCHAチャレンジ</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oci証明書サービスoracle-cloud-infrastructure-certificates">OCI証明書サービス(Oracle
+Cloud Infrastructure Certificates)</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci証明書サービス">OCI証明書サービス</h3>
+<ul>
+<li>https://docs.oracle.com/ja-jp/iaas/Content/certificates/overview.htm</li>
+<li>https://www.oracle.com/jp/security/cloud-security/ssl-tls-certificates/</li>
+<li>https://oracle-japan.github.io/ocitutorials/intermediates/certificate/</li>
+<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Identity/defaultsettings/obtain-root-ca-certificate.htm</li>
+<li>https://speakerdeck.com/ocise/ociji-shu-zi-liao-zheng-ming-shu-sabisugai-yao</li>
+<li>https://qiita.com/letian/items/60a25f1da614ecd687a0</li>
+<li>https://qiita.com/koin3z/items/d6a614ef8c10dde3b8d7</li>
+<li>https://cloudii.jp/news/blog/oracle-cloud/oci-certificates/</li>
+<li>https://blog.s-style.co.jp/2022/10/9423/</li>
+<li>https://www.reddit.com/r/oraclecloud/comments/15brbwe/auto_renewal_oci_certificate/?tl=ja</li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -947,7 +1121,7 @@ href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.h
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術">ネットワーク一般技術</h2>
+<h2 id="ネットワーク一般技術ip">ネットワーク一般技術/IP</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ipプロトコル番号">IPプロトコル番号</h3>
@@ -970,6 +1144,49 @@ Public IP Prefixとは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術ipv6">ネットワーク一般技術/IPv6</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ipv6---3つのスコープ">IPv6 - 3つのスコープ</h3>
+<ul>
+<li>リンクローカル</li>
+<li>ユニークローカル</li>
+<li>グローバル</li>
+<li><a href="https://www.infraexpert.com/study/ipv6z3.html">IPv6 -
+unicast address</a></li>
+</ul>
+<h3 id="slaacstateless-address-autoconfiguration">SLAAC(Stateless
+Address Autoconfiguration)</h3>
+<p>SLAACとは、ルータから配布されるIPv6のプレフィックスやDNSサーバのIPアドレスをもとに端末側でIPv6アドレスを自動設定するプロトコルです。</p>
+<ul>
+<li><a
+href="https://academ-aid.com/qualif/ipa/slaac-dhcpv6">【IPA対策】SLAACとDHCPv6</a></li>
+<li><a href="https://catchon-hub.com/blog/202411_2">SLAACとは？</a></li>
+<li><a href="https://www.infraexpert.com/study/ipv6z5.html">IPv6
+addressing - Stateless / Statefull / DHCPv6</a></li>
+<li><a href="https://e-words.jp/w/SLAAC.html">SLAAC 【Stateless Address
+Autoconfiguration】</a></li>
+</ul>
+<h3 id="サブネットの割り当て数">サブネットの割り当て数</h3>
+<ol type="1">
+<li>各サブネットは/64プレフィックスを持つ（IPv6で一般的に用いられる構成）</li>
+<li>プロバイダーから/56プレフィックスが割り当てられる</li>
+</ol>
+<p>→ 256個（2^8）のサブネットが利用できる。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術l2">ネットワーク一般技術/L2</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="macsec">MACsec</h3>
+<p>MACsecとは、IEEE802.1AEで定義されたLayer2（MAC: Media ⁄ Medium Access
+Control）の保護を目的としたセキュリティプロトコルです。</p>
+<ul>
+<li><a
+href="https://www.nexty-ele.com/technical-column/ethernet_macsec/">MACsecとは</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ネットワーク一般技術bgpプロトコル">ネットワーク一般技術/BGPプロトコル</h2>
 <p>分類99:ネットワーク一般技術<br />
@@ -986,18 +1203,29 @@ href="https://www.allied-telesis.co.jp/support/list/switch/x900_sb900/doc/v532_d
 <li><a href="https://www.infraexpert.com/study/bgpz01.html">BGP ( Border
 Gateway Protocol )</a></li>
 <li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
+<li><a
+href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
 </ul>
-<h3 id="ecmpequal-cost-multi-path">ECMP（Equal Cost Multi Path）</h3>
-<p>ECMP（Equal Cost Multi
-Path）とは、ネットワークにおいて、同じ宛先に対してコスト（メトリック）が等しい経路が複数存在する場合に、それらの経路へパケットを分散させて転送する技術です。</p>
+<h3 id="bgpパスアトリビュート">BGP/パスアトリビュート</h3>
+<ul>
+<li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
+Attribute</a></li>
+</ul>
+<h3 id="bgpルートポリシー経路制御">BGP/ルートポリシー(経路制御)</h3>
+<p>BCPのルートポリシーを利用する経路制御の種別としては、以下があります。</p>
+<ul>
+<li>不要な BGP ルートのフィルタリング</li>
+<li>AS PATH Prepend による経路制御</li>
+<li>MED値 の変更による優先経路選択</li>
+</ul>
+<h3
+id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
+ACL）</h3>
+<p>BGPではAS_PATH属性に基づいて経路情報のフィルタリングが行えるAS_PATH
+ACLを使用することができます。</p>
 <ul>
 <li><a
-href="https://www.infraexpert.com/study/routing13.html">ECMP</a></li>
-<li><a
-href="https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%AB%E3%83%81%E3%83%91%E3%82%B9.html">等コストマルチパス
-【ECMP】</a></li>
-<li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
-Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
+href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
 </ul>
 <h3
 id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
@@ -1049,6 +1277,9 @@ Prepend)</h3>
 <ul>
 <li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
 Path Prepend</a></li>
+<li><a
+href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
+Router で AS PATH Prepend を実装する</a></li>
 </ul>
 <h3 id="非対称ルーティング">非対称ルーティング</h3>
 <p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
@@ -1061,6 +1292,18 @@ href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id0">非対称ル
 <ul>
 <li><a
 href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id1">ステートフルインスペクションとは</a></li>
+</ul>
+<h3 id="ecmpequal-cost-multi-path">ECMP（Equal Cost Multi Path）</h3>
+<p>ECMP（Equal Cost Multi
+Path）とは、ネットワークにおいて、同じ宛先に対してコスト（メトリック）が等しい経路が複数存在する場合に、それらの経路へパケットを分散させて転送する技術です。</p>
+<ul>
+<li><a
+href="https://www.infraexpert.com/study/routing13.html">ECMP</a></li>
+<li><a
+href="https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%AB%E3%83%81%E3%83%91%E3%82%B9.html">等コストマルチパス
+【ECMP】</a></li>
+<li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
+Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
