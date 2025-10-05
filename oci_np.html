@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/04 21:44:27<br />
+更新日：2025/10/05 10:52:48<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -189,11 +189,16 @@ href="https://qiita.com/Qu4rtz_MC5/items/4a29c6a57607dcf3168d#%E3%83%AA%E3%83%BC
 </ul>
 <h3 id="iam">IAM</h3>
 <ul>
-<li>https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-xiang-xi</li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Identity/policyreference/policyreference.htm">詳細サービス・ポリシー参照</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-xiang-xi">OCI技術資料
+: IDおよびアクセス管理 (IAM) 詳細</a></li>
 </ul>
 <h3 id="コスト管理">コスト管理</h3>
 <ul>
-<li>https://speakerdeck.com/ocise/oci-kosutoguan-li</li>
+<li><a href="https://speakerdeck.com/ocise/oci-kosutoguan-li">OCI
+コスト管理</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -227,6 +232,8 @@ href="https://guide.gcas.cloud.go.jp/oci/how-to-connect-network">ネットワー
 <li>CIDRブロックは後から変更（追加・拡大・縮小・削除）可能。</li>
 <li>別リージョンではCIDRブロックが重複しても作成することはできるが、DRGを用いたピアリングができなくなる。</li>
 </ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/VCNs.htm">VCNsおよびサブネット</a></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#vcn%E3%81%AE%E6%A6%82%E8%A6%81">VCNの概要</a></li>
 </ul>
@@ -350,6 +357,11 @@ Cloud Infrastructure Architect Associate
 <li><a
 href="https://qiita.com/sazumi/items/8c70b557e5ed365d365c">OCIのネットワーク：VCNの繋ぎ方</a></li>
 </ul>
+<h3 id="ネットワーキングシナリオ">ネットワーキング・シナリオ</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/scenarios.htm#networking_scenarios">ネットワーキング・シナリオ</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="サービスゲートウェイ">サービス・ゲートウェイ</h2>
@@ -361,6 +373,7 @@ Cloud Infrastructureの概念的なネットワークです。
 これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。</p>
 <p>https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/
 https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.htm</p>
+<hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="プライベートエンドポイント">プライベート・エンドポイント</h2>
 <p>分類04:VCNゲートウェイ<br />
@@ -413,6 +426,9 @@ Network(VCN)は、VCNピアリングを使用することで各VCNは他のVCN�
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/localVCNpeering.htm">ローカル・ピアリング・ゲートウェイを使用したローカルVCNピアリング</a></li>
+<li><a
+href="https://docs.oracle.com/ja/learn/stsvpn-btw-ociregions/">2つのOCIリージョン間の静的ルーティングを使用したOracle
+Cloud Infrastructure Site-to-Site VPNの設定</a></li>
 <li><a href="https://qiita.com/shirok/items/79e85af83cee040aa62d">Oracle
 Cloud: VCNとVCNをLocal Peering してみた</a></li>
 </ul>
@@ -423,8 +439,8 @@ Cloud: VCNとVCNをLocal Peering してみた</a></li>
 <li>ピアIDは、リクエスト側テナンシーによって作成されたRPCのOCIDです。</li>
 <li>これによりRPCが一意に識別され、受け入れ側テナンシーは適切なピアリングをターゲットとして確立できます。</li>
 </ul></li>
-<li>https://docs.oracle.com/ja/learn/stsvpn-btw-ociregions/index.html#introduction</li>
-<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/connect-lpg.htm</li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/connect-lpg.htm">別のLPGへの接続</a></li>
 </ul>
 <h3
 id="ローカルピアリングゲートウェイlpg">ローカルピアリングゲートウェイ(LPG)</h3>
@@ -439,34 +455,124 @@ href="https://techblog.ap-com.co.jp/entry/2025/05/23/173915">【OCI】ローカ�
 id="ローカルピアリング接続のiam設定">ローカルピアリング接続のIAM設定</h3>
 <ul>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm#scenario_m__local-LPG">同一テナンシのLPG
+(VCNs)を使用したローカル・ピアリング</a></li>
+<li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm#scenario_m__local-LPG-xten">VCN間のルーティングに関するIAMポリシー</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-lb">OCI LB</h2>
+<h2 id="oci-lb">OCI-LB</h2>
 <p>分類05:OCIネットワーク・ソリューションとアプリケーション・サービスの計画・設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ocilb概要">OCILB/概要</h3>
+<h3 id="oci-lb概要">OCI-LB/概要</h3>
 <ul>
 <li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-rodobaransa-gai-yao">OCI技術資料
 : ロード・バランサ 概要 - FLB・NLB共通</a></li>
 <li><a
+href="https://oracle-japan.github.io/ocidocs/services/networking/load-balancer/">ロード・バランサ・サービス(再)入門</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/oci-load-balancer">OCIロードバランサの基本構造、作成手順をわかりやすく解説！</a></li>
+<li><a
 href="https://qiita.com/Qu4rtz_MC5/items/e88b53dac3c48f3f5955">Oracle
 Cloud Infrastructure Architect Associate
 勉強メモ（ロードバランサ)</a></li>
 </ul>
-<h3 id="ocilb種別">OCILB/種別</h3>
+<h3 id="oci-lb種別">OCI-LB/種別</h3>
 <ul>
 <li>フレキシブル・ロード・バランサ(FLB)
 <ul>
 <li>プロキシ型</li>
 <li>高度なバランシング機能</li>
+<li>パブリックFLB、プライベートFLBの構成が可能</li>
+<li>様々なプロトコル（HTTP, TCP, WebSocket）に対応</li>
+<li>HTTP（レイヤー7）/TCP（レイヤー4）のトラフィックに対応</li>
+<li>セッションパーシステンスに対応</li>
 </ul></li>
 <li>ネットワーク・ロード・バランサ(NLB)
 <ul>
 <li>パススルー型</li>
-<li>低レイテンシー</li>
+<li>低レイテンシーに適したロードバランサ</li>
+<li>パブリックNLB、プライベートNLBの構成が可能</li>
+<li>レイヤー4/レイヤー3のトラフィックに対応</li>
+<li>帯域幅を制限しないでスケールアップ・スケールダウン可能</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Reference/lb-vs-nlb.htm">ロード・バランサとネットワーク・ロード・バランサの比較</a></li>
+<li><a href="https://qiita.com/letian/items/d2d1f1f9b882bb99cee6">OCI
+ロードバランサとOCI NLBの比較</a></li>
+</ul>
+<h3
+id="フレキシブルロードバランサflb">フレキシブル・ロードバランサ（FLB）</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/home.htm">Load
+Balancer</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Concepts/balanceoverview.htm">ロード・バランサの概要</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-rodobaransa-xiang-xi?slide=72">OCI技術資料
+: ロード・バランサ 詳細 - フレキシブル・ロード・バランサ(FLB)</a></li>
+<li><a
+href="https://qiita.com/s_wani/items/6a5f2339113df6ed2251">フレキシブル・ロード・バランサ(FLB)のログの設定方法、モニタリング</a></li>
+</ul>
+<h3 id="flbの仕様">FLBの仕様</h3>
+<ul>
+<li>FLBのロードバランシングポリシー
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Reference/lbpolicies.htm">ロード・バランサ・ポリシー</a></li>
+<li>ラウンドロビン
+<ul>
+<li>バックエンド・セット・リストの各サーバーに順番にルーティングされる</li>
+<li>デフォルトのロード・バランサ・ポリシー</li>
+</ul></li>
+<li>最小接続
+<ul>
+<li>アクティブ接続が最も少ないバックエンド・サーバーにルーティングされる</li>
+</ul></li>
+<li>IPハッシュ
+<ul>
+<li>受信リクエストのソースIPアドレスがハッシュ・キーとして使用される</li>
+<li>ハッシュ・キーごとに同一のバックエンド・サーバーにルーティングされる</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="ネットワークロードバランサ-nlb">ネットワーク・ロード・バランサ
+(NLB)</h3>
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/network-load-balancing.htm">ネットワーク・ロード・バランシング</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm">ネットワーク・ロード・バランサ管理</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/NetworkLoadBalancer/NetworkLoadBalancers/create-network-load-balancer.htm">ネットワーク・ロード・バランサの作成</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/creating-a-public-nlb.htm">パブリックNLBの作成</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/creating-an-nlb-backend-set.htm">NLBバックエンド・セットの作成</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm">ネットワーク・ロード・バランサのヘルス・チェック・ポリシーの編集</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/NetworkLoadBalancer/NetworkLoadBalancers/preserve-source-id.htm">ネットワーク・ロード・バランサ・ソース/宛先の保持の有効化</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/load-balancer-nlb-200">ロード・バランサ
+詳細 - ネットワーク・ロード・バランサ(NLB)</a></li>
+<li><a
+href="https://qiita.com/letian/items/e0288f3027271f1a14ff">ネットワーク・ロード・バランサ
+(NLB) の経由でプライベート・サブネット内の Oracle Base DB と Autonomous
+DB に接続する</a></li>
+</ul>
+<h3 id="nlbの仕様">NLBの仕様</h3>
+<ul>
+<li>NLBのロードバランシングポリシー
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/network-load-balancing.htm#network-load-balancing__nlb-essentials">NLBの要点</a></li>
+<li>5タプル・ハッシュ：ソースIPおよびポート、宛先IPおよびポート、プロトコル</li>
+<li>3タプル・ハッシュ：ソースIP、宛先IP、プロトコル</li>
+<li>2タプル・ハッシュ：ソースIP、宛先IP</li>
 </ul></li>
 </ul>
 <h3 id="tupleファイブタプル">5tuple(ファイブタプル)</h3>
@@ -564,14 +670,29 @@ id="動的ルーティングゲートウェイdrg">動的ルーティングゲ�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="drg概要">DRG/概要</h3>
 <ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm">動的ルーティング・ゲートウェイ</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/General/Concepts/servicelimits.htm#DRG_limits">DRGの制限</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html">Dynamic
+Routing Gatewayソリューションについて学習</a></li>
 <li><a href="https://cloudii.jp/news/blog/oracle-cloud/drgdesc/">OCI
 DRGの構成要素について解説してみる</a></li>
 <li><a
 href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao">外部接続詳細
 - 動的ルーティング・ゲートウェイ(DRG)</a></li>
 </ul>
-<h3 id="drg構築手順">DRG/構築手順</h3>
+<h3 id="drg設定手順">DRG/設定手順</h3>
 <ul>
+<li>設定手順
+<ol type="1">
+<li>DRGおよびDRGアタッチメントの作業</li>
+<li>DRGルート表設定とルート・ディストリビューション</li>
+<li>動的インポートとルート・ディストリビューション</li>
+<li>動的エクスポートとルート・ディストリビューション</li>
+<li>IAMポリシーの設定</li>
+</ol></li>
 <li><a
 href="https://qiita.com/shirok/items/90cff318816fbf2a802d">DRGで東京リージョンを経由して、オンプレミスと
 大阪リージョンを接続してみてみた</a></li>
@@ -579,7 +700,42 @@ href="https://qiita.com/shirok/items/90cff318816fbf2a802d">DRGで東京リージ
 Route Tableで環境ごとにトラフィックを分離(Layer3
 Isolation)してみてみた</a></li>
 </ul>
-<h3 id="drgルート表の作成">DRGルート表の作成</h3>
+<h3 id="drgアタッチメント">DRGアタッチメント</h3>
+<ul>
+<li>DRGアタッチメントの種別
+<ul>
+<li>VCN attachments(VCN)
+<ul>
+<li>VCNに接続するアタッチメント。DRG.各VCNは、DRGと同じテナンシにすることも、異なるテナンシにすることもできます(適切なポリシーが設定されている場合)。VCNは1つのDRGにしかアタッチできません。</li>
+</ul></li>
+<li>VIRTUAL_CIRCUITアタッチメント(VIRTUAL_CIRCUIT)
+<ul>
+<li>DRGに1つ以上のFastConnect仮想回線をアタッチして、オンプレミス・ネットワークに接続できます。</li>
+</ul></li>
+<li>RPCアタッチメント(REMOTE_PEERING_CONNECTION)
+<ul>
+<li>リモート・ピアリング接続を使用して、DRGを他のDRGとピアリングできます。他のDRGは、他のリージョンまたはテナンシ、または同じリージョンに配置できます。</li>
+</ul></li>
+<li>IPSEC_TUNNELアタッチメント(IPSEC_TUNNEL)
+<ul>
+<li>サイト間VPNを使用して、2つ以上のIPSecトンネルをDRGにアタッチして、オンプレミス・ネットワークに接続できます。これは、テナンシ間でも許可されます。</li>
+</ul></li>
+<li>LOOPBACKアタッチメント(LOOPBACK)
+<ul>
+<li>サイト間VPNを使用して、FastConnect仮想回線を暗号化できます。</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#overview__drg_attach">DRGおよびDRGアタッチメントの作業</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
+</ul>
+<h3 id="drgルーティング">DRGルーティング</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_drg_routing">DRGルーティング</a></li>
+</ul>
+<h3 id="drgルート表">DRGルート表</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-rt-create.htm">DRGルート表の作成</a></li>
@@ -592,7 +748,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm">動的ルーティング・ゲートウェイ</a></li>
 </ul>
-<h3 id="as番号">AS番号</h3>
+<h3 id="as番号asn">AS番号(ASN)</h3>
 <p>OCIのAS番号は、リージョン関係なく同一の”31898”となる。</p>
 <ul>
 <li><a
@@ -656,7 +812,15 @@ Networkで使用される使用可能なパブリック・ルートのみをオ�
 異なるリージョンにあるDRG通しで接続することができます。</p>
 <ul>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/remoteVCNpeering.htm#Remote_VCN_Peering_Across_Regions">レガシーDRGを使用したリモートVCNピアリング</a></li>
+<li><a
 href="https://cloudii.jp/news/blog/oracle-cloud/20200124-1579848579/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88VCN%E3%83%94%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF">リモートVCNピアリングとは</a></li>
+</ul>
+<h3
+id="リモートピアリング接続のiam設定">リモートピアリング接続のIAM設定</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm#scenario_m__IAM_cross-tenancy">アップグレードされたDRGを使用したリモート・ピアリング</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -665,6 +829,8 @@ href="https://cloudii.jp/news/blog/oracle-cloud/20200124-1579848579/#%E3%83%AA%E
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="fastconnect概要">FastConnect/概要</h3>
 <ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnect.htm">FastConnect</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectoverview.htm">FastConnectの概要</a></li>
 <li><a
@@ -702,16 +868,11 @@ ConnectとFastConnectの違いは？</a></li>
 <li><a href="https://qiita.com/aktsmm/items/0f0f74770bc4196dda80">Azure
 と OCI を 専用線 (ExpressRoute / FastConnect) でつなぐ</a></li>
 </ul>
-<h3 id="fastconnectアタッチメント">FastConnectアタッチメント</h3>
+<h3
+id="ipsec利用時のループバックアタッチメント">IPSec利用時のループバック・アタッチメント</h3>
+<p>FastConnectでIPSecを利用する場合には、「ループバック・アタッチメント」の設定が必要。<br />
+ループバック・アタッチメントでは、トンネルのプライベートIPアドレスのOracle側をDRGに提供することで、暗号化されたトラフィックが仮想回線アタッチメントとIPSecトンネル・アタッチメントの間を移動できます。ループバック・アタッチメントがない場合、仮想回線アタッチメントとIPSecトンネル・アタッチメントの間のトラフィックは直接許可されません</p>
 <ul>
-<li>FastConnectアタッチメント
-<ul>
-<li>VCNアタッチメント</li>
-<li>VIRTUAL_CIRCUITアタッチメント</li>
-<li>IPSEC_TUNNELアタッチメント</li>
-<li>REMOTE_PEERING_CONNECTION(リモート・ピアリング接続アタッチメント)</li>
-<li>ループバック・アタッチメント</li>
-</ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
 </ul>
@@ -726,24 +887,6 @@ id="他のクラウドプロバイダとの接続概要">他のクラウド・�
 <ul>
 <li>https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html</li>
 <li>https://cloud.nttsmc.com/cxc/oci.html</li>
-<li>他社ベンダー
-<ul>
-<li>https://cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview?hl=ja</li>
-<li>https://qiita.com/asahide/items/fe0b33928b676dc1a760</li>
-<li>https://learn.microsoft.com/ja-jp/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking</li>
-</ul></li>
-</ul>
-<h3 id="oracle-interconnect-for-azure">Oracle Interconnect for
-Azure</h3>
-<p>Microsoft AzureとOracle Cloud
-Infrastructure（OCI）の機能を、データ転送料金のかからない、低レイテンシ・プライベート接続により組み合わせることで、アプリケーションの移行と最新化を加速します。</p>
-<ul>
-<li><a href="https://www.oracle.com/jp/cloud/azure/interconnect/">Oracle
-Interconnect for Azure</a></li>
-<li><a
-href="https://qiita.com/Hitachi_Takumi/items/fe95b9eda9d71e184a3f">基幹システムを想定したOCIとAzureによるマルチクラウド構成の性能を検証しました</a></li>
-<li><a
-href="https://blog.s-style.co.jp/2023/07/10050/">AzureとOCIをインターコネクトで繋ぐ方法</a></li>
 </ul>
 <h3 id="fastconnect-oracleパートナの使用">FastConnect
 Oracleパートナの使用</h3>
@@ -827,6 +970,42 @@ href="https://qiita.com/letian/items/4d6c4c9e3662f1ffbf58">On-PとOCI間のIPSec
 VPN接続のシミュレーション (Libreswanを利用)</a></li>
 <li><a href="https://qiita.com/shirok/items/8a831d23b22f6dd53379">Oracle
 Cloud と AWS Site-to-Site VPN (IPSec) 接続してみてみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="fastconnect他社ベンダー製品">FastConnect/他社ベンダー製品</h2>
+<p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="他社ベンダー製品">他社ベンダー製品</h3>
+<ul>
+<li>Google/Partner Cross-Cloud Interconnect
+<ul>
+<li><a
+href="https://cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview?hl=ja">OCI
+向け Partner Cross-Cloud Interconnect の概要</a></li>
+<li><a
+href="https://qiita.com/asahide/items/fe0b33928b676dc1a760">Google Cloud
+から クロスクラウド接続で OCI のデータベースに接続してみた</a></li>
+</ul></li>
+<li>Azule/ExpressRoute
+<ul>
+<li><a
+href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking">Azure
+と Oracle Cloud Infrastructure
+間の直接相互接続をセットアップする</a></li>
+</ul></li>
+</ul>
+<h3 id="oracle-interconnect-for-azure">Oracle Interconnect for
+Azure</h3>
+<p>Microsoft AzureとOracle Cloud
+Infrastructure（OCI）の機能を、データ転送料金のかからない、低レイテンシ・プライベート接続により組み合わせることで、アプリケーションの移行と最新化を加速します。</p>
+<ul>
+<li><a href="https://www.oracle.com/jp/cloud/azure/interconnect/">Oracle
+Interconnect for Azure</a></li>
+<li><a
+href="https://qiita.com/Hitachi_Takumi/items/fe95b9eda9d71e184a3f">基幹システムを想定したOCIとAzureによるマルチクラウド構成の性能を検証しました</a></li>
+<li><a
+href="https://blog.s-style.co.jp/2023/07/10050/">AzureとOCIをインターコネクトで繋ぐ方法</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1147,11 +1326,22 @@ Public IP Prefixとは</a></li>
 <h2 id="ネットワーク一般技術ipv6">ネットワーク一般技術/IPv6</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ipv6---3つのスコープ">IPv6 - 3つのスコープ</h3>
+<h3 id="ipv6概要-1">IPv6/概要</h3>
+<ul>
+<li><a
+href="https://www.nic.ad.jp/ja/newsletter/No32/090.html">インターネット10分講座：IPv6アドレス～技術解説～</a></li>
+<li><a
+href="https://ja.m.wikipedia.org/wiki/IPv6%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9">IPv6アドレス
+- Wikipedia</a></li>
+</ul>
+<h3 id="ipv63つのスコープ">IPv6/3つのスコープ</h3>
+<ul>
+<li>3つのスコープ
 <ul>
 <li>リンクローカル</li>
 <li>ユニークローカル</li>
 <li>グローバル</li>
+</ul></li>
 <li><a href="https://www.infraexpert.com/study/ipv6z3.html">IPv6 -
 unicast address</a></li>
 </ul>
@@ -1205,6 +1395,47 @@ Gateway Protocol )</a></li>
 <li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
 <li><a
 href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
+</ul>
+<h3 id="自律システムasautonomous-system">自律システム(AS:Autonomous
+System)</h3>
+<p>AS（自律システム）とは、インターネット上で一貫した運用ポリシーを持つ大規模なネットワークの集まりを指し、各ASには固有のAS番号（ASN）が割り当てられます。<br />
+ASは、BGP（ボーダーゲートウェイプロトコル）というプロトコルを使って他のASと経路情報を交換し、インターネット上での効率的なパケットルーティング（経路制御）を実現します。</p>
+<ul>
+<li>ASの役割
+<ul>
+<li>経路制御:
+AS同士がBGPを通じてルーティング情報を交換することで、パケットを宛先のASへ最も効率的な経路で送信するための「道案内」が行われます。</li>
+<li>トラフィック管理:
+自身のネットワークポリシーに基づいて、通信の優先順位をつけたり、トラフィックの経路を最適化したりすることで、ネットワーク運営を最適化します。</li>
+</ul></li>
+<li><a
+href="https://www.nic.ad.jp/ja/basics/terms/as.html">ASとは</a></li>
+<li><a
+href="https://www.cloudflare.com/ja-jp/learning/network-layer/what-is-an-autonomous-system/">自律システムとは？</a></li>
+</ul>
+<h3
+id="asn自律システム番号asnautonomous-system-number">ASN自律システム番号(ASN:Autonomous
+System Number)</h3>
+<p>ASN（自律システム番号）は、インターネット上のネットワークの集まりである「自律システム（AS）」を識別するためのユニークな番号です。<br />
+ISPや大規模なネットワーク管理組織に割り当てられ、インターネットのルーティングにおいて、他のネットワークと経路情報を交換するためにBGP（Border
+Gateway Protocol）で使用されます。<br />
+これにより、効率的で信頼性の高い通信が実現します。﻿</p>
+<ul>
+<li>ASNの主な役割と仕組み
+<ul>
+<li>識別子：インターネット上の個々のネットワーク（AS）をユニークに識別します。例えば、Microsoftのネットワークには「AS
+8075」や「AS 12076」といった番号が割り当てられています。﻿</li>
+<li>ルーティングの制御：BGPを使って他のネットワーク（AS）とルーティング情報を交換する際に、自身のAS番号を付与します。﻿</li>
+<li>経路情報のループ防止：BGPは、経路情報がループするのを防ぐために、受け取った経路情報に自分のAS番号が含まれていればその経路情報を破棄します。﻿</li>
+<li>トラフィック管理：特定のネットワークや地域へのトラフィックを識別・管理するために使用されます。﻿</li>
+</ul></li>
+<li>ASNの種類と管理
+<ul>
+<li>二つのタイプ：ASNには2バイト（16ビット）と4バイト（32ビット）のタイプがあります。﻿</li>
+<li>管理組織：世界5つの地域インターネットレジストリ（RIR）が、それぞれの地域内でASNを管理・割り当てています。﻿</li>
+</ul></li>
+<li><a
+href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律システム番号</a></li>
 </ul>
 <h3 id="bgpパスアトリビュート">BGP/パスアトリビュート</h3>
 <ul>
@@ -1304,6 +1535,20 @@ href="https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%A
 【ECMP】</a></li>
 <li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
 Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術web接続">ネットワーク一般技術/WEB接続</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="スティッキーセッション">スティッキーセッション</h3>
+<p>スティッキーセッションとは、ロードバランサーがクライアント状態を管理するために使用する情報。<br />
+ロードバランサーを用いて負荷分散を行う場合に、セッション管理を行うWebアプリなどで毎回同じサーバーにアクセスさせるために利用する。</p>
+<ul>
+<li><a
+href="https://e-words.jp/w/%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AD%E3%83%BC%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3.html">スティッキーセッション</a></li>
+<li><a href="https://qiita.com/KWS_0901/items/de9487aa041b2718f113">AWS
+ALB スティッキーセッション メモ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
