@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/05 10:52:48<br />
+更新日：2025/10/10 00:25:12<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -254,10 +254,11 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetabl
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables_topic-working.htm">VCNルート表とルート・ルールの作業</a></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.htm">ハブVCN内の転送ルーティング</a></li>
-<li><a
 href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654">【OCI】oracle
 cloud -仮想クラウド・ネットワーク構築編(ルート表)</a></li>
+<li><a
+href="https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/learn-routing-in-oci-networking-with-examples.pdf">Learn
+Routing in Oracle Cloud Infrastructure Networking with Examples</a></li>
 </ul>
 <h3 id="サブネット">サブネット</h3>
 <ul>
@@ -345,7 +346,7 @@ href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#ip%E3%82%A2%E3%83%
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ipv6概要">IPv6/概要</h3>
 <ul>
-<li>IPv6対応のVCNs
+<li>IPv6対応のVCNs(IPv6のCIDR構成)
 <ul>
 <li>Oracleによって割り当てられた/56
 IPv6グローバル・ユニキャスト・アドレス(GUA)接頭辞を使用する</li>
@@ -402,6 +403,9 @@ href="https://qiita.com/sazumi/items/8c70b557e5ed365d365c">OCIのネットワー
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/scenarios.htm#networking_scenarios">ネットワーキング・シナリオ</a></li>
+<li><a
+href="https://docs.oracle.com/ja/learn/oci-perresource-routing/index.html">Oracle
+Cloud Infrastructureでのリソースごとのルーティングの構成</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -690,6 +694,19 @@ href="https://qiita.com/sh-sho/items/4431d5cac2addd0b9809">OCIのマネージド
 <h2 id="オンプレミス環境">オンプレミス環境</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="vcnと外部との接続のオプション">VCNと外部との接続のオプション</h3>
+<p>外部接続には以下の３つの方式がある。</p>
+<ul>
+<li>外部接続方式
+<ul>
+<li>Public Internet(ネットワーク)</li>
+<li>VPN接続(IPsec)</li>
+<li>Fast Connect</li>
+</ul></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#vcn%E3%81%A8%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E6%8E%A5%E7%B6%9A%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">VCNと外部との接続のオプション</a></li>
+</ul>
 <h3 id="cpecustomer-premises-equipment">CPE(Customer Premises
 Equipment)</h3>
 <p>CPEとは、Customer Premises
@@ -771,15 +788,16 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
 </ul>
-<h3 id="drgルーティング">DRGルーティング</h3>
+<h3 id="drgルーティングdrgルート表">DRGルーティング(DRGルート表)</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_drg_routing">DRGルーティング</a></li>
-</ul>
-<h3 id="drgルート表">DRGルート表</h3>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-routing-manage.htm">DRGルーティング管理</a>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-rt-create.htm">DRGルート表の作成</a></li>
+</ul></li>
 </ul>
 <h3 id="パス優先">パス優先</h3>
 <p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
@@ -923,12 +941,6 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsec
 id="fastconnect他のクラウドプロバイダとの接続">FastConnect/他のクラウド・プロバイダとの接続</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3
-id="他のクラウドプロバイダとの接続概要">他のクラウド・プロバイダとの接続/概要</h3>
-<ul>
-<li>https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html</li>
-<li>https://cloud.nttsmc.com/cxc/oci.html</li>
-</ul>
 <h3 id="fastconnect-oracleパートナの使用">FastConnect
 Oracleパートナの使用</h3>
 <ul>
@@ -949,6 +961,14 @@ Cloud Servicesへの接続を確立できます。<br />
 <ul>
 <li><a href="https://qiita.com/shirok/items/75f81d83eee083b78369">Oracle
 Cloud: FastConnect Colocation (Cross-Connect) 接続してみてみた</a></li>
+</ul>
+<h3
+id="他のクラウドプロバイダとの接続概要">他のクラウド・プロバイダとの接続/概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html">他のクラウド・プロバイダとのOracle
+Cloudの接続について</a></li>
+<li>https://cloud.nttsmc.com/cxc/oci.html</li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1064,17 +1084,6 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.ht
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%83%83%E3%83%88%E8%BB%A2%E9%80%81%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トランジット(転送)ルーティング</a></li>
 </ul>
 <h3
-id="drgアタッチメントに関連付けられたvcnルート表">DRGアタッチメントに関連付けられたVCNルート表</h3>
-<p>転送ルーティングで、DRGアタッチメントに関連付けられたVCNルート表は、以下3つのリソースをターゲットにするルールを設定できます。</p>
-<ul>
-<li>VCNルート表のターゲットとして関連付けできる3つのリソース
-<ul>
-<li>プライベートIP</li>
-<li>ローカル・ピアリング・ゲートウェイ</li>
-<li>サービス・ゲートウェイ</li>
-</ul></li>
-</ul>
-<h3
 id="転送ルーティング構成で利用可能なociゲートウェイ">転送ルーティング構成で利用可能なOCIゲートウェイ</h3>
 <ul>
 <li>利用可能なOCIゲートウェイ
@@ -1086,6 +1095,17 @@ id="転送ルーティング構成で利用可能なociゲートウェイ">転�
 </ul>
 <p>インターネット・ゲートウェイとNATゲートウェイは、それらが含まれるVCN内のリソースだけが利用できます。<br />
 例えば、DRG経由のトラフィックをインターネット・ゲートウェイに転送して外部に送信することはできません。</p>
+<h3
+id="drgアタッチメントに関連付けられたvcnルート表">DRGアタッチメントに関連付けられたVCNルート表</h3>
+<p>転送ルーティングで、DRGアタッチメントに関連付けられたVCNルート表は、以下3つのリソースをターゲットにするルールを設定できます。</p>
+<ul>
+<li>VCNルート表のターゲットとして関連付けできる3つのリソース
+<ul>
+<li>プライベートIP</li>
+<li>ローカル・ピアリング・ゲートウェイ</li>
+<li>サービス・ゲートウェイ</li>
+</ul></li>
+</ul>
 <h3
 id="サードパーティプロバイダー接続の注意点">サードパーティプロバイダー接続の注意点</h3>
 <p>サードパーティ・アプライアンス（TPA）ソフトウェアは、コンピュート・インスタンス上に構成されます。<br />
@@ -1165,24 +1185,37 @@ VCN peering using Remote Peering Connection</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-zero-trust-packet-routingzprゼロトラスト">OCI Zero Trust
-Packet Routing(ZPR：ゼロトラスト)</h2>
+<h2 id="ゼロトラストセキュリティ">ゼロトラスト・セキュリティ</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oci-zero-trust-packet-routing概要">OCI Zero Trust Packet
-Routing/概要</h3>
+<h3
+id="ゼロトラストセキュリティ概要">ゼロトラスト・セキュリティ/概要</h3>
 <ul>
-<li>https://www.oracle.com/jp/security/what-is-zero-trust/</li>
-<li>https://www.oracle.com/jp/security/cloud-security/zero-trust-packet-routing/</li>
 <li><a
-href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-trust-packet-routing/add-resource.htm">Zero
-Trust Packet Routingへのリソースの追加</a></li>
+href="https://www.oracle.com/jp/security/what-is-zero-trust/">ゼロトラスト・セキュリティとは</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/ocwc_20240626_security">【Oracle
 Cloud
-ウェビナー】【失敗しない運用】セキュアな仕組みで実現するゼロトラスト</a></li>
-<li>https://www.lac.co.jp/lacwatch/service/20250210_004275.html</li>
-<li>https://qiita.com/sazumi/items/c80c09eaf19f82871be3</li>
+ウェビナー】【失敗しない運用】セキュアな仕組みで実現するゼロトラスト・セキュリティ</a></li>
+</ul>
+<h3 id="oci-zero-trust-packet-routingzpr">OCI Zero Trust Packet
+Routing(ZPR)</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/security/cloud-security/zero-trust-packet-routing/">OCI
+Zero Trust Packet Routing</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-trust-packet-routing/managing-resources.htm">リソースの管理</a>
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-trust-packet-routing/add-resource.htm">Zero
+Trust Packet Routingへのリソースの追加</a></li>
+</ul></li>
+<li><a
+href="https://qiita.com/sazumi/items/c80c09eaf19f82871be3">OCIのZPRを知っていますか</a></li>
+<li><a
+href="https://www.lac.co.jp/lacwatch/service/20250210_004275.html">クラウドネットワークセキュリティの新機軸、OCI
+Zero Trust Packet Routing</a></li>
 </ul>
 <h3
 id="セキュリティ属性ネームスペース">セキュリティ属性ネームスペース</h3>
@@ -1203,7 +1236,8 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/list-
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci-bastion概要">OCI-Bastion/概要</h3>
 <ul>
-<li>https://www.oracle.com/jp/security/cloud-security/bastion/</li>
+<li><a
+href="https://www.oracle.com/jp/security/cloud-security/bastion/">Bastion</a></li>
 <li>https://oracle-japan.github.io/ocitutorials/intermediates/bastion/</li>
 <li>https://speakerdeck.com/oracle4engineer/bastion-overview</li>
 <li>https://www.youtube.com/watch?v=Rqs9WjVyZMQ</li>
@@ -1300,13 +1334,16 @@ Cloud Infrastructure Certificates)</h2>
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci証明書サービス">OCI証明書サービス</h3>
 <ul>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/certificates/overview.htm</li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/certificates/overview.htm">証明書の概要</a></li>
 <li>https://www.oracle.com/jp/security/cloud-security/ssl-tls-certificates/</li>
 <li>https://oracle-japan.github.io/ocitutorials/intermediates/certificate/</li>
 <li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Identity/defaultsettings/obtain-root-ca-certificate.htm</li>
 <li>https://speakerdeck.com/ocise/ociji-shu-zi-liao-zheng-ming-shu-sabisugai-yao</li>
-<li>https://qiita.com/letian/items/60a25f1da614ecd687a0</li>
-<li>https://qiita.com/koin3z/items/d6a614ef8c10dde3b8d7</li>
+<li><a
+href="https://qiita.com/letian/items/60a25f1da614ecd687a0">OCI証明書サービスの使用体験</a></li>
+<li><a
+href="https://qiita.com/koin3z/items/d6a614ef8c10dde3b8d7">【OCI】Certificatesサービスの概要と使い方</a></li>
 <li>https://cloudii.jp/news/blog/oracle-cloud/oci-certificates/</li>
 <li>https://blog.s-style.co.jp/2022/10/9423/</li>
 <li>https://www.reddit.com/r/oraclecloud/comments/15brbwe/auto_renewal_oci_certificate/?tl=ja</li>
@@ -1485,18 +1522,6 @@ href="https://www.nexty-ele.com/technical-column/ethernet_macsec/">MACsecとは<
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術設計思想">ネットワーク一般技術/設計思想</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ゼロトラスト">ゼロトラスト</h3>
-<ul>
-<li><a
-href="https://techblog.ap-com.co.jp/entry/2024/02/08/220857">ゼロトラストとは-前編-</a></li>
-<li><a
-href="https://techblog.ap-com.co.jp/entry/2024/02/16/184145">ゼロトラストとは-後編-</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ネットワーク一般技術bgpプロトコル">ネットワーク一般技術/BGPプロトコル</h2>
 <p>分類99:ネットワーク一般技術<br />
@@ -1515,6 +1540,12 @@ Gateway Protocol )</a></li>
 <li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
 <li><a
 href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
+</ul>
+<h3 id="bgpのケーススタディ">BGPのケーススタディ</h3>
+<ul>
+<li><a
+href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/26634-bgp-toc.html">ボーダー
+ゲートウェイ プロトコルのケーススタディの確認</a></li>
 </ul>
 <h3 id="自律システムasautonomous-system">自律システム(AS:Autonomous
 System)</h3>
@@ -1623,14 +1654,42 @@ href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成�
 href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
 local-preference</a></li>
 </ul>
-<h3 id="asパスプリペンドas-path-prepend">ASパス・プリペンド(AS Path
-Prepend)</h3>
+<h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
+Path Prepend)</h3>
+<p>AS PATH
+Prependは、特定の経路を意図的に優先させたくない、あるいは特定の経路へのトラフィックを減らしたい場合に、AS
+PATHに自身のAS番号を複数追加して長さを伸ばします。<br />
+AS
+PATHが長くなった経路は、優先度が低く判断されるため、ルーティングテーブルに登録されにくくなります。<br />
+これにより、冗長化された複数の経路がある場合に、メインの経路を優先しつつ、障害時や混雑時に迂回経路にトラフィックを振り分けることができます。</p>
 <ul>
 <li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
 Path Prepend</a></li>
 <li><a
 href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
 Router で AS PATH Prepend を実装する</a></li>
+</ul>
+<h3 id="bgpルート集約経路集約">BGP/ルート集約(経路集約)</h3>
+<p>BGPでは、複数の経路情報を一つの経路に集約することが可能です。<br />
+この機能により、ルート情報の管理が簡素化され、ルーティングテーブルの規模を縮小できます。</p>
+<ul>
+<li><a
+href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/5441-aggregation.html">BGPでのルート集約について</a></li>
+<li><a
+href="https://www.infraexpert.com/study/bgpz24.html">BGPルート集約 -
+aggregate-addressコマンド</a></li>
+<li><a
+href="https://hirotanoblog.com/bgp-aggregate-address/2580/">BGPにおける経路集約（aggregate-address）を徹底解説　Ciscoルータ</a></li>
+<li><a href="https://y-network.jp/2020/08/23/nsx-t-024/">NSX-T BGP
+ルート集約</a></li>
+<li><a
+href="https://www.n-study.com/bgp-detail/bgp-aggregation-by-network-command/">BGPルート集約
+networkコマンドによる集約</a></li>
+<li><a
+href="https://net-skills.net/cisco-machine-menu1/actual-bgp26/">BGPルートの生成（経路集約
+その2）</a></li>
+<li><a
+href="https://daimaru-tech-blog.com/?p=691">【CCNA/CCNP/ネットワーク入門】BGP（経路集約/Prefix-List/Route-map/Default経路）を学んでみた</a></li>
 </ul>
 <h3 id="非対称ルーティング">非対称ルーティング</h3>
 <p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
@@ -1658,7 +1717,7 @@ Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術web接続">ネットワーク一般技術/WEB接続</h2>
+<h2 id="ネットワーク一般技術lb接続">ネットワーク一般技術/LB接続</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="スティッキーセッション">スティッキーセッション</h3>
@@ -1698,6 +1757,18 @@ Key、鍵署名鍵</h3>
 <ul>
 <li><a href="https://jprs.jp/glossary/index.php?ID=0232">KSK（Key
 Signing Key、鍵署名鍵）</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術設計思想">ネットワーク一般技術/設計思想</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ゼロトラスト">ゼロトラスト</h3>
+<ul>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/02/08/220857">ゼロトラストとは-前編-</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/02/16/184145">ゼロトラストとは-後編-</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
