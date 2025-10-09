@@ -194,6 +194,16 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Identity/policyreference/policy
 <li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-xiang-xi">OCI技術資料
 : IDおよびアクセス管理 (IAM) 詳細</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci_technical_deep_dive_20241029_identitydomain?slide=43">デモで解説！セキュリティと利便性を両立</a></li>
+</ul>
+<h3 id="ociモニタリング機能">OCIモニタリング機能</h3>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/intermediates/monitoring-resources/">モニタリング機能でOCIのリソースを監視する</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2023/01/31/oci%E3%81%AE%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E6%A9%9F%E8%83%BD-%EF%BD%9E%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E7%9B%A3%E8%A6%96%EF%BD%9E/">OCIのモニタリング機能
+～メトリック監視～</a></li>
 </ul>
 <h3 id="コスト管理">コスト管理</h3>
 <ul>
@@ -271,10 +281,34 @@ VNICに対してセキュリティ・ルールが設定されることで、コ�
 id="セキュリティリストslネットワークセキュリティグループnsg">セキュリティ・リスト(SL)・ネットワーク・セキュリティ・グループ(NSG)</h2>
 <p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="slとnsgの概要">SLとNSGの概要</h3>
+<p>ネットワーキング・サービスには、パケット・レベルでトラフィックを制御するためにセキュリティ・ルールを使用する2つの仮想ファイアウォール機能が用意されています。</p>
+<ul>
+<li>2つの仮想ファイアウォール機能
+<ul>
+<li>セキュリティ・リスト:ネットワーキング・サービスによる元の仮想ファイアウォール機能です。</li>
+<li>ネットワーク・セキュリティ・グループ(NSG):異なるセキュリティ体格を持つアプリケーション・コンポーネント用に後から設計された機能。NSGは特定のサービスに対してのみサポートされます。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/network-security1.html">ネットワーク・セキュリティ</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.htm">セキュリティ・ルール</a></li>
+</ul>
 <h3 id="機能の違い">機能の違い</h3>
 <p>セキュリティ・リスト(SL)はサブネットに関連付け、そのサブネットに含まれるすべてのVNICに同じルールを適用します。<br />
 ネットワーク・セキュリティ・グループ(NSG)はVNICごとに適用できるため、同じサブネット内のVNICに対して異なるセキュリティ・ルールを適用することができます。<br />
 また、どちらも許可のルールのみで拒否のルールを指定することはできません。</p>
+<h3 id="セキュリティリスト">セキュリティ・リスト</h3>
+<ul>
+<li><a
+href="https://cosol.jp/techdb/2018/12/oci_security_list_statefull_rule_stateless_rule/">OCIセキュリティリストのステートフルルールとステートレスルール</a></li>
+</ul>
+<h3
+id="ネットワークセキュリティグループ">ネットワーク・セキュリティ・グループ</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/networksecuritygroups.htm">ネットワーク・セキュリティ・グループ</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="パブリックipアドレス">パブリックIPアドレス</h2>
@@ -311,6 +345,13 @@ href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#ip%E3%82%A2%E3%83%
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ipv6概要">IPv6/概要</h3>
 <ul>
+<li>IPv6対応のVCNs
+<ul>
+<li>Oracleによって割り当てられた/56
+IPv6グローバル・ユニキャスト・アドレス(GUA)接頭辞を使用する</li>
+<li>/64以上の一意のローカル・アドレス(ULA)接頭辞を指定する</li>
+<li>/48以上のBYOIPv6接頭辞をインポートする</li>
+</ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/ipv6.htm">IPv6アドレス</a></li>
 <li><a
@@ -1062,6 +1103,16 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.ht
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="セキュリティ一般">セキュリティ一般</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="セキュリティ一般総合情報">セキュリティ一般/総合情報</h3>
+<ul>
+<li><a
+href="https://guide.gcas.cloud.go.jp/oci/security-tech">セキュリティ(OCI編)</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="クロステナンシテナンシ間接続">クロス・テナンシ(テナンシ間接続)</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
@@ -1095,8 +1146,10 @@ href="https://qiita.com/tkonishi/items/3b8848b65bec4f99afef">OCIのクロステ�
 <li>https://docs.oracle.com/ja-jp/iaas/Content/Identity/policieshow/iam-cross-domain.htm</li>
 <li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/database-tools/doc/cross-tenancy-association-policies.html</li>
 <li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm</li>
-<li>https://www.site24x7.jp/help/oci/enable-oci-tenancy-access.html</li>
-<li>https://iret.media/167663</li>
+<li><a
+href="https://www.site24x7.jp/help/oci/enable-oci-tenancy-access.html">OCIテナンシへのアクセス有効化</a></li>
+<li><a
+href="https://iret.media/167663">OCI】テナンシー間アクセスの方法について</a></li>
 <li>https://www.kodaruma.com/2022/05/oci.html</li>
 <li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm</li>
 </ul>
@@ -1112,8 +1165,8 @@ VCN peering using Remote Peering Connection</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-zero-trust-packet-routingzpr">OCI Zero Trust Packet
-Routing(ZPR)</h2>
+<h2 id="oci-zero-trust-packet-routingzprゼロトラスト">OCI Zero Trust
+Packet Routing(ZPR：ゼロトラスト)</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci-zero-trust-packet-routing概要">OCI Zero Trust Packet
@@ -1121,9 +1174,27 @@ Routing/概要</h3>
 <ul>
 <li>https://www.oracle.com/jp/security/what-is-zero-trust/</li>
 <li>https://www.oracle.com/jp/security/cloud-security/zero-trust-packet-routing/</li>
-<li>https://speakerdeck.com/oracle4engineer/ocwc_20240626_security</li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-trust-packet-routing/add-resource.htm">Zero
+Trust Packet Routingへのリソースの追加</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/ocwc_20240626_security">【Oracle
+Cloud
+ウェビナー】【失敗しない運用】セキュアな仕組みで実現するゼロトラスト</a></li>
 <li>https://www.lac.co.jp/lacwatch/service/20250210_004275.html</li>
 <li>https://qiita.com/sazumi/items/c80c09eaf19f82871be3</li>
+</ul>
+<h3
+id="セキュリティ属性ネームスペース">セキュリティ属性ネームスペース</h3>
+<p>セキュリティ属性ネームスペースは、Zero Trust Packet Routing
+(ZPR)の一連のセキュリティ属性のコンテナです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/security-attribute-namespaces.htm">セキュリティ属性ネームスペース</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm">セキュリティ属性ネームスペースの管理</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/list-security-attribute-namespace.htm">セキュリティ属性ネームスペースのリスト</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1136,7 +1207,44 @@ Routing/概要</h3>
 <li>https://oracle-japan.github.io/ocitutorials/intermediates/bastion/</li>
 <li>https://speakerdeck.com/oracle4engineer/bastion-overview</li>
 <li>https://www.youtube.com/watch?v=Rqs9WjVyZMQ</li>
-<li>https://qiita.com/koin3z/items/f252111bf46f938f4843</li>
+<li><a
+href="https://qiita.com/koin3z/items/f252111bf46f938f4843">【OCI】Bastionサービスの概要と使い方</a></li>
+<li><a href="https://qiita.com/shirok/items/5203f97770c3756e4305">Oracle
+Cloud: Bastionで Port Forwarding して
+SSH多段接続など色々してみてみた</a></li>
+</ul>
+<h3 id="bastionのセッションタイプ">Bastionのセッション・タイプ</h3>
+<ul>
+<li>Bastionのセッション・タイプ
+<ul>
+<li>管理対象SSHセッション
+<ul>
+<li>対象となるインスタンスへのSSH接続を中継します</li>
+</ul></li>
+<li>SSHポート転送セッション
+<ul>
+<li>SSHポート転送（SSHトンネリング）を作成し，対象インスタンスと接続します。</li>
+</ul></li>
+<li>動的ポート転送(SOCKS5)セッション
+<ul>
+<li>SOCKS5プロトコルを利用して、プライベート・サブネット内の任意のターゲット・リソースに動的に接続できます。</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Bastion/Concepts/bastionoverview.htm#session_types">セッション・タイプ</a></li>
+<li><a
+href="https://qiita.com/koin3z/items/f252111bf46f938f4843#12-%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BF%E3%82%A4%E3%83%97">セッションタイプ</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-network-firewall">OCI Network Firewall</h2>
+<p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-network-firewall概要">OCI Network Firewall/概要</h3>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/security/networkfirewall-policycheck/">OCI
+Network Firewallの動作を検証する</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1374,6 +1482,18 @@ Control）の保護を目的としたセキュリティプロトコルです。<
 <ul>
 <li><a
 href="https://www.nexty-ele.com/technical-column/ethernet_macsec/">MACsecとは</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術設計思想">ネットワーク一般技術/設計思想</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ゼロトラスト">ゼロトラスト</h3>
+<ul>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/02/08/220857">ゼロトラストとは-前編-</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/02/16/184145">ゼロトラストとは-後編-</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
