@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/12 09:05:48<br />
+更新日：2025/10/12 16:35:19<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -92,11 +92,11 @@ href="https://qiita.com/nisshii0/items/33b7c2a38a6d05bbc1e4">OCI資格(1Z0-1072-
 <li><a
 href="https://www.actual4test.com/exam/1Z0-1124-25-questions">4test_2025</a></li>
 </ul>
-<h3 id="試験範囲">試験範囲</h3>
+<h3 id="試験コース">試験コース</h3>
 <ul>
-<li>大項目
+<li>試験コース
 <ul>
-<li>01:OCI資格概要</li>
+<li>01:OCI(OCI_NP)資格概要</li>
 <li>02:OCI概要</li>
 <li>03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入</li>
 <li>04:VCNゲートウェイ</li>
@@ -209,17 +209,31 @@ cloud -コンパートメント作成編-【初心者向け】</a></li>
 href="https://qiita.com/manaki/items/1283bfe3f6e7667bfb43">【OCI】oracle
 cloud -仮想クラウド・ネットワーク構築編(VCN)-【初心者向け】</a></li>
 <li><a
+href="https://qiita.com/manaki/items/1283bfe3f6e7667bfb43">【OCI】oracle
+cloud -仮想クラウド・ネットワーク構築編(VCN)-【初心者向け】</a></li>
+<li><a
 href="https://qiita.com/manaki/items/20d9aa3b47db3b39fddd">【OCI】oracle
 cloud
 -仮想クラウド・ネットワーク構築編(サブネット)-【初心者向け】</a></li>
+<li><a
+href="https://qiita.com/manaki/items/2a1eac62997ea41ab71e">【OCI】oracle
+cloud
+-仮想クラウド・ネットワーク構築編(ネットワーク・セキュリティグループ)-【初心者向け</a></li>
 <li><a
 href="https://qiita.com/manaki/items/d18c26cc9504d77a577b">【OCI】oracle
 cloud
 -仮想クラウド・ネットワーク構築編(セキュリティ・リスト)-【初心者向け】</a></li>
 <li><a
-href="https://qiita.com/manaki/items/2a1eac62997ea41ab71e">【OCI】oracle
+href="https://qiita.com/manaki/items/903a5c210a2289f98ff8">【OCI】oracle
 cloud
--仮想クラウド・ネットワーク構築編(ネットワーク・セキュリティグループ)-【初心者向け</a></li>
+-仮想クラウド・ネットワーク構築編(NATゲートウェイ)-【初心者向け】</a></li>
+<li><a
+href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654">【OCI】oracle
+cloud
+-仮想クラウド・ネットワーク構築編(ルート表)-【初心者向け】</a></li>
+<li><a
+href="https://qiita.com/manaki/items/0ded6b4e25c2f57b3657">【OCI】oracle
+cloud -仮想マシン(Compute)作成編-【初心者向け】</a></li>
 <li><a
 href="https://qiita.com/manaki/items/81bf91e61b362e403bc1">【OCI】権限管理(ポリシー)について</a></li>
 </ul></li>
@@ -323,18 +337,54 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/VCNs.htm">VCNsお
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#vcn%E3%81%AE%E6%A6%82%E8%A6%81">VCNの概要</a></li>
 </ul>
-<h3 id="vcnルート表">VCNルート表</h3>
+<h3 id="vcn構成要素">VCN構成要素</h3>
 <ul>
+<li>Virtual Cloud Networkに含まれるコンポーネント
+<ul>
+<li>Virtual Cloud Network(VCN)
+<ul>
+<li>OracleCloud上で定義したSoftwareDefinedNetwork(SDN)</li>
+<li>VCNに複数のサブネットを定義する</li>
+</ul></li>
+<li>サブネット(Subnet)</li>
+<li>ルート表(Route Table)</li>
+<li>仮想ネットワークインターフェース・カード(VNIC)</li>
+<li>プライベートIP(Private IP)</li>
+<li>パブリックIP(Public IP)</li>
+<li>セキュリティ・リスト(SL:Security List)</li>
+<li>ネットワーク・セキュリティ・グループ(NSG)</li>
+<li>DHCPオプション</li>
+<li>DNSリゾルバ(Internet and VCN Resolver)
+<ul>
+<li>VCN Resolver
+<ul>
+<li>VCN内部のInstanceを名前解決するためのリゾルバ</li>
+</ul></li>
+<li>インターネット・リゾルバ
+<ul>
+<li>インスタンスによって、インターネットで公開されているホスト名が解決されます。</li>
+<li>インスタンスは、インターネット・ゲートウェイまたはオンプレミス・ネットワークへの接続(DRGを介したサイト間VPN
+IPSec接続など)を介してインターネットにアクセスする必要はありません。</li>
+</ul></li>
+</ul></li>
+<li>ゲートウェイ
+<ul>
+<li>インターネットゲートウェイ</li>
+<li>NATゲートウェイ</li>
+<li>サービスゲートウェイ</li>
+<li>プライベート・エンドポイント</li>
+<li>ダイナミック・ルーティング・ゲートウェイ(DRG)</li>
+<li>ローカル・ピアリング・ゲートウェイ(LPG)
+<ul>
+<li>同一リージョンに存在するVPNを接続するために使用する仮想ルータ</li>
+<li>別リージョンに存在するVCNと接続する場合は、DRGを使用して、Remote VPN
+Peering をする</li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm">VCNルート表</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables_topic-working.htm">VCNルート表とルート・ルールの作業</a></li>
-<li><a
-href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654">【OCI】oracle
-cloud -仮想クラウド・ネットワーク構築編(ルート表)</a></li>
-<li><a
-href="https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/learn-routing-in-oci-networking-with-examples.pdf">Learn
-Routing in Oracle Cloud Infrastructure Networking with Examples</a></li>
+href="https://qiita.com/sugimount/items/b2c4d69829c6b4325220">Oracle
+Cloud 仮想ネットワークに含まれるコンポーネントメモ</a></li>
 </ul>
 <h3 id="サブネット">サブネット</h3>
 <ul>
@@ -348,8 +398,21 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network
 href="https://qiita.com/manaki/items/20d9aa3b47db3b39fddd">【OCI】oracle
 cloud -仮想クラウド・ネットワーク構築編(サブネット)</a></li>
 </ul>
+<h3 id="vcnルート表">VCNルート表</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm">VCNルート表</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables_topic-working.htm">VCNルート表とルート・ルールの作業</a></li>
+<li><a
+href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654">【OCI】oracle
+cloud -仮想クラウド・ネットワーク構築編(ルート表)</a></li>
+<li><a
+href="https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/learn-routing-in-oci-networking-with-examples.pdf">Learn
+Routing in Oracle Cloud Infrastructure Networking with Examples</a></li>
+</ul>
 <h3
-id="仮想ネットワークインターフェースカードvic">仮想ネットワークインターフェース・カード(VIC)</h3>
+id="仮想ネットワークインターフェースカードvnic">仮想ネットワークインターフェース・カード(VNIC)</h3>
 <p>VNICはサブネットに存在し、そのサブネットが属するVCNに関連付けられます。<br />
 VNICに対してセキュリティ・ルールが設定されることで、コンピュート・インスタンスがVCNの内外のエンドポイントに接続できるようにします。</p>
 <hr />
@@ -442,15 +505,7 @@ href="https://qiita.com/500InternalServerError/items/be14d19a8a51601346cb">IPv6�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ゲートウェイ一覧">ゲートウェイ一覧</h3>
 <ul>
-<li>ゲートウェイ一覧
-<ul>
-<li>インターネットゲートウェイ</li>
-<li>NATゲートウェイ</li>
-<li>サービスゲートウェイ</li>
-<li>プライベート・エンドポイント</li>
-<li>ローカル・ピアリング・ゲートウェイ(LPG)</li>
-<li>ダイナミック・ルーティング・ゲートウェイ(DRG)</li>
-</ul></li>
+<li>(ページ内)<a href="oci_np.html#vcn構成要素">VCN構成要素</a></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc">Oracle
 Cloud Infrastructure Architect Associate
@@ -458,13 +513,26 @@ Cloud Infrastructure Architect Associate
 <li><a href="https://qiita.com/letian/items/967e9790cb9f18345f56">OCI
 各種GWのまとめ</a></li>
 </ul>
-<h3 id="vcn間nw接続">VCN間NW接続</h3>
+<h3 id="vcn間nw接続接続方式">VCN間NW接続/接続方式</h3>
+<p>外部接続には以下の３つの方式がある。</p>
 <ul>
-<li>接続方式
+<li>外部接続方式
+<ul>
+<li>Public Internet(ネットワーク)</li>
+<li>VPN接続(IPsec)</li>
+<li>Fast Connect</li>
+</ul></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#vcn%E3%81%A8%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E6%8E%A5%E7%B6%9A%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">VCNと外部との接続のオプション</a></li>
+</ul>
+<h3
+id="vcn間nw接続利用するゲートウェイ">VCN間NW接続/利用するゲートウェイ</h3>
+<ul>
+<li>利用するゲートウェイ
 <ul>
 <li>LPG：ローカルピアリングゲートウェイ</li>
 <li>DRG：動的ルーティングゲートウェイ</li>
-<li>RPC：リモートピアリング接続」</li>
+<li>RPC：リモートピアリング接続(DRGを利用する)</li>
 </ul></li>
 <li><a
 href="https://techblog.ap-com.co.jp/entry/2025/05/15/170939">LPG？DRG？RPC？
@@ -503,8 +571,13 @@ href="https://qiita.com/hongmnh/items/1cc8cf3d6feb65c7d21f">【OCI】NATイン�
 <p>Oracle Services Networkは、Oracleサービス用に予約されているOracle
 Cloud Infrastructureの概念的なネットワークです。
 これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。</p>
-<p>https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/
-https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.htm</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.htm">Oracleサービスへのアクセス:
+サービス・ゲートウェイ</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/">サービスゲートウェイでサポートされているクラウド・サービス</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="プライベートエンドポイント">プライベート・エンドポイント</h2>
@@ -737,6 +810,40 @@ VCN とオンプレミスで DNSピアリング(Forwarding)してみてみた</a
 href="https://qiita.com/Qu4rtz_MC5/items/1e1216a68e47010272fe">Oracle
 Cloud Infrastructure Architect Associate 勉強メモ（DNS)</a></li>
 </ul>
+<h3 id="dnsリゾルバ">DNSリゾルバ</h3>
+<ul>
+<li>Internet and VCN Resolver：
+<ul>
+<li>デフォルト設定であり、下記2つの目的で使用する。</li>
+<li>インターネット・リゾルバ
+<ul>
+<li>インターネットに一般公開されているwww.oracle.comなどの名前解決</li>
+</ul></li>
+<li>VCNリゾルバ
+<ul>
+<li>同じVCNで稼働するインスタンスの名前解決（VCN Resolver）</li>
+</ul></li>
+</ul></li>
+<li>Custom Resolver：
+<ul>
+<li>以下のように特定のDNSサーバーを参照するときに使用する。
+<ul>
+<li>インターネットで提供されている特定のDNSサーバー</li>
+<li>Oracle Cloud Infrastructure内に自分で立てたDNSサーバー</li>
+<li>VPNやFastConnectで接続しているオンプレミス・ネットワークにあるDNSサーバー</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/dns.htm#Choices">VCNのDNSの選択肢</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/9c5647d22c923fc74330">Oracle
+Cloud Infrastructureの名前解決の仕組み&amp;ホスト名の変更方法</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-dnsdnssec">OCI-DNS/DNSSEC</h2>
+<p>分類05:OCIネットワーク・ソリューションとアプリケーション・サービスの計画・設計<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="dnssec">DNSSEC</h3>
 <ul>
 <li><a
@@ -781,19 +888,6 @@ href="https://qiita.com/sh-sho/items/4431d5cac2addd0b9809">OCIのマネージド
 <h2 id="オンプレミス環境">オンプレミス環境</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3
-id="vcnと外部との接続のオプション">VCNと外部との接続のオプション</h3>
-<p>外部接続には以下の３つの方式がある。</p>
-<ul>
-<li>外部接続方式
-<ul>
-<li>Public Internet(ネットワーク)</li>
-<li>VPN接続(IPsec)</li>
-<li>Fast Connect</li>
-</ul></li>
-<li><a
-href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#vcn%E3%81%A8%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E6%8E%A5%E7%B6%9A%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">VCNと外部との接続のオプション</a></li>
-</ul>
 <h3 id="cpecustomer-premises-equipment">CPE(Customer Premises
 Equipment)</h3>
 <p>CPEとは、Customer Premises
@@ -1277,10 +1371,14 @@ Cross-Tenancy Remote Peeringしてみてみた</a></li>
 </ul></li>
 <li><a
 href="https://qiita.com/tkonishi/items/3b8848b65bec4f99afef">OCIのクロステナンシ・ポリシーを設定してみる</a></li>
-<li>https://docs.oracle.com/ja-jp/iaas/database-tools/doc/cross-tenancy-policies.html</li>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/Identity/policieshow/iam-cross-domain.htm</li>
-<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/database-tools/doc/cross-tenancy-association-policies.html</li>
-<li>https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm</li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-tools/doc/cross-tenancy-policies.html">6.4.1
+クロステナンシ・ポリシー</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/database-tools/doc/cross-tenancy-association-policies.html">6.4.2
+クロステナンシ・アソシエーション・ポリシー</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Identity/policieshow/iam-cross-domain.htm">クロステナンシ・アクセス・ポリシー</a></li>
 <li><a
 href="https://www.site24x7.jp/help/oci/enable-oci-tenancy-access.html">OCIテナンシへのアクセス有効化</a></li>
 <li><a
@@ -1435,6 +1533,9 @@ SSH多段接続など色々してみてみた</a></li>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/security/networkfirewall-policycheck/">OCI
 Network Firewallの動作を検証する</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/07/22/093000">【OCI】OCI
+Network Firewall を使ってみる</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1445,18 +1546,37 @@ Network Firewallの動作を検証する</a></li>
 <p>OCI WAF(Web Application
 Firewall)は、コンソール上で様々なルールを適用し、悪意のあるインターネット・トラフィックからのリクエストを除外することで<br />
 web アプリケーションを保護できるセキュリティ・サービスである。</p>
-<h3 id="oci-wafポリシー種別">OCI-WAF/ポリシー種別</h3>
 <ul>
-<li>エッジ・ポリシー
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/oracle-web-application-firewall">Oracle
+Web Application Firewall(WAF)の仕組みと機能検証</a></li>
+<li><a href="https://blog.s-style.co.jp/2025/01/13710/">OCI
+WAFのレート制限を試してみた</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/%E7%A8%BC%E5%83%8D%E3%81%97%E3%81%A6%E3%81%84%E3%82%8Bweb%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%ABwaf%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81/">WAFを経由してWebサーバーにアクセスさせる</a></li>
+<li><a
+href="https://qiita.com/ramtan0522/items/9d0307b2e3176c60e832">OCI
+WAFポリシーでブロックしたリクエストを通知する</a></li>
+</ul>
+<h3 id="oci-wafwafポリシー種別">OCI-WAF/WAFポリシー種別</h3>
+<ul>
+<li>エッジ・ポリシー(Global WAF)
 <ul>
 <li>グローバル・ソリューション</li>
 <li>このソリューションを使用するには、世界中のOracleノードを許可リストに登録し、DNSを使用して、提供するCNAMEにアプリケーションをポイントします。<br />
 </li>
 </ul></li>
-<li>WAFポリシー
+<li>WAFポリシー(Regional WAF)
 <ul>
 <li>ロード・バランサのプラグインとして機能します。</li>
 </ul></li>
+<li><a href="https://qiita.com/msasakaw/items/d044f16503bd666c1684">OCI
+Load Balancerに直接アタッチするタイプのWeb Application
+Firewallを構成する</a></li>
+<li><a href="https://qiita.com/Western24/items/e9b51ce0f90415629a9d">OCI
+WAFで脆弱なアプリを保護する - エッジ・ポリシーの場合 -</a></li>
+<li><a href="https://qiita.com/Western24/items/36862526216d6eb886a8">OCI
+WAFで脆弱なアプリを保護する - WAFポリシーの場合 -</a></li>
 </ul>
 <h3 id="oci-waf構成要素waf概念">OCI-WAF/構成要素(WAF概念)</h3>
 <ul>
@@ -1525,6 +1645,8 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Policies/create_waf-policy.
 <li><a
 href="https://qiita.com/ramtan0522/items/aa4f55d5b13655c6c024">OCI
 WAFポリシーでセキュリティ強化してみる</a></li>
+<li><a href="https://blog.s-style.co.jp/2022/02/8551/">OCI
+WAFポリシーを試してみる</a></li>
 </ul>
 <h3
 id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設定(ユースケース)</h3>
@@ -1543,11 +1665,32 @@ id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設�
 <li>「アクセス制御ルール」ごとに、「ALLOW」または「REDIRECT」の「アクション」を設定する</li>
 </ol></li>
 </ul>
+<h3 id="oci-waf保護ルール">OCI-WAF/保護ルール</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang?slide=12">OCI
+WAF保護ルールの考え方</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oci-wafエッジポリシー">OCI-WAF/エッジ・ポリシー</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="エッジポリシー概要">エッジ・ポリシー/概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Tasks/managingwaf.htm">エッジ・ポリシーの管理</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/WAF/Tasks/access-rules.htm">エッジ・ポリシーのアクセス・ルール</a></li>
+</ul>
+<h3 id="エッジポリシー設定手順">エッジ・ポリシー/設定手順</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/wafetuziporisishe-ding-shou-shun-shu?slide=9">WAFエッジポリシー設定手順書</a></li>
+<li><a
+href="https://qiita.com/cocotaro0202/items/7384241014302ad346fe">ネットワーク初心者が
+OCI WAF で不正アクセスを防御できるか試してみた</a></li>
+</ul>
 <h3 id="ボット管理">ボット管理</h3>
 <ul>
 <li>ボット管理
@@ -1629,15 +1772,22 @@ href="https://www.ctc-g.co.jp/keys/blog/detail/2022-oci-superiority">オラク�
 トラフィックの監査やセキュリティ問題のトラブルシューティングに役立ちます。</p>
 <ul>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/vcn-flow-logs.htm">フロー・ログ</a></li>
+<li><a
 href="https://cloudii.jp/news/blog/oracle-cloud/vcnflowlogs/">VCNフロー・ログ攻略</a></li>
-<li><a href="https://qiita.com/EumJinman/items/cb20f33e8b38969da88b">OCI
-Connector HubでLoggingのVCNフローログをObject
-Storageに転送する方法</a></li>
+<li><a
+href="https://qiita.com/captain-sadami/items/783b60e1ec9528e3954f">VCN
+Flow Logsでトラフィックのログを収集する</a></li>
 <li><a href="https://qiita.com/TakuyaAma/items/dc6c435529b6706ac35a">VCN
-flow logsを用いてNetworkアクセス状況を分析したときのメモ</a></li>
+flow logsを用いてNetworkアクセス状況を分析したときのメモ</a>
+<ul>
 <li><a
 href="https://qiita.com/TakuyaAma/items/dc6c435529b6706ac35a#logging--searching-logging%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E3%83%AD%E3%82%B0%E3%81%AE%E5%88%86%E6%9E%90">Logging
 / searching loggingを利用したログの分析</a></li>
+</ul></li>
+<li><a href="https://qiita.com/EumJinman/items/cb20f33e8b38969da88b">OCI
+Connector HubでLoggingのVCNフローログをObject
+Storageに転送する方法</a></li>
 </ul>
 <h3
 id="vcnフローログの有効化ポイント">VCNフロー・ログの有効化ポイント</h3>
@@ -1651,7 +1801,7 @@ id="vcnフローログの有効化ポイント">VCNフロー・ログの有効�
 <li>リソース</li>
 </ul></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/vcn-flow-logs.htm">フロー・ログ</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/vcn-flow-logs.htm">フロー・ログを有効化および配信する方法</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
