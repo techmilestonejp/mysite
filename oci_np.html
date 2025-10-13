@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/12 16:35:19<br />
+更新日：2025/10/13 11:45:13<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -145,11 +145,26 @@ href="https://www.actual4test.com/exam/1Z0-1124-24-questions#">4test</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-cloud-infrastructure-チュートリアル">Oracle Cloud
-Infrastructure チュートリアル</h2>
+<h2 id="oci参考資料">OCI参考資料</h2>
 <p>分類02:OCI概要<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oracle-cloud-infrastructure-チュートリアル-1">Oracle Cloud
+<h3 id="oracle-cloud-infrastructure-活用資料集">Oracle Cloud
+Infrastructure 活用資料集</h3>
+<ul>
+<li><a href="https://oracle-japan.github.io/ocidocs/">Oracle Cloud
+Infrastructure 活用資料集</a>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocidocs/tags/">タグ別の資料</a></li>
+</ul></li>
+<li>[speakerdeck/Oracle Cloud Infrastructure ソリューション・エンジニア]
+<ul>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi">OCI技術資料
+: 外部接続 VPN接続 詳細</a></li>
+</ul></li>
+</ul>
+<h3 id="oracle-cloud-infrastructure-チュートリアル">Oracle Cloud
 Infrastructure チュートリアル</h3>
 <ul>
 <li><a href="https://oracle-japan.github.io/ocitutorials/">Oracle Cloud
@@ -513,17 +528,39 @@ Cloud Infrastructure Architect Associate
 <li><a href="https://qiita.com/letian/items/967e9790cb9f18345f56">OCI
 各種GWのまとめ</a></li>
 </ul>
-<h3 id="vcn間nw接続接続方式">VCN間NW接続/接続方式</h3>
-<p>外部接続には以下の３つの方式がある。</p>
+<h3
+id="vcn間nw接続外部からociへの接続方式">VCN間NW接続/外部からOCIへの接続方式</h3>
+<p>外部からOCIへの接続方式には、以下の3つの方式がある。</p>
 <ul>
-<li>外部接続方式
+<li>外部からOCIへの接続方式
+<ol type="1">
+<li>パブリック・インターネット
 <ul>
-<li>Public Internet(ネットワーク)</li>
-<li>VPN接続(IPsec)</li>
-<li>Fast Connect</li>
+<li>グローバルIP通信</li>
+<li>FWとSSL通信等によりセキュリティ確保</li>
+<li>通信速度・帯域はベストエフォート</li>
+<li>外部へのデータ転送が月10TBを超える場合には課金対象</li>
 </ul></li>
+<li>VPN接続(IPsec)
+<ul>
+<li>プライベートIP通信</li>
+<li>IPsecによりセキュリティ確保(認証、暗号化)</li>
+<li>通信速度・帯域はベストエフォート</li>
+<li>VPN接続は無料、インターネット通信料金は課金対象</li>
+</ul></li>
+<li>Fast Connect
+<ul>
+<li>プライベートIP通信/グローバルIP通信</li>
+<li>プライベート回線による高いセキュリティ</li>
+<li>通信キャリアによる速度、帯域、品質を保証</li>
+<li>固定額のポート領域のみ課金、データ転送による従量課金なし、専用回線費用は課金</li>
+</ul></li>
+</ol></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#vcn%E3%81%A8%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E6%8E%A5%E7%B6%9A%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">VCNと外部との接続のオプション</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi?slide=2">OCI技術資料
+: 外部接続 VPN接続 詳細/2ページ</a></li>
 </ul>
 <h3
 id="vcn間nw接続利用するゲートウェイ">VCN間NW接続/利用するゲートウェイ</h3>
@@ -899,6 +936,9 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/configuringCPE.ht
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Reference/CPElist.htm">検証済CPEデバイス</a></li>
 <li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi?slide=6">OCI技術資料
+: 外部接続 VPN接続 詳細/6ページ</a></li>
+<li><a
 href="https://www.ashisuto.co.jp/db_blog/article/onpre-to-cloud03.html">オンプレミス環境とクラウドを接続してみよう！</a></li>
 </ul>
 <hr />
@@ -1234,12 +1274,41 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingIPsec.htm
 href="https://docs.oracle.com/cd//E83857_01/iaas-classic/compute-iaas-cloud/stcsg/ipsec-vpn-connection-oracle-cloud-infrastructure.html">17
 Oracle Cloud InfrastructureへのVPN接続を設定</a></li>
 <li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi">OCI技術資料
+: 外部接続 VPN接続 詳細</a></li>
+<li><a
 href="https://cloudii.jp/news/blog/aws/awsocivpn/">AWS-OCI間のVPN接続の手順について</a></li>
 <li><a
 href="https://qiita.com/letian/items/4d6c4c9e3662f1ffbf58">On-PとOCI間のIPSec
 VPN接続のシミュレーション (Libreswanを利用)</a></li>
 <li><a href="https://qiita.com/shirok/items/8a831d23b22f6dd53379">Oracle
 Cloud と AWS Site-to-Site VPN (IPSec) 接続してみてみた</a></li>
+</ul>
+<h3
+id="サイト間ipsecvpnvpnルーティング">サイト間IPSecVPN/VPNルーティング</h3>
+<p>CPEサイト側のBGP機能を利用して、VPNルーティングの設定を行います。<br />
+以下はその設定手順を記載します。</p>
+<ul>
+<li>VPNルーティング推奨要件
+<ul>
+<li>VPN作成時に、2つの冗長IPsecトンネルを作成し、IPsrcのトンネル毎にCPEを構成する(IPアドレスもそれぞれに割り振る)ことが推奨されている。<br />
+</li>
+</ul></li>
+<li>VPNルーティング方式(1トンネルごとにルーティングを選択)
+<ul>
+<li>静的ルーティング</li>
+<li>BGPによる動的ルーティング</li>
+<li>CIDR範囲を指定したポリシーベースルーティング</li>
+</ul></li>
+<li>VPNルーティングの注意点
+<ul>
+<li>BGPを明示的に構成しない場合は、静的ルーティングがデフォルトになる</li>
+<li>静的ルーティングは、最低1から最大10のスタティックルートを設定する</li>
+<li>BGPを選択する場合には、ASNと2つのIPアドレスが必要</li>
+</ul></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi?slide=8">OCI技術資料
+: 外部接続 VPN接続 詳細/8ページ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1854,7 +1923,8 @@ href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.h
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術ip">ネットワーク一般技術/IP</h2>
+<h2
+id="ネットワーク一般技術ipプロトコル">ネットワーク一般技術/IPプロトコル</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ipプロトコル番号">IPプロトコル番号</h3>
@@ -1917,6 +1987,20 @@ Autoconfiguration】</a></li>
 <li>プロバイダーから/56プレフィックスが割り当てられる</li>
 </ol>
 <p>→ 256個（2^8）のサブネットが利用できる。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク一般技術ipsec-vpn">ネットワーク一般技術/IPsec-VPN</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ipsec-vpn">IPsec-VPN</h3>
+<ul>
+<li><a
+href="https://www.kagoya.jp/howto/it-glossary/security/ipsec-vpn/">【図解】IPsecの仕組みとは？IPsec-VPN
+とSSL-VPNの違い</a></li>
+<li><a
+href="https://www.infraexpert.com/study/study10.html">IPsecはじめから</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク一般技術l2">ネットワーク一般技術/L2</h2>
