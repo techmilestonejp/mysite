@@ -337,19 +337,6 @@ href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oci_technical_deep_dive_20241029_identitydomain?slide=43">デモで解説！セキュリティと利便性を両立</a></li>
 </ul>
-<h3 id="ociセキュリティ">OCIセキュリティ</h3>
-<ul>
-<li>Oracle Cloud Infrastructureのセキュリティ・チェックリスト
-<ul>
-<li><a
-href="https://docs.oracle.com/ja/solutions/oci-security-checklist/index.html">Oracle
-Cloud Infrastructureのセキュリティについて</a></li>
-<li><a
-href="https://docs.oracle.com/ja/solutions/oci-security-checklist/security-controls.html">セキュリティ制御について</a></li>
-<li><a
-href="https://docs.oracle.com/ja/solutions/oci-security-checklist/network-security1.html">ネットワーク・セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="ociモニタリング機能">OCIモニタリング機能</h3>
 <ul>
 <li><a
@@ -418,10 +405,10 @@ href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#vcn%E3%81%AE%E6%A6
 <li>VCNに複数のサブネットを定義する</li>
 </ul></li>
 <li>サブネット(Subnet)</li>
-<li>ルート表(Route Table)</li>
 <li>仮想ネットワークインターフェース・カード(VNIC)</li>
-<li>プライベートIP(Private IP)</li>
+<li>ルート表(Route Table)</li>
 <li>パブリックIP(Public IP)</li>
+<li>プライベートIP(Private IP)</li>
 <li>セキュリティ・リスト(SL:Security List)</li>
 <li>ネットワーク・セキュリティ・グループ(NSG)</li>
 <li>DHCPオプション</li>
@@ -499,7 +486,16 @@ AD固有サブネットは、特定の可用性ドメイン（AD）にのみリ�
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/Overview_of_VCNs_and_Subnets.htm#Overview__regional_subnet">リージョナル・サブネットについて</a></li>
 </ul>
-<h3 id="vcnルート表">VCNルート表</h3>
+<h3
+id="仮想ネットワークインターフェースカードvnic">仮想ネットワークインターフェース・カード(VNIC)</h3>
+<p>VNICはサブネットに存在し、そのサブネットが属するVCNに関連付けられます。<br />
+VNICに対してセキュリティ・ルールが設定されることで、コンピュート・インスタンスがVCNの内外のエンドポイントに接続できるようにします。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="vcnルート表">VCNルート表</h2>
+<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="vcnルート表概要">VCNルート表/概要</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm">VCNルート表</a></li>
@@ -512,10 +508,110 @@ cloud -仮想クラウド・ネットワーク構築編(ルート表)</a></li>
 href="https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/learn-routing-in-oci-networking-with-examples.pdf">Learn
 Routing in Oracle Cloud Infrastructure Networking with Examples</a></li>
 </ul>
+<h3 id="vcnルート表vcnルート表の作成">VCNルート表/VCNルート表の作成</h3>
+<p>ルート・ルールを定義して、VCNルート表を作成する。</p>
+<ul>
+<li>ルート・ルール
+<ul>
+<li>ターゲット・タイプ: ターゲット・タイプを設定します。<br />
+ターゲット・タイプがDRGの場合は、VCNのアタッチされているDRGがターゲットとして自動的に選択されます。<br />
+ターゲットがプライベートIPオブジェクトの場合、ターゲットを指定する前に、そのプライベートIPオブジェクトを使用するVNICでソース/宛先チェックを無効にする必要があります。<br />
+</li>
+<li>ターゲット: ターゲットを指定します。<br />
+ターゲットがプライベートIPオブジェクトの場合、そのOCIDを入力します。または、プライベートIPアドレス自体を入力することもできます。入力すると、コンソールによって、対応するOCIDが検索され、それがルート・ルールのターゲットとして使用されます。<br />
+</li>
+<li>宛先CIDRブロック:
+ターゲットがサービス・ゲートウェイでない場合にのみ使用できます。<br />
+値は、トラフィックの宛先CIDRブロックです。<br />
+特定の宛先CIDRブロックを指定できます。または、サブネットを退出するすべてのトラフィックをこのルールで指定されたターゲットにルーティングする必要がある場合は、0.0.0.0/0を使用できます。<br />
+</li>
+<li>宛先サービス:ターゲットがサービス・ゲートウェイである場合のみ使用できます。<br />
+値は、宛先の「サービスCIDRラベル」です。</li>
+<li>コンパートメント:ターゲットが所属するコンパートメントを指定します。<br />
+</li>
+<li>説明: ルールのオプションの説明。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/create-routetable.htm">VCNルート表の作成</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__Working">ルート表とルート・ルールの作業</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingroutetables.htm">ルート・ターゲットとしてのプライベートIPの使用</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/20200130-1580344719/#%E3%83%AB%E3%83%BC%E3%83%88%E8%A1%A8">ルート表</a></li>
+<li><a
+href="https://qiita.com/manaki/items/c2177c8198d2d4f8d654#%E3%83%AB%E3%83%BC%E3%83%88%E8%A1%A8">ルート表</a></li>
+</ul>
 <h3
-id="仮想ネットワークインターフェースカードvnic">仮想ネットワークインターフェース・カード(VNIC)</h3>
-<p>VNICはサブネットに存在し、そのサブネットが属するVCNに関連付けられます。<br />
-VNICに対してセキュリティ・ルールが設定されることで、コンピュート・インスタンスがVCNの内外のエンドポイントに接続できるようにします。</p>
+id="vcnルート表vcnルート表で指定が可能なターゲットタイプ">VCNルート表/VCNルート表で指定が可能なターゲット・タイプ</h3>
+<p>ルート・ルールで許可されるターゲット・タイプは次のとおりです。</p>
+<ul>
+<li>ターゲット・タイプ
+<ul>
+<li>Dynamic Routing Gateway (DRG)</li>
+<li>インターネット・ゲートウェイ</li>
+<li>NATゲートウェイ</li>
+<li>サービス・ゲートウェイ</li>
+<li>ローカル・ピアリング・ゲートウェイ(LPG)</li>
+<li>プライベートIP</li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="パブリックipアドレス">パブリックIPアドレス</h2>
+<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="パブリックipアドレス概要">パブリックIPアドレス/概要</h3>
+<ul>
+<li>パブリックIPタイプ
+<ul>
+<li>エフェメラル</li>
+<li>予約済</li>
+</ul></li>
+</ul>
+<h3
+id="ipアドレス持ち込みbyoipbring-your-oun-ip-address">IPアドレス持ち込み（BYOIP：Bring
+Your Oun IP Address)</h3>
+<p>Oracle Cloud
+Infrastructureでは、Oracleが所有するアドレスを使用することに加えて、IPの持ち込み(BYOIP)によるアドレス空間をOracle
+Cloud Infrastructureのリソースで使用できます。</p>
+<ul>
+<li>BYOIPプロセスの概要
+<ul>
+<li>Oracle Cloud
+InfrastructureのBYOIPに必要なステップにはかなりの時間かかるため、それに応じた計画を立てます。</li>
+</ul></li>
+<li>BYOASN
+<ul>
+<li>Bring Your Own ASN
+(BYOASN)を介してインポートされた独自のASNを使用してIPプリフィクスをアドバタイズする場合は、Oracle
+ASN
+(31898)および独自のASNを使用して、RIRを使用してルート・オリジン認可(ROA)を作成する必要があります。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/BYOIP.htm">IPの持込み</a></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#ip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E6%8C%81%E3%81%A1%E8%BE%BC%E3%81%BFbyoip">IPアドレス持ち込み</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-ipv6">OCI-IPv6</h2>
+<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ipv6概要">IPv6/概要</h3>
+<ul>
+<li>IPv6対応のVCNs(IPv6のCIDR構成)
+<ul>
+<li>Oracleによって割り当てられた/56
+IPv6グローバル・ユニキャスト・アドレス(GUA)接頭辞を使用する</li>
+<li>/64以上の一意のローカル・アドレス(ULA)接頭辞を指定する</li>
+<li>/48以上のBYOIPv6接頭辞をインポートする</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/ipv6.htm">IPv6アドレス</a></li>
+<li><a
+href="https://qiita.com/500InternalServerError/items/be14d19a8a51601346cb">IPv6に対応した仮想クラウドネットワーク（VCN）を作成して、自宅からIPv6アドレスで仮想マシンにアクセスしてみた</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -660,77 +756,9 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/networksecurit
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="パブリックipアドレス">パブリックIPアドレス</h2>
-<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="パブリックipアドレス概要">パブリックIPアドレス/概要</h3>
-<ul>
-<li>パブリックIPタイプ
-<ul>
-<li>エフェメラル</li>
-<li>予約済</li>
-</ul></li>
-</ul>
-<h3
-id="ipアドレス持ち込みbyoipbring-your-oun-ip-address">IPアドレス持ち込み（BYOIP：Bring
-Your Oun IP Address)</h3>
-<p>Oracle Cloud
-Infrastructureでは、Oracleが所有するアドレスを使用することに加えて、IPの持ち込み(BYOIP)によるアドレス空間をOracle
-Cloud Infrastructureのリソースで使用できます。</p>
-<ul>
-<li>BYOIPプロセスの概要
-<ul>
-<li>Oracle Cloud
-InfrastructureのBYOIPに必要なステップにはかなりの時間かかるため、それに応じた計画を立てます。</li>
-</ul></li>
-<li>BYOASN
-<ul>
-<li>Bring Your Own ASN
-(BYOASN)を介してインポートされた独自のASNを使用してIPプリフィクスをアドバタイズする場合は、Oracle
-ASN
-(31898)および独自のASNを使用して、RIRを使用してルート・オリジン認可(ROA)を作成する必要があります。</li>
-</ul></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/BYOIP.htm">IPの持込み</a></li>
-<li><a
-href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#ip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E6%8C%81%E3%81%A1%E8%BE%BC%E3%81%BFbyoip">IPアドレス持ち込み</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-ipv6">OCI-IPv6</h2>
-<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ipv6概要">IPv6/概要</h3>
-<ul>
-<li>IPv6対応のVCNs(IPv6のCIDR構成)
-<ul>
-<li>Oracleによって割り当てられた/56
-IPv6グローバル・ユニキャスト・アドレス(GUA)接頭辞を使用する</li>
-<li>/64以上の一意のローカル・アドレス(ULA)接頭辞を指定する</li>
-<li>/48以上のBYOIPv6接頭辞をインポートする</li>
-</ul></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/ipv6.htm">IPv6アドレス</a></li>
-<li><a
-href="https://qiita.com/500InternalServerError/items/be14d19a8a51601346cb">IPv6に対応した仮想クラウドネットワーク（VCN）を作成して、自宅からIPv6アドレスで仮想マシンにアクセスしてみた</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ゲートウェイ概要">ゲートウェイ/概要</h2>
+<h2 id="vcn間nw接続">VCN間NW接続</h2>
 <p>分類04:VCNゲートウェイ<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ゲートウェイ一覧">ゲートウェイ一覧</h3>
-<ul>
-<li>(ページ内)<a href="oci_np.html#vcn構成要素">VCN構成要素</a></li>
-<li><a
-href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc">Oracle
-Cloud Infrastructure Architect Associate
-勉強メモ（ネットワーキング接続性)</a></li>
-<li><a href="https://qiita.com/letian/items/967e9790cb9f18345f56">OCI
-各種GWのまとめ</a></li>
-<li><a
-href="https://guide.gcas.cloud.go.jp/oci/how-to-connect-network">ネットワーク接続方法(OCI編)</a></li>
-</ul>
 <h3
 id="vcn間nw接続外部からociへの接続方式">VCN間NW接続/外部からOCIへの接続方式</h3>
 <p>外部からOCIへの接続方式には、以下の3つの方式がある。</p>
@@ -765,8 +793,33 @@ href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#vcn%E3%81%A8%E5%A4
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi?slide=2">OCI技術資料
 : 外部接続 VPN接続 詳細/2ページ</a></li>
 </ul>
+<h3 id="ネットワーキングシナリオ">ネットワーキング・シナリオ</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/scenarios.htm">ネットワーキング・シナリオ</a></li>
+<li><a
+href="https://docs.oracle.com/ja/learn/oci-perresource-routing/index.html">Oracle
+Cloud Infrastructureでのリソースごとのルーティングの構成</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ゲートウェイ概要">ゲートウェイ/概要</h2>
+<p>分類04:VCNゲートウェイ<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ゲートウェイ一覧">ゲートウェイ一覧</h3>
+<ul>
+<li>(ページ内)<a href="oci_np.html#vcn構成要素">VCN構成要素</a></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc">Oracle
+Cloud Infrastructure Architect Associate
+勉強メモ（ネットワーキング接続性)</a></li>
+<li><a href="https://qiita.com/letian/items/967e9790cb9f18345f56">OCI
+各種GWのまとめ</a></li>
+<li><a
+href="https://guide.gcas.cloud.go.jp/oci/how-to-connect-network">ネットワーク接続方法(OCI編)</a></li>
+</ul>
 <h3
-id="vcn間nw接続利用するゲートウェイ">VCN間NW接続/利用するゲートウェイ</h3>
+id="各接続ごとに利用するゲートウェイ">各接続ごとに利用するゲートウェイ</h3>
 <ul>
 <li>利用するゲートウェイ
 <ul>
@@ -783,14 +836,6 @@ Cloud Infrastructure Architect Associate
 勉強メモ(ネットワーキング)</a></li>
 <li><a
 href="https://qiita.com/sazumi/items/8c70b557e5ed365d365c">OCIのネットワーク：VCNの繋ぎ方</a></li>
-</ul>
-<h3 id="ネットワーキングシナリオ">ネットワーキング・シナリオ</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/scenarios.htm#networking_scenarios">ネットワーキング・シナリオ</a></li>
-<li><a
-href="https://docs.oracle.com/ja/learn/oci-perresource-routing/index.html">Oracle
-Cloud Infrastructureでのリソースごとのルーティングの構成</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -992,8 +1037,6 @@ href="https://qiita.com/s_wani/items/6a5f2339113df6ed2251">フレキシブル・
 <ul>
 <li>FLBのロードバランシングポリシー
 <ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Reference/lbpolicies.htm">ロード・バランサ・ポリシー</a></li>
 <li>ラウンドロビン
 <ul>
 <li>バックエンド・セット・リストの各サーバーに順番にルーティングされる</li>
@@ -1009,6 +1052,8 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Reference/lbpolicies.ht
 <li>ハッシュ・キーごとに同一のバックエンド・サーバーにルーティングされる</li>
 </ul></li>
 </ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Balance/Reference/lbpolicies.htm">ロード・バランサ・ポリシー</a></li>
 </ul>
 <h3 id="ネットワークロードバランサ-nlb">ネットワーク・ロード・バランサ
 (NLB)</h3>
@@ -1039,26 +1084,12 @@ DB に接続する</a></li>
 <ul>
 <li>NLBのロードバランシングポリシー
 <ul>
-<li><a
-href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/network-load-balancing.htm#network-load-balancing__nlb-essentials">NLBの要点</a></li>
 <li>5タプル・ハッシュ：ソースIPおよびポート、宛先IPおよびポート、プロトコル</li>
 <li>3タプル・ハッシュ：ソースIP、宛先IP、プロトコル</li>
 <li>2タプル・ハッシュ：ソースIP、宛先IP</li>
 </ul></li>
-</ul>
-<h3 id="tupleファイブタプル">5tuple(ファイブタプル)</h3>
-<p>ネットワーク分野で以下の５個のセットのこと。</p>
-<ul>
-<li>5tuple(ファイブタプル)
-<ul>
-<li>送信元IP</li>
-<li>送信元ポート番号</li>
-<li>宛先IP</li>
-<li>宛先ポート番号</li>
-<li>プロトコル番号</li>
-</ul></li>
 <li><a
-href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブタプル)とは</a></li>
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/nlb/network-load-balancing.htm#network-load-balancing__nlb-essentials">NLBの要点</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1671,10 +1702,40 @@ Network Firewallを使用したハブ&amp;スポーク構成</a></li>
 <h2 id="セキュリティ一般">セキュリティ一般</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="セキュリティ一般総合情報">セキュリティ一般/総合情報</h3>
+<h3
+id="ociセキュリティオラクル社情報">OCIセキュリティ/オラクル社情報</h3>
+<ul>
+<li>Oracle Cloud Infrastructureのセキュリティ・チェックリスト
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/index.html">Oracle
+Cloud Infrastructureのセキュリティについて</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/security-controls.html">セキュリティ制御について</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/network-security1.html">ネットワーク・セキュリティ</a></li>
+</ul></li>
+<li><a href="https://oracle-japan.github.io/ocitutorials/security/">OCI
+セキュリティ チュートリアル</a>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/security/#web-application-firewall">Web
+Application Firewall</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/security/#network-firewall">Network
+Firewall</a></li>
+</ul></li>
+</ul>
+<h3 id="ociセキュリティ一般情報">OCIセキュリティ/一般情報</h3>
 <ul>
 <li><a
 href="https://guide.gcas.cloud.go.jp/oci/security-tech">セキュリティ(OCI編)</a></li>
+<li>Oracle Cloud Infrastructureの運用監視・セキュリティサービスまとめ
+<ul>
+<li><a
+href="https://qiita.com/Western24/items/4824e4b3799b824197c6">Oracle
+Cloud Infrastructureの運用監視・セキュリティサービスまとめ</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1741,6 +1802,7 @@ VCN peering using Remote Peering Connection</a></li>
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3
 id="ゼロトラストセキュリティ概要">ゼロトラスト・セキュリティ/概要</h3>
+<p>OCI環境におけるゼロトラスト・セキュリティに関する機能をついて以下説明します。</p>
 <ul>
 <li><a
 href="https://www.oracle.com/jp/security/what-is-zero-trust/">ゼロトラスト・セキュリティとは</a></li>
@@ -1751,34 +1813,17 @@ Cloud
 </ul>
 <h3 id="oci-zero-trust-packet-routingzpr概要">OCI Zero Trust Packet
 Routing(ZPR)/概要</h3>
+<p>Oracle Cloud Infrastructure Zero Trust Packet Routing
+(ZPR)は、セキュリティ属性を割り当てたOCIリソース用に記述したインテントベースのセキュリティ・ポリシーを通じて、機密データを不正なアクセスから保護します。<br />
+OCIリソースの識別と編成に使用するラベルにより、セキュリティ属性を定義することができます。<br />
+ZPRは、ネットワークアーキテクチャーの変更や構成の誤りに関係なく、アクセスが要求されるたびにネットワークレベルでポリシーを適用します。</p>
 <ul>
-<li>ZPRアーティファクト(Zero Trust Packet Routingの概念)
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/overview.htm#zpr-concepts">Zero
-Trust Packet Routingの概念</a></li>
-<li>セキュリティ属性ネームスペース
-<ul>
-<li>一連のセキュリティ属性のコンテナです。セキュリティ属性ネームスペースを使用すると、セキュリティ属性を論理的に編成および保護できます。</li>
-</ul></li>
-<li>セキュリティ属性
-<ul>
-<li>サポートされているリソースへのアクセスを制御するためにZPRポリシーで参照できるラベルです。ZPRポリシーを作成するときにセキュリティ属性を参照して、リソースが不正アクセスや不正なデータ漏洩から保護されるようにします。</li>
-</ul></li>
-<li>ZPRポリシー
-<ul>
-<li>セキュリティ属性によって識別される特定のエンドポイント間の通信を制御するルールです。</li>
-</ul></li>
-</ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/home.htm">Zero
 Trust Packet Routing</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/overview.htm">Zero
 Trust Packet Routingの概要</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm">ZPRアーティファクト:
-セキュリティ属性ネームスペース、セキュリティ属性およびZPRポリシー</a></li>
 <li><a
 href="https://www.oracle.com/jp/security/cloud-security/zero-trust-packet-routing/">OCI
 Zero Trust Packet Routing</a></li>
@@ -1787,6 +1832,32 @@ href="https://qiita.com/sazumi/items/c80c09eaf19f82871be3">OCIのZPRを知って
 <li><a
 href="https://www.lac.co.jp/lacwatch/service/20250210_004275.html">クラウドネットワークセキュリティの新機軸、OCI
 Zero Trust Packet Routing</a></li>
+</ul>
+<h3
+id="oci-zero-trust-packet-routingzproci-zero-trust-packet-routingzpr">OCI
+Zero Trust Packet Routing(ZPR)/OCI Zero Trust Packet Routing(ZPR)</h3>
+<ul>
+<li>ZPRアーティファクト(Zero Trust Packet Routingの概念)
+<ul>
+<li>セキュリティ属性
+<ul>
+<li>サポートされているリソースへのアクセスを制御するためにZPRポリシーで参照できるラベルです。ZPRポリシーを作成するときにセキュリティ属性を参照して、リソースが不正アクセスや不正なデータ漏洩から保護されるようにします。</li>
+</ul></li>
+<li>セキュリティ属性ネームスペース
+<ul>
+<li>一連のセキュリティ属性のコンテナです。セキュリティ属性ネームスペースを使用すると、セキュリティ属性を論理的に編成および保護できます。</li>
+</ul></li>
+<li>ZPRポリシー
+<ul>
+<li>セキュリティ属性によって識別される特定のエンドポイント間の通信を制御するルールです。</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/overview.htm#zpr-concepts">Zero
+Trust Packet Routingの概念</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm">ZPRアーティファクト:
+セキュリティ属性ネームスペース、セキュリティ属性およびZPRポリシー</a></li>
 </ul>
 <h3 id="oci-zero-trust-packet-routingzpr個別設定">OCI Zero Trust Packet
 Routing(ZPR)/個別設定</h3>
@@ -1814,6 +1885,26 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-tr
 href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/zero-trust-packet-routing/add-resource.htm">Zero
 Trust Packet Routingへのリソースの追加</a></li>
 </ul></li>
+</ul>
+<h3 id="oci-zero-trust-packet-routingzprzprポリシー設定">OCI Zero Trust
+Packet Routing(ZPR)/ZPRポリシー設定</h3>
+<ul>
+<li>各ポリシーの優先順位
+<ul>
+<li>Zero Trust Packet Routingポリシー</li>
+<li>リソースのVNICが属するすべてのNSGのセキュリティ・ルール</li>
+<li>セキュリティ・リスト:
+VCNまたはサブネット内のすべてのVNICまたはエンドポイントに関連するルール<br />
+すべてのVNICまたはエンドポイントには、少なくとも1つの関連するセキュリティ・リストがあります<br />
+</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/overview.htm#zpr-other-comparison">ZPRと他のセキュリティ方法の違い</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/zero-trust-packet-routing/overview.htm#zpr-other-comparison__zpr-other-use">その他のセキュリティー方式で
+Zero Trust Packet Routingを使用する場合</a></li>
+<li><a
+href="https://qiita.com/sazumi/items/c80c09eaf19f82871be3#%E3%81%BB%E3%81%8B%E3%81%AE%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%81%AE%E4%BB%A3%E6%9B%BF%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%8B%E8%80%83%E3%81%88%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86">ほかのセキュリティの代替になるか考えてみよう</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2004,8 +2095,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Concepts/overview.htm#waf_c
 <h3 id="oci-wafwafポリシー設定">OCI-WAF/WAFポリシー設定</h3>
 <ul>
 <li><a
-href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang?slide=26">OCI
-WAF保護ルールの考え方</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm">ファイアウォール・ポリシーの作成および管理</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Policies/create_waf-policy.htm">Webアプリケーション・ファイアウォール・ポリシーの作成</a></li>
 <li><a
@@ -2015,9 +2105,21 @@ WAFポリシーでセキュリティ強化してみる</a></li>
 WAFポリシーを試してみる</a></li>
 </ul>
 <h3
+id="oci-wafネットワークアドレスリスト">OCI-WAF/ネットワーク・アドレス・リスト</h3>
+<ul>
+<li>https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/network-address-list_management.htm</li>
+<li>https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/list_network-address-list.htm</li>
+</ul>
+<h3 id="oci-wafwaf保護ルール">OCI-WAF/WAF保護ルール</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang">OCI
+WAF保護ルールの考え方</a></li>
+</ul>
+<h3
 id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設定(ユースケース)</h3>
 <ul>
-<li>WAFポリシー設定(ユースケース)
+<li>WAFポリシー設定(ユースケース1)
 <ol type="1">
 <li>IPアドレスをカテゴリごとに分類
 <ul>
@@ -2026,16 +2128,10 @@ id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設�
 <li>信頼できるパートナー</li>
 </ul></li>
 <li>IPアドレスのカテゴリごとに「ネットワークアドレスリスト」を作成</li>
-<li>「ネットワークアドレスリスト」を「ファイアウォールルール」に設定する</li>
+<li>「ネットワークアドレスリスト」を「WAFポリシー」(ファイアウォール・ポリシー・ルール)上に定義する</li>
 <li>ユーザエージェントまたはHTTPメソッド条件ごとに「アクセス制御ルール」を作成する</li>
 <li>「アクセス制御ルール」ごとに、「ALLOW」または「REDIRECT」の「アクション」を設定する</li>
 </ol></li>
-</ul>
-<h3 id="oci-waf保護ルール">OCI-WAF/保護ルール</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang?slide=12">OCI
-WAF保護ルールの考え方</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2570,6 +2666,20 @@ Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
 href="https://e-words.jp/w/%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AD%E3%83%BC%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3.html">スティッキーセッション</a></li>
 <li><a href="https://qiita.com/KWS_0901/items/de9487aa041b2718f113">AWS
 ALB スティッキーセッション メモ</a></li>
+</ul>
+<h3 id="tupleファイブタプル">5tuple(ファイブタプル)</h3>
+<p>ネットワーク分野で以下の5個のセットのこと。</p>
+<ul>
+<li>5tuple(ファイブタプル)
+<ul>
+<li>送信元IP</li>
+<li>送信元ポート番号</li>
+<li>宛先IP</li>
+<li>宛先ポート番号</li>
+<li>プロトコル番号</li>
+</ul></li>
+<li><a
+href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブタプル)とは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
