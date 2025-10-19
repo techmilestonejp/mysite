@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/13 21:55:50<br />
+更新日：2025/10/19 10:23:50<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -257,6 +257,12 @@ href="https://qiita.com/manaki/items/81bf91e61b362e403bc1">【OCI】権限管理
 <li><a
 href="https://qiita.com/letian/items/10152a4fec813c1b7d98">オラクル・クラウドの個人ブログ一覧</a></li>
 </ul></li>
+<li>Oracle Cloud Infrastructureの運用監視・セキュリティサービスまとめ
+<ul>
+<li><a
+href="https://qiita.com/Western24/items/4824e4b3799b824197c6">Oracle
+Cloud Infrastructureの運用監視・セキュリティサービスまとめ</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -296,6 +302,19 @@ href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-idoyobiakusesuguan-li-iam-
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oci_technical_deep_dive_20241029_identitydomain?slide=43">デモで解説！セキュリティと利便性を両立</a></li>
 </ul>
+<h3 id="ociセキュリティ">OCIセキュリティ</h3>
+<ul>
+<li>Oracle Cloud Infrastructureのセキュリティ・チェックリスト
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/index.html">Oracle
+Cloud Infrastructureのセキュリティについて</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/security-controls.html">セキュリティ制御について</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-security-checklist/network-security1.html">ネットワーク・セキュリティ</a></li>
+</ul></li>
+</ul>
 <h3 id="ociモニタリング機能">OCIモニタリング機能</h3>
 <ul>
 <li><a
@@ -303,12 +322,6 @@ href="https://oracle-japan.github.io/ocitutorials/intermediates/monitoring-resou
 <li><a
 href="https://xn--w8j8bac3czf5bl7e.com/2023/01/31/oci%E3%81%AE%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E6%A9%9F%E8%83%BD-%EF%BD%9E%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E7%9B%A3%E8%A6%96%EF%BD%9E/">OCIのモニタリング機能
 ～メトリック監視～</a></li>
-</ul>
-<h3 id="oci運用">OCI運用</h3>
-<ul>
-<li><a
-href="https://qiita.com/Western24/items/4824e4b3799b824197c6">Oracle
-Cloud Infrastructureの運用監視・セキュリティサービスまとめ</a></li>
 </ul>
 <h3 id="コスト管理">コスト管理</h3>
 <ul>
@@ -606,14 +619,40 @@ href="https://qiita.com/hongmnh/items/1cc8cf3d6feb65c7d21f">【OCI】NATイン�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oracle-services-network">Oracle Services Network</h3>
 <p>Oracle Services Networkは、Oracleサービス用に予約されているOracle
-Cloud Infrastructureの概念的なネットワークです。
-これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。</p>
+Cloud Infrastructureの概念的なネットワークです。<br />
+これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。<br />
+サービス・ゲートウェイは、VCNおよびオンプレミス・ネットワークのワークロードからOracle
+Services Networkへのプライベート・アクセスを提供します。</p>
 <ul>
+<li>Oracleサービスへのアクセス方法
+<ul>
+<li>オンプレミス・ネットワーク内のホスト:
+<ul>
+<li>FastConnectプライベート・ピアリングまたはサイト間VPNを使用した、VCNを経由するプライベート・アクセス:
+オンプレミス・ホストはプライベートIPアドレスを使用し、VCNおよびVCNのサービス・ゲートウェイを経由してOracle
+Services Networkに到達します。</li>
+<li>FastConnectパブリック・ピアリングを使用したパブリック・アクセス:
+オンプレミス・ホストはパブリックIPアドレスを使用します。</li>
+</ul></li>
+</ul></li>
+<li>VCN内のホスト:
+<ul>
+<li>サービス・ゲートウェイを介するプライベート・アクセス:
+これがこのトピックで説明するシナリオです。VCNのホストはプライベートIPアドレスを使用します。</li>
+</ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.htm">Oracleサービスへのアクセス:
 サービス・ゲートウェイ</a></li>
 <li><a
 href="https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/">サービスゲートウェイでサポートされているクラウド・サービス</a></li>
+</ul>
+<h3 id="サービスcidrラベル">サービスCIDRラベル</h3>
+<p>公開されたアドレスは、All <region> Services in Oracle Services
+NetworkというサービスCIDRラベルに対応します。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/General/Concepts/addressranges.htm#osn-ranges">VCNおよびOracle
+Services Network用のパブリックIPアドレス</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -971,6 +1010,14 @@ href="https://www.docswell.com/s/3200799740/ZQR243-drgdesc#p1">DRGの構成要�
 </ul>
 <h3 id="drg設定手順">DRG/設定手順</h3>
 <ul>
+<li>構成要素
+<ol type="1">
+<li>アタッチメント</li>
+<li>DRGルート表</li>
+<li>ルート・ディストリビューション</li>
+</ol></li>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=7">構成要素</a></li>
 <li>設定手順
 <ol type="1">
 <li>DRGおよびDRGアタッチメントの作業</li>
@@ -986,9 +1033,9 @@ href="https://qiita.com/shirok/items/90cff318816fbf2a802d">DRGで東京リージ
 Route Tableで環境ごとにトラフィックを分離(Layer3
 Isolation)してみてみた</a></li>
 </ul>
-<h3 id="drgアタッチメント">DRGアタッチメント</h3>
+<h3 id="drgアタッチメント">DRG/アタッチメント</h3>
 <ul>
-<li>DRGアタッチメントの種別
+<li>アタッチメントの種別
 <ul>
 <li>VCN attachments(VCN)
 <ul>
@@ -1016,7 +1063,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
 </ul>
-<h3 id="drgルーティングdrgルート表">DRGルーティング(DRGルート表)</h3>
+<h3 id="drgルート表drgルーティング">DRGルート表(DRGルーティング)</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_drg_routing">DRGルーティング</a></li>
@@ -1051,7 +1098,7 @@ id="動的ルーティングゲートウェイdrg経路制御">動的ルーテ�
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3
-id="drgルートディストリビューション">DRGルート・ディストリビューション</h3>
+id="drgルートディストリビューション">DRG/ルート・ディストリビューション</h3>
 <p>ルート・ディストリビューションは、ルートがDRGアタッチメントからどのようにインポートされるか、またはDRGアタッチメントにどのようにエクスポートされるかを指定します。<br />
 ルート・ディストリビューションは、マッチ基準（OCIDやアタッチメント・タイプなど）とアクションを含むステートメントとして定義します。</p>
 <ul>
@@ -1821,10 +1868,10 @@ href="https://www.reddit.com/r/oraclecloud/comments/15brbwe/auto_renewal_oci_cer
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ワークロード移設">ワークロード移設</h2>
+<h2 id="ワークロード移設oci移設">ワークロード移設(OCI移設)</h2>
 <p>分類09:OCIへのワークロードの移行<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oci移設">OCI移設</h3>
+<h3 id="ワークロード移設oci移設-1">ワークロード移設(OCI移設)</h3>
 <ul>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/best-practices-for-cloud-migration?slide=29">AWSからOCIへの移行を成功に導く！クラウドマイグレーションのベストプラクティス</a></li>
@@ -1877,13 +1924,18 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/vcn-flow-logs.
 <h2 id="ネットワーク関連ツール">ネットワーク関連ツール</h2>
 <p>分類10:OCIネットワーク、接続性、トラブルシューティング・ツール<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ネットワークパスアナライザ">ネットワーク・パス・アナライザ</h3>
+<h3
+id="ネットワークパスアナライザnpa">ネットワーク・パス・アナライザ(NPA)</h3>
 <p>ネットワーク・パス・アナライザ(NPA) は、
 接続性に影響を与える仮想ネットワーク構成の問題を特定するための統一された直感的な機能を提供します。<br />
 NPA はネッ トワーク構成を収集・分析し、
 送信元と宛先間のパスがどのように機能するか、
 または機能しないかを判断します。実際のトラフィックは送信されません。その代わり、
 構成が調査され、 到達可能性の確認に使用されます。</p>
+<ul>
+<li><a href="https://qiita.com/shirok/items/4bb401abd2e1ab9110ef">Oracle
+Cloud: Network Path Analyzerを使ってみてみた</a></li>
+</ul>
 <h3
 id="ネットワークビジュアライザー">ネットワーク・ビジュアライザー</h3>
 <p>OCIネットワーク・ビジュアライザは、サブネット、インスタンス、およびそれらの相互接続を含むVCNを視覚的に表示するツールで、ネットワーク・トポロジー(ネットワーク全体つながり)の理解と管理に役立ちます。</p>
