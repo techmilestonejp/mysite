@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/19 10:23:50<br />
+更新日：2025/10/19 14:34:14<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -157,18 +157,27 @@ Infrastructure 活用資料集</a>
 <li><a
 href="https://oracle-japan.github.io/ocidocs/tags/">タグ別の資料</a></li>
 </ul></li>
-<li>[speakerdeck/Oracle Cloud Infrastructure ソリューション・エンジニア]
+<li><a href="https://speakerdeck.com/ocise">speakerdeck/Oracle Cloud
+Infrastructure ソリューション・エンジニア</a>
 <ul>
 <li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi">OCI技術資料
 : 外部接続 VPN接続 詳細</a></li>
+</ul></li>
+<li>Qiita
+<ul>
+<li><a
+href="https://qiita.com/mikuroa111/items/5f837b8cfbc516f2c1cb">Oracle
+Cloud Infrastructure ソリューション・エンジニア資料
+一覧リストを作成しました</a></li>
 </ul></li>
 </ul>
 <h3 id="oracle-cloud-infrastructure-チュートリアル">Oracle Cloud
 Infrastructure チュートリアル</h3>
 <ul>
 <li><a href="https://oracle-japan.github.io/ocitutorials/">Oracle Cloud
-Infrastructure チュートリアル</a></li>
+Infrastructure チュートリアル</a>
+<ul>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/beginners/">OCI入門編</a>
 <ul>
@@ -187,6 +196,19 @@ href="https://oracle-japan.github.io/ocitutorials/beginners/creating-compute-ins
 </ul></li>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/intermediates/">OCI応用編</a></li>
+<li><a href="https://oracle-japan.github.io/ocitutorials/security/">OCI
+セキュリティ チュートリアル</a></li>
+</ul></li>
+</ul>
+<h3
+id="oracleアーキテクチャセンター">Oracleアーキテクチャ・センター</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/solutions/?q=&amp;cType=reference-architectures%2Csolution-playbook%2Cbuilt-deployed&amp;sort=date-desc&amp;lang=ja">Oracleアーキテクチャ・センター</a>
+<ul>
+<li><a
+href="https://docs.oracle.com/solutions/?q=&amp;cType=solution-playbook&amp;sort=date-desc&amp;lang=ja">ソリューション・プレイブック</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -269,6 +291,15 @@ Cloud Infrastructureの運用監視・セキュリティサービスまとめ</a
 <h2 id="oci概要">OCI概要</h2>
 <p>分類02:OCI概要<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci全体概要">OCI全体概要</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/ocise/oracle-cloud-infrastructure-hazimefalse-bu">Oracle
+Cloud Infrastructure はじめの一歩</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/oci-sabisuji-ben-qing-bao">OCI
+サービス基本情報</a></li>
+</ul>
 <h3 id="oci構成">OCI構成</h3>
 <ul>
 <li>物理的構成
@@ -278,6 +309,10 @@ Cloud Infrastructureの運用監視・セキュリティサービスまとめ</a
 <li>論理的構成
 <ul>
 <li>テナンシ(アカウント)→コンパートメント</li>
+</ul></li>
+<li>ネットワーク構成
+<ul>
+<li>Virtual Cloud Network(VCN)→サブネット</li>
 </ul></li>
 <li><a
 href="https://techblog.ap-com.co.jp/entry/2025/01/08/093000">【OCI】OCI最初に知ることシリーズ1【テナンシとコンパートメント】</a></li>
@@ -330,13 +365,17 @@ href="https://xn--w8j8bac3czf5bl7e.com/2023/01/31/oci%E3%81%AE%E3%83%A2%E3%83%8B
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="vcn概要">VCN概要</h2>
+<h2 id="ociネットワーク概要">OCIネットワーク概要</h2>
 <p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="ociネットワーク設計">OCIネットワーク設計</h3>
+<h3 id="ociネットワーク概要-1">OCIネットワーク概要</h3>
 <ul>
 <li><a
-href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.html">OCIワークロード・ネットワーキングの主要な設計決定について学習</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/overview.htm">ネットワーキングの概要</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/">クラウド・ネットワーキング</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.html">ハイブリッドおよびマルチクラウドのOCIネットワーキング設計のベストプラクティス</a></li>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/beginners/creating-vcn/">その2
 - クラウドに仮想ネットワーク(VCN)を作る</a></li>
@@ -346,10 +385,14 @@ href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-jia-xiang-kuraudonetutowak
 <li><a
 href="https://hudtech.r-ccs.riken.jp/ocisf/briefing/20200729/Hands-On-02-Virtual_Cloud_Network_100_jp_master.pdf">仮想クラウド・ネットワーク
 (VCN) 概要</a></li>
-<li><a
-href="https://guide.gcas.cloud.go.jp/oci/how-to-connect-network">ネットワーク接続方法(OCI編)</a></li>
 </ul>
-<h3 id="vcn概要-1">VCN概要</h3>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="vcn概要">VCN概要</h2>
+<p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="virtual-cloud-networkvcn概要">Virtual Cloud
+Network(VCN)概要</h3>
 <ul>
 <li>VCNの概要
 <ul>
@@ -406,10 +449,12 @@ IPSec接続など)を介してインターネットにアクセスする必要�
 <ul>
 <li>同一リージョンに存在するVPNを接続するために使用する仮想ルータ</li>
 <li>別リージョンに存在するVCNと接続する場合は、DRGを使用して、Remote VPN
-Peering をする</li>
+Peeringを行う</li>
 </ul></li>
 </ul></li>
 </ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/overview.htm#Componen">ネットワーキング・コンポーネント</a></li>
 <li><a
 href="https://qiita.com/sugimount/items/b2c4d69829c6b4325220">Oracle
 Cloud 仮想ネットワークに含まれるコンポーネントメモ</a></li>
@@ -425,6 +470,34 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network
 <li><a
 href="https://qiita.com/manaki/items/20d9aa3b47db3b39fddd">【OCI】oracle
 cloud -仮想クラウド・ネットワーク構築編(サブネット)</a></li>
+</ul>
+<h3 id="サブネット種別">サブネット種別</h3>
+<p>OCIのサブネットには、AD固有（Availability
+Domain固有）とリージョナル（リージョン全体）の2つのタイプがあります。<br />
+AD固有サブネットは、特定の可用性ドメイン（AD）にのみリソースを配置できますが、リージョナルサブネットは、リージョン内のすべてのADにリソースを配置できます。<br />
+どちらを選ぶかは、冗長性や可用性の要件によって決まります。﻿</p>
+<ul>
+<li>AD固有サブネット
+<ul>
+<li>特徴:ある特定の可用性ドメイン（AD）にのみリソースを作成できます。<br />
+</li>
+<li>利点:単一AD障害への耐性を高めることができます。<br />
+高可用性（HA）構成において、リソースを複数のADに分散させる際に役立ちます。<br />
+</li>
+<li>利用シーン:特定のADに配置したいリソースがある場合。<br />
+障害発生時にも、他のADでサービスを継続させたい場合。﻿</li>
+</ul></li>
+<li>リージョナルサブネット
+<ul>
+<li>特徴:物理的なアベイラビリティドメイン（AD）の境界を越えて、リージョン内のどのADにもリソースを配置できます。</li>
+<li>利点:ADに依存せずにリソースを配置できるため、インフラストラクチャの管理が簡素化されます。冗長性の確保が容易になります。</li>
+<li>利用シーン:リージョン全体で利用できる共有サービス（例:
+ロードバランサー）を配置する場合。<br />
+リージョン全体に展開するアプリケーションのコンポーネントを配置する場合。﻿<br />
+</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/Overview_of_VCNs_and_Subnets.htm#Overview__regional_subnet">リージョナル・サブネットについて</a></li>
 </ul>
 <h3 id="vcnルート表">VCNルート表</h3>
 <ul>
@@ -449,23 +522,130 @@ VNICに対してセキュリティ・ルールが設定されることで、コ�
 id="セキュリティリストslネットワークセキュリティグループnsg">セキュリティ・リスト(SL)・ネットワーク・セキュリティ・グループ(NSG)</h2>
 <p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="slとnsgの概要">SLとNSGの概要</h3>
+<h3
+id="セキュリティリストとネットワークセキュリティグループ概要">セキュリティ・リストとネットワーク・セキュリティ・グループ/概要</h3>
 <p>ネットワーキング・サービスには、パケット・レベルでトラフィックを制御するためにセキュリティ・ルールを使用する2つの仮想ファイアウォール機能が用意されています。</p>
 <ul>
 <li>2つの仮想ファイアウォール機能
 <ul>
-<li>セキュリティ・リスト:ネットワーキング・サービスによる元の仮想ファイアウォール機能です。</li>
-<li>ネットワーク・セキュリティ・グループ(NSG):異なるセキュリティ体格を持つアプリケーション・コンポーネント用に後から設計された機能。NSGは特定のサービスに対してのみサポートされます。</li>
+<li>セキュリティ・リスト
+<ul>
+<li>ネットワーキング・サービスによる元の仮想ファイアウォール機能です。</li>
+</ul></li>
+<li>ネットワーク・セキュリティ・グループ(NSG)
+<ul>
+<li>異なるセキュリティ体格を持つアプリケーション・コンポーネント用に後から設計された機能。NSGは特定のサービスに対してのみサポートされます。</li>
+</ul></li>
 </ul></li>
 <li><a
 href="https://docs.oracle.com/ja/solutions/oci-security-checklist/network-security1.html">ネットワーク・セキュリティ</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.htm">セキュリティ・ルール</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/oci-nsg-sl/">【Oracle
+Cloud】NSGとSLの違いと使い分け</a></li>
+<li><a
+href="https://qiita.com/Pampus/items/502b26c2fc90eb5c4c57">OCIのファイアウォール機能の違い</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2022/05/19/oci%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E6%A9%9F%E8%83%BD%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97/">OCIのファイアウォール機能について調べてみました</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/oci-aws-network-access-differences">AWS経験者が絶対に知っておくべきネットワークアクセス制御の考え方の違い</a></li>
+</ul>
+<h3
+id="セキュリティリストとネットワークセキュリティグループセキュリティルールの構成要素">セキュリティ・リストとネットワーク・セキュリティ・グループ/セキュリティ・ルールの構成要素</h3>
+<ul>
+<li>SL/NSGの構成要素
+<ul>
+<li>方向(イングレスまたはエグレス)</li>
+<li>ステートフルまたはステートレス</li>
+<li>送信元タイプおよび送信元(イングレス・ルールのみ)</li>
+<li>送信元ポート</li>
+<li>宛先タイプおよび宛先(エグレス・ルールのみ)</li>
+<li>宛先ポート</li>
+<li>IPプロトコル</li>
+<li>ICMPタイプおよびコード</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.htm#sec_rules_parts">セキュリティ・ルールの構成要素</a></li>
+</ul>
+<h3
+id="セキュリティリストとネットワークセキュリティグループ設定例">セキュリティ・リストとネットワーク・セキュリティ・グループ/設定例</h3>
+<p>設定例は以下のとおり</p>
+<p><img src="img/oci/nsg-seclist-png.png" width="75%" height="75%"></p>
+<ul>
+<li>図の説明
+<ul>
+<li>セキュリティ・リスト
+<ol type="1">
+<li>「0.0.0.0/0(全許可)」「ポート80」を宛先とするイングレス(受信パケット)は全て許可する</li>
+<li>「10.0.2.0/24」「ポート1521」を宛先とするエグレス(送信パケット)を許可する</li>
+</ol></li>
+<li>ネットワーク・セキュリティ・グループ
+<ol type="1">
+<li>「0.0.0.0/0(全許可)」「ポート80」を宛先とするイングレス(受信パケット)は全て許可する</li>
+<li>「0.0.0.0/0(全許可)」「ポート22」を宛先とするイングレス(受信パケット)は全て許可する</li>
+</ol></li>
+</ul></li>
 </ul>
 <h3 id="機能の違い">機能の違い</h3>
 <p>セキュリティ・リスト(SL)はサブネットに関連付け、そのサブネットに含まれるすべてのVNICに同じルールを適用します。<br />
 ネットワーク・セキュリティ・グループ(NSG)はVNICごとに適用できるため、同じサブネット内のVNICに対して異なるセキュリティ・ルールを適用することができます。<br />
 また、どちらも許可のルールのみで拒否のルールを指定することはできません。</p>
+<p>(機能の違い)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>セキュリティリスト</th>
+<th>ネットワークセキュリティグループ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>割当先</td>
+<td>サブネット<br>(サブネット内のすべてのVNIC)</td>
+<td>VNIC(コンピュートインスタンス)<br>サービスリソース</td>
+</tr>
+<tr>
+<td>有効化手順</td>
+<td>セキュリティ・リストとサブネットの関連付け</td>
+<td>NSGへの特定のVNICの追加</td>
+</tr>
+<tr>
+<td>ステートレス・ステートフル</td>
+<td>選択可能</td>
+<td>選択可能</td>
+</tr>
+<tr>
+<td>制限事項</td>
+<td>サブネット当たり最大5つのセキュリティ・リスト</td>
+<td>VNIC当たり最大5つのNSG</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.htm#comparison">セキュリティ・リストとネットワーク・セキュリティ・グループの比較</a></li>
+</ul>
+<h3 id="同時設定した場合の挙動">同時設定した場合の挙動</h3>
+<p>セキュリティ・リストとネットワーク・セキュリティ・グループの設定は、「OR(又は)」となる。<br />
+片方で許可していなくても、どちらかで許可ルールを設定されていればトラフィックは通過可能である。</p>
+<h3 id="セキュリティリスト">セキュリティ・リスト</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securitylists.htm">セキュリティ・リスト</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/private-cloud-appliance/cmn/network/security-lists.htm">セキュリティ・リスト</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/creating-securitylist.htm">セキュリティ・リストの作成</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/network/creating-a-security-list.htm">セキュリティ・リストの作成</a></li>
+</ul>
 <h3
 id="セキュリティリストステートフルルールとステートレスルール">セキュリティ・リスト/ステートフルルールとステートレスルール</h3>
 <ul>
@@ -483,6 +663,14 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/networksecurit
 <h2 id="パブリックipアドレス">パブリックIPアドレス</h2>
 <p>分類03:OCI仮想クラウド・ネットワーク(VCN)の設計と導入<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="パブリックipアドレス概要">パブリックIPアドレス/概要</h3>
+<ul>
+<li>パブリックIPタイプ
+<ul>
+<li>エフェメラル</li>
+<li>予約済</li>
+</ul></li>
+</ul>
 <h3
 id="ipアドレス持ち込みbyoipbring-your-oun-ip-address">IPアドレス持ち込み（BYOIP：Bring
 Your Oun IP Address)</h3>
@@ -540,6 +728,8 @@ Cloud Infrastructure Architect Associate
 勉強メモ（ネットワーキング接続性)</a></li>
 <li><a href="https://qiita.com/letian/items/967e9790cb9f18345f56">OCI
 各種GWのまとめ</a></li>
+<li><a
+href="https://guide.gcas.cloud.go.jp/oci/how-to-connect-network">ネットワーク接続方法(OCI編)</a></li>
 </ul>
 <h3
 id="vcn間nw接続外部からociへの接続方式">VCN間NW接続/外部からOCIへの接続方式</h3>
@@ -995,6 +1185,14 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/General/Concepts/servicelimits.
 </ul>
 <h3 id="drg構成要素">DRG/構成要素</h3>
 <ul>
+<li>構成要素
+<ol type="1">
+<li>アタッチメント</li>
+<li>DRGルート表</li>
+<li>ルート・ディストリビューション</li>
+</ol></li>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=7">構成要素</a></li>
 <li><a
 href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html">Dynamic
 Routing Gatewayソリューションについて学習</a></li>
@@ -1010,14 +1208,6 @@ href="https://www.docswell.com/s/3200799740/ZQR243-drgdesc#p1">DRGの構成要�
 </ul>
 <h3 id="drg設定手順">DRG/設定手順</h3>
 <ul>
-<li>構成要素
-<ol type="1">
-<li>アタッチメント</li>
-<li>DRGルート表</li>
-<li>ルート・ディストリビューション</li>
-</ol></li>
-<li><a
-href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=7">構成要素</a></li>
 <li>設定手順
 <ol type="1">
 <li>DRGおよびDRGアタッチメントの作業</li>
@@ -1178,10 +1368,10 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-iam.htm#scena
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="fastconnect基本機能">FastConnect/基本機能</h2>
+<h2 id="fastconnect概要">FastConnect/概要</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="fastconnect概要">FastConnect/概要</h3>
+<h3 id="fastconnect概要-1">FastConnect/概要</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnect.htm">FastConnect</a></li>
@@ -1192,6 +1382,11 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsec
 <li><a
 href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Concepts/fastconnectrequirements.htm">FastConnectの要件</a></li>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectthirdpartyprovider.htm">FastConnect:
+サードパーティ・プロバイダの使用</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/fastconnect/">FastConnect</a></li>
+<li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-fastconnect-xiang-xi">OCI技術資料
 : 外部接続 詳細 FastConnect</a></li>
 <li><a
@@ -1200,7 +1395,7 @@ href="https://qiita.com/hongmnh/items/5bdad2d50cb454cebf1f">【OCI】FastConnect
 </ul>
 <h3 id="fastconnect接続方式">FastConnect/接続方式</h3>
 <ul>
-<li>Oracle プロバイダー接続
+<li>Oracleプロバイダー接続
 <ul>
 <li>拠点とOracleのFastConnect拠点間を、回線事業者が提供する専用回線で接続します。</li>
 </ul></li>
@@ -1236,6 +1431,38 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsec
 id="fastconnect他のクラウドプロバイダとの接続">FastConnect/他のクラウド・プロバイダとの接続</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="サードパーティプロバイダの使用他のクラウドプロバイダとの接続">サードパーティ・プロバイダの使用(他のクラウド・プロバイダとの接続)</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectthirdpartyprovider.htm">FastConnect:
+サードパーティ・プロバイダの使用</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html">他のクラウド・プロバイダとのOracle
+Cloudの接続について</a></li>
+<li><a href="https://cloud.nttsmc.com/cxc/oci.html">Oracle
+Cloud接続</a></li>
+</ul>
+<h3
+id="fastconnectサードパーティプロバイダ設定手順">FastConnect/サードパーティ・プロバイダ設定手順</h3>
+<ul>
+<li>FastConnect/サードパーティ・プロバイダ設定手順
+<ol type="1">
+<li>DRGの設定(プライベート・ピアリングのみ)</li>
+<li>クロスコネクト・グループまたはクロスコネクションの設定</li>
+<li>サードパーティ・プロバイダへのLOOの転送</li>
+<li>光源レベルの確認</li>
+<li>各相互接続のアクティブ化</li>
+<li>インタフェースが稼働していることの確認</li>
+<li>仮想回線の設定</li>
+<li>エッジの構成</li>
+<li>Oracle BGP IPアドレスのPing</li>
+<li>BGPセッションが確立されていることの確認</li>
+<li>接続のテスト</li>
+</ol></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectthirdpartyprovider.htm#getting_started">FastConnectの開始</a></li>
+</ul>
 <h3 id="fastconnect-oracleパートナの使用">FastConnect
 Oracleパートナの使用</h3>
 <ul>
@@ -1256,15 +1483,6 @@ Cloud Servicesへの接続を確立できます。<br />
 <ul>
 <li><a href="https://qiita.com/shirok/items/75f81d83eee083b78369">Oracle
 Cloud: FastConnect Colocation (Cross-Connect) 接続してみてみた</a></li>
-</ul>
-<h3
-id="他のクラウドプロバイダとの接続概要">他のクラウド・プロバイダとの接続/概要</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja/solutions/learn-cross-cloud-interconnect/index.html">他のクラウド・プロバイダとのOracle
-Cloudの接続について</a></li>
-<li><a href="https://cloud.nttsmc.com/cxc/oci.html">Oracle
-Cloud接続</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1434,7 +1652,7 @@ id="drgアタッチメントに関連付けられたvcnルート表">DRGアタ�
 <h3
 id="サードパーティプロバイダー接続の注意点">サードパーティプロバイダー接続の注意点</h3>
 <p>サードパーティ・アプライアンス（TPA）ソフトウェアは、コンピュート・インスタンス上に構成されます。<br />
-したがって、そのTPAへルーティングするために、プライベートIPへのルーティングを指定して、そのコンピュート・インスタンスのVNICに送信します。</p>
+そのTPAへルーティングする場合には、プライベートIPへのルーティングを指定して、そのコンピュート・インスタンスのVNICに送信します。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ハブスポーク構成">ハブ・スポーク構成</h2>
@@ -1445,6 +1663,8 @@ id="サードパーティプロバイダー接続の注意点">サードパー�
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.htm">ハブと単一のスポークで構成される場合のコンポーネントおよびルーティング</a></li>
+<li><a href="https://qiita.com/Western24/items/f1029b1dd0fa15117344">OCI
+Network Firewallを使用したハブ&amp;スポーク構成</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1647,11 +1867,41 @@ SSH多段接続など色々してみてみた</a></li>
 <h3 id="oci-network-firewall概要">OCI Network Firewall/概要</h3>
 <ul>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/home.htm">ネットワーク・ファイアウォール</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/network-firewall/pricing/">Network
+Firewallの価格</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/network-firewall/edit-network-firewall.htm">ファイアウォールの変更</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/security/#network-firewall">OCI
+セキュリティ チュートリアル/Network Firewall</a>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/security/networkfirewall-setup/">OCI
+Network Firewallを構築する</a></li>
+<li><a
 href="https://oracle-japan.github.io/ocitutorials/security/networkfirewall-policycheck/">OCI
 Network Firewallの動作を検証する</a></li>
+</ul></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-network-firewallgai-yao">OCI
+Network Firewall 概要</a></li>
+<li><a
+href="https://qiita.com/shirok/items/ae7d52188a22e7b09070">Network
+Firewall を構成してみてみた</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/create-network-firewall/">【Oracle
+Cloud】Network Firewallを構築してみた</a></li>
 <li><a
 href="https://techblog.ap-com.co.jp/entry/2025/07/22/093000">【OCI】OCI
 Network Firewall を使ってみる</a></li>
+</ul>
+<h3 id="oci-network-firewallログ解析">OCI Network Firewall/ログ解析</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-network-firewallnorogufen-xi-o-and-m-logging-analyticswoli-yong-sitarogufen-xi-ji-chu-bian">OCI
+Network Firewallのログ分析</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1975,6 +2225,40 @@ href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.h
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="他社製品仕様">他社製品仕様</h2>
+<p>分類98:他社製品仕様<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="サードパーティ製仮想アプライアンス">サードパーティ製仮想アプライアンス</h3>
+<ul>
+<li>AWS
+<ul>
+<li><a
+href="https://repost.aws/ja/knowledge-center/troubleshoot-transit-gateway-third-party">VPC
+で実行されているサードパーティ製仮想アプライアンスにおける、Transit
+Gateway Connect の問題を解決する方法を教えてください</a></li>
+</ul></li>
+<li>Google
+<ul>
+<li><a
+href="https://cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/connect-site-to-cloud?hl=ja#required_tasks">サードパーティ
+アプライアンスを使用して接続を確立する</a></li>
+<li><a
+href="https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connect-vpc-networks?hl=ja">サードパーティ
+アプライアンスを使用する VPC 間のトポロジ</a></li>
+</ul></li>
+</ul>
+<h3 id="ipプレフィックスip予約">IPプレフィックス(IP予約)</h3>
+<ul>
+<li>Azure Public IP Prefix
+<ul>
+<li><a
+href="https://qiita.com/j-tsurumi/items/6ed114257f7e4b43eb81">Azure
+Public IP Prefixとは</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ネットワーク一般技術ipプロトコル">ネットワーク一般技術/IPプロトコル</h2>
 <p>分類99:ネットワーク一般技術<br />
@@ -1983,12 +2267,20 @@ id="ネットワーク一般技術ipプロトコル">ネットワーク一般技
 <ul>
 <li><a href="https://www.infraexpert.com/study/tea11.htm">プロトコル番号
 ( IP Protocol Number )</a></li>
+<li><a
+href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+Numbers</a></li>
 </ul>
-<h3 id="azure-public-ip-prefix">Azure Public IP Prefix</h3>
+<h3 id="イングレスエグレス">イングレス・エグレス</h3>
 <ul>
 <li><a
-href="https://qiita.com/j-tsurumi/items/6ed114257f7e4b43eb81">Azure
-Public IP Prefixとは</a></li>
+href="https://e-words.jp/w/%E3%82%A8%E3%82%B0%E3%83%AC%E3%82%B9.html">エグレス</a></li>
+<li><a
+href="https://www.ibm.com/jp-ja/think/topics/ingress-vs-egress">KubernetesにおけるIngressとEgressとは</a></li>
+<li><a
+href="https://qiita.com/a7zuki/items/3134e64167fdbfecad0f">IngressとEgress</a></li>
+<li><a
+href="https://stakiran.hatenablog.com/entry/2019/07/01/203651">ファイアウォールやネットワークにおける上り、下り、イングレス(Ingress)、エグレス(Egress)、インバウンド(Inbound)、アウトバウンド(Outbound)の違い</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
