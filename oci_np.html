@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/19 14:34:14<br />
+更新日：2025/10/25 11:16:32<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -488,8 +488,22 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/Overview_of_VCNs_
 </ul>
 <h3
 id="仮想ネットワークインターフェースカードvnic">仮想ネットワークインターフェース・カード(VNIC)</h3>
-<p>VNICはサブネットに存在し、そのサブネットが属するVCNに関連付けられます。<br />
+<p>VNICは<strong>サブネット</strong>に存在し、その<strong>サブネットが属するVCNに関連</strong>付けられます。<br />
 VNICに対してセキュリティ・ルールが設定されることで、コンピュート・インスタンスがVCNの内外のエンドポイントに接続できるようにします。</p>
+<p><img src="img/oci/vnic.png" width="50%" height="50%"></p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingVNICs.htm">仮想ネットワーク・インタフェース・カード(VNIC)</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/a6d4d846e4cf4afb9453">OCI
+ComputeにセカンダリVNICを追加する Part 1</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/6b0c49a0b2b3c5e4c4dd">OCI
+ComputeにセカンダリVNICを追加する Part 2</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/abe8114d327c19c98acd">OCI
+ComputeにセカンダリVNICを追加する Part 3</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="vcnルート表">VCNルート表</h2>
@@ -852,7 +866,7 @@ href="https://qiita.com/hongmnh/items/1cc8cf3d6feb65c7d21f">【OCI】NATイン�
 <h2 id="サービスゲートウェイ">サービス・ゲートウェイ</h2>
 <p>分類04:VCNゲートウェイ<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oracle-services-network">Oracle Services Network</h3>
+<h3 id="oracle-services-networkosn">Oracle Services Network(OSN)</h3>
 <p>Oracle Services Networkは、Oracleサービス用に予約されているOracle
 Cloud Infrastructureの概念的なネットワークです。<br />
 これらのサービスには、通常はインターネットを介してアクセスするパブリックIPアドレスがあります。<br />
@@ -880,6 +894,9 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/servicegateway.ht
 サービス・ゲートウェイ</a></li>
 <li><a
 href="https://www.oracle.com/jp/cloud/networking/service-gateway/service-gateway-supported-services/">サービスゲートウェイでサポートされているクラウド・サービス</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-jia-xiang-kuraudonetutowaku-vcn-xiang-xi?slide=14">Oracle
+Services Networkとは？</a></li>
 </ul>
 <h3 id="サービスcidrラベル">サービスCIDRラベル</h3>
 <p>公開されたアドレスは、All <region> Services in Oracle Services
@@ -1225,8 +1242,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/General/Concepts/servicelimits.
 <li><a
 href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=7">構成要素</a></li>
 <li><a
-href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html">Dynamic
-Routing Gatewayソリューションについて学習</a></li>
+href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html">動的ルーティング・ゲートウェイ・ソリューションについて学習</a></li>
 <li><a
 href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao">外部接続詳細
 - 動的ルーティング・ゲートウェイ(DRG)</a></li>
@@ -1298,6 +1314,21 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/drg-rt-create.htm
 href="https://homebase.server-on.net/index.php/ja/submenu/14-2020-01-05-19-58-04/265-oci-drg-route">OCIのDRG
 DRGルート表って難くないですか</a></li>
 </ul>
+<h3 id="drgルーティング処理内容">DRGルーティング処理内容</h3>
+<ul>
+<li>DRGルート表の管理パケット
+<ul>
+<li>VCN→DRGに転送されるパケット(アウトバウンドパケット)</li>
+</ul></li>
+<li>VCNルート表の管理パケット
+<ul>
+<li>DRG→VCNに転送されるパケット(インバウンドパケット)</li>
+</ul></li>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=9">DRGルート表</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html#GUID-35242C83-D3FE-437A-A24F-6EACE5BAFBD4">DRGルーティング操作</a></li>
+</ul>
 <h3 id="パス優先">パス優先</h3>
 <p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
 <ul>
@@ -1320,7 +1351,8 @@ id="動的ルーティングゲートウェイdrg経路制御">動的ルーテ�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3
 id="drgルートディストリビューション">DRG/ルート・ディストリビューション</h3>
-<p>ルート・ディストリビューションは、ルートがDRGアタッチメントからどのようにインポートされるか、またはDRGアタッチメントにどのようにエクスポートされるかを指定します。<br />
+<p>動的ルーティングの経路制御で使用する。<br />
+ルート・ディストリビューションは、ルートがDRGアタッチメントからどのようにインポートされるか、またはDRGアタッチメントにどのようにエクスポートされるかを指定します。<br />
 ルート・ディストリビューションは、マッチ基準（OCIDやアタッチメント・タイプなど）とアクションを含むステートメントとして定義します。</p>
 <ul>
 <li><a
@@ -1656,6 +1688,11 @@ Routing Gateway (DRG)となります。</p>
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.htm">ハブVCN内の転送ルーティング</a></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%83%83%E3%83%88%E8%BB%A2%E9%80%81%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トランジット(転送)ルーティング</a></li>
+</ul>
+<h3 id="転送ルーティングの挙動">転送ルーティングの挙動</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35">トラフィック・ルーティング・シナリオ</a></li>
 </ul>
 <h3
 id="転送ルーティング構成で利用可能なociゲートウェイ">転送ルーティング構成で利用可能なOCIゲートウェイ</h3>
@@ -2002,8 +2039,11 @@ Network Firewallのログ分析</a></li>
 <h3 id="oci-waf概要">OCI-WAF/概要</h3>
 <p>OCI WAF(Web Application
 Firewall)は、コンソール上で様々なルールを適用し、悪意のあるインターネット・トラフィックからのリクエストを除外することで<br />
-web アプリケーションを保護できるセキュリティ・サービスである。</p>
+Web アプリケーションを保護できるセキュリティ・サービスである。</p>
 <ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-web-application-firewall-gai-yao">OCI
+Web Application Firewall 概要</a></li>
 <li><a
 href="https://solutions.system-exe.co.jp/oracle-cloud/blog/oracle-web-application-firewall">Oracle
 Web Application Firewall(WAF)の仕組みと機能検証</a></li>
@@ -2014,6 +2054,12 @@ href="https://cloudii.jp/news/blog/oracle-cloud/%E7%A8%BC%E5%83%8D%E3%81%97%E3%8
 <li><a
 href="https://qiita.com/ramtan0522/items/9d0307b2e3176c60e832">OCI
 WAFポリシーでブロックしたリクエストを通知する</a></li>
+<li><a href="https://speakerdeck.com/dbtec/oci-wafnituite">OCI
+WAFについて</a></li>
+<li><a href="https://cloudsolution.terilogy.com/blog/oci-waf">OCI
+WAFでJuiceサーバを保護！～Part1～</a></li>
+<li><a href="https://cloudsolution.terilogy.com/blog/oci-waf-2">OCI
+WAFでJuiceサーバを保護！～Part2～</a></li>
 </ul>
 <h3 id="oci-wafwafポリシー種別">OCI-WAF/WAFポリシー種別</h3>
 <ul>
@@ -2035,12 +2081,70 @@ WAFで脆弱なアプリを保護する - エッジ・ポリシーの場合 -</a
 <li><a href="https://qiita.com/Western24/items/36862526216d6eb886a8">OCI
 WAFで脆弱なアプリを保護する - WAFポリシーの場合 -</a></li>
 </ul>
-<h3 id="oci-waf構成要素waf概念">OCI-WAF/構成要素(WAF概念)</h3>
+<h3 id="oci-waf4つの主な機能">OCI-WAF/4つの主な機能</h3>
+<p>OCI WAF（Web Application
+Firewall）の4つの主な機能は、保護ルール、脅威インテリジェンス、アクセス制御、ボット管理です。</p>
+<ol type="1">
+<li>保護ルール
 <ul>
+<li>OCI
+WAFは、Webアプリケーションへの悪意のあるトラフィックを検知し、ブロックするために、事前に定義された豊富な保護ルールを提供します。</li>
+<li>OWASPトップ10への対応:
+クロスサイトスクリプティング（XSS）やSQLインジェクションといった、OWASP（Open
+Worldwide Application Security
+Project）が定める上位の脅威からアプリケーションを保護します。</li>
+<li>カスタマイズ:
+既存のルールをカスタマイズしたり、特定のアプリケーションのニーズに合わせて独自のカスタム保護ルールを作成したりできます。</li>
+<li>チューニング:
+保護ルールは、Webトラフィックをチェックし、ルール条件に一致した場合に実行するアクション（ブロック、検知、無効化など）を決定します。運用状況に応じて、ルールの最適化が可能です。</li>
+</ul></li>
+<li>脅威インテリジェンス
+<ul>
+<li>OCI
+WAFは、脅威インテリジェンスフィードを統合し、既知の悪意のあるIPアドレスや不正なペイロードを認識・ブロックします。</li>
+<li>継続的な更新:
+悪意のあるIPアドレスのソースを、日々更新される複数の脅威インテリジェンスプロバイダーから受け取ります。</li>
+<li>自動防御:
+ボットネット、DDoS攻撃、フィッシングサイト、マルウェア感染IPなどの脅威情報に基づいて、アクセスを自動的に制限します。</li>
+<li>連携:
+OCIの脅威インテリジェンスサービスから提供される最新の脅威情報を活用し、WAFのアクセス制御ルールを構成することで、防御体制を強化できます。</li>
+</ul></li>
 <li>アクセス制御
 <ul>
-<li>アクセス制御には、リクエスト制御およびレスポンス制御が含まれます。</li>
+<li>特定の条件に基づいて、Webアプリケーションへのトラフィックを許可、ブロック、またはチャレンジ（CAPTCHAなど）するルールを設定できます。</li>
+<li>条件ベースの制御:
+IPアドレス、地理的位置情報、URL、HTTPヘッダー、リファラーなどの属性に基づいてアクセスを管理します。</li>
+<li>ブラックリスト/ホワイトリスト:
+信頼できるIPアドレスをホワイトリストに登録したり、疑わしいIPアドレスをブラックリストに登録したりすることが可能です。</li>
 </ul></li>
+<li>ボット管理
+<ul>
+<li>悪意のあるボットトラフィックを識別、分類、管理することで、ボットによる不正行為からWebアプリケーションを保護します。</li>
+<li>識別と分類:
+人間からのリクエストと機械（ボット）からのリクエストを識別し、疑わしい非人間的なリクエストをブロックします。</li>
+<li>不正なボットの緩和:
+悪意のあるボットをブロックまたはチャレンジすることで、Webスクレイピング、資格情報の不正利用、DDoS攻撃などを防ぎます。</li>
+<li>ホワイトリスト:
+検索エンジンのクローラーなど、必要なボットのアクセスを許可するように設定できます。</li>
+</ul></li>
+</ol>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-web-application-firewall-gai-yao?slide=9">OCIWAF4つの保護機能</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang?slide=5">OCIWAFの機能</a></li>
+</ul>
+<h3 id="oci-waf構成要素waf概念">OCI-WAF/構成要素(WAF概念)</h3>
+<ul>
+<li>Webアプリケーション・ファイアウォール(WAF)
+<ul>
+<li>WAFは、悪意のある好ましくないインターネット・トラフィックからアプリケーションを保護する、Payment
+Card Industry
+(PCI)に準拠したグローバル・セキュリティ・サービスです。</li>
+</ul></li>
+<li>アクセス制御
+<ul>
+<li>アクセス制御には、「リクエスト制御」および「レスポンス制御」が含まれます。</li>
 <li>リクエスト制御
 <ul>
 <li>リクエスト制御により、HTTPリクエスト・プロパティの検査および定義されたHTTPレスポンスの返却が可能になります。</li>
@@ -2052,6 +2156,7 @@ WAFで脆弱なアプリを保護する - WAFポリシーの場合 -</a></li>
 <li>レスポンス制御
 <ul>
 <li>レスポンス制御により、HTTPリクエスト・プロパティの検査および定義されたHTTPレスポンスの返却が可能になります。</li>
+</ul></li>
 </ul></li>
 <li>アクション
 <ul>
@@ -2068,7 +2173,7 @@ WAFで脆弱なアプリを保護する - WAFポリシーの場合 -</a></li>
 <ul>
 <li>各ルールは、条件としてJMESPath式を受け入れます。HTTPリクエストまたはHTTPレスポンス(ルールのタイプに応じて)は、WAFルールをトリガーします。</li>
 </ul></li>
-<li>ファイアウォール
+<li>ファイアウォール・リソース
 <ul>
 <li>ファイアウォール・リソースは、WAFポリシーとロード・バランサなどの強制ポイント間の論理リンクです。</li>
 </ul></li>
@@ -2091,8 +2196,24 @@ IP範囲、またはWAFポリシーで使用されるプライベートIPアド�
 </ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Concepts/overview.htm#waf_concepts">WAFの概念</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/oracle-web-application-firewall#toc-1">Oracle
+Web Application Firewall（WAF）とは</a></li>
+</ul>
+<h3
+id="oci-wafネットワークアドレスリスト">OCI-WAF/ネットワーク・アドレス・リスト</h3>
+<p>ネットワーク・アドレス・リストとは、個別のパブリックIPアドレスおよびCIDR
+IP範囲、またはWAFポリシーで使用されるプライベートIPアドレスを定義したものです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/network-address-list_management.htm">Webアプリケーション・ファイアウォールのネットワーク・アドレス・リスト</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/list_network-address-list.htm">Web
+Application Firewallネットワーク・アドレス・リストの表示</a></li>
 </ul>
 <h3 id="oci-wafwafポリシー設定">OCI-WAF/WAFポリシー設定</h3>
+<p>WAF（Web Application
+Firewall）ポリシーとは、Webアプリケーションへの悪意のある通信を検知・遮断するための、一連のルール（シグネチャ）や設定の集まりです。具体的には、SQLインジェクションやクロスサイト・スクリプティングといったサイバー攻撃を防ぐため、HTTP/HTTPSトラフィックを検査・分析し、特定の条件に一致した通信に対して、ブロック、ログ記録、警告などのアクションを定義します。</p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm">ファイアウォール・ポリシーの作成および管理</a></li>
@@ -2103,12 +2224,6 @@ href="https://qiita.com/ramtan0522/items/aa4f55d5b13655c6c024">OCI
 WAFポリシーでセキュリティ強化してみる</a></li>
 <li><a href="https://blog.s-style.co.jp/2022/02/8551/">OCI
 WAFポリシーを試してみる</a></li>
-</ul>
-<h3
-id="oci-wafネットワークアドレスリスト">OCI-WAF/ネットワーク・アドレス・リスト</h3>
-<ul>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/network-address-list_management.htm</li>
-<li>https://docs.oracle.com/ja-jp/iaas/Content/WAF/NetworkAddressLists/list_network-address-list.htm</li>
 </ul>
 <h3 id="oci-wafwaf保護ルール">OCI-WAF/WAF保護ルール</h3>
 <ul>
