@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/25 11:16:32<br />
+更新日：2025/10/26 11:32:33<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -342,6 +342,9 @@ href="https://speakerdeck.com/oracle4engineer/oci_technical_deep_dive_20241029_i
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/intermediates/monitoring-resources/">モニタリング機能でOCIのリソースを監視する</a></li>
 <li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-observability-and-management-platformgai-yao">OCI
+運用監視サービス 概要</a></li>
+<li><a
 href="https://xn--w8j8bac3czf5bl7e.com/2023/01/31/oci%E3%81%AE%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E6%A9%9F%E8%83%BD-%EF%BD%9E%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E7%9B%A3%E8%A6%96%EF%BD%9E/">OCIのモニタリング機能
 ～メトリック監視～</a></li>
 </ul>
@@ -362,7 +365,11 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/overview.htm">
 <li><a
 href="https://www.oracle.com/jp/cloud/networking/">クラウド・ネットワーキング</a></li>
 <li><a
-href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.html">ハイブリッドおよびマルチクラウドのOCIネットワーキング設計のベストプラクティス</a></li>
+href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/index.html">ハイブリッドおよびマルチクラウドのOCIネットワーキング設計のベストプラクティス</a>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-best-practices-networking/identify-vcn-topology-and-specifications1.html">VCNトポロジおよび仕様の確認</a></li>
+</ul></li>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/beginners/creating-vcn/">その2
 - クラウドに仮想ネットワーク(VCN)を作る</a></li>
@@ -490,7 +497,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/Overview_of_VCNs_
 id="仮想ネットワークインターフェースカードvnic">仮想ネットワークインターフェース・カード(VNIC)</h3>
 <p>VNICは<strong>サブネット</strong>に存在し、その<strong>サブネットが属するVCNに関連</strong>付けられます。<br />
 VNICに対してセキュリティ・ルールが設定されることで、コンピュート・インスタンスがVCNの内外のエンドポイントに接続できるようにします。</p>
-<p><img src="img/oci/vnic.png" width="50%" height="50%"></p>
+<p><img src="img/oci/vnic.png" width="30%" height="30%"></p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingVNICs.htm">仮想ネットワーク・インタフェース・カード(VNIC)</a></li>
@@ -681,7 +688,7 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.
 <h3
 id="セキュリティリストとネットワークセキュリティグループ設定例">セキュリティ・リストとネットワーク・セキュリティ・グループ/設定例</h3>
 <p>設定例は以下のとおり</p>
-<p><img src="img/oci/nsg-seclist-png.png" width="75%" height="75%"></p>
+<p><img src="img/oci/nsg-seclist-png.png" width="60%" height="60%"></p>
 <ul>
 <li>図の説明
 <ul>
@@ -1197,6 +1204,16 @@ Kubernetes Engine (OKE)
 href="https://qiita.com/sh-sho/items/4431d5cac2addd0b9809">OCIのマネージドKubernetesサービス
 (OKE) をカスタム作成してみた</a></li>
 </ul>
+<h3 id="okecoredns">OKE/CoreDNS</h3>
+<p>Kubernetes
+Engineによって作成されるクラスタには、自動的に起動される組込みKubernetesサービスとしてDNSサーバーが含まれます。<br />
+各ワーカー・ノードのkubeletプロセスは、個々のコンテナをDNSサーバーに向け、DNS名をIPアドレスに変換します。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Tasks/contengconfiguringdnsserver.htm">KubernetesクラスタのDNSサーバーの構成</a></li>
+<li><a href="https://qiita.com/tktk2712/items/9003be9fe56b08627c80">OCI
+Container Engine for Kubernetes (OKE)のkube-dns(CoreDNS)を確認</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="オンプレミス環境">オンプレミス環境</h2>
@@ -1315,20 +1332,23 @@ href="https://homebase.server-on.net/index.php/ja/submenu/14-2020-01-05-19-58-04
 DRGルート表って難くないですか</a></li>
 </ul>
 <h3 id="drgルーティング処理内容">DRGルーティング処理内容</h3>
+<p>「DRGルート表」と「DRGにアタッチメントされるVCNルート表」の関係は以下となります。</p>
 <ul>
 <li>DRGルート表の管理パケット
 <ul>
-<li>VCN→DRGに転送されるパケット(アウトバウンドパケット)</li>
+<li>VCN→DRGに転送されるパケット(アウトバウンドパケット)のルート定義</li>
 </ul></li>
 <li>VCNルート表の管理パケット
 <ul>
-<li>DRG→VCNに転送されるパケット(インバウンドパケット)</li>
+<li>DRG→VCNに転送されるパケット(インバウンドパケット)のルート定義</li>
 </ul></li>
 <li><a
-href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=9">DRGルート表</a></li>
-<li><a
 href="https://docs.oracle.com/ja/solutions/learn-about-drg-solutions/index.html#GUID-35242C83-D3FE-437A-A24F-6EACE5BAFBD4">DRGルーティング操作</a></li>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=9">DRGルート表</a></li>
 </ul>
+<p>設定例は以下の通りです。</p>
+<p><img src="img/oci/routing-lookup-multi-hop-network-path.png" width="75%" height="75%"></p>
 <h3 id="パス優先">パス優先</h3>
 <p>BGPのAS_PATH属性を使用して、単一のDRGルート表のコンテキストでルート選択が可能となります。</p>
 <ul>
@@ -1689,11 +1709,6 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.ht
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%83%83%E3%83%88%E8%BB%A2%E9%80%81%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トランジット(転送)ルーティング</a></li>
 </ul>
-<h3 id="転送ルーティングの挙動">転送ルーティングの挙動</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35">トラフィック・ルーティング・シナリオ</a></li>
-</ul>
 <h3
 id="転送ルーティング構成で利用可能なociゲートウェイ">転送ルーティング構成で利用可能なOCIゲートウェイ</h3>
 <ul>
@@ -1731,9 +1746,19 @@ id="サードパーティプロバイダー接続の注意点">サードパー�
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitrouting.htm">ハブと単一のスポークで構成される場合のコンポーネントおよびルーティング</a></li>
+<li><a href="https://qiita.com/shirok/items/fe5cfb09af219703be0e">Oracle
+Cloud：VCN Transit Routing で Hub and Spoke構成をしてみてみた</a></li>
 <li><a href="https://qiita.com/Western24/items/f1029b1dd0fa15117344">OCI
 Network Firewallを使用したハブ&amp;スポーク構成</a></li>
 </ul>
+<h3
+id="ハブスポーク構成設定処理内容">ハブ・スポーク構成/設定・処理内容</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35">トラフィック・ルーティング・シナリオ</a></li>
+</ul>
+<p>「ハブ・スポーク構成」の構成例は以下の通りです。</p>
+<p><img src="img/oci/transit_routing01.png" width="75%" height="75%"></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティ一般">セキュリティ一般</h2>
@@ -2341,6 +2366,21 @@ href="https://www.ctc-g.co.jp/keys/blog/detail/2022-oci-superiority">オラク�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="トラブルシューティング手法">トラブルシューティング手法</h2>
+<p>分類10:OCIネットワーク、接続性、トラブルシューティング・ツール<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="トラブルシューティング手法概要">トラブルシューティング手法/概要</h3>
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/mysql-database/doc/troubleshooting-networking.html">ネットワーキングのトラブルシューティング</a></li>
+<li><a
+href="https://docs.oracle.com/ja/learn/oci-ntw-troubleshoot-1/index.html">Oracle
+Cloud
+Infrastructureでの基本的なネットワーク問題のトラブルシューティング</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="vcnフローログ">VCNフローログ</h2>
 <p>分類10:OCIネットワーク、接続性、トラブルシューティング・ツール<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
@@ -2403,6 +2443,11 @@ id="ネットワークビジュアライザー">ネットワーク・ビジュ�
 <ul>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/e0a0afc171a413cf95e5#%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%B6%E3%83%BC">ネットワーキング・ビジュアライザー</a></li>
+</ul>
+<h3 id="connection-diagnostics">connection-diagnostics</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/en-us/iaas/tools/oci-cli/3.68.1/oci_cli_docs/cmdref/database-migration/connection/connection-diagnostics.html">connection-diagnostics</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
