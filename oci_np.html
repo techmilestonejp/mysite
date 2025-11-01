@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/10/26 11:32:33<br />
+更新日：2025/11/01 11:18:03<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1191,11 +1191,13 @@ Engine for Kubernetes(OKE)</h2>
 href="https://www.oracle.com/jp/cloud/cloud-native/kubernetes-engine/">Kubernetes
 Engine (OKE)</a></li>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/home.htm">Kubernetesエンジン</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Concepts/contengoverview.htm">Kubernetesエンジン(OKE)の概要</a></li>
+<li><a
 href="https://oracle-japan.github.io/ocitutorials/cloud-native/oke-for-beginners/">Oracle
 Container Engine for
 Kubernetes(OKE)でKubernetesを動かしてみよう</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Concepts/contengoverview.htm">Kubernetesエンジン(OKE)の概要</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/devday2025-oke-gpu-ai-platform">OCI
 Kubernetes Engine (OKE)
@@ -2014,7 +2016,8 @@ SSH多段接続など色々してみてみた</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-network-firewall">OCI Network Firewall</h2>
+<h2 id="oci-network-firewallネットワークファイアウォール">OCI Network
+Firewall(ネットワーク・ファイアウォール)</h2>
 <p>分類08:セキュアなOCIネットワークと接続ソリューションの実装と運用<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci-network-firewall概要">OCI Network Firewall/概要</h3>
@@ -2049,6 +2052,23 @@ Cloud】Network Firewallを構築してみた</a></li>
 <li><a
 href="https://techblog.ap-com.co.jp/entry/2025/07/22/093000">【OCI】OCI
 Network Firewall を使ってみる</a></li>
+</ul>
+<h3 id="ファイアウォールポリシー">ファイアウォール・ポリシー</h3>
+<p>ファイアウォール・ポリシーは、以下のルールと基準があります。</p>
+<ul>
+<li>ファイアウォール・ポリシー・ルール
+<ul>
+<li>トラフィックを復号化する復号化ルール</li>
+<li>トラフィックを許可またはブロックするセキュリティ・ルール</li>
+<li>トラフィックを検査するトンネル検査ルール</li>
+</ul></li>
+<li>基準
+<ul>
+<li>暗号化ルールは、常にセキュリティ・ルールの前に適用されます。</li>
+<li>暗号化ルールおよびセキュリティ・ルールは、ユーザーが定義できる優先順位を使用して適用されます。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm">ファイアウォール・ポリシーの作成および管理</a></li>
 </ul>
 <h3 id="oci-network-firewallログ解析">OCI Network Firewall/ログ解析</h3>
 <ul>
@@ -2239,9 +2259,18 @@ Application Firewallネットワーク・アドレス・リストの表示</a></
 <h3 id="oci-wafwafポリシー設定">OCI-WAF/WAFポリシー設定</h3>
 <p>WAF（Web Application
 Firewall）ポリシーとは、Webアプリケーションへの悪意のある通信を検知・遮断するための、一連のルール（シグネチャ）や設定の集まりです。具体的には、SQLインジェクションやクロスサイト・スクリプティングといったサイバー攻撃を防ぐため、HTTP/HTTPSトラフィックを検査・分析し、特定の条件に一致した通信に対して、ブロック、ログ記録、警告などのアクションを定義します。</p>
+<h3
+id="oci-wafwafポリシー設定ユースケース1">OCI-WAF/WAFポリシー設定(ユースケース1)</h3>
 <ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm">ファイアウォール・ポリシーの作成および管理</a></li>
+<li>WAFポリシー設定手順
+<ol type="1">
+<li>「基本情報」</li>
+<li>「アクセス制御」</li>
+<li>「レート制限」</li>
+<li>「保護」(保護ルール)</li>
+<li>「強制ポイントの選択」</li>
+<li>「確認および作成」</li>
+</ol></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Policies/create_waf-policy.htm">Webアプリケーション・ファイアウォール・ポリシーの作成</a></li>
 <li><a
@@ -2250,16 +2279,8 @@ WAFポリシーでセキュリティ強化してみる</a></li>
 <li><a href="https://blog.s-style.co.jp/2022/02/8551/">OCI
 WAFポリシーを試してみる</a></li>
 </ul>
-<h3 id="oci-wafwaf保護ルール">OCI-WAF/WAF保護ルール</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang">OCI
-WAF保護ルールの考え方</a></li>
-</ul>
 <h3
-id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設定(ユースケース)</h3>
-<ul>
-<li>WAFポリシー設定(ユースケース1)
+id="oci-wafwafポリシー設定ユースケース2">OCI-WAF/WAFポリシー設定(ユースケース2)</h3>
 <ol type="1">
 <li>IPアドレスをカテゴリごとに分類
 <ul>
@@ -2268,10 +2289,17 @@ id="oci-wafwafポリシー設定ユースケース">OCI-WAF/WAFポリシー設�
 <li>信頼できるパートナー</li>
 </ul></li>
 <li>IPアドレスのカテゴリごとに「ネットワークアドレスリスト」を作成</li>
-<li>「ネットワークアドレスリスト」を「WAFポリシー」(ファイアウォール・ポリシー・ルール)上に定義する</li>
-<li>ユーザエージェントまたはHTTPメソッド条件ごとに「アクセス制御ルール」を作成する</li>
+<li>「ネットワークアドレスリスト」を「WAFポリシー」上に定義する</li>
+<li>ユーザエージェントまたはHTTPメソッド条件ごとに「アクセス制御(アクセス制御ルール)」を作成(設定)する</li>
 <li>「アクセス制御ルール」ごとに、「ALLOW」または「REDIRECT」の「アクション」を設定する</li>
-</ol></li>
+</ol>
+<h3 id="oci-wafwaf保護ルール">OCI-WAF/WAF保護ルール</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-wafbao-hu-rurufalsekao-efang">OCI
+WAF保護ルールの考え方</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/WAF/Policies/create_waf-policy.htm#protections">4.保護</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2532,11 +2560,11 @@ Numbers</a></li>
 <li><a
 href="https://e-words.jp/w/%E3%82%A8%E3%82%B0%E3%83%AC%E3%82%B9.html">エグレス</a></li>
 <li><a
-href="https://www.ibm.com/jp-ja/think/topics/ingress-vs-egress">KubernetesにおけるIngressとEgressとは</a></li>
-<li><a
 href="https://qiita.com/a7zuki/items/3134e64167fdbfecad0f">IngressとEgress</a></li>
 <li><a
 href="https://stakiran.hatenablog.com/entry/2019/07/01/203651">ファイアウォールやネットワークにおける上り、下り、イングレス(Ingress)、エグレス(Egress)、インバウンド(Inbound)、アウトバウンド(Outbound)の違い</a></li>
+<li><a
+href="https://www.ibm.com/jp-ja/think/topics/ingress-vs-egress">KubernetesにおけるIngressとEgressとは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->

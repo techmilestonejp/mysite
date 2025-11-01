@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Oracle_Oracle待機イベント</title>
+  <title>AWR_Oracle待機イベント</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -26,11 +26,11 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Oracle_Oracle待機イベント</h1>
+<h1 class="title">AWR_Oracle待機イベント</h1>
 </header>
 <p><a href="index.html">トップページ</a><br />
 更新日：2025/08/24 21:05:22<br />
-更新日：2025/08/31 09:53:45</p>
+更新日：2025/11/01 11:18:03</p>
 <hr />
 <!----------------------------------------------------------------------------------------------------------------------------------->
 <h2 id="概要">概要</h2>
@@ -55,7 +55,19 @@ href="https://blogs.oracle.com/otnjp/post/tsushima-hakushi-17">津島博士の�
 <!----------------------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle待機イベント">Oracle待機イベント</h2>
 <!----------------------------------------------------------------------------------------------------------------------------------->
-<p>「待機イベント名」「1.概要」「2.発生原因」「3.待機時間」「4.対応策」「5.影響度」「6.(あれば)参考情報」の順番で記載します。</p>
+<h3 id="凡例">凡例</h3>
+<ul>
+<li>待機イベント名
+<ol type="1">
+<li>概要</li>
+<li>発生原因</li>
+<li>待機時間</li>
+<li>対応策</li>
+<li>影響度</li>
+<li>(あれば)参考情報</li>
+</ol></li>
+</ul>
+<h3 id="待機イベント名一覧">待機イベント名一覧</h3>
 <ol type="1">
 <li>db file sequential read
 <ol type="1">
@@ -93,7 +105,7 @@ read待機イベントは、全体スキャンが発生していることを識�
 </ol>
 <hr />
 <!----------------------------------------------------------------------------------------------------------------------------------->
-<h2 id="リンク集">リンク集</h2>
+<h2 id="リンク集oracle待機イベント">リンク集(Oracle待機イベント)</h2>
 <!----------------------------------------------------------------------------------------------------------------------------------->
 <h3 id="oracle-databaseリファレンス">Oracle Databaseリファレンス</h3>
 <ul>
@@ -116,7 +128,7 @@ href="https://docs.oracle.com/cd/E82638_01/refrn/descriptions-of-wait-events.htm
 href="https://docs.oracle.com/cd/E16338_01/server.112/b56311/waitevents.htm">C.Oracle待機イベント</a></li>
 </ul></li>
 </ul>
-<h3 id="リンク集-1">リンク集</h3>
+<h3 id="リンク集">リンク集</h3>
 <ul>
 <li>日本エクセム株式会社
 <ul>
@@ -134,20 +146,6 @@ href="https://qiita.com/tbtakhk/items/03a100912406c1396c66#%E5%BE%85%E6%A9%9F%E3
 </ul></li>
 <li><a
 href="http://www.doppo1.net/oracle/tuning/wait-event.html">待機イベント一覧</a></li>
-</ul>
-<h3 id="awrレポート解析">AWRレポート解析</h3>
-<ul>
-<li><a
-href="https://web.archive.org/web/20190908110917/http://otn.oracle.co.jp/skillup/stats_diag/1/">Oracle
-Database 性能対策機能</a></li>
-<li><a href="https://eeengineer.com/oracle-awr-report/">Oracle
-AWRレポートの見方と解析ポイントを徹底解説</a></li>
-<li><a
-href="https://web.archive.org/web/20131211111717/https://blogs.oracle.com/oracle4engineer/entry/column_howtouse_awr">AWR(Automatic
-Workload
-Repository／自動ワークロード・リポジトリ)の使い方～レポート、見方、ライセンス</a></li>
-<li><a
-href="https://qiita.com/tbtakhk/items/03a100912406c1396c66">Statspackレポートの見方についてまとめてみた</a></li>
 </ul>
 <hr />
 <!----------------------------------------------------------------------------------------------------------------------------------->
