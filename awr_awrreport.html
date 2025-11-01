@@ -30,17 +30,76 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/08/10 09:23:57<br />
-更新日：2025/11/01 11:18:03</p>
+更新日：2025/11/01 20:12:08</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="awr基礎情報">AWR基礎情報</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="awr概要">AWR概要</h3>
+<p>AWR（自動ワークロード・リポジトリ）とは、Oracleデータベースのパフォーマンス統計情報を自動で収集・保存する機能のことです。<br />
+パフォーマンス低下の原因究明に役立ちます。</p>
+<h3 id="awr利用ライセンス">AWR利用ライセンス</h3>
+<p>ライセンス: AWR機能を利用するには、Oracle Database Enterprise
+Editionに加えて、Oracle Diagnostics
+Packという有償オプションの契約が必要です。</p>
+<ul>
+<li>エディション: Oracle Database Enterprise Edition</li>
+<li>ライセンス: Oracle Diagnostics Pack</li>
+</ul>
+<h3 id="awrの仕組み">AWRの仕組み</h3>
+<p>自動収集: データベースの性能情報を定期的に自動で収集します。
+スナップショット:
+収集されたデータは、一定時間ごとに「スナップショット」としてメモリとデータベースに記録されます。
+保存:
+デフォルトではスナップショットは8日間保存され、この期間を過ぎると古いデータは自動的に削除されます。
+データソース: V<span
+class="math inline"><em>S</em><em>Y</em><em>S</em><em>S</em><em>T</em><em>A</em><em>T</em><em>や</em><em>V</em></span>SYSTEM_EVENTなど、様々なデータベース動的パフォーマンスビューから統計情報を収集します。</p>
+<h3 id="補足情報">補足情報</h3>
+<p>Statspackとの違い:
+Statspackとは異なり、AWRはデータベース作成時にすでに利用可能で、スナップショットの取得や古いデータの削除も自動化されています。
+データ保持期間: デフォルトでは8日間保存されます（11g R1以降）</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="awrレポート解析">AWRレポート解析</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="awrレポート">AWRレポート</h3>
+<p>一定間隔でスナップショットが作成され、そのデータから任意の2つの時点間の差分を分析して「AWRレポート」を作成できます。<br />
+AWRレポートには、データベースのアクティビティ、待機イベント、ボトルネックなどの情報が含まれます。</p>
+<h3 id="awrレポートの活用">AWRレポートの活用</h3>
+<ul>
+<li>ボトルネックの特定:
+<ul>
+<li>パフォーマンスが低下した際、どこにボトルネックがあるかを特定するのに役立ちます。</li>
+</ul></li>
+<li>負荷状況の分析:
+データベース全体のアクティビティや、特定の時間帯の負荷傾向を把握できます。</li>
+<li>チューニング:
+待機イベントの状況を分析し、パフォーマンスチューニングのための客観的なデータとして利用できます。</li>
+<li>キャパシティプランニング:
+過去のデータを分析し、将来のキャパシティ計画に役立てます。</li>
+</ul>
+<h3 id="awrレポートの作成方法">AWRレポートの作成方法</h3>
+<ol type="1">
+<li>GUI:
+<ul>
+<li>Oracle Enterprise
+Manager（EM）からウィザード形式で作成できます。</li>
+</ul></li>
+<li>コマンドライン:
+<ul>
+<li>awrrpt.sqlなどのスクリプトを使用して、コマンドラインからレポートを作成できます。</li>
+</ul></li>
+</ol>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="参考情報">参考情報</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="参考情報-1">参考情報</h3>
+<h3 id="参考情報awr概要">参考情報(AWR概要)</h3>
 <ul>
 <li>サイト内情報
 <ul>
 <li>(サイト内)<a
-href="oracle_oracleevent.html">Oracle_Oracle待機イベント</a></li>
+href="awr_oracleevent.html">Oracle_Oracle待機イベント</a></li>
 </ul></li>
 <li>ヘルプセンター
 <ul>
@@ -48,6 +107,15 @@ href="oracle_oracleevent.html">Oracle_Oracle待機イベント</a></li>
 href="https://docs.oracle.com/cd/G11854_01/tgdba/awr-snapshot-collection.html">AWRスナップショット収集</a></li>
 </ul></li>
 <li>オラクル社情報
+<ul>
+<li><a
+href="https://blogs.oracle.com/otnjp/post/shibacho-051">しばちょう先生の試して納得！DBAへの道　第51回
+AWRレポートを読むステップ</a></li>
+<li><a
+href="https://www.oracle.com/technetwork/jp/ondemand/branch/20150527-awr-2555967-ja.pdf">データベース性能分析手法解説
+- AWR/ASHを活用した分析事例</a></li>
+</ul></li>
+<li>オラクル社情報(過去公開情報)
 <ul>
 <li><a
 href="https://web.archive.org/web/20190908110917/http://otn.oracle.co.jp/skillup/stats_diag/1/">Oracle
@@ -67,12 +135,6 @@ Database 性能分析入門</a></li>
 <li><a
 href="https://blogs.oracle.com/oracle4engineer/post/oci-seminar-deck-20240423">Oracle
 Database 性能分析入門</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracletechnight91-perfmanage">Oracle
-Database 最新パフォーマンス分析手法</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oci-database-management">OCI
-Database Management サービス詳細</a></li>
 </ul></li>
 <li>Qiita(AWRについて)
 <ul>
@@ -85,6 +147,36 @@ ManagementによるOracle Databaseのパフォーマンス監視 実践編③</a
 <li><a
 href="https://qiita.com/tbtakhk/items/03a100912406c1396c66">Statspackレポートの見方についてまとめてみた</a></li>
 </ul></li>
+<li>一般サイト
+<ul>
+<li><a
+href="https://dekiruengineer.com/engineer/oracle_introduction_to_awr/">Oracle
+Database AWR入門</a></li>
+<li><a href="https://eeengineer.com/oracle-awr-report/">Oracle
+AWRレポートの見方と解析ポイントを徹底解説</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2018/11/26/%E6%AD%A3%E4%BD%93%E4%B8%8D%E6%98%8E%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E6%82%AA%E5%8C%96%E3%81%AE%E8%AC%8E%E3%82%92%E8%A7%A3%E3%81%8D%E6%98%8E%E3%81%8B%E3%81%9B-3/">正体不明のパフォーマンス悪化の謎を解き明かせ！</a></li>
+<li><a
+href="https://kemboooo.hatenablog.com/entry/2023/11/11/121454">OracleのAWR（概要）</a></li>
+</ul></li>
+</ul>
+<h3
+id="参考情報スナップショット処理awrレポート取得">参考情報(スナップショット処理・AWRレポート取得)</h3>
+<ul>
+<li>Oracle社情報
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/operations-insights/doc/generate-awr-hub-report.html">AWRレポートの生成</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb502-report/">502:
+各種設定の確認、レポートの取得</a></li>
+</ul></li>
+<li>AWS情報
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/Appendix.Oracle.CommonDBATasks.AWR.html">自動ワークロードリポジトリ
+(AWR) を使用したパフォーマンスレポートの生成</a></li>
+</ul></li>
 <li>Qiita(AWRレポート取得)
 <ul>
 <li><a href="https://qiita.com/plusultra/items/dae6aac6e707d66389c0">PDB
@@ -94,17 +186,34 @@ href="https://qiita.com/tbtakhk/items/03a100912406c1396c66">Statspackレポー�
 <li><a
 href="https://qiita.com/plusultra/items/a014de28adc756113650">AWRデータの移動を試す</a></li>
 </ul></li>
+<li>一般サイト
+<ul>
+<li><a
+href="https://techlab.sixsquare.co.jp/archives/8">シェル-AWRレポート出力</a></li>
+<li><a
+href="https://techlab.sixsquare.co.jp/archives/196">AWRレポート出力、スナップショットの取得・削除</a></li>
+<li><a
+href="https://piro-shiki.dreamlog.jp/archives/48681483.html">Oracle
+Database～AWRレポートの取得</a></li>
+<li><a href="https://todoonada.co.jp/3414/">[OracleDB] AWR
+SQLレポートの出力方法</a></li>
+</ul></li>
+</ul>
+<h3 id="参考情報性能分析">参考情報(性能分析)</h3>
+<ul>
 <li>Qiita(性能分析)
 <ul>
 <li><a
 href="https://qiita.com/lightworker0212/items/138d84c1fb1c05cd8b53">Oracleの性能分析機能</a></li>
 </ul></li>
-<li>一般ページ
+<li>SpeakerDeck
 <ul>
-<li><a href="https://eeengineer.com/oracle-awr-report/">Oracle
-AWRレポートの見方と解析ポイントを徹底解説</a></li>
-<li><a href="https://todoonada.co.jp/3414/">[OracleDB] AWR
-SQLレポートの出力方法</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracletechnight91-perfmanage">Oracle
+Database 最新パフォーマンス分析手法</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-database-management">OCI
+Database Management サービス詳細</a></li>
 </ul></li>
 </ul>
 <hr />
