@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Oracle_インストール</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Oracle_インストール</h1>
+</header>
+<p>作成日：2025/11/01 11:47:41<br />
+更新日：2025/11/02 09:24:37<br />
+<a href="index.html">トップページ</a></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracledbのインストール手順">OracleDBのインストール手順</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="oraclelinuxのインストール">OracleLinuxのインストール</h3>
+<p>OracleLinux上でOracleDBを構築する手順として以下のような種別があります。</p>
+<ul>
+<li>OracleLinuxのインストール手順の種別
+<ol type="1">
+<li>VirtualBoxで仮想サーバを構築して、メディアインストールを行う</li>
+<li>VirtualBoxのovaファイルを利用して、仮想サーバを構築する</li>
+<li>VirtualBoxで仮想サーバを構築して、「23ai
+Free」でインストールを行う</li>
+<li>Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
+</ol></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールlinux">Oracle製品のインストール(Linux)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="oracle23coraclelinuxvirtualbox_ovaイメージ使用インストール">Oracle23c/OracleLinux/VirtualBox_ovaイメージ使用インストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/ora_gonsuke777/items/564471e460b2b58d8aa2">DeveloperRelease
+VirtualBox ApplianceでOracleDB23c環境を楽々構築</a></li>
+</ul>
+<h3
+id="oracle19coraclelinuxvirtualboxで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBoxで仮想サーバ構築インストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/kamechan516/items/63b58f08dc7f545700bc">Oracle
+Linux
+8.7(VirtualBox使用)にOracle19cをインストールする方法　前編</a></li>
+<li><a
+href="https://qiita.com/jri-oi/items/29cc151fb8f98298d044">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築</a></li>
+</ul>
+<h3 id="oraclelinux23ai-freerpmインストール">OracleLinux/23ai
+Free(RPMインストール)</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/free/get-started/">Oracle
+Database Freeの利用を開始する</a></li>
+<li>[Oracle Database 23ai
+Freeの紹介](https://qiita.com/nakaie/items/609a85a34301fc9ed79c</li>
+<li><a
+href="https://qiita.com/nisshii0/items/e300edbbb7845a40cc11">3コマンドで
+Oracle Database 23ai Free の インストール</a></li>
+<li><a
+href="https://qiita.com/plusultra/items/f4ec92a4b78c8c11a56b">Oracle
+Database 23ai Free を試す</a></li>
+</ul>
+<h3 id="oraclelinuxvagrantboxes使用">OracleLinux/VagrantBoxes使用</h3>
+<ul>
+<li><a href="https://yum.oracle.com/boxes/">Using Oracle Linux Vagrant
+boxes</a></li>
+<li><a
+href="https://qiita.com/y_arakawa/items/08ef7a4568ef1545313d">Vagrantで開発環境を手軽に構築し壊す</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールwindows">Oracle製品のインストール(Windows)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="oracle21cwindows11インストール">Oracle21c/Windows11インストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/manabu-s/items/df29732448669b5429eb">Oracle
+Database 21c Express Editionのインストール手順及びSQL
+Developerの設定手順</a></li>
+<li><a
+href="https://qiita.com/YouKnow/items/1d5b695629af75465dcd">Windowsでインストールからテーブル作成まで</a></li>
+</ul>
+<h3
+id="oracle19cwindows10インストール">Oracle19c/Windows10インストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/eichiro169/items/1f9b5bfea9c00501afcd">oracle DB
+19cの環境構築で詰みまくったので手順をまとめた</a></li>
+</ul>
+<h3
+id="oracle12cwindows10インストール">Oracle12c/Windows10インストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/nori-k/items/668a8b50984863ed025f">Windows10にOracle12cをインストールしたので手順を残しておこうと思う</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールoraclerac">Oracle製品のインストール(OracleRAC)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="oracle-rac19cインストール">Oracle RAC19cインストール</h3>
+<ul>
+<li><a
+href="https://qiita.com/FiftyStorm/items/efa9f610d765444f3fda">VirtualBoxを用いてOracle
+DBのRAC（19c）を構築しよー</a></li>
+<li><a
+href="https://qiita.com/shirok/items/d6f2b3c0813122dd4048">VMwareへOracle
+Real Application Clusters 19c (RAC)をインストールしてみてみた</a></li>
+<li><a href="https://chiritsumon.net/lab/archives/267">Linux で 19c RAC
+環境構築</a></li>
+<li><a
+href="https://chiritsumon.net/lab/archives/489">RACのノード追加</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

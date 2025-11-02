@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/11/01 20:12:08<br />
+更新日：2025/11/02 09:24:37<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1216,6 +1216,29 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Tasks/contengconfigurin
 <li><a href="https://qiita.com/tktk2712/items/9003be9fe56b08627c80">OCI
 Container Engine for Kubernetes (OKE)のkube-dns(CoreDNS)を確認</a></li>
 </ul>
+<h3
+id="okeociネイティブイングレスコントローラ">OKE/OCIネイティブ・イングレス・コントローラ</h3>
+<p>OCIネイティブ・イングレス・コントローラとは、OCI固有のKubernetes/ingress
+Controllersのことです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Tasks/contengsettingupnativeingresscontroller.htm">KubernetesクラスタでのOCIネイティブ・イングレス・コントローラの設定</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/ContEng/Tasks/contengsettingupnativeingresscontroller-configuring.htm">OCI
+Native Ingress Controllerの構成</a></li>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/ContEng/Tasks/contengsettingupnativeingresscontroller-prereqs.htm">OCIネイティブ・イングレス・コントローラをスタンドアロン・プログラムとしてデプロイするための前提条件</a></li>
+<li><a
+href="https://qiita.com/takuya_0301/items/da616c9313eaeb9e8a9d">OCI
+Native Ingress Controllerを試してみよう</a></li>
+<li><a
+href="https://qiita.com/dingtianhongjie/items/ee1d7a55226e27ce12e3">Container
+Engine for Kubernetes (OKE) で Ingress を設定する</a></li>
+<li><a href="https://zenn.dev/tbt/articles/ed609bb1a16e4f">nginx ingress
+controller導入@OCI</a></li>
+<li><a
+href="https://github.com/oracle/oci-native-ingress-controller">oracle/oci-native-ingress-controller</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="オンプレミス環境">オンプレミス環境</h2>
@@ -1467,10 +1490,9 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsec
 <li><a
 href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/Content/Network/Concepts/fastconnectrequirements.htm">FastConnectの要件</a></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectthirdpartyprovider.htm">FastConnect:
-サードパーティ・プロバイダの使用</a></li>
-<li><a
 href="https://www.oracle.com/jp/cloud/networking/fastconnect/">FastConnect</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/fastconnect/faq/">FastConnectに関するよくある質問</a></li>
 <li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-fastconnect-xiang-xi">OCI技術資料
 : 外部接続 詳細 FastConnect</a></li>
@@ -1480,11 +1502,11 @@ href="https://qiita.com/hongmnh/items/5bdad2d50cb454cebf1f">【OCI】FastConnect
 </ul>
 <h3 id="fastconnect接続方式">FastConnect/接続方式</h3>
 <ul>
-<li>Oracleプロバイダー接続
+<li>サードパーティプロバイダー接続(Oracleプロバイダー接続)
 <ul>
 <li>拠点とOracleのFastConnect拠点間を、回線事業者が提供する専用回線で接続します。</li>
 </ul></li>
-<li>サードパーティプロバイダー接続
+<li>Oracleパートナ
 <ul>
 <li>Oracleと提携しているパートナー（SIerや通信事業者など）が提供する接続サービスを利用します。既存のネットワーク環境を活用できる場合には導入が容易ですが、サードパーティプロバイダーのネットワーク環境を通過するため、Oracleプロバイダー接続に比べてレイテンシが高くなる傾向があります。</li>
 </ul></li>
@@ -1492,6 +1514,8 @@ href="https://qiita.com/hongmnh/items/5bdad2d50cb454cebf1f">【OCI】FastConnect
 <ul>
 <li>FastConnectロケーションを提供するデータセンター内に、自身のネットワーク機器を設置し、Oracleが提供するFastConnectポートに対して物理ケーブルで直接接続（ダイレクトコネクト）します。最もレイテンシが低く、セキュリティが高い選択肢ですが、半面で物理的なネットワーク作業や機器管理が必要となります。</li>
 </ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectoverview.htm#How">接続方法および接続場所</a></li>
 <li><a
 href="https://qiita.com/hongmnh/items/8722801d50c47174323a">【OCI】FastConnectについていろいろ
 #2(接続モデル)</a></li>
@@ -1554,6 +1578,10 @@ Oracleパートナの使用</h3>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectprovider.htm">FastConnect:
 Oracleパートナの使用</a></li>
+<li><a
+href="https://www.oracle.com/jp/cloud/networking/fastconnect/partners/">FastConnectリージョン</a></li>
+<li><a
+href="https://qiita.com/hongmnh/items/b3f021b16924cbebfa53">Oracleパートナーを使用したFastConnect接続</a></li>
 </ul>
 <h3 id="oracle-cloud-コロケーション接続fastconnect-colocation">Oracle
 Cloud コロケーション接続(FastConnect Colocation)</h3>
@@ -2068,7 +2096,7 @@ Network Firewall を使ってみる</a></li>
 <li>暗号化ルールおよびセキュリティ・ルールは、ユーザーが定義できる優先順位を使用して適用されます。</li>
 </ul></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm">ファイアウォール・ポリシーの作成および管理</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/network-firewall/policies.htm#network-firewall-policies__policy">ファイアウォール・ポリシー・ルールについて</a></li>
 </ul>
 <h3 id="oci-network-firewallログ解析">OCI Network Firewall/ログ解析</h3>
 <ul>
@@ -2917,18 +2945,29 @@ href="https://techblog.ap-com.co.jp/entry/2024/02/16/184145">ゼロトラスト�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="kubernetes概要">Kubernetes/概要</h3>
 <ul>
-<li>https://kubernetes.io/ja/docs/concepts/overview/components/</li>
-<li>https://qiita.com/tadashiro_ninomiya/items/6e6fea807b2a16732b5b</li>
-<li>https://qiita.com/minorun365/items/b87ebe1e4bdad6a12da7</li>
-<li>https://circleci.com/ja/blog/what-is-kubernetes/</li>
-<li>https://sysdig.jp/learn-cloud-native/components-of-kubernetes/</li>
+<li><a
+href="https://kubernetes.io/ja/docs/concepts/overview/components/">Kubernetesのコンポーネント</a></li>
+<li><a
+href="https://qiita.com/tadashiro_ninomiya/items/6e6fea807b2a16732b5b">Kubernetesの基本を徹底解説</a></li>
+<li><a
+href="https://qiita.com/minorun365/items/b87ebe1e4bdad6a12da7">Kubernetes入門！主要コンポーネントを概要図で学ぼう</a></li>
+<li><a
+href="https://circleci.com/ja/blog/what-is-kubernetes/">Kubernetes
+(k8s)とは？基礎、概要や構造を徹底解説</a></li>
+<li><a
+href="https://sysdig.jp/learn-cloud-native/components-of-kubernetes/">Kubernetesコンポーネントの概要を解説</a></li>
 </ul>
 <h3 id="kubernetesingress-controllers">Kubernetes/Ingress
 Controllers</h3>
 <ul>
-<li>https://zenn.dev/yusu29/articles/kubernetes_ingress</li>
-<li>https://qiita.com/showchan33/items/acbccc819acc0c841653</li>
-<li>https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/</li>
+<li><a
+href="https://kubernetes.io/ja/docs/concepts/services-networking/ingress-controllers/">Ingressコントローラー</a></li>
+<li><a
+href="https://zenn.dev/yusu29/articles/kubernetes_ingress">Kubernetes
+Ingress完全に理解した</a></li>
+<li><a
+href="https://qiita.com/showchan33/items/acbccc819acc0c841653">作ってわかる！
+Ingress</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
