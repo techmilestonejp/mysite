@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/11/02 09:24:37<br />
+作成日：2025/11/22 15:45:58<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -91,6 +91,37 @@ href="https://qiita.com/nisshii0/items/33b7c2a38a6d05bbc1e4">OCI資格(1Z0-1072-
 <ul>
 <li><a
 href="https://www.actual4test.com/exam/1Z0-1124-25-questions">4test_2025</a></li>
+</ul>
+<h3 id="試験内容チェックリスト">試験内容チェックリスト</h3>
+<ul>
+<li>OCI仮想クラウド・ネットワーク (VCN) の設計とデプロイ
+<ul>
+<li>VCN/サブネットの特性の確認</li>
+<li>IPv4/IPv6 アドレス指定の理解</li>
+<li>VCN ゲートウェイの役割の区別</li>
+<li>異なるエンドポイントの認識</li>
+<li>ネットワーキング・アーキテクチャへのエンドポイントの適用</li>
+<li>オブジェクト・ストレージ・エンド・ポイント(Keeperの配置)</li>
+</ul></li>
+<li>OCI
+ネットワーキング・ソリューションとアプリケーション・サービスの計画と設計
+<ul>
+<li>IP管理の詳細を認識し、手順ステップを選択</li>
+<li>OCI
+ロード・バランサのオファリングおよび関連リソースについての理解</li>
+<li>OCI DNS およびトラフィック・ステアリングの理解</li>
+<li>DNSsec (Keeperの配置)</li>
+</ul></li>
+<li>ハイブリッド・ネットワーキング・アーキテクチャの設計
+<ul>
+<li>DRG と DRG アタッチメントのコマンドの理解</li>
+<li>BGP の知識の評価</li>
+<li>OCI VPN サービスの評価</li>
+<li>OCI の異なる FastConnect 製品のノウハウの検証</li>
+<li>マルチクラウド接続構成の維持 FastConnect に対する IPSec</li>
+</ul></li>
+<li><a
+href="https://education.oracle.com/ja/ouexam-pexam_1z0-1124-25/pexam_1Z0-1124-25">試験内容チェックリスト</a></li>
 </ul>
 <h3 id="試験コース">試験コース</h3>
 <ul>
@@ -327,6 +358,11 @@ href="https://speakerdeck.com/ocise/oci-sabisuji-ben-qing-bao">OCI
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/4a29c6a57607dcf3168d#%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%96">リージョンのサブスクライブ</a></li>
 </ul>
+<h3 id="レルム">レルム</h3>
+<ul>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/4a29c6a57607dcf3168d#%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E8%AD%98%E5%88%A5">リソースの識別</a></li>
+</ul>
 <h3 id="iam">IAM</h3>
 <ul>
 <li><a
@@ -421,15 +457,17 @@ href="https://qiita.com/Qu4rtz_MC5/items/d1e5172bccf094c72c3f#vcn%E3%81%AE%E6%A6
 <li>DHCPオプション</li>
 <li>DNSリゾルバ(Internet and VCN Resolver)
 <ul>
-<li>VCN Resolver
-<ul>
-<li>VCN内部のInstanceを名前解決するためのリゾルバ</li>
-</ul></li>
 <li>インターネット・リゾルバ
 <ul>
 <li>インスタンスによって、インターネットで公開されているホスト名が解決されます。</li>
 <li>インスタンスは、インターネット・ゲートウェイまたはオンプレミス・ネットワークへの接続(DRGを介したサイト間VPN
-IPSec接続など)を介してインターネットにアクセスする必要はありません。</li>
+IPSec接続など)を介してインターネットにアクセスする必要はありません。<br />
+</li>
+</ul></li>
+<li>VCN Resolver
+<ul>
+<li>VCN内部のInstanceを名前解決するためのリゾルバ<br />
+</li>
 </ul></li>
 </ul></li>
 <li>ゲートウェイ
@@ -1117,30 +1155,59 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-a
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-dns">OCI-DNS</h2>
+<h2 id="oci-dnsdomain-name-system">OCI-DNS(Domain Name System)</h2>
 <p>分類05:OCIネットワーク・ソリューションとアプリケーション・サービスの計画・設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci-dns概要">OCI-DNS/概要</h3>
+<p>OCI-DNSはプライマリまたはセカンダリ・インターネットに対応したDNSとして機能します。<br />
+OCI-DNSは以下の概要図の処理を実行することができます。</p>
+<p><img src="img/oci/dns.png" width="30%" height="30%"></p>
 <ul>
 <li><a
-href="https://speakerdeck.com/ocise/dnsgai-yao?slide=35">DNS概要</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/DNS/home.htm">DNSおよびトラフィック管理</a></li>
 <li><a
-href="https://qiita.com/shirok/items/2da9d9ed96869fda92df">相互接続された
-VCN とオンプレミスで DNSピアリング(Forwarding)してみてみた</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/DNS/Concepts/dnszonemanagement.htm">DNSの概要</a></li>
+<li><a href="https://www.oracle.com/jp/cloud/networking/dns/">Domain
+Name System（DNS）</a></li>
+<li><a href="https://speakerdeck.com/ocise/dnsgai-yao">DNS概要</a></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/1e1216a68e47010272fe">Oracle
 Cloud Infrastructure Architect Associate 勉強メモ（DNS)</a></li>
+<li><a
+href="https://qiita.com/shirok/items/2da9d9ed96869fda92df">相互接続された
+VCN とオンプレミスで DNSピアリング(Forwarding)してみてみた</a></li>
+<li><a href="https://qiita.com/shirok/items/ac97cf48154c59c9a87e">Oracle
+Cloud: オンプレミスとOCIをVPN接続してオンプレミスからOCI Private
+DNSを使用して名前解決してみてみた</a></li>
+<li><a href="https://qiita.com/shirok/items/4197e09dc2bfd7db82f3">Oracle
+Cloud: Private DNSで
+PeeringしたVCNどうしホスト名(FQDN)で通信できるようにしてみてみた</a></li>
+<li><a
+href="https://docs.oracle.com/ja/learn/resolve-onprem-dns-from-oci/">Oracle
+Cloud
+Infrastructureおよびオンプレミス・サービスの双方向ドメイン名解決の構成</a></li>
+</ul>
+<h3 id="oci-dnsdnsの仕組み">OCI-DNS/DNSの仕組み</h3>
+<ul>
+<li><a
+href="https://www.ashisuto.co.jp/db_blog/article/oraclecloud-name-resolution.html">OCI
+DNSで名前解決してみよう！</a></li>
+<li><a
+href="https://www.ashisuto.co.jp/db_blog/article/oraclecloud-name-resolution-02.html">OCIのDNSサービスを使ってみよう　実践編</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/9c5647d22c923fc74330">Oracle
+Cloud Infrastructureの名前解決の仕組み&amp;ホスト名の変更方法</a></li>
 </ul>
 <h3 id="dnsリゾルバ">DNSリゾルバ</h3>
 <ul>
 <li>Internet and VCN Resolver：
 <ul>
 <li>デフォルト設定であり、下記2つの目的で使用する。</li>
-<li>インターネット・リゾルバ
+<li>(1)インターネット・リゾルバ
 <ul>
 <li>インターネットに一般公開されているwww.oracle.comなどの名前解決</li>
 </ul></li>
-<li>VCNリゾルバ
+<li>(2)VCNリゾルバ
 <ul>
 <li>同じVCNで稼働するインスタンスの名前解決（VCN Resolver）</li>
 </ul></li>
@@ -1156,9 +1223,26 @@ Cloud Infrastructure Architect Associate 勉強メモ（DNS)</a></li>
 </ul></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/dns.htm#Choices">VCNのDNSの選択肢</a></li>
+</ul>
+<h3 id="プライベートdnsリゾルバ">プライベートDNSリゾルバ</h3>
+<ul>
 <li><a
-href="https://qiita.com/yamada-hakase/items/9c5647d22c923fc74330">Oracle
-Cloud Infrastructureの名前解決の仕組み&amp;ホスト名の変更方法</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/dns-topic-Private-resolver.htm">プライベートDNSリゾルバ</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/intermediates/private-dns/">プライベートDNSを使って名前解決をする</a></li>
+<li><a
+href="https://qiita.com/yamada-hakase/items/1b37b2aaacca525e571d">Oracle
+CloudのプライベートDNSを理解する</a></li>
+</ul>
+<h3 id="リゾルバエンドポイント">リゾルバ・エンドポイント</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/dns-topic-resolver_endpoints.htm">リゾルバ・エンドポイント</a></li>
+</ul>
+<h3 id="リゾルバルール">リゾルバ・ルール</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/dns-topic-resolver_rules.htm">リゾルバ・ルール</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1641,7 +1725,8 @@ BCP 経由ですべての OCI パブリック CIDR
 (Oracle Services Networkエッジルータに直接接続ができる)</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="サイト間ipsecvpn">サイト間IPSecVPN</h2>
+<h2 id="サイト間ipsecvpnsite-to-site-vpn">サイト間IPSecVPN(Site-to-Site
+VPN)</h2>
 <p>分類06:ハイブリッド・ネットワーク・アーキテクチャの設計<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="サイト間ipsecvpn概要">サイト間IPSecVPN/概要</h3>
@@ -1687,6 +1772,12 @@ id="サイト間ipsecvpnvpnルーティング">サイト間IPSecVPN/VPNルーテ
 <li><a
 href="https://speakerdeck.com/ocise/ociji-shu-zi-liao-wai-bu-jie-sok-vpnjie-sok-xiang-xi?slide=8">OCI技術資料
 : 外部接続 VPN接続 詳細/8ページ</a></li>
+</ul>
+<h3 id="ipsec-over-fastconnectfastconnect経由のipsec概要">IPSec over
+FastConnect(FastConnect経由のIPSec)/概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#ipsec">FastConnectに対するIPSecの構成</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1789,6 +1880,11 @@ href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35
 </ul>
 <p>「ハブ・スポーク構成」の構成例は以下の通りです。</p>
 <p><img src="img/oci/transit_routing01.png" width="75%" height="75%"></p>
+<h3 id="ハブスポーク構成dns設定">ハブ・スポーク構成/DNS設定</h3>
+<ul>
+<li><a
+href="https://blog.s-style.co.jp/2021/03/7394/">OCI環境へのVPN接続でも名前解決をする</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティ一般">セキュリティ一般</h2>
@@ -2902,18 +2998,52 @@ href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブ
 <h2 id="ネットワーク一般技術dns">ネットワーク一般技術/DNS</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="dnsサーバとゾーン">DNSサーバとゾーン</h3>
+<h3 id="dns機能概要">DNS機能概要</h3>
+<ul>
+<li>LPIC202試験(DNS)
+<ul>
+<li><a href="https://note.com/rollingchimpan/n/ne15470fa4c70">LPIC
+202対策 DNS編</a></li>
+<li><a
+href="https://akng-engineer.hatenablog.com/entry/2018/04/05/222444">LPIC202/LinuC202合格への道①
+【全体の感想・DNSサーバ編】</a></li>
+<li><a href="http://www.lpi.jp/today/list_exam.phtml?cls2_code=100">LPIC
+202－「DNS」－「BIND8の基本設定」</a></li>
+<li><a
+href="https://www.youtube.com/watch?v=eBoGW3PfUGU">【LPIC:202】DNSサーバを構築してWebサーバに名前解決でアクセスしてみよう</a></li>
+</ul></li>
+<li>LPIC202試験(全体)
 <ul>
 <li><a
-href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾーン</a></li>
-</ul>
-<h3 id="dsレコード">DSレコード</h3>
-<ul>
+href="https://note.com/oh_yeahfire/n/n49e87177acb1">【Linux】LPIC202試験用</a></li>
+<li><a
+href="https://qiita.com/zukizukizukizuki/items/96ffb585a18b73ffe691">最難関と名高いLPIC202のチートシート</a></li>
+<li><a
+href="https://academ-aid.com/qualif/vendor/lpic-202-qa">【Linux試験対策】LPIC-2
+202見直しポイント</a> ### DSレコード</li>
+</ul></li>
 <li><a
 href="https://jprs.jp/glossary/index.php?ID=0213">DSリソースレコード</a></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/1212e31bc8b26eb8a076">DSレコードとは</a></li>
 </ul>
+<h3 id="dnsゾーンファイル">DNSゾーンファイル</h3>
+<ul>
+<li><a
+href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾーン</a></li>
+</ul>
+<h3 id="dnsリゾルバ-1">DNSリゾルバ</h3>
+<ul>
+<li><a
+href="https://e-words.jp/w/%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90.html">リゾルバ</a></li>
+<li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
+resolver</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク一般技術dnssec">ネットワーク一般技術/DNSSEC</h2>
+<p>分類99:ネットワーク一般技術<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="zskzone-signing-keyゾーン署名鍵">ZSK（Zone Signing
 Key、ゾーン署名鍵</h3>
 <ul>
