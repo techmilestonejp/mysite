@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-作成日：2025/11/24 09:41:07<br />
+作成日：2025/11/24 23:01:23<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -821,16 +821,20 @@ href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/creating-secur
 href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/compute-cloud-at-customer/topics/network/creating-a-security-list.htm">セキュリティ・リストの作成</a></li>
 </ul>
 <h3
-id="セキュリティリストステートフルルールとステートレスルール">セキュリティ・リスト/ステートフルルールとステートレスルール</h3>
-<ul>
-<li><a
-href="https://cosol.jp/techdb/2018/12/oci_security_list_statefull_rule_stateless_rule/">OCIセキュリティリストのステートフルルールとステートレスルール</a></li>
-</ul>
-<h3
 id="ネットワークセキュリティグループ">ネットワーク・セキュリティ・グループ</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/networksecuritygroups.htm">ネットワーク・セキュリティ・グループ</a></li>
+</ul>
+<h3
+id="セキュリティルールステートフルルールとステートレスルール">セキュリティ・ルール/ステートフルルールとステートレスルール</h3>
+<p>セキュリティ・ルールを作成する際には、ステートフルとステートレスのどちらかを選択します。デフォルトは<strong>ステートフル</strong>です。<br />
+インターネットに接続するWebサイト(HTTP/HTTPSトラフィック用)が大量に存在する場合は、ステートレス・ルールが推奨されています。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/securityrules.htm#stateful">ステートレス・ルールと比較したステートフル</a></li>
+<li><a
+href="https://cosol.jp/techdb/2018/12/oci_security_list_statefull_rule_stateless_rule/">OCIセキュリティリストのステートフルルールとステートレスルール</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -981,6 +985,8 @@ id="プライベートエンドポイント概要">プライベート・エン�
 <li><a
 href="https://www.oracle.com/jp/cloud/networking/private-endpoint/">プライベート・エンドポイント</a></li>
 <li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Object/Tasks/private-endpoints.htm">オブジェクト・ストレージのプライベート・エンドポイント</a></li>
+<li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm">プライベート・エンドポイントの作成</a></li>
 <li><a
 href="https://cloudii.jp/news/blog/oracle-cloud/objectstorage-privateendpoint/">【Oracle
@@ -1008,9 +1014,36 @@ Warehouseでは、選択したサブネットの一つのプライベートIPア
 </ul></li>
 <li>アクセス方向
 <ul>
-<li>プライベート・エンドポイント：順方向、逆方向ともに接続が可能です。</li>
+<li>プライベート・エンドポイント：順方向、逆方向(双方向、両方向)ともに接続が可能です。</li>
 <li>サービス・ゲートウェイ：順方向(VCN→OSN)のみの接続が可能です。</li>
 </ul></li>
+</ul>
+<h3
+id="プライベートエンドポイントのネットワーク構成">プライベート・エンドポイントのネットワーク構成</h3>
+<p><img src="img/oci/oci-private-endpoint.png" width="70%" height="70%"></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="オブジェクトストレージの専用エンドポイント">オブジェクト・ストレージの専用エンドポイント</h2>
+<p>分類04:VCNゲートウェイ<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="オブジェクトストレージの専用エンドポイント概要">オブジェクト・ストレージの専用エンドポイント/概要</h3>
+<p>URLに専用のネームスペース文字列を含めることで、テナンシ固有のエンドポイントが設定可能となります。<br />
+テナンシーごとで分離された状態でオブジェクト・ストレージを利用することができます。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Object/Concepts/dedicatedendpoints.htm">オブジェクト・ストレージの専用エンドポイント</a></li>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/object-storage-dedicated-endpoints/">オブジェクト・ストレージの専用エンドポイントが提供されます</a></li>
+</ul>
+<h3
+id="オブジェクトストレージの専用エンドポイント接続先url">オブジェクト・ストレージの専用エンドポイント/接続先URL</h3>
+<p>接続先は以下となります。</p>
+<pre><code>https://$namespace.objectstorage.$region.oci.customeroci.com</code></pre>
+<ul>
+<li><a
+href="https://cloudii.jp/news/blog/oracle-cloud/object-storage-dedicated-endpoints/#i">専用エンドポイントの概要</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1630,8 +1663,8 @@ ConnectとFastConnectの違いは？</a></li>
 と OCI を 専用線 (ExpressRoute / FastConnect) でつなぐ</a></li>
 </ul>
 <h3
-id="fastconnectfastconnectの一般的なネットワーク構成oracleパートナまたはサードパーティプロバイダ使用">FastConnect/FastConnectの一般的なネットワーク構成(Oracleパートナまたはサードパーティ・プロバイダ使用)</h3>
-<p>Oracleパートナまたはサードパーティ・プロバイダ使用時のFastConnectの一般的なネットワーク構成は以下のとおりです。</p>
+id="fastconnectfastconnectの一般的なネットワーク構成サードパーティプロバイダー接続又はoracleパートナ">FastConnect/FastConnectの一般的なネットワーク構成(サードパーティプロバイダー接続又はOracleパートナ)</h3>
+<p>サードパーティプロバイダー接続又はOracleパートナ時のFastConnectの一般的なネットワーク構成は以下のとおりです。</p>
 <p><img src="img/oci/network_fc_choices_partner.png" width="70%" height="70%"></p>
 <ul>
 <li><a
@@ -2011,17 +2044,22 @@ Cross-Tenancy Remote Peeringしてみてみた</a></li>
 </ul>
 <h3 id="クロステナンシiamポリシー">クロス・テナンシ/IAMポリシー</h3>
 <ul>
+<li>定義:define
+<ul>
+<li>承認および許可ポリシー・文のテナンシOCIDに別名を割り当てます。</li>
+<li>「許可(admit)」ステートメントのグループ・テナンシからIAMグループOCIDに別名を割り当てるには、リソース・テナンシに「定義」ステートメントも必要です。</li>
+<li>エイリアスは、選択したわかりやすい名前です。テナンシまたはグループの実際の表示名を使用する必要はありません。</li>
+</ul></li>
 <li>承認:endorse
 <ul>
-<li>独自のテナンシ内のグループが他のテナンシ内で実行できる一般的な機能セットを示します。Endorseステートメントは、境界を越えて他のテナントにアクセスし、そのテナンシのリソースを使用するユーザーのグループを含むテナンシに常に属します。例では、このテナントをグループ・テナンシと呼んでいます。</li>
+<li>独自のテナンシ内のグループが他のテナンシ内で実行できる一般的な機能セットを示します。</li>
+<li>Endorseステートメントは、境界を越えて他のテナントにアクセスし、そのテナンシのリソースを使用するユーザーのグループを含むテナンシに常に属します。</li>
 </ul></li>
 <li>許可:admit
 <ul>
-<li>他のテナントからグループに付与する独自のテナンシの機能の種類を示します。許可ステートメントは、テナンシへのアクセスを許可するテナンシに属します。許可ステートメントは、グループ・テナンシからのリソース・アクセスを必要とし、対応する承認ステートメントで特定されるユーザーのグループを識別します。例では、このテナントをリソース・テナンシと呼んでいます。</li>
-</ul></li>
-<li>定義:define
-<ul>
-<li>承認および許可ポリシー・文のテナンシOCIDに別名を割り当てます。「許可」ステートメントのグループ・テナンシからIAMグループOCIDに別名を割り当てるには、リソース・テナンシに「定義」ステートメントも必要です。エイリアスは、選択したわかりやすい名前です。テナンシまたはグループの実際の表示名を使用する必要はありません。</li>
+<li>他のテナントからグループに付与する独自のテナンシの機能の種類を示します。</li>
+<li>許可ステートメントは、テナンシへのアクセスを許可するテナンシに属します。</li>
+<li>許可ステートメントは、グループ・テナンシからのリソース・アクセスを必要とし、対応する承認ステートメントで特定されるユーザーのグループを識別します。</li>
 </ul></li>
 <li><a
 href="https://qiita.com/tkonishi/items/3b8848b65bec4f99afef">OCIのクロステナンシ・ポリシーを設定してみる</a></li>
@@ -2033,6 +2071,8 @@ href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/database-tools/
 クロステナンシ・アソシエーション・ポリシー</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Identity/policieshow/iam-cross-domain.htm">クロステナンシ・アクセス・ポリシー</a></li>
+<li><a
+href="https://qiita.com/tkonishi/items/3b8848b65bec4f99afef#%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B7%E3%81%AE%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%A3%E3%81%A6%E4%BD%95">クロステナンシのポリシーって何？</a></li>
 <li><a
 href="https://www.site24x7.jp/help/oci/enable-oci-tenancy-access.html">OCIテナンシへのアクセス有効化</a></li>
 <li><a
@@ -2677,6 +2717,7 @@ id="仮想テストアクセスポイントvtap">仮想テスト・アクセス�
 <p>分類10:OCIネットワーク、接続性、トラブルシューティング・ツール<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="vtap概要">VTAP/概要</h3>
+<p>仮想テスト・アクセス・ポイント(VTAP)は、選択したソースから選択したターゲットにトラフィックをミラー化して、トラブルシューティング、セキュリティ分析およびデータ・モニタリングを行うツールとなります。</p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/vtap.htm">仮想テスト・アクセス・ポイント(VTAP)</a></li>
@@ -2685,7 +2726,15 @@ href="https://qiita.com/s_wani/items/63637ee7bb0150de11e0">OCIのVTAP(Virtual
 Test Access Points)機能を使ってみた</a></li>
 </ul>
 <h3 id="vtap構成要素">VTAP/構成要素</h3>
-<p>各VTAPは作成時にVTAPソース、VTAPターゲット、取得フィルタを指定することで構成されます。</p>
+<p>各VTAPは作成時には、以下の項目を設定する必要があります。</p>
+<ul>
+<li>VTAPソース</li>
+<li>VTAPターゲット</li>
+<li>取得フィルタ</li>
+</ul>
+<h3 id="vtapネットワーク構成">VTAP/ネットワーク構成</h3>
+<p><img src="img/oci/oci-vtap-01.png" width="50%" height="50%"><br />
+<img src="img/oci/oci-vtap-02.png" width="70%" height="70%"><br /></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ベストプラクティス">ベストプラクティス</h2>
