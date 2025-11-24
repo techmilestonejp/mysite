@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-作成日：2025/11/22 22:36:42<br />
+作成日：2025/11/24 09:41:07<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -126,6 +126,18 @@ href="https://www.actual4test.com/exam/1Z0-1124-25-questions">4test_2025</a></li
 <li>DRG、LPG、Network Appliance
 リソースによる転送ルーティングに関する重要な側面の解釈</li>
 <li>転送ルーティング構成の合成</li>
+</ul></li>
+<li>安全な OCI ネットワーキングと接続ソリューションの実装と運用
+<ul>
+<li>接続および関連する IAM の概念をテナンシ間通信に適用</li>
+<li>複数層アーキテクチャでの要塞サービスの様々なアプローチの理解</li>
+<li>CloudShell の機能の理解</li>
+<li>ネットワーク・ファイアウォールの特性の理解</li>
+<li>ネットワーキング多層アーキテクチャにおける
+WAF/エッジ/証明書/サービスの評価</li>
+<li>ネットワーキング多層アーキテクチャにおける IaC/OKE
+サービスの解釈</li>
+<li>Zero Trust Packet ルーティング</li>
 </ul></li>
 <li><a
 href="https://education.oracle.com/ja/ouexam-pexam_1z0-1124-25/pexam_1Z0-1124-25">試験内容チェックリスト</a></li>
@@ -1618,9 +1630,9 @@ ConnectとFastConnectの違いは？</a></li>
 と OCI を 専用線 (ExpressRoute / FastConnect) でつなぐ</a></li>
 </ul>
 <h3
-id="fastconnectfastconnectの一般的なnw構成oracleパートナまたはサードパーティプロバイダ使用">FastConnect/FastConnectの一般的なNW構成(Oracleパートナまたはサードパーティ・プロバイダ使用)</h3>
-<p>Oracleパートナまたはサードパーティ・プロバイダ使用時のFastConnectの一般的なNW構成は以下のとおりです。</p>
-<p><img src="img/oci/network_fc_choices_partner.png" width="50%" height="50%"></p>
+id="fastconnectfastconnectの一般的なネットワーク構成oracleパートナまたはサードパーティプロバイダ使用">FastConnect/FastConnectの一般的なネットワーク構成(Oracleパートナまたはサードパーティ・プロバイダ使用)</h3>
+<p>Oracleパートナまたはサードパーティ・プロバイダ使用時のFastConnectの一般的なネットワーク構成は以下のとおりです。</p>
+<p><img src="img/oci/network_fc_choices_partner.png" width="70%" height="70%"></p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectoverview.htm#diagrams">基本的なネットワークの図</a></li>
@@ -1632,6 +1644,24 @@ id="ipsec利用時のループバックアタッチメント">IPSec利用時の�
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#fastconnectsecurity_topic-loopback">ループバック・アタッチメント</a></li>
+</ul>
+<h3
+id="fastconnectbfdbidirectional-forwarding-detection">FastConnect/BFD(Bidirectional
+Forwarding Detection)</h3>
+<p>FastConnectは、BFD(Bidirectional Forwarding
+Detection)の機能をサポートしている。</p>
+<ul>
+<li><a
+href="https://docs.public.content.oci.oraclecloud.com/ja-jp/iaas/private-cloud-appliance/cmn/uplink-protocols.htm#uplink-protocols_0__bfd">BFD</a></li>
+<li><a
+href="https://docs.oracle.com/en/industries/communications/session-border-controller/9.3.0/configuration/bidirectional-forwarding-detection.html">Bidirectional
+Forwarding Detection</a></li>
+<li><a
+href="https://qiita.com/shirok/items/75f81d83eee083b78369#-task8-%E4%BB%AE%E6%83%B3%E5%9B%9E%E7%B7%9A-virtual-circuit-vc%E8%A8%AD%E5%AE%9A">Task8:
+仮想回線 Virtual Circuit (VC)設定</a></li>
+<li><a
+href="https://www.infraexpert.com/study/routing11.html">Bidirectional
+Forwarding Detection</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1794,6 +1824,12 @@ FastConnect(FastConnect経由のIPSec)/概要</h3>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Concepts/fastconnectsecurity.htm#ipsec">FastConnectに対するIPSecの構成</a></li>
 </ul>
+<h3
+id="ipsec-over-fastconnectfastconnect経由のipsecネットワーク構成">IPSec
+over FastConnect(FastConnect経由のIPSec)/ネットワーク構成</h3>
+<p>IPSec over
+FastConnectの一般的なネットワーク構成は以下のとおりです。</p>
+<p><img src="img/oci/network_loopback.png" width="50%" height="50%"></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="fastconnect他社ベンダー製品">FastConnect/他社ベンダー製品</h2>
@@ -1895,6 +1931,24 @@ href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35
 </ul>
 <p>「ハブ・スポーク構成」の構成例は以下の通りです。</p>
 <p><img src="img/oci/transit_routing01.png" width="75%" height="75%"></p>
+<h3 id="ハブスポーク構成active-directory統合">ハブ・スポーク構成/Active
+Directory統合</h3>
+<p>Active
+Directory統合する場合には、次のオプションを実装する必要があります。</p>
+<ul>
+<li>DNS
+<ul>
+<li>サブドメインやSRVフォルダ(_msdscなど)を含め、すべてのADドメインを転送する必要があります。<br />
+場合によっては、さらにカスタム・ドメインが存在することがあります(たとえば、内部ドメインがパブリック・ドメインと衝突する場合)。<br />
+すべてのルールのリストをエクスポートし、OCI上のルールとAD
+DNSへのリダイレクトを照合することをお薦めします。<br />
+ルーティングとDNS転送は<strong>VCN全体</strong>であり、ドメイン結合に依存しません。<br />
+</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/integrate-oci-msft-ad/index.html#GUID-FF86F485-5417-4DE0-889F-ABABB2E3BC77">ハイブリッド・クラウドでのActive
+Directory統合の拡張</a></li>
+</ul>
 <h3 id="ハブスポーク構成dns設定">ハブ・スポーク構成/DNS設定</h3>
 <ul>
 <li><a
