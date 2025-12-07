@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OSS-DBSilver</h1>
 </header>
 <p>作成日：2025/08/09 13:13:43<br />
-更新日：2025/12/07 10:52:53<br />
+更新日：2025/12/07 22:31:27<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -86,6 +86,15 @@ Silver 合格体験記</a></li>
 <li>トランザクションの概念</li>
 </ol></li>
 </ol>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="公開情報">公開情報</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="postgresql日本語ドキュメント">PostgreSQL日本語ドキュメント</h3>
+<ul>
+<li><a
+href="https://www.postgresql.jp/document/">PostgreSQL日本語ドキュメント</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oss-dbの一般的特徴">1.OSS-DBの一般的特徴</h2>
@@ -169,7 +178,9 @@ href="https://www.javadrive.jp/postgresql/ini/">PostgreSQLの設定ファイル<
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="バックアップとリカバリ">6.バックアップとリカバリ</h2>
+<h2
+id="バックアップリカバリpoint-in-time-recoverypitr">6.バックアップ・リカバリ/Point
+In Time Recovery(PITR)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="非排他モードの低レベルバックアップ">非排他モードの低レベルバックアップ</h3>
@@ -183,9 +194,11 @@ href="https://mondai.ping-t.com/question_subjects/73/questions/35504">問題ID
 </ul>
 <h3 id="walファイル">WALファイル</h3>
 <ul>
+<li><a href="https://www.postgresql.jp/document/17/html/wal.html">第28章
+信頼性と先行書き込みログ（WAL）</a></li>
 <li><a
-href="https://www.postgresql.jp/docs/11/wal-configuration.html">PostgreSQL
-11.5文書/30.4. WALの設定</a></li>
+href="https://www.postgresql.jp/document/17/html/wal-configuration.html">28.5.
+WALの設定</a></li>
 <li><a href="">先行書き込みログ（WAL）について理解を深める</a></li>
 </ul>
 <h3 id="pitrpoint-in-time-recovery">PITR(Point In Time Recovery)</h3>
@@ -282,10 +295,38 @@ href="https://mondai.ping-t.com/question_subjects/73/questions/35274">問題ID
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="sqlコマンドsqlコマンド句">8.SQLコマンド/SQLコマンド句</h2>
+<h2 id="sqlコマンドsql結合">8.SQLコマンド/SQL結合</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="intersect">INTERSECT</h3>
+<h3 id="sql結合一覧">SQL結合一覧</h3>
 <ul>
+<li><a
+href="https://qiita.com/xyz666/items/6e7a38081894d7326ad0">PostgreSQL
+SQL結合方法まとめ</a></li>
+</ul>
+<h3 id="内部結合概要">内部結合/概要</h3>
+<p>結合条件に指定している値が両方のテーブルに存在するデータを抽出します。</p>
+<h3 id="外部結合概要">外部結合/概要</h3>
+<p>基準となるテーブルに存在すれば抽出します。</p>
+<h3 id="外部結合right-outer-join右外部結合">外部結合/RIGHT OUTER
+JOIN(右外部結合)</h3>
+<p>外部結合では結合キーの値が等しいデータに加えて、条件に一致しなかったデータが取得されます。
+“RIGHT OUTER
+JOIN”を指定しているため、「groupNo」カラムの値が一致するデータに加えて、<br />
+条件に一致しなかった「department」テーブルの残りのデータも取得されます。</p>
+<pre><code>SELECT * FROM member RIGHT OUTER JOIN department USING (groupNo);</code></pre>
+<ul>
+<li>Ping-t問題集
+<ul>
+<li><a
+href="https://mondai.ping-t.com/question_subjects/73/questions/35310">問題ID
+: 35310 SQLコマンド</a></li>
+</ul></li>
+</ul>
+<h3 id="intersect積集合">INTERSECT(積集合)</h3>
+<p>共通するレコードのみ抽出する</p>
+<ul>
+<li><a
+href="https://gotto50105010.hatenablog.com/entry/2018/12/06/223615">【SQL入門】INTERSECT,EXCEPT,UNIONの違いを図解</a></li>
 <li>Ping-t問題集
 <ul>
 <li><a

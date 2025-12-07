@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/12/07 10:52:53<br />
+更新日：2025/12/07 22:31:27<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1995,8 +1995,39 @@ id="サードパーティプロバイダー接続の注意点">サードパー�
 そのTPAへルーティングする場合には、プライベートIPへのルーティングを指定して、そのコンピュート・インスタンスのVNICに送信します。</p>
 <h3
 id="oracleサービスへのプライベートアクセス">Oracleサービスへのプライベート・アクセス</h3>
-<p>Oracleサービス接続を実装したNW環境は以下のとおりです。</p>
+<p>サービス・ゲートウェイを介して、Oracleサービスに接続することが可能です。
+以下は、「ゲートウェイを介して直接の転送ルーティング」するNW構成となります。</p>
 <p><img src="img/oci/network_sgw_transit_task5_firewall.png" width="75%" height="75%"></p>
+<p>(DRGアタッチメントのVCNルート表)</p>
+<table>
+<thead>
+<tr>
+<th>宛先CIDR</th>
+<th>ルート・ターゲット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>リージョン内のすべてのOSNサービス</td>
+<td>サービス・ゲートウェイ</td>
+</tr>
+</tbody>
+</table>
+<p>(サービス・ゲートウェイのVCNルート表)</p>
+<table>
+<thead>
+<tr>
+<th>宛先CIDR</th>
+<th>ルート・ターゲット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.16.0.0/12</td>
+<td>DRG</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/transitroutingoracleservices.htm#setup_process">Oracleサービスへのプライベート・アクセスの設定</a></li>
