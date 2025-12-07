@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/12/06 11:50:54<br />
+更新日：2025/12/07 10:52:53<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -37,8 +37,8 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 <p>OCI 2025 Networking
 Professionalを受験しました。予想どおりに鬼ムズでした。<br />
-OCI資格でも、ネットワーク関連は他の技術者が作成している印象です。
-ここにも情報をまとめてますが、ここに書いてない情報がバンバン出題されます。<br />
+ここにも情報をまとめていましたが、試験ではここに書いてない情報がバンバン出題されていました。<br />
+(公開されている演習動画やウェブ情報を見ただけでは合格は難しいです)<br />
 ここに書いてある情報は引き続き加筆修正して、網羅性をあげていきたいです。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1010,26 +1010,38 @@ href="https://qiita.com/EumJinman/items/e9e63b5804e8634e0543">OCI「プライベ
 Databaseにインターネット経由で接続する方法</a></li>
 </ul>
 <h3
-id="プライベートエンドポイントとサービスゲートウェイの違い">プライベート・エンドポイントとサービス・ゲートウェイの違い</h3>
-<ul>
-<li>適用されるサービス
-<ul>
-<li>プライベート・エンドポイント：単一サービスへの選択的なアクセスを提供します<br />
-Autonomous Data
-Warehouseでは、選択したサブネットの一つのプライベートIPアドレスを保持します<br />
-</li>
-<li>サービス・ゲートウェイ：複数のサービスへのアクセスを提供します<br />
-</li>
-</ul></li>
-<li>アクセス方向
-<ul>
-<li>プライベート・エンドポイント：順方向、逆方向(双方向、両方向)ともに接続が可能です。</li>
-<li>サービス・ゲートウェイ：順方向(VCN→OSN)のみの接続が可能です。</li>
-</ul></li>
-</ul>
-<h3
 id="プライベートエンドポイントのネットワーク構成">プライベート・エンドポイントのネットワーク構成</h3>
 <p><img src="img/oci/oci-private-endpoint.png" width="70%" height="70%"></p>
+<h3
+id="プライベートエンドポイントとサービスゲートウェイの違い">プライベート・エンドポイントとサービス・ゲートウェイの違い</h3>
+<p>(機能の違い)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>プライベート・エンドポイント</th>
+<th>サービス・ゲートウェイ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>適用されるサービス</td>
+<td>単一サービスへの選択的なアクセスを提供します<br />Autonomous Data
+Warehouseでは、選択したサブネットの一つのプライベートIPアドレスを保持します</td>
+<td>複数のサービスへのアクセスを提供します</td>
+</tr>
+<tr>
+<td>アクセス方向</td>
+<td>順方向、逆方向ともに(双方向、両方向)接続が可能</td>
+<td>順方向(VCN→OSN)のみの接続が可能</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -1519,17 +1531,30 @@ href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=9"
 </ul>
 <p>設定例は以下の通りです。</p>
 <p><img src="img/oci/routing-lookup-multi-hop-network-path.png" width="75%" height="75%"></p>
-<h3 id="ルート競合">ルート競合</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_drg_routing__conflicts">ルート競合</a></li>
-</ul>
 <h3 id="oci-ecmp">OCI-ECMP</h3>
+<p>DRGはECMP機能をサポートしている。</p>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#overview__ecmp">ECMP</a></li>
 <li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
 Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
+</ul>
+<h3 id="ルート競合">ルート競合</h3>
+<p>同じCIDRを持つ2つのルートが同じDRGルート表で確認された場合、DRGは次の基準を使用して競合を解決します。</p>
+<ul>
+<li>競合解決の基準
+<ol type="1">
+<li>静的ルートは、常に動的ルートよりも優先されます<br />
+</li>
+<li>動的ルート間の競合は、最初にルートのASパスを分析することによって解決されます<br />
+</li>
+<li>それ以外の場合、ルートをインポートしたアタッチメント・タイプは、そのアタッチメント・タイプに基づいて次の優先度に従って評価されます<br />
+</li>
+<li>競合するルートが同じタイプのアタッチメントからインポートされた場合、競合は、アタッチメント・タイプに応じて異なる方法で解決されます<br />
+</li>
+</ol></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Network/Tasks/managingDRGs.htm#managingDRGs_topic_drg_routing__conflicts">ルート競合</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2001,6 +2026,11 @@ href="https://speakerdeck.com/ocise/dong-de-ruteingugetouei-drg-gai-yao?slide=35
 </ul>
 <p>「ハブ・スポーク構成」の構成例は以下の通りです。</p>
 <p><img src="img/oci/transit_routing01.png" width="75%" height="75%"></p>
+<h3 id="ハブスポーク構成dns設定">ハブ・スポーク構成/DNS設定</h3>
+<ul>
+<li><a
+href="https://blog.s-style.co.jp/2021/03/7394/">OCI環境へのVPN接続でも名前解決をする</a></li>
+</ul>
 <h3 id="ハブスポーク構成active-directory統合">ハブ・スポーク構成/Active
 Directory統合</h3>
 <p>Active
@@ -2016,13 +2046,8 @@ DNSへのリダイレクトを照合することをお薦めします。<br />
 </li>
 </ul></li>
 <li><a
-href="https://docs.oracle.com/ja/solutions/integrate-oci-msft-ad/index.html#GUID-FF86F485-5417-4DE0-889F-ABABB2E3BC77">ハイブリッド・クラウドでのActive
+href="https://docs.oracle.com/ja/solutions/integrate-oci-msft-ad/index.html">ハイブリッド・クラウドでのActive
 Directory統合の拡張</a></li>
-</ul>
-<h3 id="ハブスポーク構成dns設定">ハブ・スポーク構成/DNS設定</h3>
-<ul>
-<li><a
-href="https://blog.s-style.co.jp/2021/03/7394/">OCI環境へのVPN接続でも名前解決をする</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
