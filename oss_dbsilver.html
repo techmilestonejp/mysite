@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OSS-DBSilver</h1>
 </header>
 <p>作成日：2025/08/09 13:13:43<br />
-更新日：2025/12/07 22:31:27<br />
+更新日：2025/12/13 22:01:38<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -304,9 +304,9 @@ href="https://qiita.com/xyz666/items/6e7a38081894d7326ad0">PostgreSQL
 SQL結合方法まとめ</a></li>
 </ul>
 <h3 id="内部結合概要">内部結合/概要</h3>
-<p>結合条件に指定している値が両方のテーブルに存在するデータを抽出します。</p>
+<p>結合条件に指定している値が両方のテーブルに存在する行を抽出します。</p>
 <h3 id="外部結合概要">外部結合/概要</h3>
-<p>基準となるテーブルに存在すれば抽出します。</p>
+<p>結合するどちらかのテーブルに該当する行が存在すれば抽出します。</p>
 <h3 id="外部結合right-outer-join右外部結合">外部結合/RIGHT OUTER
 JOIN(右外部結合)</h3>
 <p>外部結合では結合キーの値が等しいデータに加えて、条件に一致しなかったデータが取得されます。
@@ -320,6 +320,36 @@ JOIN”を指定しているため、「groupNo」カラムの値が一致する
 <li><a
 href="https://mondai.ping-t.com/question_subjects/73/questions/35310">問題ID
 : 35310 SQLコマンド</a></li>
+</ul></li>
+</ul>
+<h3 id="外部結合left-outer-join左外部結合">外部結合/LEFT OUTER
+JOIN(左外部結合)</h3>
+<p>外部結合では結合キーの値が等しいデータに加えて、条件に一致しなかったデータが取得されます。
+結合キーに「groupNo」を指定してLEFT OUTER JOINを用いているため、
+「groupNo」カラムの値が一致するデータに加えて、
+条件に一致しなかった「member」テーブルの残りのデータも取得されます。</p>
+<pre><code>SELECT * FROM member LEFT OUTER JOIN department USING (groupNo);</code></pre>
+<ul>
+<li>Ping-t問題集
+<ul>
+<li><a
+href="https://mondai.ping-t.com/question_subjects/73/questions/35311">問題ID
+: 35311 SQLコマンド</a></li>
+</ul></li>
+</ul>
+<h3 id="外部結合full-outer-join">外部結合/FULL OUTER JOIN</h3>
+<p>外部結合では結合キーの値が等しいデータに加えて、条件に一致しなかったデータが取得されます。
+SQL文ではNATURALを用いているため、カラム名の一致する「tel」「groupNo」とカラムが結合キーになります。
+また、FULL OUTER
+JOINを指定しているため、結合キーの値が一致するデータに加えて、
+条件に一致しなかった両テーブルの残りのデータが取得されます。</p>
+<pre><code>SELECT * FROM member NATURAL FULL OUTER JOIN department;</code></pre>
+<ul>
+<li>Ping-t問題集
+<ul>
+<li><a
+href="https://mondai.ping-t.com/question_subjects/73/questions/35312">問題ID
+: 35312 SQLコマンド</a></li>
 </ul></li>
 </ul>
 <h3 id="intersect積集合">INTERSECT(積集合)</h3>
