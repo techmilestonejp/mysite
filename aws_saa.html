@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2025/12/29 22:06:19</p>
+更新日：2026/01/03 10:19:28</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws認定資格情報">AWS認定資格情報</h2>
@@ -1064,11 +1064,17 @@ id="ec2クラスタープレイスメントグループ">EC2/クラスタープ�
 また、同一AZ内のデータ転送は料金が発生しないためコスト効率も良好です。</p>
 <h3 id="ami共有アカウント">AMI共有アカウント</h3>
 <ul>
-<li>https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/sharingamis-explicit.html</li>
-<li>https://qiita.com/yukimuraki/items/f5de4e715c8c4bda2705</li>
-<li>https://in-housese.hatenablog.com/entry/2021/04/17/181344</li>
-<li>https://qiita.com/saburo555/items/a8f5c72e50540e97b93b#ami%E3%81%AE%E5%85%B1%E6%9C%89%E3%81%A8%E6%9A%97%E5%8F%B7%E5%8C%96</li>
-<li>https://qiita.com/asukitt/items/c0221b811848d7314be1#%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9Fami%E3%82%92%E5%88%A5%E3%81%AEaws%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95</li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/sharingamis-explicit.html">特定の
+AWS アカウントとの AMI の共有</a></li>
+<li><a
+href="https://qiita.com/yukimuraki/items/f5de4e715c8c4bda2705">【AWS】AMIのアカウント間共有を検証</a></li>
+<li><a
+href="https://qiita.com/saburo555/items/a8f5c72e50540e97b93b#ami%E3%81%AE%E5%85%B1%E6%9C%89%E3%81%A8%E6%9A%97%E5%8F%B7%E5%8C%96">AMIの共有と暗号化</a></li>
+<li><a
+href="https://qiita.com/asukitt/items/c0221b811848d7314be1#%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9Fami%E3%82%92%E5%88%A5%E3%81%AEaws%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95">暗号化されたAMIを、別のAWSアカウントと共有する方法</a></li>
+<li><a
+href="https://in-housese.hatenablog.com/entry/2021/04/17/181344">SAA学習-EC2-AMIの活用</a></li>
 <li>Ping-t問題集
 <ul>
 <li><a
@@ -1525,7 +1531,7 @@ href="https://mondai.ping-t.com/question_subjects/72/questions/36856">問題ID
 </ul>
 <h3 id="vpc-lambda">VPC Lambda</h3>
 <p>VPC
-Lambdaとは、Lambda関数からプライベートサブネット内のAWSリソースにアクセスさせたい場合の仕組み。</p>
+Lambdaとは、Lambda関数からプライベートサブネット内のAWSリソースにアクセスさせたい場合の仕組みです。</p>
 <ul>
 <li><a
 href="https://qiita.com/Kanahiro/items/f42ebda342673a632abe">LambdaをVPCに配置する・インターネット通信を可能にする・RDSと接続する</a></li>
@@ -1533,6 +1539,9 @@ href="https://qiita.com/Kanahiro/items/f42ebda342673a632abe">LambdaをVPCに配�
 lambda関数をVPC内に設置する</a></li>
 <li>Ping-t問題集
 <ul>
+<li><a
+href="https://mondai.ping-t.com/question_subjects/72/questions/34973">問題ID
+: 34973 セキュリティ</a></li>
 <li><a
 href="https://mondai.ping-t.com/question_subjects/72/questions/38364">問題ID
 : 38364 パフォーマンス効率</a></li>
@@ -2081,6 +2090,7 @@ href="https://dev.classmethod.jp/articles/scp-s3-presign-url-https-only/">SCP
 <h3
 id="s3アクセス制御amazon-s3-object-lambdaアクセスポイント">S3アクセス制御/Amazon
 S3 Object Lambdaアクセスポイント</h3>
+<p><img src="img/aws_saa/object-lambda.png" width="50%" height="50%"><br /></p>
 <ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/transforming-objects.html">S3
@@ -2255,8 +2265,18 @@ Gateway 2種類のボリュームゲートウェイ</a></li>
 <li><a href="https://qiita.com/naoya_ok/items/121ea92de54f54b05542">AWS
 Storage Gateway</a></li>
 </ul>
-<h3 id="aws-storage-gatewayiscsi-イニシエータの接続">(AWS Storage
-Gateway)iSCSI イニシエータの接続</h3>
+<h3 id="aws-storage-gatewayファイルゲートウェイ">AWS Storage
+Gateway/ファイルゲートウェイ</h3>
+<ul>
+<li>Ping-t問題集
+<ul>
+<li><a
+href="https://mondai.ping-t.com/question_subjects/72/questions/35739">問題ID
+: 35739 パフォーマンス効率</a></li>
+</ul></li>
+</ul>
+<h3 id="aws-storage-gatewayiscsiイニシエータの接続">AWS Storage
+Gateway/iSCSIイニシエータの接続</h3>
 <p>AWS Storage
 Gatewayが仮想的にiSCSIの機能をオンプレミス側に提供する機能<br />
 ゲートウェイを管理するには、Internet Small Computer System Interface
@@ -2290,7 +2310,7 @@ href="https://mondai.ping-t.com/question_subjects/72/questions/39394">問題ID
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ストレージその他">07:ストレージ/その他</h2>
+<h2 id="ストレージバックアップ">07:ストレージ/バックアップ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-backup">AWS Backup</h3>
 <ul>
