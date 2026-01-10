@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/01/03 10:19:28</p>
+更新日：2026/01/10 23:38:38</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws認定資格情報">AWS認定資格情報</h2>
@@ -122,6 +122,8 @@ href="https://aws.amazon.com/jp/certification/certification-prep/">AWS
 SAA 受験に向けたメモ</a></li>
 <li><a href="https://qiita.com/hoshi_/items/c5865afd087383c5e649">EC2 |
 AWS SAA 受験に向けた学習メモ①</a></li>
+<li><a href="https://qiita.com/hoshi_/items/72892916f57cfbc38b9a">AWS
+SAA 受験に向けた学習メモ⑦</a></li>
 </ul></li>
 <li>AWS SAA備忘録記事
 <ul>
@@ -129,6 +131,10 @@ AWS SAA 受験に向けた学習メモ①</a></li>
 SAA備忘録記事①〜Auto Scaling〜</a></li>
 <li><a href="https://qiita.com/saburo555/items/8176985c22d7bea26db8">AWS
 SAA備忘録記事⑦〜データベースとデータ分析サービス〜</a></li>
+<li><a href="https://qiita.com/saburo555/items/ef4fbe9c1b7ff1df0343">AWS
+SAA備忘録記事⑧〜サーバーレスアーキテクチャとストリーミングサービス〜</a></li>
+<li><a href="https://qiita.com/saburo555/items/29c4035c0cd690c054b0">AWS
+SAA備忘録記事⑨〜セキュリティ関連サービスとサーバーレスアーキテクチャ2〜</a></li>
 </ul></li>
 <li><a
 href="https://qiita.com/IYT-engineer/items/bf231a38edea1d7d6851">AWS
@@ -172,6 +178,8 @@ href="https://www.sangyo-rock.com/tech/?AWS+%CD%D1%B8%EC%A1%BF%B8%F8%BC%B0%A1%BF
 <li><a
 href="https://techblog.asia-quest.jp/202410/to-read-before-taking-the-aws-saa-c03-exam">AWS
 SAA-C03受験前に読みたい記事</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/SAA_note_Kastumata/">1ヶ月半で合格したSAAの用語集を公開してみる</a></li>
 </ul></li>
 <li>コラピット
 <ul>
@@ -475,6 +483,8 @@ IAMとは｜AWS認定試験対策</a></li>
 <li><a
 href="https://qiita.com/sakai00kou/items/a4b96dcfa6bb3e656cd9">インスタンスプロファイルを理解するついでにポリシーとロールを整理する</a></li>
 </ul>
+<p>(概要図)<br />
+<img src="img/aws_saa/iam-terms.png" width="25%" height="25%"><br /></p>
 <h3 id="iam-に関する用語の定義">IAM に関する用語の定義</h3>
 <p>AWS IAM には、以下の用語が定義されている。</p>
 <ul>
@@ -536,12 +546,6 @@ href="https://qiita.com/Batchi/items/a2dde3d2df27568cc078">管理ポリシーと
 href="https://qiita.com/Shoma0210/items/17193f254180396fb8e1">アイデンティティベースのポリシーとリソースベースのポリシーの関係性を理解したい</a></li>
 <li><a
 href="https://www.brainpad.co.jp/doors/contents/01_tech_2022-10-13-153000/">AWSポリシーのはじめの1歩</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30449">問題ID
-: 30449 IAM</a></li>
-</ul></li>
 </ul>
 <h3 id="iamポリシーの構成要素">IAMポリシーの構成要素</h3>
 <p>IAMポリシーは以下の要素で構成されます。</p>
@@ -570,18 +574,6 @@ IAMポリシーのJSONに入ってるVersionって何なの？</a></li>
 <ul>
 <li><a href="https://www.qolup-it.com/what-is-aws-iam/">AWS
 IAMとは｜AWS認定試験対策</a></li>
-</ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30454">問題ID
-: 30454 IAM</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37574">問題ID
-: 37574 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/33325">問題ID
-: 33325 セキュリティ</a></li>
 </ul></li>
 </ul>
 <h3 id="amazon-リソースネームarn">Amazon リソースネーム(ARN)</h3>
@@ -628,23 +620,11 @@ href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/security_
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_permissions_overview.html">AWS
 Organizationsを使用した組織のアクセス許可の管理</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39173">問題ID
-: 39173 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="iam条件句s3バケットポリシー">IAM条件句/S3バケットポリシー</h3>
 <ul>
 <li><a
 href="https://qiita.com/irico/items/a3ab1f8ebf1ece9cc783">S3のバケットポリシー書き方まとめ</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36916">問題ID
-: 36916 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="permissions-boundaryアクセス許可境界">Permissions
 Boundary（アクセス許可境界）</h3>
@@ -652,28 +632,12 @@ Boundary（アクセス許可境界）</h3>
 Management）では、IAMユーザーやIAMロールに対して「ここまでの範囲内であれば自由に操作を行える」という境界を設定できます。<br />
 これを「Permissions Boundary（アクセス許可境界）」と呼びます。<br />
 アクセス許可境界が設定されたユーザーは、境界で許可された範囲とIAMポリシーの両方で許可されている範囲でアクションを行えます。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30651">問題ID
-: 30651 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="iam-roles-anywhere">IAM Roles Anywhere</h3>
 <p>オンプレミスのサーバーや他クラウド上のアプリケーションからAWSのリソースにアクセスさせたい場合、<br />
 IAM Roles
 Anywhereを利用することで、公開鍵基盤（PKI）で管理されているX.509証明書に基づいて一時的な認証情報（アクセスキーなど）を取得できます。<br />
 これにより、長期的なアクセスキーを保存する必要がなくなり、安全にAWS
 APIへアクセスできます。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40032">問題ID
-: 40032 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3
 id="iamデータベース認証iam-database-authentication">IAMデータベース認証(IAM
 Database Authentication)</h3>
@@ -726,12 +690,6 @@ Identity Centerを使って複数アカウント管理する</a></li>
 <li><a
 href="https://www.ashisuto.co.jp/db_blog/article/aws-iam-identity-center.html">AWS
 IAM Identity Centerとは？</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/90988">問題ID
-: 90988 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-iam-access-analyzer">AWS IAM Access Analyzer</h3>
 <p>AWS IAM Access Analyzer
@@ -742,12 +700,6 @@ Access Analyzer</a></li>
 <li><a
 href="https://blog.serverworks.co.jp/tech/2020/07/01/iam_access_analyzer-2/">AWS
 IAM Access Analyzer を設定しよう</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/78255">問題ID
-: 78255 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -778,17 +730,10 @@ href="https://dev.classmethod.jp/articles/iam-role-passrole-assumerole/">IAM
 href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_update-role-trust-policy.html">ロール信頼ポリシーを更新する</a></li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_create_for-custom.html">カスタム信頼ポリシーを使用してロールを作成する</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36685">問題ID
-: 36685 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="セキュリティセキュリティ認証">03:セキュリティ/セキュリティ認証</h2>
+<h2 id="セキュリティid認証管理">03:セキュリティ/ID認証管理</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-cognito">Amazon Cognito</h3>
 <p>Amazon
@@ -814,37 +759,10 @@ Cognitoを試してみた（ユーザプール編）</a></li>
 Cognito/アダプティブ認証</h3>
 <p>Cognitoのアダプティブ認証は、新しいデバイス、位置、ネットワーク情報など、通常とは異なる状況でのログインを検知すると、動的にセキュリティレベルを調整する仕組みです。<br />
 通常はパスワードのみの認証設定でも、異なる状況を検知すると多要素認証(MFA)などを要求できます。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38874">問題ID
-: 38874 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-cognitoidプール">Amazon Cognito/IDプール</h3>
 <p>認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行する機能です。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36798">問題ID
-: 36798 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/66773">問題ID
-: 66773 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-cognitocognitoのユーザープール">Amazon
 Cognito/Cognitoのユーザープール</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36795">問題ID
-: 36795 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="aws-resource-access-manager">AWS Resource Access Manager</h3>
 <p>AWS
 RAMは、AWSリソースを組織内のアカウントやサービスと簡単に共有するためのサービスです。<br />
@@ -859,42 +777,6 @@ AWS Resource Access Manager – クロスアカウントでのリソース共有
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/ram/latest/userguide/shareable.html">共有可能な
 AWS リソース</a></li>
-</ul>
-<h3 id="aws-secrets-manager">AWS Secrets Manager</h3>
-<p>ユーザ名やパスワードなどのシークレット情報(秘密情報)を安全に格納できるAWSサービスです。<br />
-主にDBにアクセスする際の認証情報を管理して、自動更新機能も存在します。</p>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/secretsmanager/latest/userguide/intro.html">AWS
-Secrets Manager</a></li>
-<li><a
-href="https://www.skyarch.net/blog/aws-secrets-manager%E3%81%A7rds%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%82%92%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E3%83%AD%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">AWS
-Secrets ManagerでRDS認証情報を時間指定ローテーション</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30648">問題ID
-: 30648 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30484">問題ID
-: 30484 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36844">問題ID
-: 36844 セキュリティ</a></li>
-</ul></li>
-</ul>
-<h3 id="aws-certificate-manager-acm">AWS Certificate Manager (ACM)</h3>
-<p>AWS のサービスと接続されたリソースを使用した SSL/TLS
-証明書のプロビジョニングと管理を行っています。<br />
-SSL/TLS証明書を作成・管理しています。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=156">AWS
-Certificate Manager (ACM) の概要と試験出題ポイントは？</a></li>
-<li><a href="https://aws.amazon.com/jp/certificate-manager/">AWS
-Certificate Manager</a></li>
-<li><a href="https://qiita.com/zumax/items/3b0012e4d30b8b7a9f05">AWS
-Certificate Managerを整理してみた</a></li>
 </ul>
 <h3 id="audit-manager">Audit Manager</h3>
 <p>AWSの使用状況を継続的に監査することができます。</p>
@@ -912,60 +794,42 @@ href="https://qiita.com/mingchun_zhao/items/0705c84cca7623f57627">AWS公式資�
 <li>AWS Managed Microsoft AD</li>
 </ul></li>
 </ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="セキュリティ検知">03:セキュリティ/検知</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="guardduty">GuardDuty</h3>
-<p>AWSアカウント内の悪意のあるアクティビティや不正な行動を検出することができます。</p>
+<h3 id="aws-secrets-manager">AWS Secrets Manager</h3>
+<p>ユーザ名やパスワードなどのシークレット情報(秘密情報)を安全に格納できるAWSサービスです。<br />
+主にDBにアクセスする際の認証情報を管理して、自動更新機能も存在します。</p>
 <ul>
 <li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=71">Amazon
-GuardDuty の概要と試験出題ポイントは？</a></li>
-</ul>
-<h3 id="aws-macie">AWS Macie</h3>
-<p>S3バケット内のオブジェクトを分析し、個人情報（PII）などの機密データを識別・分類します。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
+href="https://docs.aws.amazon.com/ja_jp/secretsmanager/latest/userguide/intro.html">AWS
+Secrets Manager</a></li>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35633">問題ID
-: 35633 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35525">問題ID
-: 35525 セキュリティ</a></li>
-</ul></li>
-</ul>
-<h3 id="security-hub">Security Hub</h3>
-<p>複数のAWSアカウントを含め、すべてのセキュリティアラートを1箇所に集約。<br />
-セキュリティのベストプラクティスのチェックを行いアラートを集約し自動修復を可能にするクラウドセキュリティ体制管理サービス。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=241">AWS
-Security Hub の出題ポイント</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="セキュリティ脆弱性調査">03:セキュリティ/脆弱性調査</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="detective">Detective</h3>
-<p>潜在的なセキュリティ問題や不審なアクティビティの根本原因を、簡易的に分析および調査して、素早く特定することができます。</p>
-<h3 id="amazon-inspector">Amazon Inspector</h3>
-<p>AWSのワークロードに関して、ソフトウェアの脆弱性やネットワーク上への意図しない公開がないかを継続的にスキャンすることができる脆弱性管理サービスです。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40644">問題ID
-: 40644 信頼性</a></li>
-</ul></li>
+href="https://www.skyarch.net/blog/aws-secrets-manager%E3%81%A7rds%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%82%92%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E3%83%AD%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">AWS
+Secrets ManagerでRDS認証情報を時間指定ローテーション</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティ暗号鍵管理">03:セキュリティ/暗号鍵管理</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-kms">AWS KMS</h3>
-<p>S3やEBSの暗号化キーを作成管理します。管理は簡易的に実行。</p>
+<h3 id="aws-key-management-servicekms">AWS Key Management
+Service(KMS)</h3>
+<p>S3やEBSの暗号化キーを作成管理します。管理は簡易的に実行します。</p>
+<ul>
+<li><a href="https://aws.amazon.com/jp/kms/">AWS Key Management
+Service</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/concepts-intro.html">AWS
+KMS の概念</a></li>
+<li><a href="https://qiita.com/naoya_ok/items/811c96a4e86b122f807a">AWS
+KMS</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/summary-aws-managed-key-and-customer-managed-key/">AWS
+KMS
+のAWSマネージドキーとカスタマーマネージドキーの違いをまとめてみた</a></li>
+</ul>
+<h3 id="aws-kms暗号化ヘルパー">AWS KMS/暗号化ヘルパー</h3>
+<p>暗号化ヘルパーは、Lambda関数で使用する環境変数をAWS
+KMSを使用して暗号化し、実行時に復号して利用するためのツールです。 AWS
+Key Management
+Service（KMS）は、暗号化に使用する鍵（キー）を作成・管理するサービスです。暗号化ヘルパーはKMSを利用して環境変数を暗号化し、安全に管理することができます。</p>
 <h3 id="cloudhsm">CloudHSM</h3>
 <p>専用のハードウェアデバイスを用いて暗号化鍵を生成・管理します。高性能の管理機能がある。</p>
 <h3 id="aws-kmsとcloudhsmの違い">AWS KMSとCloudHSMの違い</h3>
@@ -982,6 +846,53 @@ href="https://mondai.ping-t.com/question_subjects/72/questions/40644">問題ID
 href="https://qiita.com/ayumi_imai/items/6a74c6327e0f6a1ac7db">AWS KMS
 と CloudHSMの違い</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="セキュリティセキュリティ認証管理">03:セキュリティ/セキュリティ認証管理</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-certificate-manager-acm">AWS Certificate Manager (ACM)</h3>
+<p>AWS のサービスと接続されたリソースを使用した SSL/TLS
+証明書のプロビジョニングと管理を行っています。<br />
+SSL/TLS証明書を作成・管理しています。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=156">AWS
+Certificate Manager (ACM) の概要と試験出題ポイントは？</a></li>
+<li><a href="https://aws.amazon.com/jp/certificate-manager/">AWS
+Certificate Manager</a></li>
+<li><a href="https://qiita.com/zumax/items/3b0012e4d30b8b7a9f05">AWS
+Certificate Managerを整理してみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="セキュリティ検知">03:セキュリティ/検知</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="guardduty">GuardDuty</h3>
+<p>AWSアカウント内の悪意のあるアクティビティや不正な行動を検出することができます。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=71">Amazon
+GuardDuty の概要と試験出題ポイントは？</a></li>
+</ul>
+<h3 id="aws-macie">AWS Macie</h3>
+<p>S3バケット内のオブジェクトを分析し、個人情報（PII）などの機密データを識別・分類します。</p>
+<h3 id="security-hub">Security Hub</h3>
+<p>複数のAWSアカウントを含め、すべてのセキュリティアラートを1箇所に集約。<br />
+セキュリティのベストプラクティスのチェックを行いアラートを集約し自動修復を可能にするクラウドセキュリティ体制管理サービス。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=241">AWS
+Security Hub の出題ポイント</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="セキュリティ脆弱性調査">03:セキュリティ/脆弱性調査</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="amazon-inspector">Amazon Inspector</h3>
+<p>AWSのワークロードに関して、ソフトウェアの脆弱性やネットワーク上への意図しない公開がないかを継続的にスキャンすることができる脆弱性管理サービスです。</p>
+<h3 id="detective">Detective</h3>
+<p>潜在的なセキュリティ問題や不審なアクティビティの根本原因を、簡易的に分析および調査して、素早く特定することができます。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="コンピュートec2">04:コンピュート/EC2</h2>
@@ -1047,15 +958,6 @@ EC2 プレイスメントグループについて整理してみた</a></li>
 <li><a
 href="https://qiita.com/Yasushi-Mo/items/d7a2a7264878afb65eb4">【AWS】EC2
 プレイスメントグループの種類と使い分け</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/33049">問題ID
-: 33049 EC2</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37125">問題ID
-: 37125 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3
 id="ec2クラスタープレイスメントグループ">EC2/クラスタープレイスメントグループ</h3>
@@ -1075,18 +977,6 @@ href="https://qiita.com/saburo555/items/a8f5c72e50540e97b93b#ami%E3%81%AE%E5%85%
 href="https://qiita.com/asukitt/items/c0221b811848d7314be1#%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9Fami%E3%82%92%E5%88%A5%E3%81%AEaws%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95">暗号化されたAMIを、別のAWSアカウントと共有する方法</a></li>
 <li><a
 href="https://in-housese.hatenablog.com/entry/2021/04/17/181344">SAA学習-EC2-AMIの活用</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/33340">問題ID
-: 33340 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30649">問題ID
-: 30649 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37758">問題ID
-: 37758 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1242,9 +1132,11 @@ DiskWriteOps): インスタンスのディスクI/Oに関するメトリクス�
 </ul>
 <p>以下はCloudWatchなどと連携することで利用可能なメトリクスとなります。</p>
 <ul>
-<li>主なスケーリング基準
+<li>その他の主なスケーリング基準(カスタムメトリクス)
 <ul>
 <li>メモリ使用量: メモリの使用量が一定量を超えた場合。</li>
+<li>ディスク空き容量・使用状況</li>
+<li>プロセス情報</li>
 <li>リクエスト数: 1インスタンスあたりの平均リクエスト数（Amazon
 ECSなど）。</li>
 <li>キューの深さ: メッセージキューの長さが一定以上になった場合</li>
@@ -1271,12 +1163,6 @@ Scaling/ターゲット追跡ポリシー(ターゲットトラッキングス�
 href="https://docs.aws.amazon.com/ja_jp/autoscaling/ec2/userguide/as-scaling-target-tracking.html">ターゲットトラッキングスケーリングポリシー</a></li>
 <li><a
 href="https://qiita.com/_lvyuu/items/5b85d13db5fb4044c01d#%E3%82%BF%E3%83%BC%E3%82%B2%E3%83%83%E3%83%88%E8%BF%BD%E8%B7%A1%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0">ターゲット追跡スケーリング</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30680">問題ID
-: 30680 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-ec2-auto-scalingヘルスチェックタイプ">Amazon EC2 Auto
 Scaling/ヘルスチェックタイプ</h3>
@@ -1318,32 +1204,10 @@ id="auto-scalingグループをクラスタープレイスメントグループ�
 Scalingグループをクラスタープレイスメントグループで起動</h3>
 <p>Auto
 Scalingグループをクラスタープレイスメントグループに所属した複数のインスタンスで起動します。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30636">問題ID
-: 30636 パフォーマンス効率</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-ec2-auto-scalingsqsメッセージキュー条件">Amazon EC2 Auto
 Scaling/SQSメッセージキュー条件</h3>
 <p>SQSのメッセージキューAuto Scalingの条件にすることで、Auto
 Scalingを実現することが可能となります。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30679">問題ID
-: 30679 信頼性</a></li>
-</ul></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="コンピュート仮想サーバ関連">04:コンピュート/仮想サーバ関連</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-batch">AWS Batch</h3>
-<p>バッチコンピューティングワークロードを実行することができます。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="コンピュートクラスタ技術">04:コンピュート/クラスタ技術</h2>
@@ -1364,8 +1228,8 @@ ParallelCluster</a></li>
 <h2 id="コンピュートオンプレミス">04:コンピュート/オンプレミス</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-outposts">AWS Outposts</h3>
-<p>AWSのインフラストラクチャとサービスをオンプレミスまたはエッジロケーションで使用します。<br />
-自社データセンターや拠点の中にAWSのラックまたはサーバーを配置してAWSのクラウドサービスと同じように使うことができます。</p>
+<p>AWSのインフラストラクチャとサービスをオンプレミスまたはエッジロケーションで使用するためのサービスです。<br />
+自社データセンターや拠点の中にAWSのラックまたはサーバーを配置して、AWSのクラウドサービスと同じように使うことができます。</p>
 <ul>
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=229">AWS
@@ -1373,10 +1237,18 @@ Outposts の概要と試験出題ポイントは？</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="コンピュートジョブ実行">04:コンピュート/ジョブ実行</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-batch">AWS Batch</h3>
+<p>バッチコンピューティングワークロードを実行することができます。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="コンテナ">05:コンテナ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="概要-1">概要</h3>
+<h3 id="amazon-コンテナ概要">Amazon コンテナ概要</h3>
 <ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-overview/containers.html">コンテナ</a></li>
 <li><a
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/202107_AWS_Black_Belt_Containers141-Containers_Introduction.pdf">BlackBelt_コンテナ入門_PDF</a></li>
 <li><a
@@ -1402,7 +1274,7 @@ href="https://qiita.com/hosomatu/items/acdc7b873c7d1589436e">ECSの専門用語�
 href="https://qiita.com/K5K/items/0d8dbdb39fbb0375e2bd">今さら聞けないAWS
 ECSとは？Fargateとは？</a></li>
 </ul>
-<h3 id="ecsでのコンテナ実行タイプ">ECSでのコンテナ実行タイプ</h3>
+<h3 id="amazon-ecsコンテナ実行タイプ">Amazon ECS/コンテナ実行タイプ</h3>
 <ul>
 <li>Fargate起動タイプ
 <ul>
@@ -1413,6 +1285,9 @@ ECSとは？Fargateとは？</a></li>
 <li>EC2から起動</li>
 </ul></li>
 </ul>
+<h3 id="amazon-ecsタスク定義とタスクロール付与">Amazon
+ECS/タスク定義とタスクロール付与</h3>
+<h3 id="amazon-ecs-anywhere">Amazon ECS Anywhere</h3>
 <h3 id="amazon-elastic-kubernetes-serviceamazon-eks">Amazon Elastic
 Kubernetes Service(Amazon EKS)</h3>
 <p>AWSまたはオンプレミスでKubernetesを実行するサービスです。</p>
@@ -1422,12 +1297,6 @@ Autoscaling(以降､HPA)はCPU負荷などメトリクスに応じてDeployment
 <ul>
 <li><a href="https://dev.classmethod.jp/articles/eks_hpa_ca/">Horizontal
 Pod Autoscaling と Cluster Autoscaler を EKSに設定してみた</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35713">問題ID
-: 35713 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-elastic-container-registryamazon-ecr">Amazon Elastic
 Container Registry(Amazon ECR)</h3>
@@ -1473,20 +1342,20 @@ Fargate 入門</a></li>
 <li>(youtube)<a href="https://www.youtube.com/watch?v=JT9aV27FixI">AWS
 Fargate 入門【AWS Black Belt】</a></li>
 </ul>
+<h3 id="aws-app2containerr">AWS App2Containerr</h3>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=146">AWS
+App2Container の概要と試験出題ポイントは？</a></li>
+<li><a href="https://qiita.com/hayao_k/items/98ce6e7462f4a4d55e10">AWS
+App2Container で既存アプリケーションをコンテナ化しよう</a></li>
+</ul>
 <h3 id="aws-load-balancer-controller">AWS Load Balancer Controller</h3>
 <p>WS Load Balancer Controllerは、Amazon EKSやAmazon
 EC2上で動作するKubernetesコントローラーです。<br />
 AWSのロードバランサーであるALBやNLBとKubernetesのリソース定義をつなぐことができます。<br />
 EKSクラスターにLoad Balancer
 Controllerをデプロイすると、Kubernetes側で必要な設定を行うだけで自動的にALBやNLBがプロビジョニング・管理されます。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/49250">問題ID
-: 49250 運用上の優秀性</a></li>
-</ul></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="サーバレス">06:サーバレス</h2>
@@ -1522,30 +1391,26 @@ href="https://d1.awsstatic.com/webinars/jp/pdf/services/20190402_AWSBlackbelt_AW
 href="https://youtu.be/QvPgjEwgiew">BlackBelt_AWSLambda_YouTube</a></li>
 <li><a href="https://qiita.com/fkooo/items/6fdbe80e7e7376ffc61b">AWS
 Lambda おすすめ本5冊紹介</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36856">問題ID
-: 36856 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="vpc-lambda">VPC Lambda</h3>
 <p>VPC
 Lambdaとは、Lambda関数からプライベートサブネット内のAWSリソースにアクセスさせたい場合の仕組みです。</p>
+<p>(構成図)<br />
+<img src="img/aws_saa/vpc-lambda.png" width="50%" height="50%"><br /></p>
 <ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/announcing-improved-vpc-networking-for-aws-lambda-functions/">Lambda
+関数が VPC 環境で改善されます</a></li>
+<li><a
+href="https://qiita.com/aiko-han/items/6b3010250e2887206b4f">AWS】VPC
+Lambdaを構築したときのメモ</a></li>
 <li><a
 href="https://qiita.com/Kanahiro/items/f42ebda342673a632abe">LambdaをVPCに配置する・インターネット通信を可能にする・RDSと接続する</a></li>
 <li><a href="https://qiita.com/miriwo/items/e9084359d4b75b6bffb2">AWS
 lambda関数をVPC内に設置する</a></li>
-<li>Ping-t問題集
-<ul>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/34973">問題ID
-: 34973 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38364">問題ID
-: 38364 パフォーマンス効率</a></li>
-</ul></li>
+href="https://dev.classmethod.jp/articles/internet-access-vpc-lambda/">インターネットアクセス可能な
+VPC Lambda を作成してみた</a></li>
 </ul>
 <h3 id="amazon-sqs">Amazon SQS</h3>
 <p>Simple Queue
@@ -1623,12 +1488,6 @@ SQS でのアクセス管理の概要</a></li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-basic-examples-of-sqs-policies.html">ベーシックAmazon
 SQSポリシーの例</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39008">問題ID
-: 39008 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-simple-notification-serviceamazon-sns">Amazon Simple
 Notification Service(Amazon SNS)</h3>
@@ -1664,25 +1523,8 @@ SNS とは</a></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/091d06db6e2e02462fd8">Amazon
 SNSを使ってみた</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37139">問題ID
-: 37139 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="snsとsqsとの連携">SNSとSQSとの連携</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/34930">問題ID
-: 34930 信頼性</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30681">問題ID
-: 30681 信頼性</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-eventbridge">Amazon EventBridge</h3>
 <p>Amazon
 EventBridgeは、AWSのサーバーレスイベントバスサービスで、アプリケーション間の疎結合を促進し、イベント駆動型アーキテクチャを構築するためのツールです。<br />
@@ -1700,12 +1542,6 @@ EventBridgeとは何か</a></li>
 <li><a
 href="https://zenn.dev/manase/scraps/2277e4b41fb105">【AWS】Amazon
 EventBridgeについて</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30362">問題ID
-: 30362 基礎知識</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-eventbridgeapi-destinationsapi送信先">Amazon
 EventBridge/API destinations(API送信先)</h3>
@@ -1719,12 +1555,6 @@ EventBridge のターゲットとしての API 送信先</a></li>
 <li><a
 href="https://zenn.dev/vega_c/articles/call-nr-metric-api-with-eventbridge">EventBridge
 API Destinationで外部API連携とNew Relic Metric APIでの実例</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38909">問題ID
-: 38909 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-rds-proxy">Amazon RDS Proxy</h3>
 <p>Amazon RDS
@@ -1856,12 +1686,6 @@ href="https://youtu.be/oFG5kMZjKtc">BlackBelt_AmazonS3_YouTube</a></li>
 <li><a
 href="https://qiita.com/saito_ry/items/60f75f14c3162f685271#amazon-simple-store-service-s3">Amazon
 simple Store service S3</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35553">問題ID
-: 35553 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="s3ストレージクラス">S3ストレージクラス</h3>
 <ul>
@@ -1893,21 +1717,6 @@ href="https://qiita.com/hollage0214/items/0fc22dd47bc8b62ae2e6#%E3%82%B9%E3%83%8
 href="https://dev.classmethod.jp/articles/should_i_choice_s3_storage_class/">6つのS3ストレージクラスの選択に迷った時みるチャートをつくってみた</a></li>
 <li><a
 href="https://qiita.com/s-katsumata/items/927e57834ca5256c4eee">S3のストレージタイプ</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30299">問題ID
-: 30299 S3</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35553">問題ID
-: 35553 コスト最適化</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36597">問題ID
-: 36597 コスト最適化</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36452">問題ID
-: 36452 コスト最適化</a></li>
-</ul></li>
 </ul>
 <p>ストレージクラスのそれぞれの特徴は以下のとおりとなります。</p>
 <table>
@@ -1974,26 +1783,10 @@ Instant Retrieval よりも) 最大 10%
 </ul>
 <h3 id="s3-storage-lens">S3 Storage Lens</h3>
 <p>S3バケットのストレージ使用状況やアクティビティに関するメトリクスを可視化する機能</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40059">問題ID
-: 40059 コスト最適化</a></li>
-</ul></li>
-</ul>
 <h3
 id="s3マルチリージョンアクセスポイント">S3マルチリージョンアクセスポイント</h3>
 <p>S3マルチリージョンアクセスポイントは、複数のリージョンに配置されたS3バケットへの統一的なアクセスポイントを提供することで、パフォーマンスと可用性を向上させる機能です。<br />
 マルチリージョンアクセスポイントを作成すると、S3は自動的に1つのグローバルなアクセスポイント（グローバルエンドポイント）を生成し、クライアントはグローバルエンドポイントを通じて複数リージョンのバケットにアクセスできるようになります。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/49254">問題ID
-: 49254 信頼性</a></li>
-</ul></li>
-</ul>
 <h3 id="s3-transfer-acceleration">S3 Transfer Acceleration</h3>
 <p>ユーザーとS3バケット間のデータ転送を高速化する機能<br />
 ユーザーと地理的に近いエッジロケーションから、高パフォーマンスなAWSグローバルネットワークを経由してS3バケットへアクセスするため、安定した高速転送が可能</p>
@@ -2034,12 +1827,6 @@ href="https://docs.aws.amazon.com/ja_jp/amazonglacier/latest/dev/vault-lock-poli
 <ul>
 <li>権限（s3:BypassGovernanceRetention）を持たないユーザーに対して、指定した保持期間中オブジェクトを読み取り専用にします。権限を持つユーザーのみオブジェクトの更新・削除と、ガバナンスモードの解除ができます。</li>
 </ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36688">問題ID
-: 36688 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2059,14 +1846,6 @@ href="aws_saa.html#iam条件句s3バケットポリシー">勉強メモ_SAA/IAM�
 </ul>
 <h3
 id="s3アクセス制御s3バケットポリシーawsprincipalorgidグローバル条件キー">S3アクセス制御/S3バケットポリシー”aws:PrincipalOrgIDグローバル条件キー”</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39173">問題ID
-: 39173 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3
 id="s3アクセス制御署名付き-urls3-presigned-url">S3アクセス制御/署名付き
 URL(S3 Presigned URL)</h3>
@@ -2105,47 +1884,30 @@ S3 Object Lambda を使用してコンテンツを動的に翻訳する</a></li>
 href="https://dev.classmethod.jp/articles/amazon-athena-query-used-amazon-s3-object-lambda/">Amazon
 AthenaのクエリをAmazon S3 Object
 Lambdaアクセスポイントに対して実行してみました</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38350">問題ID
-: 38350 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ストレージオブジェクトストレージs3暗号化">07:ストレージ/オブジェクトストレージ(S3暗号化)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="サーバー側の暗号化sse">サーバー側の暗号化(SSE)</h3>
+<p>データがS3に保存されるタイミングで自動的にS3が暗号化を行う。データを取り出すときはS3がデータを復号することができます。</p>
+<h3 id="クライアント側の暗号化cse">クライアント側の暗号化(CSE)</h3>
+<p>データをS3へアップロードする前にクライアント側で暗号化を行い暗号化したデータをそのままS3に保存します。</p>
 <h3 id="aws-s3-ストレージの暗号化キー">AWS S3
 ストレージの暗号化キー</h3>
 <ul>
-<li>SSE-S3
+<li>サーバー側の暗号化(SSE)
 <ul>
-<li>Amazon S3 がキーを管理</li>
-</ul></li>
-<li>SSE-KMS
-<ul>
-<li>ユーザがKMSでキーを生成して管理</li>
-</ul></li>
-<li>SSE-C
-<ul>
-<li>ユーザーがキーを準備し管理</li>
+<li>SSE-S3：Amazon S3 がキーを管理</li>
+<li>SSE-KMS：ユーザがKMSでキーを生成して管理</li>
+<li>SSE-C：ユーザーがキーを準備し管理</li>
 </ul></li>
 <li><a
 href="https://awsjp.com/AWS/hikaku/SSE-S3_SSE-KMS_SSE-C-compare.html">暗号化キーであるSSE-S3、SSE-KMS、SSE-Cの違いとは</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30317">問題ID
-: 30317 S3</a></li>
-</ul></li>
 </ul>
-<h3 id="サーバー側の暗号化sse">サーバー側の暗号化(SSE)</h3>
-<p>データがS3に保存されるタイミングで自動的にS3が暗号化を行う。<br />
-データを取り出すときはS3がデータを復号することができます。</p>
-<h3 id="クライアント側の暗号化cse">クライアント側の暗号化(CSE)</h3>
-<p>データをS3へアップロードする前にクライアント側で暗号化を行い暗号化したデータをそのままS3に保存します。</p>
+<h3
+id="lambda関数へのkmsキーの復号権限付与">Lambda関数へのKMSキーの復号権限付与</h3>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -2159,22 +1921,8 @@ id="ストレージファイルストレージ">07:ストレージ/ファイル�
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20180704_AWS-BlackBelt_AmazonEFS.pdf">BlackBelt_AmazonEFS_PDF</a></li>
 <li><a
 href="https://youtu.be/srLHV0ualZs">BlackBelt_AmazonEFS_YouTube</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/78251">問題ID
-: 78251 EC2</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-efsストレージクラス">Amazon EFS/ストレージクラス</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/78251">問題ID
-: 78251 コスト最適化</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-fsx">Amazon FSx</h3>
 <p>Amazon
 FSxはAWSが提供するファイルストレージサービス。ファイルストレージ
@@ -2267,14 +2015,6 @@ Storage Gateway</a></li>
 </ul>
 <h3 id="aws-storage-gatewayファイルゲートウェイ">AWS Storage
 Gateway/ファイルゲートウェイ</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35739">問題ID
-: 35739 パフォーマンス効率</a></li>
-</ul></li>
-</ul>
 <h3 id="aws-storage-gatewayiscsiイニシエータの接続">AWS Storage
 Gateway/iSCSIイニシエータの接続</h3>
 <p>AWS Storage
@@ -2301,26 +2041,12 @@ Elastic Disaster Recovery (AWS DRS)
 の概要と試験出題ポイントは？</a></li>
 <li><a href="https://aws.amazon.com/jp/disaster-recovery/">AWS Elastic
 Disaster Recovery</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39394">問題ID
-: 39394 信頼性</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ストレージバックアップ">07:ストレージ/バックアップ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-backup">AWS Backup</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40647">問題ID
-: 40647 信頼性</a></li>
-</ul></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="データベースrds">08:データベース/RDS</h2>
@@ -2377,12 +2103,6 @@ DynamoDBとは？</a></li>
 <li><a
 href="https://qiita.com/ymd65536/items/59c4adb18540f4bd8da0">【AWS】用語を整理しながら学ぶAWS
 Amazon DynamoDB</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/35740">問題ID
-: 35740 パフォーマンス効率</a></li>
-</ul></li>
 </ul>
 <h3 id="dynamodbテーブルクラス">DynamoDBテーブルクラス</h3>
 <ul>
@@ -2393,12 +2113,6 @@ href="https://mondai.ping-t.com/question_subjects/72/questions/35740">問題ID
 </ul></li>
 <li><a
 href="https://zenn.dev/osachi/articles/06624a0e7c1260#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%B9">テーブルクラス</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40026">問題ID
-: 40026 信頼性</a></li>
-</ul></li>
 </ul>
 <h3
 id="dynamodbのキャパシティモードdynamodbの利用モード">DynamoDBのキャパシティモード(DynamoDBの利用モード)</h3>
@@ -2422,12 +2136,6 @@ id="dynamodbのキャパシティモードdynamodbの利用モード">DynamoDB�
 </ul></li>
 <li><a
 href="https://qiita.com/Nazuna_Nyanmage/items/443ee3d196d6ae600c9a">DynamoDBにAutoScalingを適用した時の挙動</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40026">問題ID
-: 40026 信頼性</a></li>
-</ul></li>
 </ul>
 <h3
 id="dynamodbポイントタイムリカバリ">DynamoDB/ポイントタイムリカバリ</h3>
@@ -2439,14 +2147,6 @@ id="dynamodbポイントタイムリカバリ">DynamoDB/ポイントタイムリ
 <p>DynamoDB
 Streamsは、テーブルに対して行われた直近24時間の変更（追加・更新・削除）をログとして保持する機能です。<br />
 ストリームを利用することで、いつ・どのような更新が行われたかを追跡できます。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30554">問題ID
-: 30554 DynamoDB</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-dynamodbセッション情報">Amazon
 DynamoDBセッション情報</h3>
 <p>DynamoDBは高可用性とスケーラビリティを備えたNoSQLデータベースサービスで、セッションデータの保存に適しています。</p>
@@ -2459,12 +2159,6 @@ href="https://qiita.com/s_horikoshi/items/182a7f08298f8226db25">Amazon
 DynamoDBでphpのセッションを管理する</a></li>
 <li><a
 href="https://aws-exam.net/saa/saa_q.php?q_id=3">No.3セッション管理に利用するサービス</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/33164">問題ID
-: 33164 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="dynamodbトランザクション">DynamoDBトランザクション</h3>
 <p>DynamoDBテーブルへの書き込みなどのトランザクション発生時に特定の処理を実行させることができる機能。<br />
@@ -2497,12 +2191,6 @@ href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=59">Amazon
 ElastiCache の概要と試験出題ポイントは？</a></li>
 <li><a
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20171214_AWS-Blackbelt-ElastiCache.pdf">BlackBelt_AmazonElastiCache_PDF</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30682">問題ID
-: 30682 パフォーマンス効率</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-elasticacheの種別">Amazon ElastiCacheの種別</h3>
 <ul>
@@ -2573,18 +2261,6 @@ href="https://zenn.dev/mn87/articles/e417121016235c">パイロットライトと
 <ul>
 <li><a
 href="https://zenn.dev/inuiebio/articles/8eede7af946ae1">SAAの学習を始める際に押さえておきたい基礎知識</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38877">問題ID
-: 38877 パフォーマンス効率</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36587">問題ID
-: 36587 コスト最適化</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36550">問題ID
-: 36550 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-vpc-virtual-private-cloud">Amazon VPC (Virtual Private
 Cloud)</h3>
@@ -2676,12 +2352,6 @@ EC2 ネットワーク機能として、サポートされている EC2
 <ul>
 <li><a href="https://zenn.dev/tom12345/scraps/c5bb97e1ab6ea6">AWS
 SAA勉強</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38050">問題ID
-: 38050 パフォーマンス効率</a></li>
-</ul></li>
 </ul>
 <h3
 id="拡張ネットワーキングenhanced-networking">拡張ネットワーキング（Enhanced
@@ -2690,14 +2360,6 @@ Networking）</h3>
 EC2インスタンスのネットワーク性能を向上させる機能です。<br />
 インスタンス間での高スループット・低レイテンシーを実現できるため、リアルタイム性が求められるアプリケーションに最適です。<br />
 追加料金は掛からないです。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38877">問題ID
-: 38877 コスト最適化</a></li>
-</ul></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワークacl設定">09:ネットワーク/ACL設定</h2>
@@ -2708,14 +2370,6 @@ IPアドレスを元に許可ルールと拒否ルールの両方を設定可能
 サブネットごとに制御するファイアウォールで、許可と拒否の両方設定・ステートレスが特徴となります。</p>
 <h3 id="セキュリティグループ">セキュリティグループ</h3>
 <p>インスタンスごとに制御するファイアウォールで、許可ルールのみ設定・ステートフルが特徴となります。　　</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30622">問題ID
-: 30622 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3
 id="ネットワークaclとセキュリティグループの違い">ネットワークACLとセキュリティグループの違い</h3>
 <ul>
@@ -2853,14 +2507,6 @@ Gatewayの仕組み</a></li>
 </ul>
 <h3 id="amazon-api-gatewaycanaryリリース">Amazon API
 Gateway/Canaryリリース</h3>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38355">問題ID
-: 38355 信頼性</a></li>
-</ul></li>
-</ul>
 <h3
 id="amazon-api-gatewayカスタムドメイン名の指定カスタムでのホスト名解決">Amazon
 API Gateway/カスタムドメイン名の指定(カスタムでのホスト名解決)</h3>
@@ -2868,14 +2514,6 @@ API Gateway/カスタムドメイン名の指定(カスタムでのホスト名�
 Gatewayで作成したAPIには、カスタムドメイン名を設定できます。<br />
 カスタムドメイン名を作成する際は、AWS Certificate
 Manager（ACM）で管理されるSSL/TLS証明書を選択します。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36963">問題ID
-: 36963 セキュリティ</a></li>
-</ul></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -2913,15 +2551,6 @@ href="https://qiita.com/miyuki_samitani/items/9d9f7a0c417cb75a6c85">VPCエンド
 href="https://qiita.com/dennis_wang/items/e881f2d502b1a0addfbe">VPCエンドポイントとの関係性を徹底解説</a></li>
 <li><a
 href="https://zenn.dev/osachi/articles/06624a0e7c1260#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88-(interface-endpoint)%3A">違いのまとめ</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40256">問題ID
-: 40256 パフォーマンス効率</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36587">問題ID
-: 36587 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3
 id="vpcエンドポイントs3バケットのアクセス許可設定">VPCエンドポイント/S3バケットのアクセス許可設定</h3>
@@ -2934,12 +2563,6 @@ PrivateLink（インターフェイス型）の両方で利用できます。</p
 <ul>
 <li>VPCエンドポイントポリシーで、特定のS3バケットへの通信のみを許可する</li>
 <li>S3のバケットポリシーで、特定のVPCエンドポイントからの通信のみを許可する</li>
-</ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30624">問題ID
-: 30624 セキュリティ</a></li>
 </ul></li>
 </ul>
 <h3 id="aws-privatelink">AWS PrivateLink</h3>
@@ -2979,12 +2602,6 @@ CIDRブロックは、TCP/IPプロトコルでは通信先を特定するため�
 <ul>
 <li><a href="https://qiita.com/Nt_CeCZL/items/937ffc3d42c0025353e3">IPv4
 CIDRブロック</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36796">問題ID
-: 36796 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="ローカルピアリング">ローカルピアリング</h3>
 <p>ローカルピアリングはリージョン内でVPCを接続します。<br />
@@ -2994,12 +2611,6 @@ CIDRブロックが重複している場合、VPCピアリングでは通信で�
 <ul>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%94%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0">ローカルピアリング</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38997">問題ID
-: 38997 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="リモートピアリング">リモートピアリング</h3>
 <p>リモートピアリングはリージョン間でVPCを接続します。
@@ -3030,12 +2641,6 @@ Connectの経路選択と耐障害性の要点</a></li>
 Direct Connectを整理してみた</a></li>
 <li><a
 href="https://pages.awscloud.com/rs/112-TZM-766/images/BOS26_AWS-Builders-Online-Series_2022-Q3_Presentation-Deck.pdf">オンプレミス拠点からAWSクラウドへの接続⽅式パターン</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36553">問題ID
-: 36553 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="virtual-private-gatewayvgw">Virtual Private Gateway(VGW)</h3>
 <p>仮想プライベートゲートウェイ(VGW)とは、Direct
@@ -3072,12 +2677,6 @@ Gatewayに接続するためのインターフェースです。</li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html">AWS
 Direct Connect 仮想インターフェイスとホスト仮想インターフェイス</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39010">問題ID
-: 39010 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-transit-gateway">AWS Transit Gateway</h3>
 <p>複数のVPCや複数のオンプレミスネットワークを相互に接続するハブ機能を持つサービス。
@@ -3142,22 +2741,14 @@ Site-to-Site VPN/カスタマーゲートウェイの冗長化</h3>
 <p>AWS Site-to-Site
 VPNで使用する仮想プライベートゲートウェイとVPNトンネルは、機器障害に対する高可用性を保つためにAWS側で冗長化されています。<br />
 一方、カスタマーゲートウェイはオンプレミス内の機器なので、高可用性を保つにはAWSユーザー側で冗長化する必要があります。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36546">問題ID
-: 36546 信頼性</a></li>
-</ul></li>
-</ul>
 <h3 id="aws-direct-connectとsite-to-site-vpnの冗長化">「AWS Direct
 Connect」と「Site-to-Site VPN」の冗長化</h3>
-<p>「AWS Direct Connectと「Site-to-Site
-VPN」を同時に利用して、冗長化します。 通常時はDirect
-Connectを利用し、Direct Connectの障害時はSite-to-Site
+<p>「AWS Direct Connect」と「Site-to-Site
+VPN」を同時に利用して、冗長化することが可能です。<br />
+通常時はDirect Connectを利用し、Direct Connectの障害時はSite-to-Site
 VPNを利用します。</p>
 <h3 id="client-vpn">Client VPN</h3>
-<p>自宅の個人PCからVPCへセキュアにアクセスします。</p>
+<p>自宅の個人PC等からVPCに向けてセキュアなアクセスを提供します。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワークdnsamazon-route-53">09:ネットワーク/DNS(Amazon Route
@@ -3217,15 +2808,6 @@ Route 53 Resolverを整理してみた</a></li>
 <li><a
 href="https://blog.serverworks.co.jp/route53-nameresolution-features">Amazon
 Route53の名前解決機能を整理してみる</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38919">問題ID
-: 38919 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38875">問題ID
-: 38875 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3244,23 +2826,9 @@ href="https://youtu.be/4laAoK-zXko">BlackBelt_ELB_YouTube</a></li>
 <li><a
 href="https://zenn.dev/issy/articles/zenn-elb-overview">【初心者向け】Elastic
 Load Balancing(ELB) 入門！完全ガイド</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36486">問題ID
-: 36486 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="elbスティッキーセッション">ELB/スティッキーセッション</h3>
 <p>ELBではCookieベースのスティッキーセッションが利用可能です。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39952">問題ID
-: 39952 セキュリティ</a></li>
-</ul></li>
-</ul>
 <h3 id="elbクロスゾーン負荷分散">ELB/クロスゾーン負荷分散</h3>
 <p>アベイラビリティーゾーンが2つあり、各アベイラビリティーゾーンにターゲットノード（EC2インスタンス）の起動数に偏りがあってもトラフィックを均等に各EC2インスタンスへ分散する機能です。</p>
 <ul>
@@ -3317,12 +2885,6 @@ Latticeって何者？</a></li>
 <li><a
 href="https://zenn.dev/cadp/articles/ecs-service-mesh-compare">VPC
 Latticeも仲間に入れてECSサービス間通信方法5選を比較</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38338">問題ID
-: 38338 運用上の優秀性</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-global-accelerator">AWS Global Accelerator</h3>
 <p>ALB、NLB、EC2の前段に置いてアプリケーションの可用性とパフォーマンスを改善するサービスです。
@@ -3338,18 +2900,6 @@ Acceleratorは、ユーザーと地理的に近いエッジロケーションか
 <li><a
 href="https://qiita.com/miyuki_samitani/items/9a320888a833b4aed08c">AWS
 Global Accelerator とは</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30210">問題ID
-: 30210 Global Accelerator</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40257">問題ID
-: 40257 パフォーマンス効率</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36535">問題ID
-: 36535 パフォーマンス効率</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3408,15 +2958,6 @@ href="https://qiita.com/free-honda/items/7da95c2261d3fb00f950">CloudFront
 + S3のベストプラクティス</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/cloudfront-s3-origin-access-identity/">特定バケットに特定ディストリビューションのみからアクセスできるよう設定する</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/34975">問題ID
-: 34975 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30620">問題ID
-: 30620 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-cloudfrontの推奨構成">AWS CloudFrontの推奨構成</h3>
 <p>オリジンサーバはVPC内部「ALB+EC2」で構成として、CloudFrontの構成は「CloudFront+ALB+S3」で構成するパターンが多いです。</p>
@@ -3469,15 +3010,9 @@ Shield とは？】初心者にもわかりやすく解説</a></li>
 <h3 id="aws-shield-advanced">AWS Shield Advanced</h3>
 <p>DDos攻撃の強化版</p>
 <ul>
-<li>Ping-t問題集
-<ul>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/33342">問題ID
-: 33342 WAF/Shield</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/34977">問題ID
-: 34977 WAF/Shield</a></li>
-</ul></li>
+href="https://awsjp.com/AWS/hikaku/AWS-Shield-Standard-Advanced-hikaku.html">AWS
+Shield Standard と Advanced の機能の違い</a></li>
 </ul>
 <h3 id="aws-waf">AWS WAF</h3>
 <p>脆弱性を突く攻撃（クロスサイトスクリプティングやSQLインジェクションなど）からの保護にはAWS
@@ -3552,24 +3087,10 @@ Functions/ワークフロータイプ</h3>
 <ul>
 <li>最大5分の実行時間制限がありますが、大量のリクエストを高速処理できます。IoTデバイスからの連続データの取り込みや、ストリーミングデータの変換など、リアルタイム処理に適しています。料金は実行回数（ワークフロー単位）、合計時間、メモリ消費量に基づく従量課金制で、高頻度・短時間の処理においてコスト効率に優れます。</li>
 </ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39962">問題ID
-: 39962 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-appflow">AWS AppFlow</h3>
 <p>SaaS アプリケーションとAWS
 サービス間の双方向のデータフローを自動化します。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38082">問題ID
-: 38082 基礎知識</a></li>
-</ul></li>
-</ul>
 <h3 id="aws-appsync">AWS AppSync</h3>
 <p>異なるデバイスやプラットフォーム間でデータを簡単に同期します。</p>
 <h3 id="amazon-mq">Amazon MQ</h3>
@@ -3581,14 +3102,6 @@ ActiveMQやRabbitMQといったオープンソースのメッセージブロー�
 そのため、AMQPを使用した既存のアプリケーションからの移行が容易です。<br />
 一方、Amazon
 SQSはAWS独自規格のメッセージキューイングサービスで、AMQPに対応していません。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40027">問題ID
-: 40027 信頼性</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-simple-email-service-amazon-ses">Amazon Simple Email
 Service (Amazon SES)</h3>
 <p>Eメール送受信サービス</p>
@@ -3600,7 +3113,8 @@ href="https://youtu.be/FaBxMG_CNiU">BlackBelt_AmazonSES_YouTube</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="デベロッパーツール">12:デベロッパーツール</h2>
+<h2
+id="デベロッパーツールデプロイツール">12:デベロッパーツール(デプロイツール)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-cloudformation">AWS CloudFormation</h3>
 <p>インフラストラクチャをコードとして扱う。<br />
@@ -3612,8 +3126,6 @@ href="https://d1.awsstatic.com/webinars/jp/pdf/services/20200826_AWS-BlackBelt_A
 <li><a
 href="https://youtu.be/Viyqh9fNBjw">BlackBelt_AWSCloudFormation_YouTube</a></li>
 <li><a
-href="https://qiita.com/miu-P/items/f1de48b87547939734f3#cloudformation">CloudFormation</a></li>
-<li><a
 href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=163">AWS
 CloudFormation の概要</a></li>
 <li><a
@@ -3622,11 +3134,15 @@ CloudFormation と AWS OpsWorksの違い</a></li>
 <li><a
 href="https://awsjp.com/AWS/hikaku/OpsWorks-Elastic_Beanstalk-chigai.html">AWS
 OpsWorks と AWS Elastic Beanstalkの違い</a></li>
+<li><a
+href="https://qiita.com/miu-P/items/f1de48b87547939734f3#cloudformation">CloudFormation</a></li>
 </ul>
 <h3 id="aws-elastic-beanstalk">AWS Elastic Beanstalk</h3>
 <p>アプリケーションが動作するテンプレート環境を自動で構築する<br />
 Java、.NET、PHP、Node.js、Python、Ruby、Go、Docker
 など言語で開発されたアプリのデプロイに向いてます。</p>
+<h3 id="aws-elastic-beanstalkマルチaz構成">AWS Elastic
+Beanstalk/マルチAZ構成</h3>
 <h3 id="aws-opsworks">AWS OpsWorks</h3>
 <p>Chefを利用してソフトウェアの設定、パッケージのインストール、データベースのセットアップ、サーバーのスケーリング、コードのデプロイなどが自動化される。</p>
 <h3 id="aws-x-ray">AWS X-Ray</h3>
@@ -3636,12 +3152,6 @@ Java、.NET、PHP、Node.js、Python、Ruby、Go、Docker
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=259">AWS
 X-Ray の概要と試験出題ポイントは？</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37580">問題ID
-: 37580 信頼性</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-code-シリーズ">AWS Code シリーズ</h3>
 <ul>
@@ -3657,7 +3167,8 @@ href="https://zenn.dev/issy/articles/zenn-codexx-overview">AWSCode兄弟入門�
 <h3 id="aws-codepipeline">AWS CodePipeline</h3>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="マネジメントとガバナンス">13:マネジメントとガバナンス</h2>
+<h2
+id="マネジメントとガバナンスou管理">13:マネジメントとガバナンス/OU管理</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-organizations">AWS Organizations</h3>
 <p>AWS
@@ -3702,18 +3213,15 @@ Organizationsはなぜ必要？メリットは？ユースケースも解説！<
 <h3
 id="organizationsscpservice-control-policies">Organizations/SCP（Service
 Control Policies）</h3>
-<p>組織のアカウントでプリンシパル(アカウントルート、IAMユーザー、IAMロール)にアクセスできるAWSのサービスアクションを管理することができます。</p>
+<p>サービスコントロールポリシー（SCP）は、組織のルート、OU（Organizational
+Unit）、AWSアカウントに対して、AWSサービスへのアクセス権限や利用可能なリソースを制限できる機能です。<br />
+SCPを用いると、例えばテスト用のアカウント（群）は特定のサービスにしかアクセスできないようにしたり、全てのアカウントに対してMFA（多要素認証）を強制するように設定することなどができます。<br />
+組織のアカウントで、プリンシパル(アカウントルート、IAMユーザー、IAMロール)にアクセスできるAWSのサービスアクションを管理することができます。</p>
 <ul>
 <li><a
 href="https://qiita.com/kiton/items/d05622ce1a3972fe52df#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BCscp">サービスコントロールポリシー(SCP)</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/organizations-scp-inheritance/">SCP(サービスコントロールポリシー)の継承の仕組みを学ぼう</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37129">問題ID
-: 37129 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="organizationsタグポリシー">Organizations/タグポリシー</h3>
 <p>AWS Organizations のタグポリシーとは、AWS Organizations
@@ -3732,14 +3240,6 @@ href="https://qiita.com/hoshi_/items/dd0073c9000a8c230a93#%E3%82%BF%E3%82%B0%E3%
 Managementコンソールで、使用するタグ（例:
 「Project」タグ）を有効化します。これにより、有効化したタグがCost
 Explorerのコストレポートに含まれるようになります。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38885">問題ID
-: 38885 コスト最適化</a></li>
-</ul></li>
-</ul>
 <h3 id="organizations一括請求">Organizations/一括請求</h3>
 <p>組織内の全てのAWSアカウントの利用料が１つの請求として、まとめてマスターアカウントにされるようになる。</p>
 <ul>
@@ -3771,9 +3271,11 @@ Towerが自動的にセットアップします</li>
 <li>AWS Organizationsとの違い
 <ul>
 <li>AWS
-OrganizationsはAWSアカウントの管理と自動作成、複数のアカウントを利用した際の請求の簡素化が可能です。</li>
-<li>一方AWS Control
-Towerは、AWSICONを含むマルチアカウント環境に関係するAWSサービスのセットアップをしてくれるサービスです。</li>
+Organizationsは。AWSアカウントの管理と自動作成、複数のアカウントを利用した際のアカウント管理を簡素化します。<br />
+</li>
+<li>AWS Control Towerは、ランディングゾーンをセットアップし、AWS
+のベストプラクティスに基づいたマルチアカウント環境の管理を自動化することで、新しいAWS
+環境を簡単にセットアップできるように設計されています。</li>
 </ul></li>
 <li>aws-exam.net
 <ul>
@@ -3828,12 +3330,15 @@ Tower 機能紹介編【AWS Black Belt】</a></li>
 <li><a href="https://www.youtube.com/watch?v=PzHFGi-viTI">AWS Control
 Tower の有効化【AWS Black Belt】</a></li>
 </ul></li>
-<li>Ping-t問題集
+</ul>
+<h3 id="aws-control-towerランディングゾーン">AWS Control
+Tower/ランディングゾーン</h3>
+<p>ランディングゾーンとは、セキュリティとコンプライアンスのベストプラクティスに基づいた、マルチアカウントの
+AWS 環境の事です。<br />
+ランディングゾーンを設定すると、Organizationsを利用したマルチアカウント構成が自動的にセットアップされます。</p>
 <ul>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39011">問題ID
-: 39011 セキュリティ</a></li>
-</ul></li>
+href="https://blog.jbs.co.jp/entry/2024/03/25/160000#%E3%83%A9%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%BE%E3%83%BC%E3%83%B3">ランディングゾーン</a></li>
 </ul>
 <h3 id="aws-control-towerコントロール">AWS Control
 Tower/コントロール</h3>
@@ -3862,13 +3367,12 @@ Towerのコントロールが関連付けされたOUを簡単に削除する方�
 <li><a href="https://www.sunnycloud.jp/column/20231009-01/">AWS Control
 Tower が22種類の新しいプロアクティブコントロールと10種類のAWS Security
 Hub 検出コントロールをサポートしました</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39011">問題ID
-: 39011 セキュリティ</a></li>
-</ul></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="マネジメントとガバナンス監視">13:マネジメントとガバナンス/監視</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-cloudwatch">Amazon CloudWatch</h3>
 <p>Amazon CloudWatch は、Amazon Web Services (AWS) リソースと AWS
 で実行されているアプリケーションをリアルタイムでモニタリングする機能。<br />
@@ -3935,17 +3439,31 @@ Advisorのチェック項目は以下のとおり。</p>
 <li>RDSの削除保護の確認: Amazon RDS
 DBクラスターの削除保護が有効になっているかをチェックします</li>
 </ul></li>
-<li>Ping-t問題集
+</ul>
+<h3 id="aws-config">AWS Config</h3>
+<p>セキュリティーグループを監視し、不適切なルールを設定されているかを確認します。<br />
+また、AWSリソースの設定も監視します。</p>
 <ul>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30476">問題ID
-: 30476 Trusted Advisor</a></li>
-</ul></li>
+href="https://dev.classmethod.jp/articles/introduction-2024-aws-config/">AWS入門ブログリレー2024
+AWS Config編</a></li>
 </ul>
-<h3 id="aws-config">AWS config</h3>
-<p>セキュリティーグループを監視し、不適切なルールを設定されているかを確認します。
-AWSリソースの設定を監視します。</p>
-<h3 id="aws-config証明書管理">AWS config/証明書管理</h3>
+<h3 id="aws-config記録モード">AWS Config/記録モード</h3>
+<p>AWS Config
+は、サポートされているリソースタイプの作成、変更、削除を継続的に検出します。AWS
+Config では、これらのイベントを設定項目 (CI) として記録します。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/config/latest/developerguide/select-resources.html">AWS
+Config での AWS リソースの記録</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/config/latest/developerguide/select-resources-console.html">AWS
+Config コンソールでのリソースの記録</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/config/latest/developerguide/security-logging-and-monitoring.html">AWS
+Configでのログ記録とモニタリング</a></li>
+</ul>
+<h3 id="aws-config証明書管理">AWS Config/証明書管理</h3>
 <p>AWS
 Configでは、ACMで管理している証明書の有効期限を対象としたルールを作成できます。<br />
 ユーザーが指定した日数以内に有効期限が切れる場合、ルールが非準拠となります。<br />
@@ -3953,7 +3471,7 @@ Configでは、ACMで管理している証明書の有効期限を対象とし�
 EventBridgeのイベントルールを作成し、Amazon
 SNSから通知することで、設問の要件を満たせます。</p>
 <h3 id="aws-configリソースへのタグ付け">AWS
-config/リソースへのタグ付け</h3>
+Config/リソースへのタグ付け</h3>
 <ul>
 <li><a
 href="https://www.youtube.com/watch?v=fhjkvkIuzO4">Config：リソースのタグ検知</a></li>
@@ -3971,6 +3489,21 @@ AWSでの利用が承認されたIaCテンプレートの作成と管理を支�
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=243">AWS
 Service Catalog の概要と試験出題ポイントは？</a></li>
 </ul>
+<h3 id="aws-compute-optimizer">AWS Compute Optimizer</h3>
+<p>ワークロードに最適な AWS
+リソースを推奨し、機械学習を使って過去の使用率メトリクスを分析することで、コストを削減し、パフォーマンスを向上するツールです。<br />
+最適なAWSリソースの状態を維持します。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=173">AWS
+Compute Optimizer の概要と試験出題ポイントは？</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="マネジメントとガバナンスsystems-manager">13:マネジメントとガバナンス/Systems
+Manager</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-systems-manager">AWS Systems Manager</h3>
 <p>AWS Systems
 Managerは、複数のAWSリソースとサードパーティアプリケーションを一元管理するためのサービス<br />
@@ -3984,7 +3517,7 @@ Systems Manager の概要と試験出題ポイントは？</a></li>
 <li><a href="https://qiita.com/naoya_ok/items/68fb13cf9dcb8d70dff9">AWS
 Systems Manager</a></li>
 </ul>
-<h3 id="aws-systems-manager-session-manager">AWS Systems Manager Session
+<h3 id="aws-systems-managersession-manager">AWS Systems Manager/Session
 Manager</h3>
 <p>Session Manager はフルマネージド型の AWS Systems Manager
 ツールです。<br />
@@ -3995,42 +3528,24 @@ Manager</h3>
 href="https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/session-manager.html">AWS
 Systems Manager Session Manager</a></li>
 </ul>
-<h3 id="aws-systems-manager-パラメータストア">AWS Systems Manager
-パラメータストア</h3>
+<h3 id="aws-systems-managerパラメータストア">AWS Systems
+Manager/パラメータストア</h3>
 <ul>
 <li><a href="https://zenn.dev/nenenemo/articles/01a4c9fabe5ef6">AWS
 Systems Manager(SSM) パラメータストアの使用方法</a></li>
 </ul>
-<h3 id="aws-systems-manager-run-command">AWS Systems Manager Run
+<h3 id="aws-systems-managerrun-command">AWS Systems Manager/Run
 Command</h3>
 <p>AWSのEC2インスタンスやオンプレミスのサーバーに対してリモートでコマンドやスクリプトを安全に実行する機能です。<br />
 既存の多数のEC2インスタンスにCloudWatchエージェントをリモートで安全にインストールするのに適した方法です。<br />
 サーバーにログインしなくても安全でセキュアに大規模なサーバー群をリモートで管理できるため、踏み台サーバー、手動でのSSH接続などが不要になります。</p>
-<h3 id="aws-systems-manager-automation">AWS Systems Manager
-Automation</h3>
+<h3 id="aws-systems-managerautomation">AWS Systems
+Manager/Automation</h3>
 <p>AWS Systems Manager
 Automationは、AWSリソースへの操作をランブックに従って自動的に実行するサービスです。</p>
-<h3 id="aws-compute-optimizer">AWS Compute Optimizer</h3>
-<p>ワークロードに最適な AWS
-リソースを推奨し、機械学習を使って過去の使用率メトリクスを分析することで、コストを削減し、パフォーマンスを向上するツールです。<br />
-最適なAWSリソースの状態を維持します。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=173">AWS
-Compute Optimizer の概要と試験出題ポイントは？</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/37088">問題ID
-: 37088 コスト最適化</a></li>
-</ul></li>
-</ul>
-<h3 id="amazon-auto-scaling">Amazon Auto Scaling</h3>
-<p>負荷状況や設定したスケジュールに従い自動的にスケーリングします。<br />
-EC2、ECS、DynamoDBなどが対象となる。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="分析ストリーム">14:分析/ストリーム</h2>
+<h2 id="分析ストリーミング">14:分析/ストリーミング</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-kinesis">Amazon Kinesis</h3>
 <p>ストリーミングデータをリアルタイムで収集・処理・分析するサービスです。</p>
@@ -4067,13 +3582,11 @@ href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#%E3%82%B7%E3%83%A3%E
 <ul>
 <li>コンシューマーが専用のデータスループットを確保できる仕組みです。</li>
 </ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/50249">問題ID
-: 50249 セキュリティ</a></li>
-</ul></li>
 </ul>
+<h3 id="amazon-kinesis-data-streams拡張ファンアウト">Amazon Kinesis Data
+Streams/拡張ファンアウト</h3>
+<p>標準のKinesis Data
+Streamsコンシューマーは、1シャードあたり2MB/秒を共有しますが、拡張ファンアウトでは各コンシューマーが独立して2MB/秒を使用できます。</p>
 <h3 id="amazon-kinesis-data-firehose">Amazon Kinesis Data Firehose</h3>
 <p>ストリーミングデータを各種AWSサービスへ配信(転送)するサービスです。<br />
 「消防用ホース」の役割を意味しています。</p>
@@ -4082,6 +3595,11 @@ href="https://mondai.ping-t.com/question_subjects/72/questions/50249">問題ID
 href="https://www.qolup-it.com/what-is-amazon-data-firehose/">Amazon
 Data Firehoseとは｜AWS認定試験対策</a></li>
 </ul>
+<h3
+id="amazon-kinesis-data-firehoselambda関数を使用したデータ変換">Amazon
+Kinesis Data Firehose/Lambda関数を使用したデータ変換</h3>
+<p>Kinesis Data
+FirehoseからLambda関数に送信して、データ変化を実行することが可能となる。</p>
 <h3 id="amazon-managed-service-for-apache-flink">Amazon Managed Service
 for Apache Flink</h3>
 <p>Kinesis上のストリーミングデータをリアルタイム分析するサービスです。<br />
@@ -4093,16 +3611,10 @@ Flinkは、Kinesis上のストリーミングデータを処理し、可視化�
 href="https://aws.amazon.com/jp/blogs/news/announcing-amazon-managed-service-for-apache-flink-renamed-from-amazon-kinesis-data-analytics/">Amazon
 Kinesis Data Analytics から名称が変更された Amazon Managed Service for
 Apache Flink の発表</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38908">問題ID
-: 38908 信頼性</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36518">問題ID
-: 36518 運用上の優秀性</a></li>
-</ul></li>
 </ul>
+<h3 id="amazon-mskmanaged-streaming-for-apache-kafka">Amazon MSK(Managed
+Streaming for Apache Kafka)</h3>
+<p>Apache Kafkaをマネージドするサービスです。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="分析redshift">14:分析/Redshift</h2>
@@ -4121,12 +3633,6 @@ Redshiftとは</a></li>
 <li><a
 href="https://qiita.com/rm_zeal/items/b77818daff6f92fc5cd3">備忘】Amazon
 Redshiftの概要</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30270">問題ID
-: 30270 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-redshift拡張vpcルーティング">Amazon
 Redshift/拡張VPCルーティング</h3>
@@ -4150,14 +3656,79 @@ Redshift 拡張された VPC のルーティングとは</a></li>
 <h3 id="amazon-redshift-spectrum">Amazon Redshift Spectrum</h3>
 <p>Amazon
 S3上に保持している数百テラバイトのデータセットに対して分析を行いたいという用途で最適なデータベースサービスです。</p>
-<ul>
-<li>Ping-t問題集
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="分析glue">14:分析/Glue</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-glue">AWS Glue</h3>
+<p>複数のデータソースからデータを抽出・変換し、そのデータをターゲットに格納するELTサービスです。</p>
 <ul>
 <li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/30272">問題ID
-: 30272 セキュリティ</a></li>
-</ul></li>
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=205">AWS
+Glue の概要と試験出題ポイントは？</a></li>
 </ul>
+<h3 id="aws-glueクローラー">AWS Glue/クローラー</h3>
+<h3 id="aws-glueetlジョブの基本構成">AWS Glue/ETLジョブの基本構成</h3>
+<p>AWS
+Glueは複数のデータソースからデータを抽出し、変換・統合したデータをターゲットへ格納するといったデータ分析における橋渡しの役割を担います。</p>
+<h3 id="aws-glueストリーミングetlジョブ">AWS
+Glue/ストリーミングETLジョブ</h3>
+<p>連続的に実行されるストリーミング抽出/変換/ロード (ETL)
+ジョブを作成し、Amazon Kinesis Data Streams、Apache Kafka、Amazon
+Managed Streaming for Apache Kafka (Amazon MSK)
+などのストリーミングソースからのデータを使用できます。<br />
+ジョブはデータをクレンジングして変換し、その結果を Amazon S3
+データレイクまたは JDBC データストアにロードします。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/glue/latest/dg/add-job-streaming.html">AWS
+Glue でのストリーミング ETL ジョブ</a></li>
+</ul>
+<h3 id="aws-etl">AWS ETL</h3>
+<p>ETLとは「Extract（抽出）」「Transform（変換）」「Load（書き出し）」の略語で、具体的にはデータベースやデータレイクからデータをExtract（抽出）し、Transform（変換）して、DWHへLoad（書き出し）する作業を意味します。<br />
+データ分析を行うためには、分析対象となるデータをデータソース（データの生成元）からDWHなどのデータ分析基盤に移すことが必要になります。<br />
+このような、データソースからデータ分析基盤にデータを変換する作業をETLといいます。</p>
+<ul>
+<li><a href="https://aws.amazon.com/jp/what-is/etl/">ETL とは</a></li>
+<li><a
+href="https://www.stylez.co.jp/aws_columns/bi_dwh_and_data_lake_in_aws/what_is_aws_glue/#ETLExtract_Transform_Load">AWSのETLツール「AWS
+Glue」とは？</a></li>
+<li><a
+href="https://www.integrate.io/jp/blog/aws-etl-everything-you-need-to-know-ja/">AWS
+ETL：押さえておくべき全貌</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="分析可視化表示ツール">14:分析/可視化・表示ツール</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-athena">AWS Athena</h3>
+<p>AWSが提供するサーバーレスのインタラクティブクエリサービスです。<br />
+S3バケットに対して<strong>SQL</strong>を実行し、データの分析を行うことができます。<br />
+S3に格納されたデータに対して、SQLでクエリを実行し、データ分析を行うことができます。<br />
+簡単に利用できるため、データ分析を始めるのに最適です。</p>
+<ul>
+<li><a
+href="https://qiita.com/yoshiyama_hana/items/9b2f26b214de92a0f36c">【初心者向け】AWS
+Athena の 使い方</a></li>
+<li><a
+href="https://qiita.com/ymd65536/items/44edb06e8361cc734828">【AWS】用語を整理しながら学ぶAWS
+Amazon Athena</a></li>
+</ul>
+<h3 id="opensearch-service">OpenSearch Service</h3>
+<p>テキストの全文検索やログ分析を大量のデータに対して高速に行うためのサービスです。</p>
+<h3 id="opensearch-servicecloudwatchlogsとの連携">OpenSearch
+Service/CloudWatchLogsとの連携</h3>
+<h3 id="amazon-quick-sight">Amazon Quick Sight</h3>
+<p>データを可視化するBIツールのサービスです。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=108">Amazon
+QuickSight の概要と試験出題ポイントは？</a></li>
+<li><a href="https://www.qolup-it.com/what-is-amazon-quicksight/">Amazon
+QuickSightとは｜AWS認定試験対策</a></li>
+</ul>
+<h3 id="aws-data-exchange">AWS Data Exchange</h3>
+<p>サードパーティーデータを容易に検索やサブスクライブを行うことができます。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="分析その他">14:分析/その他</h2>
@@ -4175,14 +3746,6 @@ EMR/マネージドスケーリング機能</h3>
 <p>EMRマネージドスケーリング機能は、クラスターの使用状況を継続的に監視し、必要に応じてコアノードやタスクノードのインスタンス数を自動的に増減することで、パフォーマンスとコストのバランスを最適化する機能です。<br />
 従来のAuto
 Scalingとは異なり、ルールやしきい値を細かく設定する必要がなく、マネージドスケーリングがワークロードの状況に基づいて適切なクラスター規模に自動的に調整します。</p>
-<ul>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/82729">問題ID
-: 82729 パフォーマンス効率</a></li>
-</ul></li>
-</ul>
 <h3 id="amazon-emremrランタイムロール">Amazon
 EMR/EMRランタイムロール</h3>
 <p>EMRランタイムロールは、クラスターで実行される各ジョブに異なるIAMロールを割り当てる仕組みです。同一クラスター内でも、ジョブごとにアクセス対象リソースを分離して制御できます。</p>
@@ -4190,62 +3753,8 @@ EMR/EMRランタイムロール</h3>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/emr/latest/ManagementGuide/emr-steps-runtime-roles.html">Amazon
 EMR ステップのランタイムロール</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/40133">問題ID
-: 40133 セキュリティ</a></li>
-</ul></li>
 </ul>
-<h3 id="amazon-mskmanaged-streaming-for-apache-kafka">Amazon MSK(Managed
-Streaming for Apache Kafka)</h3>
-<p>Apache Kafkaをマネージドするサービスです。</p>
-<h3 id="aws-glue">AWS Glue</h3>
-<p>複数のデータソースからデータを抽出・変換し、そのデータをターゲットに格納するELTサービスです。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=205">AWS
-Glue の概要と試験出題ポイントは？</a></li>
-</ul>
-<h3 id="aws-etl">AWS ETL</h3>
-<p>ETLとは「Extract（抽出）」「Transform（変換）」「Load（書き出し）」の略語で、具体的にはデータベースやデータレイクからデータをExtract（抽出）し、Transform（変換）して、DWHへLoad（書き出し）する作業を意味します。<br />
-データ分析を行うためには、分析対象となるデータをデータソース（データの生成元）からDWHなどのデータ分析基盤に移すことが必要になります。<br />
-このような、データソースからデータ分析基盤にデータを変換する作業をETLといいます。</p>
-<ul>
-<li><a href="https://aws.amazon.com/jp/what-is/etl/">ETL とは</a></li>
-<li><a
-href="https://www.stylez.co.jp/aws_columns/bi_dwh_and_data_lake_in_aws/what_is_aws_glue/#ETLExtract_Transform_Load">AWSのETLツール「AWS
-Glue」とは？</a></li>
-<li><a
-href="https://www.integrate.io/jp/blog/aws-etl-everything-you-need-to-know-ja/">AWS
-ETL：押さえておくべき全貌</a></li>
-</ul>
-<h3 id="opensearch-service">OpenSearch Service</h3>
-<p>テキストの全文検索やログ分析を大量のデータに対して高速に行うためのサービスです。</p>
-<h3 id="amazon-quick-sight">Amazon Quick Sight</h3>
-<p>データを可視化するBIツールのサービスです。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=108">Amazon
-QuickSight の概要と試験出題ポイントは？</a></li>
-<li><a href="https://www.qolup-it.com/what-is-amazon-quicksight/">Amazon
-QuickSightとは｜AWS認定試験対策</a></li>
-</ul>
-<h3 id="aws-athena">AWS Athena</h3>
-<p>AWSが提供するサーバーレスのインタラクティブクエリサービスです。<br />
-S3バケットに対して<strong>SQL</strong>を実行し、データの分析を行うことができます。<br />
-S3に格納されたデータに対して、SQLでクエリを実行し、データ分析を行うことができます。<br />
-簡単に利用できるため、データ分析を始めるのに最適です。</p>
-<ul>
-<li><a
-href="https://qiita.com/yoshiyama_hana/items/9b2f26b214de92a0f36c">【初心者向け】AWS
-Athena の 使い方</a></li>
-<li><a
-href="https://qiita.com/ymd65536/items/44edb06e8361cc734828">【AWS】用語を整理しながら学ぶAWS
-Amazon Athena</a></li>
-</ul>
-<h3 id="aws-data-exchange">AWS Data Exchange</h3>
-<p>サードパーティーデータを容易に検索やサブスクライブを行うことができます。</p>
+<h3 id="amazon-emr暗号化転送">Amazon EMR/暗号化転送</h3>
 <h3 id="aws-lake-formation">AWS Lake Formation</h3>
 <p>データレイクを構築することができるマネージドサービスです。</p>
 <h3 id="aws-lake-formationでのアクセス制御">AWS Lake
@@ -4258,12 +3767,6 @@ Formationでのアクセス制御の方法には「名前付きリソースで�
 <li>名前付きリソースでのアクセスコントロール</li>
 <li>タグ（LFタグ）ベースのアクセスコントロール</li>
 </ul></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36629">問題ID
-: 36629 セキュリティ</a></li>
-</ul></li>
 </ul>
 <h3 id="amazon-datazone">Amazon DataZone</h3>
 <p>Amazon
@@ -4274,12 +3777,6 @@ Athenaとの連携により承認済みデータへの即時クエリ実行も�
 <ul>
 <li><a href="https://aws.amazon.com/jp/datazone/">Amazon
 DataZone</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/39360">問題ID
-: 39360 セキュリティ</a></li>
-</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -4389,15 +3886,6 @@ Discovery Service(AWS ADS)</h3>
 <p>シンプルかつ高速なオンラインデータの転送を可能にするためのツールです。</p>
 <ul>
 <li><a href="https://aws.amazon.com/jp/datasync/">AWS DataSync</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/36917">問題ID
-: 36917 セキュリティ</a></li>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38095">問題ID
-: 38095 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-migration-hub">AWS Migration Hub</h3>
 <p>AWS Migration Hub
@@ -4426,12 +3914,6 @@ Snow Familyにはデータの量や用途ごと複数のサービスがありま
 <li><a
 href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=247">AWS
 Snow ファミリー の概要と試験出題ポイントは？</a></li>
-<li>Ping-t問題集
-<ul>
-<li><a
-href="https://mondai.ping-t.com/question_subjects/72/questions/38925">問題ID
-: 38925 コスト最適化</a></li>
-</ul></li>
 </ul>
 <h3 id="aws-snowcone">AWS Snowcone</h3>
 <p>ポータブルデバイスを使用．Datasync連携したオンライン転送も可能になります。<br />
@@ -4473,6 +3955,10 @@ AWS のコストと使用状況を長期にわたって視覚化・理解・管�
 のコストと使用状況に関する詳細情報に一元的にアクセスが可能となります。<br />
 コストと使用状況レポートを作成できる<br />
 IAMユーザによっての使用状況が分かる</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="コスト管理リソース購入">17:コスト管理/リソース購入</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="savings-plans">Savings Plans</h3>
 <p>1年または3年の期間で契約することで割引を受ける。<br />
 EC2、Lambda、Fargate、SageMakerが対象。</p>
@@ -4486,6 +3972,9 @@ EC2、Lambda、Fargate、SageMakerが対象。</p>
 <li>DynamoDBリザーブドキャパシティ</li>
 <li>Redshiftリザーブドノード</li>
 </ul>
+<h3 id="amazon-auto-scaling">Amazon Auto Scaling</h3>
+<p>負荷状況や設定したスケジュールに従い自動的にスケーリングします。<br />
+EC2、ECS、DynamoDBなどが対象です。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="その他">99:その他</h2>
