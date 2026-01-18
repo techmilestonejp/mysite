@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCINP</h1>
 </header>
 <p>作成日：2025/06/21 12:32:06<br />
-更新日：2025/12/28 18:45:07<br />
+更新日：2026/01/18 09:35:49<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2847,8 +2847,7 @@ Public IP Prefixとは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="ネットワーク一般技術ipプロトコル">ネットワーク一般技術/IPプロトコル</h2>
+<h2 id="ネットワーク一般技術nw仕様">ネットワーク一般技術/NW仕様</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="参考情報">参考情報</h3>
@@ -2911,266 +2910,35 @@ Autoconfiguration】</a></li>
 <p>→ 256個（2^8）のサブネットが利用できる。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="ネットワーク一般技術ipsec-vpn">ネットワーク一般技術/IPsec-VPN</h2>
+<h2 id="ネットワーク一般技術">ネットワーク一般技術</h2>
 <p>分類99:ネットワーク一般技術<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="参考情報-1">参考情報</h3>
+<h3 id="bgp">BGP</h3>
 <ul>
 <li>(サイト内ページ)<a
 href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
 </ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術l2">ネットワーク一般技術/L2</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="macsec">MACsec</h3>
-<p>MACsecとは、IEEE802.1AEで定義されたLayer2（MAC: Media ⁄ Medium Access
-Control）の保護を目的としたセキュリティプロトコルです。</p>
-<ul>
-<li><a
-href="https://www.nexty-ele.com/technical-column/ethernet_macsec/">MACsecとは</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="ネットワーク一般技術bgpプロトコル">ネットワーク一般技術/BGPプロトコル</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="bgp-border-gateway-protocol">BGP (Border Gateway Protocol)</h3>
-<p>BGP（ボーダーゲートウェイプロトコル）とは、インターネットを構成する
-自律システム（AS）と呼ばれる大規模なネットワーク間（ISP、企業、大学など）で経路情報を交換し、データの最も効率的な転送経路を決定するインターネットの「ロードマップ」のような役割を担うルーティングプロトコルです。</p>
-<ul>
-<li><a
-href="https://nw.seeeko.com/archives/bgp">BGPに関する用語/SE娘の剣</a></li>
-<li><a
-href="https://www.allied-telesis.co.jp/support/list/switch/x900_sb900/doc/v532_docs/overview-35.html">IPルーティング
-/ 経路制御(BGP)</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz01.html">BGP ( Border
-Gateway Protocol )</a></li>
-<li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
-<li><a
-href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
-</ul>
-<h3 id="bgpのケーススタディ">BGPのケーススタディ</h3>
-<ul>
-<li><a
-href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/26634-bgp-toc.html">ボーダー
-ゲートウェイ プロトコルのケーススタディの確認</a></li>
-</ul>
-<h3 id="自律システムasautonomous-system">自律システム(AS:Autonomous
-System)</h3>
-<p>AS（自律システム）とは、インターネット上で一貫した運用ポリシーを持つ大規模なネットワークの集まりを指し、各ASには固有のAS番号（ASN）が割り当てられます。<br />
-ASは、BGP（ボーダーゲートウェイプロトコル）というプロトコルを使って他のASと経路情報を交換し、インターネット上での効率的なパケットルーティング（経路制御）を実現します。</p>
-<ul>
-<li>ASの役割
-<ul>
-<li>経路制御:
-AS同士がBGPを通じてルーティング情報を交換することで、パケットを宛先のASへ最も効率的な経路で送信するための「道案内」が行われます。</li>
-<li>トラフィック管理:
-自身のネットワークポリシーに基づいて、通信の優先順位をつけたり、トラフィックの経路を最適化したりすることで、ネットワーク運営を最適化します。</li>
-</ul></li>
-<li><a
-href="https://www.nic.ad.jp/ja/basics/terms/as.html">ASとは</a></li>
-<li><a
-href="https://www.cloudflare.com/ja-jp/learning/network-layer/what-is-an-autonomous-system/">自律システムとは？</a></li>
-</ul>
-<h3
-id="asn自律システム番号asnautonomous-system-number">ASN自律システム番号(ASN:Autonomous
-System Number)</h3>
-<p>ASN（自律システム番号）は、インターネット上のネットワークの集まりである「自律システム（AS）」を識別するためのユニークな番号です。<br />
-ISPや大規模なネットワーク管理組織に割り当てられ、インターネットのルーティングにおいて、他のネットワークと経路情報を交換するためにBGP（Border
-Gateway Protocol）で使用されます。<br />
-これにより、効率的で信頼性の高い通信が実現します。﻿</p>
-<ul>
-<li>ASNの主な役割と仕組み
-<ul>
-<li>識別子：インターネット上の個々のネットワーク（AS）をユニークに識別します。例えば、Microsoftのネットワークには「AS
-8075」や「AS 12076」といった番号が割り当てられています。﻿</li>
-<li>ルーティングの制御：BGPを使って他のネットワーク（AS）とルーティング情報を交換する際に、自身のAS番号を付与します。﻿</li>
-<li>経路情報のループ防止：BGPは、経路情報がループするのを防ぐために、受け取った経路情報に自分のAS番号が含まれていればその経路情報を破棄します。﻿</li>
-<li>トラフィック管理：特定のネットワークや地域へのトラフィックを識別・管理するために使用されます。﻿</li>
-</ul></li>
-<li>ASNの種類と管理
-<ul>
-<li>二つのタイプ：ASNには2バイト（16ビット）と4バイト（32ビット）のタイプがあります。﻿</li>
-<li>管理組織：世界5つの地域インターネットレジストリ（RIR）が、それぞれの地域内でASNを管理・割り当てています。﻿</li>
-</ul></li>
-<li><a
-href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律システム番号</a></li>
-</ul>
-<h3 id="bgpパスアトリビュート">BGP/パスアトリビュート</h3>
-<ul>
-<li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
-Attribute</a></li>
-</ul>
-<h3 id="bgpルートポリシー経路制御">BGP/ルートポリシー(経路制御)</h3>
-<p>BCPのルートポリシーを利用する経路制御の種別としては、以下があります。</p>
-<ul>
-<li>不要な BGP ルートのフィルタリング</li>
-<li>AS PATH Prepend による経路制御</li>
-<li>MED値 の変更による優先経路選択</li>
-</ul>
-<h3
-id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
-ACL）</h3>
-<p>BGPではAS_PATH属性に基づいて経路情報のフィルタリングが行えるAS_PATH
-ACLを使用することができます。</p>
-<ul>
-<li><a
-href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
-</ul>
-<h3
-id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
-<p>BGPにおけるルートフィルタリングは以下の4つの手法があります。<br />
-以下の手法により、BGPネイバーと送受信するルートのフィルタリングを行うことができます。</p>
-<ul>
-<li>BGP/ルートフィルタリングの種類
-<ul>
-<li>distribute-list</li>
-<li>prefix-list</li>
-<li>filter-list</li>
-<li>route-map</li>
-</ul></li>
-<li><a href="https://www.infraexpert.com/study/bgpz30.html">BGP - Route
-Filtering</a></li>
-<li><a href="https://www.infraexpert.com/study/routecontrol07.html">ip
-prefix-list</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
-as-path access-list</a></li>
-</ul>
-<h3
-id="bgpローカルプリファレンスlocal-preference">BGP/ローカルプリファレンス(Local
-Preference)</h3>
-<p>BGPのLocal
-Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
-Local
-Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
-<ul>
-<li><a
-href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
-Preference</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz21.html">BGP -
-LOCAL_PREF</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
-LOCAL_PREF - Cisco Config</a></li>
-<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
-LOCAL_PREF</a></li>
-<li><a
-href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979">BGPの冗長構成（AS
-PATH Prepend、Local-Preference）</a></li>
-<li><a
-href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
-<li><a
-href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
-local-preference</a></li>
-</ul>
-<h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
-Path Prepend)</h3>
-<p>AS PATH
-Prependは、特定の経路を意図的に優先させたくない、あるいは特定の経路へのトラフィックを減らしたい場合に、AS
-PATHに自身のAS番号を複数追加して長さを伸ばします。<br />
-AS
-PATHが長くなった経路は、優先度が低く判断されるため、ルーティングテーブルに登録されにくくなります。<br />
-これにより、冗長化された複数の経路がある場合に、メインの経路を優先しつつ、障害時や混雑時に迂回経路にトラフィックを振り分けることができます。</p>
-<ul>
-<li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
-Path Prepend</a></li>
-<li><a
-href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
-Router で AS PATH Prepend を実装する</a></li>
-</ul>
-<h3 id="bgpルート集約経路集約">BGP/ルート集約(経路集約)</h3>
-<p>BGPでは、複数の経路情報を一つの経路に集約することが可能です。<br />
-この機能により、ルート情報の管理が簡素化され、ルーティングテーブルの規模を縮小できます。</p>
-<ul>
-<li><a
-href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/5441-aggregation.html">BGPでのルート集約について</a></li>
-<li><a
-href="https://www.infraexpert.com/study/bgpz24.html">BGPルート集約 -
-aggregate-addressコマンド</a></li>
-<li><a
-href="https://hirotanoblog.com/bgp-aggregate-address/2580/">BGPにおける経路集約（aggregate-address）を徹底解説　Ciscoルータ</a></li>
-<li><a href="https://y-network.jp/2020/08/23/nsx-t-024/">NSX-T BGP
-ルート集約</a></li>
-<li><a
-href="https://www.n-study.com/bgp-detail/bgp-aggregation-by-network-command/">BGPルート集約
-networkコマンドによる集約</a></li>
-<li><a
-href="https://net-skills.net/cisco-machine-menu1/actual-bgp26/">BGPルートの生成（経路集約
-その2）</a></li>
-<li><a
-href="https://daimaru-tech-blog.com/?p=691">【CCNA/CCNP/ネットワーク入門】BGP（経路集約/Prefix-List/Route-map/Default経路）を学んでみた</a></li>
-</ul>
-<h3 id="非対称ルーティング">非対称ルーティング</h3>
-<p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
-<ul>
-<li><a
-href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id0">非対称ルーティングとは</a></li>
-</ul>
-<h3 id="ステートフルインスペクション">ステートフルインスペクション</h3>
-<p>ステートフルインスペクションとは、通信のセッション管理によって、戻りの通信を動的に許可する仕組みのことです。</p>
-<ul>
-<li><a
-href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id1">ステートフルインスペクションとは</a></li>
-</ul>
-<h3 id="ecmpequal-cost-multi-path">ECMP（Equal Cost Multi Path）</h3>
-<p>ECMP（Equal Cost Multi
-Path）とは、ネットワークにおいて、同じ宛先に対してコスト（メトリック）が等しい経路が複数存在する場合に、それらの経路へパケットを分散させて転送する技術です。</p>
-<ul>
-<li><a
-href="https://www.infraexpert.com/study/routing13.html">ECMP</a></li>
-<li><a
-href="https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%AB%E3%83%81%E3%83%91%E3%82%B9.html">等コストマルチパス
-【ECMP】</a></li>
-<li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
-Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術lb接続">ネットワーク一般技術/LB接続</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="スティッキーセッション">スティッキーセッション</h3>
-<p>スティッキーセッションとは、ロードバランサーがクライアント状態を管理するために使用する情報。<br />
-ロードバランサーを用いて負荷分散を行う場合に、セッション管理を行うWebアプリなどで毎回同じサーバーにアクセスさせるために利用する。</p>
-<ul>
-<li><a
-href="https://e-words.jp/w/%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AD%E3%83%BC%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3.html">スティッキーセッション</a></li>
-<li><a href="https://qiita.com/KWS_0901/items/de9487aa041b2718f113">AWS
-ALB スティッキーセッション メモ</a></li>
-</ul>
-<h3 id="tupleファイブタプル">5tuple(ファイブタプル)</h3>
-<p>ネットワーク分野で以下の5個のセットのこと。</p>
-<ul>
-<li>5tuple(ファイブタプル)
-<ul>
-<li>送信元IP</li>
-<li>送信元ポート番号</li>
-<li>宛先IP</li>
-<li>宛先ポート番号</li>
-<li>プロトコル番号</li>
-</ul></li>
-<li><a
-href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブタプル)とは</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術dns">ネットワーク一般技術/DNS</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="参考情報-2">参考情報</h3>
+<h3 id="lb">LB</h3>
 <ul>
 <li>(サイト内ページ)<a
 href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
 </ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク一般技術dnssec">ネットワーク一般技術/DNSSEC</h2>
-<p>分類99:ネットワーク一般技術<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="参考情報-3">参考情報</h3>
+<h3 id="dns">DNS</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
+</ul>
+<h3 id="dnssec-1">DNSSEC</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
+</ul>
+<h3 id="ipsec-vpn">IPsec-VPN</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
+</ul>
+<h3 id="l2sec">L2sec</h3>
 <ul>
 <li>(サイト内ページ)<a
 href="ipa_nw.html">勉強メモ_ネットワークスペシャリスト</a></li>
