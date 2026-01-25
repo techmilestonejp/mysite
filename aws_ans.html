@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/01/18 09:35:49</p>
+更新日：2026/01/25 09:24:36</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -67,18 +67,18 @@ href="https://d1.awsstatic.com/ja_JP/training-and-certification/docs-advnetworki
 <li>製品種別
 <ul>
 <li>01:VPC</li>
-<li>02:ACL設定</li>
-<li>03:ゲートウェイ</li>
-<li>04:VPCエンドポイント</li>
-<li>05:VPCピアリング</li>
-<li>06:オンプレ間通信</li>
+<li>02:VPCモニタリング</li>
+<li>03:ACL設定</li>
+<li>04:ゲートウェイ</li>
+<li>05:VPCエンドポイント</li>
+<li>06:VPCピアリング</li>
 <li>07:AWS Direct Connect</li>
 <li>08:VPN(IPSec接続)</li>
-<li>09:DNS(Amazon Route 53)</li>
-<li>10:ELB</li>
-<li>11:CDN</li>
-<li>12:ネットワークセキュリティ</li>
-<li>13:NWモニタリング</li>
+<li>09:オンプレ間通信</li>
+<li>10:DNS(Amazon Route 53)</li>
+<li>11:ELB</li>
+<li>12:CDN</li>
+<li>13:ネットワークセキュリティ</li>
 </ul></li>
 </ul>
 <h3 id="saa勉強メモ">SAA勉強メモ</h3>
@@ -92,13 +92,71 @@ href="https://dev.classmethod.jp/articles/watabo-passed-ans-c01/">AWS受験体�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connect">07:AWS Direct Connect</h2>
+<h2 id="ネットワーク07aws-direct-connect概要">09:ネットワーク/07:AWS
+Direct Connect(概要)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-direct-connect概要">AWS Direct Connect/概要</h3>
+<ul>
+<li>(サイト内ページ)<a href="aws_saa.html">SAA勉強メモ</a></li>
+</ul>
+<h3 id="aws-direct-connectnw構成">AWS Direct Connect/NW構成</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/hybrid-connectivity/hybrid-network-connections.html">ハイブリッドネットワーク接続</a></li>
+<li><a
+href="https://qiita.com/kamogashira/items/501543b04c1d9a2d9970">猫でもわかるDirect
+Connect(Cloud Wan対応版)</a></li>
+</ul>
+<h3 id="aws-direct-connect経路選択">AWS Direct Connect/経路選択</h3>
+<ul>
+<li><a
+href="https://qiita.com/Nana_777/items/3e7fd1247b5f03d91a0a">解説！Direct
+Connectの経路選択と耐障害性の要点</a></li>
+</ul>
 <h3 id="aws-direct-connectbfd">AWS Direct Connect/BFD</h3>
 <ul>
 <li><a
 href="https://qiita.com/youyonghua/items/191a09871cbdcc2e928f">AWS
 Direct Connect（DX）における BFD のポイント</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク07aws-direct-connect各種gw">09:ネットワーク/07:AWS
+Direct Connect(各種GW)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="各種gw概要">各種GW/概要</h3>
+<ul>
+<li>(サイト内ページ)<a href="aws_saa.html">SAA勉強メモ</a></li>
+</ul>
+<h3 id="direct-connect-ゲートウェイtransit-gateway-の関連付け">Direct
+Connect ゲートウェイ/Transit Gateway の関連付け</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/direct-connect-transit-gateways.html">Direct
+Connect ゲートウェイと Transit Gateway の関連付け</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/aws-transit-gateway-with-shared-directconnect/">“共有型”AWS
+DirectConnectでも使えるAWS Transit Gateway</a></li>
+</ul>
+<p>(NW構成図)<br />
+<img src="img/aws_saa/dgw-tgw.png" width="90%" height="90%"><br /></p>
+<h3 id="vgw-dgw-tgwの機能比較">VGW / DGW / TGWの機能比較</h3>
+<ul>
+<li><a href="https://qiita.com/mkydk/items/2f2eeee27dea99518d13">AWS
+VPC間接続：VGWとTGWを徹底比較 - どちらを選ぶべきか</a></li>
+<li><a
+href="https://www.megaport.com/ja/blog/aws-vgw-dgw-tgw-%E3%81%AE%E6%AF%94%E8%BC%83/">AWS
+VGW / DGW / TGW の比較</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク07aws-direct-connectaws-transit-gateway">09:ネットワーク/07:AWS
+Direct Connect(AWS Transit Gateway)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<ul>
+<li><a href="https://qiita.com/jowoooon/items/93affe30a80224826cde">AWS
+Transit Gatewayを図解しながら理解する</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->

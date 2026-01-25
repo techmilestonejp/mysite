@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/01/18 09:35:49</p>
+更新日：2026/01/25 09:24:36</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws認定資格情報">AWS認定資格情報</h2>
@@ -38,6 +38,12 @@
 <h3 id="公式">公式</h3>
 <ul>
 <li><a href="https://aws.amazon.com/jp/certification/">AWS認定</a></li>
+</ul>
+<h3 id="試験概要">試験概要</h3>
+<ul>
+<li><a
+href="https://blog.serverworks.co.jp/aws-certification-retirements-and-launches-2025">AWS
+認定資格 2025年下旬の変更点まとめ</a></li>
 </ul>
 <h3 id="参考ページ">参考ページ</h3>
 <ul>
@@ -53,11 +59,13 @@ WEB問題集＆徹底解説</a></li>
 <li><a
 href="https://qiita.com/aoiku/items/dc295960fec463b8ecc4">AWS#1　AWS認定試験とは？</a></li>
 <li><a
+href="https://awsjp.com/AWS/hikaku/list0.html">AWSに関する用語の違い比較表で詳しく説明</a></li>
+<li><a href="https://qiita.com/tech4anyone">tech4anyone</a>
+<ul>
+<li><a
 href="https://qiita.com/tech4anyone/items/b06f88035d27c6ef13b2">DevOps
 on AWS大全</a></li>
-<li><a href="https://qiita.com/tech4anyone">tech4anyone</a></li>
-<li><a
-href="https://awsjp.com/AWS/hikaku/list0.html">AWSに関する用語の違い比較表で詳しく説明</a></li>
+</ul></li>
 </ul>
 <h3 id="冠">12冠</h3>
 <ul>
@@ -385,7 +393,7 @@ href="https://qiita.com/wiskerpaddy/items/b543212dca665ea09010">AWS SAA
 <li>AWS機能で理解するポイント
 <ul>
 <li>サービス概要</li>
-<li>実装されてい機能の詳細</li>
+<li>実装されている機能の詳細</li>
 <li>一緒に利用されるサービス</li>
 <li>ユースケース</li>
 </ul></li>
@@ -438,11 +446,11 @@ href="https://zenn.dev/dogfortune/articles/c8d6767754d02d">AWSを使いこなす
 href="https://snowsystem.net/cloud/aws/ssa/ssa-vpc-2/">リージョン／AZとVPC／サブネットの関係まとめ</a></p></li>
 <li><p>1対他の関係性</p>
 <ul>
-<li>リージョン：AZ ＝ １： N</li>
-<li>リージョン：VPC ＝ １： N</li>
-<li>VPC：サブネット ＝ １： N</li>
-<li>VPC：AZ ＝ N： N</li>
-<li>AZ：サブネット ＝ １： N</li>
+<li>リージョン：AZ ＝ 1 ： N</li>
+<li>リージョン：VPC ＝ 1 ： N</li>
+<li>VPC：サブネット ＝ 1 ： N</li>
+<li>VPC：AZ ＝ N ： N</li>
+<li>AZ ：サブネット ＝ 1 ： N</li>
 </ul></li>
 </ul>
 <hr />
@@ -2148,6 +2156,16 @@ Disaster Recovery</a></li>
 <h2 id="ストレージバックアップ">07:ストレージ/バックアップ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-backup">AWS Backup</h3>
+<ul>
+<li><a href="https://aws.amazon.com/jp/backup/">AWS Backup</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/aws-backup/latest/devguide/whatisbackup.html">AWS
+Backup</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/aws-backup-perfect-understand/">AWS
+Backup
+によるバックアップ取得の全体像をやっぱり絵に描いて理解してみた</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="データベースrds">08:データベース/RDS</h2>
@@ -2378,7 +2396,7 @@ href="https://zenn.dev/mn87/articles/e417121016235c">パイロットライトと
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークvpc">09:ネットワーク/VPC</h2>
+<h2 id="ネットワーク01vpc">09:ネットワーク/01:VPC</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vpc概要">VPC概要</h3>
 <ul>
@@ -2398,19 +2416,6 @@ VPC の概要と試験出題ポイントは？</a></li>
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20201021_AWS-BlackBelt-VPC.pdf">BlackBelt_AmazonVPC_PDF</a></li>
 <li><a
 href="https://youtu.be/JAzsGRS_o4c">BlackBelt_AmazonVPC_YouTube</a></li>
-</ul>
-<h3 id="vpcフローログ">VPCフローログ</h3>
-<p>VPCフローログは、VPCのネットワークインターフェイスとの間で行き来するIPトラフィックに関する情報をキャプチャできるようにする機能です。<br />
-VPC内のENIで通信するネットワークトラフィック情報をキャプチャすることができます。<br />
-S3やCloudWatchに保存されます。</p>
-<ul>
-<li><a
-href="https://www.sunnycloud.jp/column/20221115-01/">VPCフローログとは</a></li>
-<li><a
-href="https://qiita.com/kerorinfather/items/64c3ca83017e521d9917">VPCフローログの取得方法</a></li>
-<li><a
-href="https://zenn.dev/lifewithpiano/articles/vpc-flowlogs2304">CloudWatch
-Logsを使用して、VPCフローログを覗いてみよう</a></li>
 </ul>
 <h3 id="vpc内のdns設定">VPC内のDNS設定</h3>
 <p>VPCの設定でDNSを設定することができます。<br />
@@ -2487,7 +2492,25 @@ EC2インスタンスのネットワーク性能を向上させる機能です�
 追加料金は掛からないです。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークacl設定">09:ネットワーク/ACL設定</h2>
+<h2
+id="ネットワーク02vpcモニタリング">09:ネットワーク/02:VPCモニタリング</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="vpcフローログ">VPCフローログ</h3>
+<p>VPCフローログは、VPCのネットワークインターフェイスとの間で行き来するIPトラフィックに関する情報をキャプチャできるようにする機能です。<br />
+VPC内のENIで通信するネットワークトラフィック情報をキャプチャすることができます。<br />
+S3やCloudWatchに保存されます。</p>
+<ul>
+<li><a
+href="https://www.sunnycloud.jp/column/20221115-01/">VPCフローログとは</a></li>
+<li><a
+href="https://qiita.com/kerorinfather/items/64c3ca83017e521d9917">VPCフローログの取得方法</a></li>
+<li><a
+href="https://zenn.dev/lifewithpiano/articles/vpc-flowlogs2304">CloudWatch
+Logsを使用して、VPCフローログを覗いてみよう</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク03acl設定">09:ネットワーク/03:ACL設定</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="ネットワークacl">ネットワークACL</h3>
 <p>ネットワークACLは、VPC内でサブネット単位にネットワークアクセスを制御するファイアウォールです。
@@ -2557,7 +2580,7 @@ href="https://qiita.com/youyonghua/items/97820a80cda059282fa6">ステートレ�
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ネットワークゲートウェイ概要">09:ネットワーク/ゲートウェイ(概要)</h2>
+id="ネットワーク04ゲートウェイ概要">09:ネットワーク/04:ゲートウェイ(概要)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws環境のゲートウェイ種別">AWS環境のゲートウェイ種別</h3>
 <ul>
@@ -2596,7 +2619,7 @@ href="https://zenn.dev/inuiebio/articles/a75ba86f63da19">おさえておきた�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークゲートウェイ">09:ネットワーク/ゲートウェイ</h2>
+<h2 id="ネットワーク04ゲートウェイ">09:ネットワーク/04:ゲートウェイ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-nat-gateway">AWS NAT Gateway</h3>
 <p>NAT ゲートウェイは、ネットワークアドレス変換 (NAT)
@@ -2641,7 +2664,7 @@ Manager（ACM）で管理されるSSL/TLS証明書を選択します。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ネットワークnw通信vpc内通信vpcエンドポイント">09:ネットワーク/NW通信(VPC内通信：VPCエンドポイント)</h2>
+id="ネットワーク05vpc間通信vpcエンドポイント">09:ネットワーク/05:VPC間通信・VPCエンドポイント</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vpcエンドポイント">VPCエンドポイント</h3>
 <p>VPCと他のサービス間の通信を可能にするVPCコンポーネント(仮想デバイス)です。<br />
@@ -2709,7 +2732,7 @@ href="https://qiita.com/inoue_d/items/7495f90a95636cf4298e">PrivateLinkに詳し
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ネットワークnw通信vpc内通信vpcピアリング">09:ネットワーク/NW通信(VPC内通信：VPCピアリング)</h2>
+id="ネットワーク06vpc間通信vpcピアリング">09:ネットワーク/06:VPC間通信・VPCピアリング</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vpcピアリング">VPCピアリング</h3>
 <p>VPCピアリング接続は、二つのVPC間をプライベートIPアドレスで安全に接続するためのAWSのサービスです</p>
@@ -2752,21 +2775,59 @@ href="https://zenn.dev/osachi/articles/06624a0e7c1260#vpc-%E3%82%A8%E3%83%B3%E3%
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークオンプレ間通信">09:ネットワーク/オンプレ間通信</h2>
+<h2 id="ネットワーク07aws-direct-connect概要">09:ネットワーク/07:AWS
+Direct Connect(概要)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-direct-connect">AWS Direct Connect</h3>
 <p>DirectConnetとは、オンプレとAWS間で物理的な専用回線を構築するNW回線です。</p>
 <ul>
+<li>公式サイト
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html">AWS
+Direct Connect</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/Welcome.html">Direct
+Connect とは</a></li>
+</ul></li>
+<li>AWS Black Belt
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/webinar-bb-awsdirectconnect-2021/">[AWS
+Black Belt Online Seminar] AWS Direct Connect 資料及び QA 公開</a></li>
+<li><a
+href="https://d1.awsstatic.com/webinars/jp/pdf/services/20210209-AWS-Blackbelt-DirectConnect.pdf">[AWS
+Black Belt Online Seminar] AWS Direct Connect</a></li>
+<li><a
+href="https://pages.awscloud.com/rs/112-TZM-766/images/BOS26_AWS-Builders-Online-Series_2022-Q3_Presentation-Deck.pdf">オンプレミス拠点からAWSクラウドへの接続方式パターン</a></li>
+</ul></li>
+<li>機能概要説明
+<ul>
+<li><a href="https://www.qolup-it.com/what-is-aws-direct-connect/">AWS
+Direct Connectとは｜AWS認定試験対策</a></li>
+</ul></li>
+<li>Qiita
+<ul>
+<li><a
+href="https://qiita.com/fjisdahgaiuerua/items/17a2a7355497565b0478">AWS
+Direct Connect とは</a></li>
 <li><a href="https://qiita.com/zumax/items/8a25279a38c4738986aa">Direct
 Connectを理解する</a></li>
 <li><a href="https://qiita.com/zumax/items/5aca0e1b841082a3c6c5">AWS
 Direct Connectを整理してみた</a></li>
-<li><a
-href="https://qiita.com/Nana_777/items/3e7fd1247b5f03d91a0a">解説！Direct
-Connectの経路選択と耐障害性の要点</a></li>
-<li><a
-href="https://pages.awscloud.com/rs/112-TZM-766/images/BOS26_AWS-Builders-Online-Series_2022-Q3_Presentation-Deck.pdf">オンプレミス拠点からAWSクラウドへの接続⽅式パターン</a></li>
+</ul></li>
 </ul>
+<p>(NW構成図)<br />
+<img src="img/aws_saa/dx.png" width="75%" height="75%"><br /></p>
+<h3 id="aws-direct-connectホスト接続">AWS Direct Connect/ホスト接続</h3>
+<p>AWS Direct Connectパートナーによって管理される物理的なDirect
+Connect接続を複数のAWSユーザーで共有する形態です。<br />
+このタイプの接続は通常1Gbps以下の速度で提供されます。（例：50Mbps、100Mbps、300Mbps、500Mbps）</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク07aws-direct-connectvif">09:ネットワーク/07:AWS
+Direct Connect(VIF)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vifvirtual-interface仮想インターフェース">VIF（Virtual
 Interface、仮想インターフェース）</h3>
 <p>AWS Direct Connectで使用するVIF（Virtual
@@ -2795,6 +2856,11 @@ Gatewayに接続するためのインターフェースです。</li>
 href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html">AWS
 Direct Connect 仮想インターフェイスとホスト仮想インターフェイス</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク07aws-direct-connect各種gw">09:ネットワーク/07:AWS
+Direct Connect(各種GW)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="virtual-private-gatewayvgw">Virtual Private Gateway(VGW)</h3>
 <p>仮想プライベートゲートウェイ(VGW)とは、Direct
 Connect（またはVPN）を経由して、VPCに接続する際に利用するゲートウェイです。<br />
@@ -2821,18 +2887,6 @@ Gatewayで世界中のAWSリージョンとプライベート接続する</a></l
 <li><a href="https://qiita.com/mmurm/items/abf390def0ae6dbd1950">Direct
 Connect Gateway (DXGW)とVGWとVIFのまとめ</a></li>
 </ul>
-<h3 id="direct-connect-ゲートウェイtransit-gateway-の関連付け">Direct
-Connect ゲートウェイ/Transit Gateway の関連付け</h3>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/direct-connect-transit-gateways.html">Direct
-Connect ゲートウェイと Transit Gateway の関連付け</a></li>
-<li><a
-href="https://aws.amazon.com/jp/blogs/news/aws-transit-gateway-with-shared-directconnect/">“共有型”AWS
-DirectConnectでも使えるAWS Transit Gateway</a></li>
-</ul>
-<p>(NW構成図)<br />
-<img src="img/aws_saa/dgw-tgw.png" width="80%" height="80%"><br /></p>
 <h3 id="aws-transit-gatewaytgw">AWS Transit Gateway(TGW)</h3>
 <p>複数のVPCや複数のオンプレミスネットワークを相互に接続するハブ機能を持つネットワークサービスです。<br />
 Amazon VPC、AWS
@@ -2841,17 +2895,10 @@ Amazon VPC、AWS
 <li><a href="https://aws.amazon.com/jp/transit-gateway/">AWS Transit
 Gateway</a></li>
 </ul>
-<h3 id="vgw-dgw-tgwの機能比較">VGW / DGW / TGWの機能比較</h3>
-<ul>
-<li><a href="https://qiita.com/mkydk/items/2f2eeee27dea99518d13">AWS
-VPC間接続：VGWとTGWを徹底比較 - どちらを選ぶべきか</a></li>
-<li><a
-href="https://www.megaport.com/ja/blog/aws-vgw-dgw-tgw-%E3%81%AE%E6%AF%94%E8%BC%83/">AWS
-VGW / DGW / TGW の比較</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークvpnipsec接続">09:ネットワーク/VPN(IPSec接続)</h2>
+<h2
+id="ネットワーク08vpnipsec接続">09:ネットワーク/08:VPN(IPSec接続)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-site-to-site-vpn">AWS Site-to-Site VPN</h3>
 <p>Site-to-Site
@@ -2902,10 +2949,12 @@ VPN」を同時に利用して、冗長化することが可能です。<br />
 VPNを利用します。</p>
 <h3 id="client-vpn">Client VPN</h3>
 <p>自宅の個人PC等からVPCに向けてセキュアなアクセスを提供します。</p>
+<h3 id="vpn監視">VPN監視</h3>
+<p>VPN監視はCloudWatchを利用します。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークdnsamazon-route-53">09:ネットワーク/DNS(Amazon Route
-53)</h2>
+<h2 id="ネットワーク10dnsamazon-route-53">09:ネットワーク/10:DNS(Amazon
+Route 53)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-route-53">Amazon Route 53</h3>
 <p>AmazonRoute53は可用性が高くスケーラブルなドメインネームシステムウェブサービス(DNS運用サービス)です。<br />
@@ -2964,7 +3013,7 @@ Route53の名前解決機能を整理してみる</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークlb">09:ネットワーク/LB</h2>
+<h2 id="ネットワーク11elb">09:ネットワーク/11:ELB</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="elastic-load-balancing-elb">Elastic Load Balancing (ELB)</h3>
 <p>負荷分散装置。HTTP/HTTPSに対応したALB，TCP/UDPに対応したNLBがある。</p>
@@ -2991,17 +3040,6 @@ href="https://dev.classmethod.jp/articles/elb_crosszone_load_balancing_default_v
 href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/edit-target-group-attributes.html">Application
 Load Balancer のターゲットグループ属性を編集する</a></li>
 </ul>
-<h3 id="aws-application-load-balanceralb">AWS Application Load
-Balancer(ALB)</h3>
-<p>ALBは、AWSが提供するロードバランシングサービスの一つで、WebアプリケーションやAPIへのアクセスを複数のターゲット（EC2インスタンス、コンテナ、IPアドレスなど）に分散させる役割を担います。</p>
-<ul>
-<li>ALBの特徴
-<ul>
-<li>レイヤー7（アプリケーション層）で負荷分散を行う</li>
-<li>HTTP、HTTPSをサポート</li>
-<li>WebSocketや、同一インスタンス内の複数ポートへの負荷分散、ホストベースやパスベース、URLクエリ文字列でのルーティングに対応するなど、高度なルーティング機能を提供する</li>
-</ul></li>
-</ul>
 <h3 id="aws-network-load-balancernlb">AWS Network Load
 Balancer(NLB)</h3>
 <p>Network Load Balancer は、開放型システム間相互接続 (OSI) モデルの第 4
@@ -3016,6 +3054,35 @@ Balancer(NLB)</h3>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/network/introduction.html">Network
 Load Balancer とは?</a></li>
+</ul>
+<h3 id="aws-application-load-balanceralb">AWS Application Load
+Balancer(ALB)</h3>
+<p>ALBは、AWSが提供するロードバランシングサービスの一つで、WebアプリケーションやAPIへのアクセスを複数のターゲット（EC2インスタンス、コンテナ、IPアドレスなど）に分散させる役割を担います。</p>
+<ul>
+<li>ALBの特徴
+<ul>
+<li>レイヤー7（アプリケーション層）で負荷分散を行う</li>
+<li>HTTP、HTTPSをサポート</li>
+<li>WebSocketや、同一インスタンス内の複数ポートへの負荷分散、ホストベースやパスベース、URLクエリ文字列でのルーティングに対応するなど、高度なルーティング機能を提供する</li>
+</ul></li>
+</ul>
+<h3 id="aws-application-load-balanceralbalbec2-autoscaling構成">AWS
+Application Load Balancer(ALB)/ALB+EC2 AutoScaling構成</h3>
+<p>ALBとEC2オートスケーリングの組み合わせがユースケースとなります。<br />
+ただし、EC2側で”ELB有効化”とします。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/autoscaling/ec2/userguide/tutorial-ec2-auto-scaling-load-balancer.html">チュートリアル:
+スケーリングとロードバランシングを使用するアプリケーションのセットアップ</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/alb-ec2-auto-scaling-group/">ALBのターゲットにEC2
+Auto Scaling Groupを設定する方法で迷った時に読む記事</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/introduction-to-aws-networking-and-autoscaling-web-server/">[入門]
+AWSのネットワークとAutoScalingなWebサーバーを作るハンズオンを作りました</a></li>
+<li><a
+href="https://qiita.com/Mikeinu/items/a358df72de65896aada5">【AWS】EC2
+AMI/ALB/Auto Scalingの備忘録</a></li>
 </ul>
 <h3 id="vpc-lattice">VPC Lattice</h3>
 <p>VPC LatticeはVPC向けのリバースプロキシサービスです。
@@ -3039,24 +3106,9 @@ Latticeって何者？</a></li>
 href="https://zenn.dev/cadp/articles/ecs-service-mesh-compare">VPC
 Latticeも仲間に入れてECSサービス間通信方法5選を比較</a></li>
 </ul>
-<h3 id="aws-global-accelerator">AWS Global Accelerator</h3>
-<p>ALB、NLB、EC2の前段に置いてアプリケーションの可用性とパフォーマンスを改善するサービスです。
-複数のリージョンで展開しているWebアプリケーションなどへのリージョン間の負荷分散が可能。<br />
-ALB，NLB，EC2インスタンス，Elastic
-IPアドレスを指定することができます。<br />
-AWS Global
-Acceleratorは、ユーザーからAWSリソースまでのアクセス経路をAWSグローバルネットワークを利用して最適化するサービスです。<br />
-通常、ユーザーがAWSリソースにアクセスする時、AWSリソースがあるリージョンまでに経由するインターネット回線の影響を受けるため、遅延の発生やデータ損失などのリスクがあります。<br />
-Global
-Acceleratorは、ユーザーと地理的に近いエッジロケーションから高パフォーマンスなAWSグローバルネットワークを経由してAWSリソースへアクセスするため、遅延の発生やデータ損失などのリスクを少なくします。</p>
-<ul>
-<li><a
-href="https://qiita.com/miyuki_samitani/items/9a320888a833b4aed08c">AWS
-Global Accelerator とは</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワークcdn">09:ネットワーク/CDN</h2>
+<h2 id="ネットワーク12cdn">09:ネットワーク/12:CDN</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-cloudfront">AWS CloudFront</h3>
 <p>Amazon
@@ -3110,18 +3162,18 @@ Identity（OAI）は、CloudFrontがS3バケットのオリジンにアクセス
 href="https://qiita.com/free-honda/items/7da95c2261d3fb00f950">CloudFront
 + S3のベストプラクティス</a></li>
 <li><a
-href="https://dev.classmethod.jp/articles/cloudfront-s3-origin-access-identity/">特定バケットに特定ディストリビューションのみからアクセスできるよう設定する</a></li>
+href="https://dev.classmethod.jp/articles/CloudFront-s3-origin-access-identity/">特定バケットに特定ディストリビューションのみからアクセスできるよう設定する</a></li>
 </ul>
-<h3 id="aws-cloudfrontの推奨構成">AWS CloudFrontの推奨構成</h3>
+<h3 id="aws-cloudfrontユースケース">AWS CloudFrontユースケース</h3>
 <p>オリジンサーバはVPC内部「ALB+EC2」で構成として、CloudFrontの構成は「CloudFront+ALB+S3」で構成するパターンが多いです。</p>
 <ul>
-<li><a href="https://blog.usize-tech.com/cloudfront-cache-basic/">Amazon
+<li><a href="https://blog.usize-tech.com/CloudFront-cache-basic/">Amazon
 CloudFrontとキャッシュ制御の基礎</a></li>
 <li><a
 href="https://zenn.dev/aws_gissan/articles/1cb52d1f2fc5ff">静的、動的コンテンツ配信を使用したWebアプリケーションサーバ設計</a></li>
 </ul>
 <h3 id="lambdaedge">Lambda@Edge</h3>
-<p>cloudFrontのエッジロケーションのサービス。Lamda関数はユーザーに近いロケーションで実行されます。</p>
+<p>CloudFrontのエッジロケーションのサービス。Lamda関数はユーザーに近いロケーションで実行されます。</p>
 <ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html">Lambda@Edge
@@ -3140,6 +3192,21 @@ FunctionsとLambda@Edgeを使用することで、エッジロケーションで
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=33">Amazon
 CloudFront の概要と試験出題ポイントは？</a></li>
+</ul>
+<h3 id="aws-global-accelerator">AWS Global Accelerator</h3>
+<p>ALB、NLB、EC2の前段に置いてアプリケーションの可用性とパフォーマンスを改善するサービスです。
+複数のリージョンで展開しているWebアプリケーションなどへのリージョン間の負荷分散が可能。<br />
+ALB，NLB，EC2インスタンス，Elastic
+IPアドレスを指定することができます。<br />
+AWS Global
+Acceleratorは、ユーザーからAWSリソースまでのアクセス経路をAWSグローバルネットワークを利用して最適化するサービスです。<br />
+通常、ユーザーがAWSリソースにアクセスする時、AWSリソースがあるリージョンまでに経由するインターネット回線の影響を受けるため、遅延の発生やデータ損失などのリスクがあります。<br />
+Global
+Acceleratorは、ユーザーと地理的に近いエッジロケーションから高パフォーマンスなAWSグローバルネットワークを経由してAWSリソースへアクセスするため、遅延の発生やデータ損失などのリスクを少なくします。</p>
+<ul>
+<li><a
+href="https://qiita.com/miyuki_samitani/items/9a320888a833b4aed08c">AWS
+Global Accelerator とは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3385,6 +3452,15 @@ Organizationsとは？その仕組みと実現できること、ユースケー�
 Organizationsはなぜ必要？メリットは？ユースケースも解説！</a></li>
 </ul>
 <h3
+id="organizations組織単位ouの管理">Organizations/組織単位(OU)の管理</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_manage_ous.html">AWS
+Organizations を使用した組織単位 (OU) の管理</a></li>
+<li><a href="https://blog.serverworks.co.jp/oranizations/ou/design">AWS
+Organizations におけるOU設計について考えてみる</a></li>
+</ul>
+<h3
 id="organizationsscpservice-control-policies">Organizations/SCP（Service
 Control Policies）</h3>
 <p>サービスコントロールポリシー（SCP）は、組織のルート、OU（Organizational
@@ -3420,6 +3496,10 @@ Explorerのコストレポートに含まれるようになります。</p>
 <li><a
 href="https://qiita.com/kiton/items/d05622ce1a3972fe52df#%E4%B8%80%E6%8B%AC%E8%AB%8B%E6%B1%82">一括請求</a></li>
 </ul>
+<h3
+id="organizationsorganizationsによるami共有">Organizations/OrganizationsによるAMI共有</h3>
+<p>AMIは、指定した別のAWSアカウント、組織、特定のOU全体と共有できます。<br />
+OUに属しているアカウントでのAMIアクセスは、AMIの共有設定に該当OUのAmazonリソースネーム（ARN）を追加することで実装可能です。</p>
 <h3 id="aws-control-tower">AWS Control Tower</h3>
 <p>AWS Control Towerとは、規範的なベストプラクティスに従って、 AWS
 マルチアカウント環境をセットアップして管理するための簡単な方法を提供します。<br />
@@ -3647,10 +3727,10 @@ SNSから通知することで、設問の要件を満たせます。</p>
 Config/リソースへのタグ付け</h3>
 <ul>
 <li><a
-href="https://www.youtube.com/watch?v=fhjkvkIuzO4">Config：リソースのタグ検知</a></li>
-<li><a
 href="https://docs.aws.amazon.com/ja_jp/config/latest/developerguide/tagging.html">AWS
 Config リソースのタグ付け</a></li>
+<li><a
+href="https://www.youtube.com/watch?v=fhjkvkIuzO4">Config：リソースのタグ検知</a></li>
 </ul>
 <h3 id="aws-service-catalog">AWS Service Catalog</h3>
 <p>AWS Service
@@ -3658,9 +3738,17 @@ Catalogは、システム開発者や管理者が定義したアプリケーシ�
 AWSでの利用が承認されたIaCテンプレートの作成と管理を支援<br />
 これにより、組織全体のAWSリソースの利用を標準化し、ガバナンスを強化し、AWS環境のセキュリティを向上させることができます。</p>
 <ul>
+<li><a href="https://aws.amazon.com/jp/servicecatalog/">AWS Service
+Catalog</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/servicecatalog/latest/adminguide/introduction.html">Service
+Catalog とは</a></li>
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=243">AWS
 Service Catalog の概要と試験出題ポイントは？</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/introduction-2024-aws-service-catalog/">AWS
+入門ブログリレー 2024 〜AWS Service Catalog編〜</a></li>
 </ul>
 <h3 id="aws-compute-optimizer">AWS Compute Optimizer</h3>
 <p>ワークロードに最適な AWS
@@ -3843,12 +3931,12 @@ S3上に保持している数百テラバイトのデータセットに対して
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=205">AWS
 Glue の概要と試験出題ポイントは？</a></li>
 </ul>
-<h3 id="aws-glueクローラー">AWS Glue/クローラー</h3>
+<h3 id="aws-gluedata-catalog">AWS Glue/Data Catalog</h3>
 <ul>
 <li><a href="https://qiita.com/c-irei/items/c91272026954837a879c">AWS
 Glue Data Catalog を理解する</a></li>
 </ul>
-<h3 id="aws-glueクローラー-1">AWS Glue/クローラー</h3>
+<h3 id="aws-glueクローラー">AWS Glue/クローラー</h3>
 <h3 id="aws-glueetlジョブの基本構成">AWS Glue/ETLジョブの基本構成</h3>
 <p>AWS
 Glueは複数のデータソースからデータを抽出し、変換・統合したデータをターゲットへ格納するといったデータ分析における橋渡しの役割を担います。</p>
@@ -4008,6 +4096,17 @@ Transcribeとは、「Polly」とは反対に、自動音声認識サービス�
 <li><a href="https://qiita.com/aoiku/items/9bd6c81c816089ac226f">Amazon
 Polly / Amazon Transcribe</a></li>
 </ul>
+<h3 id="amazon-transcribepiiマスキング機能">Amazon
+Transcribe/PIIマスキング機能</h3>
+<p>Amazon Transcribe が自動で PII を識別して隠蔽する機能があります。</p>
+<ul>
+<li><a
+href="https://blog.serverworks.co.jp/tech/2020/03/05/automatic_redaction_of_pii/">Amazon
+Transcribe が個人情報を識別して、自動的に PII
+を隠蔽してくれるようになりました</a></li>
+<li><a
+href="https://mondai.ping-t.com/g/posts/2020">ComprehendはPIIをマスキング</a></li>
+</ul>
 <h3 id="textract">Textract</h3>
 <p>OCR（光学的文字認識）サービスでドキュメントやPDFからテキストやデータを抽出します。</p>
 <hr />
@@ -4088,23 +4187,32 @@ Snow Familyにはデータの量や用途ごと複数のサービスがありま
 <ul>
 <li>ファミリー
 <ul>
-<li>AWSSnowball</li>
-<li>SnowballEdge</li>
-<li>Snowmobile</li>
+<li>AWS Snowball(AWS Snowball Edge)</li>
+<li>AWS Snowmobile</li>
 </ul></li>
 <li><a
 href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=247">AWS
 Snow ファミリー の概要と試験出題ポイントは？</a></li>
 </ul>
-<h3 id="aws-snowcone">AWS Snowcone</h3>
-<p>ポータブルデバイスを使用．Datasync連携したオンライン転送も可能になります。<br />
-8TB</p>
 <h3 id="aws-snowball">AWS Snowball</h3>
-<p>ペタバイト規模のデータ転送が可能になります。<br />
-80TB</p>
+<p>AWS Snowballは、オンプレミス上の大量のデータを安全にAmazon
+S3へ転送するために、専用の物理デバイスを提供するサービスです。<br />
+AWSから大容量ストレージを搭載したデバイスが貸し出され、ユーザーが移行対象のデータをデバイスへ取り込みます。その後、デバイスをAWSに返送するとデータがAmazon
+S3に保存されます。</p>
+<ul>
+<li>AWS Snowballのタイプ
+<ul>
+<li>Snowball Edge Storage Optimized</li>
+<li>nowball Edge Compute Optimized</li>
+</ul></li>
+</ul>
 <h3 id="aws-snowmobile">AWS Snowmobile</h3>
-<p>エクサバイト規模のデータ転送が可能になります。<br />
-100PB</p>
+<p>エクサバイト級の大容量データをAWSに高速かつ安全に移行するためのサービスです。<br />
+セミトレーラートラックで輸送されるのは、100PB（ペタバイト）のストレージコンテナとなります。</p>
+<h3 id="aws-snowcone">AWS Snowcone</h3>
+<p>AWS
+Snowファミリーの最小・最軽量のエッジコンピューティング、ストレージ、データ転送デバイスです。
+ただし、前世代デバイスのため、2024年11月12日をもって提供が停止されています。</p>
 <h3 id="aws-transfer-family">AWS Transfer Family</h3>
 <p>AWS Transfer Familyは、Amazon S3 やAmazon EFS
 に対してファイルを送受信できる転送サービスです。<br />
