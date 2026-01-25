@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/01/25 09:24:36</p>
+更新日：2026/01/24 13:40:49</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws認定資格情報">AWS認定資格情報</h2>
@@ -442,9 +442,13 @@ href="https://zenn.dev/dogfortune/articles/c8d6767754d02d">AWSを使いこなす
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="リージョン関連">リージョン関連</h3>
 <ul>
-<li><p><a
-href="https://snowsystem.net/cloud/aws/ssa/ssa-vpc-2/">リージョン／AZとVPC／サブネットの関係まとめ</a></p></li>
-<li><p>1対他の関係性</p>
+<li><a
+href="https://snowsystem.net/cloud/aws/ssa/ssa-vpc-2/">リージョン／AZとVPC／サブネットの関係まとめ</a></li>
+<li><a
+href="https://security-blog-it.com/2174/">AWSの専門用語（リージョン、アベイラビリティゾーン、エッジロケーションとは）</a></li>
+<li><a
+href="https://managed.gmocloud.com/knowledge/aws/availability-zone.html">AWS アベイラビリティーゾーンとは？</a></li>
+<li>1対他の関係性
 <ul>
 <li>リージョン：AZ ＝ 1 ： N</li>
 <li>リージョン：VPC ＝ 1 ： N</li>
@@ -779,7 +783,7 @@ href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_create_for
 <h3 id="amazon-cognito">Amazon Cognito</h3>
 <p>Amazon
 Cognitoは、アプリケーション開発者が、独自のIDプロバイダやソーシャルIDプロバイダを使用してユーザー認証・認可を提供できるサービスです。<br />
-モバイルやWebアプリ向けのユーザー認証機能を提供します。</p>
+Cognitoは、簡単な設定で、モバイルやWebアプリ向けのユーザー認証機能を提供します。</p>
 <ul>
 <li>ユーザプール
 <ul>
@@ -796,14 +800,36 @@ Cognito の概要と試験出題ポイントは？</a></li>
 <li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
 Cognitoを試してみた（ユーザプール編）</a></li>
 </ul>
+<h3 id="amazon-cognitoユーザープール">Amazon Cognito/ユーザープール</h3>
+<p>ユーザープールは、Amazon Cognito
+のユーザーディレクトリです。ユーザープールを使用することで、ユーザーはウェブまたはモバイルアプリに
+Amazon Cognito 経由でサインインする、またはサードパーティー ID
+プロバイダー (IdP) 経由でフェデレートすることができます。<br />
+ユーザープールは次の機能を提供します。</p>
+<ul>
+<li>ユーザープール機能
+<ul>
+<li>サインアップおよびサインイン。</li>
+<li>ユーザーをサインインするためのカスタマイズ可能な組み込みWeb
+UIの提供</li>
+<li>Facebook、Google でのソーシャルサインイン、Login with Amazon、Sign
+in with Apple、ユーザープールからの SAML および OIDC ID
+プロバイダー経由のサインイン。</li>
+<li>ユーザーディレクトリとユーザープロファイルの管理。</li>
+<li>多要素認証 (MFA)
+などのセキュリティ機能、漏洩した認証情報のチェック、アカウントの乗っ取りからの保護、電話とEメールによる検証。</li>
+<li>カスタマイズされたワークフローと AWS Lambda
+トリガーによるユーザー移行。</li>
+</ul></li>
+<li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
+Cognitoを試してみた（ユーザプール編）</a></li>
+</ul>
+<h3 id="amazon-cognitoidプール">Amazon Cognito/IDプール</h3>
+<p>認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行する機能です。</p>
 <h3 id="amazon-cognitoアダプティブ認証">Amazon
 Cognito/アダプティブ認証</h3>
 <p>Cognitoのアダプティブ認証は、新しいデバイス、位置、ネットワーク情報など、通常とは異なる状況でのログインを検知すると、動的にセキュリティレベルを調整する仕組みです。<br />
 通常はパスワードのみの認証設定でも、異なる状況を検知すると多要素認証(MFA)などを要求できます。</p>
-<h3 id="amazon-cognitoidプール">Amazon Cognito/IDプール</h3>
-<p>認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行する機能です。</p>
-<h3 id="amazon-cognitocognitoのユーザープール">Amazon
-Cognito/Cognitoのユーザープール</h3>
 <h3 id="amazon-cognitoapi-gatewayオーソライザー利用">Amazon Cognito/API
 Gatewayオーソライザー利用</h3>
 <ul>
@@ -1362,9 +1388,25 @@ ECSとは？Fargateとは？</a></li>
 <li>EC2から起動</li>
 </ul></li>
 </ul>
-<h3 id="amazon-ecsタスク定義とタスクロール付与">Amazon
-ECS/タスク定義とタスクロール付与</h3>
+<h3 id="amazon-ecsecsタスク定義とecsタスクロール付与">Amazon
+ECS/ECSタスク定義とECSタスクロール付与</h3>
+<p>Amazon ECS タスクに対しては、IAMロールを関連付けることができます。
+IAM
+ロールで付与されるアクセス許可は、タスクで実行中のコンテナに対しても発行することができます。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+ECS タスクの IAM ロール</a></li>
+</ul>
 <h3 id="amazon-ecs-anywhere">Amazon ECS Anywhere</h3>
+<p>Amazon Elastic Container Service (ECS) Anywhere
+は、インフラストラクチャ上でコンテナワークロードを実行および管理できるAmazon
+ECS の機能です。
+AWS外部にあるオンプレミス環境などのサーバーや仮想マシンをECSクラスターに登録し、コンテナを実行や管理することができます。</p>
+<ul>
+<li><a href="https://aws.amazon.com/jp/ecs/anywhere/">Amazon ECS
+Anywhere</a></li>
+</ul>
 <h3 id="amazon-elastic-kubernetes-serviceamazon-eks">Amazon Elastic
 Kubernetes Service(Amazon EKS)</h3>
 <p>AWSまたはオンプレミスでKubernetesを実行するサービスです。</p>
@@ -2188,18 +2230,34 @@ RDSインスタンスからの読み取り操作をオフロードするため�
 <li><a
 href="https://qiita.com/aws-training/items/8b041940bc19bec5bf89">RDSリードレプリカとは</a></li>
 </ul>
-<h3 id="multi-az-cluster">Multi-AZ Cluster</h3>
+<h3
+id="rds-dbインスタンスmulti-az-instance従来のmulti-az-clusterマルチaz配置">RDS
+DBインスタンス：Multi-AZ Instance(従来のMulti-AZ
+Cluster、マルチAZ配置)</h3>
 <p>Multi-AZ Cluster は DB Engine
 のネイティブなレプリケーションを利用して、 Writer から各々別の AZ にある
 2台の Reader へレプリケーションします。<br />
 フェイルオーバー時は最新の変更レコードを持っている Reader を Writer
 へ昇格させるので高速に切り替えられます。</p>
-<h3 id="multi-az-db-cluster">Multi-AZ DB Cluster</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.Migrating.html">Amazon
+RDS の DB インスタンスをマルチ AZ 配置に変換する</a></li>
+</ul>
+<h3 id="rds-dbクラスターmulti-az-db-cluster">RDS DBクラスター：Multi-AZ
+DB Cluster</h3>
 <p>Multi-AZ DB Clusterは、従来の Multi-AZ Instance
 と異なりレプリケーション先のインスタンスへのアクセスが可能であり、Writer
 のロールがインスタンス間で移動するため複数のエンドポイントの指定方法があります。<br />
 3つのアベイラビリティゾーンにまたがって配置されるため、可用性がさらに強化されています。</p>
 <ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html">Amazon
+Aurora DB クラスター</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/amazon-rds-multi-az-db-cluster/">新しい
+Amazon RDS のマルチ AZ 配置オプション – MySQL および PostgreSQL
+データベースでご利用可能</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/rds-multi-az-db-cluster-ga/">新しい高可用性オプションの
 Multi-AZ DB Cluster が一般提供になりました</a></li>
@@ -2210,14 +2268,37 @@ DBクラスター</a></li>
 href="https://blog.serverworks.co.jp/organize-multi-az-options#Multi-AZ-DB-cluster-%E3%82%92%E5%90%AB%E3%82%81%E3%81%9F-Multi-AZ-%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%95%B4%E7%90%86">Multi-AZ
 DB cluster を含めた Multi-AZ オプションの整理</a></li>
 </ul>
+<h3 id="rds-dbインスタンスとrds-dbクラスターの違い">「RDS
+DBインスタンス」と「RDS DBクラスター」の違い</h3>
+<p>「RDS DBインスタンス」と「RDS
+DBクラスター」では、以下の違いがあります。</p>
+<ul>
+<li>シングル/マルチAZ インスタンス（非クラスター）:
+<ul>
+<li>標準的な RDS
+の構成。各インスタンスが独立したストレージを持ち、スタンバイ機は読み取り処理ができません。</li>
+</ul></li>
+<li>マルチAZ DB クラスター:
+<ul>
+<li>1つの書き込みインスタンスと2つの読み取り可能なスタンバイインスタンスで構成される、高可用な最新オプションです。</li>
+</ul></li>
+</ul>
 <h3 id="amazon-aurora">Amazon Aurora</h3>
 <p>Amazon Aurora
 は、AWSが提供する高性能かつスケーラブルなリレーショナルデータベースエンジンです。<br />
 Auroraは、MySQL と PostgreSQL
 互換の2つのバージョンを提供(MySQL/PostgreSQL互換のデータベースエンジン)し、エンタープライズグレードの性能、スケーラビリティ、可用性を持ちながら、商用データベースの1/10程度のコストで利用できます。</p>
 <ul>
+<li><a
+href="https://qiita.com/naoya_ok/items/6bfdf2835f6b0c1bf039">Amazon
+Aurora</a></li>
 <li><a href="https://zenn.dev/ma_ro/articles/18c220dee9a48c">【AWS
 SAA-C03】Amazon Aurora とは？</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/aurora-or-rds-by-table/">AuroraとRDSの違いを一覧表でまとめてみた</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/rds-aurora-difference">Amazon
+RDSとAuroraの違いをまとめてみた</a></li>
 </ul>
 <h3 id="aurora-serverless">Aurora Serverless</h3>
 <p>オンデマンドで自動スケールし、コスト効率を最適化するサーバーレスオプション。</p>
@@ -2278,18 +2359,17 @@ id="dynamodbのキャパシティモードdynamodbの利用モード">DynamoDB�
 <li><a
 href="https://qiita.com/Nazuna_Nyanmage/items/443ee3d196d6ae600c9a">DynamoDBにAutoScalingを適用した時の挙動</a></li>
 </ul>
-<h3
-id="dynamodbポイントタイムリカバリ">DynamoDB/ポイントタイムリカバリ</h3>
-<p>差分バックアップを自動的に取得する機能。<br />
-手動でバックアップする方法はオンデマンドバックアップ</p>
-<h3 id="dynamodbtime-to-livettl">DynamoDB/Time To Live(TTL)</h3>
-<p>特定の時点で自動的にデータ項目を削除する機能</p>
 <h3 id="dynamodb-streams">DynamoDB Streams</h3>
 <p>DynamoDB
 Streamsは、テーブルに対して行われた直近24時間の変更（追加・更新・削除）をログとして保持する機能です。<br />
 ストリームを利用することで、いつ・どのような更新が行われたかを追跡できます。</p>
-<h3 id="amazon-dynamodbセッション情報">Amazon
-DynamoDBセッション情報</h3>
+<h3
+id="dynamodbポイントタイムリカバリ">DynamoDB/ポイントタイムリカバリ</h3>
+<p>差分バックアップを自動的に取得する機能。<br />
+手動でバックアップする方法はオンデマンドバックアップとなります。</p>
+<h3 id="dynamodbtime-to-livettl">DynamoDB/Time To Live(TTL)</h3>
+<p>特定の時点で自動的にデータ項目を削除する機能</p>
+<h3 id="dynamodbセッション情報">DynamoDBセッション情報</h3>
 <p>DynamoDBは高可用性とスケーラビリティを備えたNoSQLデータベースサービスで、セッションデータの保存に適しています。</p>
 <ul>
 <li><a
@@ -2333,9 +2413,9 @@ ElastiCache の概要と試験出題ポイントは？</a></li>
 <li><a
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20171214_AWS-Blackbelt-ElastiCache.pdf">BlackBelt_AmazonElastiCache_PDF</a></li>
 </ul>
-<h3 id="amazon-elasticacheの種別">Amazon ElastiCacheの種別</h3>
+<h3 id="amazon-elasticache種別">Amazon ElastiCache種別</h3>
 <ul>
-<li>Redis OSS
+<li>Redis OSSRedis()
 <ul>
 <li>幅広いユースケースに効果を発揮する豊富な一連の機能を提供します</li>
 </ul></li>
@@ -2398,8 +2478,11 @@ href="https://zenn.dev/mn87/articles/e417121016235c">パイロットライトと
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク01vpc">09:ネットワーク/01:VPC</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="vpc概要">VPC概要</h3>
+<h3
+id="awsのネットワークvpcの基礎知識">AWSのネットワーク(VPC)の基礎知識</h3>
 <ul>
+<li><a
+href="https://qiita.com/yoshiyama_hana/items/fd087f9a19538b8f6667">【AWS認定試験対策】VPC、Route53のポイントまとめ</a></li>
 <li><a
 href="https://qiita.com/nasuvitz/items/e05b3025f2ff708b7d2f">新サービスに触る前に学び直す、AWSのネットワーク基礎知識まとめ</a></li>
 <li><a
@@ -2416,19 +2499,40 @@ VPC の概要と試験出題ポイントは？</a></li>
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20201021_AWS-BlackBelt-VPC.pdf">BlackBelt_AmazonVPC_PDF</a></li>
 <li><a
 href="https://youtu.be/JAzsGRS_o4c">BlackBelt_AmazonVPC_YouTube</a></li>
+<li><a href="https://aws.amazon.com/jp/vpc/pricing/">Amazon VPC
+の料金</a></li>
 </ul>
-<h3 id="vpc内のdns設定">VPC内のDNS設定</h3>
+<h3 id="vpc内dns設定">VPC内DNS設定</h3>
 <p>VPCの設定でDNSを設定することができます。<br />
 VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御する設定です。</p>
+<ul>
+<li>DNSホスト名付与の方法種別
 <ul>
 <li>DNS解決(DNS Resolution)</li>
 <li>DNSホスト名(DNS Hostname)</li>
 <li>DHCPオプションセット(DHCP Options Sets)</li>
+</ul></li>
 <li><a
 href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
 hostnamesオプション</a></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/71ecef0ae1a30e186ec3">VPCのDNSについて</a></li>
+</ul>
+<h3 id="vpc内dns設定dns-hostnameオプション">VPC内DNS設定/DNS
+Hostnameオプション</h3>
+<p>VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御するための設定となります。<br />
+以下の特徴があります。</p>
+<ul>
+<li>DNS hostnamesオプションの特徴
+<ul>
+<li>DNSホスト名を自動的に付与</li>
+<li>一貫した名前解決</li>
+<li>セキュリティグループやネットワークACLなどのセキュリティ設定を
+名前ベースで管理</li>
+</ul></li>
+<li><a
+href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
+hostnamesオプション</a></li>
 </ul>
 <h3 id="elastic-ip-addressパブリックipアドレスプライベートip">Elastic IP
 Address/パブリックIPアドレス/プライベートIP</h3>
@@ -2602,11 +2706,13 @@ id="ネットワーク04ゲートウェイ概要">09:ネットワーク/04:ゲ�
 Gateway)：VPNの疎通を行うために設定します。<br />
 </li>
 </ul></li>
-<li><a
-href="https://zenn.dev/inuiebio/articles/7430b79fc09825">○Gatewayをまとめてみた</a></li>
+<li><a href="https://zenn.dev/inuiebio/articles/7430b79fc09825">XX
+Gatewayをまとめてみた</a></li>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc">Oracle
 Cloud Infrastructure Architect Associate 勉強メモ/NW接続性</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/aws-gateways-1">Gatewayが多過ぎて何がなんなのかわからない？AWSのGateway全種類解説！</a></li>
 <li><a
 href="https://ops.jig-saw.com/tech-cate/aws_gateway">よく使うゲートウェイの特徴・違い・料金まとめ</a></li>
 <li><a
@@ -2621,13 +2727,42 @@ href="https://zenn.dev/inuiebio/articles/a75ba86f63da19">おさえておきた�
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク04ゲートウェイ">09:ネットワーク/04:ゲートウェイ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-internet-gateway">AWS Internet Gateway</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/VPC_Internet_Gateway.html">インターネットゲートウェイを使用して
+VPC のインターネットアクセスを有効にする</a></li>
+<li><a href="https://zenn.dev/yukun369/articles/0703765388c70c">AWS
+VPCのインターネットゲートウェイについて学ぼう！</a></li>
+</ul>
 <h3 id="aws-nat-gateway">AWS NAT Gateway</h3>
 <p>NAT ゲートウェイは、ネットワークアドレス変換 (NAT)
 サービスのことです。</p>
 <ul>
 <li><a
+href="https://zenn.dev/youtuber/articles/6d656fac5013d4">AWS初心者必見！NATゲートウェイの役割をわかりやすく解説</a></li>
+<li><a
 href="https://zenn.dev/tom12345/scraps/c5bb97e1ab6ea6#comment-d7b5a38509202c">NAT
 ゲートウェイ</a></li>
+</ul>
+<h3 id="internet-gatewayとnat-gatewayの違い">Internet GatewayとNAT
+Gatewayの違い</h3>
+<ul>
+<li><a href="https://qiita.com/KWS_0901/items/8f818caaa4e989a185c5">AWS
+Internet Gateway と NAT Gateway メモ</a></li>
+<li><a
+href="https://qiita.com/blpch7/items/f52b1eccedc8f66518c8#%E8%A9%A6%E9%A8%93%E3%81%AB%E5%87%BA%E9%A1%8C%E3%81%95%E3%82%8C%E3%82%8B%E3%82%B2%E3%83%BC%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A4">試験に出題されるゲートウェイ</a></li>
+<li><a
+href="https://milestone-of-se.nesuke.com/sv-advanced/aws/internet-nat-gateway/">【図解/AWS】インターネットGWとNAT-GWの違い〜各メリット、パブリックサブネットとは〜</a></li>
+</ul>
+<h3 id="aws-nat-gatewaynw構成">AWS NAT Gateway/NW構成</h3>
+<p>NAT GatewayのNW構成は以下に従う。</p>
+<ul>
+<li>NW構成
+<ul>
+<li>パブリックサブネットごとにNATゲートウェイを配置する</li>
+<li>ターゲットがNATゲートウェイのルートテーブルを、プライベートサブネットごとに設定する</li>
+</ul></li>
 </ul>
 <h3 id="amazon-api-gatewayapiゲートウェイ">Amazon API
 Gateway(APIゲートウェイ)</h3>
@@ -2669,11 +2804,7 @@ id="ネットワーク05vpc間通信vpcエンドポイント">09:ネットワー
 <h3 id="vpcエンドポイント">VPCエンドポイント</h3>
 <p>VPCと他のサービス間の通信を可能にするVPCコンポーネント(仮想デバイス)です。<br />
 VPCエンドポイントを作成することで、VPC内のインスタンスとVPC外のサービスをプライベート接続で通信できるようになります。<br />
-VPCエンドポイントにはゲートウェイ型とインターフェイス型の2種類があり、それぞれ利用できるAWSサービスが異なります。<br />
-ゲートウェイ型はAmazon S3やAmazon DynamoDBで利用できます。<br />
-VPCエンドポイントを通じてデータをS3バケットに転送する場合、そのデータ転送はAWSのプライベートネットワーク内で行われるためデータの外部への露出もありません。<br />
-また、ゲートウェイ型VPCエンドポイントは利用料金が無料で、データ転送料金も発生しないため、転送データ量が多いアプリケーションにとっては大きなコスト節約につながります。<br />
-プライベートサブネット内のリソースからVPC外のリソースに対し，インターネットを経由しないアクセスを可能にします。</p>
+VPCエンドポイントにはゲートウェイ型とインターフェイス型の2種類があり、それぞれ利用できるAWSサービスが異なります。</p>
 <ul>
 <li>VPCエンドポイントの種類
 <ul>
@@ -2692,12 +2823,32 @@ VPCエンドポイントを通じてデータをS3バケットに転送する場
 </ul></li>
 </ul></li>
 <li><a
+href="https://aws.amazon.com/jp/builders-flash/202503/learn-vpc-end-point/">テクニカルインストラクターと学ぶインターフェース型とゲートウェイ型の
+VPC エンドポイント</a></li>
+<li><a
 href="https://qiita.com/miyuki_samitani/items/9d9f7a0c417cb75a6c85">VPCエンドポイント
 ってなんのこと？</a></li>
 <li><a
 href="https://qiita.com/dennis_wang/items/e881f2d502b1a0addfbe">VPCエンドポイントとの関係性を徹底解説</a></li>
 <li><a
 href="https://zenn.dev/osachi/articles/06624a0e7c1260#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88-(interface-endpoint)%3A">違いのまとめ</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/vpc-endpoint-gateway-vs-interface">VPCエンドポイント(ゲートウェイ/インターフェース)の選び方</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/koty-mousa-differences-two-types-vpc-endpoints/">2種類のエンドポイント、違いを比べてみた！〜ゲートウェイ型&amp;インターフェース型〜</a></li>
+</ul>
+<h3
+id="vpcエンドポイントゲートウェイ型エンドポイント">VPCエンドポイント/ゲートウェイ型エンドポイント</h3>
+<p>ゲートウェイ型はAmazon S3やAmazon DynamoDBで利用できます。<br />
+VPCエンドポイントを通じてデータをS3バケットに転送する場合、そのデータ転送はAWSのプライベートネットワーク内で行われるためデータの外部への露出もありません。<br />
+また、ゲートウェイ型VPCエンドポイントは利用料金が無料で、データ転送料金も発生しないため、転送データ量が多いアプリケーションにとっては大きなコスト節約につながります。<br />
+プライベートサブネット内のリソースからVPC外のリソースに対し，インターネットを経由しないアクセスを可能にします。</p>
+<h3
+id="vpcエンドポイントインターフェイス型エンドポイント">VPCエンドポイント/インターフェイス型エンドポイント</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/privatelink/create-interface-endpoint.html">インターフェイス
+VPC エンドポイント AWS のサービス を使用して にアクセスする</a></li>
 </ul>
 <h3
 id="vpcエンドポイントs3バケットのアクセス許可設定">VPCエンドポイント/S3バケットのアクセス許可設定</h3>
@@ -2740,6 +2891,12 @@ id="ネットワーク06vpc間通信vpcピアリング">09:ネットワーク/06
 <li><a
 href="https://qiita.com/dennis_wang/items/0964a346df78e51d6633">PrivateLinkとVPCピアリングの賢い使い分け</a></li>
 </ul>
+<h3
+id="vpcピアリングとvpcエンドポイントの違い">VPCピアリングとVPCエンドポイントの違い</h3>
+<ul>
+<li><a
+href="https://zenn.dev/osachi/articles/06624a0e7c1260#vpc-%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9-(aws-privatelink)">違いのまとめ</a></li>
+</ul>
 <h3 id="vpcピアリングipv4-cidrブロック">VPCピアリング/IPv4
 CIDRブロック</h3>
 <p>IPv4
@@ -2766,12 +2923,6 @@ CIDRブロックが重複させてはならないです。</p>
 <ul>
 <li><a
 href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%94%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0">リモートピアリング</a></li>
-</ul>
-<h3
-id="vpcエンドポイントとvpcピアリングの違い">VPCエンドポイントとVPCピアリングの違い</h3>
-<ul>
-<li><a
-href="https://zenn.dev/osachi/articles/06624a0e7c1260#vpc-%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9-(aws-privatelink)">違いのまとめ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2933,8 +3084,6 @@ href="https://zenn.dev/luvmini511/articles/30dff49a173bde#vpc-%E3%81%AE%E5%A4%96
 <li><a
 href="https://qiita.com/naoya_ok/items/61f68c4a4b8ac97d2208#34site-to-site-vpn-%E3%82%B5%E3%82%A4%E3%83%88%E9%96%93vpn%E6%8E%A5%E7%B6%9A%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88">Site-to-Site
 VPN (サイト間VPN)接続を構築するために必要なコンポーネント</a></li>
-<li><a
-href="https://qiita.com/blpch7/items/f52b1eccedc8f66518c8#%E8%A9%A6%E9%A8%93%E3%81%AB%E5%87%BA%E9%A1%8C%E3%81%95%E3%82%8C%E3%82%8B%E3%82%B2%E3%83%BC%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A4">試験に出題されるゲートウェイ</a></li>
 </ul>
 <h3 id="aws-site-to-site-vpnカスタマーゲートウェイの冗長化">AWS
 Site-to-Site VPN/カスタマーゲートウェイの冗長化</h3>
@@ -3085,8 +3234,8 @@ href="https://qiita.com/Mikeinu/items/a358df72de65896aada5">【AWS】EC2
 AMI/ALB/Auto Scalingの備忘録</a></li>
 </ul>
 <h3 id="vpc-lattice">VPC Lattice</h3>
-<p>VPC LatticeはVPC向けのリバースプロキシサービスです。
-VPCを跨いだ通信を可能します。</p>
+<p>VPC
+LatticeはVPC向けのリバースプロキシサービスです。VPCを跨いだ通信を可能します。</p>
 <ul>
 <li>仕組み
 <ul>
@@ -4180,39 +4329,6 @@ Migration Hub とは?</a></li>
 href="https://www.skyarch.net/blog/aws-migration-hub-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/">AWS
 Migration Hub を使ってみた</a></li>
 </ul>
-<h3 id="aws-snow-family">AWS Snow Family</h3>
-<p>Snow
-Familyオンプレミス上の大量のデータをAWSのストレージへ安全に転送するために、専用の物理デバイスを提供するサービスです。<br />
-Snow Familyにはデータの量や用途ごと複数のサービスがあります。</p>
-<ul>
-<li>ファミリー
-<ul>
-<li>AWS Snowball(AWS Snowball Edge)</li>
-<li>AWS Snowmobile</li>
-</ul></li>
-<li><a
-href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=247">AWS
-Snow ファミリー の概要と試験出題ポイントは？</a></li>
-</ul>
-<h3 id="aws-snowball">AWS Snowball</h3>
-<p>AWS Snowballは、オンプレミス上の大量のデータを安全にAmazon
-S3へ転送するために、専用の物理デバイスを提供するサービスです。<br />
-AWSから大容量ストレージを搭載したデバイスが貸し出され、ユーザーが移行対象のデータをデバイスへ取り込みます。その後、デバイスをAWSに返送するとデータがAmazon
-S3に保存されます。</p>
-<ul>
-<li>AWS Snowballのタイプ
-<ul>
-<li>Snowball Edge Storage Optimized</li>
-<li>nowball Edge Compute Optimized</li>
-</ul></li>
-</ul>
-<h3 id="aws-snowmobile">AWS Snowmobile</h3>
-<p>エクサバイト級の大容量データをAWSに高速かつ安全に移行するためのサービスです。<br />
-セミトレーラートラックで輸送されるのは、100PB（ペタバイト）のストレージコンテナとなります。</p>
-<h3 id="aws-snowcone">AWS Snowcone</h3>
-<p>AWS
-Snowファミリーの最小・最軽量のエッジコンピューティング、ストレージ、データ転送デバイスです。
-ただし、前世代デバイスのため、2024年11月12日をもって提供が停止されています。</p>
 <h3 id="aws-transfer-family">AWS Transfer Family</h3>
 <p>AWS Transfer Familyは、Amazon S3 やAmazon EFS
 に対してファイルを送受信できる転送サービスです。<br />
@@ -4227,6 +4343,58 @@ Transfer Family の勘所</a></li>
 <li><a
 href="https://ods.n-kishou.co.jp/tech/blog/detail/6698">気象データをAWS
 Transfer Family経由でAWS S3に転送してみた</a></li>
+</ul>
+<h3 id="aws-snow-family">AWS Snow Family</h3>
+<p>Snow
+Familyオンプレミス上の大量のデータをAWSのストレージへ安全に転送するために、専用の物理デバイスを提供するサービスです。<br />
+過去はSnow
+Familyにはデータの量や用途ごと複数のサービスがありましたが、現在は「AWS
+Snowball Edge」のみ提供されています。</p>
+<ul>
+<li>現在提供可能サービス
+<ul>
+<li>AWS Snowball Edge</li>
+</ul></li>
+<li>過去ファミリー
+<ul>
+<li>AWS Snowcone(2024年11月12日サービス停止)</li>
+<li>旧式Snowball Edge(AWS Snowball：2024年11月12日サービス停止)</li>
+<li>AWS Snowmobile(2024年4月ごろサービス停止)</li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/how-aws-pricing-works/aws-snow-family.html">AWS
+Snow ファミリー</a></li>
+<li><a
+href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=247">AWS
+Snow ファミリー の概要と試験出題ポイントは？</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/summary-of-aws-service-eos-announcement-at-202411/">2024年11月に公開されたAWSサービスのサポート終了アナウンスまとめ</a></li>
+</ul>
+<h3 id="aws-snowball-edge">AWS Snowball Edge</h3>
+<p>Snowball Edgeは、オンプレミス上の大量のデータを安全にAmazon
+S3へ転送するために、専用の物理デバイスを提供するサービスです。<br />
+AWSから大容量ストレージを搭載したデバイスが貸し出され、ユーザーが移行対象のデータをデバイスへ取り込みます。その後、デバイスをAWSに返送するとデータがAmazon
+S3に保存されます。</p>
+<ul>
+<li>Snowball Edgeのタイプ
+<ul>
+<li>Snowball Edge Compute Optimized</li>
+<li>Snowball Edge Storage Optimized</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/jp/snowball/pricing/">AWS Snowball
+の料金</a></li>
+</ul>
+<h3 id="aws-snowcone">AWS Snowcone</h3>
+<p>AWS
+Snowファミリーの最小・最軽量のエッジコンピューティング、ストレージ、データ転送デバイスです。
+ただし、前世代デバイスのため、2024年11月12日をもってサービス提供が停止されています。</p>
+<h3 id="aws-snowmobile">AWS Snowmobile</h3>
+<p>エクサバイト級の大容量データをAWSに高速かつ安全に移行するためのサービスです。<br />
+100PB（ペタバイト）のストレージコンテナで、セミトレーラートラックで輸送されます。<br />
+ただし、2024年4月ごろにサービス提供が停止されています。</p>
+<ul>
+<li><a
+href="https://qiita.com/shinry/items/7a02e04b56815c612548">Snowmobileってもうサービス終了してた件</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
