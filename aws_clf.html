@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>勉強メモ_CLF</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">勉強メモ_CLF</h1>
+</header>
+<p><a href="index.html">トップページ</a><br />
+作成日：2025/05/10 11:21:33<br />
+更新日：2026/01/31 10:27:42</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="clf学習">CLF学習</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="clfシラバス">CLFシラバス</h3>
+<p>「試験ガイド」にAWS製品の分類が記載されている。</p>
+<ol type="1">
+<li>クラウドの概念</li>
+<li>セキュリティとコンプライアンス</li>
+<li>テクノロジー</li>
+<li>請求と料金</li>
+</ol>
+<ul>
+<li><a href="https://note.com/furiko_dearu/n/n3e42734a5838">AWS
+CLFの試験範囲とシラバス</a></li>
+<li><a
+href="https://www.isoroot.jp/blog/6812/#first">AWS認定クラウドプラクティショナーについて</a></li>
+</ul>
+<h3 id="clf勉強メモ">CLF勉強メモ</h3>
+<ul>
+<li>(サイト内ページ)<a href="aws_saa.html">SAA_勉強サイト</a></li>
+</ul>
+<h3 id="clf合格体験記">CLF合格体験記</h3>
+<ul>
+<li><a href="https://qiita.com/Iyugo/items/8c04bdd2cf025d639f9a">AWS
+クラウドプラクティショナーにギリギリ合格したのでその反省</a></li>
+<li><a
+href="https://qiita.com/tsn/items/06d95b591b4acfdca868">AWSクラウドプラクティショナー取得には無料WEB問題集を使おう</a></li>
+<li><a
+href="https://tech.nri-net.com/entry/how_a_beginner_passed_3_exams">IT初心者が半年で基本情報技術者・AWS
+CLF・Ruby silverに合格した方法</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws設計">AWS設計</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="awsクラウドの利点">AWSクラウドの利点</h3>
+<p>AWSクラウドを活用することで、企業はコストの削減や業務の効率化を図りつつ、柔軟性や信頼性を最大限に引き出すことが可能です。以下に、AWSクラウドの主な利点を紹介します。</p>
+<ul>
+<li>AWSクラウドコンピューティング6つのメリット
+<ol type="1">
+<li>固定費が柔軟な変動費へ</li>
+<li>コストの最適化</li>
+<li>キャパシティが予測不要に</li>
+<li>スケールによる大きなコストメリット</li>
+<li>スピードと俊敏性の向上</li>
+<li>わずか数分で世界中にデプロイ</li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html">クラウドコンピューティングの
+6 つの利点</a></li>
+<li><a
+href="https://qiita.com/aoiku/items/8e65159828c42b18f877">AWSの長所と利点</a></li>
+<li>AWS の クラウドが選ばれる 10 の理由
+<ul>
+<li><a href="https://aws.amazon.com/jp/aws-ten-reasons/">AWS の
+クラウドが選ばれる 10 の理由</a></li>
+</ul></li>
+<li>その他の利点(一般的な視点)
+<ol type="1">
+<li>コスト効率</li>
+<li>規模の経済【スケールメリット】</li>
+<li>弾力性【スケーラビリティ】</li>
+<li>ビジネスの俊敏性</li>
+<li>グローバル展開の容易さ</li>
+<li>可用性</li>
+<li>信頼性</li>
+<li>セキュリティとコンプライアンス</li>
+<li>運用負担の軽減</li>
+<li>マイクロサービスアーキテクチャ</li>
+</ol></li>
+</ul>
+<h3 id="aws-well-architected-フレームワーク">AWS Well-Architected
+フレームワーク</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="aws_saa.html#aws-well-architected-framework">SAA_勉強サイト</a></li>
+</ul>
+<h3 id="俊敏性">俊敏性</h3>
+<p>俊敏性とは、開発者がこれらのリソースを利用できるようになるまでの時間を数週間から数分に短縮が可能な状態のこと。</p>
+<ul>
+<li><a
+href="https://zenn.dev/airiswim/articles/24552ec0962749#%E2%96%A0-%E4%BB%96%E3%80%81%E3%81%93%E3%81%AE%E9%A1%9E%E3%81%A7%E3%82%88%E3%81%8F%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%82%8B%E3%83%AF%E3%83%BC%E3%83%89%E3%81%A8%E6%A6%82%E8%A6%81%E3%80%81%E5%AF%BE%E5%87%A6%E4%BE%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">他、この類でよく使用されるワードと概要、対処例について</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html">クラウドコンピューティングの
+6 つの利点</a></li>
+</ul>
+<h3 id="信頼性の柱design-for-failure">信頼性の柱(Design for
+Failure)</h3>
+<p>お客様は利用している AWS サービスの SLA に関わらず、常に Design for
+Failure を意識し環境構築や運用について考える必要があります。</p>
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/startup/techblog-well-architected-reliability-1/#01">信頼性の柱</a></li>
+</ul>
+<h3 id="設計原則">設計原則</h3>
+<p>クラウドにはワークロードのセキュリティ強化に役立つ多くの原則</p>
+<ul>
+<li>設計原則
+<ol type="1">
+<li>強力なアイデンティティ基盤を実装する</li>
+<li>トレーサビリティの維持</li>
+<li>すべての層にセキュリティを適用する</li>
+<li>セキュリティのベストプラクティスの自動化</li>
+<li>転送中のデータおよび保管中のデータの保護</li>
+<li>人をデータから遠ざける</li>
+<li>セキュリティイベントの準備</li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/framework/sec-design.html">設計原則</a></li>
+</ul>
+<h3 id="aws-グローバルインフラストラクチャ">AWS
+グローバルインフラストラクチャ</h3>
+<ul>
+<li>AWSグローバルインフラストラクチャの6つの利点
+<ol type="1">
+<li>セキュリティ</li>
+<li>可用性</li>
+<li>パフォーマンス</li>
+<li>スケーラビリティ</li>
+<li>柔軟性</li>
+<li>グローバルに提供するサービスの規模</li>
+</ol></li>
+<li><a
+href="https://aws.amazon.com/jp/about-aws/global-infrastructure/">AWSグローバルインフラストラクチャ</a></li>
+</ul>
+<h3 id="aws-セキュリティ">AWS セキュリティ</h3>
+<ul>
+<li>公式資料
+<ul>
+<li>(PDF)<a
+href="https://d1.awsstatic.com/whitepapers/ja_JP/Security/AWS_Security_Best_Practices.pdf">AWS
+セキュリティのベストプラクティス</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-クラウド導入フレームワーク">AWS
+クラウド導入フレームワーク</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-クラウド導入フレームワーク-aws-caf">AWS
+クラウド導入フレームワーク (AWS CAF)</h3>
+<p>AWS
+CAFというフレームワークに則ることで、クラウド導入の複雑さを軽減し、ビジネス成果を最大化することができるというものです。<br />
+AWS CAF
+は、「6つのパースペクティブ」と「7つの機能」が提供されています。</p>
+<ul>
+<li>6つのパースペクティブ
+<ol type="1">
+<li>ビジネス
+<ul>
+<li>戦略管理</li>
+<li>ポートフォリオ管理</li>
+<li>イノベーション管理</li>
+<li>製品管理</li>
+<li>戦略的パートナーシップ</li>
+<li>データの収益化</li>
+<li>ビジネスインサイト</li>
+<li>データサイエンス</li>
+</ul></li>
+<li>人材(人員)
+<ul>
+<li>文化の進化</li>
+<li>トランスフォーメーションのリーダーシップ</li>
+<li>クラウドフルエンシー</li>
+<li>ワークフォースのトランスフォーメーション</li>
+<li>変革の促進</li>
+<li>組織設計</li>
+<li>組織の連携</li>
+</ul></li>
+<li>ガバナンス
+<ul>
+<li>プログラムおよびプロジェクト管理</li>
+<li>利益管理</li>
+<li>リスク管理</li>
+<li>ラウドの財務管理</li>
+<li>アプリケーションポートフォリオ管理</li>
+<li>データガバナンス</li>
+<li>データキュレーション</li>
+</ul></li>
+<li>プラットフォーム
+<ul>
+<li>プラットフォームアーキテクチャ</li>
+<li>データアーキテクチャ</li>
+<li>プラットフォームエンジニアリング</li>
+<li>データエンジニアリング</li>
+<li>プロビジョニングとオーケストレーション</li>
+<li>モダンアプリケーション開発</li>
+<li>継続的インテグレーションと継続的デリバリー</li>
+</ul></li>
+<li>セキュリティ
+<ul>
+<li>セキュリティガバナンス</li>
+<li>セキュリティ保証</li>
+<li>アイデンティティおよび許可管理</li>
+<li>脅威検出</li>
+<li>インフラストラクチャの保護</li>
+<li>データ保護</li>
+<li>アプリケーションのセキュリティ</li>
+<li>インシデント対応</li>
+</ul></li>
+<li>オペレーション
+<ul>
+<li>可観測性</li>
+<li>イベント管理 (AIOps)</li>
+<li>インシデントおよび問題管理</li>
+<li>変更およびリリース管理</li>
+<li>パフォーマンスおよびキャパシティ管理</li>
+<li>構成管理</li>
+<li>パッチ管理</li>
+<li>可用性および継続性管理</li>
+<li>アプリケーション管理</li>
+</ul></li>
+</ol></li>
+<li>7つの機能
+<ul>
+<li>プラットフォームアーキテクチャ（クラウド環境のガイドラインの合意形成）</li>
+<li>データアーキテクチャ（データ分析とアーキテクチャ設計の推進）</li>
+<li>プラットフォームエンジニアリング（高セキュリティで効率的なクラウド環境構築）</li>
+<li>データエンジニアリング（データフローの自動化とオーケストレーション）</li>
+<li>プロビジョニング及びオーケストレーション（クラウド環境の作成と配布の自動化）</li>
+<li>モダンアプリケーション開発（フレームワークに基づくアプリケーション開発）</li>
+<li>CI／CD（アプリケーション開発とサービス展開の迅速化）</li>
+</ul></li>
+<li><a
+href="https://aws.amazon.com/jp/cloud-adoption-framework/">AWSクラウド導入フレームワーク</a></li>
+<li><a
+href="https://qiita.com/miu-P/items/f1de48b87547939734f3#aws-%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E5%B0%8E%E5%85%A5%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF-aws-caf">AWSクラウド導入フレームワーク</a></li>
+<li><a href="https://aws.keepitup.jp/CLF301S025A/">第25問 AWS CAF
+におけるプラットフォームのパースペクティブ</a></li>
+<li><a href="https://qiita.com/NOTATM/items/87665eeab13edb958dee">AWS
+クラウド導入フレームワークの各パースペクティブ</a></li>
+</ul>
+<h3
+id="クラウドトランスフォーメーションジャーニークラウド導入戦略">クラウドトランスフォーメーションジャーニー(クラウド導入戦略)</h3>
+<p>AWSに移行するためのクラウド導入戦略のこと。「4つのフェーズ」で構成される。</p>
+<ul>
+<li>4つのフェーズ
+<ul>
+<li>構想フェーズ</li>
+<li>連携フェーズ</li>
+<li>ローンチフェーズ</li>
+<li>スケールフェーズ</li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/overview-aws-cloud-adoption-framework/your-cloud-transformation-journey.html">クラウドトランスフォーメーションジャーニー</a></li>
+<li><a
+href="https://www.cloudsolution.tokai-com.co.jp/white-paper/2021/0413-229.html">AWSクラウド導入フレームワーク「AWS
+CAF」とは？</a></li>
+<li><a
+href="https://qiita.com/Can-A/items/223d1bf1951b8ca48bd4#%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%81%B8%E3%81%AE%E7%A7%BB%E8%A1%8C%E3%81%AE%E5%88%A9%E7%82%B9%E3%81%A8%E6%88%A6%E7%95%A5%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B">クラウドへの移行の利点と戦略を理解する</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="awsデータセンター">AWSデータセンター</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="責任共有モデル">責任共有モデル</h3>
+<p>AWSの責任共有モデルとは、クラウドサービス提供者であるAWSと顧客との間で、セキュリティとコンプライアンスに関する責任を分担する考え方です。</p>
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/compliance/shared-responsibility-model/">責任共有モデル</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-security-incident-response-guide/shared-responsibility.html">責任共有</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/strategy-accelerating-security-maturity/understanding-the-security-scope.html">セキュリティ範囲について</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/applying-the-aws-shared-responsibility-model-to-your-gxp-solution/">AWS
+責任共有モデルを GxP ソリューションに適用する</a></li>
+<li><a
+href="https://managed.gmocloud.com/knowledge/aws/shared-responsibility-model.html">AWSの責任共有モデルとは？</a></li>
+</ul>
+<p>(責任共有モデル)<br />
+<img src="img/aws_saa/General-Shared-Responsibility-Model-on-AWS.jpg" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="管理とガバナンス提供サービス">管理とガバナンス/提供サービス</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-managed-service">AWS Managed Service</h3>
+<p>AWS Managed
+Service（AMS）とは、企業がAWSを利用する際にAWSから提供される一連のIT運用サービスのこと。</p>
+<ul>
+<li><a
+href="https://and-engineer.com/articles/YMwFsBMAACkAE2Bx">AWSのマネージドサービスとは？</a></li>
+<li><a
+href="https://note.com/danchi_kun/n/n6608909226dd#614e02c0-e0b1-4b36-9e9e-d5af83ac30dd">AWS
+Managed Service</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="サポート">サポート</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="サポートプラン">サポートプラン</h3>
+<ul>
+<li>タイプ
+<ul>
+<li>ベーシック</li>
+<li>ディベロッパー(開発)</li>
+<li>ビジネス</li>
+<li>エンタープライズ</li>
+</ul></li>
+<li>注意点
+<ul>
+<li>チャットサポートは「ビジネス」から</li>
+</ul></li>
+<li>用語
+<ul>
+<li>コンシェルジュ</li>
+<li>AWS Trusted Advisorのライセンス範囲</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/jp/premiumsupport/plans/">AWS
+サポートプランの比較</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/introduction-2024-aws-support/">AWS入門ブログリレー2024
+AWSサポート編</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/awssupport/latest/user/trusted-advisor.html">AWS
+Trusted Advisor</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="その他">その他</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="用語集">用語集</h3>
+<ul>
+<li>カーブアウト
+<ul>
+<li>ネットワーク環境の切り出し</li>
+<li><a
+href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12300780647">AWSに出てくるカーブアウトとはなんですか？</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
