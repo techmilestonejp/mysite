@@ -388,6 +388,11 @@ href="https://www.nexty-ele.com/technical-column/ethernet_macsec/">MACsecとは<
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="レイヤ3ipアドレス">レイヤ3/IPアドレス</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="概要">概要</h3>
+<ul>
+<li><a
+href="https://qiita.com/h3pei/items/efb4c9328d82d24d98e6">IPアドレスの基礎知識</a></li>
+</ul>
 <h3 id="マルチキャスト">マルチキャスト</h3>
 <ul>
 <li><a
@@ -562,10 +567,21 @@ Gateway Protocol）で使用されます。<br />
 <li><a
 href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律システム番号</a></li>
 </ul>
-<h3 id="bgpパスアトリビュート">BGP/パスアトリビュート</h3>
+<h3
+id="bgpパスアトリビュートパス属性">BGP/パスアトリビュート(パス属性)</h3>
 <ul>
 <li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
 Attribute</a></li>
+<li><a
+href="https://nw.seeeko.com/archives/bgp#4%E3%83%91%E3%82%B9%E3%82%A2%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%83%88">パスアトリビュート</a></li>
+<li><a
+href="https://atmarkit.itmedia.co.jp/ait/articles/1209/13/news147.html">BGPアトリビュートとは</a></li>
+<li><a
+href="https://xtech.nikkei.com/it/article/COLUMN/20090907/336685/">6種類のパスアトリビュートを押さえる</a></li>
+<li><a
+href="https://qiita.com/EkanTw/items/79f45e0f4d0265771785">BGPパスアトリビュートを覚える呪文</a></li>
+<li><a
+href="https://www.juniper.net/documentation/jp/ja/software/junos/vpn-l2/bgp/topics/concept/routing-protocols-address-representation.html">BGPパス選択について</a></li>
 </ul>
 <h3 id="bgpルートポリシー経路制御">BGP/ルートポリシー(経路制御)</h3>
 <p>BCPのルートポリシーを利用する経路制御の種別としては、以下があります。</p>
@@ -573,6 +589,32 @@ Attribute</a></li>
 <li>不要な BGP ルートのフィルタリング</li>
 <li>AS PATH Prepend による経路制御</li>
 <li>MED値 の変更による優先経路選択</li>
+</ul>
+<h3
+id="bgpローカルプリファレンスlocal-preference">BGP/ローカルプリファレンス(Local
+Preference)</h3>
+<p>BGPのLocal
+Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
+Local
+Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
+<ul>
+<li><a
+href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
+Preference</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz21.html">BGP -
+LOCAL_PREF</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
+LOCAL_PREF - Cisco Config</a></li>
+<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
+LOCAL_PREF</a></li>
+<li><a
+href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979">BGPの冗長構成（AS
+PATH Prepend、Local-Preference）</a></li>
+<li><a
+href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
+<li><a
+href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
+local-preference</a></li>
 </ul>
 <h3
 id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
@@ -601,32 +643,6 @@ Filtering</a></li>
 prefix-list</a></li>
 <li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
 as-path access-list</a></li>
-</ul>
-<h3
-id="bgpローカルプリファレンスlocal-preference">BGP/ローカルプリファレンス(Local
-Preference)</h3>
-<p>BGPのLocal
-Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
-Local
-Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
-<ul>
-<li><a
-href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
-Preference</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz21.html">BGP -
-LOCAL_PREF</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
-LOCAL_PREF - Cisco Config</a></li>
-<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
-LOCAL_PREF</a></li>
-<li><a
-href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979">BGPの冗長構成（AS
-PATH Prepend、Local-Preference）</a></li>
-<li><a
-href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
-<li><a
-href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
-local-preference</a></li>
 </ul>
 <h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
 Path Prepend)</h3>
@@ -891,7 +907,7 @@ href="https://qiita.com/mathkuro/items/7d6187a633c30f794587">5tuple(ファイブ
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="レイヤ7nwセキュリティ">レイヤ7/NWセキュリティ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="概要">概要</h3>
+<h3 id="概要-1">概要</h3>
 <ul>
 <li>(サイト内ページ)<a
 href="ipa_sc.html">勉強メモ_セキュリティスペシャリスト</a></li>
