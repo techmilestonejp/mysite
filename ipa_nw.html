@@ -233,6 +233,15 @@ href="https://qiita.com/asacloud9/items/6af2fb7cbb387cb535d9">4年かけてネ�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク概要">ネットワーク概要</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="基礎知識">基礎知識</h3>
+<ul>
+<li><a
+href="https://x.com/envader_plus/status/2025834414685487233">チートシート</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="osi参照モデル">OSI参照モデル</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="osi参照モデル-1">OSI参照モデル</h3>
@@ -498,7 +507,7 @@ href="https://note.com/sennai/n/n507585c1262f">ルーティングプロトコル
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ルーティングbgpbgp-4">ルーティング/BGP(BGP-4)</h2>
+<h2 id="ルーティングbgpbgp-4概要">ルーティング/BGP(BGP-4)/概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="bgp-border-gateway-protocol概要">BGP (Border Gateway
 Protocol)/概要</h3>
@@ -508,6 +517,8 @@ Protocol)/概要</h3>
 データの最も効率的な転送経路を決定するインターネットの「ロードマップ」のような役割を担うルーティングプロトコルです。</p>
 <ul>
 <li><a
+href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
+<li><a
 href="https://nw.seeeko.com/archives/bgp">BGPに関する用語/SE娘の剣</a></li>
 <li><a
 href="https://www.allied-telesis.co.jp/support/list/switch/x900_sb900/doc/v532_docs/overview-35.html">IPルーティング
@@ -516,15 +527,12 @@ href="https://www.allied-telesis.co.jp/support/list/switch/x900_sb900/doc/v532_d
 Gateway Protocol )</a></li>
 <li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
 <li><a
-href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
-<li><a
 href="https://www.nw-siken.com/kakomon/06_haru/am2_1.html">NWスぺ令和06年春期午前2問01</a></li>
 </ul>
 <h3 id="bgpのケーススタディ">BGPのケーススタディ</h3>
 <ul>
 <li><a
-href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/26634-bgp-toc.html">ボーダー
-ゲートウェイ プロトコルのケーススタディの確認</a></li>
+href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/26634-bgp-toc.html">ボーダーゲートウェイプロトコルのケーススタディの確認</a></li>
 </ul>
 <h3 id="自律システムasautonomous-system">自律システム(AS:Autonomous
 System)</h3>
@@ -567,6 +575,23 @@ Gateway Protocol）で使用されます。<br />
 <li><a
 href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律システム番号</a></li>
 </ul>
+<h3 id="bgpメッセージ">BGP/メッセージ</h3>
+<p>BGPはTCPポート179番を利用して通信を行います。BGPルータはピアを確立するために、メッセージと呼ばれる形式で機能情報を交換します。<br />
+メッセージはBGPの状態により数種類存在します。ピアが確立した後は、経路情報を伝達するためのメッセージを定期的に交換し、お互いの持つ経路情報を保持、更新し続けます。</p>
+<ul>
+<li>メッセージ一覧
+<ul>
+<li>OPENメッセージ</li>
+<li>KEEPALIVEメッセージ</li>
+<li>UPDATEメッセージ</li>
+<li>NOTIFICATIONメッセー</li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ルーティングbgpbgp-4パス属性">ルーティング/BGP(BGP-4)/パス属性</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="bgpパスアトリビュートパス属性">BGP/パスアトリビュート(パス属性)</h3>
 <ul>
@@ -577,75 +602,51 @@ href="https://nw.seeeko.com/archives/bgp#4%E3%83%91%E3%82%B9%E3%82%A2%E3%83%88%E
 <li><a
 href="https://atmarkit.itmedia.co.jp/ait/articles/1209/13/news147.html">BGPアトリビュートとは</a></li>
 <li><a
-href="https://xtech.nikkei.com/it/article/COLUMN/20090907/336685/">6種類のパスアトリビュートを押さえる</a></li>
-<li><a
 href="https://qiita.com/EkanTw/items/79f45e0f4d0265771785">BGPパスアトリビュートを覚える呪文</a></li>
 <li><a
 href="https://www.juniper.net/documentation/jp/ja/software/junos/vpn-l2/bgp/topics/concept/routing-protocols-address-representation.html">BGPパス選択について</a></li>
+<li><a
+href="https://xtech.nikkei.com/it/article/COLUMN/20090907/336685/">6種類のパスアトリビュートを押さえる</a></li>
 </ul>
 <h3 id="bgpルートポリシー経路制御">BGP/ルートポリシー(経路制御)</h3>
 <p>BCPのルートポリシーを利用する経路制御の種別としては、以下があります。</p>
 <ul>
-<li>不要な BGP ルートのフィルタリング</li>
 <li>AS PATH Prepend による経路制御</li>
 <li>MED値 の変更による優先経路選択</li>
+<li><a
+href="https://www.alaxala.com/jp/techinfo/archive/manual/AX5400S/HTML/10_10_/APGUIDE/0267.HTM">経路選択アルゴリズム</a></li>
 </ul>
 <h3
-id="bgpローカルプリファレンスlocal-preference">BGP/ローカルプリファレンス(Local
-Preference)</h3>
+id="bgpローカルプリファレンスlocal-preferencelocal_pref">BGP/ローカルプリファレンス(Local
+Preference：LOCAL_PREF)</h3>
 <p>BGPのLocal
 Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
 Local
 Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
 <ul>
-<li><a
-href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
-Preference</a></li>
 <li><a href="https://www.infraexpert.com/study/bgpz21.html">BGP -
 LOCAL_PREF</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
-LOCAL_PREF - Cisco Config</a></li>
-<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
-LOCAL_PREF</a></li>
+<li><a
+href="https://itinfranote.com/bgp-local-preference-attribute/">BGP Local
+Preference</a>)</li>
 <li><a
 href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979">BGPの冗長構成（AS
 PATH Prepend、Local-Preference）</a></li>
 <li><a
 href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
+<li>各製品のLOCAL_PREF設定
+<ul>
+<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
+LOCAL_PREF - Cisco Config</a></li>
+<li>[JUNOS -
+LOCAL_PREF](https://www.infraexpert.com/infra/junosb06.html</li>
 <li><a
 href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
 local-preference</a></li>
-</ul>
-<h3
-id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
-ACL）</h3>
-<p>BGPではAS_PATH属性に基づいて経路情報のフィルタリングが行えるAS_PATH
-ACLを使用することができます。</p>
-<ul>
-<li><a
-href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
-</ul>
-<h3
-id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
-<p>BGPにおけるルートフィルタリングは以下の4つの手法があります。<br />
-以下の手法により、BGPネイバーと送受信するルートのフィルタリングを行うことができます。</p>
-<ul>
-<li>BGP/ルートフィルタリングの種類
-<ul>
-<li>distribute-list</li>
-<li>prefix-list</li>
-<li>filter-list</li>
-<li>route-map</li>
 </ul></li>
-<li><a href="https://www.infraexpert.com/study/bgpz30.html">BGP - Route
-Filtering</a></li>
-<li><a href="https://www.infraexpert.com/study/routecontrol07.html">ip
-prefix-list</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
-as-path access-list</a></li>
 </ul>
 <h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
-Path Prepend)</h3>
+PATH Prepend)</h3>
 <p>AS PATH
 Prependは、特定の経路を意図的に優先させたくない、あるいは特定の経路へのトラフィックを減らしたい場合に、AS
 PATHに自身のAS番号を複数追加して長さを伸ばします。<br />
@@ -659,6 +660,51 @@ Path Prepend</a></li>
 href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
 Router で AS PATH Prepend を実装する</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ルーティングbgpbgp-4ルートフィルタリング">ルーティング/BGP(BGP-4)/ルートフィルタリング</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="bgpルートフィルタリング">BGP/ルートフィルタリング</h3>
+<p>BGPフィルタは、ルータがBGP経路情報を受信・送信する際に、特定の条件に基づいて経路を許可または拒否する設定です。<br />
+これにより、不要な経路の受信や誤った経路のアドバタイズを防ぎ、ネットワークの安定性とセキュリティを向上させます。</p>
+<h3
+id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
+<p>BGPにおけるルートフィルタリングは以下の4つの手法があります。<br />
+以下の手法により、BGPネイバーと送受信するルートのフィルタリングを行うことができます。</p>
+<ul>
+<li>BGP/ルートフィルタリングの種類
+<ul>
+<li>distribute-list</li>
+<li>prefix-list</li>
+<li>filter-list(AS_PATH ACL)</li>
+<li>route-map</li>
+</ul></li>
+<li><a
+href="https://www.n-study.com/bgp-detail/bgp-route-filter-overview/">BGPルートフィルタの種類</a></li>
+<li><a
+href="https://qiita.com/youyonghua/items/ff408470c51d2c8753b4">BGPフィルタメモ</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz30.html">BGP - Route
+Filtering</a></li>
+<li><a href="https://www.infraexpert.com/study/routecontrol07.html">ip
+prefix-list</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
+as-path access-list</a></li>
+</ul>
+<h3
+id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
+ACL）</h3>
+<p>BGPではAS_PATH属性に基づいて経路情報のフィルタリングが行えるAS_PATH
+ACLを使用することができます。</p>
+<ul>
+<li><a
+href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ルーティングbgpbgp-4その他機能">ルーティング/BGP(BGP-4)/その他機能</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="bgpルート集約経路集約">BGP/ルート集約(経路集約)</h3>
 <p>BGPでは、複数の経路情報を一つの経路に集約することが可能です。<br />
 この機能により、ルート情報の管理が簡素化され、ルーティングテーブルの規模を縮小できます。</p>
@@ -681,18 +727,6 @@ href="https://net-skills.net/cisco-machine-menu1/actual-bgp26/">BGPルートの�
 <li><a
 href="https://daimaru-tech-blog.com/?p=691">【CCNA/CCNP/ネットワーク入門】BGP（経路集約/Prefix-List/Route-map/Default経路）を学んでみた</a></li>
 </ul>
-<h3 id="非対称ルーティング">非対称ルーティング</h3>
-<p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
-<ul>
-<li><a
-href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id0">非対称ルーティングとは</a></li>
-</ul>
-<h3 id="ステートフルインスペクション">ステートフルインスペクション</h3>
-<p>ステートフルインスペクションとは、通信のセッション管理によって、戻りの通信を動的に許可する仕組みのことです。</p>
-<ul>
-<li><a
-href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id1">ステートフルインスペクションとは</a></li>
-</ul>
 <h3 id="ecmpequal-cost-multi-path">ECMP（Equal Cost Multi Path）</h3>
 <p>ECMP（Equal Cost Multi
 Path）とは、ネットワークにおいて、同じ宛先に対してコスト（メトリック）が等しい経路が複数存在する場合に、それらの経路へパケットを分散させて転送する技術です。</p>
@@ -704,6 +738,18 @@ href="https://e-words.jp/w/%E7%AD%89%E3%82%B3%E3%82%B9%E3%83%88%E3%83%9E%E3%83%A
 【ECMP】</a></li>
 <li><a href="https://qiita.com/shirok/items/c3dbe48ad8f3bef26949">Oracle
 Cloud: ECMP有効にして IPSec VPN接続してみてみた</a></li>
+</ul>
+<h3 id="非対称ルーティング">非対称ルーティング</h3>
+<p>非対称ルーティングとは、以下のように行きと帰りのパケットが異なる経路を通る通信のことです。</p>
+<ul>
+<li><a
+href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id0">非対称ルーティングとは</a></li>
+</ul>
+<h3 id="ステートフルインスペクション">ステートフルインスペクション</h3>
+<p>ステートフルインスペクションとは、通信のセッション管理によって、戻りの通信を動的に許可する仕組みのことです。</p>
+<ul>
+<li><a
+href="https://ssaits.jp/promapedia/trouble/20230227.html#index_id1">ステートフルインスペクションとは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
