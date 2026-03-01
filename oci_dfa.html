@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/02/23 08:26:45<br />
+更新日：2026/03/01 15:46:54<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -53,6 +53,9 @@ Become an Oracle Data Platform Foundations Associate (2025)
 </ul>
 <h3 id="試験内容チェックリスト">試験内容チェックリスト</h3>
 <ul>
+<li>データ管理の概要</li>
+<li>Autonomous Databaseとツール</li>
+<li>ExadataおよびDBCS</li>
 <li><a
 href="https://education.oracle.com/oracle-data-platform-2025-foundations-associate/pexam_1Z0-1195-25">試験内容チェックリスト</a></li>
 </ul>
@@ -62,9 +65,46 @@ href="https://education.oracle.com/oracle-data-platform-2025-foundations-associa
 <ul>
 <li>分類01:OCI資格概要</li>
 <li>分類02:データ管理の概要</li>
-<li>分類03:Autonomous Databaseとツール</li>
-<li>分類04:ExadataおよびDBCS</li>
-<li>分類05:MySQLおよびNoSQL</li>
+<li>分類03:OCI-OracleDB
+<ul>
+<li>01:Autonomous Database</li>
+<li>02:Exadata</li>
+<li>03:DBCS</li>
+</ul></li>
+<li>分類04:その他DB
+<ul>
+<li>01:MySQL</li>
+<li>02:NoSQL</li>
+</ul></li>
+<li>分類05:マルチモデルDB
+<ul>
+<li>01:コンバージド・データベース</li>
+</ul></li>
+<li>分類06:レジリエンシ
+<ul>
+<li>01:Oracle Maximum Availability Architecture (Oracle
+MAA:最大可用性アーキテクチャ)</li>
+<li>02:Oracle Maximum Security Architecture(Oracle
+MSA:最大セキュリティ・アーキテクチャ)</li>
+</ul></li>
+<li>分類07:開発
+<ul>
+<li>01:APEX</li>
+<li>02:REST-API</li>
+<li>03:Oracleデータ・ツールセット</li>
+</ul></li>
+<li>分類08:データ・レイク
+<ul>
+<li>01:データ・レイク</li>
+<li>02:データ・ウェアハウス</li>
+<li>03:機械学習</li>
+<li>04:データ・メッシュ</li>
+</ul></li>
+<li>分類09:アップグレードと移行
+<ul>
+<li>01:アップグレード</li>
+<li>02:移行</li>
+</ul></li>
 </ul></li>
 </ul>
 <h3 id="勉強メモ">勉強メモ</h3>
@@ -74,8 +114,24 @@ href="https://qiita.com/infra365/items/ca5d311d92752566c40d">１日でOCIの要�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ociアーキテクチャ">OCIアーキテクチャ</h2>
+<p>分類02:データ管理の概要<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="ociサービス一覧">OCIサービス一覧</h3>
+<ul>
+<li><a
+href="https://qiita.com/sugimount/items/86e069305e5939c9eb61">Oracle
+Cloud 全サービスまとめ IaaS編</a></li>
+</ul>
+<h3 id="統合アーキテクチャ">統合アーキテクチャ</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/data-application-integration-workloads/index.html">OCIでのデータおよびアプリケーション統合ワークロード用のネットワーク・アーキテクチャの設計</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="mysql">MySQL</h2>
-<p>分類04:MySQLおよびNoSQL<br />
+<p>分類04:その他DB<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="mysql-heatwave-database">MySQL HeatWave Database</h3>
 <ul>
@@ -90,6 +146,97 @@ HeatWaveのサービス概略 ー全体像を理解しよう</a></li>
 <li><a
 href="https://xn--w8j8bac3czf5bl7e.com/2023/01/17/oci%E3%81%A7mysql-database-servicemds%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">OCIでMySQL
 Database Service(MDS)を作成してみました</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="コンバージドデータベース">コンバージド・データベース</h2>
+<p>分類05:マルチモデルDB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="概要">概要</h3>
+<ul>
+<li>Converged Database
+<ul>
+<li>一つの製品で複数のデータタイプや処理特性に対応することができるデータベース</li>
+</ul></li>
+<li>Purpose-Built Database
+<ul>
+<li>データ分析やレコメンデーション、履歴追跡するサプライチェーン用など、目的別に特化したデータベース</li>
+</ul></li>
+<li><a
+href="https://www.ashisuto.co.jp/pr/west/Column_Converged_vs_PurposeBuiltDatabase.pdf">データベースの新たな覇権争いConverged
+Database とPurpose-Built Database とは？</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-maximum-availability-architectureoraclemaa">Oracle
+Maximum Availability Architecture(OracleMAA)</h2>
+<p>分類06:レジリエンシ<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-maa概要">Oracle MAA概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/technologies/maximum-availability-architecture/">Oracle
+Maximum Availability Architecture</a></li>
+<li>(PDF)<a
+href="https://www.oracle.com/jp/a/otn/docs/maa-for-the-oracle-converged-database-ja.pdf">ハイブリッド・クラウドおよびマルチクラウド展開でのコンバージドOracle
+DatabaseのMAA</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="データレイク">データ・レイク</h2>
+<p>分類08:データ・レイク<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="データレイク概要">データ・レイク概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/solutions/data-platform-lakehouse/">データ・プラットフォーム
+- データ・レイクハウス</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-multicloud-datalake/">マルチクラウド・データ・レイク統合アーキテクチャの実装</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/arch-center-about-data-lake/">Oracle
+Cloudでのデータ・レイクの設計について</a></li>
+<li><a
+href="https://www.oracle.com/jp/big-data/what-is-data-lake/">データレイクとは</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-uebina-zui-jin-yokuwen-ku-lakehouse-reikuhausu-tutehe-shi-li-nixue-budetahuo-yong-ji-pan-falsekorekarafalsekatatitoha">【Oracle
+Cloud ウェビナー】最近よく聞く”Lakehouse(レイクハウス)“って</a></li>
+<li><a
+href="https://www.youtube.com/watch?v=CTKs4hTQW6w">【基本を知ろう】クラウド・データレイクを実現する各サービス最新情報</a></li>
+<li><a href="https://www.youtube.com/watch?v=2EpXkON6S_s">【Oracle Cloud
+ウェビナー】今さら聞けないデータ連携！OCIが提供する各サービス総まとめ</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="データウェアハウス">データ・ウェアハウス</h2>
+<p>分類08:データ・レイク<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="autonomous-database-for-analytics-and-data-warehousing-adw">Autonomous
+Database for analytics and data warehousing (ADW)</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/autonomous-ai-lakehouse/">Autonomous
+Database for analytics and data warehousing (ADW)</a></li>
+<li><a
+href="http://oracle.com/jp/database/what-is-a-data-warehouse/">データウェアハウスとは</a></li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/autonomous-data-warehouse/get-started/">Oracle
+Autonomous Data Warehouseを無料で使い始めましょう</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/how-to-build-and-operate-oracle-autonomous-data-warehouse">Oracle
+Autonomous Data Warehouseの構築手順と操作方法</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="アップグレード">アップグレード</h2>
+<p>分類09:アップグレードと移行<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="アップグレード概要">アップグレード概要</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-database-upgrade-migration-jp">Oracle
+AI Databaseのアップグレードと移行</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
