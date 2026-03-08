@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/05 22:39:56<br />
+更新日：2026/03/08 10:37:45<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -67,20 +67,21 @@ href="https://education.oracle.com/oracle-data-platform-2025-foundations-associa
 <li>分類02:データ管理の概要</li>
 <li>分類03:OCI-OracleDB
 <ul>
-<li>01:Autonomous Database</li>
+<li>01:Oracle Autonomous AI Database(Autonomous Database)</li>
 <li>02:Exadata</li>
-<li>03:DBCS</li>
+<li>03:Oracle Base Database Service(Oracle Database Cloud Serivce)</li>
 </ul></li>
 <li>分類04:その他DB
 <ul>
 <li>01:MySQL</li>
 <li>02:NoSQL</li>
 </ul></li>
-<li>分類05:マルチモデルDB
+<li>分類05:コンバージド・データベース
 <ul>
 <li>01:コンバージド・データベース</li>
 <li>02:Oracle JSON</li>
 <li>03:グラフデータベース</li>
+<li>04:Spatial Database</li>
 </ul></li>
 <li>分類06:レジリエンシ
 <ul>
@@ -97,8 +98,8 @@ MSA:最大セキュリティ・アーキテクチャ)</li>
 </ul></li>
 <li>分類08:データ・レイク
 <ul>
-<li>01:データ・レイク</li>
-<li>02:データ・ウェアハウス</li>
+<li>01:データ・ウェアハウス</li>
+<li>02:データ・レイク</li>
 <li>03:機械学習</li>
 <li>04:データ・メッシュ</li>
 </ul></li>
@@ -107,6 +108,14 @@ MSA:最大セキュリティ・アーキテクチャ)</li>
 <li>01:アップグレード</li>
 <li>02:移行</li>
 </ul></li>
+<li>分類10:その他OCIサービス
+<ul>
+<li>01:Oracle Database Management</li>
+<li>02:OCI Data Integration</li>
+<li>03:リソースマネージャー</li>
+<li>04:モニタリング</li>
+</ul></li>
+<li>分類99:その他</li>
 </ul></li>
 </ul>
 <h3 id="勉強メモ">勉強メモ</h3>
@@ -140,6 +149,49 @@ Cloud 全サービスまとめ IaaS編</a></li>
 <li><a
 href="https://docs.oracle.com/ja/solutions/data-application-integration-workloads/index.html">OCIでのデータおよびアプリケーション統合ワークロード用のネットワーク・アーキテクチャの設計</a></li>
 </ul>
+<h3 id="共有セキュリティモデル">共有セキュリティ・モデル</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/cloud-adoption-framework/security.htm">共有セキュリティ・モデル</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/cloud-adoption-framework/oci-shared-responsibility.htm">レジリエンシの共同責任モデル</a></li>
+<li><a
+href="https://jpn.nec.com/soft/oracle/oci/autonomous_DB.html">自律型データベース
+Oracle Autonomous Database</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-ai-databaseoracle-databaseサービス">Oracle AI
+Database(Oracle Databaseサービス)</h2>
+<p>分類02:データ管理の概要<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-ai-database">Oracle AI Database</h3>
+<ul>
+<li>機能一覧
+<ul>
+<li>Autonomous Database(ADB)
+<ul>
+<li>ADB-D</li>
+<li>ADB-S</li>
+</ul></li>
+<li>Exadata Database Service
+<ul>
+<li>ExaDB-D</li>
+<li>ExaDB-XS</li>
+</ul></li>
+<li>Base Database Service</li>
+</ul></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison">Oracle
+Cloud Infrastructure 上で利用可能なOracle
+Databaseのサービスの比較</a></li>
+</ul>
+<h3 id="oracle-ai-database管理範囲">Oracle AI Database管理範囲</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison?slide=11">Oracle
+AI Database管理範囲</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle-autonomous-ai-databaseoracle-autonomous-database">Oracle
@@ -148,9 +200,13 @@ Autonomous AI Database(Oracle Autonomous Database)</h2>
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="概要">概要</h3>
 <ul>
+<li><a href="https://www.oracle.com/jp/autonomous-database/">Autonomous
+AI Database</a></li>
 <li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116">Oracle
 Autonomous Database Cloud 2021 Specialist (1Z0-931-21) 学習メモ</a></li>
+<li><a href="https://oracle-japan.github.io/ocitutorials/adb/">Oracle AI
+Database編 - Autonomous AI Database (ADB)を使ってみよう</a></li>
 <li><a
 href="https://www.oracle.com/jp/database/technologies/datawarehouse-bigdata/adb-faqs.html">Oracle
 Autonomous Databaseに関するFAQ</a></li>
@@ -160,27 +216,109 @@ Database 技術FAQ</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oracle-autonomous-database">Oracle
 Autonomous AI Database：サービス概要のご紹介</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp">Autonomous
+AI Database Serverless 技術詳細</a></li>
 </ul>
+<h3 id="構成仕様">構成・仕様</h3>
+<ul>
+<li>構成
+<ul>
+<li>マルチテナント構成のPDB</li>
+<li>MAA構成</li>
+<li>Elastic(ハードウェアリソースの増減が簡易的に変更可能となる構成)</li>
+<li>Exadata</li>
+<li>Full Managed PaaS</li>
+<li>Multi-AZ/AD deployment</li>
+</ul></li>
+<li><a
+href="https://cosol.jp/techdb/2019/04/oracle_cloud_autonomous_database_architecture/">Autonomous
+Databaseのアーキテクチャ – Oracle Cloud</a></li>
+<li><a href="https://cloudii.jp/news/blog/oracle-cloud/atp_01/">Oracle
+Autonomous Databaseに慣れる（１）</a></li>
+<li><a
+href="https://qiita.com/plusultra/items/5715741eb2a405325ef1">Oracle
+Autonomous Databaseに慣れる（２）</a></li>
+</ul>
+<h3
+id="自律型データベースクラウド特徴">自律型データベース・クラウド/特徴</h3>
+<ul>
+<li>自律型データベースの仕組み
+<ul>
+<li>自己管理：
+データベースおよびインフラストラクチャの管理、監視、およびチューニング・プロセスはすべて自動化されています。</li>
+<li>自己保護：組み込みの機能により、外部からの攻撃と悪意のある内部ユーザーの両方から
+データベースを保護できるよう支援します。</li>
+<li>自己修復:これらの機能は、計画外のメンテナンスなど、ダウンタイムを最小限に抑えるために機能します。</li>
+</ul></li>
+<li>特徴
+<ul>
+<li>自動プロビジョニング
+<ul>
+<li>DBAを介さずにデータベース導入(DB構築)ができる機能です。</li>
+</ul></li>
+<li>自動構成
+<ul>
+<li>特定のワークロードに最適化するようにデータベースを自動的に構成・チューニングする機能です。</li>
+</ul></li>
+<li>自動インデックス作成
+<ul>
+<li>この機能は、ワークロードを自動的にモニターし、アプリケーションに支障をきたす可能性のある欠落したインデックスを検出します。</li>
+</ul></li>
+<li>自動スケーリング
+<ul>
+<li>この機能は、ワークロードが必要とするコンピュート・リソースを自動的にスケールし、実際の使用量に応じた支払いを実現します。</li>
+</ul></li>
+<li>自動データ保護
+<ul>
+<li>自律型データベースは、機密データや規制対象データを自動的に保護し、構成のセキュリティを評価し、異常なアクティビティをモニターできます。</li>
+</ul></li>
+<li>自動化されたセキュリティ
+<ul>
+<li>オペレーティング・システムへのアクセスを禁止し、管理者権限を制限することで、フィッシング攻撃の防止を支援し、クラウドへの侵入と悪意のある内部ユーザーの両方からシステムを保護します。</li>
+</ul></li>
+<li>自動バックアップ
+<ul>
+<li>過去60日以内の指定した時点までのデータベースをリストアまたはリカバリすることができます。</li>
+</ul></li>
+<li>自動パッチ適用
+<ul>
+<li>ダウンタイムなしで自動的にパッチやアップグレードを適用できるようになります。アプリケーションの実行は継続されながら、パッチ適用はクラスタノードまたはサーバー間でラウンドロビン方式で行われます。</li>
+</ul></li>
+<li>自動化された障害検出と解決
+<ul>
+<li>パターン認識を使用して、長時間のタイムアウトなしにハードウェア障害を自動的に予測することができます。</li>
+</ul></li>
+<li>自動フェイルオーバー
+<ul>
+<li>スタンバイ・データベースへのデータ損失ゼロの自動フェイルオーバーは、プライマリ・データベース・インスタンスが利用できなくなった場合でも、アプリケーションがアクセス可能な状態を維持します。</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/what-is-autonomous-database/">自律型データベースとは</a></li>
+<li><a
+href="https://jpn.nec.com/soft/oracle/oci/autonomous_DB.html">自律型データベース
+Oracle Autonomous Database</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-autonomous-ai-databasedb機能種別">Oracle Autonomous AI
+Database/DB機能種別</h2>
+<p>分類03:OCI-OracleDB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="種別">種別</h3>
 <ul>
 <li>Oracle Autonomous Database
 <ul>
 <li>Autonomous Transaction Processing (ATP)</li>
 <li>Autonomous Data Warehouse (ADW)</li>
+<li>Autonomous JSON Database (AJD)</li>
 </ul></li>
 <li><a
 href="https://cosol.jp/techdb/2019/04/autonomous_database_comparison_adw_and_atp_predefined_services/">ADWとATPの比較
 / Autonomous Databaseへの接続と事前定義サービス</a></li>
 <li><a href="https://www.issoh.co.jp/tech/details/4203/">Autonomous
 Transaction ProcessingとData Warehouseの違い</a></li>
-</ul>
-<h3 id="仕様">仕様</h3>
-<ul>
-<li><a href="https://cloudii.jp/news/blog/oracle-cloud/atp_01/">Oracle
-Autonomous Databaseに慣れる（１）</a></li>
-<li><a
-href="https://qiita.com/plusultra/items/5715741eb2a405325ef1">Oracle
-Autonomous Databaseに慣れる（２）</a></li>
 </ul>
 <h3 id="oracle-autonomous-databaseatp">Oracle Autonomous
 Database(ATP)</h3>
@@ -190,14 +328,261 @@ Database(ATP)を触ってみた</a></li>
 <li><a href="https://cloudii.jp/news/blog/oracle-cloud/atp_01/">Oracle
 Autonomous DatabasのAutonomous Transaction Processing
 を使ってみた</a></li>
+<li><a
+href="https://qiita.com/yushibats/items/cbad89098dfcc8c71178">【ハンズオン】AI
+× データ基盤：OCI AI Data
+Platformで実現する統合分析パイプラインの構築（前編）</a></li>
 </ul>
-<h3 id="自律型データベースクラウド">自律型データベース・クラウド</h3>
+<h3
+id="autonomous-database-for-analytics-and-data-warehousing-adw">Autonomous
+Database for analytics and data warehousing (ADW)</h3>
 <ul>
-<li>自己稼働 : 自動でチューニングやDBやインフラの監視を行う。</li>
-<li>自己保護:
-通信やデータ保管は全て暗号化、また自動でセキュリティパッチも適用を行う。</li>
-<li>自己復旧:
-自動バックアップおよびサーバーやストレージの多重化を行う。</li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/autonomous-ai-lakehouse/">Autonomous
+Database for analytics and data warehousing (ADW)</a></li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/autonomous-data-warehouse/get-started/">Oracle
+Autonomous Data Warehouseを無料で使い始めましょう</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/how-to-build-and-operate-oracle-autonomous-data-warehouse">Oracle
+Autonomous Data Warehouseの構築手順と操作方法</a></li>
+</ul>
+<h3 id="autonomous-json-databaseajd">Autonomous JSON Database(AJD)</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/ajd-technical-detail-jp">Autonomous
+JSON Database 技術概要 / ajd_technical_detail_jp</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/features-and-usage-of-oracle-autonomous-json-database">Oracle
+Autonomous JSON Databaseの特徴と使い方</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-autonomous-ai-database各機能">Oracle Autonomous AI
+Database/各機能</h2>
+<p>分類03:OCI-OracleDB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="autonomous-ai-database-data-studio">Autonomous AI Database Data
+Studio</h3>
+<ul>
+<li>Data Studioの特長
+<ul>
+<li>データ読み込み
+<ul>
+<li>Autonomous AI
+Databaseへのデータの迅速なロード、リンク、フィード</li>
+<li>データロードをAIが強化</li>
+</ul></li>
+<li>データ変換</li>
+<li>データ分析</li>
+<li>データ・インサイト</li>
+<li>データ・カタログ</li>
+<li>データ共有</li>
+</ul></li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/data-studio/">Autonomous
+AI Database Data Studio</a></li>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/data-studio/features/">Autonomous
+AI Database Data Studioの機能</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adp-data-studio-overview-page.html">データ・スタジオの概要ページ</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/data-preferences.html">Data
+Studio設定</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/autonomous-database-database-actions-ji-neng-gai-yao">Autonomous
+Database - Database Actions 機能概要</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/data-studionoji-neng-kuo-zhang">Data
+Studioの機能拡張</a></li>
+<li><a href="https://qiita.com/goo2000/items/90a8e0c2376122ad7b12">Data
+Studioにあるジョブを試してみた</a></li>
+<li><a
+href="https://qiita.com/bambooseven/items/956a80f767ec11a52a0f">Autonomous
+Databaseのデータ分析機能で、AIを使用したクエリの説明を試してみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="exadata-database-service">Exadata Database Service</h2>
+<p>分類03:OCI-OracleDB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="exadata-database-service-1">Exadata Database Service</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/engineered-systems/exadata/database-service/">Exadata
+Database Service</a></li>
+<li><a
+href="https://www.oracle.com/jp/a/ocom/docs/engineered-systems/exadata/exadata-cloud-infrastructure-x9m-ds-ja.pdf">Oracle
+Exadata Cloud Infrastructure X9M</a></li>
+</ul>
+<h3
+id="exadata-database-service-on-dedicated-infrastructureexadb-d">Exadata
+Database Service on Dedicated Infrastructure（ExaDB-D）</h3>
+<p>Exadata Database Service on Dedicated
+Infrastructure（ExaDB-D）は、ミッションクリティカルな基盤で圧倒的な実績を誇るExadataの専有環境を、
+OCI上においてサブスクリプションで利用できるサービスです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/exadatacloud/doc/exa-whats-new.html">Oracle
+Exadata Database Service on Dedicated Infrastructureの新機能</a></li>
+<li><a href="https://oracle-japan.github.io/ocitutorials/exadbd/">Oracle
+AI Database編 - Exadata Database Service on Dedicated Infrastructure
+(ExaDB-D) を使ってみよう</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-exadata-database-service">Oracle
+Exadata Database Service(Dedicated
+Infrastructure)：サービス概要のご紹介</a></li>
+<li><a
+href="https://www.lac.co.jp/lacwatch/service/20240424_003821.html">ここが違うよOCI
+ExaDB-D！～構築時に注意すべきポイント</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2023/06/27/exadb-d%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F%EF%BC%81%EF%BC%81/">ExaDB-Dを検証してみた！！</a></li>
+<li><a
+href="https://www.ashisuto.co.jp/db_blog/article/oci-exascale-cross-service-data-guard.html">ExaDB-DとExaDB-XSで実現！クロスサービスData
+Guardでコスト最適化</a></li>
+</ul>
+<h3
+id="oracle-exadata-database-service-on-exascale-infrastructureexadb-xs">Oracle
+Exadata Database Service on Exascale Infrastructure(ExaDB-XS)</h3>
+<p>ExaDB-XS（Exadata Database Service on Exascale
+Infrastructure）とは、OCI上でExadataが使えるインフラ共有型のデータベースサービスです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/exadb-xs/doc/overview-exadb-xs-service.html">Oracle
+Exadata Database Service on Exascale Infrastructureの概要</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/exadatacloud/doc/exa-service-desc.html">Oracle
+Exadata Database Service on Dedicated Infrastructureの説明</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/exadb-xs-technical-detail">Exadata
+Database Service on Exascale Infrastructure(ExaDB-XS)
+サービス技術詳細</a></li>
+<li><a
+href="https://www.ashisuto.co.jp/pr/west/article/column-202501.html">ExaDB-XSとは？Oracle
+CloudでExadataを低コストで使う方法</a></li>
+</ul>
+<h3 id="exadata-cloudcustomer">Exadata Cloud@Customer</h3>
+<p>Oracle Exadata
+Cloud@Customerは、エンタープライズ・データ・センター(顧客データセンター)でExadata
+Database Serviceを稼働させることが可能となります。</p>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/engineered-systems/exadata/cloud-at-customer/">Exadata
+Cloud@Customer</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-exadata-cloud-at-customer">Oracle
+Exadata Cloud@Customer：サービス概要のご紹介</a></li>
+</ul>
+<h3 id="oci-exadataにおける責任分担">OCI Exadataにおける責任分担</h3>
+<ul>
+<li>オラクルが責任を持つ範囲（インフラ管理）
+<ul>
+<li>Oracleは、サービスの基盤となるインフラストラクチャの可用性とセキュリティを維持する責任があります。</li>
+</ul>
+<ol type="1">
+<li>物理ハードウェア、インフラの保守: サーバー、ストレージ（Exadata
+Storage
+Server）、ネットワークスイッチの物理的な保守・修理・交換。。</li>
+<li>ストレージ・サーバー:
+ストレージ・ソフトウェアのアップデートおよびディスク障害への対応。</li>
+<li>ハイパーバイザ:
+VMを実行するための仮想化基盤の管理とセキュリティ確保。</li>
+<li>インフラのアップデート:
+ストレージ・サーバーのソフトウェアや、ネットワーク機器の定期的なセキュリティ・スキャンおよびアップデート。</li>
+<li>物理的セキュリティ:
+データセンター自体のセキュリティ対策（OCIの場合)</li>
+</ol></li>
+<li>お客様が責任を持つ範囲（データベース・VM管理）
+<ul>
+<li>プロビジョニングされたリソースの構成、セキュリティ、および運用に責任を持ちます。お客様は、提供されたリソースを使用して、実際の業務データを安全に運用する責任を負います。<br />
+</li>
+</ul>
+<ol type="1">
+<li>仮想マシン（VM）の管理:
+VM内のゲストOS設定・管理、セキュリティ・パッチの適用、およびカスタム・ソフトウェアの管理、VM内へのアクセス制御。</li>
+<li>データベース（CDB/PDB）: Oracle
+Databaseのインストール（プロビジョニング/データベース作成）、パッチ適用、バックアップ、リカバリ、およびパフォーマンス・チューニング。</li>
+<li>データ保護と暗号化:
+データ自体の保護、表領域の暗号化（TDE）や透過的データ暗号化の暗号化キー管理。</li>
+<li>IDおよびアクセス管理: IAM（Identity and Access
+Management）ポリシーによる、サービスへのアクセス権限の定義と運用。</li>
+<li>ネットワーク・セキュリティ:
+セキュリティ・リストやネットワーク・セキュリティ・グループ（NSG）を使用したアクセス制御の設定。</li>
+</ol></li>
+<li>監査とモニタリング
+<ol type="1">
+<li>ロギング:
+オラクルはインフラ側のログを管理し、お客様はVMやデータベース、OCIサービス操作の監査ログを管理する役割を分担します。</li>
+</ol></li>
+<li>モデル別の特徴
+<ul>
+<li>利用形態によって、一部の責任範囲が異なります。</li>
+<li>Dedicated Infrastructure (ExaDB-D):
+OCI上の専用筐体を利用。物理インフラはすべてOracleがOCIリージョン内で管理します。</li>
+<li>Cloud@Customer (ExaDB-C@C):
+お客様のデータセンターに機材を設置。物理的な設置場所や電源・空調、ネットワーク配線などの物理環境の準備はユーザーの責任となります。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/exadatacloud/doc/ecs-security-guide.html#ECSCM-GUID-41E906D4-1BA9-4A2A-9FA1-68319808B107">責任</a></li>
+</ul>
+<h3 id="oracle-operator-access-control">Oracle Operator Access
+Control</h3>
+<p>Oracle Operator Access Controlは、Oracle
+CloudのExadataインフラストラクチャに対して、Oracleの技術者がメンテナンス目的で行うアクセス（SSHなど）を、
+顧客が可視化・制御・監査できるセキュリティ機能です。<br />
+この機能は、専用Exadataインフラストラクチャ(ExaDB-D)上のAutonomous
+DatabaseやExadata Cloud@Customerで、追加費用なしで利用できます。<br />
+Oracle Operator Access
+Controlを使用すると、Exadataインフラストラクチャ、Oracle Autonomous
+DatabaseをExadata
+Cloud@Customer上でホストするExadataインフラストラクチャ、
+およびOracleによって管理されるAutonomous Exadata VMクラスタ(Exadata
+Cloud@Customer上のOracle Autonomous
+Databaseにデプロイされたクライアント仮想マシン)に対する、
+Oracleのアクセス権の付与、監査および取消を行うことができます。</p>
+<ul>
+<li>主な機能と特徴:
+<ul>
+<li>アクセスの管理と制御:
+Oracleのオペレータによるアクセスを制限・許可し、承認された作業のみを実行可能にします。</li>
+<li>リアルタイム監視と監査:
+オペレータが実行するコマンドやキーストロークを監視し、記録します。</li>
+<li>アクセスの制限: アクセスできる期間、コンポーネント、コマンド（cat,
+grep, topなど）を細かく制限可能です。</li>
+<li>承認ワークフロー:
+重要な操作（INFRA_UPDATE_RESTART）に対し、アクセス申請と承認のプロセスを設定できます。</li>
+<li>セキュリティ強化:
+一時的な資格情報（credentials）を使用し、作業完了後に権限が削除されます。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/operator-access-control/doc/overview-of-operator-access-control.html">Oracle
+Operator Access Controlの概要</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle-base-database-serviceoracle-database-cloud-serivce">Oracle
+Base Database Service(Oracle Database Cloud Serivce)</h2>
+<p>分類03:OCI-OracleDB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-base-database-service概要">Oracle Base Database
+Service/概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/base-database-service/">Base
+Database Service</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/base-database/index.html">ベース・データベース</a></li>
+<li><a href="https://oracle-japan.github.io/ocitutorials/basedb/">Oracle
+AI Database編 - Base Database Service (BaseDB) を使ってみよう</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/basedb-tech-detail">Oracle
+Base Database Service 技術詳細</a></li>
+<li><a href="https://cosol.jp/techdb/2025/09/oci_basedb/">OCI Oracle
+BaseDBとは何か</a></li>
+<li><a href="https://cosol.jp/techdb/2025/09/oci_basedb_create/">OCI
+Oracle BaseDB作成時の指定項目</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -220,12 +605,51 @@ Database Service(MDS)を作成してみました</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="nosql-database-cloud-service">NoSQL Database Cloud Service</h2>
+<p>分類04:その他DB<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="nosql-database-cloud-service概要">NoSQL Database Cloud
+Service/概要</h3>
+<ul>
+<li><a href="https://www.oracle.com/jp/database/nosql/">NoSQL Database
+Cloud Service</a></li>
+<li><a
+href="https://www.oracle.com/jp/database/nosql/what-is-nosql/">NoSQLとは</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/cloud-native/functions-nosql-for-intermediates/">Oracle
+Functionsを利用したNoSQLデータベースアクセス</a></li>
+<li><a href="https://speakerdeck.com/oracle4engineer/ndcs-overview">OCI
+NoSQL Database Cloud Service 概要</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/ndcs-tech-detail">Oracle
+NoSQL Database Cloud Service 技術詳細</a></li>
+<li><a
+href="https://www.intellilink.co.jp/column/oracleletter/2014/032500.aspx">Oracle
+NoSQL Database</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="コンバージドデータベースconverged-database">コンバージド・データベース(Converged
 Database)</h2>
-<p>分類05:マルチモデルDB<br />
+<p>分類05:コンバージド・データベース<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="概要-1">概要</h3>
+<ul>
+<li>コンバージド・データベースの特徴
+<ul>
+<li>あらゆるデータ形式をサポート</li>
+<li>あらゆるワークロードをサポート</li>
+<li>開発と分析に高性能を提供</li>
+</ul></li>
+<li><a
+href="https://www.oracle.com/jp/a/otn/docs/database/oci-managed-comanaged-consolidation-deployment-strategies-ja.pdf">Oracle
+Cloudインフラストラクチャのマネージド型およびコマネージド型の統合およびデプロイメント戦略</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb106-json/">06:
+ADBでコンバージド・データベースを体験しよう（JSONデータの操作）</a></li>
+</ul>
+<h3 id="種別-1">種別</h3>
 <ul>
 <li>Converged Database
 <ul>
@@ -242,7 +666,7 @@ Database とPurpose-Built Database とは？</a></li>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle-json">Oracle JSON</h2>
-<p>分類05:マルチモデルDB<br />
+<p>分類05:コンバージド・データベース<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oracle-json概要">Oracle JSON/概要</h3>
 <ul>
@@ -259,11 +683,26 @@ href="https://docs.oracle.com/cd/F19136_01/adjsn/">JSON開発者ガイド(Releas
 href="https://qiita.com/sugimount/items/064a1301b461df482f00">Oracle
 Database で JSON データを扱う</a></li>
 </ul>
+<h3 id="jsonコレクション">JSONコレクション</h3>
+<ul>
+<li>特徴
+<ul>
+<li>表ではなく、JSONコレクション</li>
+<li>MongoDBコレクションとして利用可能</li>
+</ul></li>
+<li>対応表
+<ul>
+<li>データベース - スキーマ</li>
+<li>コレクション - 表</li>
+<li>ドキュメント - 行</li>
+<li>フィルタ - 問い合わせ</li>
+</ul></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="グラフデータベースgraph-database">グラフデータベース(Graph
 Database)</h2>
-<p>分類05:マルチモデルDB<br />
+<p>分類05:コンバージド・データベース<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="グラフデータベース概要">グラフデータベース/概要</h3>
 <ul>
@@ -273,6 +712,9 @@ href="https://www.oracle.com/jp/database/integrated-graph-database/">統合さ�
 href="https://www.oracle.com/jp/autonomous-database/graph/get-started/">グラフデータベースを無料で使用する</a></li>
 <li><a
 href="https://www.oracle.com/jp/autonomous-database/what-is-graph-database/">グラフデータベースとは</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb215-graph/">215
+: Graph Studioで金融取引の分析を行う</a></li>
 <li><a href="https://qiita.com/sh-sho/items/aae123092d98d4958147">Oracle
 DatabaseでGraphRAGを試してみた</a></li>
 <li><a
@@ -283,6 +725,34 @@ href="https://products.sint.co.jp/siob/blog/graph-database">グラフデータ�
 <li><a
 href="https://codezine.jp/article/detail/16539">グラフ・データベースとは何か？
 なぜあまり使われてこなかったのか、そしてその展望とは</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="spatial-database">Spatial Database</h2>
+<p>分類05:コンバージド・データベース<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="spatial-database概要">Spatial Database/概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/spatial-database/">Spatial
+Database</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F44376_01/spstu/intro-to-spatial-studio.html">Oracle
+Spatial Studioの概要</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb214-spatial-studio/">214
+: Spatial Studio で地理情報を扱おう</a></li>
+<li><a
+href="https://www.oracle.com/jp/database/technologies/spatial-download/">Spatialのダウンロード</a></li>
+<li><a
+href="https://www.slideshare.net/slideshow/spatial-features/60952405">Oracle
+Spatial 概要説明資料</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/Oracle.Options.Spatial.html">Oracle
+Spatial</a></li>
+<li><a
+href="https://qiita.com/ryotayamanaka/items/6f9954e63dac03fd44d0">Oracle
+Spatial を使った接触追跡</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -301,6 +771,27 @@ DatabaseのMAA</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-maximum-security-architectureoraclemsa">Oracle Maximum
+Security Architecture(OracleMSA)</h2>
+<p>分類06:レジリエンシ<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-msa概要">Oracle MSA概要</h3>
+<ul>
+<li><a
+href="https://blogs.oracle.com/otnjp/oracles-maximum-security-architecture-for-database-security-jp">オラクルのMaximum
+Security Architectureで実現するデータベースのセキュリティ</a></li>
+<li><a
+href="https://www.oracle.com/au/autonomous-database/database-maximum-security-architecture/">An
+introduction to Oracle’s maximum security architecture</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-database-security-gai-yao">Oracle
+Database Security</a></li>
+<li><a
+href="https://www.oracle.com/jp/a/tech/docs/exadata-maximum-security-architecture-ja.pdf">Oracle
+Exadata Database Machine</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle-apex">Oracle APEX</h2>
 <p>分類07:開発<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
@@ -311,6 +802,7 @@ href="https://speakerdeck.com/oracle4engineer/oracle-apexnoshao-jie-oracle-apext
 APEXの紹介 - Oracle APEXとは何か、始め方と学び方</a></li>
 <li><a href="https://www.tis.jp/service_solution/apex/product/">Oracle
 APEXとは</a></li>
+<li><a href="https://apexugj.blogspot.com/">日日是Oracle APEX</a></li>
 </ul>
 <h3 id="salesforce-apex言語">Salesforce Apex言語</h3>
 <ul>
@@ -327,10 +819,186 @@ href="https://www.rstone-jp.com/column/139209/">SalesforceのApex言語（エー
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-rest-api">Oracle REST API</h2>
+<p>分類07:開発<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-rest-api-1">Oracle REST API</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/G36922_01/orddg/introduction-to-Oracle-REST-Data-Services.html">Oracle
+REST Data Servicesの紹介</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/API/Concepts/usingapi.htm">REST
+API</a></li>
+<li><a href="https://docs.oracle.com/cd/G14026_01/index.html">Oracle
+REST Data Services 24.1</a></li>
+<li><a
+href="https://solutions.system-exe.co.jp/oracle-cloud/blog/oci-rest-api-user-guide">OCIのREST
+API利用入門ガイド</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/cloud-native/functions-ords-for-intermediates/">Oracle
+Functionsを利用したORDSでのデータベースアクセス</a></li>
+<li><a
+href="https://cosol.jp/techdb/2015/12/create_oracle_database_cloud_service_instance_using_rest_api/">REST
+APIを用いてOracle Database Cloud Serviceインスタンスを作成する</a></li>
+<li><a
+href="https://qiita.com/atwits/items/ee2affef4aac41cd0524">【OCI】APEXのREST
+API機能を使ってAutonomous Databaseにデータを登録してみる</a></li>
+<li><a href="https://qiita.com/satokaz/items/bd2e9514c3dbc2d8f313">ORDS
+(Oracle REST Data Services) の Database Actions を使えるようにしてみる
+(ORDS 23.1)</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracleデータツールセット">Oracleデータ・ツールセット</h2>
+<p>分類07:開発<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3
+id="oracleデータツールセット概要">Oracleデータ・ツールセット/概要</h3>
+<p>Oracleのデータ・ツールセットは、データベースの管理、分析、開発を効率化する包括的な製品群です。<br />
+SQL*PlusやSQL Developer、OCI Database Toolsなどの純正ツールのほか、Toad
+for Oracleのようなサードパーティ製高機能ツール、 さらにBI（Oracle
+Analytics
+Cloud）と連携するデータセット機能が含まれ、データ収集から可視化までを一貫してサポートします。</p>
+<ul>
+<li>主なOracleデータツールと機能
+<ul>
+<li>SQL*Plus: データベース操作のためのコマンドライン・ツール。SET MARKUP
+CSV ON機能でデータの抽出が容易</li>
+<li>Oracle SQL Developer:
+データベース開発・管理のための無料グラフィカル・ツール。SQLの実行、DBオブジェクトの管理、移行が可能。</li>
+<li>OCI Database Tools: Oracle Cloud
+Infrastructure上のデータベース（Autonomous
+Databaseなど）への接続・管理を行うマネージド・サービス。</li>
+<li>Oracle Data Access Components (ODAC): .NET、COM、OLE
+DB、ODBCを介してOracleデータベースにアクセスするためのクライアント・ライブラリ。</li>
+<li>Toad for Oracle (Quest Software):
+データベースのパフォーマンス診断、SQLの最適化、自動化などを行うサードパーティ製の強力な開発・管理ツール。</li>
+<li>Oracle Analytics Cloud (OAC) データセット:
+データベース、ファイル、SaaS（Salesforceなど）からデータを取得し、視覚化するためのデータ準備・モデリング・ツール。</li>
+</ul></li>
+</ul>
+<h3 id="oracle-sqlcl-sql-developerコマンドライン">Oracle SQLcl (SQL
+Developerコマンドライン)</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/F94929_01/sqcug/working-sqlcl.html">Oracle
+SQLclの使用</a></li>
+<li><a
+href="https://www.intellilink.co.jp/column/oracleletter/2016/030100.aspx">SQLcl
+について</a></li>
+<li><a
+href="https://qiita.com/fam_taro/items/4a93f934b26468f38fc8">もっと楽に
+SQLcl 使おう【使いやすい SQL*Plus】</a></li>
+</ul>
+<h3 id="sql-developer">SQL Developer</h3>
+<ul>
+<li><a href="https://qiita.com/letian/items/08f2e2f6d90c08549cbf">SQL
+Developerで様々なDBに接続する方法</a></li>
+</ul>
+<h3 id="oracle-database-tools-service">Oracle Database Tools
+Service</h3>
+<p>Oracle Database Tools Serviceは、Oracle Cloud
+Infrastructure（OCI）内のマネージド・サービスであり、複数のユーザー、リソース、およびサービスで再利用できる任意のOracle
+Databaseへの接続をOCIに作成できます。<br />
+接続が確立されると、WebベースのSQLワークシートを使用して、SQLに直接アクセスするか、OCIクラウド・シェルによって、SQLclセッションで接続を使用します。</p>
+<ul>
+<li><a href="https://www.oracle.com/jp/database/tools-service/">Oracle
+Database Tools Service</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-tools/home.htm">データベース・ツール</a></li>
+<li><a href="https://qiita.com/letian/items/1d4ed7477a28b794a56c">OCI
+データベース・ツールでオラクルDBへの接続方法</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="データウェアハウス">データ・ウェアハウス</h2>
+<p>分類08:データ・レイク<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="データウェアハウス-1">データ・ウェアハウス</h3>
+<ul>
+<li><a
+href="http://oracle.com/jp/database/what-is-a-data-warehouse/">データウェアハウスとは</a></li>
+</ul>
+<h3
+id="ociにおけるデータウェアハウスとデータレイクの比較">OCIにおけるデータウェアハウスとデータレイクの比較</h3>
+<p>OCIのデータウェアハウス（ADW等）とデータレイク（Object
+Storage等）の最大の違いは「データの構造」と「目的」です。
+ウェアハウスは整形済みの構造化データを高速分析する「倉庫」で、レイクはRAWデータをそのまま保存し柔軟に機械学習などに使う「湖」です。</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>データウェアハウス (Oracle Autonomous Data Warehouse - ADW)</th>
+<th>データレイク (Object Storage + Big Data Service)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCIサービス</td>
+<td>Autonomous Data Warehouse (ADW)</td>
+<td>Object Storage, Big Data Service</td>
+</tr>
+<tr>
+<td>特性</td>
+<td>高いクエリパフォーマンス、データ品質</td>
+<td>高い柔軟性、低コスト、大規模保存</td>
+</tr>
+<tr>
+<td>主な用途</td>
+<td>BI、経営レポート、定型的な高速分析</td>
+<td>AI/機械学習、非定型分析、ビッグデータ処理</td>
+</tr>
+<tr>
+<td>データ構造</td>
+<td>構造化データ（表形式）</td>
+<td>非構造化、半構造化、構造化データ（あらゆる形式）</td>
+</tr>
+<tr>
+<td>処理方式</td>
+<td>ETL/ELTで事前加工</td>
+<td>生データのまま格納 (Raw Data)</td>
+</tr>
+<tr>
+<td>主な利用者</td>
+<td>ビジネスアナリスト、データアナリスト</td>
+<td>データサイエンティスト、データエンジニア</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oracle-cloud-のデータレイクハウス">Oracle Cloud
+の「データレイクハウス」</h3>
+<p>最近のOCIでは、これら2つのいいとこ取りをした「データレイクハウス」アプローチが推奨されています。
+これは、Object Storageで低コストにデータを蓄積しつつ、Autonomous
+DatabaseやBig Data
+Serviceを用いて、それらのデータを高速かつ直接的に分析する手法です。<br />
+使い分けの指針：定型レポートが必要なら「ウェアハウス」、データサイエンス目的や将来的な活用を想定するなら「レイク」から開始し、
+最終的には「レイクハウス」を目指すのが効率的です。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="データレイク">データ・レイク</h2>
 <p>分類08:データ・レイク<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="データレイク概要">データ・レイク概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/big-data/what-is-data-lake/">データレイクとは</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/oci-multicloud-datalake/">マルチクラウド・データ・レイク統合アーキテクチャの実装</a></li>
+<li><a
+href="https://docs.oracle.com/ja/solutions/arch-center-about-data-lake/">Oracle
+Cloudでのデータ・レイクの設計について</a></li>
+<li><a
+href="https://www.youtube.com/watch?v=CTKs4hTQW6w">【基本を知ろう】クラウド・データレイクを実現する各サービス最新情報</a></li>
+<li><a href="https://www.youtube.com/watch?v=2EpXkON6S_s">【Oracle Cloud
+ウェビナー】今さら聞けないデータ連携！OCIが提供する各サービス総まとめ</a></li>
+</ul>
+<h3 id="データレイクハウス概要">データ・レイクハウス概要</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/ja/solutions/data-platform-lakehouse/">データ・プラットフォーム
@@ -338,40 +1006,47 @@ href="https://docs.oracle.com/ja/solutions/data-platform-lakehouse/">データ�
 <li><a
 href="https://docs.oracle.com/ja/solutions/oci-open-source-lakehouse/">OCIにオープンソースのデータ・レイクハウスを導入</a></li>
 <li><a
-href="https://docs.oracle.com/ja/solutions/oci-multicloud-datalake/">マルチクラウド・データ・レイク統合アーキテクチャの実装</a></li>
-<li><a
-href="https://docs.oracle.com/ja/solutions/arch-center-about-data-lake/">Oracle
-Cloudでのデータ・レイクの設計について</a></li>
-<li><a
-href="https://www.oracle.com/jp/big-data/what-is-data-lake/">データレイクとは</a></li>
-<li><a
 href="https://speakerdeck.com/oracle4engineer/oracle-cloud-uebina-zui-jin-yokuwen-ku-lakehouse-reikuhausu-tutehe-shi-li-nixue-budetahuo-yong-ji-pan-falsekorekarafalsekatatitoha">【Oracle
 Cloud ウェビナー】最近よく聞く”Lakehouse(レイクハウス)“って</a></li>
-<li><a
-href="https://www.youtube.com/watch?v=CTKs4hTQW6w">【基本を知ろう】クラウド・データレイクを実現する各サービス最新情報</a></li>
-<li><a href="https://www.youtube.com/watch?v=2EpXkON6S_s">【Oracle Cloud
-ウェビナー】今さら聞けないデータ連携！OCIが提供する各サービス総まとめ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="データウェアハウス">データ・ウェアハウス</h2>
+<h2 id="機械学習ml">機械学習(ML)</h2>
 <p>分類08:データ・レイク<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3
-id="autonomous-database-for-analytics-and-data-warehousing-adw">Autonomous
-Database for analytics and data warehousing (ADW)</h3>
+<h3 id="機械学習概要">機械学習概要</h3>
 <ul>
 <li><a
-href="https://www.oracle.com/jp/autonomous-database/autonomous-ai-lakehouse/">Autonomous
-Database for analytics and data warehousing (ADW)</a></li>
+href="https://www.oracle.com/jp/artificial-intelligence/machine-learning/">機械学習サービス</a></li>
 <li><a
-href="http://oracle.com/jp/database/what-is-a-data-warehouse/">データウェアハウスとは</a></li>
+href="https://oracle-japan.github.io/ocitutorials/adb/adb107-machine-learning/">107:
+ADBの付属ツールで機械学習(予測モデルからデプロイまで)</a></li>
 <li><a
-href="https://www.oracle.com/jp/autonomous-database/autonomous-data-warehouse/get-started/">Oracle
-Autonomous Data Warehouseを無料で使い始めましょう</a></li>
+href="https://oracle-japan.github.io/ocitutorials/adb/adb208-oml-notebook/">208:
+Oracle Machine Learningで機械学習をしよ</a></li>
 <li><a
-href="https://solutions.system-exe.co.jp/oracle-cloud/blog/how-to-build-and-operate-oracle-autonomous-data-warehouse">Oracle
-Autonomous Data Warehouseの構築手順と操作方法</a></li>
+href="https://speakerdeck.com/oracle4engineer/start-ml-in-oracle-database-oracle-machine-learning">Oracle
+Database で機械学習を始めよう! Oracle Machine Learning</a></li>
+</ul>
+<h3 id="oci-data-science-service">OCI Data Science Service</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/artificial-intelligence/data-science/features/">データ・サイエンス・サービスの機能</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-data-science-service-zhi-pin-gai-yao">OCI
+Data Science Service 製品概要</a></li>
+<li><a
+href="https://qiita.com/kngsym2018/items/9afa6bc86a4b21f4fc54">Oracle
+Cloud Infrastructure Data
+Scienceで機械学習してタイタニック号の生存者を予測</a></li>
+<li><a
+href="https://cloudsolution.terilogy.com/blog/oci-accelerated-data-science-01">OCIのデータ・サイエンスを使ってアヤメを品種判別してみる</a></li>
+</ul>
+<h3 id="oracle-machine-learning-automl">Oracle Machine Learning
+AutoML</h3>
+<ul>
+<li><a href="https://docs.oracle.com/cd/F44707_01/">Oracle Machine
+Learning AutoMLユーザー・インタフェース</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -416,6 +1091,7 @@ href="https://www.databricks.com/jp/glossary/data-mesh">データメッシ
 href="https://speakerdeck.com/oracle4engineer/oracle-database-upgrade-migration-jp">Oracle
 AI Databaseのアップグレードと移行</a></li>
 </ul>
+<hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oci移行">OCI移行</h2>
 <p>分類09:アップグレードと移行<br />
@@ -424,6 +1100,49 @@ AI Databaseのアップグレードと移行</a></li>
 <ul>
 <li><a href="https://cosol.jp/service/service016/">Oracle Database
 OCI移行サービス</a></li>
+<li><a
+href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#migration">Migration</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-database-management">Oracle Database Management</h2>
+<p>分類10:その他OCIサービス<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-database-management概要">OCI Database Management/概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/manageability/database-management/">データベース管理</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-management/doc/enable-database-management-oracle-cloud-databases.html">Oracle
+Cloudデータベースの診断および管理の有効化</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/management/dbcs-database-management/">Base
+Database ServiceでDatabase Managementを有効化する</a></li>
+<li><a href="https://qiita.com/Western24/items/bac8190ee08a8b1cf339">OCI
+Database ManagementでBaseDB/ExaDB-Dのパフォーマンス監視をする</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-database-management">OCI
+Database Management サービス詳細</a></li>
+<li><a
+href="https://www.lac.co.jp/lacwatch/service/20240402_003746.html">OCI
+Database Managementで始める、クラウド時代のデータベース監視</a></li>
+<li><a href="https://blog.s-style.co.jp/2024/08/12491/">OCI Database
+Management サービスで Autonomous Database と MySQL HeatWave
+を監視する</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2025/04/13/oci-database-management%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F-2-2/">OCI
+Database Managementを設定してみました</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-data-integration">OCI Data Integration</h2>
+<p>分類10:その他OCIサービス<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-data-integration概要">OCI Data Integration/概要</h3>
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
+Data Integrationチュートリアル</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
