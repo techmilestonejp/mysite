@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/14 22:49:29<br />
+更新日：2026/03/15 18:11:18<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -140,6 +140,23 @@ href="https://qiita.com/infra365/items/ca5d311d92752566c40d">１日でOCIの要�
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="ociサービス一覧">OCIサービス一覧</h3>
 <ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/GSG/Concepts/baremetalintro.htm">Oracle
+Cloud Infrastructureへようこそ</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/cloud-adoption-framework/home.htm">Oracle
+Cloud Infrastructure Cloud Adoption Framework</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/services.htm">Oracle
+Cloud Infrastructure</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/General/serviceessentials.htm">サービス基本情報</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocidocs/services/database/oracle-database-features/">[コア技術]Oracle
+Database 機能概要</a></li>
+<li>(PDF)<a
+href="https://www.oracle.com/a/ocom/docs/cloud/oracle-cloud-infrastructure-platform-overview-wp-jp.pdf">Oracle
+Cloud Infrastructureプラットフォーム概要</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/ocwc_20230705_oci_service_matome">【Oracle
 Cloud
@@ -412,29 +429,18 @@ AI Databaseインスタンスのプロビジョニング</a></li>
 <li><a
 href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/getting-started-provisionadb.html">Autonomous
 AI Databaseのプロビジョニングまたはクローニング</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb101-provisioning/">101:
+ADBインスタンスを作成してみよう</a></li>
 </ul>
 <h3 id="adbスケーリング">ADBスケーリング</h3>
 <ul>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=70">拡張性</a></li>
 </ul>
-<h3 id="autonomous-ai-database-data-studio">Autonomous AI Database Data
-Studio</h3>
+<h3 id="autonomous-ai-database-data-studio概要">Autonomous AI Database
+Data Studio/概要</h3>
 <ul>
-<li>Data Studioの特長
-<ul>
-<li>データ読み込み
-<ul>
-<li>Autonomous AI
-Databaseへのデータの迅速なロード、リンク、フィード</li>
-<li>データロードをAIが強化</li>
-</ul></li>
-<li>データ変換</li>
-<li>データ分析</li>
-<li>データ・インサイト</li>
-<li>データ・カタログ</li>
-<li>データ共有</li>
-</ul></li>
 <li><a
 href="https://www.oracle.com/jp/autonomous-database/data-studio/">Autonomous
 AI Database Data Studio</a></li>
@@ -457,6 +463,45 @@ Studioにあるジョブを試してみた</a></li>
 <li><a
 href="https://qiita.com/bambooseven/items/956a80f767ec11a52a0f">Autonomous
 Databaseのデータ分析機能で、AIを使用したクエリの説明を試してみた</a></li>
+</ul>
+<h3 id="autonomous-ai-database-data-studio機能一覧">Autonomous AI
+Database Data Studio/機能一覧</h3>
+<ul>
+<li>Data Studioの特長
+<ul>
+<li>データ・ロード(データ読み込み)
+<ul>
+<li>Autonomous AI
+Databaseへのデータの迅速なロード、リンク、フィード</li>
+<li>データロードをAIが強化</li>
+</ul></li>
+<li>データ・カタログ</li>
+<li>データ変換(data-transforms)</li>
+<li>データ・インサイト(data-insights)</li>
+<li>データ分析</li>
+<li>データ共有</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/adp-data-studio-overview-page.html">10
+「Data Studioの概要」ページ</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/data-load.html">12
+「データ・ロード」ページ</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/catalog-entities.html">13
+カタログ・ツール</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/data-transforms.html">14
+「データ変換」ページ</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/data-insights.html">15
+「データ・インサイト」ページ</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/data-analysis-tool.html">16
+データ分析ツール</a></li>
+<li><a
+href="https://docs.oracle.com/cd/F87171_01/sdwad/adp-data-share-tool.html">20
+データ共有ツール</a></li>
 </ul>
 <h3 id="自動ワークロードリプレイ">自動ワークロードリプレイ</h3>
 <ul>
@@ -943,7 +988,8 @@ href="https://www.rstone-jp.com/column/139209/">SalesforceのApex言語（エー
 <h2 id="oracle-rest-api">Oracle REST API</h2>
 <p>分類07:開発<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oracle-rest-api-1">Oracle REST API</h3>
+<h3 id="oracle-rest-data-servicesords">Oracle REST Data
+Services(ORDS)</h3>
 <ul>
 <li><a
 href="https://docs.oracle.com/cd/G36922_01/orddg/introduction-to-Oracle-REST-Data-Services.html">Oracle
@@ -992,6 +1038,8 @@ Databaseなど）への接続・管理を行うマネージド・サービスで
 <li>Oracle Analytics Cloud (OAC) データセット:
 データベース、ファイル、SaaS（Salesforceなど）からデータを取得し、視覚化するためのデータ準備・モデリング・ツールです。</li>
 </ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adbsb-analyze.html">分析</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=41">ツール群</a></li>
 </ul>
@@ -1193,14 +1241,55 @@ href="https://docs.oracle.com/ja/solutions/oci-open-source-lakehouse/">OCIにオ
 href="https://speakerdeck.com/oracle4engineer/oracle-cloud-uebina-zui-jin-yokuwen-ku-lakehouse-reikuhausu-tutehe-shi-li-nixue-budetahuo-yong-ji-pan-falsekorekarafalsekatatitoha">【Oracle
 Cloud ウェビナー】最近よく聞く”Lakehouse(レイクハウス)“って</a></li>
 </ul>
-<h3 id="特徴">特徴</h3>
+<h3 id="データレイクハウス特徴">データ・レイクハウス特徴</h3>
 <ul>
+<li>データ・レイクハウスの5つの特徴
+<ul>
+<li>Data Warehouse</li>
+<li>Data Lake</li>
+<li>Managed Open-source Services</li>
+<li>Data Integration</li>
+<li>Data Catalog</li>
+</ul></li>
+<li><a
+href="https://blogs.oracle.com/cloud-infrastructure/autonomous-database-enhances-data-lake-analytics">Delivering
+a lakehouse on OCI</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414">Oracle
 Autonomous AI Lakehouseについて</a></li>
 <li><a
 href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/appendix-autonomous-database-data-warehouse-workload.html">Autonomous
 AI Databaseによるレイクハウス・ワークロード</a></li>
+</ul>
+<h3 id="oci-data-integration">OCI Data Integration</h3>
+<p>Oracle
+Integrationは、AI、統合および自動化機能の包括的なポートフォリオを備えたAI自動化プラットフォームです。<br />
+これにより、アプリケーションとデータの接続、ビジネス・プロセスの自動化、AIによるイノベーションのすべてを、完全管理型の事前構成済環境で実現できます。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/application-integration/index.html">Oracle
+Integration</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/application-integration/doc/high-level-workflow.html">高レベルのワークフロー</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
+Data Integrationチュートリアル</a></li>
+</ul>
+<h3 id="data-catalog">Data Catalog</h3>
+<ul>
+<li><a href="https://www.oracle.com/big-data/data-catalog/">Data
+Catalog</a></li>
+<li><a href="https://www.oracle.com/jp/big-data/data-catalog/">Oracle
+Cloud Infrastructure Data Catalog</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb603-data-catalog/">603
+: データ・カタログを使ってメタデータを収集しよう</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-data-catalog-overview-2022nian-5yue-ban">OCI
+Data Catalog Overview 2022年5月版</a></li>
+<li><a href="https://qiita.com/kenwatan/items/4494ee5c88d371d51e39">OCI
+Data Catalogを使ったAutonomous DatabaseからObject
+Storageファイルの検索</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1338,9 +1427,15 @@ href="https://www.databricks.com/jp/glossary/data-mesh">データメッシ
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="アップグレード概要">アップグレード概要</h3>
 <ul>
-<li><a
+<li><p><a
+href="https://docs.oracle.com/ja-jp/iaas/database-management/doc/get-started-vulnerability-detection-patching.html">脆弱性検出およびパッチ管理サービスの開始</a></p></li>
+<li><p><a
 href="https://speakerdeck.com/oracle4engineer/oracle-database-upgrade-migration-jp">Oracle
-AI Databaseのアップグレードと移行</a></li>
+AI Databaseのアップグレードと移行</a></p></li>
+<li><p><a
+href="https://speakerdeck.com/oracle4engineer/exadata-database-service-software-update-upgrade-overview">Exadata
+Database Service
+ソフトウェアのアップデートとアップグレードの概要</a></p></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1349,6 +1444,8 @@ AI Databaseのアップグレードと移行</a></li>
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci移行概要">OCI移行概要</h3>
 <ul>
+<li><a
+href="https://www.oracle.com/jp/cloud/migration/">OCI移行ハブ</a></li>
 <li><a href="https://cosol.jp/service/service016/">Oracle Database
 OCI移行サービス</a></li>
 <li><a
@@ -1389,17 +1486,6 @@ Management サービスで Autonomous Database と MySQL HeatWave
 <li><a
 href="https://xn--w8j8bac3czf5bl7e.com/2025/04/13/oci-database-management%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F-2-2/">OCI
 Database Managementを設定してみました</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oci-data-integration">OCI Data Integration</h2>
-<p>分類10:その他OCIサービス<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oci-data-integration概要">OCI Data Integration/概要</h3>
-<ul>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
-Data Integrationチュートリアル</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
