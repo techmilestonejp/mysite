@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/15 18:11:18<br />
+更新日：2026/03/20 11:17:29<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -280,11 +280,12 @@ id="自律型データベースクラウド特徴">自律型データベース�
 <ul>
 <li>自律型データベースの仕組み
 <ul>
-<li>自己管理：
-データベースおよびインフラストラクチャの管理、監視、およびチューニング・プロセスはすべて自動化されています。</li>
-<li>自己保護：組み込みの機能により、外部からの攻撃と悪意のある内部ユーザーの両方から
-データベースを保護できるよう支援します。</li>
-<li>自己修復:これらの機能は、計画外のメンテナンスなど、ダウンタイムを最小限に抑えるために機能します。</li>
+<li>自己管理（Self-Driving）:
+データベースの作成、チューニング、スケーリング（拡張）を自動で行う。負荷に応じてCPUやストレージを自動的に拡張し、稼働したまま変更可能。</li>
+<li>自己保護（Self-Securing）:
+セキュリティパッチの自動適用、データ暗号化、不正アクセス検知など、外部脅威と内部ミスの両方からデータを守る。</li>
+<li>自己修復（Self-Repairing）:
+障害発生時に自動的に復旧し、ダウンタイムを最小限に抑える。</li>
 </ul></li>
 <li>特徴
 <ul>
@@ -334,6 +335,8 @@ href="https://www.oracle.com/jp/autonomous-database/what-is-autonomous-database/
 <li><a
 href="https://jpn.nec.com/soft/oracle/oci/autonomous_DB.html">自律型データベース
 Oracle Autonomous Database</a></li>
+<li><a
+href="https://josysnavi.jp/2019/trendwatch_autonomousdatabase_191023">【トレンドウォッチ】情シス業務から運用が消えるのか！？自律型データベースってなに？</a></li>
 </ul>
 <h3 id="autonomous-database-dedicated">Autonomous Database
 Dedicated</h3>
@@ -361,8 +364,9 @@ Autonomous AI Database/DB機能種別(ワークロード)</h2>
 <ul>
 <li>Oracle Autonomous Database
 <ul>
-<li>Autonomous Transaction Processing (ATP)</li>
-<li>Autonomous Data Warehouse (ADW)</li>
+<li>Oracle Autonomous AI Transaction Processing (ATP)</li>
+<li>Oracle Autonomous AI Lakehouse</li>
+<li>(Autonomous Data Warehouse (ADW))</li>
 <li>Autonomous JSON Database (AJD)</li>
 </ul></li>
 <li><a
@@ -378,7 +382,17 @@ Transaction ProcessingとData Warehouseの違い</a></li>
 </ul>
 <h3 id="oracle-autonomous-databaseatp">Oracle Autonomous
 Database(ATP)</h3>
+<p>Oracle Autonomous AI Transaction
+Processingは、トランザクション、分析、バッチのワークロードを同時に実行するために最適化された、完全に自動化されたデータベース・サービスです。</p>
+<p>(ATPの構成図)<br />
+<img src="img/oci_dfa/autonomous-transaction-processing-architecture.png" width="50%" height="50%"><br /></p>
 <ul>
+<li><a
+href="https://www.oracle.com/jp/autonomous-database/autonomous-transaction-processing/">Oracle
+Autonomous AI Transaction Processing</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-B90147B2-EA04-4147-9606-0413D9CC1589">Oracle
+Autonomous AI Transaction Processingについて</a></li>
 <li><a
 href="https://docs.oracle.com/ja/solutions/deploy-autonomous-database-and-app/index.html#GUID-40A628D0-7A04-42EA-A07E-A3FCC4248DBF">セキュアな本番対応のOracle
 Autonomous DatabaseおよびOracle APEXアプリケーションのデプロイ</a></li>
@@ -476,8 +490,8 @@ Databaseへのデータの迅速なロード、リンク、フィード</li>
 <li>データロードをAIが強化</li>
 </ul></li>
 <li>データ・カタログ</li>
-<li>データ変換(data-transforms)</li>
-<li>データ・インサイト(data-insights)</li>
+<li>データ変換(Data-Transforms)</li>
+<li>データ・インサイト(Data-Insights)</li>
 <li>データ分析</li>
 <li>データ共有</li>
 </ul></li>
@@ -502,6 +516,19 @@ href="https://docs.oracle.com/cd/F87171_01/sdwad/data-analysis-tool.html">16
 <li><a
 href="https://docs.oracle.com/cd/F87171_01/sdwad/adp-data-share-tool.html">20
 データ共有ツール</a></li>
+</ul>
+<h3 id="oracle-data-transforms">Oracle Data Transforms</h3>
+<p>Oracle Data
+Transformsは、自律型AIデータベースとのデータ統合のためのグラフィカル・データ変換を設計するために使用できるグラフィカル・ユーザー・インタフェースです。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-data-transforms.html">Data
+Studioを使用したデータの変換</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb403-data-transforms/">403
+: Data Transformsを使ってみよう</a></li>
+<li><a href="https://qiita.com/goo2000/items/1058fe9b7a4c619a60ee">Data
+Transformsとデータソースをリージョン間でクローンしてみた</a></li>
 </ul>
 <h3 id="自動ワークロードリプレイ">自動ワークロードリプレイ</h3>
 <ul>
@@ -639,6 +666,10 @@ Cloud@Customer</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oracle-exadata-cloud-at-customer">Oracle
 Exadata Cloud@Customer：サービス概要のご紹介</a></li>
+<li><a
+href="https://www.oracle.com/jp/a/ocom/docs/database/idc-oracle-adb-cloud-at-customer-report-jp.pdf">Oracle
+Cloud@Customer によるデータセンターへの Oracle Autonomous Database
+導入</a></li>
 </ul>
 <h3 id="oci-exadataにおける責任分担">OCI Exadataにおける責任分担</h3>
 <ul>
@@ -1039,6 +1070,11 @@ Databaseなど）への接続・管理を行うマネージド・サービスで
 データベース、ファイル、SaaS（Salesforceなど）からデータを取得し、視覚化するためのデータ準備・モデリング・ツールです。</li>
 </ul></li>
 <li><a
+href="https://www.oracle.com/jp/application-development/technologies/">開発者ツール</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-tools.html#ADBSB-GUID-1F087509-57AA-49C3-AB11-851A04F42C60">Autonomous
+AI Database組み込みツールについて</a></li>
+<li><a
 href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adbsb-analyze.html">分析</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=41">ツール群</a></li>
@@ -1240,6 +1276,9 @@ href="https://docs.oracle.com/ja/solutions/oci-open-source-lakehouse/">OCIにオ
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oracle-cloud-uebina-zui-jin-yokuwen-ku-lakehouse-reikuhausu-tutehe-shi-li-nixue-budetahuo-yong-ji-pan-falsekorekarafalsekatatitoha">【Oracle
 Cloud ウェビナー】最近よく聞く”Lakehouse(レイクハウス)“って</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414">Oracle
+Autonomous AI Lakehouseについて</a></li>
 </ul>
 <h3 id="データレイクハウス特徴">データ・レイクハウス特徴</h3>
 <ul>
