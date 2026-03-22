@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/21 09:17:48<br />
+更新日：2026/03/22 10:08:42<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -947,6 +947,21 @@ NoSQL Database Cloud Service 技術詳細</a></li>
 href="https://www.intellilink.co.jp/column/oracleletter/2014/032500.aspx">Oracle
 NoSQL Database</a></li>
 </ul>
+<h3
+id="nosqlを実行するためのoci-cliコマンド">NoSQLを実行するためのOCI-CLIコマンド</h3>
+<ul>
+<li>OCI-CLIコマンドの引数
+<ul>
+<li>configuration</li>
+<li>index</li>
+<li>query</li>
+<li>row</li>
+<li>table</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/nosql.html">OCI
+CLI Command Reference</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -1390,8 +1405,11 @@ Storage等）の最大の違いは「データの構造」と「目的」です�
 </tr>
 </tbody>
 </table>
-<h3 id="oracle-cloud-のデータレイクハウス">Oracle Cloud
-の「データレイクハウス」</h3>
+<ul>
+<li><a
+href="https://zenn.dev/osachi/articles/06624a0e7c1260#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AC%E3%82%A4%E3%82%AF%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%8F%E3%82%A6%E3%82%B9">データレイク・データウェアハウス</a></li>
+</ul>
+<h3 id="ociでのデータレイクハウス">OCIでの「データレイクハウス」</h3>
 <p>最近のOCIでは、これら2つのいいとこ取りをした「データレイクハウス」アプローチが推奨されています。
 これは、Object Storageで低コストにデータを蓄積しつつ、Autonomous
 DatabaseやBig Data
@@ -1451,9 +1469,11 @@ href="https://docs.oracle.com/ja-jp/iaas/application-integration/doc/high-level-
 href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
 Data Integrationチュートリアル</a></li>
 </ul>
-<h3 id="data-catalog">Data Catalog</h3>
+<h3 id="oci-data-catalog">OCI Data Catalog</h3>
+<p>OCI Data
+Catalogは、データの専門家がデータを発見し、データガバナンスをサポートするのに役立つメタデータを管理するためのOCIサービスです。</p>
 <ul>
-<li><a href="https://www.oracle.com/big-data/data-catalog/">Data
+<li><a href="https://www.oracle.com/jp/big-data/data-catalog/">Data
 Catalog</a></li>
 <li><a href="https://www.oracle.com/jp/big-data/data-catalog/">Oracle
 Cloud Infrastructure Data Catalog</a></li>
@@ -1466,6 +1486,23 @@ Data Catalog Overview 2022年5月版</a></li>
 <li><a href="https://qiita.com/kenwatan/items/4494ee5c88d371d51e39">OCI
 Data Catalogを使ったAutonomous DatabaseからObject
 Storageファイルの検索</a></li>
+</ul>
+<h3 id="oci-data-flow">OCI Data Flow</h3>
+<p>OCI Data Flow
+は、大量データの並列分散処理を実現するためのフレームワークである Apache
+Spark を OCI 上で提供するマネージドサービスです。</p>
+<ul>
+<li><a href="https://www.oracle.com/jp/big-data/data-flow/">Data
+Flow</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/data-flow-overview">OCI
+Data Flow 概要</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/datascience/dataflow-for-beginner/">OCI
+Data Flow ハンズオン(初級編)</a></li>
+<li><a href="https://qiita.com/letian/items/b2408b85c8f258183047">OCI
+Data Flowを使ってオブジェクト・ストレージからADBへデータをロードする –
+Part 1</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->

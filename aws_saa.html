@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/02/15 09:10:18</p>
+更新日：2026/03/21 13:09:06</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="saa学習">SAA学習</h2>
@@ -536,9 +536,9 @@ Management）では、IAMユーザーやIAMロールに対して「ここまで�
 これを「Permissions Boundary（アクセス許可境界）」と呼びます。<br />
 アクセス許可境界が設定されたユーザーは、境界で許可された範囲とIAMポリシーの両方で許可されている範囲でアクションを行えます。</p>
 <h3 id="iam-roles-anywhere">IAM Roles Anywhere</h3>
-<p>オンプレミスのサーバーや他クラウド上のアプリケーションからAWSのリソースにアクセスさせたい場合、<br />
-IAM Roles
-Anywhereを利用することで、公開鍵基盤（PKI）で管理されているX.509証明書に基づいて一時的な認証情報（アクセスキーなど）を取得できます。<br />
+<p>オンプレミスのサーバーや他クラウド上のアプリケーションからAWSのリソースにアクセスさせたい場合、IAM
+Roles Anywhereを利用することで、<br />
+公開鍵基盤（PKI）で管理されているX.509証明書に基づいて一時的な認証情報（アクセスキーなど）を取得できます。<br />
 これにより、長期的なアクセスキーを保存する必要がなくなり、安全にAWS
 APIへアクセスできます。</p>
 <hr />
@@ -690,6 +690,34 @@ Identity Centerを使って複数アカウント管理する</a></li>
 href="https://www.ashisuto.co.jp/db_blog/article/aws-iam-identity-center.html">AWS
 IAM Identity Centerとは？</a></li>
 </ul>
+<h3 id="idpidentity-provider">IdP（Identity Provider）</h3>
+<p>IdP（Identity
+Provider）とは、クラウドサービスや業務アプリケーションへのログインに必要なユーザーの認証情報を管理し、
+SSO（シングルサインオン）を実現するシステムです。ユーザー本人確認を行い、SAMLやOpenID
+Connectを用いて安全なアクセスを提供するため、
+社内IDを一元管理しセキュリティを向上させます。</p>
+<ul>
+<li>IdPの主な役割とメリット:
+<ul>
+<li>SSO（シングルサインオン）の実現:
+1つのIDとパスワードで、複数のSaaSや社内システムへログイン可能。</li>
+<li>セキュリティ向上:
+多要素認証（MFA）を組み合わせ、不正アクセスを防止。</li>
+<li>IDの一元管理:
+社員や組織の情報を一括管理し、入退社時のID発行・削除を効率化。</li>
+<li>サービス連携:
+複数のサービス提供者（SP）に対して認証結果を提供し、安全なアクセスを許可。</li>
+</ul></li>
+<li><a
+href="https://www.cloudgate.jp/glossary/idp">IdP（アイディーピー）</a></li>
+</ul>
+<h3 id="id-フェデレーションとシングルサインオン">ID
+フェデレーションとシングルサインオン</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/identity-sso.html">ID
+フェデレーションとシングルサインオン</a></li>
+</ul>
 <h3 id="iamiam-identity-centerorganizations">IAM/IAM Identity
 Center/Organizations</h3>
 <ul>
@@ -735,6 +763,29 @@ href="https://dev.classmethod.jp/articles/iam-role-passrole-assumerole/">IAM
 href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_update-role-trust-policy.html">ロール信頼ポリシーを更新する</a></li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_create_for-custom.html">カスタム信頼ポリシーを使用してロールを作成する</a></li>
+</ul>
+<h3
+id="信頼ポリシーassumerole-lambda実行ロール">信頼ポリシー(AssumeRole)
+/Lambda実行ロール</h3>
+<p>以下のようなJSON定義で信頼ポリシーを定義することができます。</p>
+<pre><code>{
+  &quot;Version&quot;:&quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Service&quot;: &quot;lambda.amazonaws.com&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+    }
+  ]
+}</code></pre>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-api">AWS
+CLI を使用したロールの作成と管理</a></li>
+<li><a
+href="https://zenn.dev/toge510/articles/96034ac0e37f21#%E4%BF%A1%E9%A0%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">信頼ポリシー</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -812,9 +863,9 @@ GatewayのオーソライザーにCognitoを使用してみた</a></li>
 id="セキュリティセキュリティ監視管理">03:セキュリティ/セキュリティ監視・管理</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-resource-access-manager">AWS Resource Access Manager</h3>
-<p>AWS
-RAMは、AWSリソースを組織内のアカウントやサービスと簡単に共有するためのサービスです。<br />
-クロスアカウントでのリソース共有が可能となる。</p>
+<p>AWS Resource Access
+Managerとは、AWSリソースを組織内のアカウントやサービスと簡単に共有するためのサービスです。<br />
+クロスアカウントでリソースの共有を行うことができます。</p>
 <ul>
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=238">AWS
@@ -833,7 +884,11 @@ AWS リソース</a></li>
 href="https://qiita.com/mingchun_zhao/items/0705c84cca7623f57627">AWS公式資料で挑むSCS認定-AuditManager</a></li>
 </ul>
 <h3 id="aws-secrets-manager">AWS Secrets Manager</h3>
-<p>ユーザ名やパスワードなどのシークレット情報(秘密情報)を安全に格納できるAWSサービスです。<br />
+<p>AWS Secrets
+Managerは、データベースなどにアクセスする際のシークレット（ログイン時のユーザ名やパスワード認証情報など）を安全に格納できるAWSサービスです。<br />
+アプリケーションなどからAWSリソースへアクセスする際にSecrets
+Managerからシークレットを取得することにより、
+ログイン情報をアプリケーションにハードコーディングしたり平文で入力しておく必要がありません。
 主にDBにアクセスする際の認証情報を管理して、自動更新機能も存在します。</p>
 <ul>
 <li><a
@@ -1083,14 +1138,17 @@ href="https://qiita.com/miyuki_samitani/items/41fa570054568bbbac5f">リザーブ
 href="https://qiita.com/uechi-shingo/items/54cd342a9aee1f7ec3f8">リザーブドインスタンスの対象サービス</a></li>
 </ul>
 <h3 id="savings-planssp">Savings Plans(SP)</h3>
-<p>Savings
-Plansには3つのタイプがあります。それぞれ対象となるサービスが異なります。</p>
+<p>1年または3年の期間の契約で割引を受けすることができるサービスです。<br />
+Savings
+Plansには3つのタイプがあり、それぞれ対象となるサービスが異なります。</p>
 <ul>
 <li>タイプ
 <ul>
 <li>Compute Savings Plans
 <ul>
-<li>Amazon EC2、AWS Lambda、AWS Fargate</li>
+<li>Amazon EC2</li>
+<li>AWS Lambda</li>
+<li>AWS Fargate</li>
 </ul></li>
 <li>EC2 Instance Savings Plans</li>
 <li>SageMaker Savings Plans</li>
@@ -1476,11 +1534,70 @@ href="https://youtu.be/QvPgjEwgiew">BlackBelt_AWSLambda_YouTube</a></li>
 <li><a href="https://qiita.com/fkooo/items/6fdbe80e7e7376ffc61b">AWS
 Lambda おすすめ本5冊紹介</a></li>
 </ul>
-<h3 id="vpc-lambda">VPC Lambda</h3>
+<h3 id="lambda実行ロール">Lambda実行ロール</h3>
+<p>Lambda実行ロールとは、Lambda関数がAWSリソースにアクセスするための権限を定義するIAMロールのことです。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/permissions-executionrole-update.html">実行ロールのアクセス許可の表示と更新</a></li>
+<li><a
+href="https://sqlengineer.hatenablog.com/entry/2024/07/09/210559">Lambda実行ロールとは？</a></li>
+<li><a
+href="https://zenn.dev/toge510/articles/96034ac0e37f21">Lambda実行ロールを例に信頼ポリシーを理解する</a></li>
+</ul>
+<p>(S3バケットからデータを読み取る)</p>
+<pre><code>{ 
+    &quot;Version&quot;: &quot;2012-10-17&quot;, 
+    &quot;Statement&quot;: [ 
+        { 
+            &quot;Effect&quot;: &quot;Allow&quot;, 
+            &quot;Action&quot;: [ &quot;s3:GetObject&quot; ], 
+            &quot;Resource&quot;: [ 
+            &quot;arn:aws:s3:::example-bucket/*&quot;
+            ]
+        } 
+    ] 
+}</code></pre>
+<h3
+id="lambda関数に対してeventbridge-のリソースベースポリシーの権限を付与">Lambda関数に対してEventBridge
+のリソースベースポリシーの権限を付与</h3>
+<p>Eventbridge
+でルールが実行されると、このルールに関連付けられているすべてのターゲットが呼び出されます。<br />
+ルールは、 AWS Lambda 関数を呼び出したり、Amazon SNS
+トピックに発行したり、イベントを Kinesis
+ストリームに中継したりできます。<br />
+所有しているリソースに対して API コールを行うには、Eventbridge
+に適切なアクセス許可が必要です。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/eventbridge/latest/userguide/eb-use-resource-based.html">Amazon
+EventBridge のリソースベースのポリシーを使用する</a></li>
+</ul>
+<p>(Amazon API Gateway のアクセス許可)</p>
+<pre><code>{
+    &quot;Version&quot;:&quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;Service&quot;: &quot;events.amazonaws.com&quot;
+            },
+            &quot;Action&quot;: &quot;execute-api:Invoke&quot;,
+            &quot;Condition&quot;: {
+                &quot;ArnEquals&quot;: {
+                &quot;aws:SourceArn&quot;: &quot;arn:aws:events:us-east-1:123456789012:rule/rule-name&quot;
+                }
+            },
+            &quot;Resource&quot;: [
+            &quot;arn:aws:execute-api:us-east-1:123456789012:API-id/stage/GET/api&quot;
+            ]
+        }
+    ]
+}</code></pre>
+<h3 id="vpc-lambdavpcラムダ">VPC Lambda(VPCラムダ)</h3>
 <p>VPC
 Lambdaとは、Lambda関数からプライベートサブネット内のAWSリソースにアクセスさせたい場合の仕組みです。</p>
 <p>(構成図)<br />
-<img src="img/aws_saa/vpc-lambda.png" width="50%" height="50%"><br /></p>
+<img src="img/aws_saa/vpc-lambda.png" width="30%" height="30%"><br /></p>
 <ul>
 <li><a
 href="https://aws.amazon.com/jp/blogs/news/announcing-improved-vpc-networking-for-aws-lambda-functions/">Lambda
@@ -1551,6 +1668,10 @@ APIを使って可視性タイムアウトの値を適切な値に設定する�
 <li>メッセージが空である場合に設定された時間を待ちます。</li>
 </ul></li>
 </ul>
+<h3 id="amazon-sqsファンアウト">Amazon SQS/ファンアウト</h3>
+<p>ファンアウトとは、メッセージを複数の送信先に配信し、それぞれが並列に処理を実行する仕組みのことです。<br />
+SNSで分類されたメッセージを、後続のアプリケーションがSQSキューから取得して処理できます。<br />
+SNSとSQSを組み合わせると「ファンアウト」構成を実装できます。</p>
 <h3 id="amazon-sqsメッセージが二重に処理される">Amazon
 SQS/メッセージが二重に処理される</h3>
 <ol type="1">
@@ -1781,11 +1902,9 @@ id="ストレージオブジェクトストレージ">07:ストレージ/オブ�
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-simple-store-services3">Amazon simple Store
 service(S3)</h3>
-<p>こちらはインスタンスに関係なくどんと用意されているストレージです。<br />
-グローバルサービスといって、同一リージョン内のリソースが共通で使用することができます。<br />
+<p>グローバルサービスといって、同一リージョン内のリソースが共通で使用することができます。<br />
 様々な場所から共通でアクセスできる保存ボックスです。<br />
-オブジェクト無制限<br />
-HTTP/HTTPS経由でデータにアクセス</p>
+オブジェクト無制限でりようすることが可能です。HTTP/HTTPS経由でデータにアクセスします。</p>
 <ul>
 <li><a
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20190220_AWS-BlackBelt_S3_Glacier.pdf">BlackBelt_AmazonS3_PDF</a></li>
@@ -1900,8 +2019,8 @@ id="s3マルチリージョンアクセスポイント">S3マルチリージョ�
 <p>S3マルチリージョンアクセスポイントは、複数のリージョンに配置されたS3バケットへの統一的なアクセスポイントを提供することで、パフォーマンスと可用性を向上させる機能です。<br />
 マルチリージョンアクセスポイントを作成すると、S3は自動的に1つのグローバルなアクセスポイント（グローバルエンドポイント）を生成し、クライアントはグローバルエンドポイントを通じて複数リージョンのバケットにアクセスできるようになります。</p>
 <h3 id="s3-transfer-acceleration">S3 Transfer Acceleration</h3>
-<p>ユーザーとS3バケット間のデータ転送を高速化する機能<br />
-ユーザーと地理的に近いエッジロケーションから、高パフォーマンスなAWSグローバルネットワークを経由してS3バケットへアクセスするため、安定した高速転送が可能</p>
+<p>ユーザーとS3バケット間のデータ転送を高速化する機能です。<br />
+ユーザーと地理的に近いエッジロケーションから、高パフォーマンスなAWSグローバルネットワークを経由してS3バケットへアクセスするため、安定した高速転送が可能となります。</p>
 <h3 id="mfa-delete">MFA Delete</h3>
 <p>S3のバージョニング機能を使用して管理されているオブジェクトを削除する際に，MFAデバイスの認証が必要となる機能。<br />
 誤削除の防止になる。</p>
@@ -2024,6 +2143,14 @@ href="https://awsjp.com/AWS/hikaku/SSE-S3_SSE-KMS_SSE-C-compare.html">暗号化�
 </ul>
 <h3
 id="lambda関数へのkmsキーの復号権限付与">Lambda関数へのKMSキーの復号権限付与</h3>
+<p>Lambda関数が暗号化されたS3オブジェクトを復号する場合、下記の2つの設定が必要です：</p>
+<ul>
+<li>KMSキーの復号権限付与
+<ul>
+<li>KMSキーポリシーで、Lambda実行ロールによるキーの使用を許可する</li>
+<li>Lambda実行ロールのIAMポリシーに、KMSキーの復号権限を付与する</li>
+</ul></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -2043,7 +2170,7 @@ href="https://youtu.be/srLHV0ualZs">BlackBelt_AmazonEFS_YouTube</a></li>
 <p>Amazon
 FSxはAWSが提供するファイルストレージサービス。ファイルストレージ
 64TB可。<br />
-HPC環境に対応したLustre、CIFS,SMBプロトコルに対応したWindowsタイプの種別がある。</p>
+HPC環境に対応した「Lustreタイプ」、CIFSやSMBプロトコルに対応した「Windowsタイプ」の種別がある。</p>
 <ul>
 <li>FSx for Lustre
 <ul>
@@ -2098,6 +2225,21 @@ href="https://docs.aws.amazon.com/ja_jp/fsx/latest/LustreGuide/using-fsx-lustre.
 for Lustre
 ファイルシステムのデプロイおよびストレージクラスオプション</a></li>
 </ul>
+<h3 id="fsx-for-netapp-ontapnetapp-snapmirror">FSx for NetApp
+ONTAP/NetApp SnapMirror</h3>
+<p>Amazon FSx for NetApp ONTAP は、NetApp ONTAP
+ファイルシステム上に構築されたフルマネージドファイルストレージサービスです。<br />
+レプリケーションサーバーを別途構築することなく、AWS
+リージョン間のデータのレプリケーションをすぐに利用できます。</p>
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/cross-region-disaster-recovery-with-amazon-fsx-for-netapp-ontap/">Amazon
+FSx for NetApp ONTAP
+で実装するクロスリージョン・ディザスタリカバリ</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/fsx/latest/ONTAPGuide/migrating-fsx-ontap-snapmirror.html">NetApp
+SnapMirror を使用した FSx for ONTAP への移行</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ストレージオンプレミス">07:ストレージ/オンプレミス</h2>
@@ -2129,8 +2271,15 @@ Gateway 2種類のボリュームゲートウェイ</a></li>
 <li><a href="https://qiita.com/naoya_ok/items/121ea92de54f54b05542">AWS
 Storage Gateway</a></li>
 </ul>
-<h3 id="aws-storage-gatewayファイルゲートウェイ">AWS Storage
-Gateway/ファイルゲートウェイ</h3>
+<h3 id="aws-storage-gatewayamazon-s3-ファイルゲートウェイ">AWS Storage
+Gateway/Amazon S3 ファイルゲートウェイ</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/filegateway/latest/files3/file-gateway-concepts.html">Amazon
+S3 ファイルゲートウェイの仕組み</a></li>
+</ul>
+<p>(SMB/NFSプロトコルを介したファイルゲートウェイ構成図)<br />
+<img src="img/aws_saa/file-gateway-concepts-diagram.png" width="50%" height="50%"><br /></p>
 <h3 id="aws-storage-gatewayiscsiイニシエータの接続">AWS Storage
 Gateway/iSCSIイニシエータの接続</h3>
 <p>AWS Storage
@@ -2599,6 +2748,11 @@ Networking）</h3>
 EC2インスタンスのネットワーク性能を向上させる機能です。<br />
 インスタンス間での高スループット・低レイテンシーを実現できるため、リアルタイム性が求められるアプリケーションに最適です。<br />
 追加料金は掛からないです。</p>
+<h3 id="awsネットワーク料金">AWSネットワーク料金</h3>
+<ul>
+<li><a
+href="https://blog.jicoman.info/2020/02/cost-optimization-aws-network/">AWSネットワーク料金についてまとめてみた（2020年1月）</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -3351,7 +3505,7 @@ Application Load Balancer/スティッキーセッション</h3>
 <h3 id="aws-application-load-balanceralbec2-autoscaling構成">AWS
 Application Load Balancer/ALB+EC2 AutoScaling構成</h3>
 <p>ALBとEC2オートスケーリングの組み合わせがユースケースとなります。<br />
-ただし、EC2側で”ELB有効化”とします。</p>
+ただし、EC2側で<strong>ELB有効化</strong>を行います。</p>
 <ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/autoscaling/ec2/userguide/tutorial-ec2-auto-scaling-load-balancer.html">チュートリアル:
@@ -3413,8 +3567,10 @@ frontとは？</a></li>
 <li><a href="https://www.youtube.com/watch?v=HH8-FCOsUBg">模擬問題
 (CloudFront)</a></li>
 </ul>
-<h3 id="amazon-cloudfrontのorigin-access-identityoai">Amazon
-CloudFrontのOrigin Access Identity(OAI)</h3>
+<h3
+id="amazon-cloudfrontorigin-access-identityoaiオリジンアクセスアイデンティファイ">Amazon
+CloudFront/Origin Access
+Identity(OAI：オリジンアクセスアイデンティファイ)</h3>
 <p>Amazon CloudFrontのOrigin Access
 Identity（OAI）は、CloudFrontがS3バケットのオリジンにアクセスする際に使用する特別なIDのことです。</p>
 <ul>
@@ -3423,6 +3579,20 @@ href="https://qiita.com/free-honda/items/7da95c2261d3fb00f950">CloudFront
 + S3のベストプラクティス</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/CloudFront-s3-origin-access-identity/">特定バケットに特定ディストリビューションのみからアクセスできるよう設定する</a></li>
+</ul>
+<h3
+id="amazon-cloudfrontorigin-access-controloacオリジンアクセスコントロール">Amazon
+CloudFront/Origin Access control(OAC：オリジンアクセスコントロール)</h3>
+<p>現在OAIはレガシーな設定となっており、OACが推奨されています。</p>
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/amazon-cloudfront-introduces-origin-access-control-oac/">Amazon
+CloudFront オリジンアクセスコントロール（OAC）のご紹介</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Amazon
+S3 オリジンへのアクセスを制限する</a></li>
+<li><a
+href="https://qiita.com/shota_hagiwara/items/caacbda7f55aeea110d1">【AWS】OACを設定してCloudFront経由でS3に格納したコンテンツを公開する</a></li>
 </ul>
 <h3 id="aws-cloudfrontユースケース">AWS CloudFrontユースケース</h3>
 <p>オリジンサーバはVPC内部「ALB+EC2」で構成として、CloudFrontの構成は「CloudFront+ALB+S3」で構成するパターンが多いです。</p>
@@ -3773,6 +3943,8 @@ Organizationsはなぜ必要？メリットは？ユースケースも解説！<
 </ul>
 <h3
 id="organizations組織単位ouの管理">Organizations/組織単位(OU)の管理</h3>
+<p>Organizational
+Units（OUs）とは、AWSアカウントをグループ化した時のグループ単位のことです。</p>
 <ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_manage_ous.html">AWS
@@ -4398,6 +4570,11 @@ href="https://qiita.com/gumigumi_/items/57e71f701cf3020dd6de">機械学習系サ
 <h3 id="勉強メモ_aws-mls試験">勉強メモ_AWS MLS試験</h3>
 <ul>
 <li><a
+href="https://qiita.com/Neville/items/a9a5c0df95b5be1307b1">AWS認定の新資格AI
+Practitionerの要点を整理してみた</a></li>
+<li><a href="https://qiita.com/mapami/items/ec1909e6ab71182b3aab">AWS
+Certified AI Practitioner（AIF）対策のまとめ</a></li>
+<li><a
 href="https://qiita.com/d-hosso/items/adf448eac356cd208dae">試験直前チェック！AWS
 MLS試験で役立つSageMaker機能集</a></li>
 <li><a href="https://note.com/reotaro24126/n/nc9fb93a748cb">AWS MLS
@@ -4406,6 +4583,9 @@ MLS試験で役立つSageMaker機能集</a></li>
 SageMaker サービス AIF/MLA/MLS 試験対策</a></li>
 <li><a
 href="https://zenn.dev/t_oishi/articles/507240c7897acb">主要なSageMakerの機能をまとめてみた</a></li>
+</ul>
+<h3 id="合格体験記_aws-mls試験">合格体験記_AWS MLS試験</h3>
+<ul>
 <li><a
 href="https://zenn.dev/enumura/articles/23175115e7187d">SageMaker未経験からAWS
 MLS 合格までの1ヶ月学習法</a></li>
@@ -4587,6 +4767,47 @@ href="https://qiita.com/shinry/items/7a02e04b56815c612548">Snowmobileっても�
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="コスト管理クラウド財務管理">17:コスト管理(クラウド財務管理)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="コスト系サービス概要">コスト系サービス概要</h3>
+<ul>
+<li>AWS Cost Explorer
+<ul>
+<li>AWSのコストと利用状況を長期に渡って視覚化することが可能。<br />
+</li>
+<li>時間の経過に伴う AWS
+のコストと使用量を可視化することができる。<br />
+</li>
+<li>カスタムフィルターとグループを適用して、データを分析可能</li>
+</ul></li>
+<li>AWS Budgets
+<ul>
+<li>AWSコストと使用量を追跡して、その事前対処が可能。<br />
+</li>
+<li>事前に予算を見積して、サービスの使用量、サービスのコスト、インスタンスの予約を計画することができる。<br />
+</li>
+<li>使用量が予算の量を超えた場合に送信されるカスタムアラートを設定可能</li>
+<li>リザーブドインスタンスやSaving
+Plansの集計使用率とカバレッジメトリクスをモニタリングすることができる。<br />
+</li>
+</ul></li>
+<li>AWS Cost and Usage Report(コスト利用状況レポート)
+<ul>
+<li>AWSのコスト分析を行う上で必要となる詳細レポートを作成することが可能。<br />
+</li>
+</ul></li>
+<li>AWS pricing calculator
+<ul>
+<li>リージョンごとの料金を簡易的に確認するウェブベースのツール</li>
+</ul></li>
+<li><a
+href="https://blog.serverworks.co.jp/2024/05/09/170617#%E3%82%B3%E3%82%B9%E3%83%88%E7%B3%BB%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">コスト系サービスについて</a></li>
+<li><a
+href="https://qiita.com/yashiuri01/items/bac23130a43d62677330#%E3%82%B3%E3%82%B9%E3%83%88">AWS
+CLF入門 - コストとサポート編</a></li>
+<li><a
+href="https://qiita.com/DaijiroNozaki-afk/items/64cac27d228ce0a25d06">AWSで予算を算出するときに出てくるコスト評価サービスの違い</a></li>
+<li><a
+href="https://note.com/ym202110/n/n4e57bfbf9cfc">AWS_請求と料金関係のサービスについて</a></li>
+</ul>
 <h3 id="aws-cost-explorer">AWS Cost Explorer</h3>
 <p>AWSのコストと使用量の経時的変化を可視化<br />
 AWS のコストと使用状況を長期にわたって視覚化・理解・管理ができます。</p>
@@ -4596,16 +4817,17 @@ AWS のコストと使用状況を長期にわたって視覚化・理解・管�
 <h3 id="aws-のコストと使用状況レポートaws-cost-and-usage-report">AWS
 のコストと使用状況レポート(AWS Cost and Usage Report)</h3>
 <p>AWS
-のコストと使用状況に関する詳細情報に一元的にアクセスが可能となります。<br />
-コストと使用状況レポートを作成できる<br />
-IAMユーザによっての使用状況が分かる</p>
+のコストと使用状況の詳細情報に一元的に管理して、レポート作成することができます。<br />
+IAMユーザから使用状況を確認することができます。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="コスト管理リソース購入">17:コスト管理/リソース購入</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="savings-plans">Savings Plans</h3>
-<p>1年または3年の期間で契約することで割引を受ける。<br />
-EC2、Lambda、Fargate、SageMakerが対象。</p>
+<ul>
+<li>(自サイト内ページ)<a
+href="aws_saa_local.html#savings-planssp">Savings Plans(SP)</a></li>
+</ul>
 <h3 id="リザーブド購入可能製品">リザーブド購入可能製品</h3>
 <p>AWSサービスの中には1年-3年などの一定期間利用を予約することを前提に割引価格で購入可能になるオプションがあります。<br />
 主なリザーブド購入オプションは以下のようなものがあります。</p>
