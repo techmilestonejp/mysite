@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/22 10:08:42<br />
+更新日：2026/03/28 22:46:29<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -167,6 +167,8 @@ CloudInfrastructure（OCI）</a></li>
 <li><a
 href="https://qiita.com/sugimount/items/86e069305e5939c9eb61">Oracle
 Cloud 全サービスまとめ IaaS編</a></li>
+<li><a href="https://qiita.com/himiyaza/items/ebfbab15cee20bbcff45">OCI
+Database(DBCS/DBaaS)関連情報まとめ（リンク集）</a></li>
 </ul>
 <h3 id="ociサービス構成図">OCIサービス/構成図</h3>
 <p>(OCIサービス構成図)<br />
@@ -299,60 +301,11 @@ Database@AzureでADBをプロビジョニングしてみた</a></li>
 href="https://docs.oracle.com/ja/solutions/deploy-adb-db-at-google-cloud/index.html">Oracle
 Database@Google CloudへのOracle Autonomous Databaseのデプロイ</a></li>
 </ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-ai-databaseoracle-databaseサービス">Oracle AI
-Database(Oracle Databaseサービス)</h2>
-<p>分類02:データ管理の概要<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="oracle-ai-database構成種別デプロイメント">Oracle AI
-Database構成種別(デプロイメント)</h3>
-<ul>
-<li>Oracle AI Database構成種別(デプロイメント)
-<ul>
-<li>Autonomous Database(ADB)
-<ul>
-<li>Autonomous Database Dedicated(ADB-D/専有型)</li>
-<li>Autonomous Database Serverless(ADB-S/共有型)</li>
-</ul></li>
-<li>Exadata Database Service
-<ul>
-<li>Oracle Exadata Database Service on Dedicated
-Infrastructure(ExaDB-D)</li>
-<li>Oracle Exadata Database Service on Exascale
-Infrastructure(ExaDB-XS)</li>
-</ul></li>
-<li>Base Database Service</li>
-</ul></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison">Oracle
-Cloud Infrastructure 上で利用可能なOracle
-Databaseのサービスの比較</a></li>
-</ul>
-<h3 id="autonomous-database-dedicated">Autonomous Database
-Dedicated</h3>
+<h3 id="oracle-databaseaws">Oracle Database@AWS</h3>
 <ul>
 <li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb701-adbd/">ADB-Dの環境を作成してみよう</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-d-technical-detail-jp">Autonomous
-Database - Dedicated 技術詳細</a></li>
-</ul>
-<h3 id="autonomous-ai-database-serverless">Autonomous AI Database
-Serverless</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp">Autonomous
-AI Database Serverless 技術詳細</a></li>
-</ul>
-<h3 id="oracle-ai-database管理範囲共同責任モデル">Oracle AI
-Database管理範囲(共同責任モデル)</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison?slide=11">Oracle
-AI Database管理範囲</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/exadata-database-cloud-technical-detail?slide=9">管理範囲の違い</a></li>
+href="https://qiita.com/asahide/items/2cfd8fa7040a52198437">Oracle
+Database@AWS の利用に向けて</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -385,7 +338,7 @@ AI Database Serverless 技術詳細</a></li>
 </ul>
 <h3 id="構成仕様">構成・仕様</h3>
 <ul>
-<li>構成
+<li>ADB構成
 <ul>
 <li>マルチテナント構成のPDB</li>
 <li>MAA構成</li>
@@ -470,6 +423,93 @@ href="https://josysnavi.jp/2019/trendwatch_autonomousdatabase_191023">【トレ�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-ai-databaseoracle-databaseサービス">Oracle AI
+Database(Oracle Databaseサービス)</h2>
+<p>分類02:データ管理の概要<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oracle-ai-database構成種別デプロイメント">Oracle AI
+Database構成種別(デプロイメント)</h3>
+<ul>
+<li>Oracle AI Database構成種別(デプロイメント)
+<ul>
+<li>Autonomous Database(ADB)
+<ul>
+<li>Autonomous Database Dedicated(ADB-D/専有型)</li>
+<li>Autonomous Database Serverless(ADB-S/共有型)</li>
+</ul></li>
+<li>Exadata Database Service
+<ul>
+<li>Oracle Exadata Database Service on Dedicated
+Infrastructure(ExaDB-D)</li>
+<li>Oracle Exadata Database Service on Exascale
+Infrastructure(ExaDB-XS)</li>
+</ul></li>
+<li>Base Database Service</li>
+</ul></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison">Oracle
+Cloud Infrastructure 上で利用可能なOracle
+Databaseのサービスの比較</a></li>
+</ul>
+<h3 id="adb-dとadb-sの違い">ADB-DとADB-Sの違い</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/gjgms/">Autonomous
+AI Database
+ServerlessとDedicatedの互換性のためのアプリケーションの認定</a></li>
+<li><a
+href="https://updraft.hatenadiary.com/entry/2022/03/14/193504">今日は、OCIのADB-SとADB-Dの違いについての日</a></li>
+</ul>
+<h3 id="oracle-ai-database管理範囲共同責任モデル">Oracle AI
+Database管理範囲(共同責任モデル)</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison?slide=11">Oracle
+AI Database管理範囲</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/exadata-database-cloud-technical-detail?slide=9">管理範囲の違い</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="autonomous-database-dedicatedadb-d専有型">Autonomous Database
+Dedicated(ADB-D/専有型)</h2>
+<p>分類02:データ管理の概要<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="adb-d概要">ADB-D/概要</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-d-technical-detail-jp">Autonomous
+Database - Dedicated 技術詳細</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb701-adbd/">ADB-Dの環境を作成してみよう</a></li>
+</ul>
+<h3 id="adb-d構築手順">ADB-D/構築手順</h3>
+<p>(ADB-D構築手順)<br />
+<img src="img/oci_dfa/adb_setup.png" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="autonomous-database-serverlessadb-s共有型">Autonomous Database
+Serverless(ADB-S/共有型)</h2>
+<p>分類02:データ管理の概要<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="autonomous-ai-database-serverless">Autonomous AI Database
+Serverless</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp">Autonomous
+AI Database Serverless 技術詳細</a></li>
+</ul>
+<h3 id="各機能">各機能</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/whats-new-adwc.html">Oracle
+Autonomous AI Database Serverlessの新機能</a></li>
+<li><a
+href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/whats-new-adwc.html">「Oracle
+Autonomous Databaseサーバーレス」の新機能</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle-autonomous-ai-databasedb機能種別ワークロード">Oracle
 Autonomous AI Database/DB機能種別(ワークロード)</h2>
 <p>分類03:OCI-OracleDB<br />
@@ -551,171 +591,15 @@ Autonomous JSON Databaseの特徴と使い方</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-autonomous-ai-database各機能">Oracle Autonomous AI
-Database/各機能</h2>
+<h2 id="autonomous-ai-database-各機能">Autonomous AI Database
+各機能</h2>
 <p>分類03:OCI-OracleDB<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="adbプロビジョニング">ADBプロビジョニング</h3>
+<h3 id="autonomous-ai-database-各機能-1">Autonomous AI Database
+各機能</h3>
 <ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-provision.html">Autonomous
-AI Databaseインスタンスのプロビジョニング</a></li>
-<li><a
-href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/getting-started-provisionadb.html">Autonomous
-AI Databaseのプロビジョニングまたはクローニング</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb101-provisioning/">101:
-ADBインスタンスを作成してみよう</a></li>
-</ul>
-<h3 id="adbスケーリング">ADBスケーリング</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=70">拡張性</a></li>
-</ul>
-<h3 id="自動ワークロードリプレイ">自動ワークロードリプレイ</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/autonomous-ai-database-serverlessniokeruwakurodoripureinohuo-yong-nituite">Autonomous
-AI Database
-Serverlessにおけるワークロードリプレイの活用について</a></li>
-<li><a
-href="https://qiita.com/asahide/items/20204fd31e878aa80d00">Autonomous
-AI Databaseのワークロードリプレイ運用に向けて</a></li>
-<li><a
-href="https://qiita.com/albert1127/items/67f0f7a0c9c227758b8a">Autonomous
-AI Database
-Serverlessにおけるワークロードリプレイの活用について</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-autonomous-ai-database各機能可用性">Oracle Autonomous AI
-Database/各機能(可用性)</h2>
-<p>分類03:OCI-OracleDB<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="adb可用性概要">ADB可用性/概要</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=88">可用性</a></li>
-</ul>
-<h3 id="data-guard">Data Guard</h3>
-<ul>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb212-audg/">212:
-Autonomous Database を災害対策構成にしてみよう</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracle-dbasecamp-7">高可用性システム構築
-- Oracle Data Guard基本編</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/entdb-exadbd-dataguard">BaseDB
-/ ExaDB-D(ExaCS)におけるData Guard解説</a></li>
-<li><a href="https://cosol.jp/column/oracle-cloud-guard/">Oracle Data
-Guardとは？OCI上での構成手順を解説！</a></li>
-<li><a href="https://qiita.com/shirok/items/356da23cd304ae9ab6b4">Oracle
-Cloud: 東京-大阪リージョン間で手動Data Guardしてみてみた</a></li>
-<li><a
-href="https://xn--w8j8bac3czf5bl7e.com/2024/08/27/oci%E3%81%A7dataguard%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86-2/">OCIでDataGuardを構築してみよう</a></li>
-<li><a
-href="https://xn--w8j8bac3czf5bl7e.com/2025/06/12/oci-basedb%E3%81%AEdata-guard%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%93%8D%E4%BD%9C%E7%B7%A8/">OCI
-BaseDBのData Guardについて(操作編)</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-autonomous-ai-database各機能接続">Oracle Autonomous AI
-Database/各機能(接続)</h2>
-<p>分類03:OCI-OracleDB<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3
-id="事前定義済データベースサービス名">事前定義済データベース・サービス名</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/connect-predefined-generic.html">Autonomous
-AI Databaseの事前定義済データベース・サービス名</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb201-service-names/">事前に定義済の接続サービス</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-autonomous-ai-database各機能data-studio">Oracle
-Autonomous AI Database/各機能(Data Studio)</h2>
-<p>分類03:OCI-OracleDB<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="autonomous-ai-database-data-studio概要">Autonomous AI Database
-Data Studio/概要</h3>
-<ul>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/data-studio/">Autonomous
-AI Database Data Studio</a></li>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/data-studio/features/">Autonomous
-AI Database Data Studioの機能</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adp-data-studio-overview-page.html">データ・スタジオの概要ページ</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/data-preferences.html">Data
-Studio設定</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/autonomous-database-database-actions-ji-neng-gai-yao">Autonomous
-Database - Database Actions 機能概要</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/data-studionoji-neng-kuo-zhang">Data
-Studioの機能拡張</a></li>
-<li><a href="https://qiita.com/goo2000/items/90a8e0c2376122ad7b12">Data
-Studioにあるジョブを試してみた</a></li>
-<li><a
-href="https://qiita.com/bambooseven/items/956a80f767ec11a52a0f">Autonomous
-Databaseのデータ分析機能で、AIを使用したクエリの説明を試してみた</a></li>
-</ul>
-<h3 id="autonomous-ai-database-data-studio機能一覧">Autonomous AI
-Database Data Studio/機能一覧</h3>
-<ul>
-<li>Data Studioの特長
-<ul>
-<li>データ・ロード(データ読み込み)
-<ul>
-<li>Autonomous AI
-Databaseへのデータの迅速なロード、リンク、フィード</li>
-<li>データロードをAIが強化</li>
-</ul></li>
-<li>データ・カタログ</li>
-<li>データ変換(Data-Transforms)</li>
-<li>データ・インサイト(Data-Insights)</li>
-<li>データ分析</li>
-<li>データ共有</li>
-</ul></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/adp-data-studio-overview-page.html">10
-「Data Studioの概要」ページ</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/data-load.html">12
-「データ・ロード」ページ</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/catalog-entities.html">13
-カタログ・ツール</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/data-transforms.html">14
-「データ変換」ページ</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/data-insights.html">15
-「データ・インサイト」ページ</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/data-analysis-tool.html">16
-データ分析ツール</a></li>
-<li><a
-href="https://docs.oracle.com/cd/F87171_01/sdwad/adp-data-share-tool.html">20
-データ共有ツール</a></li>
-</ul>
-<h3 id="oracle-data-transforms">Oracle Data Transforms</h3>
-<p>Oracle Data
-Transformsは、自律型AIデータベースとのデータ統合のためのグラフィカル・データ変換を設計するために使用できるグラフィカル・ユーザー・インタフェースです。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-data-transforms.html">Data
-Studioを使用したデータの変換</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb403-data-transforms/">403
-: Data Transformsを使ってみよう</a></li>
-<li><a href="https://qiita.com/goo2000/items/1058fe9b7a4c619a60ee">Data
-Transformsとデータソースをリージョン間でクローンしてみた</a></li>
+<li>構築</li>
+<li>可用性</li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
