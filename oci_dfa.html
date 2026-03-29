@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIDFA</h1>
 </header>
 <p>作成日：2026/02/23 08:26:45<br />
-更新日：2026/03/28 22:46:29<br />
+更新日：2026/03/29 17:08:25<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -199,92 +199,6 @@ Oracle Autonomous Database</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="oracle-ai-databaseライセンス体系">Oracle AI
-Database/ライセンス体系</h2>
-<p>分類02:データ管理の概要<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3
-id="ライセンス体系ecpuとocpuの違い">ライセンス体系/ECPUとOCPUの違い</h3>
-<ul>
-<li>OCPU (Oracle Compute Unit)
-<ul>
-<li>1OCPU は、ハイパースレッディングが有効な 1 つの物理コア
-に相当します（2 vCPU 相当）</li>
-<li>主に Compute インスタンス、Base Database Service
-などで利用されます。</li>
-</ul></li>
-<li>ECPU (Elastic Compute Unit):
-<ul>
-<li>Elastic CPU の略で、常時フル性能を使わず、必要時にだけ CPU
-性能をバーストさせる設計となります<br />
-</li>
-<li>特定のデータベースサービス（Autonomous Database, MySQL HeatWave
-など）向けに導入された、より柔軟で細分化された 単位です<br />
-</li>
-<li>ECPU は「使用時間に応じた CPU 秒課金」で、OCPU
-より後発の比較的新しい課金モデル<br />
-</li>
-<li>バックグラウンドでは物理 CPU
-を共有し、負荷が低いときには割り当てを抑える<br />
-</li>
-<li>1 ECPU は、0.25 OCPU（0.5 vCPU） に相当します。つまり、1 OCPU = 4
-ECPU という換算になります。</li>
-</ul></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=16">ECPU単位</a></li>
-<li><a
-href="https://www.digiteras.jp/column/1781/">【OCI】OCPUとECPUについて</a></li>
-<li><a
-href="https://licensecounter.jp/engineer-voice/blog/articles/20250825_oci_ocpu_ecpu.html">【OCI】OCPU
-と ECPU</a></li>
-<li><a
-href="https://qiita.com/goo2000/items/2b3dce00d487507822b7">[Autonomous
-Database] OCPUモデルからECPUモデルに変更してみる</a></li>
-</ul>
-<h3
-id="ライセンス体系paygとbyolの違い">ライセンス体系/PAYGとBYOLの違い</h3>
-<ul>
-<li>PAYG（Pay-As-You-Go：従量課金）
-<ul>
-<li>使用量に応じた時間単位の支払い</li>
-<li>料金体系: 使用した時間やリソース量に応じて課金。</li>
-<li>メリット: 初期費用が不要で、すぐにサービスを利用開始できる。</li>
-<li>向いているケース: 需要が変動する環境、短期的なプロジェクト。</li>
-</ul></li>
-<li>BYOL（Bring Your Own License：ライセンス持ち込み）
-<ul>
-<li>既存のライセンスをクラウドに適用する形態</li>
-<li>料金体系: ベンダーから事前に購入したライセンスを使用。</li>
-<li>メリット:
-クラウドのライセンス料金が不要（または削減）になり、オンプレミスの既存資産を再利用できる。</li>
-<li>向いているケース:
-既存ライセンスを多く持っている企業、長期利用の固定ワークロード。</li>
-</ul></li>
-<li><a
-href="https://www.oracle.com/jp/industries/payg-services-price-list/">Pay
-As You Goモデルの価格表</a></li>
-<li><a
-href="https://www.oracle.com/jp/cloud/bring-your-own-license/faq/">Oracle
-Bring Your Own License（BYOL）に関するFAQ</a></li>
-</ul>
-<h3 id="ユニバーサルクレジット">ユニバーサル・クレジット</h3>
-<ul>
-<li><a
-href="https://www.oracle.com/jp/cloud/universal-credits/">ユニバーサル・クレジット</a></li>
-<li><a
-href="https://licensecounter.jp/engineer-voice/blog/articles/20251127_universal_credits_alert_on_spending.html">OCI】Universal
-Credits の消費状況にアラートを設定してみた</a></li>
-</ul>
-<h3 id="クラウド価格">クラウド価格</h3>
-<ul>
-<li><a
-href="https://www.oracle.com/jp/cloud/pricing/">OCIの価格設定</a></li>
-<li><a
-href="https://www.intellilink.co.jp/business/platform/license-guide-cloud.aspx">Oracle
-Cloud購入ガイド</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracle-autonomous-ai-databaseサードパーティ">Oracle Autonomous
 AI Database/サードパーティ</h2>
 <p>分類03:OCI-OracleDB
@@ -306,120 +220,6 @@ Database@Google CloudへのOracle Autonomous Databaseのデプロイ</a></li>
 <li><a
 href="https://qiita.com/asahide/items/2cfd8fa7040a52198437">Oracle
 Database@AWS の利用に向けて</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="oracle-autonomous-ai-databaseoracle-autonomous-databaseadb">Oracle
-Autonomous AI Database(Oracle Autonomous Database/ADB)</h2>
-<p>分類03:OCI-OracleDB<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="概要">概要</h3>
-<ul>
-<li><a href="https://www.oracle.com/jp/autonomous-database/">Autonomous
-AI Database</a></li>
-<li><a
-href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116">Oracle
-Autonomous Database Cloud 2021 Specialist (1Z0-931-21) 学習メモ</a></li>
-<li><a href="https://oracle-japan.github.io/ocitutorials/adb/">Oracle AI
-Database編 - Autonomous AI Database (ADB)を使ってみよう</a></li>
-<li><a
-href="https://www.oracle.com/jp/database/technologies/datawarehouse-bigdata/adb-faqs.html">Oracle
-Autonomous Databaseに関するFAQ</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocidocs/faq/autonomous-database-faq/autonomous-database-faq/">Autonomous
-Database 技術FAQ</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracle-autonomous-database">Oracle
-Autonomous AI Database：サービス概要のご紹介</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp">Autonomous
-AI Database Serverless 技術詳細</a></li>
-</ul>
-<h3 id="構成仕様">構成・仕様</h3>
-<ul>
-<li>ADB構成
-<ul>
-<li>マルチテナント構成のPDB</li>
-<li>MAA構成</li>
-<li>Elastic(ハードウェアリソースの増減が簡易的に変更可能となる構成)</li>
-<li>Exadata</li>
-<li>Full Managed PaaS</li>
-<li>Multi-AZ/AD deployment</li>
-</ul></li>
-<li><a
-href="https://cosol.jp/techdb/2019/04/oracle_cloud_autonomous_database_architecture/">Autonomous
-Databaseのアーキテクチャ – Oracle Cloud</a></li>
-<li><a href="https://cloudii.jp/news/blog/oracle-cloud/atp_01/">Oracle
-Autonomous Databaseに慣れる（１）</a></li>
-<li><a
-href="https://qiita.com/plusultra/items/5715741eb2a405325ef1">Oracle
-Autonomous Databaseに慣れる（２）</a></li>
-</ul>
-<h3
-id="自律型データベースクラウド特徴">自律型データベース・クラウド/特徴</h3>
-<ul>
-<li>自律型データベースの仕組み
-<ul>
-<li>自己管理（Self-Driving）:
-データベースの作成、チューニング、スケーリング（拡張）を自動で行う。負荷に応じてCPUやストレージを自動的に拡張し、稼働したまま変更可能。</li>
-<li>自己保護（Self-Securing）:
-セキュリティパッチの自動適用、データ暗号化、不正アクセス検知など、外部脅威と内部ミスの両方からデータを守る。</li>
-<li>自己修復（Self-Repairing）:
-障害発生時に自動的に復旧し、ダウンタイムを最小限に抑える。</li>
-</ul></li>
-<li>特徴
-<ul>
-<li>自動プロビジョニング
-<ul>
-<li>DBAを介さずにデータベース導入(DB構築)ができる機能です。</li>
-</ul></li>
-<li>自動構成
-<ul>
-<li>特定のワークロードに最適化するようにデータベースを自動的に構成・チューニングする機能です。</li>
-</ul></li>
-<li>自動インデックス作成
-<ul>
-<li>この機能は、ワークロードを自動的にモニターし、アプリケーションに支障をきたす可能性のある欠落したインデックスを検出します。</li>
-</ul></li>
-<li>自動スケーリング
-<ul>
-<li>この機能は、ワークロードが必要とするコンピュート・リソースを自動的にスケールし、実際の使用量に応じた支払いを実現します。</li>
-</ul></li>
-<li>自動データ保護
-<ul>
-<li>自律型データベースは、機密データや規制対象データを自動的に保護し、構成のセキュリティを評価し、異常なアクティビティをモニターできます。</li>
-</ul></li>
-<li>自動化されたセキュリティ
-<ul>
-<li>オペレーティング・システムへのアクセスを禁止し、管理者権限を制限することで、フィッシング攻撃の防止を支援し、クラウドへの侵入と悪意のある内部ユーザーの両方からシステムを保護します。</li>
-</ul></li>
-<li>自動バックアップ
-<ul>
-<li>過去60日以内の指定した時点までのデータベースをリストアまたはリカバリすることができます。</li>
-</ul></li>
-<li>自動パッチ適用
-<ul>
-<li>ダウンタイムなしで自動的にパッチやアップグレードを適用できるようになります。アプリケーションの実行は継続されながら、パッチ適用はクラスタノードまたはサーバー間でラウンドロビン方式で行われます。</li>
-</ul></li>
-<li>自動化された障害検出と解決
-<ul>
-<li>パターン認識を使用して、長時間のタイムアウトなしにハードウェア障害を自動的に予測することができます。</li>
-</ul></li>
-<li>自動フェイルオーバー
-<ul>
-<li>スタンバイ・データベースへのデータ損失ゼロの自動フェイルオーバーは、プライマリ・データベース・インスタンスが利用できなくなった場合でも、アプリケーションがアクセス可能な状態を維持します。</li>
-</ul></li>
-</ul></li>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/what-is-autonomous-database/">自律型データベースとは</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=10">自律型データベースビジョン</a></li>
-<li><a
-href="https://jpn.nec.com/soft/oracle/oci/autonomous_DB.html">自律型データベース
-Oracle Autonomous Database</a></li>
-<li><a
-href="https://josysnavi.jp/2019/trendwatch_autonomousdatabase_191023">【トレンドウォッチ】情シス業務から運用が消えるのか！？自律型データベースってなに？</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -451,62 +251,22 @@ href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle
 Cloud Infrastructure 上で利用可能なOracle
 Databaseのサービスの比較</a></li>
 </ul>
-<h3 id="adb-dとadb-sの違い">ADB-DとADB-Sの違い</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/gjgms/">Autonomous
-AI Database
-ServerlessとDedicatedの互換性のためのアプリケーションの認定</a></li>
-<li><a
-href="https://updraft.hatenadiary.com/entry/2022/03/14/193504">今日は、OCIのADB-SとADB-Dの違いについての日</a></li>
-</ul>
 <h3 id="oracle-ai-database管理範囲共同責任モデル">Oracle AI
 Database管理範囲(共同責任モデル)</h3>
+<ul>
+<li>ExaDataを含めた管理範囲
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/exadata-database-cloud-technical-detail?slide=9">管理範囲の違い</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison?slide=10">管理範囲</a></li>
+</ul></li>
+<li>Oracle AI Database管理範囲
 <ul>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oracle-cloud-infrastructure-oracle-database-service-comparison?slide=11">Oracle
 AI Database管理範囲</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/exadata-database-cloud-technical-detail?slide=9">管理範囲の違い</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="autonomous-database-dedicatedadb-d専有型">Autonomous Database
-Dedicated(ADB-D/専有型)</h2>
-<p>分類02:データ管理の概要<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="adb-d概要">ADB-D/概要</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-d-technical-detail-jp">Autonomous
-Database - Dedicated 技術詳細</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb701-adbd/">ADB-Dの環境を作成してみよう</a></li>
-</ul>
-<h3 id="adb-d構築手順">ADB-D/構築手順</h3>
-<p>(ADB-D構築手順)<br />
-<img src="img/oci_dfa/adb_setup.png" width="50%" height="50%"><br /></p>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="autonomous-database-serverlessadb-s共有型">Autonomous Database
-Serverless(ADB-S/共有型)</h2>
-<p>分類02:データ管理の概要<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="autonomous-ai-database-serverless">Autonomous AI Database
-Serverless</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp">Autonomous
-AI Database Serverless 技術詳細</a></li>
-</ul>
-<h3 id="各機能">各機能</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/whats-new-adwc.html">Oracle
-Autonomous AI Database Serverlessの新機能</a></li>
-<li><a
-href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/whats-new-adwc.html">「Oracle
-Autonomous Databaseサーバーレス」の新機能</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -523,71 +283,12 @@ Autonomous AI Database/DB機能種別(ワークロード)</h2>
 <li>(Autonomous Data Warehouse (ADW))</li>
 <li>Autonomous JSON Database (AJD)</li>
 </ul></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html">Autonomous
-AI Databaseワークロード・タイプについて</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=21">ワークロード</a></li>
-<li><a
-href="https://cosol.jp/techdb/2019/04/autonomous_database_comparison_adw_and_atp_predefined_services/">ADWとATPの比較
-/ Autonomous Databaseへの接続と事前定義サービス</a></li>
-<li><a href="https://www.issoh.co.jp/tech/details/4203/">Autonomous
-Transaction ProcessingとData Warehouseの違い</a></li>
-</ul>
-<h3 id="oracle-autonomous-databaseatp">Oracle Autonomous
-Database(ATP)</h3>
-<p>Oracle Autonomous AI Transaction
-Processingは、トランザクション、分析、バッチのワークロードを同時に実行するために最適化された、完全に自動化されたデータベース・サービスです。</p>
-<p>(ATPの構成図)<br />
-<img src="img/oci_dfa/autonomous-transaction-processing-architecture.png" width="50%" height="50%"><br /></p>
-<ul>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/autonomous-transaction-processing/">Oracle
-Autonomous AI Transaction Processing</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-B90147B2-EA04-4147-9606-0413D9CC1589">Oracle
-Autonomous AI Transaction Processingについて</a></li>
-<li><a
-href="https://docs.oracle.com/ja/solutions/deploy-autonomous-database-and-app/index.html#GUID-40A628D0-7A04-42EA-A07E-A3FCC4248DBF">セキュアな本番対応のOracle
-Autonomous DatabaseおよびOracle APEXアプリケーションのデプロイ</a></li>
-<li><a href="https://blog.s-style.co.jp/2019/06/4567/">Oracle Autonomous
-Database(ATP)を触ってみた</a></li>
-<li><a href="https://cloudii.jp/news/blog/oracle-cloud/atp_01/">Oracle
-Autonomous DatabasのAutonomous Transaction Processing
-を使ってみた</a></li>
-<li><a
-href="https://qiita.com/yushibats/items/cbad89098dfcc8c71178">【ハンズオン】AI
-× データ基盤：OCI AI Data
-Platformで実現する統合分析パイプラインの構築（前編）</a></li>
 </ul>
 <h3 id="oracle-autonomous-ai-lakehouse">Oracle Autonomous AI
 Lakehouse</h3>
 <ul>
 <li>(サイト内ページ)<a
-href="file:///C:/Users/user/Desktop/home20250101/08_public_html/html05/html/oci_dfa.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AC%E3%82%A4%E3%82%AF%E3%83%8F%E3%82%A6%E3%82%B9">データ・レイクハウス</a></li>
-</ul>
-<h3
-id="autonomous-database-for-analytics-and-data-warehousing-adw">Autonomous
-Database for analytics and data warehousing (ADW)</h3>
-<ul>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/autonomous-ai-lakehouse/">Autonomous
-Database for analytics and data warehousing (ADW)</a></li>
-<li><a
-href="https://www.oracle.com/jp/autonomous-database/autonomous-data-warehouse/get-started/">Oracle
-Autonomous Data Warehouseを無料で使い始めましょう</a></li>
-<li><a
-href="https://solutions.system-exe.co.jp/oracle-cloud/blog/how-to-build-and-operate-oracle-autonomous-data-warehouse">Oracle
-Autonomous Data Warehouseの構築手順と操作方法</a></li>
-</ul>
-<h3 id="autonomous-json-databaseajd">Autonomous JSON Database(AJD)</h3>
-<ul>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/ajd-technical-detail-jp">Autonomous
-JSON Database 技術概要 / ajd_technical_detail_jp</a></li>
-<li><a
-href="https://solutions.system-exe.co.jp/oracle-cloud/blog/features-and-usage-of-oracle-autonomous-json-database">Oracle
-Autonomous JSON Databaseの特徴と使い方</a></li>
+href="oci_dfa.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AC%E3%82%A4%E3%82%AF%E3%83%8F%E3%82%A6%E3%82%B9">データ・レイクハウス</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -598,8 +299,13 @@ Autonomous JSON Databaseの特徴と使い方</a></li>
 <h3 id="autonomous-ai-database-各機能-1">Autonomous AI Database
 各機能</h3>
 <ul>
-<li>構築</li>
+<li>各機能
+<ul>
+<li>構築：(サイト内ページ)<a
+href="oci_adp.html#adb構築">ADB/構築</a></li>
 <li>可用性</li>
+<li>パッチ適用</li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -853,7 +559,7 @@ id="コンバージドデータベースconverged-database">コンバージド�
 Database)</h2>
 <p>分類05:コンバージド・データベース<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="概要-1">概要</h3>
+<h3 id="概要">概要</h3>
 <ul>
 <li>コンバージド・データベースの特徴
 <ul>
@@ -1216,7 +922,8 @@ Developerで様々なDBに接続する方法</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="データウェアハウス">データ・ウェアハウス</h2>
+<h2
+id="データウェアハウスレイクハウス">データ・ウェアハウス(レイクハウス)</h2>
 <p>分類08:データ・レイク<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="データウェアハウス概要">データ・ウェアハウス概要</h3>
@@ -1300,94 +1007,6 @@ DatabaseやBig Data
 Serviceを用いて、それらのデータを高速かつ直接的に分析する手法です。<br />
 使い分けの指針：定型レポートが必要なら「ウェアハウス」、データサイエンス目的や将来的な活用を想定するなら「レイク」から開始し、
 最終的には「レイクハウス」を目指すのが効率的です。</p>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="データレイクハウス">データ・レイクハウス</h2>
-<p>分類08:データ・レイク<br />
-<!---------------------------------------------------------------------------------------------------------------------></p>
-<h3 id="データレイクハウス概要">データ・レイクハウス概要</h3>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja/solutions/data-platform-lakehouse/">データ・プラットフォーム
-- データ・レイクハウス</a></li>
-<li><a
-href="https://docs.oracle.com/ja/solutions/oci-open-source-lakehouse/">OCIにオープンソースのデータ・レイクハウスを導入</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oracle-cloud-uebina-zui-jin-yokuwen-ku-lakehouse-reikuhausu-tutehe-shi-li-nixue-budetahuo-yong-ji-pan-falsekorekarafalsekatatitoha">【Oracle
-Cloud ウェビナー】最近よく聞く”Lakehouse(レイクハウス)“って</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414">Oracle
-Autonomous AI Lakehouseについて</a></li>
-</ul>
-<h3 id="データレイクハウス特徴">データ・レイクハウス特徴</h3>
-<ul>
-<li>データ・レイクハウスの5つの特徴
-<ul>
-<li>Data Warehouse</li>
-<li>Data Lake</li>
-<li>Managed Open-source Services</li>
-<li>Data Integration</li>
-<li>Data Catalog</li>
-</ul></li>
-<li><a
-href="https://blogs.oracle.com/cloud-infrastructure/autonomous-database-enhances-data-lake-analytics">Delivering
-a lakehouse on OCI</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/about-autonomous-database-workloads.html#ADBSB-GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414">Oracle
-Autonomous AI Lakehouseについて</a></li>
-<li><a
-href="https://docs.oracle.com/cd/G41736_01/paas/autonomous-database/serverless/adbsb/appendix-autonomous-database-data-warehouse-workload.html">Autonomous
-AI Databaseによるレイクハウス・ワークロード</a></li>
-</ul>
-<h3 id="oci-data-integration">OCI Data Integration</h3>
-<p>Oracle
-Integrationは、AI、統合および自動化機能の包括的なポートフォリオを備えたAI自動化プラットフォームです。<br />
-これにより、アプリケーションとデータの接続、ビジネス・プロセスの自動化、AIによるイノベーションのすべてを、完全管理型の事前構成済環境で実現できます。</p>
-<ul>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/application-integration/index.html">Oracle
-Integration</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/application-integration/doc/high-level-workflow.html">高レベルのワークフロー</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
-Data Integrationチュートリアル</a></li>
-</ul>
-<h3 id="oci-data-catalog">OCI Data Catalog</h3>
-<p>OCI Data
-Catalogは、データの専門家がデータを発見し、データガバナンスをサポートするのに役立つメタデータを管理するためのOCIサービスです。</p>
-<ul>
-<li><a href="https://www.oracle.com/jp/big-data/data-catalog/">Data
-Catalog</a></li>
-<li><a href="https://www.oracle.com/jp/big-data/data-catalog/">Oracle
-Cloud Infrastructure Data Catalog</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb603-data-catalog/">603
-: データ・カタログを使ってメタデータを収集しよう</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/oci-data-catalog-overview-2022nian-5yue-ban">OCI
-Data Catalog Overview 2022年5月版</a></li>
-<li><a href="https://qiita.com/kenwatan/items/4494ee5c88d371d51e39">OCI
-Data Catalogを使ったAutonomous DatabaseからObject
-Storageファイルの検索</a></li>
-</ul>
-<h3 id="oci-data-flow">OCI Data Flow</h3>
-<p>OCI Data Flow
-は、大量データの並列分散処理を実現するためのフレームワークである Apache
-Spark を OCI 上で提供するマネージドサービスです。</p>
-<ul>
-<li><a href="https://www.oracle.com/jp/big-data/data-flow/">Data
-Flow</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/data-flow-overview">OCI
-Data Flow 概要</a></li>
-<li><a
-href="https://oracle-japan.github.io/ocitutorials/datascience/dataflow-for-beginner/">OCI
-Data Flow ハンズオン(初級編)</a></li>
-<li><a href="https://qiita.com/letian/items/b2408b85c8f258183047">OCI
-Data Flowを使ってオブジェクト・ストレージからADBへデータをロードする –
-Part 1</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="機械学習oracle-machine-learningml">機械学習(Oracle Machine
