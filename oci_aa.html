@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>OCIAA_勉強メモ</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">OCIAA_勉強メモ</h1>
+</header>
+<p>作成日：2025/05/10 12:09:29<br />
+更新日：2026/01/04 17:23:20<br />
+<a href="index.html">トップページ</a></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ociaa勉強サイト">OCIAA勉強サイト</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="公式サイト">公式サイト</h3>
+<ul>
+<li><a
+href="https://mylearn.oracle.com/ou/learning-path/japanese-become-an-oci-architect-associate-2024-/140905">Become
+An OCI Architect Associate 2024</a></li>
+</ul>
+<h3 id="合格体験記">合格体験記</h3>
+<ul>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/03/03/090000">【OCI】Oracle
+Cloud Infrastructure 2024 Certified Architect Associate (1Z0-1072-24)
+に合格したので所感を綴る</a>
+<ul>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/03/03/090000#Japanese-Become-an-OCI-Architect-Associate-2024-%E3%81%AE%E5%86%85%E5%AE%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Japanese:
+Become an OCI Architect Associate (2024) の内容について</a></li>
+</ul></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/09/12/093000">【OCI】OCI
+Architect Associate (2024)を10日で合格する</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/04/15/080000">【OCI】(Architect
+Associate合格体験記) 勉強方法や勉強時間を詳しく紹介します</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2025/04/16/090000">【OCI】1週間でOCI
+Architect
+Associateに合格｜動画挫折からの問題演習【2025年4月受験】</a></li>
+<li><a
+href="https://qiita.com/sakura_yoh/items/b26c8fc161f1b7e621b6">合格体験記_OCI
+Architect Associate 2024</a></li>
+<li><a
+href="https://licensecounter.jp/engineer-voice/blog/articles/20240326_oci_architect_associate.html">OCI
+Architect Associate試験を受けてみた</a></li>
+</ul>
+<h3 id="問題集販売">問題集販売</h3>
+<ul>
+<li><a href="https://note.com/data_ku/m/mfeee5ae13692">OCI Architect
+Associate一発合格問題集</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci-iam-ポリシー">OCI IAM ポリシー</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="iam総合情報">IAM総合情報</h3>
+<ul>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/4a29c6a57607dcf3168d">Oracle
+Cloud Infrastructure Architect Associate 勉強メモ（IAMとコンパートメント
+ポリシー)</a></li>
+<li><a
+href="https://qiita.com/Skogkatter112/items/9724bea9379364e83e47">OCI
+IAM ポリシーによる権限管理 ケース別チートシート</a></li>
+<li><a
+href="https://qiita.com/atwits/items/ef4021adf4401d89aaee">【OCI】IAM
+Identity DomainのAPIを使ってユーザ登録してみる</a></li>
+</ul>
+<h3 id="インスタンスプリンシパル">インスタンス・プリンシパル</h3>
+<pre><code>「プリンシパル」とは：  
+リソースにアクセス(操作)しようとする呼び出し元のアイデンティティ  
+OCIのインスタンス・プリンシパルは、コンピュート・インスタンスにIAMのアイデンティティを付与し、OCIの他のリソース（Object Storageなど）へセキュアにアクセスできる仕組みです。  </code></pre>
+<ul>
+<li><a
+href="https://qiita.com/sakura_yoh/items/1188506c77bd40599573">OCI 2024
+Architect Associate 試験勉強メモ</a></li>
+</ul>
+<h3 id="ad連携">AD連携</h3>
+<ul>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2024/09/03/oci%E3%81%A8ad%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E9%80%A3%E6%90%BA%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">OCIとADアカウント連携してみました</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="コンピュート">コンピュート</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="コンピュート実行コマンド">コンピュート、実行コマンド</h3>
+<ul>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/88b4deff6b5b33549539#%E5%AE%9F%E8%A1%8C%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">実行コマンド</a></li>
+</ul>
+<pre><code>Linux・Windows 両方で使用可能。スクリプトはデフォルトでBashシェルで実行。
+SSH不要
+オブジェクトストレージと連携可能
+Ubatu以外のプラットフォームイメージで動作
+プレーン・テキストでインスタンスに直接アップロードするスクリプト・ファイルの最大サイズは4KB
+プレーン・テキストとして返されるスクリプトの出力は、最後の1KB</code></pre>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ブロックストレージ">ブロックストレージ</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="バックアップポリシー">バックアップポリシー</h3>
+<ul>
+<li>バックアップポリシー
+<ul>
+<li>ブロンズ：月ごとにバックアップ取得（月の初日に取得）12か月間保存される。</li>
+<li>シルバー：週ごとにバックアップ取得（日曜日）4週間保存。ブロンズポリシーの月初めのバックアップも含まれ、こちらは12か月間保存される。</li>
+<li>ゴールド：日ごとにバックアップ取得。7日間保存。ブロンズポリシーの月初めのバックアップ（12か月間）、シルバーポリシーの週ごとのバックアップ（4週間）も含まれる。</li>
+</ul></li>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/8e9af502826e623e64cb#%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">バックアップ・ポリシー</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ファイルストレージ">ファイルストレージ</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="ociファイルストレージサービスの概念">OCIファイルストレージサービスの概念</h3>
+<ul>
+<li>ファイルシステム：ストレージそのもの</li>
+<li>エクスポート：NFSコントロールレイヤー</li>
+<li>マウントターゲット：エクスポートのエンドポイント</li>
+<li>参考情報
+<ul>
+<li><a
+href="https://qiita.com/Qu4rtz_MC5/items/f379469e423e83f2cd59#oci%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E6%A6%82%E5%BF%B5">OCIファイルストレージサービスの概念</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="オブジェクトストレージ">オブジェクトストレージ</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="オブジェクトストレージオブジェクトストレージサービス">オブジェクトストレージ(オブジェクト・ストレージ・サービス)</h3>
+<ul>
+<li>リージョナル・サービスで特定のコンピュータ・インスタンスに紐づいてない</li>
+<li>「保持ルール」は「バケット・レベル」</li>
+<li>参考情報
+<ul>
+<li><a
+href="https://qiita.com/ksonoda/items/dc12792c99a962f932f9">Oracle Cloud
+Infrastructure オブジェクト・ストレージ・サービスの機能概要</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2022/10/03/oci-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%81%A8%E3%81%AF-2/">OCI
+オブジェクト・ストレージとは</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

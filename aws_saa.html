@@ -28,9 +28,9 @@
 <header id="title-block-header">
 <h1 class="title">勉強メモ_SAA</h1>
 </header>
-<p><a href="index.html">トップページ</a><br />
+<p><a href="index_local.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/03/21 13:09:06</p>
+更新日：2026/04/05 17:10:26</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="saa学習">SAA学習</h2>
@@ -81,6 +81,9 @@ href="https://aws.amazon.com/jp/certification/certification-prep/">AWS
 <li>17:コスト管理</li>
 <li>99:その他</li>
 </ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html">対象の
+AWS のサービスと機能</a></li>
 </ul>
 <h3 id="saa勉強メモ">SAA勉強メモ</h3>
 <ul>
@@ -108,12 +111,35 @@ SAA備忘録記事②Auto Scaling 後半</a></li>
 SAA備忘録記事③ハイパフォーマンスコンピューティングとネットワーク基礎</a></li>
 <li><a href="https://qiita.com/saburo555/items/a8f5c72e50540e97b93b">AWS
 SAA備忘録記事④AMI・EBS・ELB等</a></li>
+<li><a href="https://qiita.com/saburo555/items/70cfc653f4456288641e">AWS
+SAA備忘録記事⑤Amazon S3</a></li>
+<li><a href="https://qiita.com/saburo555/items/4d7c3949327ac29b2008">AWS
+SAA備忘録記事⑥RDSとAuroraの基礎と活用法</a></li>
 <li><a href="https://qiita.com/saburo555/items/8176985c22d7bea26db8">AWS
 SAA備忘録記事⑦データベースとデータ分析サービス</a></li>
 <li><a href="https://qiita.com/saburo555/items/ef4fbe9c1b7ff1df0343">AWS
 SAA備忘録記事⑧サーバーレスアーキテクチャとストリーミングサービス</a></li>
 <li><a href="https://qiita.com/saburo555/items/29c4035c0cd690c054b0">AWS
 SAA備忘録記事⑨セキュリティ関連サービスとサーバーレスアーキテクチャ2</a></li>
+</ul></li>
+<li>AWS 認定ソリューションアーキテクト –
+プロフェッショナル資格試験に向けた知識の整理
+<ul>
+<li><a
+href="https://qiita.com/fkooo/items/17fa401f4e46ecd00675">AWS初心者がAWS
+認定ソリューションアーキテクト –
+プロフェッショナル資格試験に合格した時の勉強法</a></li>
+<li><a href="https://qiita.com/fkooo/items/e3c0c9a11d078619cbe0">AWS
+認定ソリューションアーキテクト –
+プロフェッショナル資格試験に向けた知識の整理 プロレベルのTips</a></li>
+<li><a href="https://qiita.com/fkooo/items/a6d71407b2bed42332cc">AWS
+認定ソリューションアーキテクト –
+プロフェッショナル資格試験に向けた知識の整理
+IDフェデレーションとDDoS対策</a></li>
+<li><a href="https://qiita.com/fkooo/items/ae934fe9b1eb2a77f65d">AWS
+認定ソリューションアーキテクト –
+プロフェッショナル資格試験に向けた知識の整理
+IAMポリシーサンプル</a></li>
 </ul></li>
 <li><a
 href="https://qiita.com/IYT-engineer/items/bf231a38edea1d7d6851">AWS
@@ -311,8 +337,8 @@ href="https://note.com/noted_cedum9926/n/n3667cb04931c">AWS未経験者による
 <ul>
 <li>サービス概要</li>
 <li>実装されている機能の詳細</li>
-<li>一緒に利用されるサービス</li>
-<li>ユースケース</li>
+<li>一緒に利用される他のサービス</li>
+<li>代表的なユースケース</li>
 </ul></li>
 </ul>
 <hr />
@@ -535,6 +561,13 @@ Boundary（アクセス許可境界）</h3>
 Management）では、IAMユーザーやIAMロールに対して「ここまでの範囲内であれば自由に操作を行える」という境界を設定できます。<br />
 これを「Permissions Boundary（アクセス許可境界）」と呼びます。<br />
 アクセス許可境界が設定されたユーザーは、境界で許可された範囲とIAMポリシーの両方で許可されている範囲でアクションを行えます。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/access_policies_boundaries.html">IAM
+エンティティのアクセス許可境界</a></li>
+<li><a
+href="https://zenn.dev/shousel/articles/a5a4ce8384d33f">ガードレール：権限の境界（Boundary）とSCP</a></li>
+</ul>
 <h3 id="iam-roles-anywhere">IAM Roles Anywhere</h3>
 <p>オンプレミスのサーバーや他クラウド上のアプリケーションからAWSのリソースにアクセスさせたい場合、IAM
 Roles Anywhereを利用することで、<br />
@@ -690,9 +723,9 @@ Identity Centerを使って複数アカウント管理する</a></li>
 href="https://www.ashisuto.co.jp/db_blog/article/aws-iam-identity-center.html">AWS
 IAM Identity Centerとは？</a></li>
 </ul>
-<h3 id="idpidentity-provider">IdP（Identity Provider）</h3>
-<p>IdP（Identity
-Provider）とは、クラウドサービスや業務アプリケーションへのログインに必要なユーザーの認証情報を管理し、
+<h3 id="identity-provideridp">Identity Provider(IdP)</h3>
+<p>Identity
+Provider(IdP)とは、クラウドサービスや業務アプリケーションへのログインに必要なユーザーの認証情報を管理し、
 SSO（シングルサインオン）を実現するシステムです。ユーザー本人確認を行い、SAMLやOpenID
 Connectを用いて安全なアクセスを提供するため、
 社内IDを一元管理しセキュリティを向上させます。</p>
@@ -711,12 +744,16 @@ Connectを用いて安全なアクセスを提供するため、
 <li><a
 href="https://www.cloudgate.jp/glossary/idp">IdP（アイディーピー）</a></li>
 </ul>
-<h3 id="id-フェデレーションとシングルサインオン">ID
-フェデレーションとシングルサインオン</h3>
+<h3
+id="シングルサインオン実現のためのid-フェデレーション">シングルサインオン実現のためのID
+フェデレーション</h3>
+<p>外部のID管理システムを認証して、AWSのID管理を行う機能です。</p>
 <ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/identity-sso.html">ID
 フェデレーションとシングルサインオン</a></li>
+<li><a
+href="https://qiita.com/fkooo/items/a6d71407b2bed42332cc#id%E3%83%95%E3%82%A7%E3%83%87%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">IDフェデレーション</a></li>
 </ul>
 <h3 id="iamiam-identity-centerorganizations">IAM/IAM Identity
 Center/Organizations</h3>
@@ -759,14 +796,52 @@ href="https://zenn.dev/fusic/articles/1538897dd8f092#assumerole">AssumeRole</a><
 href="https://dev.classmethod.jp/articles/iam-role-passrole-assumerole/">IAM
 ロールの PassRole と AssumeRole
 をもう二度と忘れないために絵を描いてみた</a></li>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_update-role-trust-policy.html">ロール信頼ポリシーを更新する</a></li>
+</ul>
+<h3 id="信頼ポリシーassumerole-iamロール設定">信頼ポリシー(AssumeRole) /
+IAMロール設定</h3>
+<p>STSで権限付与を行うためには、以下IAMユーザとIAMロールが必要になる。<br />
+ロール作成時に「信頼関係」を編集。IAMユーザからのAssume
+Roleを引き受けるために信頼関係を定義します。</p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;: &quot;SampleSid&quot;,
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;AWS&quot;: &quot;arn:aws:iam::&lt;アカウントID&gt;:user/&lt;Assume Role実行するIAMユーザ名&gt;&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+    }
+  ]
+}</code></pre>
+<ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_create_for-custom.html">カスタム信頼ポリシーを使用してロールを作成する</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_update-role-trust-policy.html">ロール信頼ポリシーを更新する</a></li>
+<li><a href="https://qiita.com/fururun02/items/4887b07e8455d482dc9f">AWS
+STSを使ってみる</a></li>
+</ul>
+<h3 id="信頼ポリシーassumerole-s3接続">信頼ポリシー(AssumeRole) /
+S3接続</h3>
+<p>この投稿ではプライベートサブネットのEC2から別AWSアカウント上のS3に対して、VPCエンドポイント（STSおよびS3）を利用して接続することができる。</p>
+<ul>
+<li><a
+href="https://dev.classmethod.jp/articles/sts_s3_vpcendpoint_private/">STSとS3のVPCエンドポイントを利用してプライベートに別アカウントのS3バケットを利用してみる</a></li>
+<li><a
+href="https://blog.future.ad.jp/s3%E3%81%AE%E6%93%8D%E4%BD%9C%E3%81%A7%E3%81%8D%E3%82%8B%E4%B8%80%E6%99%82%E7%9A%84%E3%81%AA%E3%82%AF%E3%83%AC%E3%83%87%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%92%E7%99%BA%E8%A1%8C%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F1">S3の操作できる一時的なクレデンシャルを発行してみた【前編</a></li>
+<li><a
+href="https://qiita.com/youyonghua/items/a1740450d307ec276a57">AWS
+Security Token Service (AWS STS)
+を使用して，一時的な認証情報を発行</a></li>
+<li><a href="https://techblog.goinc.jp/entry/2026/01/28/130754">AWS
+STSのSession
+Tagを使った一時トークンに付与する必要十分なS3権限の動的管理</a></li>
 </ul>
 <h3
-id="信頼ポリシーassumerole-lambda実行ロール">信頼ポリシー(AssumeRole)
-/Lambda実行ロール</h3>
+id="信頼ポリシーassumerole-lambda実行ロール">信頼ポリシー(AssumeRole) /
+Lambda実行ロール</h3>
 <p>以下のようなJSON定義で信頼ポリシーを定義することができます。</p>
 <pre><code>{
   &quot;Version&quot;:&quot;2012-10-17&quot;,
@@ -931,10 +1006,53 @@ KMS の概念</a></li>
 <li><a href="https://qiita.com/naoya_ok/items/811c96a4e86b122f807a">AWS
 KMS</a></li>
 <li><a
+href="https://qiita.com/shihandai/items/f09245648c5519d21fe1">【AWSセキュリティ基礎】AWS
+Key Management Service(KMS)</a></li>
+<li><a
 href="https://dev.classmethod.jp/articles/summary-aws-managed-key-and-customer-managed-key/">AWS
 KMS
 のAWSマネージドキーとカスタマーマネージドキーの違いをまとめてみた</a></li>
 </ul>
+<h3 id="aws-kmsキーポリシー">AWS KMS/キーポリシー</h3>
+<ul>
+<li>キーポリシー設定
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/key-policies.html">AWS
+KMSのキーポリシー</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/key-policy-overview.html">キーポリシーを作成する</a></li>
+<li><a
+href="https://aws.amazon.com/jp/builders-flash/202502/learn-kms-key-policy/">テクニカルインストラクターと学ぶ
+AWS KMS のキーポリシー</a></li>
+<li><a
+href="https://www.securify.jp/blog_cspm/aws-kms-03/">IAMポリシーでのKMSキーの復号化と暗号化アクションの許可設定について</a></li>
+<li><a
+href="https://repost.aws/questions/QUB-u8F6msSBqz5mdMK25D4g/s-3-%E3%83%90%E3%82%B1%E3%83%83%E3%83%88%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%A8kms%E3%82%AD%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%A7%E3%81%AE-principal%E3%81%AE%E5%8A%B9%E6%9E%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6?sc_ichannel=ha&amp;sc_ilang=ja&amp;sc_isite=repost&amp;sc_iplace=hp&amp;sc_icontent=QUB-u8F6msSBqz5mdMK25D4g&amp;sc_ipos=3">S3バケットポリシーとKMSキーポリシーでのPrincipalの効果について</a></li>
+</ul></li>
+<li>デフォルトのキーポリシー
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/key-policy-default.html">デフォルトのキーポリシー</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/create-kms-key-policy-for-cloudtrail.html">CloudTrail
+の AWS KMS キーポリシーを設定する</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/kms-default-key-policy-overview/">デフォルトのキーポリシー</a></li>
+<li><a
+href="https://zenn.dev/m_taiki/articles/77c9542649aca0">KMSのデフォルトのキーポリシーの内容について</a></li>
+</ul></li>
+</ul>
+<p>(デフォルトのキーポリシー)</p>
+<pre><code>{
+  &quot;Sid&quot;: &quot;Enable IAM User Permissions&quot;,
+  &quot;Effect&quot;: &quot;Allow&quot;,
+  &quot;Principal&quot;: {
+    &quot;AWS&quot;: &quot;arn:aws:iam::111122223333:root&quot;
+   },
+  &quot;Action&quot;: &quot;kms:*&quot;,
+  &quot;Resource&quot;: &quot;*&quot;
+}</code></pre>
 <h3 id="aws-kms暗号化ヘルパー">AWS KMS/暗号化ヘルパー</h3>
 <p>暗号化ヘルパーは、Lambda関数で使用する環境変数をAWS
 KMSを使用して暗号化し、実行時に復号して利用するためのツールです。 AWS
@@ -1234,8 +1352,10 @@ Amazon EC2 Auto Scaling について</a></li>
 <li><a
 href="https://www.stylez.co.jp/aws_columns/learn-the-basics-of-aws/autoscaling/">柔軟なリソース増減を実現するAWSのオートスケーリング</a></li>
 </ul>
-<h3 id="amazon-ec2-auto-scaling主なスケーリング基準メトリクス">Amazon
-EC2 Auto Scaling/主なスケーリング基準（メトリクス)</h3>
+<h3
+id="amazon-ec2-auto-scaling主なスケーリング基準スケーリングのトリガーメトリクス">Amazon
+EC2 Auto
+Scaling/主なスケーリング基準（スケーリングのトリガー、メトリクス)</h3>
 <p>以下はEC2インスタンスの集約メトリクスとなります。
 デフォルトで定義されて、グループ内の全EC2インスタンスから集約されたデータに基づいています。
 スケーリングポリシーのトリガーとして一般的に使用されます。</p>
@@ -1275,6 +1395,8 @@ ECSなど）。</li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/autoscaling/ec2/userguide/ec2-auto-scaling-metrics.html#as-group-metrics">Amazon
 EC2 Auto Scaling の Amazon CloudWatch メトリクス</a></li>
+<li><a
+href="https://zenn.dev/osachi/articles/06624a0e7c1260#%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC">スケーリングのトリガー</a></li>
 <li><a
 href="https://qiita.com/hoshi_/items/c5865afd087383c5e649#%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A1%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9">スケーリングに利用できるメトリクス</a></li>
 <li><a
@@ -1603,7 +1725,7 @@ Lambdaとは、Lambda関数からプライベートサブネット内のAWSリ�
 href="https://aws.amazon.com/jp/blogs/news/announcing-improved-vpc-networking-for-aws-lambda-functions/">Lambda
 関数が VPC 環境で改善されます</a></li>
 <li><a
-href="https://qiita.com/aiko-han/items/6b3010250e2887206b4f">AWS】VPC
+href="https://qiita.com/aiko-han/items/6b3010250e2887206b4f">【AWS】VPC
 Lambdaを構築したときのメモ</a></li>
 <li><a
 href="https://qiita.com/Kanahiro/items/f42ebda342673a632abe">LambdaをVPCに配置する・インターネット通信を可能にする・RDSと接続する</a></li>
@@ -3386,8 +3508,8 @@ VPNを利用します。</p>
 Route 53)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-route-53">Amazon Route 53</h3>
-<p>AmazonRoute53は可用性が高くスケーラブルなドメインネームシステムウェブサービス(DNS運用サービス)です。<br />
-ルーティングポリシーの設定やヘルスチェックが可能</p>
+<p>AmazonRoute53とは、可用性が高くスケーラブルなドメインネームシステムウェブサービス(DNS運用サービス)です。<br />
+ルーティングポリシーの設定やヘルスチェックを実行することができます。</p>
 <ul>
 <li><a href="https://aws.amazon.com/jp/route53/">Amazon Route
 53</a></li>
@@ -3397,12 +3519,15 @@ Route 53を整理してみた</a></li>
 <h3
 id="amazonroute53のルーティングポリシー">AmazonRoute53のルーティングポリシー</h3>
 <ul>
+<li>AmazonRoute53のルーティングポリシー
+<ul>
 <li>シンプルルーティング</li>
 <li>加重ルーティング</li>
 <li>位置情報ルーティング</li>
 <li>レイテンシールーティング</li>
 <li>複数値回答ルーティング</li>
 <li>フェイルオーバールーティング</li>
+</ul></li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/routing-policy.html">ルーティングポリシーの選択</a></li>
 <li><a
@@ -3411,14 +3536,21 @@ Route 53 でレイテンシーおよび加重レコードを使用</a></li>
 <li><a
 href="https://qiita.com/hiroaki-u/items/e37e45280446c997b892">Route53を使って、色々なルーティングを試してみた</a></li>
 </ul>
-<h3 id="amazon-route-53-resolverリゾルバ">Amazon Route 53
-Resolver(リゾルバ)</h3>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク10dnsamazon-route-53-resolver">09:ネットワーク/10:DNS(Amazon
+Route 53 Resolver)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="amazon-route-53-resolver">Amazon Route 53 Resolver</h3>
 <p>各アベイラビリティゾーンに組み込まれた AWS 管理の DNS
-サーバーであり、「Amazon DNS サーバー」または「Amazon Provided
+サーバーであり、「Amazon Route 53 Resolver」または「Amazon Provided
 DNS」とも呼ばれます。<br />
-デフォルトでは、VPC 内に起動された EC2 から名前解決を行う際は、VPC の
-CIDR + 2 にプロビジョニングされた Amazon Route 53 Resolver
-を用いるよう設定されています。<br />
+Amazon Route 53
+Resolverは、VPC（仮想ネットワーク）内でDNSサーバーを独自に設定しない場合に、自動的に提供されるAWS既定のDNSサービスです。<br />
+VPC 内に起動された EC2 から名前解決を行う際は、VPC
+CIDRの第4オクテットに「+2」したIP（例:
+10.0.0.2）で、AWS内のプライベートDNSやインターネットの名前解決を行います。
 CIDR が「10.0.0.0/16」の VPC
 なら「10.0.0.2」、「172.31.0.0/16」なら「172.31.0.2」が Amazon Route 53
 Resolver の IP アドレスとなります。</p>
@@ -3432,8 +3564,16 @@ Route53ResolverYouTube</a></li>
 href="https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/resolver.html">Amazon
 Route 53 Resolver</a></li>
 <li><a
+href="https://qiita.com/miyuki_samitani/items/59e9c9ff432a750d728e">Amazon
+Provided DNS (Amazon Route 53 Resolver) とは</a></li>
+<li><a
 href="https://dev.classmethod.jp/articles/amazon-route-53-resolver-dns-check/">Amazon
 Route 53 Resolver DNS を利用した DNS 解決について調べてみた</a></li>
+</ul>
+<h3
+id="amazon-route-53-resolver-インバウンドアウトバウンドエンドポイント">Amazon
+Route 53 Resolver インバウンド/アウトバウンドエンドポイント</h3>
+<ul>
 <li><a href="https://qiita.com/zumax/items/715de9f932f07a7ffceb">Amazon
 Route 53 Resolverを整理してみた</a></li>
 <li><a
@@ -3706,10 +3846,8 @@ href="https://docs.aws.amazon.com/ja_jp/waf/latest/developerguide/classic-web-ac
 <p>AWS Shieldは、DDoS攻撃からの保護に特化したサービスです。<br />
 マネージド DDoS
 保護でアプリケーションの可用性と応答性を最大化します。<br />
-DDos攻撃からELBやCloudFrontを保護。<br />
-無償のStandardと有償で高度な保護を提供するAdvancedがある。<br />
-なお、Shield AdvancedはNLBを保護できますが、API
-Gatewayはサポートしていません。</p>
+DDos攻撃からELBやCloudFrontを保護することができます。<br />
+無償のStandardと有償で高度な保護を提供するAdvancedがあります。</p>
 <ul>
 <li>AWS Shieldの機能
 <ul>
@@ -3730,11 +3868,13 @@ Shield と Shield Advanced の仕組み</a></li>
 href="https://business.ntt-east.co.jp/content/cloudsolution/column-85.html">AWS
 Shieldとは？AWS WAFとの違いやAdvancedの使い方を解説</a></li>
 <li><a
-href="https://www.wafcharm.com/jp/blog/aws-shield-for-beginners/">AWS
+href="https://www.wafcharm.com/jp/blog/aws-shield-for-beginners/">【AWS
 Shield とは？】初心者にもわかりやすく解説</a></li>
 </ul>
 <h3 id="aws-shield-advanced">AWS Shield Advanced</h3>
-<p>DDos攻撃の強化版</p>
+<p>DDos攻撃から防御する強化版のサービスです。<br />
+Shield AdvancedはNLBを保護できますが、API
+Gatewayはサポートしていません。</p>
 <ul>
 <li><a
 href="https://awsjp.com/AWS/hikaku/AWS-Shield-Standard-Advanced-hikaku.html">AWS
@@ -3893,9 +4033,35 @@ href="https://qiita.com/leomarokun/items/41cbe8aa7c32298ec665">AWS Code
 href="https://zenn.dev/issy/articles/zenn-codexx-overview">AWSCode兄弟入門！完全ガイド</a></li>
 </ul>
 <h3 id="aws-codecommit">AWS CodeCommit</h3>
+<ul>
+<li><a
+href="https://qiita.com/hiohio25/items/e5cf9e495e178e4532ce#aws-codecommit">AWS
+CodeCommit</a></li>
+</ul>
 <h3 id="aws-codebuild">AWS CodeBuild</h3>
+<ul>
+<li><a
+href="https://qiita.com/hiohio25/items/e5cf9e495e178e4532ce#aws-codebuild">AWS
+CodeBuild</a></li>
+</ul>
 <h3 id="aws-codedeploy">AWS CodeDeploy</h3>
+<ul>
+<li><a
+href="https://qiita.com/hiohio25/items/e5cf9e495e178e4532ce#aws-codedeploy">AWS
+CodeDeploy</a></li>
+</ul>
 <h3 id="aws-codepipeline">AWS CodePipeline</h3>
+<ul>
+<li><a
+href="https://qiita.com/hiohio25/items/e5cf9e495e178e4532ce#aws-codepipeline">AWS
+CodePipeline</a></li>
+</ul>
+<h3 id="aws-ブルーグリーンデプロイ">AWS ブルーグリーンデプロイ</h3>
+<ul>
+<li><a
+href="https://qiita.com/dennis_wang/items/cfb5050c8761e8cf8293">RDS
+Blue/Green Deployment完全解説：ダウンタイムゼロへの挑戦</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -3962,6 +4128,8 @@ SCPを用いると、例えばテスト用のアカウント（群）は特定�
 <ul>
 <li><a
 href="https://qiita.com/kiton/items/d05622ce1a3972fe52df#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BCscp">サービスコントロールポリシー(SCP)</a></li>
+<li><a
+href="https://qiita.com/mzmz__02/items/8ad282f8e8ef091c8e66">【AWS】SCPとは？(SCPとIAMの違い)</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/organizations-scp-inheritance/">SCP(サービスコントロールポリシー)の継承の仕組みを学ぼう</a></li>
 </ul>
@@ -4196,6 +4364,19 @@ DBクラスターの削除保護が有効になっているかをチェックし
 <li><a
 href="https://dev.classmethod.jp/articles/introduction-2024-aws-config/">AWS入門ブログリレー2024
 AWS Config編</a></li>
+<li><a
+href="https://business.ntt-east.co.jp/content/cloudsolution/column-try-26.html">AWSリソースの設定変更履歴を管理する「AWS
+Config」とは？実際に使用してみた</a></li>
+</ul>
+<h3 id="aws-config非準拠設定の検知">AWS Config/非準拠設定の検知</h3>
+<p>Configのルールを設定することにより、様々なリソースの設定状況を監査します。<br />
+AWSリソースに対してコンプライアンスに反した設定がされたまま運用されていないかをチェックできます。<br />
+指定したリソースに変更があったタイミングでAmazon
+SNSによる通知を受け取ることもできます。</p>
+<ul>
+<li><a
+href="https://qiita.com/T-Hashi-moto/items/e6a04651ee0fec003844">AWS
+Config の非準拠判定を通知する方法 5 選</a></li>
 </ul>
 <h3 id="aws-config記録モード">AWS Config/記録モード</h3>
 <p>AWS Config
@@ -4307,6 +4488,8 @@ Automationは、AWSリソースへの操作をランブックに従って自動�
 <h3 id="amazon-kinesis">Amazon Kinesis</h3>
 <p>ストリーミングデータをリアルタイムで収集・処理・分析するサービスです。</p>
 <ul>
+<li>概要資料
+<ul>
 <li><a
 href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=78">Amazon
 Kinesis の概要と試験出題ポイント - aws-exam.net</a></li>
@@ -4317,13 +4500,17 @@ href="https://dimzakki.com/aws-saa-measures/#kinesis">Kinesis</a></li>
 <li><a
 href="https://in-housese.hatenablog.com/entry/2021/08/14/082657">SAA学習-データベース-Kinesisの概要</a></li>
 <li><a
-href="https://qiita.com/sigmalist/items/73d3feeb6e0f5905ed64">AWSでストリームデータを扱うためのメッセージングサービス一覧</a></li>
-<li><a href="https://r-mutax.hateblo.jp/entry/2023/05/03/202321">Amazon
-Kinesis Data StreamsとAmazon Kinesis Data Firehoseの違い</a></li>
-<li><a
 href="https://qiita.com/kkk5713/items/2c275dbec36e429561b1">【SAA資格勉強】Kinesisについて</a></li>
 <li><a
 href="https://zenn.dev/5991/articles/79aaf5e7bef7dc#%E5%88%86%E6%9E%90">分析</a></li>
+</ul></li>
+<li>機能比較
+<ul>
+<li><a
+href="https://qiita.com/sigmalist/items/73d3feeb6e0f5905ed64">AWSでストリームデータを扱うためのメッセージングサービス一覧</a></li>
+<li><a href="https://r-mutax.hateblo.jp/entry/2023/05/03/202321">Amazon
+Kinesis Data StreamsとAmazon Kinesis Data Firehoseの違い</a></li>
+</ul></li>
 </ul>
 <h3 id="amazon-kinesis-data-streams">Amazon Kinesis Data Streams</h3>
 <p>ストリーミングデータを収集するサービスです。</p>
@@ -4476,6 +4663,43 @@ ETL：押さえておくべき全貌</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="分析lake-formation">14:分析/Lake Formation</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-lake-formation">AWS Lake Formation</h3>
+<p>AWS Lake
+Formationは、データレイクを構築することができるマネージドなAWSサービスです。<br />
+セキュアで効率的なデータレイクの作成、カタログ化、検索、セキュリティ、監査のプロセスを簡単化することができます。</p>
+<ul>
+<li>AWS Lake Formationの機能
+<ul>
+<li>データレイクの構築</li>
+<li>データカタログの作成</li>
+<li>データのインポートとエクスポート</li>
+<li>データアクセス制御</li>
+<li>データセキュリティ</li>
+</ul></li>
+<li><a href="https://docs.aws.amazon.com/ja_jp/lake-formation/">AWS Lake
+Formation のドキュメント</a></li>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=218">AWS
+Lake Formation の概要と試験出題ポイントは？</a></li>
+<li><a
+href="https://zenn.dev/osachi/articles/06624a0e7c1260#aws-lake-formation">AWS
+Lake Formation</a></li>
+</ul>
+<h3 id="aws-lake-formationでのアクセス制御">AWS Lake
+Formationでのアクセス制御</h3>
+<p>Lake
+Formationでのアクセス制御の方法には「名前付きリソースでのアクセスコントロール」と「タグ（LFタグ）ベースのアクセスコントロール」の2種類があります。</p>
+<ul>
+<li>アクセス制御
+<ul>
+<li>名前付きリソースでのアクセスコントロール</li>
+<li>タグ（LFタグ）ベースのアクセスコントロール</li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="分析可視化表示ツール">14:分析/可視化・表示ツール</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-athena">AWS Athena</h3>
@@ -4512,7 +4736,7 @@ QuickSightとは｜AWS認定試験対策</a></li>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-emr-elastic-mapreduce">Amazon EMR (Elastic
 MapReduce)</h3>
-<p>ビッグデータの処理や分析を行う．HadoopやSparkを利用するサービスです。<br />
+<p>ビッグデータの処理や分析を行うHadoopやSparkを利用するサービスです。<br />
 ファイルシステムとしてHDFS(一時的)とEMRFS(S3連携可)を利用することができます。</p>
 <ul>
 <li><a href="https://qiita.com/Shmwa2/items/c1888b99dd8043b47a08">Amazon
@@ -4532,19 +4756,6 @@ href="https://docs.aws.amazon.com/ja_jp/emr/latest/ManagementGuide/emr-steps-run
 EMR ステップのランタイムロール</a></li>
 </ul>
 <h3 id="amazon-emr暗号化転送">Amazon EMR/暗号化転送</h3>
-<h3 id="aws-lake-formation">AWS Lake Formation</h3>
-<p>データレイクを構築することができるマネージドサービスです。</p>
-<h3 id="aws-lake-formationでのアクセス制御">AWS Lake
-Formationでのアクセス制御</h3>
-<p>Lake
-Formationでのアクセス制御の方法には「名前付きリソースでのアクセスコントロール」と「タグ（LFタグ）ベースのアクセスコントロール」の2種類があります。</p>
-<ul>
-<li>アクセス制御
-<ul>
-<li>名前付きリソースでのアクセスコントロール</li>
-<li>タグ（LFタグ）ベースのアクセスコントロール</li>
-</ul></li>
-</ul>
 <h3 id="amazon-datazone">Amazon DataZone</h3>
 <p>Amazon
 DataZoneは、AWS、オンプレミス、サードパーティーに分散されたデータを一元的にカタログ化し、検索・共有・管理を効率化するサービスです。<br />
