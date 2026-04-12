@@ -507,7 +507,7 @@ href="https://note.com/sennai/n/n507585c1262f">ルーティングプロトコル
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ルーティングbgpbgp-4概要">ルーティング/BGP(BGP-4)/概要</h2>
+<h2 id="bgpbgp-4概要">BGP(BGP-4)/概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="bgp-border-gateway-protocol概要">BGP (Border Gateway
 Protocol)/概要</h3>
@@ -518,13 +518,13 @@ Protocol)/概要</h3>
 <ul>
 <li><a
 href="https://www.nic.ad.jp/ja/newsletter/No35/0800.html">インターネット10分講座：BGP</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz01.html">BGP ( Border
+Gateway Protocol )</a></li>
 <li><a
 href="https://nw.seeeko.com/archives/bgp">BGPに関する用語/SE娘の剣</a></li>
 <li><a
 href="https://www.allied-telesis.co.jp/support/list/switch/x900_sb900/doc/v532_docs/overview-35.html">IPルーティング
 / 経路制御(BGP)</a></li>
-<li><a href="https://www.infraexpert.com/study/bgpz01.html">BGP ( Border
-Gateway Protocol )</a></li>
 <li><a href="https://net-skills.net/intro-menu4/bgp/">BGP とは</a></li>
 <li><a
 href="https://www.nw-siken.com/kakomon/06_haru/am2_1.html">NWスぺ令和06年春期午前2問01</a></li>
@@ -589,8 +589,7 @@ href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律シス�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="ルーティングbgpbgp-4パス属性">ルーティング/BGP(BGP-4)/パス属性</h2>
+<h2 id="bgpbgp-4パス属性">BGP(BGP-4)/パス属性</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="bgpパスアトリビュートパス属性">BGP/パスアトリビュート(パス属性)</h3>
@@ -636,13 +635,13 @@ PATH Prepend、Local-Preference）</a></li>
 href="https://qiita.com/coco0922/items/7584d0f683e1275350b3">BGPの冗長構成（MED、Local-Preference）</a></li>
 <li>各製品のLOCAL_PREF設定
 <ul>
-<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
-LOCAL_PREF - Cisco Config</a></li>
-<li>[JUNOS -
-LOCAL_PREF](https://www.infraexpert.com/infra/junosb06.html</li>
 <li><a
 href="https://www.furukawa.co.jp/fitelnet/f/man/60/command-config/route-map/set_local-preference.htm">set
 local-preference</a></li>
+<li><a href="https://www.infraexpert.com/study/bgpz23.html">BGP
+LOCAL_PREF - Cisco Config</a></li>
+<li><a href="https://www.infraexpert.com/infra/junosb06.html">JUNOS -
+LOCAL_PREF</a></li>
 </ul></li>
 </ul>
 <h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
@@ -663,7 +662,7 @@ Router で AS PATH Prepend を実装する</a></li>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ルーティングbgpbgp-4ルートフィルタリング">ルーティング/BGP(BGP-4)/ルートフィルタリング</h2>
+id="bgpbgp-4ルートフィルタリング">BGP(BGP-4)/ルートフィルタリング</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="bgpルートフィルタリング">BGP/ルートフィルタリング</h3>
 <p>BGPフィルタは、ルータがBGP経路情報を受信・送信する際に、特定の条件に基づいて経路を許可または拒否する設定です。<br />
@@ -680,16 +679,16 @@ id="bgpルートフィルタリングの種類">BGP/ルートフィルタリン�
 <li>filter-list(AS_PATH ACL)</li>
 <li>route-map</li>
 </ul></li>
-<li><a
-href="https://www.n-study.com/bgp-detail/bgp-route-filter-overview/">BGPルートフィルタの種類</a></li>
-<li><a
-href="https://qiita.com/youyonghua/items/ff408470c51d2c8753b4">BGPフィルタメモ</a></li>
 <li><a href="https://www.infraexpert.com/study/bgpz30.html">BGP - Route
 Filtering</a></li>
 <li><a href="https://www.infraexpert.com/study/routecontrol07.html">ip
 prefix-list</a></li>
 <li><a href="https://www.infraexpert.com/study/bgpz31.html">BGP - ip
 as-path access-list</a></li>
+<li><a
+href="https://www.n-study.com/bgp-detail/bgp-route-filter-overview/">BGPルートフィルタの種類</a></li>
+<li><a
+href="https://qiita.com/youyonghua/items/ff408470c51d2c8753b4">BGPフィルタメモ</a></li>
 </ul>
 <h3
 id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
@@ -702,18 +701,17 @@ href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタ�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="ルーティングbgpbgp-4その他機能">ルーティング/BGP(BGP-4)/その他機能</h2>
+<h2 id="bgpbgp-4その他機能">BGP(BGP-4)/その他機能</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="bgpルート集約経路集約">BGP/ルート集約(経路集約)</h3>
 <p>BGPでは、複数の経路情報を一つの経路に集約することが可能です。<br />
 この機能により、ルート情報の管理が簡素化され、ルーティングテーブルの規模を縮小できます。</p>
 <ul>
 <li><a
-href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/5441-aggregation.html">BGPでのルート集約について</a></li>
-<li><a
 href="https://www.infraexpert.com/study/bgpz24.html">BGPルート集約 -
 aggregate-addressコマンド</a></li>
+<li><a
+href="https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/5441-aggregation.html">BGPでのルート集約について</a></li>
 <li><a
 href="https://hirotanoblog.com/bgp-aggregate-address/2580/">BGPにおける経路集約（aggregate-address）を徹底解説　Ciscoルータ</a></li>
 <li><a href="https://y-network.jp/2020/08/23/nsx-t-024/">NSX-T BGP
@@ -809,10 +807,18 @@ href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾー
 </ul>
 <h3 id="dnsリゾルバ">DNSリゾルバ</h3>
 <ul>
-<li><a
-href="https://e-words.jp/w/%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90.html">リゾルバ</a></li>
+<li>スタブリゾルバ
+<ul>
+<li>DNSリクエストを送信するだけのクライアントPC、またはDNSサーバ</li>
+</ul></li>
+<li>フルサービスリゾルバ
+<ul>
+<li>スタブリゾルバからの再帰問い合わせ（Recursive）を受けて、反復問い合わせ（Iterative）によって完全にDNS解決を行えるDNSサーバ</li>
+</ul></li>
 <li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
 resolver</a></li>
+<li><a
+href="https://e-words.jp/w/%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90.html">リゾルバ</a></li>
 <li><a
 href="https://www.nw-siken.com/kakomon/24_aki/am2_9.html">NWスぺ平成24年秋期午前2問07</a></li>
 </ul>
@@ -916,7 +922,8 @@ href="https://www.nw-siken.com/kakomon/05_haru/am2_18.html">NWスぺ令和05年�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="負荷分散装置lbload-balancer">負荷分散装置（LB:Load
+<h2
+id="レイヤ7負荷分散装置lbload-balancer">レイヤ7/負荷分散装置（LB:Load
 Balancer）</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="lb概要">LB概要</h3>
@@ -992,7 +999,7 @@ href="https://www.nw-siken.com/kakomon/07_haru/am2_5.html">NWスぺ令和07年�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="wan概要">WAN/概要</h2>
+<h2 id="wan広域ネットワーク概要">WAN・広域ネットワーク/概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="広域イーサネットwide-ethernetとip-vpnの違い">広域イーサネット(Wide
@@ -1020,9 +1027,46 @@ Wide Ethernet</a></li>
 href="https://network.yamaha.com/setting/router_firewall/other_operation/closed_area/usage">広域イーサネット網とインターネットVPNを併用
 : コマンド設定</a></li>
 </ul>
+<h3 id="cdncontents-delivery-network">CDN(Contents Delivery
+Network)</h3>
+<p>CDN(Contents Delivery
+Network)は、Webサイトの画像・動画などのコンテンツを地理的に分散したキャッシュサーバーに保存し、ユーザーに最も近いサーバーから高速・安定的に配信するネットワークです。<br />
+主なメリットは、表示速度向上、サーバー負荷軽減、セキュリティ（DDoS対策）の強化です。</p>
+<ul>
+<li>CDNの仕組みとメリット
+<ul>
+<li>高速配信:
+ユーザーの近くのサーバー（エッジサーバー）からデータを配信するため、物理的な距離を短縮し、Webサイトの表示速度を向上させます。</li>
+<li>サーバー負荷の削減:
+オリジンサーバー（元となるサーバー）へのアクセスを大幅に軽減し、大規模なアクセス集中でもサーバーダウンを防ぎます。</li>
+<li>セキュリティ向上:
+DDoS攻撃などの悪意のあるトラフィックを分散・吸収し、サイトを守ります</li>
+</ul></li>
+<li>主なCDNサービス
+<ul>
+<li>Cloudflare:
+高いシェアを持ち、無料プランから強固なセキュリティ機能を提供します。</li>
+<li>Amazon CloudFront: AWS（Amazon Web
+Services）環境との連携に強みがあります。</li>
+<li>Akamai:
+大規模・高性能で、世界最大規模のネットワークを持っています。</li>
+<li>Fastly: 高速なキャッシュ更新と細かい制御が特徴です</li>
+</ul></li>
+<li><a
+href="https://business.ntt-east.co.jp/content/cloudsolution/column-505.htm">CDNとは？意味や仕組み、メリットをわかりやすく解説</a></li>
+<li><a
+href="https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%83%87%E3%83%AA%E3%83%90%E3%83%AA%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF">コンテンツデリバリネットワーク</a></li>
+<li><a href="https://nw.seeeko.com/archives/cdn">CDN(Contents Delivery
+Network)</a></li>
+<li><a href="https://aws.amazon.com/jp/what-is/cdn/">CDN
+(コンテンツ配信ネットワーク) とは何ですか?</a></li>
+<li><a
+href="https://aolaniengineer.hatenablog.com/entry/nw_h29_a_pm_2_1_3">DNS（ゾーンファイル、CNAME）、CDN【ネットワークスペシャリスト試験
+平成29年度 秋期 午後2 問1 設問3】</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="wanip-vpn">WAN/IP-VPN</h2>
+<h2 id="wan広域ネットワークip-vpn">WAN・広域ネットワーク/IP-VPN</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="mpls">MPLS</h3>
 <ul>
