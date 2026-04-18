@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/06/08 09:50:02<br />
-更新日：2026/04/05 21:44:35</p>
+更新日：2026/04/18 22:18:44</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="saa学習">SAA学習</h2>
@@ -87,7 +87,7 @@ AWS のサービスと機能</a></li>
 </ul>
 <h3 id="saa勉強メモ">SAA勉強メモ</h3>
 <ul>
-<li>Qiita
+<li>Qiita/学習メモ総合
 <ul>
 <li>AWS SAA 受験に向けた学習メモ
 <ul>
@@ -168,6 +168,12 @@ href="https://qiita.com/Yu-kiFujiwara/items/fb582c5aab675558e677">AWS
 <li><a
 href="https://qiita.com/riekure/items/344b2d819b719cbfddb4">表で対策するAWS
 認定ソリューションアーキテクト - アソシエイト(SAA)</a></li>
+</ul></li>
+<li>Qiita/学習メモ
+<ul>
+<li><a
+href="https://qiita.com/railgun-0402/items/79c7cf6b7b9edf9cf6e3">【メモ】AWS
+SAA-C03におけるメモ</a></li>
 </ul></li>
 <li>zenn.dev
 <ul>
@@ -329,7 +335,8 @@ href="https://qiita.com/wiskerpaddy/items/b543212dca665ea09010">AWS SAA
 href="https://note.com/noted_cedum9926/n/n3667cb04931c">AWS未経験者によるSAA-C03試験の合格体験記録（26年2月）</a></li>
 </ul></li>
 </ul>
-<h3 id="個人で思うこと">個人で思うこと</h3>
+<h3
+id="aws資格を学習する際に思うところ">AWS資格を学習する際に思うところ</h3>
 <p>AWSの各機能を学習する場合には、以下の点を記載するようにしています。<br />
 その他AWS資格でも同様の学習が必要と思われます。</p>
 <ul>
@@ -483,7 +490,7 @@ IAMとは｜AWS認定試験対策</a></li>
 href="https://qiita.com/sakai00kou/items/a4b96dcfa6bb3e656cd9">インスタンスプロファイルを理解するついでにポリシーとロールを整理する</a></li>
 </ul>
 <h3 id="iam-に関する用語の定義">IAM に関する用語の定義</h3>
-<p>AWS IAM には、以下の用語が定義されている。</p>
+<p>AWS IAM には、以下の用語が定義されています。</p>
 <ul>
 <li>IAM リソース
 <ul>
@@ -547,13 +554,104 @@ href="https://www.brainpad.co.jp/doors/contents/01_tech_2022-10-13-153000/">AWS�
 <h3 id="iamポリシーiamポリシーの種別">IAMポリシー/IAMポリシーの種別</h3>
 <ul>
 <li>IAMポリシーの種別
+<ol type="1">
+<li>管理ポリシー
 <ul>
 <li>AWS管理ポリシー</li>
-<li>カスタマー管理ポリシー</li>
-<li>インラインポリシー</li>
+<li>カスタマー管理ポリシー(マネージドポリシー)</li>
 </ul></li>
+<li>インラインポリシー</li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">管理ポリシーとインラインポリシー</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/access_policies-choosing-managed-or-inline.html">管理ポリシーとインラインポリシーのいずれかを選択する</a></li>
+<li><a
+href="https://qiita.com/hoshi_/items/dd0073c9000a8c230a93#iam%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">IAMポリシー</a></li>
+<li><a
+href="https://qiita.com/miyuki_samitani/items/74c34ab5e98e2cd7e713">IAMの管理ポリシーとインラインポリシー</a></li>
 <li><a
 href="https://qiita.com/Batchi/items/a2dde3d2df27568cc078">管理ポリシーとインラインポリシーの違いが分からなかったので改めてIAMポリシーのお勉強をする</a></li>
+<li><a
+href="https://qiita.com/tireidev/items/7b2fd523218b461de7db">【AWS
+IAM】管理ポリシーとインラインポリシーの違いについて</a></li>
+<li><a
+href="https://note.com/koguma_gunso/n/n9f81a94a90b2">ぜんぜんわからなかったIAMについてまとめてみました</a></li>
+</ul>
+<p>(IAMポリシーの種別)</p>
+<table>
+<thead>
+<tr>
+<th>種別</th>
+<th>インラインポリシー</th>
+<th>マネージドポリシー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>再利用</td>
+<td>不可（1つのID専用）</td>
+<td>可能（複数のIDにアタッチ可）</td>
+</tr>
+<tr>
+<td>削除時の挙動</td>
+<td>IDと一緒に消える</td>
+<td>ポリシー単体で残る</td>
+</tr>
+<tr>
+<td>バージョン管理</td>
+<td>非対応</td>
+<td>対応（過去5世代など）</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="iamポリシーインラインポリシー">IAMポリシー/インラインポリシー</h3>
+<p>AWSのインラインポリシーとは、特定の(1つの)IAMアイデンティティ（ユーザー、グループ、ロール）に直接埋め込まれる固有のポリシーです。<br />
+インラインポリシーは、以下のような限定的な場合で使用します。</p>
+<ul>
+<li>主な特徴
+<ul>
+<li>1対1の厳密な関係
+<ul>
+<li>ポリシーとそのIDが密接に結合しており、そのIDを削除するとポリシーも自動的に削除されます</li>
+</ul></li>
+<li>共有不可
+<ul>
+<li>独立したエンティティではないため、他のユーザーやロールに同じポリシーを使い回す（アタッチする）ことはできません</li>
+</ul></li>
+<li>管理コスト
+<ul>
+<li>ポリシーの内容を更新する場合、埋め込まれているすべての箇所を個別に編集する必要があります</li>
+</ul></li>
+</ul></li>
+<li>ユースケース
+<ul>
+<li>誤用防止
+<ul>
+<li>そのID以外に絶対に適用させたくない、非常に限定的で機密性の高い権限を定義する場合</li>
+</ul></li>
+<li>意図しない削除の回避
+<ul>
+<li>IDを削除した際に、ポリシーだけが「ゴミ」として残るのを防ぎたい場合</li>
+</ul></li>
+<li>テスト用
+<ul>
+<li>一時的な検証目的で、特定のユーザーにのみパッチ的に権限を与えたい場合</li>
+</ul></li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/access-keys_inline-policy.html">インラインポリシーを
+IAM ユーザーにアタッチしてアクセスキーの使用を制御する</a></li>
+<li><a
+href="http://prototype-handson-cli.s3-website-ap-northeast-1.amazonaws.com/handson_light-aws_service/handson_light-aws_service-iam_user/iam-user-update-expand-policy-attach-inline-basic_user.html">4.1.4.
+IAMユーザーのインラインポリシー作成
+(handson-cli-iam-user-basic_user-user)</a></li>
+<li><a
+href="http://prototype-handson-cli.s3-website-ap-northeast-1.amazonaws.com/handson_light-aws_service/handson_light-aws_service-iam_role/iam-role-update-expand-policy-attach-inline-basic_role.html">2.4.
+IAMロールのインラインポリシー作成 (handson-cli-iam-role-role)</a></li>
+<li><a
+href="https://www.capybara-engineer.com/entry/2021/01/06/150959">インラインポリシーがアタッチされたIAMグループをCloudformationで作成する</a></li>
 </ul>
 <h3 id="permissions-boundaryアクセス許可境界">Permissions
 Boundary（アクセス許可境界）</h3>
@@ -609,8 +707,9 @@ href="https://qiita.com/shota_hagiwara/items/e9cf6413c5c99335e658">【AWS】ア�
 <li><a href="https://qiita.com/wildmouse/items/d6b86ca560827d96609a">AWS
 IAMポリシーのJSONに入ってるVersionって何なの？</a></li>
 </ul>
-<h3 id="amazon-リソースネームarn">Amazon リソースネーム(ARN)</h3>
-<p>リソースを特定するための文字列。<br />
+<h3 id="amazon-resource-namearn">Amazon Resource Name(ARN)</h3>
+<p>Amazon Resource
+Name(ARN)とは、AWSの中でリソースを一意に特定するための文字列です。ログ調査を行う場合に使用します。<br />
 次の例ではアカウント 123456789012 のすべてのリージョンにおけるすべての
 Amazon VPC と一致します。</p>
 <pre><code>arn:aws:ec2:*:123456789012:vpc/*</code></pre>
@@ -634,8 +733,9 @@ EC2インスタンスのリソースネーム（arn）の割り出し方</a></li
   &quot;Version&quot;:&quot;2012-10-17&quot;,
   &quot;Statement&quot;: [
     {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: &quot;s3:ListAllMyBuckets&quot;,
+      &quot;Sid&quot;:      &quot;ExampleStatementID&quot;,
+      &quot;Effect&quot;:   &quot;Allow&quot;,
+      &quot;Action&quot;:   &quot;s3:ListAllMyBuckets&quot;,
       &quot;Resource&quot;: &quot;*&quot;
     }
   ]
@@ -660,45 +760,10 @@ href="https://docs.aws.amazon.com/ja_jp/privateca/latest/userguide/pca-rbp.html"
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">リソースベースのポリシー</a></li>
 </ul>
-<h3 id="iam-json-ポリシー書式s3バケットポリシー">IAM JSON
-ポリシー書式/S3バケットポリシー</h3>
-<ul>
-<li><a
-href="https://qiita.com/irico/items/a3ab1f8ebf1ece9cc783">S3のバケットポリシー書き方まとめ</a></li>
-</ul>
-<h3
-id="iam-json-ポリシー書式s3バケットポリシーawsprincipalorgidグローバル条件キー">IAM
-JSON
-ポリシー書式/S3バケットポリシー”aws:PrincipalOrgID”グローバル条件キー</h3>
-<p>AWS
-Organizationsの許可をあたる場合には、“aws:PrincipalOrgID”の「グローバル条件キー」を追加する</p>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/reference_policies_condition-keys.html">AWS
-グローバル条件コンテキストキー</a></li>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/security_iam_service-with-iam.html">IAM
-と AWS Organizations 連携方法</a></li>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_permissions_overview.html">AWS
-Organizationsを使用した組織のアクセス許可の管理</a></li>
-<li><a
-href="https://qiita.com/tsukamoto/items/97703adecae8c692ddb9#organizations%E5%86%85%E3%81%AE%E5%85%A8aws%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E8%A8%B1%E5%8F%AF">Organizations内の全AWSアカウントにアクセス許可</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティiam関連ツール">03:セキュリティ/IAM関連ツール</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3
-id="iamデータベース認証iam-database-authentication">IAMデータベース認証(IAM
-Database Authentication)</h3>
-<p>IAMデータベース認証（IAM Database Authentication） は、Amazon RDS や
-Amazon Aurora
-に接続する際に、IAMの認証情報（トークン）を使ってログインできる仕組み</p>
-<ul>
-<li><a
-href="https://qiita.com/youyonghua/items/833ad02e91abc4daa76f">IAMデータベース認証</a></li>
-</ul>
 <h3 id="aws-iam-identity-center">AWS IAM Identity Center</h3>
 <p>AWS IAM Identity Center(旧AWS Single
 Sign-on)とは、AWSのIDアクセス管理サービスとなります。<br />
@@ -744,17 +809,33 @@ Connectを用いて安全なアクセスを提供するため、
 <li><a
 href="https://www.cloudgate.jp/glossary/idp">IdP（アイディーピー）</a></li>
 </ul>
-<h3
-id="シングルサインオン実現のためのid-フェデレーション">シングルサインオン実現のためのID
-フェデレーション</h3>
-<p>外部のID管理システムを認証して、AWSのID管理を行う機能です。</p>
+<h3 id="aws-iam-identity-centerid-フェデレーション">AWS IAM Identity
+Center/ID フェデレーション</h3>
+<p>IDフェデレーションとは、異なるセキュリティドメイン間でユーザーIDと認証情報を共有する仕組みです。<br />
+IDフェデレーションを行うことで、シングルサインオン(SSO)を実現することができます。<br />
+この場合、企業がすでに利用しているActive Directory、Azure AD、Okta、Ping
+IdentityなどのIdPとAWSの間で信頼関係を確立し、
+IdPで認証されたユーザーがAWSリソースにアクセスできるようにします。</p>
 <ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_common-scenarios_federated-users.html">外部で認証されたユーザーへのアクセス
+(ID フェデレーション)</a></li>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/identity-sso.html">ID
 フェデレーションとシングルサインオン</a></li>
 <li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_providers.html">ID
+プロバイダーと AWS とのフェデレーション</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_providers_saml.html">SAML
+2.0 フェデレーション</a></li>
+<li><a
 href="https://qiita.com/fkooo/items/a6d71407b2bed42332cc#id%E3%83%95%E3%82%A7%E3%83%87%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">IDフェデレーション</a></li>
+<li><a
+href="https://qiita.com/munehige/items/2185756b74a1661415b8">AWSへのSSOとは</a></li>
 </ul>
+<p>(SAML ベースのフェデレーションを使用した AWS への API アクセス)</p>
+<p><img src="img/aws_saa/saml-based-federation-diagram.png" width="75%" height="75%"><br /></p>
 <h3 id="iamiam-identity-centerorganizations">IAM/IAM Identity
 Center/Organizations</h3>
 <ul>
@@ -771,6 +852,99 @@ Access Analyzer</a></li>
 href="https://blog.serverworks.co.jp/tech/2020/07/01/iam_access_analyzer-2/">AWS
 IAM Access Analyzer を設定しよう</a></li>
 </ul>
+<h3 id="aws-directory-service">AWS Directory Service</h3>
+<p>AWS上でMicrosoftのADを提供する．Windowsインスタンス群を管理することができます。</p>
+<ul>
+<li>3つのタイプ
+<ul>
+<li>Simple AD</li>
+<li>AD Connector</li>
+<li>AWS Managed Microsoft AD</li>
+</ul></li>
+</ul>
+<h3
+id="iamデータベース認証iam-database-authentication">IAMデータベース認証(IAM
+Database Authentication)</h3>
+<p>IAMデータベース認証（IAM Database Authentication） は、Amazon RDS や
+Amazon Aurora
+に接続する際に、IAMの認証情報（トークン）を使ってログインできる仕組み</p>
+<ul>
+<li><a
+href="https://qiita.com/youyonghua/items/833ad02e91abc4daa76f">IAMデータベース認証</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="セキュリティid認証管理">03:セキュリティ/ID認証管理</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="amazon-cognito">Amazon Cognito</h3>
+<p>Amazon
+Cognitoは、アプリケーション開発者が、独自のIDプロバイダやソーシャルIDプロバイダを使用してユーザー認証・認可を提供できるサービスです。<br />
+Cognitoは、簡単な設定で、モバイルやWebアプリ向けのユーザー認証機能を提供します。<br />
+Cognitoは主に「ユーザープール」と「IDプール」の2つのコンポーネントで構成されます。</p>
+<ul>
+<li>ユーザプール
+<ul>
+<li>ユーザディレクトリの提供</li>
+<li>アプリユーザのサインアップ、サインインオプションの提供</li>
+</ul></li>
+<li>IDプール
+<ul>
+<li>AWSの他のサービスに対するアクセスをユーザに許可しています。</li>
+</ul></li>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=38">Amazon
+Cognito の概要と試験出題ポイントは？</a></li>
+<li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
+Cognitoを試してみた（ユーザプール編）</a></li>
+</ul>
+<h3 id="amazon-cognitoユーザープール">Amazon Cognito/ユーザープール</h3>
+<p>ユーザープールは、Amazon Cognito
+内部のユーザーディレクトリです。<br />
+ユーザープールを使用することで、ユーザーはウェブまたはモバイルアプリに
+Amazon Cognito 経由でサインインする、 またはサードパーティー ID
+プロバイダー (IdP) 経由でフェデレートすることができます。<br />
+ユーザープールは次の機能を提供します。</p>
+<ul>
+<li>ユーザープール機能
+<ul>
+<li>サインアップおよびサインイン。</li>
+<li>ユーザーをサインインするためのカスタマイズ可能な組み込みWeb
+UIの提供</li>
+<li>Facebook、Google でのソーシャルサインイン、Login with Amazon、Sign
+in with Apple、ユーザープールからの SAML および OIDC ID
+プロバイダー経由のサインイン。</li>
+<li>ユーザーディレクトリとユーザープロファイルの管理。</li>
+<li>多要素認証 (MFA)
+などのセキュリティ機能、漏洩した認証情報のチェック、アカウントの乗っ取りからの保護、電話とEメールによる検証。</li>
+<li>カスタマイズされたワークフローと AWS Lambda
+トリガーによるユーザー移行。</li>
+</ul></li>
+<li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
+Cognitoを試してみた（ユーザプール編）</a></li>
+</ul>
+<h3
+id="amazon-cognitoamazon-cognitoユーザープールapi-gatewayオーソライザー利用">Amazon
+Cognito/Amazon Cognitoユーザープール(API Gatewayオーソライザー利用)</h3>
+<p>Amazon Cognitoユーザープールを使用して、API
+GatewayのAPIにアクセスできるユーザを制御することができます。<br />
+API Gatewayで、以下の設定が必要となります。</p>
+<ul>
+<li>Amazon Cognitoユーザープールを利用するための手順
+<ul>
+<li>COGNITO_USER_POOLタイプのオーソライザを作成</li>
+<li>そのオーソライザーを使用するAPIメソッドを構成する</li>
+</ul></li>
+<li><a href="https://qiita.com/zumax/items/2d7eb1ffa49441eb988a">API
+GatewayのオーソライザーにCognitoを使用してみた</a></li>
+</ul>
+<h3 id="amazon-cognitoidプール">Amazon Cognito/IDプール</h3>
+<p>認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行する機能です。<br />
+IDプールは、認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行します。<br />
+認証時の属性情報に応じてIAMロールが割り当てられ、そのロールに付与された権限に基づいてAWSリソースへのアクセスが制御されます。</p>
+<h3 id="amazon-cognitoアダプティブ認証">Amazon
+Cognito/アダプティブ認証</h3>
+<p>Cognitoのアダプティブ認証は、新しいデバイス、位置、ネットワーク情報など、通常とは異なる状況でのログインを検知すると、動的にセキュリティレベルを調整する仕組みです。<br />
+通常はパスワードのみの認証設定でも、異なる状況を検知すると多要素認証(MFA)などを要求できます。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティsecurity-token-service">03:セキュリティ/Security
@@ -806,12 +980,12 @@ Roleを引き受けるために信頼関係を定義します。</p>
   &quot;Version&quot;: &quot;2012-10-17&quot;,
   &quot;Statement&quot;: [
     {
-      &quot;Sid&quot;: &quot;SampleSid&quot;,
-      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Sid&quot;:       &quot;ExampleStatementID&quot;,
+      &quot;Effect&quot;:    &quot;Allow&quot;,
       &quot;Principal&quot;: {
         &quot;AWS&quot;: &quot;arn:aws:iam::&lt;アカウントID&gt;:user/&lt;Assume Role実行するIAMユーザ名&gt;&quot;
       },
-      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+      &quot;Action&quot;:    &quot;sts:AssumeRole&quot;
     }
   ]
 }</code></pre>
@@ -847,11 +1021,11 @@ Lambda実行ロール</h3>
   &quot;Version&quot;:&quot;2012-10-17&quot;,
   &quot;Statement&quot;: [
     {
-      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Effect&quot;:    &quot;Allow&quot;,
       &quot;Principal&quot;: {
         &quot;Service&quot;: &quot;lambda.amazonaws.com&quot;
       },
-      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+      &quot;Action&quot;:    &quot;sts:AssumeRole&quot;
     }
   ]
 }</code></pre>
@@ -864,80 +1038,26 @@ href="https://zenn.dev/toge510/articles/96034ac0e37f21#%E4%BF%A1%E9%A0%BC%E3%83%
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="セキュリティid認証管理">03:セキュリティ/ID認証管理</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="amazon-cognito">Amazon Cognito</h3>
-<p>Amazon
-Cognitoは、アプリケーション開発者が、独自のIDプロバイダやソーシャルIDプロバイダを使用してユーザー認証・認可を提供できるサービスです。<br />
-Cognitoは、簡単な設定で、モバイルやWebアプリ向けのユーザー認証機能を提供します。</p>
-<ul>
-<li>ユーザプール
-<ul>
-<li>ユーザディレクトリ</li>
-<li>アプリユーザのサインアップ、サインインオプションを提供しています。</li>
-</ul></li>
-<li>IDプール
-<ul>
-<li>AWSの他のサービスに対するアクセスをユーザに許可しています。</li>
-</ul></li>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=38">Amazon
-Cognito の概要と試験出題ポイントは？</a></li>
-<li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
-Cognitoを試してみた（ユーザプール編）</a></li>
-</ul>
-<h3 id="amazon-cognitoユーザープール">Amazon Cognito/ユーザープール</h3>
-<p>ユーザープールは、Amazon Cognito
-のユーザーディレクトリです。ユーザープールを使用することで、ユーザーはウェブまたはモバイルアプリに
-Amazon Cognito 経由でサインインする、またはサードパーティー ID
-プロバイダー (IdP) 経由でフェデレートすることができます。<br />
-ユーザープールは次の機能を提供します。</p>
-<ul>
-<li>ユーザープール機能
-<ul>
-<li>サインアップおよびサインイン。</li>
-<li>ユーザーをサインインするためのカスタマイズ可能な組み込みWeb
-UIの提供</li>
-<li>Facebook、Google でのソーシャルサインイン、Login with Amazon、Sign
-in with Apple、ユーザープールからの SAML および OIDC ID
-プロバイダー経由のサインイン。</li>
-<li>ユーザーディレクトリとユーザープロファイルの管理。</li>
-<li>多要素認証 (MFA)
-などのセキュリティ機能、漏洩した認証情報のチェック、アカウントの乗っ取りからの保護、電話とEメールによる検証。</li>
-<li>カスタマイズされたワークフローと AWS Lambda
-トリガーによるユーザー移行。</li>
-</ul></li>
-<li><a href="https://qiita.com/zumax/items/6937b3ecb501b6ca50bb">Amazon
-Cognitoを試してみた（ユーザプール編）</a></li>
-</ul>
-<h3 id="amazon-cognitoidプール">Amazon Cognito/IDプール</h3>
-<p>認証済みまたは匿名のユーザーに対して、AWSリソースにアクセスするための一時的な認証情報（STSクレデンシャル）を発行する機能です。</p>
-<h3 id="amazon-cognitoアダプティブ認証">Amazon
-Cognito/アダプティブ認証</h3>
-<p>Cognitoのアダプティブ認証は、新しいデバイス、位置、ネットワーク情報など、通常とは異なる状況でのログインを検知すると、動的にセキュリティレベルを調整する仕組みです。<br />
-通常はパスワードのみの認証設定でも、異なる状況を検知すると多要素認証(MFA)などを要求できます。</p>
-<h3 id="amazon-cognitoapi-gatewayオーソライザー利用">Amazon Cognito/API
-Gatewayオーソライザー利用</h3>
-<ul>
-<li><a href="https://qiita.com/zumax/items/2d7eb1ffa49441eb988a">API
-GatewayのオーソライザーにCognitoを使用してみた</a></li>
-</ul>
-<h3 id="aws-directory-service">AWS Directory Service</h3>
-<p>AWS上でMicrosoftのADを提供する．Windowsインスタンス群を管理することができます。</p>
-<ul>
-<li>3つのタイプ
-<ul>
-<li>Simple AD</li>
-<li>AD Connector</li>
-<li>AWS Managed Microsoft AD</li>
-</ul></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="セキュリティセキュリティ監視管理">03:セキュリティ/セキュリティ監視・管理</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-resource-access-manager">AWS Resource Access Manager</h3>
+<h3 id="aws-secrets-manager">AWS Secrets Manager</h3>
+<p>AWS Secrets
+Managerは、データベースなどにアクセスする際のシークレット（ログイン時のユーザ名やパスワード認証情報など）を安全に格納できるAWSサービスです。<br />
+アプリケーションなどからAWSリソースへアクセスする際にSecrets
+Managerからシークレットを取得することにより、
+ログイン情報をアプリケーションにハードコーディングしたり平文で入力しておく必要がありません。
+主にDBにアクセスする際の認証情報を管理して、自動更新機能も存在します。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/secretsmanager/latest/userguide/intro.html">AWS
+Secrets Manager</a></li>
+<li><a
+href="https://www.skyarch.net/blog/aws-secrets-manager%E3%81%A7rds%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%82%92%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E3%83%AD%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">AWS
+Secrets ManagerでRDS認証情報を時間指定ローテーション</a></li>
+</ul>
+<h3 id="aws-resource-access-managerram">AWS Resource Access
+Manager(RAM)</h3>
 <p>AWS Resource Access
 Managerとは、AWSリソースを組織内のアカウントやサービスと簡単に共有するためのサービスです。<br />
 クロスアカウントでリソースの共有を行うことができます。</p>
@@ -957,21 +1077,6 @@ AWS リソース</a></li>
 <ul>
 <li><a
 href="https://qiita.com/mingchun_zhao/items/0705c84cca7623f57627">AWS公式資料で挑むSCS認定-AuditManager</a></li>
-</ul>
-<h3 id="aws-secrets-manager">AWS Secrets Manager</h3>
-<p>AWS Secrets
-Managerは、データベースなどにアクセスする際のシークレット（ログイン時のユーザ名やパスワード認証情報など）を安全に格納できるAWSサービスです。<br />
-アプリケーションなどからAWSリソースへアクセスする際にSecrets
-Managerからシークレットを取得することにより、
-ログイン情報をアプリケーションにハードコーディングしたり平文で入力しておく必要がありません。
-主にDBにアクセスする際の認証情報を管理して、自動更新機能も存在します。</p>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/secretsmanager/latest/userguide/intro.html">AWS
-Secrets Manager</a></li>
-<li><a
-href="https://www.skyarch.net/blog/aws-secrets-manager%E3%81%A7rds%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%82%92%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E3%83%AD%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">AWS
-Secrets ManagerでRDS認証情報を時間指定ローテーション</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1030,6 +1135,10 @@ href="https://www.securify.jp/blog_cspm/aws-kms-03/">IAMポリシーでのKMSキ
 <li><a
 href="https://repost.aws/questions/QUB-u8F6msSBqz5mdMK25D4g/s-3-%E3%83%90%E3%82%B1%E3%83%83%E3%83%88%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%A8kms%E3%82%AD%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%A7%E3%81%AE-principal%E3%81%AE%E5%8A%B9%E6%9E%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6?sc_ichannel=ha&amp;sc_ilang=ja&amp;sc_isite=repost&amp;sc_iplace=hp&amp;sc_icontent=QUB-u8F6msSBqz5mdMK25D4g&amp;sc_ipos=3">S3バケットポリシーとKMSキーポリシーでのPrincipalの効果について</a></li>
 </ul></li>
+</ul>
+<h3 id="aws-kmsデフォルトのキーポリシー">AWS
+KMS/デフォルトのキーポリシー</h3>
+<ul>
 <li>デフォルトのキーポリシー
 <ul>
 <li><a
@@ -1045,14 +1154,32 @@ href="https://zenn.dev/m_taiki/articles/77c9542649aca0">KMSのデフォルトの
 </ul>
 <p>(デフォルトのキーポリシー)</p>
 <pre><code>{
-  &quot;Sid&quot;: &quot;Enable IAM User Permissions&quot;,
-  &quot;Effect&quot;: &quot;Allow&quot;,
-  &quot;Principal&quot;: {
-    &quot;AWS&quot;: &quot;arn:aws:iam::111122223333:root&quot;
-   },
-  &quot;Action&quot;: &quot;kms:*&quot;,
-  &quot;Resource&quot;: &quot;*&quot;
+  &quot;Version&quot;:&quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;:       &quot;Enable IAM User Permissions&quot;,
+      &quot;Effect&quot;:    &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;AWS&quot;:     &quot;arn:aws:iam::111122223333:root&quot;
+      },
+      &quot;Action&quot;:    &quot;kms:*&quot;,
+      &quot;Resource&quot;:  &quot;*&quot;
+  }
 }</code></pre>
+<h3
+id="aws-kmskmsで暗号化されたsnsトピックに対してlambda関数から実行する場合の権限設定">AWS
+KMS/KMSで暗号化されたSNSトピックに対して、Lambda関数から実行する場合の権限設定</h3>
+<p>KMSで暗号化されたSNSトピックに対して、Lambda関数からメッセージを安全に発行する際に必要となる権限を設定するためには、
+KMSカスタマーマネージドキーのキーポリシー、SNSトピックのリソースポリシー、Lambda実行ロールの3層にわたって必要な権限を付与する必要があります。<br />
+具体的な設定は以下です。</p>
+<ul>
+<li>KMSで暗号化されたSNSトピックに対して、Lambda関数からメッセージを安全に発行する際に必要となる権限設定
+<ol type="1">
+<li>KMSカスタマーマネージドキーのキーポリシーの設定</li>
+<li>SNSトピックのリソースポリシー</li>
+<li>Lambda実行ロール</li>
+</ol></li>
+</ul>
 <h3 id="aws-kms暗号化ヘルパー">AWS KMS/暗号化ヘルパー</h3>
 <p>暗号化ヘルパーは、Lambda関数で使用する環境変数をAWS
 KMSを使用して暗号化し、実行時に復号して利用するためのツールです。 AWS
@@ -1073,6 +1200,11 @@ Service（KMS）は、暗号化に使用する鍵（キー）を作成・管理�
 <li><a
 href="https://qiita.com/ayumi_imai/items/6a74c6327e0f6a1ac7db">AWS KMS
 と CloudHSMの違い</a></li>
+</ul>
+<h3 id="s3ストレージでの暗号化">S3ストレージでの暗号化</h3>
+<ul>
+<li>(自サイト内ページ)<a
+href="aws_saa.html#ストレージオブジェクトストレージs3暗号化">S3/暗号化</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1181,6 +1313,22 @@ id="ec2クラスタープレイスメントグループ">EC2/クラスタープ�
 <p>プレイスメントグループのうち「クラスタープレイスメントグループ」は、グループ内のEC2インスタンスを単一AZ内の物理的に近い距離に配置するので、
 各EC2インスタンス同士の通信は遅延が発生しにくく高速な通信が可能になります。<br />
 また、同一AZ内のデータ転送は料金が発生しないためコスト効率も良好です。</p>
+<h3 id="インスタントストア">インスタントストア</h3>
+<p>EC2で利用できる基本的なブロックストレージの1つです。<br />
+(あともう一つはEBSになります)</p>
+<ul>
+<li>インスタンスストアの特徴
+<ul>
+<li>EC2インスタンスの物理サーバの内蔵ディスク</li>
+<li>EC2とは分けることができない</li>
+<li>EC2をstopするとデータが揮発する</li>
+<li>追加費用は発生しない</li>
+<li>インスタンスタイプに d
+がついているものがインスタンスストアのものです。</li>
+</ul></li>
+<li><a
+href="https://qiita.com/miyuki_samitani/items/d5a38ef26f172311ade1">インスタンスストアとは</a></li>
+</ul>
 <h3 id="ami共有アカウント">AMI共有アカウント</h3>
 <ul>
 <li><a
@@ -1202,7 +1350,7 @@ href="https://in-housese.hatenablog.com/entry/2021/04/17/181344">SAA学習-EC2-A
 <h3 id="ec2料金タイプ">EC2料金タイプ</h3>
 <p>EC2の料金タイプは以下の通りです。﻿</p>
 <ul>
-<li>オンデマンドインスタンス:
+<li>オンデマンドインスタンス
 <ul>
 <li>利用時間に応じて料金が課金される最も一般的な料金タイプです。</li>
 <li>利用開始から終了まで、1秒単位で料金が計算されます。</li>
@@ -1219,7 +1367,7 @@ href="https://in-housese.hatenablog.com/entry/2021/04/17/181344">SAA学習-EC2-A
 <ul>
 <li>1年または3年の期間で一定の使用量を契約するかわりに安く使用することができるプランです。</li>
 <li>期間契約(１年または３年）で、一貫した使用量で契約するインスタンス</li>
-<li>リザーブドインスタンスと違うのは、「使用量が一定である」という点です。<br />
+<li>リザーブドインスタンスと違うのは、「<strong>使用量が一定である</strong>」という点です。<br />
 </li>
 </ul></li>
 <li>スポットインスタンス
@@ -1232,7 +1380,9 @@ href="https://in-housese.hatenablog.com/entry/2021/04/17/181344">SAA学習-EC2-A
 </ul></li>
 <li>メモ
 <ul>
-<li>「オンデマンド」はデフォルト、「スポット」で安くできる</li>
+<li>「オンデマンド」はデフォルト、「リザーブドインスタンス」は事前に契約期間がある</li>
+<li>「Savings
+Plans」は「使用量が一定」である、「スポット」は利用期間が限られる・予期せぬ停止がある</li>
 </ul></li>
 <li><a
 href="https://zenn.dev/mo_ri_regen/articles/aws-ec2-cost-types">EC2の料金タイプについて</a></li>
@@ -1247,8 +1397,19 @@ id="リザーブドインスタンスriのタイプ">リザーブドインスタ
 <ul>
 <li>タイプ
 <ul>
-<li>スタンダード</li>
-<li>コンバーティブル</li>
+<li>スタンダード
+<ul>
+<li>平均割引率 : 1年(40%) 3年(60%)</li>
+<li>交換 : 交換は出来ません</li>
+<li>マーケットプレイスでの販売・購入 : 販売・購入できます</li>
+</ul></li>
+<li>コンバーティブル
+<ul>
+<li>平均割引率 : 1年(31%) 3年(54%)</li>
+<li>交換 :
+期間内であれば、インスタンスファミリー・インスタンスタイプ・プラットフォームなど違う属性の別のリザーブドインスタンスに交換することができます</li>
+<li>マーケットプレイスでの販売 : 販売・購入できません</li>
+</ul></li>
 </ul></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/41fa570054568bbbac5f">リザーブドインスタンスの種類について</a></li>
@@ -1360,7 +1521,7 @@ Scaling/主なスケーリング基準（スケーリングのトリガー、メ
 デフォルトで定義されて、グループ内の全EC2インスタンスから集約されたデータに基づいています。
 スケーリングポリシーのトリガーとして一般的に使用されます。</p>
 <ul>
-<li>EC2インスタンスの集約メトリクス(デフォルト定義済)
+<li>EC2インスタンスの集約メトリクス(デフォルト利用できる定義済みメトリクス)
 <ul>
 <li>CPU使用率 (CPU_Utilization):
 インスタンスの平均CPU使用率。最も一般的なスケーリングトリガーです。</li>
@@ -1375,6 +1536,8 @@ DiskWriteOps): インスタンスのディスクI/Oに関するメトリクス�
 <ul>
 <li>「平均CPU使用率が70%を超えたら、1台インスタンスを追加する」</li>
 </ul></li>
+<li><a
+href="https://qiita.com/hoshi_/items/c5865afd087383c5e649#%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8B%E5%AE%9A%E7%BE%A9%E6%B8%88%E3%81%BF%E3%83%A1%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9">デフォルト利用できる定義済みメトリクス</a></li>
 </ul>
 <p>以下はCloudWatchなどと連携することで利用可能なメトリクスとなります。</p>
 <ul>
@@ -1562,6 +1725,31 @@ Autoscaling(以降､HPA)はCPU負荷などメトリクスに応じてDeployment
 <li><a href="https://dev.classmethod.jp/articles/eks_hpa_ca/">Horizontal
 Pod Autoscaling と Cluster Autoscaler を EKSに設定してみた</a></li>
 </ul>
+<h3
+id="ekseksクラスター作成時のシークレットの暗号化">EKS/EKSクラスター作成時のシークレットの暗号化</h3>
+<p>EKSクラスター作成時、AWS
+KMSを利用してKubernetesのSecretを安全に暗号化（エンベロープ暗号化）できます。<br />
+クラスター設定の「暗号化」セクションでKMSキーを指定し有効化します。注意事項として、一度有効化すると無効化できず、作成後の変更も不可です。</p>
+<ul>
+<li>シークレットの暗号化
+<ul>
+<li>作成時：クラスターの新規作成ウィザードにて「KMSキー」を選択し、シークレットの暗号化を有効化する。</li>
+<li>KMSキー:
+対象EKSクラスターと同じAWSリージョンにあるKMSキー（対称型）が必要。</li>
+<li>用途:
+K8sのAPIサーバーを通じて保存されるSecretリソースの秘匿性向上。</li>
+<li>注意点:
+暗号化の有効化は、作成時のみ可能。既存のクラスターに対しては、AWS
+CLIで設定できるが、無効化は不可。</li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/enable-kms.html">既存のクラスターで
+KMS を使用して Kubernetes シークレットを暗号化する</a></li>
+<li><a
+href="https://qiita.com/shott/items/303d308d9e9d9fa2c6e7">【Kubernetes】EKS環境における機密情報（シークレット）管理について</a></li>
+<li><a href="https://www.securify.jp/blog_cspm/aws-eks-07/">EKS
+クラスターで暗号化された Kubernetes シークレットを利用する手順</a></li>
+</ul>
 <h3 id="amazon-elastic-container-registryamazon-ecr">Amazon Elastic
 Container Registry(Amazon ECR)</h3>
 <p>Dockerコンテナイメージを保存・管理・デプロイできるコンテナレジストリサービス。<br />
@@ -1668,16 +1856,16 @@ href="https://zenn.dev/toge510/articles/96034ac0e37f21">Lambda実行ロールを
 </ul>
 <p>(S3バケットからデータを読み取る)</p>
 <pre><code>{ 
-    &quot;Version&quot;: &quot;2012-10-17&quot;, 
-    &quot;Statement&quot;: [ 
-        { 
-            &quot;Effect&quot;: &quot;Allow&quot;, 
-            &quot;Action&quot;: [ &quot;s3:GetObject&quot; ], 
-            &quot;Resource&quot;: [ 
-            &quot;arn:aws:s3:::example-bucket/*&quot;
-            ]
-        } 
-    ] 
+  &quot;Version&quot;: &quot;2012-10-17&quot;, 
+  &quot;Statement&quot;: [ 
+      { 
+        &quot;Effect&quot;:   &quot;Allow&quot;, 
+        &quot;Action&quot;:   &quot;s3:GetObject&quot;, 
+        &quot;Resource&quot;: [
+           &quot;arn:aws:s3:::example-bucket/*&quot;
+        ]
+      } 
+  ] 
 }</code></pre>
 <h3
 id="lambda関数に対してeventbridge-のリソースベースポリシーの権限を付与">Lambda関数に対してEventBridge
@@ -1696,24 +1884,24 @@ EventBridge のリソースベースのポリシーを使用する</a></li>
 </ul>
 <p>(Amazon API Gateway のアクセス許可)</p>
 <pre><code>{
-    &quot;Version&quot;:&quot;2012-10-17&quot;,
-    &quot;Statement&quot;: [
-        {
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Principal&quot;: {
-                &quot;Service&quot;: &quot;events.amazonaws.com&quot;
-            },
-            &quot;Action&quot;: &quot;execute-api:Invoke&quot;,
-            &quot;Condition&quot;: {
-                &quot;ArnEquals&quot;: {
-                &quot;aws:SourceArn&quot;: &quot;arn:aws:events:us-east-1:123456789012:rule/rule-name&quot;
-                }
-            },
-            &quot;Resource&quot;: [
-            &quot;arn:aws:execute-api:us-east-1:123456789012:API-id/stage/GET/api&quot;
-            ]
-        }
-    ]
+  &quot;Version&quot;:&quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+      {
+        &quot;Effect&quot;: &quot;Allow&quot;,
+        &quot;Principal&quot;: {
+            &quot;Service&quot;: &quot;events.amazonaws.com&quot;
+        },
+        &quot;Action&quot;: &quot;execute-api:Invoke&quot;,
+        &quot;Condition&quot;: {
+            &quot;ArnEquals&quot;: {
+            &quot;aws:SourceArn&quot;: &quot;arn:aws:events:us-east-1:123456789012:rule/rule-name&quot;
+            }
+        },
+        &quot;Resource&quot;: [
+           &quot;arn:aws:execute-api:us-east-1:123456789012:API-id/stage/GET/api&quot;
+        ]
+      }
+  ]
 }</code></pre>
 <h3 id="vpc-lambdavpcラムダ">VPC Lambda(VPCラムダ)</h3>
 <p>VPC
@@ -1826,19 +2014,49 @@ Notification Service(Amazon SNS)</h3>
 は、サブスクライブしているエンドポイントまたはクライアントへのメッセージの配信または送信を、調整および管理するウェブサービスです。<br />
 複数のアプリケーションやユーザーに対して同時にメッセージを配信します。<br />
 標準トピックと順序を保証するFIFOトピックがある．FIFOトピックを指定した場合SQSのみ通知を受け取れる。</p>
+<ol type="1">
+<li>Publisher（パブリッシャー）
 <ul>
-<li>トピック
-<ul>
-<li>配信対象をグルーピングし、配信対象に一斉に通知を配信するための機能です</li>
+<li>説明:
+パブリッシャーは、SNSトピックにメッセージを送信する役割を担うエンティティです。</li>
 </ul></li>
-<li>サブスクリプション
+<li>Topic（トピック）
 <ul>
-<li>作成したトピックと配信対象のエンドポイントを紐づけるデータ</li>
+<li>説明:
+トピックは、SNSにおけるメッセージの受け渡しの中枢となるオブジェクトです</li>
 </ul></li>
-<li>パブリッシュ
+<li>Subscriber（サブスクライバー）
 <ul>
-<li>通知を発信すること</li>
+<li>説明:
+サブスクライバーは、SNSトピックにサブスクライブ（登録）してメッセージを受信するエンティティです</li>
 </ul></li>
+<li>Subscription（サブスクリプション）
+<ul>
+<li>説明:
+サブスクリプションは、SNSトピックにサブスクライブされたサブスクライバーの登録情報です。</li>
+</ul></li>
+<li>Consumer（コンシューマ）
+<ul>
+<li>説明:
+コンシューマは、SNSからメッセージを実際に受け取るエンティティです。</li>
+</ul></li>
+<li>Message（メッセージ）
+<ul>
+<li>説明:
+メッセージは、パブリッシャーがSNSトピックに送信する情報です。</li>
+</ul></li>
+<li>Fanout（ファンアウト）
+<ul>
+<li>説明:
+SNSのトピックを使って、1つのメッセージを複数のサブスクライバーに配信することを指します。</li>
+</ul></li>
+<li>Push Notification（プッシュ通知）
+<ul>
+<li>説明:
+SNSは、モバイルデバイス（iOS、Android）に対してプッシュ通知を送るためにも利用されます。</li>
+</ul></li>
+</ol>
+<ul>
 <li><a
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20190604_AWS-Blackbelt_AmazonSNS.pdf">BlackBelt_AmazonSNS_PDF</a></li>
 <li><a
@@ -1854,6 +2072,8 @@ SNS とは</a></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/091d06db6e2e02462fd8">Amazon
 SNSを使ってみた</a></li>
+<li><a
+href="https://zenn.dev/osachi/articles/06624a0e7c1260#sns%E3%81%AE%E6%A6%82%E8%A6%81%E3%83%BB%E5%8D%98%E8%AA%9E">SNSの概要・単語</a></li>
 </ul>
 <h3 id="amazon-snsカスタムデータ識別子">Amazon
 SNS/カスタムデータ識別子</h3>
@@ -1863,6 +2083,11 @@ href="https://docs.aws.amazon.com/ja_jp/sns/latest/dg/sns-message-data-protectio
 SNS でのカスタムデータ識別子の使用</a></li>
 </ul>
 <h3 id="snsとsqsとの連携">SNSとSQSとの連携</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/sns/latest/dg/sns-sqs-as-subscriber.html">Amazon
+SNS 通知の Amazon SQS キューへのファンアウトと非同期処理</a></li>
+</ul>
 <h3 id="amazon-eventbridge">Amazon EventBridge</h3>
 <p>Amazon
 EventBridgeは、AWSのサーバーレスイベントバスサービスで、アプリケーション間の疎結合を促進し、イベント駆動型アーキテクチャを構築するためのツールです。<br />
@@ -2020,7 +2245,7 @@ Data Lifecycle Manager でバックアップを自動化</a></li>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ストレージオブジェクトストレージ">07:ストレージ/オブジェクトストレージ</h2>
+id="ストレージオブジェクトストレージ概要">07:ストレージ/オブジェクトストレージ(概要)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="amazon-simple-store-services3">Amazon simple Store
 service(S3)</h3>
@@ -2134,8 +2359,11 @@ Instant Retrieval よりも) 最大 10%
 <p>Amazon
 S3のオブジェクトへアクセスする際に発生する転送料金は、S3バケットの所有者が支払います。<br />
 S3オブジェクトを共有する際にバケットの所有者が転送料金を負担したくない場合は、バケットを「リクエスタ支払い」に設定するとアクセス元に対して転送料金が請求されるようになります。</p>
-<h3 id="s3-storage-lens">S3 Storage Lens</h3>
-<p>S3バケットのストレージ使用状況やアクティビティに関するメトリクスを可視化する機能</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ストレージオブジェクトストレージ各機能">07:ストレージ/オブジェクトストレージ(各機能)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="s3マルチリージョンアクセスポイント">S3マルチリージョンアクセスポイント</h3>
 <p>S3マルチリージョンアクセスポイントは、複数のリージョンに配置されたS3バケットへの統一的なアクセスポイントを提供することで、パフォーマンスと可用性を向上させる機能です。<br />
@@ -2143,6 +2371,40 @@ id="s3マルチリージョンアクセスポイント">S3マルチリージョ�
 <h3 id="s3-transfer-acceleration">S3 Transfer Acceleration</h3>
 <p>ユーザーとS3バケット間のデータ転送を高速化する機能です。<br />
 ユーザーと地理的に近いエッジロケーションから、高パフォーマンスなAWSグローバルネットワークを経由してS3バケットへアクセスするため、安定した高速転送が可能となります。</p>
+<h3 id="s3バケットのcors設定">S3バケットのCORS設定</h3>
+<p>Cross−Origin Resource Sharing (CORS)
+は、特定のドメインにロードされたクライアントウェブアプリケーションが異なるドメイン内のリソースと通信するための設定です。<br />
+Amazon S3 は CORS がサポートされています。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/enabling-cors-examples.html">Cross−Origin
+Resource Sharing (CORS) の設定</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/cors.html">Cross−Origin
+Resource Sharing (CORS) の使用</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/olap-security.html#olap-cors">Object
+Lambda アクセスポイントの CORS サポート</a></li>
+<li><a href="https://qiita.com/kandu/items/5ab73b56d9b2695d5461">AWS
+S3バケットにCORSを設定する</a></li>
+<li><a
+href="https://qiita.com/railgun-0402/items/79c7cf6b7b9edf9cf6e3#amazons3-cors%E3%81%A8%E3%81%AF">AmazonS3
+CORSとは？</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/lim-s3-cors-2021/">S3のCORS機能を使ってみた</a></li>
+<li><a href="https://zenn.dev/leesw/articles/4d21d04d78cdb1">AWS SAA –
+Amazon S3 CORS</a></li>
+</ul>
+<h3
+id="crossorigin-resource-sharing-corsオリジン間リソース共有">Cross−Origin
+Resource Sharing (CORS：オリジン間リソース共有)</h3>
+<ul>
+<li><a
+href="https://tech-lab.sios.jp/archives/37299">CORSについて簡単に説明する</a></li>
+<li><a
+href="https://qiita.com/Hirohana/items/9b5501c561954ad32be7">オリジン間リソース共有
+(CORS)とは</a></li>
+</ul>
 <h3 id="mfa-delete">MFA Delete</h3>
 <p>S3のバージョニング機能を使用して管理されているオブジェクトを削除する際に，MFAデバイスの認証が必要となる機能。<br />
 誤削除の防止になる。</p>
@@ -2181,27 +2443,17 @@ href="https://docs.aws.amazon.com/ja_jp/amazonglacier/latest/dev/vault-lock-poli
 <li>権限（s3:BypassGovernanceRetention）を持たないユーザーに対して、指定した保持期間中オブジェクトを読み取り専用にします。権限を持つユーザーのみオブジェクトの更新・削除と、ガバナンスモードの解除ができます。</li>
 </ul></li>
 </ul>
+<h3 id="s3-storage-lens">S3 Storage Lens</h3>
+<p>S3バケットのストレージ使用状況やアクティビティに関するメトリクスを可視化する機能</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="ストレージオブジェクトストレージs3アクセス制御">07:ストレージ/オブジェクトストレージ(S3アクセス制御)</h2>
+id="ストレージオブジェクトストレージs3アクセス制御概要">07:ストレージ/オブジェクトストレージ(S3アクセス制御/概要)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="s3アクセス制御概要">S3アクセス制御/概要</h3>
 <ul>
 <li><a
 href="https://qiita.com/K5K/items/ef6a02aee760b128a25b">S3のアクセス制御を理解するためのロードマップ</a></li>
-</ul>
-<h3
-id="s3アクセス制御s3のバケットポリシー">S3アクセス制御/S3のバケットポリシー</h3>
-<ul>
-<li>(サイト内ページ)<a
-href="aws_saa.html#iam条件句s3バケットポリシー">勉強メモ_SAA/IAM条件句-S3のバケットポリシー</a></li>
-</ul>
-<h3
-id="s3アクセス制御s3バケットポリシーawsprincipalorgidグローバル条件キー">S3アクセス制御/S3バケットポリシー”aws:PrincipalOrgIDグローバル条件キー”</h3>
-<ul>
-<li>(サイト内)<a
-href="aws_saa_local.html#iam条件句s3バケットポリシーawsprincipalorgidグローバル条件キー">IAM条件句/S3バケットポリシー”aws:PrincipalOrgIDグローバル条件キー”</a></li>
 </ul>
 <h3
 id="s3アクセス制御署名付き-urls3-presigned-url">S3アクセス制御/署名付き
@@ -2217,11 +2469,26 @@ href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/using-presigne
 URL を使用したオブジェクトのダウンロードおよびアップロード</a></li>
 <li><a href="https://qiita.com/tmiki/items/87697d3d3d5330c6fc08">S3
 Presigned URLの仕組みを調べてみた</a></li>
+<li><a
+href="https://blog.future.ad.jp/%E7%BD%B2%E5%90%8D%E4%BB%98%E3%81%8Durl%E3%81%A8%E3%81%AF%E5%88%9D%E5%BF%83%E8%80%85%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E8%A7%A3%E8%AA%AC">署名付きURLとは？初心者のための解説</a></li>
 <li><a href="https://blog.techscore.com/entry/2023/08/04/080000">S3
 presigned URL を発行してみる</a></li>
 <li><a
+href="https://www.wantedly.com/companies/wantedly/post_articles/1019235">AWS
+S3 署名付きアップロード機能 Presigned URLとPOST Policyの比較</a></li>
+<li><a
 href="https://dev.classmethod.jp/articles/scp-s3-presign-url-https-only/">SCP
 を利用して S3 署名付き URL の利用を HTTPS のみに制限してみた</a></li>
+</ul>
+<h3
+id="s3アクセス制御署名付き-urlとcloudfrontの連携">S3アクセス制御/署名付き
+URLとCloudFrontの連携</h3>
+<p>「CloudFront +
+S3」の構成では、CloudFrontのオリジンにS3を設定することで、CloudFront経由でS3からコンテンツを取得できます。<br />
+テンプレートオブジェクトの署名付きURLを生成して、CloudFormationスタック作成時にそのURLを指定することで、S3バケットに保管されたCloudFormationテンプレートを取得することができます。</p>
+<ul>
+<li><a
+href="https://qiita.com/ayu_miin/items/1a16496a1da3937a630a">CloudFrontとS3の署名付きURL：アクセス制御の違い</a></li>
 </ul>
 <h3
 id="s3アクセス制御amazon-s3-object-lambdaアクセスポイント">S3アクセス制御/Amazon
@@ -2245,12 +2512,94 @@ Lambdaアクセスポイントに対して実行してみました</a></li>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
+id="ストレージオブジェクトストレージs3アクセス制御バケットポリシー">07:ストレージ/オブジェクトストレージ(S3アクセス制御/バケットポリシー)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="iam-json-ポリシー書式s3バケットポリシー">IAM JSON
+ポリシー書式/S3バケットポリシー</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/example-bucket-policies.html">Amazon
+S3 バケットポリシーの例</a></li>
+<li><a
+href="https://qiita.com/irico/items/a3ab1f8ebf1ece9cc783">S3のバケットポリシー書き方まとめ</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/s3_getobject_listbucket/">【S3】オブジェクトを取得するIAMにs3:ListBucketも付与した方が良さそうって話</a></li>
+</ul>
+<p>(S3バケットポリシーの設定値)</p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;:       &quot;ExampleStatementID&quot;,
+      &quot;Effect&quot;:    &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;AWS&quot;:     &quot;*&quot;
+      },
+      &quot;Action&quot;:   [
+        &quot;s3:ListBuckets&quot;,
+        &quot;s3:PutObject&quot;
+      ]
+      &quot;Resource&quot;: [
+        &quot;arn:aws:s3:::amzn-s3-demo-bucket&quot;,
+        &quot;arn:aws:s3:::amzn-s3-demo-bucket/*&quot;
+      ]
+    }
+  ]
+}</code></pre>
+<h3
+id="iam-json-ポリシー書式s3バケットポリシーawsprincipalorgidグローバル条件キー">IAM
+JSON
+ポリシー書式/S3バケットポリシー”aws:PrincipalOrgID”グローバル条件キー</h3>
+<p>AWS
+Organizationsの許可を与える場合には、“「グローバル条件キー」に”aws:PrincipalOrgID”を指定する。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/reference_policies_condition-keys.html">AWS
+グローバル条件コンテキストキー</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/security_iam_service-with-iam.html">IAM
+と AWS Organizations 連携方法</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_permissions_overview.html">AWS
+Organizationsを使用した組織のアクセス許可の管理</a></li>
+<li><a
+href="https://qiita.com/tsukamoto/items/97703adecae8c692ddb9#organizations%E5%86%85%E3%81%AE%E5%85%A8aws%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E8%A8%B1%E5%8F%AF">Organizations内の全AWSアカウントにアクセス許可</a></li>
+<li><a
+href="https://thaim-til.hatenablog.jp/entry/2024/04/26/000531">SourceOrgIDとPrincipalOrgIDでOrganiations環境下のアクセス制御を実現する</a></li>
+</ul>
+<p>(グローバル条件句の設定値)</p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;:       &quot;ExampleStatementID&quot;,
+      &quot;Effect&quot;:    &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+      &quot;AWS&quot;:       &quot;*&quot;
+      },
+      &quot;Action&quot;: [
+        &quot;kms:Decrypt&quot;,
+        &quot;kms:DescribeKey&quot;,
+        &quot;kms:Encrypt&quot;,
+        &quot;kms:ReEncrypt*&quot;,
+        &quot;kms:GetKeyPolicy&quot;
+      ],
+      &quot;Resource&quot;: &quot;*&quot;,
+      &quot;Condition&quot;: {
+        &quot;StringEquals&quot;: {
+          &quot;aws:PrincipalOrgID&quot;: &quot;o-xxxxxxxxxxx&quot;
+        }
+      }
+    }
+  ]
+}</code></pre>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
 id="ストレージオブジェクトストレージs3暗号化">07:ストレージ/オブジェクトストレージ(S3暗号化)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="サーバー側の暗号化sse">サーバー側の暗号化(SSE)</h3>
 <p>データがS3に保存されるタイミングで自動的にS3が暗号化を行う。データを取り出すときはS3がデータを復号することができます。</p>
-<h3 id="クライアント側の暗号化cse">クライアント側の暗号化(CSE)</h3>
-<p>データをS3へアップロードする前にクライアント側で暗号化を行い暗号化したデータをそのままS3に保存します。</p>
 <h3 id="aws-s3-ストレージの暗号化キー">AWS S3
 ストレージの暗号化キー</h3>
 <ul>
@@ -2264,15 +2613,25 @@ id="ストレージオブジェクトストレージs3暗号化">07:ストレー
 href="https://awsjp.com/AWS/hikaku/SSE-S3_SSE-KMS_SSE-C-compare.html">暗号化キーであるSSE-S3、SSE-KMS、SSE-Cの違いとは</a></li>
 </ul>
 <h3
-id="lambda関数へのkmsキーの復号権限付与">Lambda関数へのKMSキーの復号権限付与</h3>
-<p>Lambda関数が暗号化されたS3オブジェクトを復号する場合、下記の2つの設定が必要です：</p>
+id="lambda関数が暗号化されたs3オブジェクトを復号する場合">Lambda関数が暗号化されたS3オブジェクトを復号する場合</h3>
+<p>Lambda関数が暗号化されたS3オブジェクトを復号する場合、下記の2つの設定が必要となります。</p>
 <ul>
-<li>KMSキーの復号権限付与
-<ul>
+<li>Lambda関数が暗号化されたS3オブジェクトを復号する場合
+<ol type="1">
 <li>KMSキーポリシーで、Lambda実行ロールによるキーの使用を許可する</li>
 <li>Lambda実行ロールのIAMポリシーに、KMSキーの復号権限を付与する</li>
-</ul></li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/olap-writing-lambda.html">S3
+Object Lambda アクセスポイントの Lambda 関数の記述</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/olap-security.html">S3
+Object Lambda アクセスポイントのセキュリティに関する考慮事項</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/lambda-kms-s3-data/">KMSで暗号化されたS3のデータをLambdaで処理する方法を試してみた</a></li>
 </ul>
+<h3 id="クライアント側の暗号化cse">クライアント側の暗号化(CSE)</h3>
+<p>データをS3へアップロードする前にクライアント側で暗号化を行い暗号化したデータをそのままS3に保存します。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -2330,8 +2689,9 @@ href="https://qiita.com/aws-training/items/df418e73978a73b8987d">Amazon
 FSx for
 LustreとS3を活用したデータ集約型アプリケーションの最適化</a></li>
 </ul>
-<h3 id="fsx-for-lustreのファイルシステムのデプロイオプション">FSx for
-Lustreのファイルシステムのデプロイオプション</h3>
+<h3
+id="amazon-fsx-for-lustreファイルシステムのデプロイオプション">Amazon
+FSx for Lustre/ファイルシステムのデプロイオプション</h3>
 <ul>
 <li>永続的ファイルシステム
 <ul>
@@ -2364,14 +2724,17 @@ SnapMirror を使用した FSx for ONTAP への移行</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ストレージオンプレミス">07:ストレージ/オンプレミス</h2>
+<h2
+id="ストレージストレージゲートウェイ">07:ストレージ/ストレージゲートウェイ</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-storage-gateway">AWS Storage Gateway</h3>
 <p>オンプレミス環境のストレージをAmazon
 S3にシームレスに接続することができるハイブリッドストレージサービス。
 オンプレからAWSのストレージサービスへのアクセスを高速かつセキュアにおこなう。</p>
 <ul>
-<li>ファイルゲートウェイ</li>
+<li>AWS Storage Gateway/種別
+<ul>
+<li>Amazon S3ファイルゲートウェイ</li>
 <li>ボリュームゲートウェイ
 <ul>
 <li>キャッシュ型ボリューム</li>
@@ -2384,6 +2747,7 @@ S3にシームレスに接続することができるハイブリッドストレ
 <li>テープゲートウェイ
 <ul>
 <li>iSCSIイニシエータ：ターゲットはVTLデバイス</li>
+</ul></li>
 </ul></li>
 <li><a href="https://zenn.dev/ma_ro/articles/6775c023185462">AWS
 SAA-C03】AWS Storage Gateway とは？</a></li>
@@ -2402,6 +2766,33 @@ S3 ファイルゲートウェイの仕組み</a></li>
 </ul>
 <p>(SMB/NFSプロトコルを介したファイルゲートウェイ構成図)<br />
 <img src="img/aws_saa/file-gateway-concepts-diagram.png" width="50%" height="50%"><br /></p>
+<h3 id="aws-storage-gatewayボリュームゲートウェイ">AWS Storage
+Gateway/ボリュームゲートウェイ</h3>
+<p>AWS Storage Gateway
+ボリュームゲートウェイは、オンプレミスからiSCSI（Internet Small Computer
+System Interface）を使用して、
+S3をブロックストレージボリュームとして利用できるサービスです。<br />
+iSCSIとはコンピュータのストレージを接続するSCSIをTCP/IPで実現したプロトコルのことで、
+サーバーはiSCSIで接続されたストレージ（Storage
+Gatewayの場合はS3）をローカルディスクとして利用できます。<br />
+以下種別があります。</p>
+<ul>
+<li>ボリュームゲートウェイ種別
+<ul>
+<li>キャッシュ型（キャッシュボリューム）
+<ul>
+<li>すべてのデータをS3に保存し、高頻度アクセスのデータのみオンプレミスのキャッシュストレージにコピーします。</li>
+<li>オンプレミスのストレージ容量を抑えることが可能となります。<br />
+</li>
+<li>キャッシュ上に存在するデータは低遅延でアクセスできます。</li>
+</ul></li>
+<li>保管型（ストアドボリューム）
+<ul>
+<li>すべてのデータをオンプレミスのボリュームストレージに保存し、S3に非同期でバックアップを保存します。</li>
+<li>キャッシュ型とは異なり全データへのアクセス先がオンプレミスになるので、S3へのアクセスによる遅延が発生しません。</li>
+</ul></li>
+</ul></li>
+</ul>
 <h3 id="aws-storage-gatewayiscsiイニシエータの接続">AWS Storage
 Gateway/iSCSIイニシエータの接続</h3>
 <p>AWS Storage
@@ -2417,18 +2808,6 @@ Gatewayが仮想的にiSCSIの機能をオンプレミス側に提供する機�
 href="https://docs.aws.amazon.com/ja_jp/storagegateway/latest/vgw/initiator-connection-common.html">iSCSI
 イニシエータの接続</a></li>
 </ul>
-<h3 id="aws-elastic-disaster-recovery">AWS Elastic Disaster
-Recovery</h3>
-<p>AWS Elastic Disaster Recovery (AWS DRS)
-は、オンプレミスやクラウド環境からAWSへの災害復旧ソリューションを提供するサービスです。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=267">AWS
-Elastic Disaster Recovery (AWS DRS)
-の概要と試験出題ポイントは？</a></li>
-<li><a href="https://aws.amazon.com/jp/disaster-recovery/">AWS Elastic
-Disaster Recovery</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ストレージバックアップ">07:ストレージ/バックアップ</h2>
@@ -2443,6 +2822,22 @@ Backup</a></li>
 href="https://dev.classmethod.jp/articles/aws-backup-perfect-understand/">AWS
 Backup
 によるバックアップ取得の全体像をやっぱり絵に描いて理解してみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ストレージオンプレミス">07:ストレージ/オンプレミス</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-elastic-disaster-recovery">AWS Elastic Disaster
+Recovery</h3>
+<p>AWS Elastic Disaster Recovery (AWS DRS)
+は、オンプレミスやクラウド環境からAWSへの災害復旧ソリューションを提供するサービスです。</p>
+<ul>
+<li><a
+href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=267">AWS
+Elastic Disaster Recovery (AWS DRS)
+の概要と試験出題ポイントは？</a></li>
+<li><a href="https://aws.amazon.com/jp/disaster-recovery/">AWS Elastic
+Disaster Recovery</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -2501,8 +2896,10 @@ Multi-AZ DB Cluster が一般提供になりました</a></li>
 href="https://qiita.com/naoya_ok/items/90a91344106349c8f7da#%E3%83%9E%E3%83%AB%E3%83%81az-db%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC">マルチAZ
 DBクラスター</a></li>
 </ul>
-<h3 id="rds-dbインスタンスとrds-dbクラスターの違い">「RDS
-DBインスタンス」と「RDS DBクラスター」の違い</h3>
+<h3
+id="rds-dbインスタンスmulti-az-instanceとrds-dbクラスターmulti-az-db-clusterの違い">「RDS
+DBインスタンス」(Multi-AZ Instance)と「RDS DBクラスター」(Multi-AZ DB
+Cluster)の違い</h3>
 <p>「RDS DBインスタンス」と「RDS
 DBクラスター」では、以下の違いがあります。</p>
 <ul>
@@ -2521,6 +2918,12 @@ DB cluster を含めた Multi-AZ オプションの整理</a></li>
 </ul>
 <p>(Multi-AZの違い)</p>
 <table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
 <thead>
 <tr>
 <th>項目</th>
@@ -2541,6 +2944,18 @@ DB cluster を含めた Multi-AZ オプションの整理</a></li>
 <td>2</td>
 <td>3</td>
 <td>任意のAZ数</td>
+</tr>
+<tr>
+<td>スタンバイインスタンス数</td>
+<td>1インスタンス</td>
+<td>2インスタンス</td>
+<td>最大15インスタンスのリードレプリカ</td>
+</tr>
+<tr>
+<td>スタンバイインスタンスでの読取処理</td>
+<td>不可</td>
+<td>可能</td>
+<td>可能</td>
 </tr>
 </tbody>
 </table>
@@ -3579,7 +3994,14 @@ Route 53 Resolverを整理してみた</a></li>
 <li><a
 href="https://blog.serverworks.co.jp/route53-nameresolution-features">Amazon
 Route53の名前解決機能を整理してみる</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/patterns/set-up-dns-resolution-for-hybrid-networks-in-a-multi-account-aws-environment.html">マルチアカウント
+AWS 環境でハイブリッドネットワークの DNS 解決を設定する</a></li>
 </ul>
+<p>(アウトバウンドエンドポイント)<br />
+<img src="img/aws_saa/outbound_endpoint.png" width="75%" height="50%"><br /></p>
+<p>(インバウンドエンドポイント)<br />
+<img src="img/aws_saa/inbound_endpoint.png" width="75%" height="50%"><br /></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク11elb">09:ネットワーク/11:ELB</h2>
@@ -3800,6 +4222,12 @@ Latticeって何者？</a></li>
 href="https://zenn.dev/cadp/articles/ecs-service-mesh-compare">VPC
 Latticeも仲間に入れてECSサービス間通信方法5選を比較</a></li>
 </ul>
+<h3 id="cdncontents-delivery-network">CDN(Contents Delivery
+Network)</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="ipa_nw.html#cdncontents-delivery-network">勉強メモ_ネットワークスペシャリスト</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="セキュリティネットワーク">10:セキュリティ(ネットワーク)</h2>
@@ -3963,6 +4391,15 @@ Service (Amazon SES)</h3>
 href="https://d1.awsstatic.com/webinars/jp/pdf/services/20190521_AWS-BlackBelt_AmazonSES.pdf">BlackBelt_AmazonSES_PDF</a></li>
 <li><a
 href="https://youtu.be/FaBxMG_CNiU">BlackBelt_AmazonSES_YouTube</a></li>
+</ul>
+<h3 id="エクスポネンシャルバックオフ">エクスポネンシャルバックオフ</h3>
+<ul>
+<li><a
+href="https://qiita.com/aws-training/items/c2fc883837dcd94b7cde">【AWS
+SAP】エクスポネンシャルバックオフとは</a></li>
+<li><a
+href="https://yoshidashingo.com/entry/2014/08/17/135017">AWSユーザーは必ず覚えておきたいExponential
+Backoffアルゴリズムとは何か</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -4313,54 +4750,11 @@ CloudWatchでできることとは？ OSS監視ツールとも比較</a></li>
 href="https://qiita.com/tech4anyone/items/3ed5c9702e1db6d4c489">Amazon
 CloudWatch Logsの超詳細解説</a></li>
 </ul>
-<h3 id="amazon-cloudtrail">Amazon CloudTrail</h3>
-<p>AWS環境で実行されたアクションやイベントを記録・追跡し、証跡を管理するためのサービスです。
-ユーザーのアクションを監視します。</p>
-<ul>
-<li><a
-href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=166">AWS
-CloudTrail の概要と試験出題ポイントは？</a></li>
-<li><a
-href="https://d1.awsstatic.com/webinars/jp/pdf/services/20210119_AWSBlackbelt_CloudTrail.pdf">BlackBelt_AWSCloudTrail_PDF</a></li>
-<li><a
-href="https://youtu.be/_mmZa1Blxc4">BlackBelt_AWSCloudTrail_YouTube</a></li>
-</ul>
-<h3 id="aws-trusted-advisor">AWS Trusted Advisor</h3>
-<p>AWS
-のベストプラクティスをフォローするためのレコメンデーションを提供するツール
-AWS環境ベストプラクティスと照会しアドバイスをおこなう。 AWS Trusted
-Advisorのチェック項目は以下のとおり。</p>
-<ul>
-<li>コスト最適化
-<ul>
-<li>EC2リザーブドインスタンスの最適化：リザーブドインスタンス（予約購入したインスタンス）の利用状況に基づいて、最適な購入数を算出しコスト節約を促進します。</li>
-<li>低稼働率のEC2インスタンスの検出：直近14日間で、1日のCPU使用率が10%以下かつネットワークI/Oが5MB以下の日が継続しているかを確認します。使用率が低いインスタンスの数やサイズを調整することでコストの削減が可能です。</li>
-</ul></li>
-<li>パフォーマンス
-<ul>
-<li>高使用率のEC2インスタンスの検出：直近14日間で、1日のCPU使用率が90%以上の日が継続しているかを確認します。</li>
-</ul></li>
-<li>セキュリティ
-<ul>
-<li>開かれたポート：アクセス元の制限がなく定義されているセキュリティグループ（0.0.0.0/0）の存在を警告します。（ポート番号に応じて警告を表示）</li>
-</ul></li>
-<li>耐障害性
-<ul>
-<li>ロードバランサ（ELB）の最適化：ELB配下のインスタンスが複数のアベイラビリティゾーンで稼働しているかを確認します。</li>
-</ul></li>
-<li>サービス制限（サービスクォータ）
-<ul>
-<li>サービスごとの制限値と使用状況の確認：各サービスの設定された上限値と使用率を照合し、使用率が限界に近づいているかを確認します。</li>
-</ul></li>
-<li>運用上の優秀性
-<ul>
-<li>RDSの削除保護の確認: Amazon RDS
-DBクラスターの削除保護が有効になっているかをチェックします</li>
-</ul></li>
-</ul>
 <h3 id="aws-config">AWS Config</h3>
 <p>セキュリティーグループを監視し、不適切なルールを設定されているかを確認します。また、AWSリソースの設定も監視します。</p>
 <ul>
+<li><a href="https://qiita.com/munehige/items/2972e0f519829db23003">AWS
+Configの使い道</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/introduction-2024-aws-config/">AWS入門ブログリレー2024
 AWS Config編</a></li>
@@ -4408,6 +4802,91 @@ href="https://docs.aws.amazon.com/ja_jp/config/latest/developerguide/tagging.htm
 Config リソースのタグ付け</a></li>
 <li><a
 href="https://www.youtube.com/watch?v=fhjkvkIuzO4">Config：リソースのタグ検知</a></li>
+</ul>
+<h3 id="amazon-cloudtrail">Amazon CloudTrail</h3>
+<p>AWS
+CloudTrailとは、AWS環境で実行されたアクションやイベントを記録・追跡し、証跡を管理するためのサービスです。<br />
+AWS
+CloudTrailはユーザーのアクションを監視し、AWSサービスに対して「いつ」「誰によって」「どのような操作が行われたのか」を記録、保存することができます。<br />
+例えば、操作した覚えがないのにリソースが増減されていたりインスタンスが削除されていたような場合でも、CloudTrailのログを参照することで誰がどのような操作を行ったのかを確認できます。</p>
+<ul>
+<li>主な特徴と機能
+<ul>
+<li>イベントの自動記録:
+アカウント作成時から有効で、過去90日間の管理イベントを無料で見ることができます。</li>
+<li>長期保存と証跡:
+90日以上の保管が必要な場合、「証跡（Trail）」を作成し、Amazon
+S3に長期保管できます。</li>
+<li>詳細な証跡情報:
+ユーザー名、イベント時間、送信元IPアドレス、API操作内容などがJSON形式で記録されます。</li>
+</ul></li>
+<li>イベントの種類
+<ul>
+<li>管理イベント:
+セキュリティグループの変更やリソースの作成など、コントロールプレーンの操作。</li>
+<li>データイベント:
+S3バケット内のファイル操作やLambda関数の実行など、データプレーンの操作。</li>
+<li>ネットワークアクティビティイベント:
+VPCエンドポイント経由のアクセスなど。</li>
+<li>インサイトイベント:
+異常なAPIコールを検出し、セキュリティの脅威を特定。</li>
+</ul></li>
+<li><a
+href="https://aws-exam.net/saa/saa_s_aws_service_summary.php?s_id=166">AWS
+CloudTrail の概要と試験出題ポイントは？</a></li>
+<li><a
+href="https://d1.awsstatic.com/webinars/jp/pdf/services/20210119_AWSBlackbelt_CloudTrail.pdf">BlackBelt_AWSCloudTrail_PDF</a></li>
+<li><a
+href="https://youtu.be/_mmZa1Blxc4">BlackBelt_AWSCloudTrail_YouTube</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/amazon-cloudtrail-illustration/">イラストで理解するAWS
+CloudTrail</a></li>
+<li><a href="https://baresupport.jp/blog/2024/03/01/495/">AWS
+CloudTrailとは？ AWS上の証跡を残す方法を解説</a></li>
+<li><a href="https://www.sbbit.jp/article/cont1/81207">AWS
+CloudTrailを基礎からわかりやすく図解する</a></li>
+</ul>
+<h3 id="aws-trusted-advisor">AWS Trusted Advisor</h3>
+<p>AWS
+のベストプラクティスをフォローするためのレコメンデーションを提供するツール
+AWS環境ベストプラクティスと照会しアドバイスをおこなう。 AWS Trusted
+Advisorのチェック項目は以下のとおり。</p>
+<ul>
+<li>コスト最適化
+<ul>
+<li>EC2リザーブドインスタンスの最適化：リザーブドインスタンス（予約購入したインスタンス）の利用状況に基づいて、最適な購入数を算出しコスト節約を促進します。</li>
+<li>低稼働率のEC2インスタンスの検出：直近14日間で、1日のCPU使用率が10%以下かつネットワークI/Oが5MB以下の日が継続しているかを確認します。使用率が低いインスタンスの数やサイズを調整することでコストの削減が可能です。</li>
+</ul></li>
+<li>パフォーマンス
+<ul>
+<li>高使用率のEC2インスタンスの検出：直近14日間で、1日のCPU使用率が90%以上の日が継続しているかを確認します。</li>
+</ul></li>
+<li>セキュリティ
+<ul>
+<li>開かれたポート：アクセス元の制限がなく定義されているセキュリティグループ（0.0.0.0/0）の存在を警告します。（ポート番号に応じて警告を表示）</li>
+</ul></li>
+<li>耐障害性
+<ul>
+<li>ロードバランサ（ELB）の最適化：ELB配下のインスタンスが複数のアベイラビリティゾーンで稼働しているかを確認します。</li>
+</ul></li>
+<li>サービス制限（サービスクォータ）
+<ul>
+<li>サービスごとの制限値と使用状況の確認：各サービスの設定された上限値と使用率を照合し、使用率が限界に近づいているかを確認します。</li>
+</ul></li>
+<li>運用上の優秀性
+<ul>
+<li>RDSの削除保護の確認: Amazon RDS
+DBクラスターの削除保護が有効になっているかをチェックします</li>
+</ul></li>
+<li><a
+href="https://dev.classmethod.jp/articles/cm-advent-calendar-2015-getting-started-again-aws-td/">AWS再入門
+AWS Trusted Advisor編</a></li>
+<li><a
+href="https://mosomoso-history.com/%E3%80%90aws%E3%80%91trusted-advisor%E4%BD%BF%E3%81%8A%E3%81%86%E3%80%81%E7%84%A1%E6%96%99%E6%9E%A0%E3%81%A7%E3%82%82%E4%BD%BF%E3%81%86%E3%81%B9%E3%81%8D/">【AWS】Trusted
+Advisor使おう、無料枠でも使うべき</a></li>
+<li><a
+href="https://medium.com/veltra-engineering/aws-trusted-advisor-494ae7fc32db">AWS
+Trusted Advisor でコスト削減してみた</a></li>
 </ul>
 <h3 id="aws-service-catalog">AWS Service Catalog</h3>
 <p>AWS Service
@@ -4876,27 +5355,23 @@ href="https://zenn.dev/5991/articles/79aaf5e7bef7dc#%E6%A9%9F%E6%A2%B0%E5%AD%A6%
 <p>画像認識やビデオ分析を自動化</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="移行と転送">16:移行と転送</h2>
+<h2 id="移行と転送移行サービス">16:移行と転送(移行サービス)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-application-migration-service">AWS Application Migration
 Service</h3>
 <p>サーバ(EC2)移行サービス</p>
 <h3 id="aws-database-migration-serviceaws-dms">AWS Database Migration
 Service(AWS DMS)</h3>
-<p>データベース移行サービス。<br />
+<p>AWS Database Migration Service(AWS
+DMS)とは、データベース移行を補助するサービスです。<br />
 処理中も移行元のデータベースは動かしたままで問題ありませんし、oracleからAuroraというような別のDBへの移行もサポートしています。</p>
 <h3 id="aws-application-discovery-serviceaws-ads">AWS Application
 Discovery Service(AWS ADS)</h3>
 <p>サーバーやストレージ、ネットワーク機器から設定や使用状況のデータを自動収集し、アプリケーションのリストや動作方法、依存関係を把握するためのサービスです。<br />
 オンプレ等AWSとは別環境で稼働しているサーバのスペックや負荷状況などの情報を収集することができます。</p>
-<h3 id="aws-datasync">AWS DataSync</h3>
-<p>シンプルかつ高速なオンラインデータの転送を可能にするためのツールです。</p>
-<ul>
-<li><a href="https://aws.amazon.com/jp/datasync/">AWS DataSync</a></li>
-</ul>
 <h3 id="aws-migration-hub">AWS Migration Hub</h3>
 <p>AWS Migration Hub
-を使用すると、一か所で既存のサーバーを検出し、移行を計画して、各アプリケーションの移行ステータスを追跡できます。</p>
+を使用すると、一か所で既存のサーバーを検出し、移行を計画して、各アプリケーションの移行ステータスを追跡、管理することができます。</p>
 <ul>
 <li><a href="https://aws.amazon.com/jp/migration-hub/">AWS Migration
 Hub</a></li>
@@ -4906,6 +5381,15 @@ Migration Hub とは?</a></li>
 <li><a
 href="https://www.skyarch.net/blog/aws-migration-hub-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/">AWS
 Migration Hub を使ってみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="移行と転送ファイル転送">16:移行と転送(ファイル転送)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-datasync">AWS DataSync</h3>
+<p>シンプルかつ高速なオンラインデータの転送を可能にするためのツールです。</p>
+<ul>
+<li><a href="https://aws.amazon.com/jp/datasync/">AWS DataSync</a></li>
 </ul>
 <h3 id="aws-transfer-family">AWS Transfer Family</h3>
 <p>AWS Transfer Familyは、Amazon S3 やAmazon EFS
