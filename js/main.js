@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------------------------- 
  * 
- * プログラム概要 ： Canvasテスト
+ * プログラム概要 ： Canvasテスト(ナンバープレースアプリ作成)
  * バージョン     ： 0.0.0.1(初期作成)
  * 処理概要       ： メイン処理
  * 新規作成日     ： 2026/05/01 15:39:44
@@ -19,6 +19,7 @@ let context     = null;        // コンテキスト
 let pos         = {x:0, y:0};  // キャンバス上のマウス座標
 let string      = '';          // キャンバスの表示文字列
 let isMouseDown = false;       // マウス押下の有無
+let push_count  = 0;           // プッシュカウント
 
 /* ---------------------------------------------------------------------------------------------- */
 // マウスイベント読み込み
@@ -46,6 +47,9 @@ const mouseDownListener = () => {
 	// マウスステータスの有効化
 	isMouseDown = true;
 
+	// プッシュカウント
+	push_count = push_count + 1;
+
 	// マウス情報を表示
 	drawCanvas();
 
@@ -71,23 +75,38 @@ const mouseUpListener = () => {
 const drawCanvas = () => {
 
 	// キャンバス背景設定
-	context.fillStyle = "green";
+	context.fillStyle = "#FFFFFF";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
 	// マウスステータスの文字列に設定
 	const mouseDownString = isMouseDown ? "Mouse ON" : "Mouse OFF";
 
 	// 共通定義
-	context.fillStyle = "#FFFFFF";                      // 文字の色
+	context.fillStyle = "#000000";                      // 文字の色
 
-	// 表示する文字列を設定
-	context.font  = "14px MS Gothic";
-	context.fillText('ステータス', 150, canvas.height/2);
-
-	// 表示する文字列を設定
-	string = `x: ${pos.x} y:${pos.y} ${mouseDownString}`;
+	// 表示する文字列を設定(メモ数字)
 	context.font = "12px MS Gothic";
+	for(let i = 0; i < 30; i++) {
+		string = `${(i+1)%10}`;
+		context.fillText(string,  0, (i+1)*12);  // 文字列の定義
+		context.fillText(string,  6, (i+1)*12);  // 文字列の定義
+		context.fillText(string, 12, (i+1)*12);  // 文字列の定義
+	}
+
+	// 表示する文字列を設定(ナンプレ設定数字)
+	context.font = "24px MS Gothic";
+	string = "1"
+	context.fillText(string, 50, 24);  // 文字列の定義
+
+	// 表示する文字列を設定(マウス位置)
+	context.font = "12px MS Gothic";
+	string = `x: ${pos.x} y:${pos.y} ${mouseDownString}`;
 	context.fillText(string, 150, canvas.height/2+12);  // 文字列の定義
+
+	// 表示する文字列を設定(プッシュカウント)
+	context.font = "12px MS Gothic";
+	string = `プッシュカウント: ${push_count}`;
+	context.fillText(string, 150, canvas.height/2);  // 文字列の定義
 
 }
 
