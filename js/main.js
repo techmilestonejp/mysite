@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------------------------- 
  * 
- * プログラム概要 ： Canvasテスト(ナンバープレースアプリ作成)
+ * プログラム概要 ： Canvasテスト
  * バージョン     ： 0.0.0.1(初期作成)
  * 処理概要       ： メイン処理
  * 新規作成日     ： 2026/05/01 15:39:44
@@ -71,12 +71,14 @@ const mouseUpListener = () => {
 /* ---------------------------------------------------------------------------------------------- */
 // キャンバス表示
 /* ---------------------------------------------------------------------------------------------- */
-
 const drawCanvas = () => {
 
 	// キャンバス背景設定
-	context.fillStyle = "#FFFFFF";
+	context.fillStyle = "#F0FFFF";
 	context.fillRect(0, 0, canvas.width, canvas.height);
+
+	// 線表示
+	drawLine();
 
 	// マウスステータスの文字列に設定
 	const mouseDownString = isMouseDown ? "Mouse ON" : "Mouse OFF";
@@ -86,27 +88,106 @@ const drawCanvas = () => {
 
 	// 表示する文字列を設定(メモ数字)
 	context.font = "12px MS Gothic";
-	for(let i = 0; i < 30; i++) {
+	for(let i = 0; i < 2; i++) {
 		string = `${(i+1)%10}`;
-		context.fillText(string,  0, (i+1)*12);  // 文字列の定義
-		context.fillText(string,  6, (i+1)*12);  // 文字列の定義
-		context.fillText(string, 12, (i+1)*12);  // 文字列の定義
+		context.fillText(string, 12, (i+1)*12+12);  // 文字列の定義
+		context.fillText(string, 18, (i+1)*12+12);  // 文字列の定義
+		context.fillText(string, 24, (i+1)*12+12);  // 文字列の定義
+		context.fillText(string, 30, (i+1)*12+12);  // 文字列の定義
+		context.fillText(string, 36, (i+1)*12+12);  // 文字列の定義
 	}
 
 	// 表示する文字列を設定(ナンプレ設定数字)
 	context.font = "24px MS Gothic";
 	string = "1"
-	context.fillText(string, 50, 24);  // 文字列の定義
+	context.fillText(string, 50, 10+24);  // 文字列の定義
 
 	// 表示する文字列を設定(マウス位置)
-	context.font = "12px MS Gothic";
 	string = `x: ${pos.x} y:${pos.y} ${mouseDownString}`;
-	context.fillText(string, 150, canvas.height/2+12);  // 文字列の定義
+	context.font = "12px MS Gothic";
+	context.fillText(string, 10, 350);  // 文字列の定義
 
 	// 表示する文字列を設定(プッシュカウント)
-	context.font = "12px MS Gothic";
 	string = `プッシュカウント: ${push_count}`;
-	context.fillText(string, 150, canvas.height/2);  // 文字列の定義
+	context.font = "12px MS Gothic";
+	context.fillText(string, 10, 380);  // 文字列の定義
+
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+// 線表示
+/* ---------------------------------------------------------------------------------------------- */
+const drawLine = () => {
+
+
+	// 線描画
+	context.lineWidth = 1;     // 線の太さ
+
+
+	for(let i = 0; i < 3; i++) {
+
+		// 補助線1
+		context.strokeStyle = '#A0A0A0';     // 線の色
+		context.beginPath();                 // パスをリセット
+		context.moveTo(10+96*i+32, 10);      // 始点
+		context.lineTo(10+96*i+32, 10+96*3); // 終点
+		context.stroke();                    // 線を描画
+
+		// 補助線2
+		context.strokeStyle = '#A0A0A0'; // 線の色
+		context.beginPath();                 // パスをリセット
+		context.moveTo(10+96*i+64, 10);         // 始点
+		context.lineTo(10+96*i+64, 10+96*3);    // 終点
+		context.stroke();                    // 線を描画
+
+		// 主軸
+		context.strokeStyle = '#000000'; // 線の色
+		context.beginPath();                 // パスをリセット
+		context.moveTo(10+96*i, 10);         // 始点
+		context.lineTo(10+96*i, 10+96*3);    // 終点
+		context.stroke();                    // 線を描画
+
+	}
+
+		// 主軸
+		context.strokeStyle = '#000000'; // 線の色
+		context.beginPath();                 // パスをリセット
+		context.moveTo(10+96*3, 10);         // 始点
+		context.lineTo(10+96*3, 10+96*3);    // 終点
+		context.stroke();    
+
+
+	for(let i = 0; i < 3; i++) {
+
+		// 補助線1
+		context.strokeStyle = '#A0A0A0'; // 線の色
+		context.beginPath();               // パスをリセット
+		context.moveTo(10     , 10+96*i+32);  // 始点
+		context.lineTo(10+96*3, 10+96*i+32);  // 終点
+		context.stroke();                  // 線を描画
+
+		// 補助線2
+		context.strokeStyle = '#A0A0A0'; // 線の色
+		context.beginPath();               // パスをリセット
+		context.moveTo(10     , 10+96*i+64);  // 始点
+		context.lineTo(10+96*3, 10+96*i+64);  // 終点
+		context.stroke();                  // 線を描画
+
+		// 主軸
+		context.strokeStyle = '#000000'; // 線の色
+		context.beginPath();               // パスをリセット
+		context.moveTo(10     , 10+96*i);  // 始点
+		context.lineTo(10+96*3, 10+96*i);  // 終点
+		context.stroke();                  // 線を描画
+
+	}
+
+		// 主軸
+		context.strokeStyle = '#000000';   // 線の色
+		context.beginPath();               // パスをリセット
+		context.moveTo(10     , 10+96*3);  // 始点
+		context.lineTo(10+96*3, 10+96*3);  // 終点
+		context.stroke();                  // 線を描画
 
 }
 
