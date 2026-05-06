@@ -554,9 +554,9 @@ href="https://www.nic.ad.jp/ja/basics/terms/as.html">ASとは</a></li>
 href="https://www.cloudflare.com/ja-jp/learning/network-layer/what-is-an-autonomous-system/">自律システムとは？</a></li>
 </ul>
 <h3
-id="asn自律システム番号asnautonomous-system-number">ASN自律システム番号(ASN:Autonomous
-System Number)</h3>
-<p>ASN（自律システム番号）は、インターネット上のネットワークの集まりである「自律システム（AS）」を識別するためのユニークな番号です。<br />
+id="as自律システム番号asnautonomous-system-numberas番号">AS自律システム番号(ASN:Autonomous
+System Number/AS番号)</h3>
+<p>ASN（自律システム番号）とは、インターネット上のネットワークの集まりである「自律システム（AS）」を識別するためのユニークな番号のことを表します。<br />
 ISPや大規模なネットワーク管理組織に割り当てられ、インターネットのルーティングにおいて、他のネットワークと経路情報を交換するためにBGP（Border
 Gateway Protocol）で使用されます。<br />
 これにより、効率的で信頼性の高い通信が実現します。﻿</p>
@@ -577,6 +577,25 @@ Gateway Protocol）で使用されます。<br />
 <li><a
 href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律システム番号</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="bgpbgp-4仕組み">BGP(BGP-4)/仕組み</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="bgp通信処理">BGP/通信処理</h3>
+<p>BGPは2台のルータ間でTCP（ポート番号179）による接続を行い、経路情報を交換します。<br />
+この経路情報を交換する隣接ルータをネイバー（Neighbor）やピア（Peer）と呼びます。経路情報は、それぞれのASで受信している経路、およびローカル経路を交換します。</p>
+<ul>
+<li><a
+href="https://atmarkit.itmedia.co.jp/ait/articles/0112/06/news002.html">BGPの仕組みと役割を理解する</a></li>
+</ul>
+<h3 id="bgp経路情報交換">BGP/経路情報交換</h3>
+<p>BGPは、初めにTCPを用いた1対1のセッションを確立します。そのうえで、BGPの基本情報、および互いのルータが知っているすべての経路情報を交換します。<br />
+以降は、KEEPALIVEメッセージによる対向ルータの生存確認を行い、ルーティング・テーブルが更新（追加／削除）された場合には、その経路の差分情報のみを交換します。<br />
+差分情報のみを交換することにより、CPU負荷の軽減や帯域の浪費を最低限に抑えることが可能です。このような仕組みにより、BGPでは効率よく経路情報の交換を行うことができます。</p>
+<ul>
+<li><a
+href="https://atmarkit.itmedia.co.jp/ait/articles/0112/06/news002.html">BGPの仕組みと役割を理解する</a></li>
+</ul>
 <h3 id="bgpメッセージ">BGP/メッセージ</h3>
 <p>BGPはTCPポート179番を利用して通信を行います。BGPルータはピアを確立するために、メッセージと呼ばれる形式で機能情報を交換します。<br />
 メッセージはBGPの状態により数種類存在します。ピアが確立した後は、経路情報を伝達するためのメッセージを定期的に交換し、お互いの持つ経路情報を保持、更新し続けます。</p>
@@ -595,6 +614,8 @@ href="https://qiita.com/youyonghua/items/521c741903777f171b7b">ASN自律シス�
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="bgpパスアトリビュートパス属性">BGP/パスアトリビュート(パス属性)</h3>
+<p>BGPで交換される4つのメッセージのうち、「Updateメッセージ」がありましたが、Updateメッセージの中に「パスアトリビュート（パス属性）」が含まれています。<br />
+パスアトリビュートはBGPで使用するメトリックです。このパスアトリビュートを組み合わせることで「AS」に対して様々な経路制御が可能となります。</p>
 <ul>
 <li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
 Attribute</a></li>
@@ -609,14 +630,38 @@ href="https://www.juniper.net/documentation/jp/ja/software/junos/vpn-l2/bgp/topi
 <li><a
 href="https://xtech.nikkei.com/it/article/COLUMN/20090907/336685/">6種類のパスアトリビュートを押さえる</a></li>
 </ul>
+<h3
+id="bgpパスアトリビュートのカテゴリ">BGP/パスアトリビュートのカテゴリ</h3>
+<p>BGPの10種類以上あるパスアトリビュートは、大きく以下の4つのカテゴリーに分類することができます。</p>
+<ul>
+<li>パスアトリビュートのカテゴリ
+<ul>
+<li>Well-known mandatory（ 既知必須 ）</li>
+<li>Well-known discretionary（ 既知任意 ）</li>
+<li>Optional transitive（ オプション通知 ）</li>
+<li>Optional non-transitive（オプション非通知）</li>
+</ul></li>
+</ul>
 <h3 id="bgpルートポリシー経路制御">BGP/ルートポリシー(経路制御)</h3>
 <p>BCPのルートポリシーを利用する経路制御の種別としては、以下があります。</p>
 <ul>
+<li>パス選択の優先順位
+<ul>
+<li>LOCAL_PREFアトリビュートが最も大きいルートを優先</li>
 <li>AS PATH Prepend による経路制御</li>
 <li>MED値 の変更による優先経路選択</li>
+</ul></li>
+<li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
+Attribute</a></li>
+<li><a
+href="https://qiita.com/coco0922/items/bca5ead860b6f9e58979#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AAbgp%E3%81%AE%E8%A8%AD%E5%AE%9A">基本的なBGPの設定</a></li>
 <li><a
 href="https://www.alaxala.com/jp/techinfo/archive/manual/AX5400S/HTML/10_10_/APGUIDE/0267.HTM">経路選択アルゴリズム</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="bgpbgp-4パス属性詳細">BGP(BGP-4)/パス属性(詳細)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="bgpローカルプリファレンスlocal-preferencelocal_pref">BGP/ローカルプリファレンス(Local
 Preference：LOCAL_PREF)</h3>
