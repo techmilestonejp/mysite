@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_ネットワークスペシャリスト</h1>
 </header>
 <p>作成日：2025/07/06 09:43:35<br />
-更新日：2026/05/09 12:15:51<br />
+更新日：2026/05/10 13:12:46<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -658,8 +658,10 @@ href="https://docs.cloud.google.com/network-connectivity/docs/router/concepts/bg
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="bgpパスアトリビュートパス属性">BGP/パスアトリビュート(パス属性)</h3>
-<p>BGPで交換される4つのメッセージのうち、「Updateメッセージ」がありましたが、Updateメッセージの中に「パスアトリビュート（パス属性）」が含まれています。<br />
-パスアトリビュートはBGPで使用するメトリックです。このパスアトリビュートを組み合わせることで「AS」に対して様々な経路制御が可能となります。</p>
+<p>パスアトリビュートとは、BGPで使用するメトリックです。<br />
+BGPで交換される4つのメッセージの一つである「Updateメッセージ」に「パスアトリビュート（パス属性）」が含まれています。<br />
+このパスアトリビュートを組み合わせることでAS(Autonomous
+System)の経路制御が可能となります。</p>
 <ul>
 <li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
 Attribute</a></li>
@@ -692,11 +694,17 @@ id="bgpベストパス選択パス選択の優先順位">BGP/ベストパス選�
 同じ宛先への経路情報が各プロトコルでの生成によって複数存在する場合，それぞれの経路情報のプリファレンス値が比較され優先度の最も高い経路情報が有効になります。<br />
 BGP4では，自プロトコルを使用し学習した同じ宛先への複数の経路情報から次の表に示す優先順位で一つの最適の経路を選択します。</p>
 <ul>
-<li>パス選択の優先順位
+<li>パス選択の優先順位(抜粋)
 <ol type="1">
-<li>LOCAL_PREFアトリビュートが最も大きいルートを優先</li>
-<li>AS PATH Prepend による経路制御</li>
-<li>MED値 の変更による優先経路選択</li>
+<li>WEIGHTアトリビュートが最も大きいルート</li>
+<li>LOCAL_PREFアトリビュートが最も大きいルート</li>
+<li>ネットワークコマンドで生成したルート</li>
+<li>AS_PATHアトリビュートが最も短いルート(AS PATH Prepend
+による経路制御)</li>
+<li>ORIGINアトリビュートが最も小さいルートを優先（ IGP &lt; EGP &lt;
+Incomplete ）</li>
+<li>MED（MULTI_EXIT_DISC）アトリビュートが最も小さいルートを優先</li>
+<li>IBGPで学習したルート&lt;EBGPで学習したルート</li>
 </ol></li>
 <li><a href="https://www.infraexpert.com/study/bgpz05.html">BGP - Path
 Attribute</a></li>
@@ -707,13 +715,56 @@ href="https://www.alaxala.com/jp/techinfo/archive/manual/AX5400S/HTML/10_10_/APG
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="bgpbgp-4パス属性個別要素">BGP(BGP-4)/パス属性(個別要素)</h2>
+<h2 id="bgpbgp-4パス属性_個別要素">BGP(BGP-4)/パス属性_個別要素</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
-id="bgpローカルプリファレンスlocal-preferencelocal_pref">BGP/ローカルプリファレンス(Local
-Preference：LOCAL_PREF)</h3>
-<p>BGPのLocal
-Preference（ローカルプリファレンス）は、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性です。<br />
+id="bgpas_pathas_pathアトリビュート">BGP/AS_PATH(AS_PATHアトリビュート)</h3>
+<p>AS_PATHは、BGP（Border Gateway
+Protocol）において経路情報が通過してきた自律システム（AS）の番号リストであり、ループ防止とパス選択に使用される必須のアトリビュートです。<br />
+一般にAS_PATHが短い経路が優先され、意図的にAS番号を並べてパスを長くする「AS
+PATH Prepend」でトラフィックフローを制御できます。</p>
+<ul>
+<li>主な特徴と役割
+<ul>
+<li>AS番号の履歴:
+ルートが通過したASの順序を記録（左側が最新、右側が起源に近い）。</li>
+<li>ループ防止:
+受信した経路に自身のAS番号が含まれている場合、その経路は破棄される。</li>
+<li>ベストパスの選定:
+複数の経路が存在する場合、AS_PATHの長さ（AS数）が最も短いものが優先される。</li>
+</ul></li>
+<li>制御技術（AS PATH Prepend）
+<ul>
+<li>自ASのAS番号を重複して付加することで、意図的にパスを長くし、外部ASからの経路優先度を下げて通信の非対称性や負荷分散（Act/Standby）を実現する。</li>
+</ul></li>
+<li>ASパスフィルター
+<ul>
+<li>正規表現を用いて特定のAS_PATHを持つルートをフィルタリング（許可/拒否）し、ルーティングポリシーに適用できる。</li>
+</ul></li>
+</ul>
+<h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
+PATH Prepend)</h3>
+<p>AS PATH
+Prependは、特定の経路を意図的に優先させたくない、あるいは特定の経路へのトラフィックを減らしたい場合に、AS
+PATHに自身のAS番号を複数追加して長さを伸ばします。<br />
+AS
+PATHが長くなった経路は、優先度が低く判断されるため、ルーティングテーブルに登録されにくくなります。<br />
+これにより、冗長化された複数の経路がある場合に、メインの経路を優先しつつ、障害時や混雑時に迂回経路にトラフィックを振り分けることができます。</p>
+<ul>
+<li><a
+href="https://www.infraexpert.com/study/bgpz13.html">AS_PATHアトリビュート
+- 設定</a></li>
+<li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
+Path Prepend</a></li>
+<li><a
+href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
+Router で AS PATH Prepend を実装する</a></li>
+</ul>
+<h3
+id="bgpローカルプリファレンスlocal-preferencelocal_prefアトリビュート">BGP/ローカルプリファレンス(Local
+Preference：LOCAL_PREFアトリビュート)</h3>
+<p>Local
+Preference（ローカルプリファレンス）とは、BGPルート選択において、同一AS内でのルートの優先順位を決定するために使用されるウェルノウンのディスクリショナリ属性のことです。<br />
 Local
 Preferenceは、iBGPピア間で共有される属性であり、通常、数値が大きいほど優先度が高くなります。</p>
 <ul>
@@ -738,20 +789,27 @@ LOCAL_PREF - Cisco Config</a></li>
 LOCAL_PREF</a></li>
 </ul></li>
 </ul>
-<h3 id="bgpasパスプリペンドas-path-prepend">BGP/ASパス・プリペンド(AS
-PATH Prepend)</h3>
-<p>AS PATH
-Prependは、特定の経路を意図的に優先させたくない、あるいは特定の経路へのトラフィックを減らしたい場合に、AS
-PATHに自身のAS番号を複数追加して長さを伸ばします。<br />
-AS
-PATHが長くなった経路は、優先度が低く判断されるため、ルーティングテーブルに登録されにくくなります。<br />
-これにより、冗長化された複数の経路がある場合に、メインの経路を優先しつつ、障害時や混雑時に迂回経路にトラフィックを振り分けることができます。</p>
+<h3 id="bgpmedmulti_exit_disc">BGP/MED（MULTI_EXIT_DISC）</h3>
+<p>MED（MULTI_EXIT_DISC）は、BGPにおいて隣接するAS（自律システム）に対して、自社ネットワークへの最適なエントリポイント（入り口）を伝えるためのメトリック（コスト）値です。<br />
+値が低いほど優先され、マルチホーミング接続環境でトラフィックの流入経路を制御する際に使用されます。<br />
+MEDの詳細な仕様や実装における考慮事項は、RFC
+4451で定義されています。</p>
 <ul>
-<li><a href="https://qiita.com/youyonghua/items/7cf2a9529b6e936439ca">AS
-Path Prepend</a></li>
+<li>MED（MULTI_EXIT_DISC）の主な特徴
+<ul>
+<li>定義:
+4オクテットの符号なし数値で、別名「INTER_AS_METRIC」とも呼ばれます。</li>
+<li>特性: Optional
+Non-Transitive（任意・非通過）属性であり、隣接するASには伝播されますが、さらにその先のASには送信されません。</li>
+<li>用途:
+同じASから複数の接続点（エントリポイント）で受信したルートに対し、どの経路を優先させるかを示す。</li>
+<li>選択基準:
+BGPのベストパス選択アルゴリズムにおいて、値が小さいほど優先されます。</li>
+<li>注意点:
+動的なネットワークでは意図しないトラフィックフローの変化を引き起こす可能性があるため、設定には注意が必要とJANOGは指摘しています。</li>
+</ul></li>
 <li><a
-href="https://zenn.dev/cloud_ace/articles/cloud-router-bgp-route-policy-as-path-prepend">Cloud
-Router で AS PATH Prepend を実装する</a></li>
+href="https://beginners-network.com/supplement/bgp-path-attributes/multi_exit_disc.html">BGPのMULTI_EXIT_DISC属性</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -792,6 +850,12 @@ ACLを使用することができます。</p>
 <ul>
 <li><a
 href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
+</ul>
+<h3 id="bgplocal-preference-と-med-の違い">BGP/Local Preference と MED
+の違い</h3>
+<ul>
+<li><a href="https://zenn.dev/go3_network/articles/dd39984ed238e0">BGP
+の Local Preference と MED の比較</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
