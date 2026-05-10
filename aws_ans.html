@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/05/01 12:20:22</p>
+更新日：2026/05/09 22:33:43</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -150,17 +150,63 @@ href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/hybrid-connectivity/h
 href="https://qiita.com/kamogashira/items/501543b04c1d9a2d9970">猫でもわかるDirect
 Connect(Cloud Wan対応版)</a></li>
 </ul>
-<h3 id="aws-direct-connect経路選択">AWS Direct Connect/経路選択</h3>
+<h3 id="aws-direct-connectvgwルーティング優先度">AWS Direct
+Connect/VGWルーティング優先度</h3>
+<p>Site to Site
+VPNおよびDirectConnectで、重複するルートが存在する場合にはVirtual
+Private Gateway（VGW）は以下の優先順位でルートを決定します。</p>
 <ul>
+<li>VGWルーティング優先度
+<ol type="1">
+<li>最長プレフィックス (例: 10.10.2.15/32 は 10.10.2.0/24
+よりも優先されます)
+<ul>
+<li>ロンゲストマッチ（宛先ネットワークがより詳細に絞り込まれているルート）</li>
+</ul></li>
+<li>静的ルート (VPC ピアリングやインターネットゲートウェイ接続など)</li>
+<li>プレフィックスリストルート</li>
+<li>(伝播されたルート)DirectConnectBGPルート(動的ルート)
+<ul>
+<li>DirectConnectとSite to Site VPNではDirectConnectが優先</li>
+</ul></li>
+<li>(伝播されたルート)VPN 静的ルート
+<ul>
+<li>SitetoSiteVPNで、静的ルートとBGPルートでは、静的ルートが優先</li>
+</ul></li>
+<li>(伝播されたルート)VPN BGP ルート (動的ルート)
+(仮想プライベートゲートウェイなど)
+<ul>
+<li>BGPルートの中ではAS_PATHが最短のものが優先</li>
+<li>AS_PATHが同じ場合はMEDが最小のものが優先</li>
+</ul></li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/route-tables-priority.html">ルーティングの優先度の仕組み</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/control-bgp-route-on-site-to-site-vpn/">[AWS]
+Site to Site VPN の BGP 経路を制御しよう</a></li>
 <li><a
 href="https://qiita.com/Nana_777/items/3e7fd1247b5f03d91a0a">解説！Direct
 Connectの経路選択と耐障害性の要点</a></li>
+<li>(自サイトページ)<a
+href="ipa_nw.html#bgpベストパス選択パス選択の優先順位">ベストパス選択(パス選択の優先順位)</a></li>
 </ul>
 <h3 id="aws-direct-connectbfd">AWS Direct Connect/BFD</h3>
 <ul>
 <li><a
 href="https://qiita.com/youyonghua/items/191a09871cbdcc2e928f">AWS
 Direct Connect（DX）における BFD のポイント</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-gbp">07:AWS Direct Connect/AWS-GBP</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-gbp概要">AWS-GBP/概要</h3>
+<ul>
+<li>(自サイト内ページ：BGP概要)<a
+href="ipa_nw.html#bgpbgp-4概要">BGP_概要</a></li>
+<li>(自サイト内ページ：OCI環境の設定例)<a
+href="oci_np.html#動的ルーティングゲートウェイdrgbgpに関する設定">動的ルーティングゲートウェイ_BGPに関する設定</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -216,17 +262,6 @@ Transit Gateway の Connect アタッチメントと Connect ピア</a></li>
 href="https://dev.classmethod.jp/articles/routing-of-the-dedicated-transit-gateway-subnet/">AWS
 Transit Gateway をVPCにアタッチメントしたTransit
 Gateway専用サブネットのルートテーブルのルート設定について</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connectaws-gbp">07:AWS Direct Connect/AWS-GBP</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-gbp概要">AWS-GBP/概要</h3>
-<ul>
-<li>(自サイト内ページ：BGP概要)<a
-href="ipa_nw.html#bgpbgp-4概要">BGP_概要</a></li>
-<li>(自サイト内ページ：OCI環境の設定例)<a
-href="oci_np.html#動的ルーティングゲートウェイdrgbgpに関する設定">動的ルーティングゲートウェイ_BGPに関する設定</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
