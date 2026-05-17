@@ -295,6 +295,13 @@ href="https://oracle-japan.github.io/ocitutorials/adb/adb701-adbd/">ADB-Dの環�
 <li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#%E3%83%97%E3%83%AD%E3%83%93%E3%82%B8%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0-1">プロビジョニング</a></li>
 </ul>
+<h3 id="adb-dメトリクス">ADB-D/メトリクス</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/adbaa/observe-autonomous-ai-database-on-dedicated-exadata.html">Autonomous
+AI Databaseメトリックによる専用Exadataインフラストラクチャ上のAutonomous
+AI Databaseの観察</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="autonomous-database-serverlessadb-s共有型">Autonomous Database
@@ -534,6 +541,48 @@ ADBインスタンスを作成してみよう</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=70">拡張性</a></li>
 </ul>
+<h3 id="データベースリンク">データベース・リンク</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/database-links.html">Autonomous
+AI Databaseを使用したデータベース・リンクの使用</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="adbデータロード">ADB/データ・ロード</h2>
+<p>分類05:Oracle Autonomous AI Database/各機能<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="データロード">データ・ロード</h3>
+<ul>
+<li>データ・ロード種別
+<ul>
+<li>Oracle Database Actionsを使用したデータ・ロード</li>
+<li>Oracle Database
+Actionsを使用したローカル・ファイルからのデータ・ロード</li>
+<li>クラウド内のファイルからのデータのロード(DBMS_CLOUD)</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/load-data-autonomous.html">Autonomous
+AI Databaseへのデータの読み込み</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/load-data-intro.html">データ・ロード</a></li>
+</ul>
+<h3 id="dbms_cloudパッケージ">DBMS_CLOUDパッケージ</h3>
+<p>DBMS_CLOUDパッケージでは、オブジェクト・ストレージのデータを操作するための包括的なサポートを提供します。</p>
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/F19136_01/arpls/DBMS_CLOUD.html">37
+DBMS_CLOUD</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/basedb/dbcs202-dbms-cloud/">202:DBMS_CLOUDを使ってObject
+StorageのデータをBaseDBから参照しよう</a></li>
+</ul>
+<h3 id="datapump">Datapump</h3>
+<ul>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2025/12/25/oci%E3%81%B8%E3%81%AE%E7%A7%BB%E8%A1%8C%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F-%E3%81%9D%E3%81%AE2-adb%E3%81%B8%E3%81%AE%E7%A7%BB%E8%A1%8Cdatapump/">OCIへの移行を検証してみた
+その2 ADBへの移行(Datapump)</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="adb可用性">ADB/可用性</h2>
@@ -596,8 +645,81 @@ AI Databaseの事前定義済データベース・サービス名</a></li>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/adb/adb201-service-names/">事前に定義済の接続サービス</a></li>
 <li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=79">事前定義済データベース・サービス</a></li>
+<li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#connecting-to-adb">Connecting
 to ADB</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="adbdatabase-actions">ADB/Database Actions</h2>
+<p>分類05:Oracle Autonomous AI Database/各機能<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="database-actions">Database Actions</h3>
+<ul>
+<li>公式資料
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/F47819_01/sdweb/preface-sql-developer-web.html">オンプレミスOracle
+DatabaseのためのOracle Database Actionsの使用</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-tools/doc/database-actions.html">データベース・アクションの使用</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/connect-database-actions.html">組込みOracle
+Databaseアクションでの接続</a></li>
+</ul></li>
+<li>チュートリアル
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb102-dataload/">102:
+ADBにデータをロードしよう(Database Actions)</a></li>
+</ul></li>
+<li>speakerdeck
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=43">Database
+Actions</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=44">Database
+Actionsに含まれるコンポーネント</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/autonomous-database-database-actions-ji-neng-gai-yao">Autonomous
+Database - Database Actions 機能概要</a></li>
+</ul></li>
+<li>Qiita
+<ul>
+<li><a
+href="https://qiita.com/yunagash/items/27001de1a602a59d9225">Oracle
+Database@AzureでADBのDatabase Actionsに接続してみた</a></li>
+<li><a
+href="https://xn--w8j8bac3czf5bl7e.com/2023/07/27/%E3%80%90oci%E3%80%91autonomous-databaseadb%E3%81%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【OCI】Autonomous
+Database(ADB)にデータをアップロードしてみました！</a></li>
+</ul></li>
+</ul>
+<h3 id="database-actionsデータロード">Database
+Actions/データ・ロード</h3>
+<ul>
+<li>データ・ロード
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/load-data-database-actions.html">Oracle
+Database Actionsを使用したデータのロード</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/load-data-database-actions.html">Oracle
+Database Actionsを使用したローカル・ファイルからデータをロード</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb102-dataload/">102:
+ADBにデータをロードしよう(Database Actions)</a></li>
+<li><a
+href="https://amysimpsongrange.com/2023/09/28/oracle-autonomous-database-load-data-from-object-storage/">Oracle
+Autonomous Database: Load Data from Object Storage</a></li>
+</ul></li>
+<li>AI連携
+<ul>
+<li><a
+href="https://qiita.com/goo2000/items/12bf4af16bb9db6fac14">Database
+Actionsのデータ・ロードの新機能を試してみた（感情分析など）</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -606,6 +728,8 @@ to ADB</a></li>
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="autonomous-ai-database-data-studio概要">Autonomous AI Database
 Data Studio/概要</h3>
+<ul>
+<li>公式資料
 <ul>
 <li><a
 href="https://www.oracle.com/jp/autonomous-database/data-studio/">Autonomous
@@ -618,17 +742,24 @@ href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adp-
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/data-preferences.html">Data
 Studio設定</a></li>
-<li><a
-href="https://speakerdeck.com/oracle4engineer/autonomous-database-database-actions-ji-neng-gai-yao">Autonomous
-Database - Database Actions 機能概要</a></li>
+</ul></li>
+<li>speakerdeck
+<ul>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/data-studionoji-neng-kuo-zhang">Data
 Studioの機能拡張</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/technight-number-68-adb-databaseactions-datastudio">TechNight
+#68-Database ActionsのData Studio活用方法のご紹介</a></li>
+</ul></li>
+<li>Qiita
+<ul>
 <li><a href="https://qiita.com/goo2000/items/90a8e0c2376122ad7b12">Data
 Studioにあるジョブを試してみた</a></li>
 <li><a
 href="https://qiita.com/bambooseven/items/956a80f767ec11a52a0f">Autonomous
 Databaseのデータ分析機能で、AIを使用したクエリの説明を試してみた</a></li>
+</ul></li>
 </ul>
 <h3 id="autonomous-ai-database-data-studio機能一覧">Autonomous AI
 Database Data Studio/機能一覧</h3>
@@ -638,8 +769,10 @@ Database Data Studio/機能一覧</h3>
 <li>データ・ロード(データ読み込み)
 <ul>
 <li>Autonomous AI
-Databaseへのデータの迅速なロード、リンク、フィード</li>
-<li>データロードをAIが強化</li>
+Databaseへのデータの迅速なロード、リンク、フィード<br />
+</li>
+<li>データロード処理でAIとの連携が可能<br />
+</li>
 </ul></li>
 <li>データ・カタログ</li>
 <li>データ変換(Data-Transforms)</li>
@@ -681,12 +814,64 @@ href="https://oracle-japan.github.io/ocitutorials/adb/adb403-data-transforms/">4
 : Data Transformsを使ってみよう</a></li>
 <li><a href="https://qiita.com/goo2000/items/1058fe9b7a4c619a60ee">Data
 Transformsとデータソースをリージョン間でクローンしてみた</a></li>
+<li><a
+href="https://qiita.com/goo2000/items/38451f917d5795eb6d16">[Autonomous
+Database] Data TransformsからData StudioのData Loadを呼び出す</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="adbパッチ適用">ADB/パッチ適用</h2>
+<h2 id="adbadbイベント">ADB/ADBイベント</h2>
 <p>分類05:Oracle Autonomous AI Database/各機能<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="adbイベント概要">ADBイベント/概要</h3>
+<ul>
+<li>総合情報
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Events/home.htm">イベント</a></li>
+</ul></li>
+<li>マニュアル
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/Content/Events/Concepts/eventsoverview.htm">イベントの概要</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-database-events.html">Autonomous
+AI Databaseイベントの使用</a></li>
+<li><a
+href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/adbaa/events-for-autonomous-ai-database-on-dedicated-exadata.html">専用Exadataインフラストラクチャ上のAutonomous
+AI Databaseのイベント</a></li>
+<li><a
+href="https://docs.oracle.com/ja/cloud/paas/globally-distributed-autonomous-database/user/events-distributed-adb.html">グローバルに分散されたAutonomous
+AI Databaseのイベント</a></li>
+</ul></li>
+<li>speakerdeck
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=126">イベント一覧</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="adbアップグレードパッチ適用">ADB/アップグレード・パッチ適用</h2>
+<p>分類05:Oracle Autonomous AI Database/各機能<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="アップグレード概要">アップグレード概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-management/doc/get-started-vulnerability-detection-patching.html">脆弱性検出およびパッチ管理サービスの開始</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oracle-database-upgrade-migration-jp">Oracle
+AI Databaseのアップグレードと移行</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/exadata-database-service-software-update-upgrade-overview">Exadata
+Database Service
+ソフトウェアのアップデートとアップグレードの概要</a></li>
+</ul>
+<h3 id="メンテナンスパッチ">メンテナンスパッチ</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=135">メンテナンス・パッチ</a></li>
+</ul>
 <h3 id="自動ワークロードリプレイ">自動ワークロードリプレイ</h3>
 <ul>
 <li><a
@@ -748,42 +933,23 @@ href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/adbs
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=41">ツール群</a></li>
 </ul>
-<h3 id="database-actions">Database Actions</h3>
+<h3 id="graph-studio">Graph Studio</h3>
 <ul>
 <li><a
-href="https://docs.oracle.com/cd/F47819_01/sdweb/preface-sql-developer-web.html">オンプレミスOracle
-DatabaseのためのOracle Database Actionsの使用</a></li>
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/graph-autonomous-database.html">自律型AIデータベースでのOracle
+Graphの使用</a></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/database-tools/doc/database-actions.html">データベース・アクションの使用</a></li>
+href="https://docs.oracle.com/cd/F79184_01/spgdg/prerequisites-using-autonomous-database-graph-client.html">Autonomous
+Databaseグラフ・クライアントを使用するための前提条件</a></li>
 <li><a
-href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/connect-database-actions.html">組込みOracle
-Databaseアクションでの接続</a></li>
+href="https://www.oracle.com/jp/database/integrated-graph-database/graph-faq/">Graph
+Studioに関するよくある質問</a></li>
 <li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb102-dataload/">102:
-ADBにデータをロードしよう(Database Actions)</a></li>
+href="https://oracle-japan.github.io/ocitutorials/adb/adb215-graph/">215
+: Graph Studioで金融取引の分析を行う</a></li>
 <li><a
-href="https://speakerdeck.com/oracle4engineer/autonomous-database-database-actions-ji-neng-gai-yao">Autonomous
-Database - Database Actions 機能概要</a></li>
-<li><a
-href="https://xn--w8j8bac3czf5bl7e.com/2023/07/27/%E3%80%90oci%E3%80%91autonomous-databaseadb%E3%81%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【OCI】Autonomous
-Database(ADB)にデータをアップロードしてみました！</a></li>
-<li><a
-href="https://qiita.com/yunagash/items/27001de1a602a59d9225">Oracle
-Database@AzureでADBのDatabase Actionsに接続してみた</a></li>
-</ul>
-<h3 id="oracle-database-tools-service">Oracle Database Tools
-Service</h3>
-<p>Oracle Database Tools Serviceは、Oracle Cloud
-Infrastructure（OCI）内のマネージド・サービスであり、複数のユーザー、リソース、およびサービスで再利用できる任意のOracle
-Databaseへの接続をOCIに作成できます。<br />
-接続が確立されると、WebベースのSQLワークシートを使用して、SQLに直接アクセスするか、OCIクラウド・シェルによって、SQLclセッションで接続を使用します。</p>
-<ul>
-<li><a href="https://www.oracle.com/jp/database/tools-service/">Oracle
-Database Tools Service</a></li>
-<li><a
-href="https://docs.oracle.com/ja-jp/iaas/database-tools/home.htm">データベース・ツール</a></li>
-<li><a href="https://qiita.com/letian/items/1d4ed7477a28b794a56c">OCI
-データベース・ツールでオラクルDBへの接続方法</a></li>
+href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=48">Graph
+Studio</a></li>
 </ul>
 <h3 id="oracle-analytics-cloud">Oracle Analytics Cloud</h3>
 <ul>
@@ -802,6 +968,20 @@ href="https://xn--w8j8bac3czf5bl7e.com/2024/01/12/oracle-analytics-cloud%E3%82%9
 Analytics Cloudを使って分析してみた</a></li>
 <li><a href="https://qiita.com/tyo38/items/4106e5a60a6981cdb2f9">Oracle
 Analytics Cloud：インスタンスの作成</a></li>
+</ul>
+<h3 id="oracle-database-tools-service">Oracle Database Tools
+Service</h3>
+<p>Oracle Database Tools Serviceは、Oracle Cloud
+Infrastructure（OCI）内のマネージド・サービスであり、複数のユーザー、リソース、およびサービスで再利用できる任意のOracle
+Databaseへの接続をOCIに作成できます。<br />
+接続が確立されると、WebベースのSQLワークシートを使用して、SQLに直接アクセスするか、OCIクラウド・シェルによって、SQLclセッションで接続を使用します。</p>
+<ul>
+<li><a href="https://www.oracle.com/jp/database/tools-service/">Oracle
+Database Tools Service</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-tools/home.htm">データベース・ツール</a></li>
+<li><a href="https://qiita.com/letian/items/1d4ed7477a28b794a56c">OCI
+データベース・ツールでオラクルDBへの接続方法</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -914,10 +1094,19 @@ href="https://docs.oracle.com/ja-jp/iaas/application-integration/index.html">Ora
 Integration</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/application-integration/doc/high-level-workflow.html">高レベルのワークフロー</a></li>
+</ul>
+<h3 id="oci-data-integrationetlサービス">OCI Data
+Integration/ETLサービス</h3>
+<p>OCI Data
+Integrationでは、オブジェクト・ストレージ上のデータを変換し、Autonomous
+Databaseにロードを実行することが可能です。 s</p>
+<ul>
 <li><a
 href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/">OCI
 Data Integrationチュートリアル</a></li>
 </ul>
+<p>(OCI Data Integration ETLサービス概要)<br />
+<img src="img/oci_dfa/ociditutorial.png" width="50%" height="50%"><br /></p>
 <h3 id="oci-data-catalog">OCI Data Catalog</h3>
 <p>OCI Data
 Catalogは、データの専門家がデータを発見し、データガバナンスをサポートするのに役立つメタデータを管理するためのOCIサービスです。</p>
@@ -952,6 +1141,28 @@ Data Flow ハンズオン(初級編)</a></li>
 <li><a href="https://qiita.com/letian/items/b2408b85c8f258183047">OCI
 Data Flowを使ってオブジェクト・ストレージからADBへデータをロードする –
 Part 1</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="アップグレード">アップグレード</h2>
+<p>分類09:アップグレードと移行<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<ul>
+<li>(サイト内ページ)<a href="oci_adp.html">アップグレードと移行</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oci移行">OCI移行</h2>
+<p>分類09:アップグレードと移行<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci移行概要">OCI移行概要</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/cloud/migration/">OCI移行ハブ</a></li>
+<li><a href="https://cosol.jp/service/service016/">Oracle Database
+OCI移行サービス</a></li>
+<li><a
+href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#migration">Migration</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
