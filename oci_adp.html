@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIADP</h1>
 </header>
 <p>作成日：2025/12/13 10:12:20<br />
-更新日：2026/05/10 13:12:46<br />
+更新日：2026/05/23 15:50:35<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -254,7 +254,7 @@ Database構成種別(デプロイメント)</h3>
 <h3 id="adb-dとadb-sの違い">ADB-DとADB-Sの違い</h3>
 <ul>
 <li><a
-href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/gjgms/">Autonomous
+href="https://docs.oracle.com/ja/cloud/paas/autonomous-database/dedicated/adbaa/certify-applications-for-compatibility-between-autonomous-ai.html">Autonomous
 AI Database
 ServerlessとDedicatedの互換性のためのアプリケーションの認定</a></li>
 <li><a
@@ -292,6 +292,8 @@ href="https://oracle-japan.github.io/ocitutorials/adb/adb701-adbd/">ADB-Dの環�
 <p>(ADB-D構築手順)<br />
 <img src="img/oci_dfa/adb_setup.png" width="50%" height="50%"><br /></p>
 <ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/adb-d-technical-detail-jp?slide=27">プロビジョニング・ステップ</a></li>
 <li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#%E3%83%97%E3%83%AD%E3%83%93%E3%82%B8%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0-1">プロビジョニング</a></li>
 </ul>
@@ -638,12 +640,22 @@ id="事前定義済データベースサービス名">事前定義済データ�
 <li>medium</li>
 <li>low</li>
 </ul></li>
+<li>補足
+<ul>
 <li>証明書のzipファイル内にあるtnsnames.oraファイルには上記5つのデータベースサービス名が含まれている</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/predefined-database-services-names.html">Autonomous
+AI Databaseのデータベース・サービス名</a></li>
 <li><a
 href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/connect-predefined-generic.html">Autonomous
 AI Databaseの事前定義済データベース・サービス名</a></li>
 <li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb201-service-names/">事前に定義済の接続サービス</a></li>
+href="https://oracle-japan.github.io/ocitutorials/adb/adb201-service-names/">201:
+接続サービスの理解</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb201-service-names/#5-%E5%90%8C%E6%99%82%E5%AE%9F%E8%A1%8C%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E6%95%B0%E3%81%AE%E5%88%B6%E9%99%90%E3%81%8C%E5%A4%89%E6%9B%B4%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%97%E3%82%88%E3%81%86">5.
+同時実行セッション数の制限が変更できることを確認しよう</a></li>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=79">事前定義済データベース・サービス</a></li>
 <li><a
@@ -1025,6 +1037,13 @@ href="https://www.intellilink.co.jp/column/oracleletter/2016/030100.aspx">SQLcl
 <li><a
 href="https://qiita.com/fam_taro/items/4a93f934b26468f38fc8">もっと楽に
 SQLcl 使おう【使いやすい SQL*Plus】</a></li>
+</ul>
+<h3 id="oracle-sqlcl-sql-developerコマンドライン概要">Oracle SQLcl (SQL
+Developerコマンドライン)/概要</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db/autonomous-database.html">OCI
+CLI Command Reference/autonomous-database</a></li>
 </ul>
 <h3 id="sql-developer">SQL Developer</h3>
 <ul>
