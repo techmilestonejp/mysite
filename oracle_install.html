@@ -29,22 +29,32 @@
 <h1 class="title">Oracle_インストール</h1>
 </header>
 <p>作成日：2025/11/01 11:47:41<br />
-更新日：2026/05/09 12:15:51<br />
+更新日：2026/05/24 11:11:06<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracledbのインストール手順">OracleDBのインストール手順</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="oraclelinuxのインストール">OracleLinuxのインストール</h3>
-<p>OracleLinux上でOracleDBを構築する手順として以下のような種別があります。</p>
+<h3
+id="oraclelinux上のoracledbインストール手順">OracleLinux上のOracleDBインストール手順</h3>
+<p>OracleLinux上でOracleDBをインストールする(構築する)手順としては、以下の種別があります。</p>
 <ul>
 <li>OracleLinuxのインストール手順の種別
 <ol type="1">
-<li>VirtualBoxで仮想サーバを構築して、メディアインストールを行う</li>
+<li>VirtualBoxで対応OSが導入された仮想サーバ(VMサーバ)を構築して、Oracleメディアのインストールを行う</li>
 <li>VirtualBoxのovaファイルを利用して、仮想サーバを構築する</li>
 <li>VirtualBoxで仮想サーバを構築して、「23ai
-Free」でインストールを行う</li>
-<li>Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
+Free」(RPMインストール)でインストールを行う</li>
+<li>(OracleLinuxのみ)Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
+</ol></li>
+</ul>
+<h3
+id="その他oracledbインストール手順">その他OracleDBインストール手順</h3>
+<p>その他の手順としては、以下でOracleインストールが可能です。</p>
+<ul>
+<li>その他OracleDBインストール手順
+<ol type="1">
+<li>Docker環境上でOracle Databaseインストール</li>
 </ol></li>
 </ul>
 <hr />
@@ -95,14 +105,14 @@ href="https://cosol.jp/techdb/2022/12/oracle_software_patch_download/">Oracleソ
 id="oracle製品のインストールlinux環境上その他">Oracle製品のインストール(Linux環境上：その他)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
-id="oracle23coraclelinuxvirtualbox_ovaイメージ使用インストール">Oracle23c/OracleLinux/VirtualBox_ovaイメージ使用インストール</h3>
+id="oracle23coraclelinuxvirtualbox_ovaイメージ">Oracle23c/OracleLinux/VirtualBox_ovaイメージ</h3>
 <ul>
 <li><a
 href="https://qiita.com/ora_gonsuke777/items/564471e460b2b58d8aa2">DeveloperRelease
 VirtualBox ApplianceでOracleDB23c環境を楽々構築</a></li>
 </ul>
-<h3 id="oraclelinux23ai-freerpmインストール">OracleLinux/23ai
-Free(RPMインストール)</h3>
+<h3 id="ai-freerpmインストールoraclelinux">23ai
+Free(RPMインストール)/OracleLinux</h3>
 <ul>
 <li><a
 href="https://www.oracle.com/jp/database/free/get-started/">Oracle
@@ -116,12 +126,52 @@ Oracle Database 23ai Free の インストール</a></li>
 href="https://qiita.com/plusultra/items/f4ec92a4b78c8c11a56b">Oracle
 Database 23ai Free を試す</a></li>
 </ul>
-<h3 id="oraclelinuxvagrantboxes使用">OracleLinux/VagrantBoxes使用</h3>
+<h3 id="oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</h3>
 <ul>
 <li><a href="https://yum.oracle.com/boxes/">Using Oracle Linux Vagrant
 boxes</a></li>
 <li><a
 href="https://qiita.com/y_arakawa/items/08ef7a4568ef1545313d">Vagrantで開発環境を手軽に構築し壊す</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールdocker環境上">Oracle製品のインストール(Docker環境上)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="docker環境上でoracle-databaseインストール">Docker環境上でOracle
+Databaseインストール</h3>
+<ul>
+<li>Docker環境上でOracle Databaseインストール
+<ul>
+<li><a
+href="https://qiita.com/kamajiro/items/f4afe62bf7f4646f042e">【Docker】Oracle
+AI Database 26ai Free環境を構築する</a></li>
+<li><a
+href="https://qiita.com/RYA234/items/19abe4a44e9820c9efd3">DockerでOracle
+Databaseを構築</a></li>
+<li><a
+href="https://qiita.com/h-i-ist/items/a67acbce0e7c6bdebd69">DockerでOracle
+Databaseを構築してみる</a></li>
+<li><a
+href="https://qiita.com/mi-kana/items/249722c0636f31f06c7e">Oracle
+Database Free 23ai Docker版を導入してみる</a></li>
+<li><a
+href="https://qiita.com/princessechamp/items/b132992bb9661063141a">Docker上にOracle環境を構築してみた</a></li>
+<li><a
+href="https://qiita.com/yoshiyu0922/items/2b2b2bdc2d39aaabb78e">MacでOracle
+Databaseを構築 on Docker</a></li>
+<li><a
+href="https://qiita.com/y-nakazono/items/52acb21ae41286be0af2">ローカルでOracleDB構築</a></li>
+<li><a
+href="https://qiita.com/neko_the_shadow/items/f106e25b1a2419bb5094">Dockerで構築したOracle
+Database のPre-Builtを試す</a></li>
+<li><a
+href="https://zenn.dev/msksgm/articles/20211225-oracle-database-19c-docker">Oracle
+Database 19c 環境をDockerで作成してSQL Developerで接続する</a></li>
+<li><a
+href="https://haronoid.hatenablog.com/entry/2017/12/04/174606">Docker
+にテスト用にOracle DBを構築する</a></li>
+</ul></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -150,33 +200,6 @@ id="oracle12cwindows10インストール">Oracle12c/Windows10インストール<
 <ul>
 <li><a
 href="https://qiita.com/nori-k/items/668a8b50984863ed025f">Windows10にOracle12cをインストールしたので手順を残しておこうと思う</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="oracle製品のインストールoraclerac">Oracle製品のインストール(OracleRAC)</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="oracle-rac-19cインストール">Oracle RAC 19cインストール</h3>
-<ul>
-<li><a
-href="https://qiita.com/FiftyStorm/items/efa9f610d765444f3fda">VirtualBoxを用いてOracle
-DBのRAC（19c）を構築しよー</a></li>
-<li><a
-href="https://qiita.com/shirok/items/d6f2b3c0813122dd4048">VMwareへOracle
-Real Application Clusters 19c (RAC)をインストールしてみてみた</a></li>
-<li><a href="https://chiritsumon.net/lab/archives/267">Linux で 19c RAC
-環境構築</a></li>
-<li><a
-href="https://chiritsumon.net/lab/archives/489">RACのノード追加</a></li>
-</ul>
-<h3 id="oracle-restart-19cインストール">Oracle Restart
-19cインストール</h3>
-<ul>
-<li><a
-href="https://cosol.jp/techdb/2022/04/oracle_restart19c_setup/">VM作成からのOracle
-Restart 19cインストール手順</a></li>
-<li><a
-href="https://cosol.jp/techdb/2021/12/new_oracle_book_ac_day11/">Restart環境でのopatchauto実行例</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
