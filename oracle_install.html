@@ -29,7 +29,7 @@
 <h1 class="title">Oracle_インストール</h1>
 </header>
 <p>作成日：2025/11/01 11:47:41<br />
-更新日：2026/05/24 11:11:06<br />
+更新日：2026/05/30 21:39:47<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -45,7 +45,7 @@ id="oraclelinux上のoracledbインストール手順">OracleLinux上のOracleDB
 <li>VirtualBoxのovaファイルを利用して、仮想サーバを構築する</li>
 <li>VirtualBoxで仮想サーバを構築して、「23ai
 Free」(RPMインストール)でインストールを行う</li>
-<li>(OracleLinuxのみ)Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
+<li>(OracleLinux構築のみ)Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
 </ol></li>
 </ul>
 <h3
@@ -66,24 +66,47 @@ id="oracle製品のインストールlinux環境上通常メディアインス�
 id="oracle19coraclelinuxvirtualbox-vmで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBox
 VMで仮想サーバ構築インストール</h3>
 <ul>
-<li>Qiita
+<li>Qiita(Oracle Linux 9)
+<ul>
+<li><a
+href="https://qiita.com/jri-oi/items/29cc151fb8f98298d044">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築</a></li>
+<li><a
+href="https://qiita.com/jri-oi/items/5ab379764a5af5658210">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築（２）Oracle
+Databaseインストール事前準備</a></li>
+<li><a
+href="https://qiita.com/jri-oi/items/9069717e478644a78e2d">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築（３）Opatchインストール</a></li>
+</ul></li>
+<li>Qiita(Oracle Linux 8)
 <ul>
 <li><a
 href="https://qiita.com/kamechan516/items/63b58f08dc7f545700bc">Oracle
 Linux
 8.7(VirtualBox使用)にOracle19cをインストールする方法　前編</a></li>
-<li><a
-href="https://qiita.com/jri-oi/items/29cc151fb8f98298d044">VirtualBoxでOracle
-Linux 9 + Oracle DB 19c 環境構築</a></li>
-<li><a href="https://qiita.com/plusultra/items/7dae26a702e3aa9ab059">Red
-Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
+</ul></li>
+<li>Qiita(RHEL 8)
+<ul>
 <li><a href="https://qiita.com/nigmom/items/24b5fbdce95ddcded1a8">RHEL
 8.6 に Oracle Database 19c インストール</a></li>
+<li><a href="https://qiita.com/plusultra/items/7dae26a702e3aa9ab059">Red
+Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
 </ul></li>
-<li>コーソル
+<li>JBS Tech Blog(RHEL 8)
 <ul>
-<li>https://cosol.jp/techdb/2021/06/oracle19c_setup_1of2/</li>
-<li>https://cosol.jp/techdb/2021/06/oracle19c_setup_2of2/</li>
+<li><a
+href="https://blog.jbs.co.jp/entry/2024/11/14/101133">LinuxでOracle
+Database 19c をインストールする手順</a></li>
+</ul></li>
+<li>コーソル(Oracle Linux 7.9)
+<ul>
+<li><a
+href="https://cosol.jp/techdb/2021/06/oracle19c_setup_1of2/">VM作成からのOracle
+19cインストール手順 前編（Linuxシングル）</a></li>
+<li><a
+href="https://cosol.jp/techdb/2021/06/oracle19c_setup_2of2/">VM作成からのOracle
+19cインストール手順 後編（Linuxシングル）</a></li>
 </ul></li>
 </ul>
 <h3 id="サイレントインストール">サイレントインストール</h3>
@@ -92,12 +115,9 @@ Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
 最速構築ガイド：Oracle VM へのサイレントインストール手順</a></li>
 </ul>
 <h3
-id="oracleソフトウェアパッチ-ダウンロード手順">Oracleソフトウェア/パッチ
-ダウンロード手順</h3>
+id="oracleソフトウェアoracleパッチ適用手順">Oracleソフトウェア/Oracleパッチ適用手順</h3>
 <ul>
-<li><a
-href="https://cosol.jp/techdb/2022/12/oracle_software_patch_download/">Oracleソフトウェア/パッチ
-ダウンロード手順</a></li>
+<li>(自サイト内ページ)<a href="oracle_patch.html">Oracleパッチ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -128,10 +148,8 @@ Database 23ai Free を試す</a></li>
 </ul>
 <h3 id="oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</h3>
 <ul>
-<li><a href="https://yum.oracle.com/boxes/">Using Oracle Linux Vagrant
-boxes</a></li>
-<li><a
-href="https://qiita.com/y_arakawa/items/08ef7a4568ef1545313d">Vagrantで開発環境を手軽に構築し壊す</a></li>
+<li>(自サイト内ページ)<a
+href="tech_linuxinstall.html#oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
