@@ -30,29 +30,49 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/05/30 14:55:29<br />
-更新日：2026/05/30 14:55:29</p>
+更新日：2026/05/31 12:21:52</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracleパッチ概要">Oracleパッチ概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="oracleパッチ種別">Oracleパッチ種別</h3>
 <ul>
-<li>Oracle Database 19c RU19.17 (2022年10月中旬)以降
-<ul>
-<li>MRP</li>
-</ul></li>
 <li>12c R2以後のパッチ体系
 <ul>
-<li>RU</li>
-<li>RUR</li>
+<li>RU（Release Update / リリース更新)</li>
+<li>RU（Release Update）とは、Oracle Database 12.2（12c R2）以降
+から導入された四半期ごとに提供される累積的な修正パッチのことです。従来のPSU（Patch
+Set
+Update）に代わるパッチ提供形態であり、新機能拡張、セキュリティ問題の修正、バグ修正が含まれます。</li>
+<li><a
+href="https://docs.oracle.com/cd/F19136_01/dbptc/index.html#GUID-62637CAD-E7F6-4E31-B5E8-8C7508D0A785">リリース更新(RU)</a></li>
 </ul></li>
-<li>12.1.0.2以前のパッチ体系
+<li>Oracle Database 19c RU19.17 (2022年10月中旬)以降
+<ul>
+<li>MRP (Monthly Recommended Patches / 月次推奨パッチ)</li>
+<li>OracleのMRP (Monthly Recommended Patches /
+月次推奨パッチ)は、四半期のリリース更新（RU）の上に追加される重要なバグ修正やセキュリティ修正を、毎月まとめて提供するパッチ形式です。</li>
+<li><a
+href="https://docs.oracle.com/cd/F19136_01/dbptc/index.html#GUID-81B51932-3DD5-479B-9233-E0D37485DFC4">月次推奨パッチ(MRP)</a></li>
+</ul></li>
+<li>個別パッチ</li>
+</ul>
+<h3 id="oracleパッチ種別廃止済">Oracleパッチ種別(廃止済)</h3>
+<ul>
+<li>12c R2以後のパッチ体系(廃止済)
+<ul>
+<li>RUR（Release Update Revisions)</li>
+<li>RUR（Release Update
+Revisions）は2023年1月に廃止されました。現在は、直近の機能・セキュリティ修正が含まれるRU（Release
+Updates）と、障害修正に特化したMRP（Monthly Recommended
+Patches）の提供スタイルへ完全に移行しています。</li>
+</ul></li>
+<li>12.1.0.2以前のパッチ体系(廃止済)
 <ul>
 <li>PSR</li>
 <li>PSU</li>
 <li>CPU</li>
 </ul></li>
-<li>個別パッチ</li>
 </ul>
 <h3 id="oracleパッチ概要-1">Oracleパッチ概要</h3>
 <ul>
@@ -62,6 +82,10 @@ href="https://qiita.com/shi6maSencho/items/75335f635dbae3c72d85">パッチ適用
 href="https://kemboooo.hatenablog.com/entry/2024/11/17/162535">Oracleのパッチ</a></li>
 <li><a
 href="https://www.reqtc.com/blog/oracleopatch-lspatches.html">ORACLEホームに適用されているパッチ番号を一覧表示する</a></li>
+<li><a
+href="https://qiita.com/ssfujita/items/cc3dcde1bc2a98c97cbe">Oracle
+DatabaseのRelease Update (RU) とRelease Update Revisions (RUR)
+を自由に行き来できるか試してみた</a></li>
 </ul>
 <h3 id="ダウンロード手順">ダウンロード手順</h3>
 <ul>
