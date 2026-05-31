@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_OCIADP</h1>
 </header>
 <p>作成日：2025/12/13 10:12:20<br />
-更新日：2026/05/23 15:50:35<br />
+更新日：2026/05/31 17:05:30<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -118,7 +118,8 @@ href="https://education.oracle.com/ja/oracle-autonomous-database-cloud-2025-prof
 <ul>
 <li>01:Oracle データレイク</li>
 </ul></li>
-<li>分類08:Oracle Autonomous AI Database/移行</li>
+<li>分類08:Oracle Autonomous AI Database/監視</li>
+<li>分類09:Oracle Autonomous AI Database/移行</li>
 </ul></li>
 </ul>
 <hr />
@@ -1125,7 +1126,7 @@ href="https://oracle-japan.github.io/ocitutorials/intermediates/ocidi-tutorials/
 Data Integrationチュートリアル</a></li>
 </ul>
 <p>(OCI Data Integration ETLサービス概要)<br />
-<img src="img/oci_dfa/ociditutorial.png" width="50%" height="50%"><br /></p>
+<img src="img/oci_dfa/ociditutorial.png" width="40%" height="40%"><br /></p>
 <h3 id="oci-data-catalog">OCI Data Catalog</h3>
 <p>OCI Data
 Catalogは、データの専門家がデータを発見し、データガバナンスをサポートするのに役立つメタデータを管理するためのOCIサービスです。</p>
@@ -1163,16 +1164,128 @@ Part 1</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="アップグレード">アップグレード</h2>
-<p>分類09:アップグレードと移行<br />
+<h2 id="oci-database-management">OCI Database Management</h2>
+<p>分類08:Oracle Autonomous AI Database/監視<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="oci-database-management概要">OCI Database Management/概要</h3>
 <ul>
-<li>(サイト内ページ)<a href="oci_adp.html">アップグレードと移行</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-database-management">OCI
+Database Management サービス詳細</a></li>
+<li><a
+href="https://qiita.com/Western24/items/5e3cd3caebff0101f522">Oracle
+Databaseの運用管理 Enterprise Manager vs. Database Management</a></li>
+<li><a
+href="https://qiita.com/Western24/items/db97c7e2e9553e683d2e">Database
+ManagementによるOracle Databaseのパフォーマンス監視 実践編①</a></li>
+<li><a href="https://qiita.com/Western24/items/bac8190ee08a8b1cf339">OCI
+Database ManagementでBaseDB/ExaDB-Dのパフォーマンス監視をする</a></li>
+<li><a href="https://qiita.com/Western24/items/c391afbf51951424b35f">OCI
+Database ManagementでオンプレミスのOracle
+Databaseのパフォーマンス監視をする</a></li>
+</ul>
+<h3 id="oci-database-management管理オプション">OCI Database
+Management/管理オプション</h3>
+<ul>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/oci-database-management?slide=31">2つの管理オプション</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb503-monitoring/#3-3-database-management%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%A3%E8%A6%96%E8%A8%AD%E5%AE%9A">3-3.
+Database Managementによる監視設定</a></li>
+</ul>
+<h3 id="oci-database-managementフリートサマリー">OCI Database
+Management/フリート・サマリー</h3>
+<p>パフォーマンス情報を表示するダッシュボードです。</p>
+<p>(フリート・サマリー画面)<br />
+<img src="img/oci_dfa/fleet_summary.jpg" width="70%" height="70%"><br /></p>
+<h3 id="oci-database-management管理対象データベース詳細">OCI Database
+Management/管理対象データベース詳細</h3>
+<p>フリート内の管理対象データベースに関する情報は、対応する「管理対象データベースの詳細」ページに表示されます。<br />
+「管理対象データベースの詳細」ページに移動するには、「Oracle
+Databaseフリート・サマリー」ページで、次のいずれかのオプションを使用できます。</p>
+<ul>
+<li>「管理対象データベースの詳細」の表示方法
+<ul>
+<li>「メンバー」リストまたは表で、管理対象データベースの名前をクリックします。</li>
+<li>「パフォーマンス」ツリー・マップで、管理対象データベースまたはRACインスタンスを示す長方形をクリックします。</li>
+</ul></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-management/doc/monitor-and-manage-specific-managed-database.html">特定の管理対象データベースのモニターと管理</a></li>
+<li><a
+href="https://www.lac.co.jp/lacwatch/service/20240409_003754.html">OCI
+Database
+Managementで始める、クラウド時代のデータベース監視【活用編】</a></li>
+</ul>
+<h3 id="oci-database-management管理対象データベース詳細監視項目">OCI
+Database Management/管理対象データベース詳細(監視項目)</h3>
+<ul>
+<li>「管理対象データベース詳細」で確認可能な監視項目
+<ul>
+<li>パフォーマンス・ハブ</li>
+<li>ADDMスポットライト
+<ul>
+<li>SQL詳細の表示</li>
+<li>SQLチューニング・アドバイザの実行</li>
+<li>データベース・パラメータの編集</li>
+</ul></li>
+<li>AWRエクスプローラ</li>
+<li>容量計画</li>
+<li>SQLインサイト</li>
+<li>ログ・エクスプローラ</li>
+<li>サマリー
+<ul>
+<li>モニタリング・ステータス・タイムライン</li>
+<li>アクティビティ・クラス(平均アクティブ・セッション)</li>
+<li>アクティビティ</li>
+<li>I/O</li>
+<li>メモリー</li>
+<li>ストレージ</li>
+</ul></li>
+<li>サマリー(管理対象データベースの詳細)
+<ul>
+<li>Oracle関連のログ</li>
+<li>パフォーマンス
+<ul>
+<li>パフォーマンス・ハブ</li>
+<li>ADDMスポットライト</li>
+<li>AWRエクスプローラ</li>
+<li>SQLチューニング・アドバイザ</li>
+<li>SQLチューニング・セット</li>
+<li>SQL計画管理</li>
+<li>SQLインサイト</li>
+<li>SQLの検索</li>
+<li>セッションの検索</li>
+<li>オプティマイザ統計</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="パフォーマンスハブ">パフォーマンス・ハブ</h3>
+<p>(パフォーマンス・ハブ画面)<br />
+<img src="img/oci_dfa/autonomous-performance-hub.png" width="70%" height="70%"><br /></p>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/performance-hub/">パフォーマンス・ハブ</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/autonomous-monitor-perf-hub.html">パフォーマンス・ハブによる自律型AIデータベースの監視</a></li>
+<li><a
+href="https://docs.oracle.com/cd/E57425_01/121/ADMQS/GUID-573F73E4-EF1C-46F2-9BAB-73DA08E7D364.htm">10.1.2
+パフォーマンス・ハブを使用したパフォーマンスの監視</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="アップグレード">アップグレード</h2>
+<p>分類09:Oracle Autonomous AI Database/移行<br />
+<!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="アップグレード-1">アップグレード</h3>
+<ul>
+<li>(サイト内ページ)<a
+href="oci_adp.html#adbアップグレードパッチ適用">ADB/アップグレード・パッチ適用</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oci移行">OCI移行</h2>
-<p>分類09:アップグレードと移行<br />
+<p>分類09:Oracle Autonomous AI Database/移行<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
 <h3 id="oci移行概要">OCI移行概要</h3>
 <ul>
@@ -1182,6 +1295,19 @@ href="https://www.oracle.com/jp/cloud/migration/">OCI移行ハブ</a></li>
 OCI移行サービス</a></li>
 <li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#migration">Migration</a></li>
+</ul>
+<h3 id="zero-downtime-migration">Zero Downtime Migration</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/database-migration/doc/zero-downtime-migration.html">ゼロ・ダウンタイム移行について</a></li>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/exadatacloud/doc/ecs-moving-using-zdlra.html">ゼロ・ダウンタイム移行を使用したOracle
+Cloudへの移行</a></li>
+<li><a
+href="https://speakerdeck.com/oracle4engineer/zero-downtime-migration-tech-detail">Zero
+Downtime Migration 技術詳細</a></li>
+<li><a
+href="https://enterprisezine.jp/article/detail/18754">シン・OCI移行ツールでシステム停止時間を短縮</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
