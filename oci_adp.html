@@ -28,9 +28,9 @@
 <header id="title-block-header">
 <h1 class="title">勉強メモ_OCIADP</h1>
 </header>
-<p>作成日：2025/12/13 10:12:20<br />
-更新日：2026/05/31 17:05:30<br />
-<a href="index.html">トップページ</a></p>
+<p><a href="index.html">トップページ</a><br />
+作成日：2025/12/13 10:12:20<br />
+更新日：2026/06/06 22:10:34</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oci資格情報oci-adp-2025">OCI資格情報(OCI-ADP-2025)</h2>
@@ -630,6 +630,19 @@ href="oracle_dataguard.html">OracleDataGuard</a></li>
 <h2 id="adb接続">ADB/接続</h2>
 <p>分類05:Oracle Autonomous AI Database/各機能<br />
 <!---------------------------------------------------------------------------------------------------------------------></p>
+<h3 id="接続方式概要">接続方式概要</h3>
+<p>ADBでは、ウォレットを利用したmTLS接続の他に、特定の条件下でウォレットを利用しないTLS接続という接続方法があります。</p>
+<h3 id="tls認証">TLS認証</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/connect-sqlplus-tls.html">ウォレットを使用しないSQL*Plusの接続</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb108-walletless/">108:
+接続文字列を利用して接続してみよう</a></li>
+<li><a
+href="https://qiita.com/500InternalServerError/items/6822718140afc4e8884e">[OCI]ウォレットを使用せずにSQL*PlusからAutonomous
+DatabaseにTLS認証で接続してみた</a></li>
+</ul>
 <h3
 id="事前定義済データベースサービス名">事前定義済データベース・サービス名</h3>
 <ul>
@@ -662,6 +675,14 @@ href="https://speakerdeck.com/oracle4engineer/adb-s-technical-detail-jp?slide=79
 <li><a
 href="https://qiita.com/dingtianhongjie/items/27a432bf02edce15e116#connecting-to-adb">Connecting
 to ADB</a></li>
+</ul>
+<h3 id="application-continuity">Application Continuity</h3>
+<ul>
+<li><a
+href="https://docs.oracle.com/ja-jp/iaas/autonomous-database-serverless/doc/dbms-cloud-admin.html#GUID-42B9DDB0-12A7-4EE3-9860-30EFA41061E9">ENABLE_APP_CONTプロシージャ</a></li>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/adb/adb213-tac/">213 :
+Application Continuityを設定しよう</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -1190,8 +1211,8 @@ Management/管理オプション</h3>
 <li><a
 href="https://speakerdeck.com/oracle4engineer/oci-database-management?slide=31">2つの管理オプション</a></li>
 <li><a
-href="https://oracle-japan.github.io/ocitutorials/adb/adb503-monitoring/#3-3-database-management%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%A3%E8%A6%96%E8%A8%AD%E5%AE%9A">3-3.
-Database Managementによる監視設定</a></li>
+href="https://oracle-japan.github.io/ocitutorials/adb/adb503-monitoring/#3-3-database-management%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%A3%E8%A6%96%E8%A8%AD%E5%AE%9A">503
+: ADBインスタンスの監視設定をしてみよう</a></li>
 </ul>
 <h3 id="oci-database-managementフリートサマリー">OCI Database
 Management/フリート・サマリー</h3>

@@ -28,9 +28,9 @@
 <header id="title-block-header">
 <h1 class="title">Oracle_インストール</h1>
 </header>
-<p>作成日：2025/11/01 11:47:41<br />
-更新日：2026/05/31 17:05:30<br />
-<a href="index.html">トップページ</a></p>
+<p><a href="index.html">トップページ</a><br />
+作成日：2025/11/01 11:47:41<br />
+更新日：2026/06/06 22:10:34</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracledbのインストール手順">OracleDBのインストール手順</h2>
@@ -39,28 +39,30 @@
 id="oraclelinux上のoracledbインストール手順">OracleLinux上のOracleDBインストール手順</h3>
 <p>OracleLinux上でOracleDBをインストールする(構築する)手順としては、以下の種別があります。</p>
 <ul>
-<li>OracleLinuxのインストール手順の種別
-<ol type="1">
+<li>OracleLinuxのインストール手順の種別/従来型
+<ul>
 <li>VirtualBoxで対応OSが導入された仮想サーバ(VMサーバ)を構築して、Oracleメディアのインストールを行う</li>
-<li>VirtualBoxのovaファイルを利用して、仮想サーバを構築する</li>
+</ul></li>
+<li>OracleLinuxのインストール手順の種別/23aiFree以後
+<ul>
 <li>VirtualBoxで仮想サーバを構築して、「23ai
 Free」(RPMインストール)でインストールを行う</li>
-<li>(OracleLinux構築のみ)Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
-</ol></li>
-</ul>
-<h3
-id="その他oracledbインストール手順">その他OracleDBインストール手順</h3>
-<p>その他の手順としては、以下でOracleインストールが可能です。</p>
+<li>VirtualBoxのovaファイル(「23ai
+Free」導入済)を利用して、仮想サーバを構築する</li>
+</ul></li>
+<li>OracleLinuxのインストール手順の種別/Docker環境(23aiFree)
 <ul>
-<li>その他OracleDBインストール手順
-<ol type="1">
 <li>Docker環境上でOracle Databaseインストール</li>
+</ul></li>
+<li>OracleLinuxのインストール手順の種別/OracleLinux構築のみ
+<ol type="1">
+<li>Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
 </ol></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="oracle製品のインストールlinux環境上通常メディアインストール">Oracle製品のインストール(Linux環境上：通常メディアインストール)</h2>
+id="oracle製品のインストールlinux環境上従来型メディアインストール">Oracle製品のインストール(Linux環境上：従来型メディアインストール)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
 id="oracle19coraclelinuxvirtualbox-vmで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBox
@@ -93,12 +95,6 @@ Linux
 <li><a href="https://qiita.com/plusultra/items/7dae26a702e3aa9ab059">Red
 Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
 </ul></li>
-<li>JBS Tech Blog(RHEL 8)
-<ul>
-<li><a
-href="https://blog.jbs.co.jp/entry/2024/11/14/101133">LinuxでOracle
-Database 19c をインストールする手順</a></li>
-</ul></li>
 <li>コーソル(Oracle Linux 7.9)
 <ul>
 <li><a
@@ -107,6 +103,12 @@ href="https://cosol.jp/techdb/2021/06/oracle19c_setup_1of2/">VM作成からのOr
 <li><a
 href="https://cosol.jp/techdb/2021/06/oracle19c_setup_2of2/">VM作成からのOracle
 19cインストール手順 後編（Linuxシングル）</a></li>
+</ul></li>
+<li>JBS Tech Blog(Red Hat Enterprise Linux 8)
+<ul>
+<li><a
+href="https://blog.jbs.co.jp/entry/2024/11/14/101133">LinuxでOracle
+Database 19c をインストールする手順</a></li>
 </ul></li>
 </ul>
 <h3 id="サイレントインストール">サイレントインストール</h3>
@@ -119,13 +121,83 @@ id="oracleソフトウェアoracleパッチ適用手順">Oracleソフトウェ�
 <ul>
 <li>(自サイト内ページ)<a href="oracle_patch.html">Oracleパッチ</a></li>
 </ul>
+<h3 id="oracle-ai-database-26aiのruninstaller起動">Oracle AI Database
+26aiのrunInstaller起動</h3>
+<p>オンプレミスへのインストールの場合、Oracle AI Database 26ai は Oracle
+Exadata および Oracle Database Appliance（ODA）で利用可能です。<br />
+通常の仮想環境では、runInstaller のみ実行可能です。</p>
+<ul>
+<li><a href="https://qiita.com/shirok/items/b9e3bcb60b9d7353e266">Oracle
+AI Database 26ai のメディアをダウンロードして runInstaller
+実行してみてみた</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="oracle製品のインストールlinux環境上その他">Oracle製品のインストール(Linux環境上：その他)</h2>
+id="oracle製品のインストールlinux環境上26ai-23ai-freerpmインストール">Oracle製品のインストール(Linux環境上：26ai-23ai
+Free/RPMインストール)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="ai-freerpmインストール">26ai Free(RPMインストール)</h3>
+<ul>
+<li>概要
+<ul>
+<li><a href="https://qiita.com/nakaie/items/30e1338614601c52a476">Oracle
+AI Database 26ai Freeの紹介</a></li>
+</ul></li>
+<li>インストール手順(CentOS Stream 8)
+<ul>
+<li><a
+href="https://qiita.com/nisshii0/items/092a4c74730960b8f9e1">3コマンドで
+Oracle AI Database 26ai Free の インストール</a></li>
+</ul></li>
+</ul>
+<h3 id="ai-freerpmインストール-1">23ai Free(RPMインストール)</h3>
+<ul>
+<li>概要
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/free/get-started/">Oracle
+Database Freeの利用を開始する</a></li>
+<li><a href="https://qiita.com/nakaie/items/609a85a34301fc9ed79c">Oracle
+Database 23ai Freeの紹介</a></li>
+</ul></li>
+<li>インストール手順(CentOS Stream 9)
+<ul>
+<li><a href="https://qiita.com/nerai/items/bab9975a7f7e5b56a003">CentOS
+Stream 9 に Oracle Database 23ai Free をインストールする</a></li>
+</ul></li>
+<li>インストール手順(CentOS Stream 8)
+<ul>
+<li><a
+href="https://qiita.com/tbtakhk/items/857fad99b23e652d09ad">CentOS
+Stream 8にOracle Database 23c Freeをインストールしてみた</a></li>
+</ul></li>
+<li>インストール手順(OracleLinux 8)
+<ul>
+<li><a
+href="https://oracle-japan.github.io/ocitutorials/ai-vector-search/ai-vector102-23aifree-install/">Oracle
+AI Database Free のインストール</a></li>
+<li><a
+href="https://qiita.com/nisshii0/items/e300edbbb7845a40cc11">3コマンドで
+Oracle Database 23ai Free の インストール</a></li>
+<li><a
+href="https://qiita.com/plusultra/items/f4ec92a4b78c8c11a56b">Oracle
+Database 23ai Free を試す</a></li>
+<li><a
+href="https://aulta.co.jp/technical/server-build/oracle-database-23ai-free-oracle-linux-8">Oracle
+Database 23ai Free と Oracle Linux 8
+で最高のOracle環境を準備する</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールlinux環境上23ai-freeovaイメージ">Oracle製品のインストール(Linux環境上：23ai
+Free/ovaイメージ)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
-id="oracle23coraclelinuxvirtualbox_ovaイメージ">Oracle23c/OracleLinux/VirtualBox_ovaイメージ</h3>
+id="oracle23coraclelinuxvirtualbox_ovaイメージ23ai-free導入済">Oracle23c/OracleLinux/VirtualBox_ovaイメージ(23ai
+Free導入済)</h3>
 <ul>
 <li><a
 href="https://qiita.com/ora_gonsuke777/items/a53b04da983998e16c06">Oracle
@@ -134,40 +206,30 @@ Database 23ai Free VirtualBox Appliance で Oracle DB 23ai環境 を
 <li><a
 href="https://qiita.com/ora_gonsuke777/items/564471e460b2b58d8aa2">DeveloperRelease
 VirtualBox ApplianceでOracleDB23c環境を楽々構築</a></li>
-</ul>
-<h3 id="ai-freerpmインストールoraclelinux">23ai
-Free(RPMインストール)/OracleLinux</h3>
-<ul>
 <li><a
-href="https://www.oracle.com/jp/database/free/get-started/">Oracle
-Database Freeの利用を開始する</a></li>
-<li><a href="https://qiita.com/nakaie/items/609a85a34301fc9ed79c">Oracle
-Database 23ai Freeの紹介</a></li>
-<li><a
-href="https://qiita.com/nisshii0/items/e300edbbb7845a40cc11">3コマンドで
-Oracle Database 23ai Free の インストール</a></li>
-<li><a
-href="https://qiita.com/plusultra/items/f4ec92a4b78c8c11a56b">Oracle
-Database 23ai Free を試す</a></li>
-</ul>
-<h3 id="oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</h3>
-<ul>
-<li>(自サイト内ページ)<a
-href="tech_linuxinstall.html#oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</a></li>
+href="https://xn--w8j8bac3czf5bl7e.com/2025/08/19/oracle-database-23ai-free-developer-release%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%EF%BC%81/">Oracle
+Database 23ai Free–Developer Releaseを使ってみた！</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
-id="oracle製品のインストールdocker環境上">Oracle製品のインストール(Docker環境上)</h2>
+id="oracle製品のインストール26ai-23ai-freedocker環境上">Oracle製品のインストール(26ai-23ai
+Free/Docker環境上)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="docker環境上でoracle-databaseインストール">Docker環境上でOracle
 Databaseインストール</h3>
 <ul>
-<li>Docker環境上でOracle Databaseインストール
+<li>Oracle AI Database 26ai Free Docker版
 <ul>
 <li><a
 href="https://qiita.com/kamajiro/items/f4afe62bf7f4646f042e">【Docker】Oracle
 AI Database 26ai Free環境を構築する</a></li>
+<li><a
+href="https://qiita.com/shakiyam/items/01b80aa0d6307c7cd8e2">Oracle AI
+Database 26aiをDockerやPodmanで動かしてみる</a></li>
+</ul></li>
+<li>Oracle Database Free 23ai Docker版
+<ul>
 <li><a
 href="https://qiita.com/RYA234/items/19abe4a44e9820c9efd3">DockerでOracle
 Databaseを構築</a></li>
@@ -176,24 +238,36 @@ href="https://qiita.com/h-i-ist/items/a67acbce0e7c6bdebd69">DockerでOracle
 Databaseを構築してみる</a></li>
 <li><a
 href="https://qiita.com/mi-kana/items/249722c0636f31f06c7e">Oracle
-Database Free 23ai Docker版を導入してみる</a></li>
-<li><a
-href="https://qiita.com/princessechamp/items/b132992bb9661063141a">Docker上にOracle環境を構築してみた</a></li>
-<li><a
-href="https://qiita.com/yoshiyu0922/items/2b2b2bdc2d39aaabb78e">MacでOracle
-Databaseを構築 on Docker</a></li>
+Database Free 23ai Docker版を導入してみる</a> Oracle Database 21c
+Docker版</li>
 <li><a
 href="https://qiita.com/y-nakazono/items/52acb21ae41286be0af2">ローカルでOracleDB構築</a></li>
 <li><a
 href="https://qiita.com/neko_the_shadow/items/f106e25b1a2419bb5094">Dockerで構築したOracle
-Database のPre-Builtを試す</a></li>
+Database のPre-Builtを試す</a> Oracle Database 19c Docker版</li>
+<li><a
+href="https://qiita.com/princessechamp/items/b132992bb9661063141a">Docker上にOracle環境を構築してみた</a></li>
 <li><a
 href="https://zenn.dev/msksgm/articles/20211225-oracle-database-19c-docker">Oracle
-Database 19c 環境をDockerで作成してSQL Developerで接続する</a></li>
+Database 19c 環境をDockerで作成してSQL Developerで接続する</a> Oracle
+Database 12c Docker版</li>
+<li><a
+href="https://qiita.com/yoshiyu0922/items/2b2b2bdc2d39aaabb78e">MacでOracle
+Databaseを構築 on Docker</a></li>
 <li><a
 href="https://haronoid.hatenablog.com/entry/2017/12/04/174606">Docker
 にテスト用にOracle DBを構築する</a></li>
 </ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="oracle製品のインストールlinux環境上その他">Oracle製品のインストール(Linux環境上：その他)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</h3>
+<ul>
+<li>(自サイト内ページ)<a
+href="tech_linuxinstall.html#oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
