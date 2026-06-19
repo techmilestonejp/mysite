@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>技術メモ_OSリソース測定</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">技術メモ_OSリソース測定</h1>
+</header>
+<p><a href="index.html">トップページ</a><br />
+作成日：2025/06/19 22:57:40<br />
+更新日：2025/06/19 22:57:40</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="vmstat">vmstat</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="vmstat概要">vmstat/概要</h3>
+<ul>
+<li>ベンダー情報
+<ul>
+<li><a
+href="https://docs.oracle.com/cd/E19683-01/817-7412/spmonitor-36385/index.html">仮想メモリーの統計情報の表示
+(vmstat)</a></li>
+<li><a
+href="https://users.miraclelinux.com/technet/document/linux/training/2_5_4.html">Linux技術トレーニング　基本管理コース
+II</a></li>
+<li><a href="https://access.redhat.com/ja/solutions/3054501">Vmstat
+の出力結果はどのように解釈すれば良いですか?</a></li>
+<li><a
+href="https://linuc.org/study/column/7477/">vmstatの出力の意味</a></li>
+<li><a
+href="https://www.ibm.com/docs/ja/aix/7.2.0?topic=monitoring-vmstat-command">vmstat
+コマンド</a></li>
+<li><a
+href="https://www.ibm.com/docs/ja/aix/7.2.0?topic=io-assessing-disk-performance-vmstat-command">vmstat
+コマンドによるディスク・パフォーマンスの評価</a></li>
+<li><a
+href="https://atmarkit.itmedia.co.jp/ait/articles/1707/13/news015.html">【
+vmstat 】コマンド――仮想メモリやディスクI/Oの統計情報を表示する</a></li>
+</ul></li>
+<li>Qiita
+<ul>
+<li><a
+href="https://www.linuxmaster.jp/linux_skill/2010/05/129vmstat-cpu.html">vmstatコマンドでCPU・メモリの負荷を確認する方法｜出力の読み方と高負荷の切り分け</a></li>
+<li><a
+href="https://qiita.com/yasushi-jp/items/d821c7d90006671d5d66">CPU使用率を取得する方法（Linux、vmstatコマンド）</a></li>
+</ul></li>
+<li>公開ページ
+<ul>
+<li><a
+href="https://qiita.com/asuna_sennkou/items/09d53ddbce3335cddc0c">「vmstatの見方を完全解説：Linuxのリソース状況を一目で把握する」</a></li>
+<li><a
+href="https://zenn.dev/yoshitomo_t/scraps/a54be0a78e7e36">【備忘録】vmstatコマンド</a></li>
+<li><a
+href="https://www.compiere-distribution-lab.net/2014/12/08/linux%E7%A7%81%E7%94%A8%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E9%9B%86-vmstat-%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%BC%E3%82%84cpu%E3%81%AE%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B/">【Linux私用コマンド集-0007】vmstat:メモリーやCPUの使用状況を表示する</a></li>
+</ul></li>
+</ul>
+<h3 id="メモリとキャッシュ">メモリとキャッシュ</h3>
+<p>確保されたキャッシュは解放できるものと解放できないものが存在します。<br />
+そのために、freeのサイズが少ない状態としても、cacheのサイズが多ければメモリの利用に問題はありません。</p>
+<ul>
+<li><a
+href="https://qiita.com/kunihirotanaka/items/70d43d48757aea79de2d#%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%A8%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5">メモリとキャッシュ</a></li>
+<li><a
+href="https://tech-lab.sios.jp/archives/43710">リソースの見方を今一度確認してみよう～メモリ使用率～</a></li>
+<li><a
+href="https://users.miraclelinux.com/technet/document/linux/training/2_5_4.html#training2_5_4_3">Linux技術トレーニング　基本管理コース
+II/4-3.考察</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

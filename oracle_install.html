@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/11/01 11:47:41<br />
-更新日：2026/06/06 22:10:34</p>
+更新日：2026/06/13 11:12:01</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracledbのインストール手順">OracleDBのインストール手順</h2>
@@ -39,10 +39,6 @@
 id="oraclelinux上のoracledbインストール手順">OracleLinux上のOracleDBインストール手順</h3>
 <p>OracleLinux上でOracleDBをインストールする(構築する)手順としては、以下の種別があります。</p>
 <ul>
-<li>OracleLinuxのインストール手順の種別/従来型
-<ul>
-<li>VirtualBoxで対応OSが導入された仮想サーバ(VMサーバ)を構築して、Oracleメディアのインストールを行う</li>
-</ul></li>
 <li>OracleLinuxのインストール手順の種別/23aiFree以後
 <ul>
 <li>VirtualBoxで仮想サーバを構築して、「23ai
@@ -54,83 +50,18 @@ Free」導入済)を利用して、仮想サーバを構築する</li>
 <ul>
 <li>Docker環境上でOracle Databaseインストール</li>
 </ul></li>
+<li>OracleLinuxのインストール手順の種別/従来型
+<ul>
+<li>VirtualBoxで対応OSが導入された仮想サーバ(VMサーバ)を構築して、Oracleメディアのインストールを行う</li>
+</ul></li>
 <li>OracleLinuxのインストール手順の種別/OracleLinux構築のみ
 <ol type="1">
 <li>Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
 </ol></li>
 </ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2
-id="oracle製品のインストールlinux環境上従来型メディアインストール">Oracle製品のインストール(Linux環境上：従来型メディアインストール)</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
 <h3
-id="oracle19coraclelinuxvirtualbox-vmで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBox
-VMで仮想サーバ構築インストール</h3>
-<ul>
-<li>Qiita(Oracle Linux 9)
-<ul>
-<li><a
-href="https://qiita.com/jri-oi/items/29cc151fb8f98298d044">VirtualBoxでOracle
-Linux 9 + Oracle DB 19c 環境構築</a></li>
-<li><a
-href="https://qiita.com/jri-oi/items/5ab379764a5af5658210">VirtualBoxでOracle
-Linux 9 + Oracle DB 19c 環境構築（２）Oracle
-Databaseインストール事前準備</a></li>
-<li><a
-href="https://qiita.com/jri-oi/items/9069717e478644a78e2d">VirtualBoxでOracle
-Linux 9 + Oracle DB 19c 環境構築（３）Opatchインストール</a></li>
-</ul></li>
-<li>Qiita(Oracle Linux 8)
-<ul>
-<li><a
-href="https://qiita.com/kamechan516/items/63b58f08dc7f545700bc">Oracle
-Linux
-8.7(VirtualBox使用)にOracle19cをインストールする方法　前編</a></li>
-</ul></li>
-<li>Qiita(RHEL 8)
-<ul>
-<li><a href="https://qiita.com/nigmom/items/24b5fbdce95ddcded1a8">RHEL
-8.6 に Oracle Database 19c インストール</a></li>
-<li><a href="https://qiita.com/plusultra/items/7dae26a702e3aa9ab059">Red
-Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
-</ul></li>
-<li>コーソル(Oracle Linux 7.9)
-<ul>
-<li><a
-href="https://cosol.jp/techdb/2021/06/oracle19c_setup_1of2/">VM作成からのOracle
-19cインストール手順 前編（Linuxシングル）</a></li>
-<li><a
-href="https://cosol.jp/techdb/2021/06/oracle19c_setup_2of2/">VM作成からのOracle
-19cインストール手順 後編（Linuxシングル）</a></li>
-</ul></li>
-<li>JBS Tech Blog(Red Hat Enterprise Linux 8)
-<ul>
-<li><a
-href="https://blog.jbs.co.jp/entry/2024/11/14/101133">LinuxでOracle
-Database 19c をインストールする手順</a></li>
-</ul></li>
-</ul>
-<h3 id="サイレントインストール">サイレントインストール</h3>
-<ul>
-<li><a href="https://oracle-master00000.com/26ai-027/">Oracle 26ai
-最速構築ガイド：Oracle VM へのサイレントインストール手順</a></li>
-</ul>
-<h3
-id="oracleソフトウェアoracleパッチ適用手順">Oracleソフトウェア/Oracleパッチ適用手順</h3>
-<ul>
-<li>(自サイト内ページ)<a href="oracle_patch.html">Oracleパッチ</a></li>
-</ul>
-<h3 id="oracle-ai-database-26aiのruninstaller起動">Oracle AI Database
-26aiのrunInstaller起動</h3>
-<p>オンプレミスへのインストールの場合、Oracle AI Database 26ai は Oracle
-Exadata および Oracle Database Appliance（ODA）で利用可能です。<br />
-通常の仮想環境では、runInstaller のみ実行可能です。</p>
-<ul>
-<li><a href="https://qiita.com/shirok/items/b9e3bcb60b9d7353e266">Oracle
-AI Database 26ai のメディアをダウンロードして runInstaller
-実行してみてみた</a></li>
-</ul>
+id="従来型インストールの廃止について">従来型インストールの廃止について</h3>
+<p>従来型のインストール手順は23ai移行からは廃止されています。</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -262,6 +193,84 @@ href="https://haronoid.hatenablog.com/entry/2017/12/04/174606">Docker
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
+id="oracle製品のインストールlinux環境上従来型メディアインストール">Oracle製品のインストール(Linux環境上：従来型メディアインストール)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="oracle19coraclelinuxvirtualbox-vmで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBox
+VMで仮想サーバ構築インストール</h3>
+<ul>
+<li>Qiita(Oracle DB 19c/Oracle Linux 9)
+<ul>
+<li><a
+href="https://qiita.com/jri-oi/items/29cc151fb8f98298d044">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築</a></li>
+<li><a
+href="https://qiita.com/jri-oi/items/5ab379764a5af5658210">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築（２）Oracle
+Databaseインストール事前準備</a></li>
+<li><a
+href="https://qiita.com/jri-oi/items/9069717e478644a78e2d">VirtualBoxでOracle
+Linux 9 + Oracle DB 19c 環境構築（３）Opatchインストール</a></li>
+</ul></li>
+<li>Qiita(Oracle DB 19c/Oracle Linux 8)
+<ul>
+<li><a
+href="https://qiita.com/kamechan516/items/63b58f08dc7f545700bc">Oracle
+Linux
+8.7(VirtualBox使用)にOracle19cをインストールする方法　前編</a></li>
+</ul></li>
+<li>Qiita(Oracle DB 19c/Red Hat Enterprise Linux 8)
+<ul>
+<li><a href="https://qiita.com/nigmom/items/24b5fbdce95ddcded1a8">RHEL
+8.6 に Oracle Database 19c インストール</a></li>
+<li><a href="https://qiita.com/plusultra/items/7dae26a702e3aa9ab059">Red
+Hat Enterprise Linux 8 に Oracle Database 19c をインストール</a></li>
+</ul></li>
+<li>コーソル(Oracle Linux 7.9)
+<ul>
+<li><a
+href="https://cosol.jp/techdb/2021/06/oracle19c_setup_1of2/">VM作成からのOracle
+19cインストール手順 前編（Linuxシングル）</a></li>
+<li><a
+href="https://cosol.jp/techdb/2021/06/oracle19c_setup_2of2/">VM作成からのOracle
+19cインストール手順 後編（Linuxシングル）</a></li>
+</ul></li>
+<li>JBS Tech Blog(Oracle DB 19c/Red Hat Enterprise Linux 8)
+<ul>
+<li><a
+href="https://blog.jbs.co.jp/entry/2024/11/14/101133">LinuxでOracle
+Database 19c をインストールする手順</a></li>
+</ul></li>
+<li>Qiita(Oracle21c/Oracle Linux 8)
+<ul>
+<li><a
+href="https://qiita.com/tk_miya/items/afc1390717816a87408e">Oracle Linux
+8にOracle Database 21cをインストールしてみた</a></li>
+</ul></li>
+</ul>
+<h3 id="サイレントインストール">サイレントインストール</h3>
+<ul>
+<li><a href="https://oracle-master00000.com/26ai-027/">Oracle 26ai
+最速構築ガイド：Oracle VM へのサイレントインストール手順</a></li>
+</ul>
+<h3
+id="oracleソフトウェアoracleパッチ適用手順">Oracleソフトウェア/Oracleパッチ適用手順</h3>
+<ul>
+<li>(自サイト内ページ)<a href="oracle_patch.html">Oracleパッチ</a></li>
+</ul>
+<h3 id="oracle-ai-database-26aiのruninstaller起動">Oracle AI Database
+26aiのrunInstaller起動</h3>
+<p>オンプレミスへのインストールの場合、Oracle AI Database 26ai は Oracle
+Exadata および Oracle Database Appliance（ODA）で利用可能です。<br />
+通常の仮想環境では、runInstaller のみ実行可能です。</p>
+<ul>
+<li><a href="https://qiita.com/shirok/items/b9e3bcb60b9d7353e266">Oracle
+AI Database 26ai のメディアをダウンロードして runInstaller
+実行してみてみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
 id="oracle製品のインストールlinux環境上その他">Oracle製品のインストール(Linux環境上：その他)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="oraclelinuxvagrantboxes">OracleLinux/VagrantBoxes</h3>
@@ -294,6 +303,9 @@ href="https://qiita.com/eichiro169/items/1f9b5bfea9c00501afcd">oracle DB
 <h3
 id="oracle12cwindows10インストール">Oracle12c/Windows10インストール</h3>
 <ul>
+<li><a
+href="https://qiita.com/AkihikoOgata/items/f17f118b2605f0b90892">Windows10にOracle12c
+インストール、DB作成、ユーザ作成、接続までの手順</a></li>
 <li><a
 href="https://qiita.com/nori-k/items/668a8b50984863ed025f">Windows10にOracle12cをインストールしたので手順を残しておこうと思う</a></li>
 </ul>
