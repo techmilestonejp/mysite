@@ -30,27 +30,44 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/11/01 11:47:41<br />
-更新日：2026/06/13 11:12:01</p>
+更新日：2026/06/27 22:05:48</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracleメディア入手先">Oracleメディア入手先</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="oracle-メディアダウンロード">Oracle メディアダウンロード</h3>
+<ul>
+<li><a
+href="https://www.oracle.com/jp/database/technologies/oracle-database-software-downloads.html">Oracle
+AI Database Software Downloads</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oracledbのインストール手順">OracleDBのインストール手順</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3
+id="従来型インストールの廃止について">従来型インストールの廃止について</h3>
+<p>従来型のメディアを利用したOracleインストールは、Oracle19cまでしか実行できません。<br />
+オンプレミスへのインストールの場合、Oracle AI Database 23ai以降では は
+Oracle Exadata および Oracle Database
+Appliance（ODA）で利用可能です。<br />
+Oracle23ai以降では、PRMインストールによる無料版を利用してOracleインストールを行います。</p>
+<h3
 id="oraclelinux上のoracledbインストール手順">OracleLinux上のOracleDBインストール手順</h3>
 <p>OracleLinux上でOracleDBをインストールする(構築する)手順としては、以下の種別があります。</p>
 <ul>
-<li>OracleLinuxのインストール手順の種別/23aiFree以後
+<li>OracleLinuxのインストール手順の種別/23aiFree版インストール
 <ul>
 <li>VirtualBoxで仮想サーバを構築して、「23ai
 Free」(RPMインストール)でインストールを行う</li>
 <li>VirtualBoxのovaファイル(「23ai
 Free」導入済)を利用して、仮想サーバを構築する</li>
 </ul></li>
-<li>OracleLinuxのインストール手順の種別/Docker環境(23aiFree)
+<li>OracleLinuxのインストール手順の種別/Docker環境(23aiFree環境)
 <ul>
 <li>Docker環境上でOracle Databaseインストール</li>
 </ul></li>
-<li>OracleLinuxのインストール手順の種別/従来型
+<li>OracleLinuxのインストール手順の種別/従来型(19c以前)
 <ul>
 <li>VirtualBoxで対応OSが導入された仮想サーバ(VMサーバ)を構築して、Oracleメディアのインストールを行う</li>
 </ul></li>
@@ -59,9 +76,55 @@ Free」導入済)を利用して、仮想サーバを構築する</li>
 <li>Vagrantを使用して、VagrantBoxesによるインストールを行う</li>
 </ol></li>
 </ul>
-<h3
-id="従来型インストールの廃止について">従来型インストールの廃止について</h3>
-<p>従来型のインストール手順は23ai移行からは廃止されています。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="oracle-26iについて">Oracle 26iについて</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="概要">概要</h3>
+<p>「Oracle 26ai（Oracle AI Database）」は、従来の「Oracle Database
+23ai」に代わる次世代の長期サポートリリース（LTS）です。<br />
+AIをデータのある場所で直接処理する「AI-Native」思想を特徴とし、SQLによる高度なベクトル検索などを備えています。</p>
+<h3 id="バージョンとリリースの詳細">バージョンとリリースの詳細</h3>
+<ul>
+<li>製品名称: Oracle AI Database 26ai (旧23ai)</li>
+<li>内部バージョン番号: 23.26.0.0.0
+<ul>
+<li>Oracle Database 23aiをベースとしています。</li>
+<li>メジャーバージョンとしては 23
+を踏襲して、23aiから26aiへのアップデートは通常のリリース更新（RU）で可能です。</li>
+<li>「Oracle Database 23ai」に「Oct 2025」のRUを適用することで、Oracle
+AI Database 26aiへのアップデートが可能です。</li>
+</ul></li>
+<li><a
+href="https://cosol.jp/techdb/2025/10/oracle_ai_database_26ai/">Oracle
+AI Database 26aiとは</a></li>
+<li><a href="https://docs.oracle.com/cd/G47991_01/rnrdm/">Oracle® AI
+Databaseデータベース・リリース・ノート26ai</a></li>
+<li><a href="https://oracle.human-design.jp/column/20260402/">第19回
+19cユーザー必見。次世代LTS「Oracle AI Database
+26ai」へのアップデートで何が変わるのか？</a></li>
+<li><a
+href="https://docs.oracle.com/cd/G47991_01/vecse/oracle-ai-database-26ai-release-updates.html">Oracle
+AI Database 26aiリリース更新</a></li>
+<li><a
+href="https://www.oracle.com/security-alerts/cpujul2025.html">Oracle
+Critical Patch Update Advisory - July 2025</a></li>
+<li><a
+href="https://www.linkedin.com/posts/mokhtar-atif-dba_oracledba-sre-postgressql-activity-7383895819495641088-PtYe">Oracle
+26ai Database Released</a></li>
+</ul>
+<h3 id="oracle-26ai前後のリリース状況">Oracle
+26ai前後のリリース状況</h3>
+<ul>
+<li>リリース状況
+<ul>
+<li>2025/04 : April 2025: Oracle Database 23ai – 23.8.0.25.04</li>
+<li>2025/07 : July 2025: Oracle Database 23ai – 23.9.0.25.07</li>
+<li>2025/10 : October 2025: Oracle AI Database 26ai – 23.26.0.0.0</li>
+<li>2026/01 : January 2026: Oracle AI Database 26ai – 23.26.1.0.0</li>
+<li>2026/04 : April 2026: Oracle AI Database 26ai – 23.26.2.0.0</li>
+</ul></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -195,6 +258,10 @@ href="https://haronoid.hatenablog.com/entry/2017/12/04/174606">Docker
 <h2
 id="oracle製品のインストールlinux環境上従来型メディアインストール">Oracle製品のインストール(Linux環境上：従来型メディアインストール)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3
+id="従来型インストールの廃止について-1">従来型インストールの廃止について</h3>
+<p>従来型のメディアを利用したOracleインストールは、Oracle21cまでしか実行できません。<br />
+従来型のインストール手順は23ai移行からは廃止されています。Oracle23ai移行は、PRMインストールによる無料版を利用してOracleインストールを行います。</p>
 <h3
 id="oracle19coraclelinuxvirtualbox-vmで仮想サーバ構築インストール">Oracle19c/OracleLinux/VirtualBox
 VMで仮想サーバ構築インストール</h3>
