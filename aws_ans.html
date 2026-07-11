@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/05/10 13:12:46</p>
+更新日：2026/07/11 09:52:53</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -82,17 +82,56 @@ href="https://d1.awsstatic.com/ja_JP/training-and-certification/docs-advnetworki
 <li>06:VPCピアリング</li>
 <li>07:AWS Direct Connect</li>
 <li>08:VPN(IPSec接続)</li>
-<li>09:オンプレ間通信</li>
-<li>10:DNS(Amazon Route 53)</li>
-<li>11:ELB</li>
-<li>12:CDN</li>
-<li>13:ネットワークセキュリティ</li>
+<li>09:DNS(Amazon Route 53)</li>
+<li>10:ELB</li>
+<li>11:CDN</li>
+<li>12:ネットワークセキュリティ</li>
 </ul></li>
 </ul>
 <h3 id="ans勉強メモ">ANS勉強メモ</h3>
 <ul>
+<li>Zenn
+<ul>
+<li><a href="AWS%20ANS%20勉強メモ">AWS ANS 勉強メモ</a></li>
+<li><a
+href="https://zenn.dev/onigiri5/articles/b6e235f5fecc1a">AWS資格試験勉強メモ
+Specialty Networking (ANS-C01)</a></li>
+<li><a href="https://zenn.dev/onodak/scraps/967a7b5d86cf2d">AWS
+Certified Advanced Networking - Specialty (ANS)
+受験に向けてメモ</a></li>
+<li><a href="https://zenn.dev/t4rr0w/articles/b6342f76a37971">AWS
+Certified Advanced Networking - Specialty編</a></li>
+<li><a href="https://zenn.dev/agent_grow/articles/59820a19270192">AWS
+Certified Advanced Networking - Specialty(ANS-C01) 備忘録</a></li>
+</ul></li>
+<li>Zenn(Ano)
+<ul>
+<li><a
+href="https://zenn.dev/ano/articles/810da39f9f0dda">ネットワークアーキテクチャ系メモ</a></li>
+<li><a
+href="https://zenn.dev/ano/articles/38d5996744e269">ネットワーク関連まとめ
+①</a></li>
+<li><a
+href="https://zenn.dev/ano/articles/fa4361237b2dbf">ネットワーク関連まとめ
+②</a></li>
+<li><a
+href="https://zenn.dev/ano/articles/4767b1d0fc9afc">ネットワーク関連まとめ
+③</a></li>
+<li><a href="https://zenn.dev/ano/articles/0079afe6459c1c">Route 53
+まとめ</a></li>
+<li><a href="https://zenn.dev/ano/articles/37444018a6b86d">1. Load
+Balancers</a></li>
+<li><a href="https://zenn.dev/ano/articles/96ecd2deb982ec">4. Transit
+Gateway</a></li>
+<li><a href="https://zenn.dev/ano">Anoさんの記事一覧 | Zenn</a></li>
+</ul></li>
+</ul>
+<h3 id="ans合格体験記">ANS合格体験記</h3>
+<ul>
 <li>Qiita
 <ul>
+<li><a href="https://qiita.com/heiyoo/items/a34bb6980030c4a874b7">AWS
+ANSを通してAWSのネットワークサービスを学んでみた</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/watabo-passed-ans-c01/">AWS受験体験記:
 3回目の受験でようやくANS-C01に合格したので勉強の仕方を振り返る</a></li>
@@ -141,8 +180,17 @@ href="https://www.ric.co.jp/book/new-publication/detail/2688">AWS認定　高度
 <li>Amazon Route 53</li>
 <li>AWS Direct Connect(DX)</li>
 <li>AWS Transit Gateway</li>
-<li>マルチアカウントアーキテクチャのネットワーク接続</li>
+<li>マルチアカウントでのアーキテクチャのネットワーク接続</li>
 </ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="acl設定">03:ACL設定</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="acl設定概要">ACL設定/概要</h3>
+<ul>
+<li><a href="https://qiita.com/mkydk/items/a5d96d027feb01d44022">Network
+ACLとセキュリティグループの違いと使い分け：実務で活用するAWSネットワークセキュリティ</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -247,33 +295,6 @@ VGW / DGW / TGW の比較</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connectaws-transit-gateway">07:AWS Direct Connect/AWS
-Transit Gateway</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-transit-gateway概要">AWS Transit Gateway概要</h3>
-<ul>
-<li><a href="https://qiita.com/jowoooon/items/93affe30a80224826cde">AWS
-Transit Gatewayを図解しながら理解する</a></li>
-</ul>
-<h3 id="aws-transit-gatewayアタッチメント">AWS Transit
-Gateway/アタッチメント</h3>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/tgw-vpc-attachments.html">AWS
-Transit Gateway の Amazon VPC アタッチメント</a></li>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/create-vpc-attachment.html">AWS
-Transit Gateway で VPC アタッチメントの作成</a></li>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/tgw-connect.html">AWS
-Transit Gateway の Connect アタッチメントと Connect ピア</a></li>
-<li><a
-href="https://dev.classmethod.jp/articles/routing-of-the-dedicated-transit-gateway-subnet/">AWS
-Transit Gateway をVPCにアタッチメントしたTransit
-Gateway専用サブネットのルートテーブルのルート設定について</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws-direct-connect冗長化">07:AWS Direct Connect/冗長化</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="概要">概要</h3>
@@ -296,6 +317,62 @@ Direct Connect ロケーションと 4つの Direct Connect
 <img src="img/aws_saa/osakadx-05.png" width="40%" height="40%"><br /></p>
 <p>(アクティブ・アクティブ構成(ECMP構成)/AWS→オンプレミス環境)<br />
 <img src="img/aws_saa/osakadx-07.png" width="40%" height="40%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway">07:AWS Direct Connect/AWS
+Transit Gateway</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-transit-gateway概要">AWS Transit Gateway概要</h3>
+<ul>
+<li>アタッチメント
+<ul>
+<li>「VPC」、「VPN」、「Direct Connect」とTransit
+Gatewayを関連付ける操作です。</li>
+</ul></li>
+<li>ルートテーブル
+<ul>
+<li>Transit Gatewayの通信経路を制御します。</li>
+</ul></li>
+<li>アソシエーション
+<ul>
+<li>アタッチメントとルートテーブルを関連付ける操作です。</li>
+</ul></li>
+<li>プロパゲーション
+<ul>
+<li>アタッチメントしているVPCのNW情報を、ルートテーブルに対して伝播させるための操作です。</li>
+</ul></li>
+<li><a href="https://qiita.com/jowoooon/items/93affe30a80224826cde">AWS
+Transit Gatewayを図解しながら理解する</a></li>
+</ul>
+<h3 id="aws-transit-gatewayアタッチメント">AWS Transit
+Gateway/アタッチメント</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/tgw-vpc-attachments.html">AWS
+Transit Gateway の Amazon VPC アタッチメント</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/create-vpc-attachment.html">AWS
+Transit Gateway で VPC アタッチメントの作成</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/tgw-connect.html">AWS
+Transit Gateway の Connect アタッチメントと Connect ピア</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/routing-of-the-dedicated-transit-gateway-subnet/">AWS
+Transit Gateway をVPCにアタッチメントしたTransit
+Gateway専用サブネットのルートテーブルのルート設定について</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway構築">07:AWS Direct
+Connect/AWS Transit Gateway(構築)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-transit-gateway構築">AWS Transit Gateway構築</h3>
+<ul>
+<li><a
+href="https://dev.classmethod.jp/articles/tgw-outbound-aggregation-2022/">【AWS
+Transit
+Gateway】複数VPCのアウトバウンド通信を集約する環境を作る</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 </body>
