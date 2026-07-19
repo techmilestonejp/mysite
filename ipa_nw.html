@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_ネットワークスペシャリスト</h1>
 </header>
 <p>作成日：2025/07/06 09:43:35<br />
-更新日：2026/05/10 13:12:46<br />
+更新日：2026/07/18 12:43:37<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -383,6 +383,15 @@ href="https://www.sc-siken.com/kakomon/07_haru/am2_19.html">SCスぺ令和07年�
 href="https://hosochin.com/2023/03/09/post-1694/">VLANについて概要を理解する</a></li>
 <li><a href="https://nw.seeeko.com/archives/vlan">VLANとVXLAN</a></li>
 <li><a href="https://note.com/sennai/n/nc32d88eefa8c">VLAN</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="レイヤ2lag">レイヤ2/LAG</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<ul>
+<li><a
+href="https://nw.seeeko.com/archives/lag">リンクアグリゲーション（Link
+Aggregation）</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -811,6 +820,12 @@ BGPのベストパス選択アルゴリズムにおいて、値が小さいほ�
 <li><a
 href="https://beginners-network.com/supplement/bgp-path-attributes/multi_exit_disc.html">BGPのMULTI_EXIT_DISC属性</a></li>
 </ul>
+<h3 id="bgplocal-preference-と-med-の違い">BGP/Local Preference と MED
+の違い</h3>
+<ul>
+<li><a href="https://zenn.dev/go3_network/articles/dd39984ed238e0">BGP
+の Local Preference と MED の比較</a></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
@@ -820,11 +835,11 @@ id="bgpbgp-4ルートフィルタリング">BGP(BGP-4)/ルートフィルタリ�
 <p>BGPフィルタは、ルータがBGP経路情報を受信・送信する際に、特定の条件に基づいて経路を許可または拒否する設定です。<br />
 これにより、不要な経路の受信や誤った経路のアドバタイズを防ぎ、ネットワークの安定性とセキュリティを向上させます。</p>
 <h3
-id="bgpルートフィルタリングの種類">BGP/ルートフィルタリングの種類</h3>
+id="bgpルートフィルタリングの種別">BGP/ルートフィルタリングの種別</h3>
 <p>BGPにおけるルートフィルタリングは以下の4つの手法があります。<br />
 以下の手法により、BGPネイバーと送受信するルートのフィルタリングを行うことができます。</p>
 <ul>
-<li>BGP/ルートフィルタリングの種類
+<li>BGP/ルートフィルタリングの種別
 <ul>
 <li>distribute-list</li>
 <li>prefix-list</li>
@@ -843,19 +858,13 @@ href="https://www.n-study.com/bgp-detail/bgp-route-filter-overview/">BGPルー�
 href="https://qiita.com/youyonghua/items/ff408470c51d2c8753b4">BGPフィルタメモ</a></li>
 </ul>
 <h3
-id="bgpフィルタリング設定as_path-acl">BGP/フィルタリング設定（AS_PATH
-ACL）</h3>
+id="bgpas_pathフィルタリングas_path-acl">BGP/AS_PATHフィルタリング(AS_PATH
+ACL)</h3>
 <p>BGPではAS_PATH属性に基づいて経路情報のフィルタリングが行えるAS_PATH
 ACLを使用することができます。</p>
 <ul>
 <li><a
 href="https://qiita.com/coco0922/items/a943abb6e294c3703be3">BGPのフィルタリング設定</a></li>
-</ul>
-<h3 id="bgplocal-preference-と-med-の違い">BGP/Local Preference と MED
-の違い</h3>
-<ul>
-<li><a href="https://zenn.dev/go3_network/articles/dd39984ed238e0">BGP
-の Local Preference と MED の比較</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -923,7 +932,8 @@ href="https://aolaniengineer.com/archives/3283">やさしいネットワーク�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="レイヤ7dnsサーバ">レイヤ7/DNSサーバ</h2>
+<h2 id="レイヤ7dnsサーバdomain-name-system">レイヤ7/DNSサーバ（Domain
+Name System）</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="dns機能概要">DNS機能概要</h3>
 <ul>
@@ -950,28 +960,19 @@ href="https://academ-aid.com/qualif/vendor/lpic-202-qa">【Linux試験対策】L
 202見直しポイント</a></li>
 </ul></li>
 </ul>
-<h3
-id="dsレコードdsリソースレコード">DSレコード(DSリソースレコード)</h3>
+<h3 id="dnsサーバ種別dnsリゾルバ">DNSサーバ種別(DNSリゾルバ)</h3>
+<p>DNS（Domain Name System）サーバには主に2つの機能があります。</p>
 <ul>
-<li><a
-href="https://jprs.jp/glossary/index.php?ID=0213">DSリソースレコード</a></li>
-<li><a
-href="https://qiita.com/miyuki_samitani/items/1212e31bc8b26eb8a076">DSレコードとは</a></li>
-</ul>
-<h3 id="dnsゾーンファイル">DNSゾーンファイル</h3>
+<li>フルサービスリゾルバ(「フルリゾルバ」機能)
 <ul>
-<li><a
-href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾーン</a></li>
-</ul>
-<h3 id="dnsリゾルバ">DNSリゾルバ</h3>
-<ul>
+<li>自身の管理するドメインの情報を公開する「権威サーバ」機能を持つ（「コンテンツサーバ」とも呼ばれる）</li>
+<li>スタブリゾルバからの再帰問い合わせ（Recursive）を受けて、反復問い合わせ（Iterative）によって完全にDNS解決を行うこともできる。</li>
+</ul></li>
 <li>スタブリゾルバ
 <ul>
 <li>DNSリクエストを送信するだけのクライアントPC、またはDNSサーバ</li>
-</ul></li>
-<li>フルサービスリゾルバ
-<ul>
-<li>スタブリゾルバからの再帰問い合わせ（Recursive）を受けて、反復問い合わせ（Iterative）によって完全にDNS解決を行えるDNSサーバ</li>
+<li>名前解決検索要求を受け取り、他のDNSサーバに問い合わせを行う</li>
+<li>応答結果をキャッシュしておき、キャッシュがあればそれを返すため「キャッシュサーバ」とも呼ばれる。</li>
 </ul></li>
 <li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
 resolver</a></li>
@@ -979,6 +980,20 @@ resolver</a></li>
 href="https://e-words.jp/w/%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90.html">リゾルバ</a></li>
 <li><a
 href="https://www.nw-siken.com/kakomon/24_aki/am2_9.html">NWスぺ平成24年秋期午前2問07</a></li>
+</ul>
+<h3 id="dnsゾーン">DNSゾーン</h3>
+<p>DNSゾーンとは、1台の権威DNSサーバが管理する範囲のことです。</p>
+<ul>
+<li><a
+href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾーン</a></li>
+</ul>
+<h3
+id="dsレコードdsリソースレコード">DSレコード(DSリソースレコード)</h3>
+<ul>
+<li><a
+href="https://jprs.jp/glossary/index.php?ID=0213">DSリソースレコード</a></li>
+<li><a
+href="https://qiita.com/miyuki_samitani/items/1212e31bc8b26eb8a076">DSレコードとは</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->

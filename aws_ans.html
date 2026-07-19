@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/07/11 09:52:53</p>
+更新日：2026/07/19 10:05:07</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -185,6 +185,27 @@ href="https://www.ric.co.jp/book/new-publication/detail/2688">AWS認定　高度
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="vpcモニタリング">02:VPCモニタリング</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="vpcモニタリングvpn監視">VPCモニタリング/VPN監視</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpn/latest/s2svpn/monitoring-cloudwatch-vpn.html">Amazon
+CloudWatch を使用して AWS Site-to-Site VPN
+トンネルをモニタリングする</a></li>
+<li><a href="https://qiita.com/rev4t/items/37363b36ff80430f29f5">AWS
+VPN接続ステータスグラフをCloudWatchカスタムメトリクスで表示する</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/monitoring-vpn-connection-by-cloudwatch/">AWS
+CloudWatchアラームでVPCのVPN接続を監視できるようになりました</a></li>
+</ul>
+<h3 id="vpcトラフィクミラーリング">VPCトラフィクミラーリング</h3>
+<ul>
+<li><a
+href="https://dev.classmethod.jp/articles/how-to-capture-packets-outside-ec2-with-vpc-traffic-mirroring/">VPCトラフィクミラーリングを使ってEC2にログインせずにパケットキャプチャする方法を学ぼう</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="acl設定">03:ACL設定</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="acl設定概要">ACL設定/概要</h3>
@@ -295,13 +316,29 @@ VGW / DGW / TGW の比較</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connect冗長化">07:AWS Direct Connect/冗長化</h2>
+<h2 id="aws-direct-connectaws-gbp冗長化">07:AWS Direct
+Connect/AWS-GBP冗長化</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="概要">概要</h3>
 <ul>
 <li><a
 href="https://www.itechh.ne.jp/blog/column/direct-connect-redundancy-1.html">Direct
 Connectにおける冗長化</a></li>
+</ul>
+<h3
+id="ecmp等コストマルチパス設定時の優先順位">ECMP(等コストマルチパス)設定時の優先順位</h3>
+<ul>
+<li>ECMPの優先順位
+<ol type="1">
+<li>より具体的なプレフィックスで指定されているルート</li>
+<li>AS PATHが短いルート</li>
+<li>MED(Multi-Exit Discriminator)が低いルート</li>
+</ol></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/how-transit-gateways-work.html#tgw-ecmp">等コストマルチパスルーティング</a></li>
+<li><a
+href="https://qiita.com/har1101/items/9d82a40f3c31265575ca">動的なAWS
+VPN接続における優先順位をまとめる</a></li>
 </ul>
 <h3 id="構成図">構成図</h3>
 <p>(アクティブ・パッシブ構成/AWS→オンプレミス環境)<br />
@@ -324,17 +361,46 @@ Direct Connect ロケーションと 4つの Direct Connect
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connectaws-transit-gateway">07:AWS Direct Connect/AWS
-Transit Gateway</h2>
+<h2 id="aws-direct-connectその他冗長化">07:AWS Direct
+Connect/その他冗長化</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-transit-gateway概要">AWS Transit Gateway概要</h3>
+<h3 id="lag">LAG</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/lags.html">Direct
+Connect リンク集約グループ (LAGs)</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connect構築">07:AWS Direct Connect/構築</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="構築">構築</h3>
+<ul>
+<li><a href="https://atbex.attokyo.co.jp/blog/detail/85/">AWS direct
+connectの設定を実際にやってみたので解説します！</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway_概要">07:AWS Direct
+Connect/AWS Transit Gateway_概要</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="概要-1">概要</h3>
+<ul>
+<li>(サイト内ページ)<a href="aws_saa.html">SAA勉強メモ</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway_構成">07:AWS Direct
+Connect/AWS Transit Gateway_構成</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-transit-gateway構成要素">AWS Transit Gateway構成要素</h3>
 <ul>
 <li>アタッチメント
 <ul>
-<li>「VPC」、「VPN」、「Direct Connect」とTransit
+<li>「VPC」、「VPN」、「Direct Connect」等とTransit
 Gatewayを関連付ける操作です。</li>
 </ul></li>
-<li>ルートテーブル
+<li>Transit Gatewayルートテーブル
 <ul>
 <li>Transit Gatewayの通信経路を制御します。</li>
 </ul></li>
@@ -348,6 +414,9 @@ Gatewayを関連付ける操作です。</li>
 </ul></li>
 <li><a href="https://qiita.com/jowoooon/items/93affe30a80224826cde">AWS
 Transit Gatewayを図解しながら理解する</a></li>
+<li><a
+href="https://qiita.com/pommny_dev/items/58f3fdd7cb8b97af6a61">Transit
+Gateway攻略　①VPC間接続のキホン</a></li>
 </ul>
 <h3 id="aws-transit-gatewayアタッチメント">AWS Transit
 Gateway/アタッチメント</h3>
@@ -366,10 +435,71 @@ href="https://dev.classmethod.jp/articles/routing-of-the-dedicated-transit-gatew
 Transit Gateway をVPCにアタッチメントしたTransit
 Gateway専用サブネットのルートテーブルのルート設定について</a></li>
 </ul>
+<h3 id="aws-transit-gatewaytransit-gatewayルートテーブル">AWS Transit
+Gateway/Transit Gatewayルートテーブル</h3>
+<ul>
+<li>AWSドキュメント
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/how-transit-gateways-work.html#tgw-routing-overview">ルーティング</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/how-transit-gateways-work.html#tgw-route-tables-overview">ルートテーブル</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/tgw-route-tables.html">Transit
+Gateway の Transit Gateway AWS ルートテーブル</a></li>
+</ul></li>
+<li>公開情報
+<ul>
+<li><a
+href="https://qiita.com/jowoooon/items/93affe30a80224826cde#%E3%83%AB%E3%83%BC%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB">ルートテーブル</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/tech/2020/06/30/transit-gateway-routing/">Transit
+Gatewayのルーティング仕様を分かりやすく解説してみる</a></li>
+<li><a
+href="https://blog.usize-tech.com/routing-transit-gateway/">Transit
+Gatewayのルーティングを考えてみる</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/architecture/field-notes-working-with-route-tables-in-aws-transit-gateway/">Field
+Notes: Working with Route Tables in AWS Transit Gateway</a></li>
+<li><a href="https://000020.awsstudygroup.com/6-result/">Add Transit
+Gateway Routes to VPC Route Tables</a></li>
+</ul></li>
+</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connectaws-transit-gateway構築">07:AWS Direct
-Connect/AWS Transit Gateway(構築)</h2>
+<h2
+id="aws-direct-connectaws-transit-gateway_クロスアカウントvpc接続">07:AWS
+Direct Connect/AWS Transit Gateway_クロスアカウントVPC接続</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="クロスアカウントvpc接続">クロスアカウントVPC接続</h3>
+<ul>
+<li><a
+href="https://qiita.com/pommny_dev/items/244afe30130ee749eaeb">Transit
+Gateway攻略 ③クロスアカウントのVPC接続</a></li>
+<li><a
+href="https://techblog.forgevision.com/entry/vpc/transit_gateway">AWS
+Transit Gateway をリージョン間でクロスアカウント接続してみた</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway_その他機能">07:AWS Direct
+Connect/AWS Transit Gateway_その他機能</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-transit-gatewaynetwork-manager">AWS Transit Gateway/Network
+Manager</h3>
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/new-for-aws-transit-gateway-build-global-networks-and-centralize-monitoring-using-network-manager/">AWS
+Transit Gatewayの新機能– Network Manager</a></li>
+<li><a
+href="https://qiita.com/pommny_dev/items/792c69faaf33e10009e8">Transit
+Gateway攻略 ②-2Tranit Gateway Network
+Managerを使ってリージョン間のTGW接続を可視化する</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connectaws-transit-gateway_構築">07:AWS Direct
+Connect/AWS Transit Gateway_構築</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-transit-gateway構築">AWS Transit Gateway構築</h3>
 <ul>
@@ -377,6 +507,26 @@ Connect/AWS Transit Gateway(構築)</h2>
 href="https://dev.classmethod.jp/articles/tgw-outbound-aggregation-2022/">【AWS
 Transit
 Gateway】複数VPCのアウトバウンド通信を集約する環境を作る</a></li>
+<li><a
+href="https://develop.d1xrg9ubdspdie.amplifyapp.com/">TransitGateway
+ハンズオン</a></li>
+<li><a
+href="https://qiita.com/pommny_dev/items/58f3fdd7cb8b97af6a61">Transit
+Gateway攻略　①VPC間接続のキホン</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/06/21/163627">Transit
+Gatewayの概要と構築ポイント</a></li>
+<li><a href="https://www.ryucom.co.jp/blog/aws/4554/">VGW
+を利用したサイト間 VPN を Transit Gateway に切り替えてみた</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/tgw-outbound-aggregation-2022/">【AWS
+Transit
+Gateway】複数VPCのアウトバウンド通信を集約する環境を作る</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/tgw-outbound-aggregation-in-an-account/">【Transit
+Gateway】アウトバウンド通信を集約する環境を構築してみる</a></li>
+<li><a href="https://000020.awsstudygroup.com/">Set up AWS Transit
+Gateway</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
