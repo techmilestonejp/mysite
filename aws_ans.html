@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/07/19 10:05:07</p>
+更新日：2026/07/25 15:35:02</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -316,17 +316,17 @@ VGW / DGW / TGW の比較</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connectaws-gbp冗長化">07:AWS Direct
-Connect/AWS-GBP冗長化</h2>
+<h2 id="aws-direct-connectdirectconnect冗長化aws-gbp冗長化">07:AWS
+Direct Connect/DirectConnect冗長化(AWS-GBP冗長化)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="概要">概要</h3>
+<h3 id="directconnect冗長化概要">DirectConnect冗長化/概要</h3>
 <ul>
 <li><a
 href="https://www.itechh.ne.jp/blog/column/direct-connect-redundancy-1.html">Direct
 Connectにおける冗長化</a></li>
 </ul>
 <h3
-id="ecmp等コストマルチパス設定時の優先順位">ECMP(等コストマルチパス)設定時の優先順位</h3>
+id="directconnect冗長化ecmp等コストマルチパス設定時の優先順位">DirectConnect冗長化/ECMP(等コストマルチパス)設定時の優先順位</h3>
 <ul>
 <li>ECMPの優先順位
 <ol type="1">
@@ -340,17 +340,9 @@ href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/how-transit-gateways-work
 href="https://qiita.com/har1101/items/9d82a40f3c31265575ca">動的なAWS
 VPN接続における優先順位をまとめる</a></li>
 </ul>
-<h3 id="構成図">構成図</h3>
-<p>(アクティブ・パッシブ構成/AWS→オンプレミス環境)<br />
-<img src="img/aws_saa/osakadx-04.png" width="40%" height="40%"><br /></p>
-<p>(アクティブ・パッシブ構成/オンプレミス環境→AWS)<br />
-<img src="img/aws_saa/osakadx-05.png" width="40%" height="40%"><br /></p>
-<p>(アクティブ・アクティブ構成(ECMP構成)/AWS→オンプレミス環境)<br />
-<img src="img/aws_saa/osakadx-07.png" width="40%" height="40%"><br /></p>
+<h3
+id="directconnect冗長化4つのdirectconnectの場合のユースケース">DirectConnect冗長化/4つのDirectConnectの場合のユースケース</h3>
 <ul>
-<li><a
-href="https://aws.amazon.com/jp/blogs/news/creating-active-passive-bgp-connections-over-aws-direct-connect/">AWS
-Direct Connect でのアクティブ/パッシブ BGP 接続の構築</a></li>
 <li><a
 href="https://aws.amazon.com/jp/blogs/news/dx-trafficcontrol-osaka/">AWS
 Direct Connect
@@ -358,6 +350,24 @@ Direct Connect
 <li><a href="https://zenn.dev/mygrit/articles/27e054b8b6cc22">2つの
 Direct Connect ロケーションと 4つの Direct Connect
 接続を使った構成</a></li>
+</ul>
+<p>(アクティブ・パッシブ構成/AWS→オンプレミス環境)<br />
+<img src="img/aws_saa/osakadx-04.png" width="40%" height="40%"><br /></p>
+<p>(アクティブ・パッシブ構成/オンプレミス環境→AWS)<br />
+<img src="img/aws_saa/osakadx-05.png" width="40%" height="40%"><br /></p>
+<p>(アクティブ・アクティブ構成(ECMP構成)/AWS→オンプレミス環境)<br />
+<img src="img/aws_saa/osakadx-07.png" width="40%" height="40%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="aws-direct-connect構築">07:AWS Direct Connect/構築</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="構築">構築</h3>
+<ul>
+<li><a href="https://atbex.attokyo.co.jp/blog/detail/85/">AWS direct
+connectの設定を実際にやってみたので解説します！</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/creating-active-passive-bgp-connections-over-aws-direct-connect/">AWS
+Direct Connect でのアクティブ/パッシブ BGP 接続の構築</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -372,19 +382,10 @@ Connect リンク集約グループ (LAGs)</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="aws-direct-connect構築">07:AWS Direct Connect/構築</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="構築">構築</h3>
-<ul>
-<li><a href="https://atbex.attokyo.co.jp/blog/detail/85/">AWS direct
-connectの設定を実際にやってみたので解説します！</a></li>
-</ul>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="aws-direct-connectaws-transit-gateway_概要">07:AWS Direct
 Connect/AWS Transit Gateway_概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="概要-1">概要</h3>
+<h3 id="概要">概要</h3>
 <ul>
 <li>(サイト内ページ)<a href="aws_saa.html">SAA勉強メモ</a></li>
 </ul>

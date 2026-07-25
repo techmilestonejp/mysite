@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_ネットワークスペシャリスト</h1>
 </header>
 <p>作成日：2025/07/06 09:43:35<br />
-更新日：2026/07/18 12:43:37<br />
+更新日：2026/07/25 15:35:02<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -960,26 +960,44 @@ href="https://academ-aid.com/qualif/vendor/lpic-202-qa">【Linux試験対策】L
 202見直しポイント</a></li>
 </ul></li>
 </ul>
-<h3 id="dnsサーバ種別dnsリゾルバ">DNSサーバ種別(DNSリゾルバ)</h3>
-<p>DNS（Domain Name System）サーバには主に2つの機能があります。</p>
+<h3 id="dnsサーバ種別概要">DNSサーバ種別/概要</h3>
+<p>DNS（Domain Name System）サーバは、以下の種別が存在します。</p>
 <ul>
-<li>フルサービスリゾルバ(「フルリゾルバ」機能)
+<li>権威DNSサーバ（コンテンツサーバ）</li>
+<li>フルサービスリゾルバ
+<ul>
+<li>キャッシュサーバ</li>
+<li>再帰DNSサーバ</li>
+</ul></li>
+<li>フォワーダー(DNSプロキシ)</li>
+<li>スタブリゾルバ</li>
+</ul>
+<p>https://www.infraexpert.com/study/tcpip24.html
+https://qiita.com/nk9bb8/items/163f94f97b5411226d74
+https://www.digicert.com/jp/faq/dns/recursive-and-authoritative-dns-differences</p>
+<h3 id="dnsサーバ種別dnsリゾルバ">DNSサーバ種別/DNSリゾルバ</h3>
+<p>各サーバの機能概要は、以下のとおりです。</p>
+<ul>
+<li>権威サーバ（コンテンツDNSサーバ）
 <ul>
 <li>自身の管理するドメインの情報を公開する「権威サーバ」機能を持つ（「コンテンツサーバ」とも呼ばれる）</li>
+<li>特定のドメインに関する「正式な情報（IPアドレスなど）」を自身のデータベースに保持し、その情報に対する問い合わせにのみ回答するサーバーです。</li>
+</ul></li>
+<li>フルサービスリゾルバ(「フルリゾルバ」機能)
+<ul>
+<li>パソコンやスマホなどの端末（スタブリゾルバ）からの名前解決要求を受け付け、世界中のDNSサーバーに問い合わせてIPアドレスを突き止める役割を持ちます。</li>
+<li>応答結果をキャッシュしておき、キャッシュがあればそれを返すため「キャッシュサーバ」とも呼ばれる。</li>
 <li>スタブリゾルバからの再帰問い合わせ（Recursive）を受けて、反復問い合わせ（Iterative）によって完全にDNS解決を行うこともできる。</li>
 </ul></li>
 <li>スタブリゾルバ
 <ul>
 <li>DNSリクエストを送信するだけのクライアントPC、またはDNSサーバ</li>
 <li>名前解決検索要求を受け取り、他のDNSサーバに問い合わせを行う</li>
-<li>応答結果をキャッシュしておき、キャッシュがあればそれを返すため「キャッシュサーバ」とも呼ばれる。</li>
 </ul></li>
 <li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
 resolver</a></li>
 <li><a
 href="https://e-words.jp/w/%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90.html">リゾルバ</a></li>
-<li><a
-href="https://www.nw-siken.com/kakomon/24_aki/am2_9.html">NWスぺ平成24年秋期午前2問07</a></li>
 </ul>
 <h3 id="dnsゾーン">DNSゾーン</h3>
 <p>DNSゾーンとは、1台の権威DNSサーバが管理する範囲のことです。</p>
@@ -987,8 +1005,15 @@ href="https://www.nw-siken.com/kakomon/24_aki/am2_9.html">NWスぺ平成24年秋
 <li><a
 href="https://manual.iij.jp/dns/domain-help/16187857.html">DNSサーバとゾーン</a></li>
 </ul>
+<h3 id="dnsレコード">DNSレコード</h3>
+<ul>
+<li><a
+href="https://qiita.com/free-honda/items/b000e120478381291b3e">初心者向け：AレコードやCNAMEレコードなど主要DNSレコードの役割と設定方法</a></li>
+<li><a
+href="https://www.nw-siken.com/kakomon/24_aki/am2_9.html">NWスぺ平成24年秋期午前2問07</a></li>
+</ul>
 <h3
-id="dsレコードdsリソースレコード">DSレコード(DSリソースレコード)</h3>
+id="dsリソースレコードdsレコード">DSリソースレコード(DSレコード)</h3>
 <ul>
 <li><a
 href="https://jprs.jp/glossary/index.php?ID=0213">DSリソースレコード</a></li>
