@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/07/11 09:52:53<br />
-更新日：2026/07/11 09:52:53</p>
+更新日：2026/07/26 09:47:16</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="はじめに">00:はじめに</h2>
@@ -2955,10 +2955,28 @@ href="https://zenn.dev/mn87/articles/e417121016235c">パイロットライトと
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="ネットワーク01vpc">09:ネットワーク/01:VPC</h2>
+<h2 id="ネットワーク01vpc概要">09:ネットワーク/01:VPC/概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3
-id="awsのネットワークvpcの基礎知識">AWSのネットワーク(VPC)の基礎知識</h3>
+<h3 id="amazon-vpc-virtual-private-cloud">Amazon VPC (Virtual Private
+Cloud)</h3>
+<p>AWS内に構築できるプライベートなネットワーク環境</p>
+<ul>
+<li>公式資料
+<ul>
+<li><a
+href="https://d1.awsstatic.com/webinars/jp/pdf/services/20201021_AWS-BlackBelt-VPC.pdf">BlackBelt_AmazonVPC_PDF</a></li>
+<li><a
+href="https://youtu.be/JAzsGRS_o4c">BlackBelt_AmazonVPC_YouTube</a></li>
+<li><a href="https://aws.amazon.com/jp/vpc/pricing/">Amazon VPC
+の料金</a></li>
+</ul></li>
+<li>学習資料
+<ul>
+<li><a
+href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=137">Amazon
+VPC の概要と試験出題ポイントは？</a></li>
+</ul></li>
+<li>公開情報
 <ul>
 <li><a
 href="https://qiita.com/nasuvitz/items/e05b3025f2ff708b7d2f">新サービスに触る前に学び直す、AWSのネットワーク基礎知識まとめ</a></li>
@@ -2968,53 +2986,27 @@ href="https://qiita.com/yoshiyama_hana/items/fd087f9a19538b8f6667">【AWS認定�
 href="https://zenn.dev/inuiebio/articles/a75ba86f63da19">おさえておきたいSAAに出てくるITサービス・オプション名称(ネットワーキング)</a></li>
 <li><a
 href="https://zenn.dev/inuiebio/articles/8eede7af946ae1">SAAの学習を始める際に押さえておきたい基礎知識</a></li>
-</ul>
-<h3 id="amazon-vpc-virtual-private-cloud">Amazon VPC (Virtual Private
-Cloud)</h3>
-<p>AWS内に構築できるプライベートなネットワーク環境</p>
-<ul>
-<li><a
-href="https://aws-exam.net/clf/clf_s_aws_service_summary.php?s_id=137">Amazon
-VPC の概要と試験出題ポイントは？</a></li>
-<li><a
-href="https://d1.awsstatic.com/webinars/jp/pdf/services/20201021_AWS-BlackBelt-VPC.pdf">BlackBelt_AmazonVPC_PDF</a></li>
-<li><a
-href="https://youtu.be/JAzsGRS_o4c">BlackBelt_AmazonVPC_YouTube</a></li>
-<li><a href="https://aws.amazon.com/jp/vpc/pricing/">Amazon VPC
-の料金</a></li>
-</ul>
-<h3 id="vpc内dns設定">VPC内DNS設定</h3>
-<p>VPCの設定でDNSを設定することができます。<br />
-VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御する設定です。</p>
-<ul>
-<li>DNSホスト名付与の方法種別
-<ul>
-<li>DNS解決(DNS Resolution)</li>
-<li>DNSホスト名(DNS Hostname)</li>
-<li>DHCPオプションセット(DHCP Options Sets)</li>
 </ul></li>
-<li><a
-href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
-hostnamesオプション</a></li>
-<li><a
-href="https://qiita.com/miyuki_samitani/items/71ecef0ae1a30e186ec3">VPCのDNSについて</a></li>
 </ul>
-<h3 id="vpc内dns設定dns-hostnameオプション">VPC内DNS設定/DNS
-Hostnameオプション</h3>
-<p>VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御するための設定となります。<br />
-以下の特徴があります。</p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク01vpcユースケース">09:ネットワーク/01:VPC/ユースケース</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="vpc構成ユースケース">VPC構成ユースケース</h3>
 <ul>
-<li>DNS hostnamesオプションの特徴
-<ul>
-<li>DNSホスト名を自動的に付与</li>
-<li>一貫した名前解決</li>
-<li>セキュリティグループやネットワークACLなどのセキュリティ設定を
-名前ベースで管理</li>
-</ul></li>
 <li><a
-href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
-hostnamesオプション</a></li>
+href="https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77">Amazon
+VPCを「これでもか！」というくらい丁寧に解説</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/how-to-think-about-zero-trust-architectures-on-aws/">AWS上でどのようにゼロトラストアーキテクチャを考えていくか</a></li>
 </ul>
+<p>(VPC構成ユースケース)<br />
+<img src="img/aws_saa/zerotrustpic.jpg" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク01vpc構成要素">09:ネットワーク/01:VPC/構成要素</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="elastic-ip-addressパブリックipアドレスプライベートip">Elastic IP
 Address/パブリックIPアドレス/プライベートIP</h3>
 <p>AWSの仮想機器に割り当てるIPアドレスの種別について以下記載します。</p>
@@ -3082,6 +3074,42 @@ href="https://blog.jicoman.info/2020/02/cost-optimization-aws-network/">AWSネ�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク01vpcvpc-dns">09:ネットワーク/01:VPC/VPC-DNS</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="vpc内dns設定">VPC内DNS設定</h3>
+<p>VPCの設定でDNSを設定することができます。<br />
+VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御する設定です。</p>
+<ul>
+<li>DNSホスト名付与の方法種別
+<ul>
+<li>DNS解決(DNS Resolution)</li>
+<li>DNSホスト名(DNS Hostname)</li>
+<li>DHCPオプションセット(DHCP Options Sets)</li>
+</ul></li>
+<li><a
+href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
+hostnamesオプション</a></li>
+<li><a
+href="https://qiita.com/miyuki_samitani/items/71ecef0ae1a30e186ec3">VPCのDNSについて</a></li>
+</ul>
+<h3 id="vpc内dns設定dns-hostnameオプション">VPC内DNS設定/DNS
+Hostnameオプション</h3>
+<p>VPC内のインスタンスに対してDNSホスト名を付与するかどうかを制御するための設定となります。<br />
+以下の特徴があります。</p>
+<ul>
+<li>DNS hostnamesオプションの特徴
+<ul>
+<li>DNSホスト名を自動的に付与</li>
+<li>一貫した名前解決</li>
+<li>セキュリティグループやネットワークACLなどのセキュリティ設定を
+名前ベースで管理</li>
+</ul></li>
+<li><a
+href="https://qiita.com/umibudou/items/b985a61c85592ed581bb#dns-hostnames%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">DNS
+hostnamesオプション</a></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ネットワーク02vpcモニタリング">09:ネットワーク/02:VPCモニタリング</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3093,10 +3121,14 @@ S3やCloudWatchに保存されます。</p>
 <li><a
 href="https://www.sunnycloud.jp/column/20221115-01/">VPCフローログとは</a></li>
 <li><a
+href="https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#vpc%E3%81%A8%E3%83%AD%E3%82%B0">VPCとログ</a></li>
+<li><a
 href="https://qiita.com/kerorinfather/items/64c3ca83017e521d9917">VPCフローログの取得方法</a></li>
 <li><a
 href="https://zenn.dev/lifewithpiano/articles/vpc-flowlogs2304">CloudWatch
 Logsを使用して、VPCフローログを覗いてみよう</a></li>
+<li><a
+href="https://atmarkit.itmedia.co.jp/ait/articles/2303/09/news008.html">ネットワーク監視とフロー情報の基礎知識</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3555,7 +3587,7 @@ href="https://qiita.com/Qu4rtz_MC5/items/5d3d5a588f2acf25d0dc#%E3%83%AA%E3%83%A2
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク07aws-direct-connect概要">09:ネットワーク/07:AWS
-Direct Connect(概要)</h2>
+Direct Connect/概要</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-direct-connect">AWS Direct Connect</h3>
 <p>DirectConnetとは、オンプレとAWS間で物理的な専用回線を構築するNW回線です。</p>
@@ -3598,63 +3630,10 @@ Direct Connectを整理してみた</a></li>
 </ul>
 <p>(NW構成図)<br />
 <img src="img/aws_saa/dx.png" width="75%" height="75%"><br /></p>
-<h3 id="aws-direct-connectaws-direct-connectロケーション">AWS Direct
-Connect/AWS Direct Connectロケーション</h3>
-<p>(AWS Direct Connectロケーション概要図)<br />
-<img src="img/aws_saa/h4b-network02-07.png" width="50%" height="50%"><br /></p>
-<ul>
-<li><a
-href="https://techblog.beex-inc.com/entry/2023/10/14/000000#Direct-Connect%E3%83%AD%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%81%AF">Direct
-Connectロケーションとは</a></li>
-<li><a
-href="https://atbex.attokyo.co.jp/about/cloud-connection/aws/#anc3">AWS
-Direct Connectへの接続サービス</a></li>
-<li><a href="https://atbex.attokyo.co.jp/blog/detail/9/">AWS Direct
-Connectロケーションまでの回線はユーザー側で用意</a></li>
-<li><a
-href="https://www.colt.net/ja/resources/insights/aws-direct-connect#section4">AWSダイレクトコネクトとは？ネットワーク構成と接続方法を図解</a></li>
-<li><a
-href="https://cloudpack.jp/service/aws/plan/direct-connect.html">専用接続プラン（AWS
-Direct Connect）</a></li>
-<li><a
-href="https://cloud.watch.impress.co.jp/docs/news/1648378.html">TOKAIコミュニケーションズ、大阪エリア2カ所目のAWS
-Direct
-Connectロケーション開設に伴い閉域接続サービスの接続ポイントを追加</a></li>
-</ul>
-<h3 id="用語コロケーション">(用語)コロケーション</h3>
-<p>コロケーションとは、ネットワークへの常時接続環境のもとに、サーバや回線接続装置などを共同の場所に設置する形態ことです。</p>
-<ul>
-<li><a href="https://it-trend.jp/words/collo">コロケーション
-とは</a></li>
-</ul>
-<h3 id="aws-direct-connectdirect-connect専用接続とホスト接続">AWS Direct
-Connect/Direct Connect専用接続とホスト接続</h3>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/WorkingWithConnections.html">Direct
-Connect 専用接続とホスト接続</a></li>
-<li><a
-href="https://qiita.com/zumax/items/5aca0e1b841082a3c6c5#%E5%B0%82%E7%94%A8%E6%8E%A5%E7%B6%9A%E3%81%A8%E3%83%9B%E3%82%B9%E3%83%88%E5%9E%8B%E6%8E%A5%E7%B6%9A">専用接続とホスト型接続</a></li>
-<li><a
-href="https://www.colt.net/ja/resources/insights/aws-direct-connect#section4">AWSダイレクトコネクトが提供している接続タイプ</a></li>
-</ul>
-<h3 id="aws-direct-connectホスト接続">AWS Direct Connect/ホスト接続</h3>
-<p>「AWS Direct Connect
-パートナー」がお客様に代わってプロビジョニングする物理イーサネット接続。<br />
-AWS利用者は、この接続をプロビジョニングする「AWS Direct Connect
-パートナープログラムのパートナー」に連絡することで、ホスト接続をリクエストします。<br />
-AWS Direct Connectパートナーによって管理される物理的なDirect
-Connect接続を複数のAWS利用者と共有する形態となります。<br />
-このタイプの接続は通常1Gbps以下の速度で提供されます。(例：50Mbps、100Mbps、300Mbps、500Mbps)</p>
-<ul>
-<li><a
-href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/hosted_connection.html">ホスト接続
-Direct Connect</a></li>
-</ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク07aws-direct-connectvif">09:ネットワーク/07:AWS
-Direct Connect(VIF)</h2>
+Direct Connect/VIF</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vifvirtual-interface仮想インターフェース">VIF(Virtual
 Interface、仮想インターフェース)</h3>
@@ -3722,12 +3701,117 @@ Amazon VPC、AWS
 <ul>
 <li><a href="https://aws.amazon.com/jp/transit-gateway/">AWS Transit
 Gateway</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/tgw/how-transit-gateways-work.html">AWS
+Transit Gateway の仕組み</a></li>
+<li><a href="https://qiita.com/jowoooon/items/93affe30a80224826cde">AWS
+Transit Gatewayを図解しながら理解する</a></li>
+</ul>
+<h3 id="aws-transit-gatewaytgw構成概要">AWS Transit
+Gateway(TGW)/構成概要</h3>
+<ul>
+<li><a href="AWS%20Direct%20Connect%20+%20AWS%20Transit%20Gateway">AWS
+Direct Connect + AWS Transit Gateway</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-aws-transit-gateway-vpn.html">AWS
+Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/inline-traffic-inspection-third-party-appliances/transit-gateway-asymmetric-routing.html">AWS
+Transit Gateway トラフィックフローと非対称ルーティング</a></li>
+<li><a href="https://atbex.attokyo.co.jp/blog/detail/96/">AWS Transit
+Gatewayとは？概要や利用するメリットについて説明します</a></li>
+</ul>
+<p>(AWS Direct Connect + AWS Transit Gateway)<br />
+<img src="img/aws_saa/aws-direct-connect-and-aws-transit-gateway.png" width="50%" height="50%"><br /></p>
+<p>(AWS Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN
+(public VIF))<br />
+<img src="img/aws_saa/aws-direct-connect-transit-gateway-site-to-site-vpn-public-vif.png" width="50%" height="50%"><br /></p>
+<p>(AWS Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN
+(transit VIF))<br />
+<img src="img/aws_saa/aws-direct-connect-and-aws-transit-gateway-and-vpn-with-transit-vif.png" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク07aws-direct-connectaws-direct-connectロケーション">09:ネットワーク/07:AWS
+Direct Connect/AWS Direct Connectロケーション</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-direct-connectaws-direct-connectロケーション">AWS Direct
+Connect/AWS Direct Connectロケーション</h3>
+<p>(AWS Direct Connectロケーション概要図)<br />
+<img src="img/aws_saa/h4b-network02-07.png" width="50%" height="50%"><br /></p>
+<ul>
+<li><a
+href="https://techblog.beex-inc.com/entry/2023/10/14/000000#Direct-Connect%E3%83%AD%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%81%AF">Direct
+Connectロケーションとは</a></li>
+<li><a
+href="https://atbex.attokyo.co.jp/about/cloud-connection/aws/#anc3">AWS
+Direct Connectへの接続サービス</a></li>
+<li><a href="https://atbex.attokyo.co.jp/blog/detail/9/">AWS Direct
+Connectロケーションまでの回線はユーザー側で用意</a></li>
+<li><a
+href="https://www.colt.net/ja/resources/insights/aws-direct-connect#section4">AWSダイレクトコネクトとは？ネットワーク構成と接続方法を図解</a></li>
+<li><a
+href="https://cloudpack.jp/service/aws/plan/direct-connect.html">専用接続プラン（AWS
+Direct Connect）</a></li>
+<li><a
+href="https://cloud.watch.impress.co.jp/docs/news/1648378.html">TOKAIコミュニケーションズ、大阪エリア2カ所目のAWS
+Direct
+Connectロケーション開設に伴い閉域接続サービスの接続ポイントを追加</a></li>
+</ul>
+<h3 id="用語コロケーション">(用語)コロケーション</h3>
+<p>コロケーションとは、ネットワークへの常時接続環境のもとに、サーバや回線接続装置などを共同の場所に設置する形態ことです。</p>
+<ul>
+<li><a href="https://it-trend.jp/words/collo">コロケーション
+とは</a></li>
+</ul>
+<h3 id="aws-direct-connectdirect-connect専用接続とホスト接続">AWS Direct
+Connect/Direct Connect専用接続とホスト接続</h3>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/WorkingWithConnections.html">Direct
+Connect 専用接続とホスト接続</a></li>
+<li><a
+href="https://qiita.com/zumax/items/5aca0e1b841082a3c6c5#%E5%B0%82%E7%94%A8%E6%8E%A5%E7%B6%9A%E3%81%A8%E3%83%9B%E3%82%B9%E3%83%88%E5%9E%8B%E6%8E%A5%E7%B6%9A">専用接続とホスト型接続</a></li>
+<li><a
+href="https://www.colt.net/ja/resources/insights/aws-direct-connect#section4">AWSダイレクトコネクトが提供している接続タイプ</a></li>
+</ul>
+<h3 id="aws-direct-connectホスト接続">AWS Direct Connect/ホスト接続</h3>
+<p>「AWS Direct Connect
+パートナー」がお客様に代わってプロビジョニングする物理イーサネット接続。<br />
+AWS利用者は、この接続をプロビジョニングする「AWS Direct Connect
+パートナープログラムのパートナー」に連絡することで、ホスト接続をリクエストします。<br />
+AWS Direct Connectパートナーによって管理される物理的なDirect
+Connect接続を複数のAWS利用者と共有する形態となります。<br />
+このタイプの接続は通常1Gbps以下の速度で提供されます。(例：50Mbps、100Mbps、300Mbps、500Mbps)</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/hosted_connection.html">ホスト接続
+Direct Connect</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
 id="ネットワーク08vpnipsec接続">09:ネットワーク/08:VPN(IPSec接続)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="aws-vpnの接続方式">AWS-VPNの接続方式</h3>
+<ul>
+<li>AWS-VPNの接続方式
+<ul>
+<li>Client VPN</li>
+<li>Site-to-Site VPN</li>
+<li>Direct Connect</li>
+</ul></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/webinar-bb-site-to-site-vpn-2021/">AWS
+Black Belt Online Seminar/AWS Site-to-Site VPN</a></li>
+<li><a
+href="https://www.slideshare.net/slideshow/202110-aws-black-belt-online-seminar-aws-sitetosite-vpn/250547658">AWS
+Black Belt Online Seminar/AWS Site-to-Site VPN</a></li>
+<li><a
+href="https://qiita.com/zumax/items/c48d7174ac6047c1da32#%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%81%8B%E3%82%89aws%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E7%A8%AE%E9%A1%9E">オンプレからAWSに接続する種類</a></li>
+</ul>
+<p>(AWS-VPNの接続方式)<br />
+<img src="img/aws_saa/AWS-VPN_3patterns.png" width="50%" height="50%"><br /></p>
 <h3 id="aws-site-to-site-vpn">AWS Site-to-Site VPN</h3>
 <p>Site-to-Site
 VPNは、オンプレミスからVPCのリソースへセキュアなアクセスを構成します。</p>
@@ -3735,6 +3819,11 @@ VPNは、オンプレミスからVPCのリソースへセキュアなアクセ�
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/vpn/latest/s2svpn/VPC_VPN.html">AWS
 Site-to-Site VPN</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpn/latest/s2svpn/how_it_works.html">AWS
+Site-to-Site VPN 仕組み</a></li>
+<li><a href="https://qiita.com/zumax/items/c48d7174ac6047c1da32">AWS
+Site To Site VPN</a></li>
 <li><a
 href="https://qiita.com/fjisdahgaiuerua/items/5c051d81817b68924ec1">Site-to-Site
 VPN</a></li>
@@ -3775,6 +3864,17 @@ VPN」を同時に利用して、冗長化することが可能です。<br />
 VPNを利用します。</p>
 <h3 id="client-vpn">Client VPN</h3>
 <p>自宅の個人PC等からVPCに向けてセキュアなアクセスを提供します。</p>
+<ul>
+<li><a
+href="https://tex2e.github.io/blog/infrastructure/aws-solution-architect-professional#aws%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88vpn">AWSクライアントVPN</a></li>
+<li><a
+href="https://qiita.com/Masayuki-Goto/items/6f7f2bc100a2945d1292">初心者向けAWS
+Client VPN入門</a></li>
+<li><a href="https://qiita.com/madayo/items/f829ec3d300731ac1fe9">AWS の
+VPN サービス(AWS Client VPN)を試してみる</a></li>
+<li><a href="https://qiita.com/atsumjp/items/837d8ea5763bb985ff8d">AWS
+Client VPNを試してみる</a></li>
+</ul>
 <h3 id="vpn監視">VPN監視</h3>
 <p>VPN監視はCloudWatchを利用します。</p>
 <hr />
@@ -3788,23 +3888,107 @@ Route 53)</h2>
 <ul>
 <li><a href="https://aws.amazon.com/jp/route53/">Amazon Route
 53</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/route53-nameresolution-features">Amazon
+Route53の名前解決機能を整理してみる</a></li>
+<li><a
+href="https://qiita.com/Catalyst3104/items/79dee09a9ffeb91964c0">DNSサーバの種類</a></li>
 <li><a href="https://qiita.com/zumax/items/f9b617d3d8df6ff1d4ab">Amazon
 Route 53を整理してみた</a></li>
 </ul>
+<h3 id="amazon-route-53機能概要">Amazon Route 53/機能概要</h3>
+<p>Amazon Route 53は、以下の機能を有しています。</p>
+<ul>
+<li>Route53機能
+<ul>
+<li>Route53 →「DNS権威サーバ」
+<ul>
+<li>Route53 Private Hostzone → 「内部DNSサーバ」</li>
+</ul></li>
+<li>Route53 Resolver
+→「DNSキャッシュサーバ」と「DNSフォワーダ」の両方の機能</li>
+</ul></li>
+<li>(自サイト内)<a
+href="ipa_nw.html#dnsサーバ種別概要">DNSサーバ種別</a></li>
+<li><a
+href="https://qiita.com/Catalyst3104/items/79dee09a9ffeb91964c0#%E8%9B%87%E8%B6%B3aws%E3%81%AEdns%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A8%E3%81%AE%E5%AF%BE%E5%BF%9C%E4%BB%98%E3%81%91">AWSのDNSサービスとの対応付け</a></li>
+</ul>
 <h3
 id="amazonroute53のルーティングポリシー">AmazonRoute53のルーティングポリシー</h3>
+<p>Amazon Route 53のルーティングポリシーは全部で8種類あります。<br />
+システムの目的や要件に合わせて最適なものを選択します。</p>
+<ol type="1">
+<li>シンプルルーティング (Simple)
 <ul>
-<li>AmazonRoute53のルーティングポリシー
-<ul>
-<li>シンプルルーティングポリシー</li>
-<li>加重ルーティングポリシー</li>
-<li>レイテンシールーティングポリシー</li>
-<li>フェイルオーバールーティングポリシー</li>
-<li>地理的近接性ルーティングポリシー</li>
-<li>位置情報ルーティングポリシー</li>
-<li>IP ベースのルーティングポリシー</li>
-<li>複数値回答ルーティングポリシー</li>
+<li>概要: 1つのドメインに対して固定のIPアドレスを返します。</li>
+<li>特徴:
+1つのレコードに複数のIPを登録すると、ランダムに返して簡易的な負荷分散を行います。</li>
+<li>用途:
+単一のサーバー構成や、特別な制御が必要ない通常のWebサイト。</li>
 </ul></li>
+<li>加重ルーティング (Weighted)
+<ul>
+<li>概要:
+指定した比率（ウェイト）に基づいてトラフィックを分散します。</li>
+<li>特徴:
+割り当てを「80：20」のように設定し、徐々にアクセス数を調整できます。</li>
+<li>用途:
+新機能のテスト（カナリアリリース）や、性能の異なるサーバーへの負荷分散。</li>
+</ul></li>
+<li>位置情報ルーティング (Geolocation)
+<ul>
+<li>概要:
+ユーザーの「クライアントの国や地域」に基づいてルーティングします。</li>
+<li>特徴:
+日本からのアクセスには日本のサーバー、米国からは米国のサーバーを案内します。</li>
+<li>用途:
+コンテンツの多言語切り替えや、地域の法規制（GDPRなど）に合わせたデータ制御。</li>
+</ul></li>
+<li>地理的近接性ルーティング (Geoproximity)
+<ul>
+<li>概要:
+ユーザーとリソースの「物理的な距離」に基づいてルーティングします。</li>
+<li>特徴:
+「バイアス（偏重値）」を設定することで、特定のリージョンがカバーする地理的範囲を意図的に拡大・縮小できます。</li>
+<li>用途:
+地理的に最も近いサーバーへ自動誘導し、遅延（レイテンシー）を抑えたい場合。</li>
+</ul></li>
+<li>レイテンシーベースルーティング (Latency)
+<ul>
+<li>概要:
+ユーザーに対して「最もネットワーク遅延が少ない（応答が速い）」AWSリージョンへルーティングします。</li>
+<li>特徴:
+物理的な距離ではなく、実際のネットワークの混雑状況や速度を測定して判断します。</li>
+<li>用途:
+世界展開しているアプリで、ユーザーの体感速度を最速にしたい場合。</li>
+</ul></li>
+<li>フェイルオーバールーティング (Failover)
+<ul>
+<li>概要: システム障害時に、自動で予備の環境へ切り替えます。</li>
+<li>特徴:
+「アクティブ（本番）」と「パッシブ（待機）」のペアを設定し、ヘルスチェックと連動させます。</li>
+<li>用途:
+システムの可用性を高めるための、災害対策（DR環境）やバックアップ。</li>
+</ul></li>
+<li>複数値回答ルーティング (Multivalue Answer)
+<ul>
+<li>概要:
+ヘルスチェックに合格した正常なIPアドレスを、最大8個までランダムに返します。</li>
+<li>特徴:
+シンプルルーティングにヘルスチェック機能を加えたような動作をします。</li>
+<li>用途:
+障害のあるサーバーを自動で除外する、DNSレベルのシンプルな負荷分散。</li>
+</ul></li>
+<li>IPベースルーティング (IP-based)概要:
+ユーザーの「接続元IPアドレス（CIDRブロック）」に基づいてルーティングします。
+<ul>
+<li>特徴:
+ユーザーが所属するネットワークごとに、明確にエンドポイントを出し分けることができます。</li>
+<li>用途:
+特定のプロバイダや社内ネットワークからのアクセスを、専用の検証環境へ誘導したい場合。</li>
+</ul></li>
+</ol>
+<ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/routing-policy.html">ルーティングポリシーの選択</a></li>
 <li><a
@@ -3818,10 +4002,27 @@ href="https://qiita.com/hiroaki-u/items/e37e45280446c997b892">Route53を使っ�
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2
+id="ネットワーク10dnsamazon-route-53-ホストゾーン">09:ネットワーク/10:DNS(Amazon
+Route 53 ホストゾーン)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="amazon-route-53-ホストゾーン概要">Amazon Route 53
+ホストゾーン/概要</h3>
+<ul>
+<li><a
+href="https://qiita.com/zumax/items/f9b617d3d8df6ff1d4ab#%E3%83%9B%E3%82%B9%E3%83%88%E3%82%BE%E3%83%BC%E3%83%B3">ホストゾーン</a></li>
+</ul>
+<h3 id="amazon-route-53-ホストゾーン概要図">Amazon Route 53
+ホストゾーン/概要図</h3>
+<p>(Amazon Route
+53/パブリックホストゾーン・プライベートホストゾーン)<br />
+<img src="img/aws_saa/Amazon-Route-53-image.png" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2
 id="ネットワーク10dnsamazon-route-53-resolver">09:ネットワーク/10:DNS(Amazon
 Route 53 Resolver)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="amazon-route-53-resolver">Amazon Route 53 Resolver</h3>
+<h3 id="amazon-route-53-resolver概要">Amazon Route 53 Resolver/概要</h3>
 <p>各アベイラビリティゾーンに組み込まれた AWS 管理の DNS
 サーバーであり、「Amazon Route 53 Resolver」または「Amazon Provided
 DNS」とも呼ばれます。<br />
@@ -3829,7 +4030,7 @@ Amazon Route 53
 Resolverは、VPC(仮想ネットワーク)内でDNSサーバーを独自に設定しない場合に、自動的に提供されるAWS既定のDNSサービスです。<br />
 VPC 内に起動された EC2 から名前解決を行う際は、VPC
 CIDRの第4オクテットに「+2」したIP(例:
-10.0.0.2)で、AWS内のプライベートDNSやインターネットの名前解決を行います。
+10.0.0.2)で、AWS内のプライベートDNSやインターネットの名前解決を行います。<br />
 CIDR が「10.0.0.0/16」の VPC
 なら「10.0.0.2」、「172.31.0.0/16」なら「172.31.0.2」が Amazon Route 53
 Resolver の IP アドレスとなります。</p>
@@ -3849,22 +4050,41 @@ Provided DNS (Amazon Route 53 Resolver) とは</a></li>
 href="https://dev.classmethod.jp/articles/amazon-route-53-resolver-dns-check/">Amazon
 Route 53 Resolver DNS を利用した DNS 解決について調べてみた</a></li>
 </ul>
+<h3 id="amazon-route-53-resolver概要図">Amazon Route 53
+Resolver/概要図</h3>
+<p>(Amazon Route 53 Resolver概要図)<br />
+<img src="img/aws_saa/cdp-route53.png" width="75%" height="75%"><br /></p>
 <h3
-id="amazon-route-53-resolver-インバウンドアウトバウンドエンドポイント">Amazon
-Route 53 Resolver インバウンド/アウトバウンドエンドポイント</h3>
+id="amazon-route-53-resolverインバウンドアウトバウンドエンドポイント">Amazon
+Route 53 Resolver/インバウンド・アウトバウンドエンドポイント</h3>
 <ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/resolver.html">Route
+53 VPC Resolver とは</a></li>
+<li><a
+href="https://blog.serverworks.co.jp/route53-nameresolution-features#%EF%BC%93Inbound-EndpointOutbound-Endpoint">Inbound
+Endpoint・Outbound Endpoint</a></li>
 <li><a href="https://qiita.com/zumax/items/715de9f932f07a7ffceb">Amazon
 Route 53 Resolverを整理してみた</a></li>
 <li><a
-href="https://blog.serverworks.co.jp/route53-nameresolution-features">Amazon
-Route53の名前解決機能を整理してみる</a></li>
+href="https://qiita.com/mksamba/items/b16e99170e666b68f194">Amazon Route
+53 Resolver インバウンド/アウトバウンドエンドポイント
+を使ってみる</a></li>
+</ul>
+<p>(インバウンドエンドポイントの概要図)<br />
+<img src="img/aws_saa/Resolver-routing.png" width="50%" height="50%"><br /></p>
+<h3
+id="amazon-route-53-resolverインバウンドアウトバウンドエンドポイント_マルチアカウント環境">Amazon
+Route 53
+Resolver/インバウンド・アウトバウンドエンドポイント_マルチアカウント環境</h3>
+<ul>
 <li><a
 href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/patterns/set-up-dns-resolution-for-hybrid-networks-in-a-multi-account-aws-environment.html">マルチアカウント
 AWS 環境でハイブリッドネットワークの DNS 解決を設定する</a></li>
 </ul>
-<p>(インバウンドエンドポイント)<br />
+<p>(インバウンドエンドポイント_マルチアカウント環境)<br />
 <img src="img/aws_saa/inbound_endpoint.png" width="50%" height="50%"><br /></p>
-<p>(アウトバウンドエンドポイント)<br />
+<p>(アウトバウンドエンドポイント_マルチアカウント環境)<br />
 <img src="img/aws_saa/outbound_endpoint.png" width="50%" height="50%"><br /></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -3919,8 +4139,8 @@ Load Balancer とは?</a></li>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク11elbalb">09:ネットワーク/11:ELB(ALB)</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="aws-application-load-balanceralb">AWS Application Load
-Balancer(ALB)</h3>
+<h3 id="aws-application-load-balanceralb概要">AWS Application Load
+Balancer(ALB)/概要</h3>
 <p>ALBは、AWSが提供するロードバランシングサービスの一つで、WebアプリケーションやAPIへのアクセスを複数のターゲット(EC2インスタンス、コンテナ、IPアドレスなど)に分散させる役割を担います。</p>
 <ul>
 <li>ALBの特徴
@@ -3933,15 +4153,83 @@ Balancer(ALB)</h3>
 <li>WebSocket</li>
 <li>同一インスタンス内の複数ポートへの負荷分散、</li>
 </ul></li>
-<li>ALBのルーティング機能
+<li>ALBの主な構成要素
 <ul>
-<li>ホストベースルーティング</li>
-<li>パスベースルーティング</li>
-<li>URLクエリ文字列でのルーティング</li>
+<li>リスナー</li>
+<li>リスナールール</li>
+<li>ターゲットグループ</li>
+<li>ターゲット</li>
 </ul></li>
+<li><a
+href="https://konishi-tech.com/alb/">ALBの構成要素（リスナー・ルールなど）やELBとの違いを解説</a></li>
+<li><a
+href="https://zenn.dev/osachi/articles/3be1a4783a8a85">ロードバランサーのコンポーネントを整理</a></li>
 </ul>
-<h3 id="aws-application-load-balancerスティッキーセッション">AWS
-Application Load Balancer/スティッキーセッション</h3>
+<h3 id="albリスナー">ALB/リスナー</h3>
+<p>リスナーは、どの通信をロードバランサーで受け入れるかというゲートキーパーの役割です。<br />
+Protocol:Port のセットで、受信する通信を決めます。</p>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/load-balancer-listeners.html">Application
+Load Balancer のリスナー</a></li>
+<li><a
+href="https://qiita.com/free-honda/items/6b2cab657d5f0a6c8078#alb%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%8A%E3%83%BC%E3%81%A8%E3%81%AF">ALBのリスナーとは</a></li>
+</ul>
+<h3 id="albリスナールール">ALB/リスナールール</h3>
+<p>リスナールールとは、事前に定義した条件(ルール)に応じて、リスナーが許可した接続を適切なサーバー群（ターゲットグループ）に振り分ける機能です。<br />
+リスナールールの条件の種類は以下があります。</p>
+<ol type="1">
+<li>ホストベース
+<ul>
+<li>概要: ルーティングアクセス先の ドメイン名（ホストヘッダー）
+に応じて、異なるターゲット（サーバー群）にリクエストを転送します。</li>
+<li>仕組み: リクエストに含まれる Host
+ヘッダーの値を条件にして振り分けます。</li>
+<li>主な用途: 1つのALBで複数のWebサービス（例: shop.example.com と
+blog.example.com）をホストし、バックエンドの異なるサーバー群にトラフィックを流す場合。</li>
+</ul></li>
+<li>パスベース
+<ul>
+<li>概要: ルーティングURLの ドメイン以下のパス（URI）
+に応じて、トラフィックを転送します。</li>
+<li>仕組み: スラッシュ（/）で区切られたパスの文字列（例: /img/ や
+/api/）を条件にして振り分けます。ワイルドカード（*）も使用可能です。</li>
+<li>主な用途:
+マイクロサービスアーキテクチャのように、同じドメイン内で機能ごとに処理サーバーを分ける場合。例:
+静的コンテンツ（/static/<em>）は S3 や専用サーバーへ、
+API処理（/api/</em>）はアプリケーションサーバーへ転送する。</li>
+</ul></li>
+<li>URLクエリ文字列
+<ul>
+<li>概要: ルーティングURLの末尾にある クエリパラメータ（? 以降の文字列）
+に基づいて転送先を決定します。</li>
+<li>仕組み: キーと値のペア（例: ?version=v2 や
+?lang=ja）を条件として指定します。完全一致や正規表現での指定が可能です。</li>
+<li>主な用途:
+特定のバージョンへのアクセスや、特定のキャンペーン用ページ、モバイル端末向けリクエストを別のサーバーグループへ誘導したい場合。</li>
+</ul></li>
+</ol>
+<ul>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/listener-rules.html">Application
+Load Balancer のリスナールール</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/rule-condition-types.html">リスナールールの条件の種類</a></li>
+<li><a
+href="https://qiita.com/free-honda/items/6b2cab657d5f0a6c8078#alb%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%A8%E3%81%AF">ALBのルールとは</a></li>
+<li><a
+href="https://qiita.com/ss12345/items/d54d98068d00dd1d5812">ELBの用語要点まとめ１</a></li>
+<li><a
+href="https://mondai.ping-t.com/g/posts/1470">パスベースのルーティングとホストベースのルーティングの違いが理解できません</a></li>
+</ul>
+<h3 id="albパスベースルーティング">ALB/パスベースルーティング</h3>
+<ul>
+<li><a
+href="https://zenn.dev/mn87/articles/f2b0b35f519d76">ALBのパスベースルーティングをやってみた</a></li>
+<li><a
+href="https://techblog.ap-com.co.jp/entry/2024/07/31/093000">ALBパスベースルーティング</a></li>
+</ul>
+<h3 id="albスティッキーセッション">ALB/スティッキーセッション</h3>
 <p>ALBではCookieベースのスティッキーセッションが利用可能です。</p>
 <h3 id="aws-application-load-balanceralbec2-autoscaling構成">AWS
 Application Load Balancer/ALB+EC2 AutoScaling構成</h3>
@@ -4035,13 +4323,60 @@ S3 オリジンへのアクセスを制限する</a></li>
 <li><a
 href="https://qiita.com/shota_hagiwara/items/caacbda7f55aeea110d1">【AWS】OACを設定してCloudFront経由でS3に格納したコンテンツを公開する</a></li>
 </ul>
-<h3 id="aws-cloudfrontユースケース">AWS CloudFrontユースケース</h3>
-<p>オリジンサーバはVPC内部「ALB+EC2」で構成として、CloudFrontの構成は「CloudFront+ALB+S3」で構成するパターンが多いです。</p>
+<h3 id="aws-cloudfrontユースケース">AWS CloudFront/ユースケース</h3>
+<p>AWS
+CloudFrontを利用する場合には、HTTPサーバを以下のように構成するのがユースケースとなります。</p>
 <ul>
+<li>静的HTTPサーバ
+<ul>
+<li>CloudFrontの設定として「CloudFront+ALB+S3」で構成</li>
+</ul></li>
+<li>動的HTTPサーバ
+<ul>
+<li>オリジンサーバにVPCを指定して、VPC内部では「ALB+EC2」構成</li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/patterns/serve-static-content-in-an-amazon-s3-bucket-through-a-vpc-by-using-amazon-cloudfront.html">Amazon
+CloudFront を使用して Amazon S3 バケットの静的なコンテンツを VPC
+経由で配信する</a></li>
+<li><a
+href="https://qiita.com/hyj624117615/items/450f6526c6a9c81848a6">【AWS】CloudFront
++ S3 + ALB のhttps構成を構築してみました</a></li>
+<li><a
+href="https://dev.classmethod.jp/articles/other-account-alb-s3-as-cloudfront-origin/">CloudFrontのオリジンに別アカウントのALBとS3を指定する</a></li>
+<li><a
+href="https://tech.itandi.co.jp/entry/2019/07/cloudfront-alb-s3">CloudFront
++ ALB +
+S3でリダイレクトを設定しつつ、静的サイトをホスティングする方法</a></li>
 <li><a href="https://blog.usize-tech.com/CloudFront-cache-basic/">Amazon
 CloudFrontとキャッシュ制御の基礎</a></li>
 <li><a
 href="https://zenn.dev/aws_gissan/articles/1cb52d1f2fc5ff">静的、動的コンテンツ配信を使用したWebアプリケーションサーバ設計</a></li>
+</ul>
+<p>(CloudFront+ALB+S3構成の例)<br />
+<img src="img/aws_saa/CloudFront-ALB-S3.png" width="50%" height="50%"><br /></p>
+<h3 id="aws-cloudfront署名付きurl">AWS CloudFront/署名付きURL</h3>
+<p>規定ポリシーとカスタムポリシー（Custom
+Policy）の主な違いは以下の通りです。</p>
+<ul>
+<li>規定ポリシー（Canned Policy）
+<ul>
+<li>設定項目: 有効期限（DateLessThan）のみ</li>
+<li>メリット:
+パラメータが少なく、比較的簡単にプログラム等で生成できる</li>
+<li>用途:
+「指定した日時までは誰でもダウンロードできる」といったシンプルな期限付きコンテンツ配信</li>
+</ul></li>
+<li>カスタムポリシー（Custom Policy）
+<ul>
+<li>設定項目:
+有効期限に加え、アクセス開始日時（DateGreaterThan）、アクセス可能なIPアドレスの範囲制限（IpAddress）など</li>
+<li>メリット: より細かく厳密なアクセス制御が可能</li>
+<li>用途:
+特定のIPからのみアクセスさせたい場合や、複数のオブジェクトに対して共通の制限をかけたい場合</li>
+</ul></li>
+<li><a
+href="https://rarejob-tech-dept.hatenablog.com/entry/2021/01/15/190000">CloudFrontの署名付きURLを利用したコンテンツ配信</a></li>
 </ul>
 <h3 id="lambdaedge">Lambda@Edge</h3>
 <p>CloudFrontのエッジロケーションのサービス。Lamda関数はユーザーに近いロケーションで実行されます。</p>

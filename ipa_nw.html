@@ -29,7 +29,7 @@
 <h1 class="title">勉強メモ_ネットワークスペシャリスト</h1>
 </header>
 <p>作成日：2025/07/06 09:43:35<br />
-更新日：2026/07/25 15:35:02<br />
+更新日：2026/07/26 09:47:16<br />
 <a href="index.html">トップページ</a></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -963,37 +963,54 @@ href="https://academ-aid.com/qualif/vendor/lpic-202-qa">【Linux試験対策】L
 <h3 id="dnsサーバ種別概要">DNSサーバ種別/概要</h3>
 <p>DNS（Domain Name System）サーバは、以下の種別が存在します。</p>
 <ul>
-<li>権威DNSサーバ（コンテンツサーバ）</li>
-<li>フルサービスリゾルバ
+<li>DNSサーバ種別
+<ul>
+<li>権威DNSサーバ(コンテンツサーバ)</li>
+<li>フルサービスリゾルバ(フルリゾルバ)
 <ul>
 <li>キャッシュサーバ</li>
 <li>再帰DNSサーバ</li>
 </ul></li>
-<li>フォワーダー(DNSプロキシ)</li>
+<li>DNSフォワーダー(DNSプロキシ)</li>
 <li>スタブリゾルバ</li>
+</ul></li>
+<li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
+resolver / recursive query iterative query</a></li>
+<li><a
+href="https://qiita.com/nk9bb8/items/163f94f97b5411226d74">DNSの用語を中心にまとめてみました</a></li>
+<li><a
+href="https://www.digicert.com/jp/faq/dns/recursive-and-authoritative-dns-differences">再帰的
+DNS と権威 DNS の違いは何ですか？</a></li>
 </ul>
-<p>https://www.infraexpert.com/study/tcpip24.html
-https://qiita.com/nk9bb8/items/163f94f97b5411226d74
-https://www.digicert.com/jp/faq/dns/recursive-and-authoritative-dns-differences</p>
 <h3 id="dnsサーバ種別dnsリゾルバ">DNSサーバ種別/DNSリゾルバ</h3>
 <p>各サーバの機能概要は、以下のとおりです。</p>
 <ul>
-<li>権威サーバ（コンテンツDNSサーバ）
+<li>権威DNSサーバ（コンテンツサーバ）
 <ul>
-<li>自身の管理するドメインの情報を公開する「権威サーバ」機能を持つ（「コンテンツサーバ」とも呼ばれる）</li>
-<li>特定のドメインに関する「正式な情報（IPアドレスなど）」を自身のデータベースに保持し、その情報に対する問い合わせにのみ回答するサーバーです。</li>
+<li>自身の管理するドメインの情報を公開する「権威サーバ」機能を持ちます。（「コンテンツサーバ」とも呼ばれます）</li>
+<li>特定のドメインに関する「正式な情報（IPアドレスなど）」を自身のデータベースに保持し、その情報に対する問い合わせにのみ回答するサーバーのことです。<br />
+</li>
 </ul></li>
-<li>フルサービスリゾルバ(「フルリゾルバ」機能)
+<li>フルサービスリゾルバ(フルリゾルバ/キャッシュサーバ)
 <ul>
 <li>パソコンやスマホなどの端末（スタブリゾルバ）からの名前解決要求を受け付け、世界中のDNSサーバーに問い合わせてIPアドレスを突き止める役割を持ちます。</li>
-<li>応答結果をキャッシュしておき、キャッシュがあればそれを返すため「キャッシュサーバ」とも呼ばれる。</li>
+<li>応答結果をキャッシュしておき、キャッシュがあればそれを返すため「キャッシュサーバ」とも呼ばれます。<br />
+</li>
 <li>スタブリゾルバからの再帰問い合わせ（Recursive）を受けて、反復問い合わせ（Iterative）によって完全にDNS解決を行うこともできる。</li>
+</ul></li>
+<li>DNSフォワーダ（DNSプロキシ）
+<ul>
+<li>キャッシュサーバのようにクライアントからのクエリを受け付けるが、自身で名前解決は行わず、キャッシュサーバにクエリを転送（フォワード）するだけのサーバのことです。<br />
+</li>
 </ul></li>
 <li>スタブリゾルバ
 <ul>
-<li>DNSリクエストを送信するだけのクライアントPC、またはDNSサーバ</li>
-<li>名前解決検索要求を受け取り、他のDNSサーバに問い合わせを行う</li>
+<li>DNSリクエストを送信するだけのクライアントPC、またはDNSサーバのことです。<br />
+</li>
+<li>名前解決検索要求を受け取り、他のDNSサーバに問い合わせを行います。</li>
 </ul></li>
+<li><a
+href="https://qiita.com/Catalyst3104/items/79dee09a9ffeb91964c0">DNSサーバの種類</a></li>
 <li><a href="https://www.infraexpert.com/study/tcpip24.html">DNS
 resolver</a></li>
 <li><a
