@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/07/11 09:52:53<br />
-更新日：2026/07/26 09:47:16</p>
+更新日：2026/08/09 15:40:54</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="はじめに">00:はじめに</h2>
@@ -157,6 +157,13 @@ href="https://engineerblog.mynavi.jp/technology/aws_aboutaccount/">AWSにおけ�
 <li>VPC：サブネット ＝ 1 ： N</li>
 <li>VPC：AZ ＝ N ： N</li>
 <li>AZ ：サブネット ＝ 1 ： N</li>
+</ul></li>
+<li>注意点
+<ul>
+<li>VPCは、リージョンの内の一つにしか割り当てできません。複数のリージョンを跨いでVPCを割り当てることができません。<br />
+</li>
+<li>サブネットは、アベイラビリティゾーン（AZ）の内の一つにしか割り当てできません。複数のAZを跨いでサブネットを割り当てることができません。<br />
+</li>
 </ul></li>
 <li><a
 href="https://security-blog-it.com/2174/">AWSの専門用語(リージョン、アベイラビリティゾーン、エッジロケーションとは)</a></li>
@@ -3074,6 +3081,46 @@ href="https://blog.jicoman.info/2020/02/cost-optimization-aws-network/">AWSネ�
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
+<h2
+id="ネットワーク01vpcamazon-vpcルートテーブル">09:ネットワーク/01:VPC/Amazon
+VPCルートテーブル</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="amazon-vpcルートテーブル">Amazon VPCルートテーブル</h3>
+<p>ルートテーブルは「宛先（Destination）」と「ターゲット（Target）」で構成されます。</p>
+<ul>
+<li>宛先(Destination)
+<ul>
+<li>データがどこに向かうのかを示します。例えば、10.0.0.0/16という形式で表されるIPアドレス範囲です。</li>
+</ul></li>
+<li>ターゲット(Target)
+<ul>
+<li>データがその宛先に到達するためのルートです。ターゲットには、インターネットゲートウェイやVPCピアリング接続、VPN接続などが含まれます。</li>
+<li>「Route」と表現される場合もあります。<br />
+</li>
+</ul></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/RouteTables.html">ルートテーブルの概念</a></li>
+<li><a
+href="https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/VPC_Route_Tables.html">ルートテーブルを設定する</a></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/inspect-subnet-to-subnet-traffic-with-amazon-vpc-more-specific-routing/">Amazon
+VPC のルーティング強化により、VPC
+内のサブネット間のトラフィックが調査可能に</a></li>
+<li><a
+href="https://qiita.com/u-bayashi/items/d761d60c50f558a0a92f">AWSのネットワーク構成＆ルーティングについて</a></li>
+<li><a href="https://zenn.dev/yukun369/articles/b3eafe886e17e2">AWS
+VPCのルートテーブルについて学ぼう！</a></li>
+<li><a
+href="https://tenshoku.mynavi.jp/engineer/guide/articles/YNAgFhMAAPVEJWdD">AWSのルートテーブルとは？その概念から設定方法まで詳しく解説！</a></li>
+<li><a
+href="https://www.cloud-for-all.com/blog/what-is-an-aws-route-table">AWSルートテーブルとは？基礎から設定方法までわかりやすく解説</a></li>
+<li><a
+href="https://iret.media/154342">メインルートテーブルのルート設定はローカル通信のみにしておこう</a></li>
+</ul>
+<p>(VPCルートテーブルの構成)<br />
+<img src="img/aws_saa/vpc_route_table.png" width="50%" height="50%"><br /></p>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ネットワーク01vpcvpc-dns">09:ネットワーク/01:VPC/VPC-DNS</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="vpc内dns設定">VPC内DNS設定</h3>
@@ -4041,8 +4088,7 @@ Route53Resolver_PDF</a></li>
 <li><a href="https://youtu.be/bax2ZksBzck">BlackBelt_Amazon
 Route53ResolverYouTube</a></li>
 <li><a
-href="https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/resolver.html">Amazon
-Route 53 Resolver</a></li>
+href="https://aws.amazon.com/jp/cdp/route53/">ハイブリッド環境での名前解決を一元化するためのクラウド構成と料金試算例</a></li>
 <li><a
 href="https://qiita.com/miyuki_samitani/items/59e9c9ff432a750d728e">Amazon
 Provided DNS (Amazon Route 53 Resolver) とは</a></li>
@@ -4120,6 +4166,10 @@ href="https://dev.classmethod.jp/articles/elb_crosszone_load_balancing_default_v
 href="https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/edit-target-group-attributes.html">Application
 Load Balancer のターゲットグループ属性を編集する</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="ネットワーク11elbnlb">09:ネットワーク/11:ELB(NLB)</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
 <h3 id="aws-network-load-balancernlb">AWS Network Load
 Balancer(NLB)</h3>
 <p>Network Load Balancer は、開放型システム間相互接続 (OSI) モデルの第 4
