@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/01/15 20:29:28<br />
-更新日：2026/08/09 15:40:54</p>
+更新日：2026/08/23 15:36:14</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="ans学習">ANS学習</h2>
@@ -199,10 +199,51 @@ VPN接続ステータスグラフをCloudWatchカスタムメトリクスで表�
 href="https://dev.classmethod.jp/articles/monitoring-vpn-connection-by-cloudwatch/">AWS
 CloudWatchアラームでVPCのVPN接続を監視できるようになりました</a></li>
 </ul>
-<h3 id="vpcトラフィクミラーリング">VPCトラフィクミラーリング</h3>
+<h3
+id="vpcトラフィクミラーリング概要">VPCトラフィクミラーリング/概要</h3>
+<p>Amazon VPC トラフィックミラーリングは、EC2
+インスタンスのネットワークインターフェース（ENI）を通過するトラフィックを複製（ミラーリング）し、
+別のセキュリティツールや監視アプライアンスに転送できる機能です。</p>
 <ul>
+<li>主要なユースケース
+<ul>
+<li>高度なセキュリティ分析:
+侵入検知システム（IDS）や脅威検出ツールへのトラフィック転送。</li>
+<li>トラブルシューティング:
+障害発生時のネットワークパケットの詳細解析（Wiresharkなどの活用）。</li>
+<li>コンテンツモニタリング:
+コンプライアンス監査や不適切な通信の監視。</li>
+<li>テスト環境でのシミュレーション:
+本番環境の実際のトラフィックを開発環境に流す擬似テスト。</li>
+</ul></li>
+<li><a
+href="https://aws.amazon.com/jp/blogs/news/new-vpc-traffic-mirroring/">最新
+– VPC トラフィックミラーリング –
+ネットワークトラフィックを捉えて検査する</a></li>
 <li><a
 href="https://dev.classmethod.jp/articles/how-to-capture-packets-outside-ec2-with-vpc-traffic-mirroring/">VPCトラフィクミラーリングを使ってEC2にログインせずにパケットキャプチャする方法を学ぼう</a></li>
+</ul>
+<h3
+id="vpcトラフィクミラーリング機能詳細">VPCトラフィクミラーリング/機能詳細</h3>
+<p>設定を行う際は、AWS
+マネジメントコンソールのVPCダッシュボードから定義します。</p>
+<ul>
+<li>機能
+<ul>
+<li>ミラーターゲット（Target）
+<ul>
+<li>コピーしたトラフィックの送信先。別のEC2の「ENI」、「Network Load
+Balancer (NLB)」、または「Gateway Load Balancer
+(GWLB)」を指定可能。</li>
+</ul></li>
+<li>ミラーフィルター（Filter）
+<ul>
+<li>どのトラフィックをミラーリングするかを指定するルール。特定のIPアドレス（CIDR）やプロトコル（TCP/UDPなど）に限定可能。</li>
+</ul></li>
+<li>ミラーセッション（Session）「ソース（コピー元ENI）」、「ターゲット」、「フィルター」を紐付ける接続定義</li>
+</ul></li>
+<li><a
+href="https://www.sunnycloud.jp/column/20241127-01/">VPCトラフィックミラーリングでEC2のパケットキャプチャを行う</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -584,18 +625,67 @@ Gateway</a></li>
 <li>③AWS Direct Connect
 <ul>
 <li>特徴：プライベートライン経由の専用ネットワーク接続</li>
+<li>利点
+<ul>
+<li>より予測可能なネットワークパフォーマンス</li>
+<li>帯域幅コストの削減</li>
+<li>BGP ピアリングポリシーとルーティングポリシーをサポート</li>
+</ul></li>
+<li>制限事項
+<ul>
+<li>追加の通信プロバイダーとホスティングプロバイダーの関係や新しいネットワーク回線のプロビジョニングが必要になる場合があります。</li>
+</ul></li>
 </ul></li>
 <li>④AWS Direct Connect + AWS Transit Gateway
 <ul>
 <li>特徴：複数の VPCs
 のリージョンルーターへのプライベートライン経由の専用ネットワーク接続</li>
+<li>利点
+<ul>
+<li>前のオプションと同じ</li>
+<li>最大 5,000 個のアタッチメント用の AWS
+マネージド高可用性とスケーラビリティのリージョンネットワークハブ</li>
+</ul></li>
+<li>制限事項
+<ul>
+<li>前のオプションと同じ</li>
+</ul></li>
 </ul></li>
 <li>⑤AWS Direct Connect + AWS Site-to-Site VPN
 <ul>
 <li>特徴：プライベートライン経由の IPsec VPN 接続</li>
+<li>利点
+<ul>
+<li>より予測可能なネットワークパフォーマンス</li>
+<li>帯域幅コストの削減</li>
+<li>AWS Direct Connectで BGP
+ピアリングポリシーとルーティングポリシーをサポート</li>
+<li>既存の VPN 機器とプロセスの再利用</li>
+<li>AWS マネージド高可用性 VPN サービス</li>
+<li>VPN 接続で静的ルートまたは動的ボーダーゲートウェイプロトコル (BGP)
+ピアリングおよびルーティングポリシーをサポート</li>
+</ul></li>
+<li>制限事項
+<ul>
+<li>追加の通信およびホスティングプロバイダー関係、または新しいネットワーク回線のプロビジョニングが必要になる場合があります。</li>
+<li>冗長性とフェイルオーバーを実装する責任はお客様にあります
+(必要な場合）。</li>
+<li>リモートデバイスはシングルホップ BGP をサポートする必要があります
+(動的ルーティングに BGP を活用する場合)</li>
+</ul></li>
 </ul></li>
 <li>⑥AWS Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN
 <ul>
+<li>利点
+<ul>
+<li>前のオプションと同じ</li>
+<li>最大 5,000 個のアタッチメント用の AWS
+マネージド高可用性とスケーラビリティのリージョンネットワークハブ</li>
+</ul></li>
+<li>制限事項
+<ul>
+<li>前のオプションと同じ</li>
+</ul></li>
 <li>特徴：複数の VPCs のリージョンルーターへのプライベートライン経由の
 IPsec VPN 接続</li>
 </ul></li>
@@ -652,6 +742,8 @@ VPC への接続オプション</a></li>
 </ul>
 <p>(④AWS Direct Connect + AWS Transit Gateway)<br />
 <img src="img/aws_saa/aws-direct-connect-and-aws-transit-gateway.png" width="50%" height="50%"><br /></p>
+<p>(⑤AWS Direct Connect + AWS Site-to-Site VPN)<br />
+<img src="img/aws_saa/aws-direct-connect-and-aws-site-to-site-vpn.png" width="50%" height="50%"><br /></p>
 <p>(⑥AWS Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN
 (public VIF))<br />
 <img src="img/aws_saa/aws-direct-connect-transit-gateway-site-to-site-vpn-public-vif.png" width="50%" height="50%"><br /></p>

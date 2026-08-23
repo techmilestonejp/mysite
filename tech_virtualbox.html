@@ -30,35 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2025/07/19 10:05:07<br />
-更新日：2026/08/09 15:40:54</p>
-<hr />
-<!--------------------------------------------------------------------------------------------------------------------->
-<h2 id="設定">設定</h2>
-<!--------------------------------------------------------------------------------------------------------------------->
-<h3 id="virtualboxのnw構成">VirtualBoxのNW構成</h3>
-<ul>
-<li>NAT
-<ul>
-<li>インターネット用</li>
-</ul></li>
-<li>ホストオンリーネットワーク
-<ul>
-<li>VirtualBoxを稼働しているホストサーバ(PC環境)との接続</li>
-</ul></li>
-</ul>
-<h3 id="virtualboxのnw設定箇所">VirtualBoxのNW設定箇所</h3>
-<ul>
-<li>VirtualBoxのNW設定箇所
-<ul>
-<li>VirtualBox内の仮想スイッチ(VirtualBoxマネージャ上の設定)</li>
-<li>VirtualBox仮想サーバごとのNIC設定</li>
-<li>VirtualBox仮想サーバ内のOS設定(Linux設定)</li>
-</ul></li>
-</ul>
-<h3
-id="virtualbox内の仮想スイッチvirtualboxマネージャ上の設定">VirtualBox内の仮想スイッチ(VirtualBoxマネージャ上の設定)</h3>
-<p>(ホストオンリーネットワーク)</p>
-<p>(NAT)</p>
+更新日：2026/08/23 15:36:14</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="リンク集">リンク集</h2>
@@ -79,6 +51,42 @@ href="https://saito-shion-technology.hatenablog.jp/entry/2020/02/14/171556">Virt
 <li><a
 href="https://buzz-server.com/tech/virtual-box-nat-network/">VirtualBoxのNATネットワークを使った開発環境を整える</a></li>
 </ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="設定">設定</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="virtualboxのnw構成">VirtualBoxのNW構成</h3>
+<ul>
+<li>NAT
+<ul>
+<li>インターネット用</li>
+</ul></li>
+<li>ホストオンリーネットワーク
+<ul>
+<li>VirtualBoxを稼働しているホストサーバ(PC環境)との接続</li>
+</ul></li>
+</ul>
+<p>(概要図)
+<img src="img/virtualbox/vb_nw.png" width="50%" height="50%"><br /></p>
+<h3 id="virtualboxのnw設定箇所">VirtualBoxのNW設定箇所</h3>
+<ul>
+<li>VirtualBoxのNW設定箇所
+<ul>
+<li>VirtualBox内の仮想スイッチ(VirtualBoxマネージャ上の設定)</li>
+<li>VirtualBox仮想サーバごとのNIC設定</li>
+<li>VirtualBox仮想サーバ内のOS設定(Linux設定)</li>
+</ul></li>
+</ul>
+<h3
+id="virtualbox内の仮想スイッチvirtualboxマネージャ上の設定">VirtualBox内の仮想スイッチ(VirtualBoxマネージャ上の設定)</h3>
+<p>(ホストオンリーネットワーク/アダプター)<br />
+<img src="img/virtualbox/vb_mng_hostonly_01.png" width="70%" height="70%"><br /></p>
+<p>(ホストオンリーネットワーク/DHCPサーバー)<br />
+<img src="img/virtualbox/vb_mng_hostonly_02.png" width="70%" height="70%"><br /></p>
+<p>(NATネットワーク/全般オプション)<br />
+<img src="img/virtualbox/vb_mng_nat_01.png" width="70%" height="70%"><br /></p>
+<p>(NATネットワーク/ポートフォワーディング)<br />
+<img src="img/virtualbox/vb_mng_nat_02.png" width="70%" height="70%"><br /></p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 </body>
