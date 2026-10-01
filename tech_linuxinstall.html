@@ -30,7 +30,7 @@
 </header>
 <p><a href="index.html">トップページ</a><br />
 作成日：2026/05/30 14:55:29<br />
-更新日：2026/05/31 17:05:30</p>
+更新日：2026/09/20 10:26:22</p>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="oraclelinux">OracleLinux</h2>
@@ -156,21 +156,76 @@ Linuxでサーバ構築を試してみた</a></li>
 <li><a href="https://tanoike.com/install-linux-mint-on-pc">Linux Mint
 22.3をパソコンにインストールする方法</a></li>
 <li><a href="https://note.com/takeo_terazawa/n/nbf3d1e411bd2">Linux Mint
-22インストール／　Windows10サポート終了</a></li>
+22インストール／Windows10サポート終了</a></li>
 </ul>
-<h3 id="linux-mintsambaサーバ">Linux Mint/Sambaサーバ</h3>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="linux-mint後設定">Linux Mint/後設定</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="linux-mint後設定-1">Linux Mint/後設定</h3>
+<p>(ホームディレクトリを英表記に変更)</p>
+<pre><code>LANG=C xdg-user-dirs-gtk-update</code></pre>
+<p>(SSHインストール)</p>
+<pre><code>sudo apt install openssh-server
+systemctl status ssh</code></pre>
+<p>(sambaインストール)</p>
+<pre><code>sudo apt install -y samba</code></pre>
+<p>(sambaユーザー作成)</p>
+<pre><code>sudo smbpasswd -a xxxxxx(OSユーザ名)</code></pre>
+<p>(smb.conf設定)<br />
+既存のsmb.confの最終行に以下を追加します。<br />
+以下設定でホームディレクトリへのファイル操作が可能となります。</p>
+<pre><code>[homes]
+read only = no
+writable = yes
+create mask = 0777
+directory mask = 0777</code></pre>
+<p>(samba再起動)</p>
+<pre><code>sudo systemctl restart smbd.service</code></pre>
+<ul>
+<li>ホームディレクトリを英表記に変更
+<ul>
+<li><a
+href="https://zenn.dev/tasiten/articles/7727537e2e975e">Linuxのホーム内ディレクトリの英語化</a></li>
+</ul></li>
+<li>SSH接続
+<ul>
+<li><a href="https://qiita.com/bo-san/items/71341dea38cd86f9466c">Linux
+mint端末にSSH接続を許可するまで</a></li>
+</ul></li>
+<li>Sambaサーバ
 <ul>
 <li><a href="https://gn5r.hatenablog.com/entry/2019/08/16/160228">Linux
 Mint19.1でSambaサーバ構築メモ</a></li>
 <li><a href="https://fsyublog.blog.fc2.com/blog-entry-1260.html">Linux
 MintでのSamba設定</a></li>
+</ul></li>
+</ul>
+<hr />
+<!--------------------------------------------------------------------------------------------------------------------->
+<h2 id="osコマンド">OSコマンド</h2>
+<!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="systemctl">systemctl</h3>
+<ul>
+<li><a
+href="https://qiita.com/sinsengumi/items/24d726ec6c761fc75cc9">systemctl
+コマンド</a></li>
 </ul>
 <hr />
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2 id="その他">その他</h2>
 <!--------------------------------------------------------------------------------------------------------------------->
+<h3 id="関連コマンド">関連コマンド</h3>
+<ul>
+<li>ファイルハッシュ値
+<ul>
+<li><a
+href="https://qiita.com/setonao/items/4e9edd3e2064c56507e4">【Windows】SHA256などのファイルハッシュ値を確認する方法</a></li>
+</ul></li>
+</ul>
 <h3 id="公開ftp">公開FTP</h3>
 <ul>
+<li><a href="https://ftp.udx.icscoe.jp/">IPA ICSCoE/Cyberlab Public
+Mirror Service</a></li>
 <li><a href="https://ftp.riken.jp/">Welcome to ftp.riken.jp</a></li>
 <li><a href="http://ftp.nara.wide.ad.jp/">Welcome to NAIST FTP
 Server</a></li>
